@@ -5,9 +5,12 @@
   "scripts": {
     "query": "tsx build/query_models.ts",
     "update-models": "tsx build/update_models.ts",
-    "preview": "npx serve site"
+    "preview": "npx serve site",
+    "build-site": "tsx build/render_site.ts",
+    "generate-og": "tsx build/generate_og.ts"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.65",
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
