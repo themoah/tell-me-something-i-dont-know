@@ -276,7 +276,18 @@ async function main() {
 
     const runs: RunResult[] = [];
     for (let runIdx = 0; runIdx < runsPerModel; runIdx++) {
-      const result = await queryModel(model.id, prompt, temperature, maxTokens, apiKey!);
+      let result = await queryModel(model.id, prompt, temperature, maxTokens, apiKey!);
+
+      // Retry if model returned success but empty content (e.g. reasoning ate all tokens)
+      const retryTokens = [2500, 5000, 10000];
+      let retries = 0;
+      while (result.success && (!result.content || !result.content.trim()) && retries < retryTokens.length) {
+        const boostedTokens = retryTokens[retries];
+        retries++;
+        process.stdout.write(` ↻(retry ${retries}, max_tokens=${boostedTokens})`);
+        await sleep(1000);
+        result = await queryModel(model.id, prompt, temperature, boostedTokens, apiKey!);
+      }
 
       if (result.success) {
         result.topics = detectTopics(result.content!);
