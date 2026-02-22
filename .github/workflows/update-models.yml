@@ -1,0 +1,26 @@
+name: Update Models List
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Weekly Monday 9am UTC
+  workflow_dispatch:
+
+jobs:
+  update-models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run update-models
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add build/models.yaml
+          git diff --cached --quiet || git commit -m "Auto-update models list $(date -u +%Y-%m-%d)"
+          git push

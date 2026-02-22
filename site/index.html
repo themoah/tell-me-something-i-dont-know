@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell Me Something I Don't Know — LLM Edition</title>
+    <meta name="description" content="I've asked 25+ LLMs the same question. Most of them said jellyfish.">
+    <meta property="og:title" content="Tell Me Something I Don't Know — LLM Edition">
+    <meta property="og:description" content="I've asked 25+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <!-- Cloudflare Web Analytics — add your token in the Cloudflare Pages dashboard -->
+    <!-- https://developers.cloudflare.com/analytics/web-analytics/ -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_WEB_ANALYTICS_TOKEN"}'></script>
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 80px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(240, 192, 64, 0.08);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: rgba(110, 168, 254, 0.08); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: rgba(192, 132, 252, 0.08); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: rgba(74, 222, 128, 0.08); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all 0.2s;
+            animation: fadeUp 0.4s ease both;
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid rgba(110, 168, 254, 0.3); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid rgba(192, 132, 252, 0.3); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid rgba(74, 222, 128, 0.3); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: rgba(255,255,255,0.06);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: rgba(240, 192, 64, 0.1);
+            color: var(--accent-dim);
+            font-size: 11px;
+        }
+
+        .error-text {
+            color: #f87171;
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 48px 0 32px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Tell me something<br><span class="highlight">I don't know.</span></h1>
+        <p class="subtitle">
+            We asked <strong id="model-count">25+</strong> LLMs the exact same question.
+            Most of them told us about jellyfish.
+        </p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Temperature: <strong id="meta-temp">0.7</strong></span>
+            <span>Generated: <strong id="meta-date">—</strong></span>
+        </div>
+    </header>
+
+    <section class="topic-section">
+        <h2>🪼 The Hive Mind — Most Repeated Topics</h2>
+        <div id="topic-bars" class="topic-bars"></div>
+        <div id="jellyfish-callout" class="jellyfish-callout" style="display:none">
+            <span class="emoji">🪼</span>
+            <span id="callout-text"></span>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-row">
+            <span class="filter-label">Filter</span>
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="commercial">Commercial</button>
+            <button class="filter-pill" data-filter="open-weights">Open Weights</button>
+            <button class="filter-pill" data-filter="open-source">Open Source</button>
+            <span class="model-count" id="visible-count"></span>
+        </div>
+    </section>
+
+    <section class="models-section">
+        <div id="model-grid" class="model-grid">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                Loading responses...
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+(async function() {
+    const grid = document.getElementById('model-grid');
+    const topicBarsEl = document.getElementById('topic-bars');
+    const calloutEl = document.getElementById('jellyfish-callout');
+    const calloutText = document.getElementById('callout-text');
+    const visibleCountEl = document.getElementById('visible-count');
+
+    let data;
+    try {
+        const resp = await fetch('./data.json');
+        data = await resp.json();
+    } catch(e) {
+        grid.innerHTML = '<p class="error-text">Failed to load data.json</p>';
+        return;
+    }
+
+    // Meta
+    document.getElementById('model-count').textContent = data.meta.total_models;
+    document.getElementById('meta-temp').textContent = data.meta.temperature;
+    document.getElementById('meta-date').textContent = new Date(data.meta.generated_at).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    // Topic bars
+    const topics = data.stats.topic_frequency;
+    const maxCount = Math.max(...Object.values(topics), 1);
+    let topicHTML = '';
+
+    const topicEmojis = {
+        'jellyfish': '🪼', 'octopus': '🐙', 'honey': '🍯', 'eiffel tower': '🗼',
+        'bananas': '🍌', 'cleopatra': '👑', 'mantis shrimp': '🦐', 'tardigrade': '🐻',
+        'blue whale': '🐋', 'venus': '🪐', 'shakespeare': '🎭', 'platypus': '🦆',
+        'space': '🌌', 'trees': '🌳', 'sloths': '🦥', 'dna': '🧬',
+        'oxford university': '🎓',
+    };
+
+    for (const [topic, count] of Object.entries(topics)) {
+        const pct = (count / maxCount * 100).toFixed(1);
+        const emoji = topicEmojis[topic] || '📌';
+        topicHTML += `
+            <div class="topic-bar-row">
+                <span class="topic-bar-label">${emoji} ${topic}</span>
+                <div class="topic-bar-track">
+                    <div class="topic-bar-fill" style="width: 0%" data-width="${pct}%"></div>
+                </div>
+                <span class="topic-bar-count">${count}</span>
+            </div>
+        `;
+    }
+    topicBarsEl.innerHTML = topicHTML;
+
+    // Animate bars after render
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            document.querySelectorAll('.topic-bar-fill').forEach(bar => {
+                bar.style.width = bar.dataset.width;
+            });
+        });
+    });
+
+    // Jellyfish callout
+    if (topics['jellyfish']) {
+        const jCount = topics['jellyfish'];
+        const total = data.stats.total_responses;
+        const pct = ((jCount / total) * 100).toFixed(0);
+        calloutText.textContent = `${jCount} out of ${total} responses mentioned jellyfish (${pct}%). The immortal jellyfish is apparently the default "interesting fact" in LLM training data.`;
+        calloutEl.style.display = 'block';
+    }
+
+    // Render model cards
+    let cardsHTML = '';
+    for (const model of data.models) {
+        const licenseClass = model.license;
+        const licenseLabel = model.license.replace('-', ' ');
+
+        const runs = model.runs;
+        const tabsHTML = runs.map((_, i) =>
+            `<button class="response-tab ${i === 0 ? 'active' : ''}" data-run="${i}">Run ${i + 1}</button>`
+        ).join('');
+
+        const responsesHTML = runs.map((run, i) => {
+            if (!run.success) {
+                return `<div class="response-text ${i > 0 ? 'hidden' : ''}" data-run="${i}"><span class="error-text">Error: ${escapeHtml(run.error || 'Unknown error')}</span></div>`;
+            }
+
+            const topicTags = (run.topics || []).map(t => {
+                const emoji = topicEmojis[t] || '';
+                return `<span class="topic-tag">${emoji} ${t}</span>`;
+            }).join(' ');
+
+            return `
+                <div class="response-text ${i > 0 ? 'hidden' : ''}" data-run="${i}">
+                    ${escapeHtml(run.content)}
+                </div>
+                <div class="response-meta ${i > 0 ? 'hidden' : ''}" data-run="${i}">
+                    <span>${run.tokens_completion} tokens</span>
+                    ${topicTags}
+                </div>
+            `;
+        }).join('');
+
+        cardsHTML += `
+            <div class="model-card" data-license="${model.license}" style="animation-delay: ${data.models.indexOf(model) * 40}ms">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">${escapeHtml(model.name)}</div>
+                        <div class="model-provider">${escapeHtml(model.provider)}</div>
+                    </div>
+                    <span class="license-tag ${licenseClass}">${licenseLabel}</span>
+                </div>
+                <div class="response-tabs">${tabsHTML}</div>
+                ${responsesHTML}
+            </div>
+        `;
+    }
+    grid.innerHTML = cardsHTML;
+
+    // Tab switching
+    grid.addEventListener('click', e => {
+        const tab = e.target.closest('.response-tab');
+        if (!tab) return;
+
+        const card = tab.closest('.model-card');
+        const runIdx = tab.dataset.run;
+
+        card.querySelectorAll('.response-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        card.querySelectorAll('[data-run]').forEach(el => {
+            if (el.classList.contains('response-tab')) return;
+            el.classList.toggle('hidden', el.dataset.run !== runIdx);
+        });
+    });
+
+    // Filter pills
+    const pills = document.querySelectorAll('.filter-pill');
+    function updateFilter(filter) {
+        pills.forEach(p => p.classList.toggle('active', p.dataset.filter === filter));
+
+        let visible = 0;
+        document.querySelectorAll('.model-card').forEach(card => {
+            const show = filter === 'all' || card.dataset.license === filter;
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        visibleCountEl.textContent = `${visible} model${visible !== 1 ? 's' : ''}`;
+    }
+
+    pills.forEach(pill => {
+        pill.addEventListener('click', () => updateFilter(pill.dataset.filter));
+    });
+
+    updateFilter('all');
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // Hidden style for tabs
+    const style = document.createElement('style');
+    style.textContent = '.hidden { display: none !important; }';
+    document.head.appendChild(style);
+})();
+</script>
+
+</body>
+</html>

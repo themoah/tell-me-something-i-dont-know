@@ -1,0 +1,19 @@
+{
+  "name": "tell-me-something-i-dont-know",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "query": "tsx build/query_models.ts",
+    "update-models": "tsx build/update_models.ts",
+    "preview": "npx serve site"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
