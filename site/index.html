@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tell Me Something I Don't Know — LLM Edition</title>
-    <meta name="description" content="I've asked 25+ LLMs the same question. Most of them said jellyfish.">
+    <meta name="description" content="I've asked 65+ LLMs the same question. Most of them said jellyfish.">
     <meta property="og:title" content="Tell Me Something I Don't Know — LLM Edition">
-    <meta property="og:description" content="I've asked 25+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
+    <meta property="og:description" content="I've asked 65+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -370,6 +370,44 @@
             .filter-row { gap: 6px; }
         }
 
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
         /* === LOADING STATE === */
         .loading {
             text-align: center;
@@ -396,7 +434,7 @@
     <header>
         <h1>Tell me something<br><span class="highlight">I don't know.</span></h1>
         <p class="subtitle">
-            We asked <strong id="model-count">25+</strong> LLMs the exact same question.
+            I've asked <strong id="model-count">25+</strong> LLMs the exact same question.
             Most of them told us about jellyfish.
         </p>
         <div class="meta-line">
@@ -539,6 +577,13 @@
                 return `<span class="topic-tag">${emoji} ${t}</span>`;
             }).join(' ');
 
+            const reasoningBlock = run.reasoning ? `
+                <details class="reasoning-block ${i > 0 ? 'hidden' : ''}" data-run="${i}">
+                    <summary>show reasoning · ${run.tokens_reasoning ?? '?'} tokens</summary>
+                    <div class="reasoning-content">${escapeHtml(run.reasoning)}</div>
+                </details>
+            ` : '';
+
             return `
                 <div class="response-text ${i > 0 ? 'hidden' : ''}" data-run="${i}">
                     ${escapeHtml(run.content)}
@@ -547,6 +592,7 @@
                     <span>${run.tokens_completion} tokens</span>
                     ${topicTags}
                 </div>
+                ${reasoningBlock}
             `;
         }).join('');
 

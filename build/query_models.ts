@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import 'dotenv/config';
 /**
  * Query LLMs via OpenRouter and generate data.json for the static site.
  *
@@ -46,8 +47,10 @@ interface RunResult {
   content: string | null;
   tokens_prompt?: number;
   tokens_completion?: number;
+  tokens_reasoning?: number;
   finish_reason?: string;
   topics?: string[];
+  reasoning?: string;
   error?: string;
 }
 
@@ -83,6 +86,7 @@ async function queryModel(
     messages: [{ role: 'user', content: prompt }],
     temperature,
     max_tokens: maxTokens,
+    include_reasoning: true,
   };
 
   try {
@@ -99,11 +103,12 @@ async function queryModel(
     }
 
     const data = (await resp.json()) as {
-      choices: Array<{ message: { content: string }; finish_reason?: string }>;
-      usage?: { prompt_tokens?: number; completion_tokens?: number };
+      choices: Array<{ message: { content: string; reasoning?: string }; finish_reason?: string }>;
+      usage?: { prompt_tokens?: number; completion_tokens?: number; reasoning_tokens?: number };
     };
 
     const content = data.choices[0].message.content;
+    const reasoning = data.choices[0].message.reasoning ?? undefined;
     const usage = data.usage ?? {};
 
     return {
@@ -111,7 +116,9 @@ async function queryModel(
       content,
       tokens_prompt: usage.prompt_tokens ?? 0,
       tokens_completion: usage.completion_tokens ?? 0,
+      tokens_reasoning: usage.reasoning_tokens ?? undefined,
       finish_reason: data.choices[0].finish_reason ?? 'unknown',
+      ...(reasoning ? { reasoning } : {}),
     };
   } catch (e: unknown) {
     const err = e as Error;
@@ -161,12 +168,14 @@ function computeStats(models: ModelEntry[]) {
   const topicCounts: Record<string, number> = {};
   let totalResponses = 0;
   let totalTokens = 0;
+  let totalReasoningTokens = 0;
 
   for (const model of models) {
     for (const run of model.runs) {
       if (run.success) {
         totalResponses++;
         totalTokens += run.tokens_completion ?? 0;
+        totalReasoningTokens += run.tokens_reasoning ?? 0;
         for (const topic of run.topics ?? []) {
           topicCounts[topic] = (topicCounts[topic] ?? 0) + 1;
         }
@@ -184,6 +193,7 @@ function computeStats(models: ModelEntry[]) {
     total_models: models.length,
     total_responses: totalResponses,
     total_tokens: totalTokens,
+    total_reasoning_tokens: totalReasoningTokens,
     topic_frequency: topicFrequency,
   };
 }

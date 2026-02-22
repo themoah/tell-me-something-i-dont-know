@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import 'dotenv/config';
 /**
  * Auto-discover new popular models from OpenRouter and add them to models.yaml.
  * Never removes or modifies existing models — only appends new ones.
