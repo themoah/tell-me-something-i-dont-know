@@ -174,15 +174,6 @@
       "runs": [
         {
           "success": true,
-          "content": "",
-          "tokens_prompt": 13,
-          "tokens_completion": 448,
-          "finish_reason": "length",
-          "reasoning": "**Providing a safe interesting fact**\n\nHere's an intriguing fact: wombats produce cube-shaped poop, which helps prevent it from rolling away to mark their territory effectively.**Providing a safe, interesting fact**\n\nHere's a little-known fact: wombats produce cube-shaped poop, which helps prevent it from rolling away and is used to mark their territory.",
-          "topics": []
-        },
-        {
-          "success": true,
           "content": "Here's a quirky bit of trivia: in Antarctica’s McMurdo Dry Valleys, there's a 55-square-kilometer patch of ground where, because of unusual atmospheric conditions, it hasn’t rained or snowed in roughly two million years.",
           "tokens_prompt": 13,
           "tokens_completion": 307,
@@ -197,29 +188,15 @@
           "tokens_completion": 249,
           "finish_reason": "stop",
           "topics": []
-        }
-      ]
-    },
-    {
-      "id": "openai/o3-deep-research",
-      "name": "o3 Deep Research",
-      "provider": "OpenAI",
-      "license": "commercial",
-      "runs": [
-        {
-          "success": false,
-          "content": null,
-          "error": "HTTP 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Unsupported parameter: 'temperature' is not supported with this model.\\\",\\n    \\\"type\\"
         },
         {
-          "success": false,
-          "content": null,
-          "error": "HTTP 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Unsupported parameter: 'temperature' is not supported with this model.\\\",\\n    \\\"type\\"
-        },
-        {
-          "success": false,
-          "content": null,
-          "error": "HTTP 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Unsupported parameter: 'temperature' is not supported with this model.\\\",\\n    \\\"type\\"
+          "success": true,
+          "content": "",
+          "tokens_prompt": 13,
+          "tokens_completion": 448,
+          "finish_reason": "length",
+          "reasoning": "**Providing a safe interesting fact**\n\nHere's an intriguing fact: wombats produce cube-shaped poop, which helps prevent it from rolling away to mark their territory effectively.**Providing a safe, interesting fact**\n\nHere's a little-known fact: wombats produce cube-shaped poop, which helps prevent it from rolling away and is used to mark their territory.",
+          "topics": []
         }
       ]
     },
