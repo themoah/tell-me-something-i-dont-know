@@ -150,6 +150,7 @@ function detectTopics(text: string): string[] {
     platypus: ['platypus'],
     sloths: ['sloth'],
     trees: ['more trees.*stars', 'trees on earth.*stars'],
+  'anglo-zanzibar war': ['anglo-zanzibar', 'zanzibar war', 'shortest war', 'shortest recorded war'],
   };
 
   const topics: string[] = [];

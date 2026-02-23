@@ -351,6 +351,17 @@
             color: var(--text-dim);
             min-height: 80px;
         }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: rgba(255,255,255,0.06); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
 
         .response-meta {
             margin-top: 14px;
@@ -467,6 +478,7 @@
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tell Me Something I Don't Know — LLM Edition","description":"I've asked 27 LLMs 'Tell me something I don't know.' Most of them said jellyfish.","url":"https://tellmesomethingidontknow.xyz","author":{"@type":"Person","name":"Aviv Dozorets","url":"https://x.com/themoah"},"dateModified":"2026-02-22T22:12:03.167Z"}</script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15/marked.min.js"></script>
 </head>
 <body>
 
@@ -578,26 +590,21 @@
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something genuinely interesting:
+                    <p>Here&#39;s something genuinely interesting:</p>
+<p><strong>Your brain actively reconstructs the past, not just the future.</strong></p>
+<p>Most people know the brain &quot;predicts&quot; things. But memory itself is largely a reconstruction process - every time you recall a memory, you&#39;re essentially rebuilding it, and it can be subtly altered in the process. This means <strong>remembering something can actually change the memory.</strong></p>
+<p>This has real implications:</p>
+<ul>
+<li>Eyewitness testimony is far less reliable than courts historically assumed</li>
+<li>Therapy techniques that &quot;recover&quot; memories can sometimes create false ones</li>
+<li>The more confidently someone remembers something, the more times they&#39;ve likely reconstructed it - which paradoxically can make it <em>less</em> accurate</li>
+</ul>
+<p>Psychologist Elizabeth Loftus spent decades demonstrating that people can be given <strong>entirely false memories</strong> - of being lost in a mall as a child, or seeing something that never happened - and believe them completely.</p>
+<p>So in a real sense, you&#39;re not the same person who experienced your own past. You&#39;re someone who inherited a story about it.</p>
+<hr>
+<p>What makes this worth sitting with: it challenges the idea that personal identity is built on solid ground. Your continuous sense of &quot;self&quot; partly rests on memories that are more creative than archival.</p>
+<p>Want me to go deeper on any angle of this?</p>
 
-**Your brain actively reconstructs the past, not just the future.**
-
-Most people know the brain &quot;predicts&quot; things. But memory itself is largely a reconstruction process - every time you recall a memory, you&#39;re essentially rebuilding it, and it can be subtly altered in the process. This means **remembering something can actually change the memory.**
-
-This has real implications:
-- Eyewitness testimony is far less reliable than courts historically assumed
-- Therapy techniques that &quot;recover&quot; memories can sometimes create false ones
-- The more confidently someone remembers something, the more times they&#39;ve likely reconstructed it - which paradoxically can make it *less* accurate
-
-Psychologist Elizabeth Loftus spent decades demonstrating that people can be given **entirely false memories** - of being lost in a mall as a child, or seeing something that never happened - and believe them completely.
-
-So in a real sense, you&#39;re not the same person who experienced your own past. You&#39;re someone who inherited a story about it.
-
----
-
-What makes this worth sitting with: it challenges the idea that personal identity is built on solid ground. Your continuous sense of &quot;self&quot; partly rests on memories that are more creative than archival.
-
-Want me to go deeper on any angle of this?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>282 tokens</span>
@@ -605,24 +612,20 @@ Want me to go deeper on any angle of this?
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s something genuinely interesting:
+                    <p>Here&#39;s something genuinely interesting:</p>
+<p><strong>Your brain actively reconstructs the past every time you remember it.</strong></p>
+<p>Memory isn&#39;t like a video file you replay - it&#39;s more like a document you rewrite each time you open it. Every time you recall a memory, it becomes temporarily unstable and can be altered by your current mood, new information, or even suggestions from others. Then it gets &quot;re-saved&quot; in a slightly modified form.</p>
+<p>This means <strong>the act of remembering something can change the memory itself</strong> - and the more you revisit a memory, the more it may drift from what actually happened.</p>
+<p>This has real implications for:</p>
+<ul>
+<li>Eyewitness testimony in courts</li>
+<li>How therapy can sometimes accidentally create false memories</li>
+<li>Why childhood memories are often unreliable</li>
+</ul>
+<p>The process is called <strong>memory reconsolidation</strong>, and researchers are actually exploring whether it could be used therapeutically - deliberately reactivating traumatic memories in a safe context to essentially &quot;overwrite&quot; the emotional charge attached to them.</p>
+<hr>
+<p>Want me to go deeper on this, or pick a completely different topic - science, history, psychology, something counterintuitive?</p>
 
-**Your brain actively reconstructs the past every time you remember it.**
-
-Memory isn&#39;t like a video file you replay - it&#39;s more like a document you rewrite each time you open it. Every time you recall a memory, it becomes temporarily unstable and can be altered by your current mood, new information, or even suggestions from others. Then it gets &quot;re-saved&quot; in a slightly modified form.
-
-This means **the act of remembering something can change the memory itself** - and the more you revisit a memory, the more it may drift from what actually happened.
-
-This has real implications for:
-- Eyewitness testimony in courts
-- How therapy can sometimes accidentally create false memories
-- Why childhood memories are often unreliable
-
-The process is called **memory reconsolidation**, and researchers are actually exploring whether it could be used therapeutically - deliberately reactivating traumatic memories in a safe context to essentially &quot;overwrite&quot; the emotional charge attached to them.
-
----
-
-Want me to go deeper on this, or pick a completely different topic - science, history, psychology, something counterintuitive?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>247 tokens</span>
@@ -630,24 +633,20 @@ Want me to go deeper on this, or pick a completely different topic - science, hi
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something genuinely interesting:
+                    <p>Here&#39;s something genuinely interesting:</p>
+<p><strong>Your brain actively reconstructs your past memories every time you recall them.</strong></p>
+<p>Memory isn&#39;t like a video file you play back - it&#39;s more like a document you rewrite each time you open it. Every time you remember something, the memory becomes temporarily unstable and gets re-saved with slight modifications influenced by your current mood, new information, or the context of remembering.</p>
+<p>This means:</p>
+<ul>
+<li>Memories can be <strong>unintentionally altered</strong> just by recalling them</li>
+<li>People can develop <strong>genuinely confident false memories</strong> without any intent to deceive</li>
+<li>The more you rehearse a memory, the more <strong>polished but potentially distorted</strong> it becomes</li>
+</ul>
+<p>This has serious implications for <strong>eyewitness testimony</strong> in legal cases, which research suggests is far less reliable than courts have historically assumed.</p>
+<p>The process is called <strong>memory reconsolidation</strong>, and it suggests that in some ways, the most &quot;accurate&quot; memories might be ones you rarely think about.</p>
+<hr>
+<p>Want me to go deeper on this, or would you prefer something from a completely different field - physics, history, psychology, linguistics?</p>
 
-**Your brain actively reconstructs your past memories every time you recall them.**
-
-Memory isn&#39;t like a video file you play back - it&#39;s more like a document you rewrite each time you open it. Every time you remember something, the memory becomes temporarily unstable and gets re-saved with slight modifications influenced by your current mood, new information, or the context of remembering.
-
-This means:
-- Memories can be **unintentionally altered** just by recalling them
-- People can develop **genuinely confident false memories** without any intent to deceive
-- The more you rehearse a memory, the more **polished but potentially distorted** it becomes
-
-This has serious implications for **eyewitness testimony** in legal cases, which research suggests is far less reliable than courts have historically assumed.
-
-The process is called **memory reconsolidation**, and it suggests that in some ways, the most &quot;accurate&quot; memories might be ones you rarely think about.
-
----
-
-Want me to go deeper on this, or would you prefer something from a completely different field - physics, history, psychology, linguistics?
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>245 tokens</span>
@@ -666,13 +665,11 @@ Want me to go deeper on this, or would you prefer something from a completely di
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>Tardigrades (water bears) were the first known animals to survive exposure to outer space.</strong> In 2007, thousands were sent outside a spacecraft on the FOTON-M3 mission and endured the vacuum, extreme temperatures, and radiation of space — then many were revived and even reproduced afterward.</p>
+<p>What&#39;s especially wild is that scientists still don&#39;t fully understand <em>how</em> they do it. They enter a state called &quot;tun,&quot; losing almost all their body water and essentially suspending their biology until conditions improve.</p>
+<p>Want to go deeper on this or hear something from a different field?</p>
 
-**Tardigrades (water bears) were the first known animals to survive exposure to outer space.** In 2007, thousands were sent outside a spacecraft on the FOTON-M3 mission and endured the vacuum, extreme temperatures, and radiation of space — then many were revived and even reproduced afterward.
-
-What&#39;s especially wild is that scientists still don&#39;t fully understand *how* they do it. They enter a state called &quot;tun,&quot; losing almost all their body water and essentially suspending their biology until conditions improve.
-
-Want to go deeper on this or hear something from a different field?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>140 tokens</span>
@@ -680,19 +677,17 @@ Want to go deeper on this or hear something from a different field?
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>Trees can communicate and share resources through underground fungal networks</strong>, sometimes called the &quot;Wood Wide Web.&quot; Through mycorrhizal fungi connecting their roots, trees can:</p>
+<ul>
+<li>Send nutrients to struggling neighbors (even of different species)</li>
+<li>Warn nearby trees about insect attacks, prompting them to produce defensive chemicals</li>
+<li>Preferentially feed their own offspring</li>
+</ul>
+<p>Older &quot;mother trees&quot; can recognize their kin and channel more resources to their seedlings through these networks.</p>
+<p>What&#39;s especially interesting is that some plants actually <em>hack</em> the system — certain orchids, for example, tap into the network and steal nutrients without giving anything back.</p>
+<p>Want me to go deeper on this or share something from a completely different field?</p>
 
-**Trees can communicate and share resources through underground fungal networks**, sometimes called the &quot;Wood Wide Web.&quot; Through mycorrhizal fungi connecting their roots, trees can:
-
-- Send nutrients to struggling neighbors (even of different species)
-- Warn nearby trees about insect attacks, prompting them to produce defensive chemicals
-- Preferentially feed their own offspring
-
-Older &quot;mother trees&quot; can recognize their kin and channel more resources to their seedlings through these networks.
-
-What&#39;s especially interesting is that some plants actually *hack* the system — certain orchids, for example, tap into the network and steal nutrients without giving anything back.
-
-Want me to go deeper on this or share something from a completely different field?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>163 tokens</span>
@@ -700,17 +695,16 @@ Want me to go deeper on this or share something from a completely different fiel
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>Trees can communicate and share resources through underground fungal networks</strong>, sometimes called the &quot;Wood Wide Web.&quot; Through mycorrhizal fungi connected to their roots, trees can:</p>
+<ul>
+<li>Send nutrients to struggling neighbors (even of different species)</li>
+<li>Warn nearby trees about insect attacks, prompting them to produce defensive chemicals</li>
+<li>&quot;Mother trees&quot; preferentially feed their offspring through these networks</li>
+</ul>
+<p>What&#39;s especially surprising is that dying trees have been observed dumping their remaining resources into the network — essentially leaving an inheritance for surrounding trees.</p>
+<p>Want me to go deeper on this, or would you prefer something surprising from a completely different field?</p>
 
-**Trees can communicate and share resources through underground fungal networks**, sometimes called the &quot;Wood Wide Web.&quot; Through mycorrhizal fungi connected to their roots, trees can:
-
-- Send nutrients to struggling neighbors (even of different species)
-- Warn nearby trees about insect attacks, prompting them to produce defensive chemicals
-- &quot;Mother trees&quot; preferentially feed their offspring through these networks
-
-What&#39;s especially surprising is that dying trees have been observed dumping their remaining resources into the network — essentially leaving an inheritance for surrounding trees.
-
-Want me to go deeper on this, or would you prefer something surprising from a completely different field?
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>143 tokens</span>
@@ -729,7 +723,8 @@ Want me to go deeper on this, or would you prefer something surprising from a co
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something that might surprise you: octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body. Even stranger—the heart that serves the body actually *stops beating* when the octopus swims, which is why they prefer crawling along the ocean floor instead. Swimming is exhausting for them.
+                    <p>Here&#39;s something that might surprise you: octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body. Even stranger—the heart that serves the body actually <em>stops beating</em> when the octopus swims, which is why they prefer crawling along the ocean floor instead. Swimming is exhausting for them.</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>81 tokens</span>
@@ -737,11 +732,10 @@ Want me to go deeper on this, or would you prefer something surprising from a co
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s something that might surprise you: octopuses have three hearts and blue blood.
+                    <p>Here&#39;s something that might surprise you: octopuses have three hearts and blue blood.</p>
+<p>Two hearts pump blood to the gills, while the third pumps it to the rest of the body. Their blood is blue because it uses copper-based hemocyanin to carry oxygen instead of the iron-based hemoglobin that makes our blood red.</p>
+<p>Even stranger: when an octopus swims, the heart that delivers blood to the body actually <em>stops beating</em>. This is why they prefer crawling—swimming exhausts them quickly and can even be fatal if they&#39;re already stressed.</p>
 
-Two hearts pump blood to the gills, while the third pumps it to the rest of the body. Their blood is blue because it uses copper-based hemocyanin to carry oxygen instead of the iron-based hemoglobin that makes our blood red.
-
-Even stranger: when an octopus swims, the heart that delivers blood to the body actually *stops beating*. This is why they prefer crawling—swimming exhausts them quickly and can even be fatal if they&#39;re already stressed.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>127 tokens</span>
@@ -749,7 +743,8 @@ Even stranger: when an octopus swims, the heart that delivers blood to the body 
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something that might surprise you: octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body. Even stranger, the heart that delivers blood to the body actually *stops beating* when the octopus swims—which is why they prefer crawling along the ocean floor instead. Swimming exhausts them much faster.
+                    <p>Here&#39;s something that might surprise you: octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body. Even stranger, the heart that delivers blood to the body actually <em>stops beating</em> when the octopus swims—which is why they prefer crawling along the ocean floor instead. Swimming exhausts them much faster.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>83 tokens</span>
@@ -768,11 +763,10 @@ Even stranger: when an octopus swims, the heart that delivers blood to the body 
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Octopuses have **three hearts**, and two of them stop beating when they swim.
+                    <p>Octopuses have <strong>three hearts</strong>, and two of them stop beating when they swim.</p>
+<p>The two smaller hearts pump blood to the gills, and the main heart pumps blood to the rest of the body. But when an octopus swims, the main heart actually <em>stops</em>, which is one reason octopuses prefer crawling along the seafloor instead of swimming — it’s energetically exhausting for them.</p>
+<p>Bonus twist: their blood is blue because it uses <strong>copper-based hemocyanin</strong> instead of iron-based hemoglobin to carry oxygen.</p>
 
-The two smaller hearts pump blood to the gills, and the main heart pumps blood to the rest of the body. But when an octopus swims, the main heart actually *stops*, which is one reason octopuses prefer crawling along the seafloor instead of swimming — it’s energetically exhausting for them.
-
-Bonus twist: their blood is blue because it uses **copper-based hemocyanin** instead of iron-based hemoglobin to carry oxygen.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>134 tokens</span>
@@ -780,11 +774,10 @@ Bonus twist: their blood is blue because it uses **copper-based hemocyanin** ins
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Octopuses have **three hearts**, and two of them stop beating when they swim.
+                    <p>Octopuses have <strong>three hearts</strong>, and two of them stop beating when they swim.</p>
+<p>The two smaller hearts pump blood to the gills, and the larger one pumps it to the rest of the body. When an octopus swims, the heart that delivers blood to the body actually pauses — which is why octopuses prefer crawling over swimming. Swimming literally exhausts them.</p>
+<p>Bonus twist: their blood is blue because it uses <strong>copper-based hemocyanin</strong> instead of iron-based hemoglobin to transport oxygen.</p>
 
-The two smaller hearts pump blood to the gills, and the larger one pumps it to the rest of the body. When an octopus swims, the heart that delivers blood to the body actually pauses — which is why octopuses prefer crawling over swimming. Swimming literally exhausts them.
-
-Bonus twist: their blood is blue because it uses **copper-based hemocyanin** instead of iron-based hemoglobin to transport oxygen.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>139 tokens</span>
@@ -792,11 +785,10 @@ Bonus twist: their blood is blue because it uses **copper-based hemocyanin** ins
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Octopuses have three hearts, and two of them stop beating when they swim.
+                    <p>Octopuses have three hearts, and two of them stop beating when they swim.</p>
+<p>The two smaller hearts pump blood to the gills, and the larger heart pumps blood to the rest of the body. When an octopus swims, the main heart has to work so hard that the gill hearts temporarily stop. This is one reason octopuses prefer crawling over swimming — it’s less exhausting.</p>
+<p>Bonus detail: their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin to carry oxygen.</p>
 
-The two smaller hearts pump blood to the gills, and the larger heart pumps blood to the rest of the body. When an octopus swims, the main heart has to work so hard that the gill hearts temporarily stop. This is one reason octopuses prefer crawling over swimming — it’s less exhausting.
-
-Bonus detail: their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin to carry oxygen.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>129 tokens</span>
@@ -815,7 +807,8 @@ Bonus detail: their blood is blue because it uses copper-based hemocyanin instea
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Did you know there’s a real “zombie” fungus called *Ophiocordyceps unilateralis* that infects ants, takes over their nervous system, and compels them to climb to an ideal spot for the fungus to grow? Once
+                    <p>Did you know there’s a real “zombie” fungus called <em>Ophiocordyceps unilateralis</em> that infects ants, takes over their nervous system, and compels them to climb to an ideal spot for the fungus to grow? Once</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>500 tokens</span>
@@ -829,7 +822,8 @@ Bonus detail: their blood is blue because it uses copper-based hemocyanin instea
 There’s a parasitic fungus called *Ophiocordyceps unilateralis* that infects ants and controls their behavior, effectively turning them into &quot;zombies&quot; to help spread the fungus.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    In Oregon’s Malheur National Forest, a single honey fungus (Armillaria) stretches over 3 square miles and is estimated to be thousands of years old, making it one of the largest and oldest living organisms on Earth.
+                    <p>In Oregon’s Malheur National Forest, a single honey fungus (Armillaria) stretches over 3 square miles and is estimated to be thousands of years old, making it one of the largest and oldest living organisms on Earth.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>1826 tokens</span>
@@ -843,7 +837,8 @@ There’s a parasitic fungus called *Ophiocordyceps unilateralis* that infects a
 In Oregon, there&#39;s a honey fungus over 3 miles wide and thousands of years old, considered one of the largest organisms on Earth.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Here’s a surprisingly little-known fact: in 2001, a quasicrystal—a structure that defies normal rules of crystal symmetry—was discovered in a meteorite that landed in Siberia. This natural quasicrystal shows that materials once thought impossible in nature can form under the extreme conditions of space, offering a glimpse into exotic chemistry and physics beyond Earth.
+                    <p>Here’s a surprisingly little-known fact: in 2001, a quasicrystal—a structure that defies normal rules of crystal symmetry—was discovered in a meteorite that landed in Siberia. This natural quasicrystal shows that materials once thought impossible in nature can form under the extreme conditions of space, offering a glimpse into exotic chemistry and physics beyond Earth.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>279 tokens</span>
@@ -868,7 +863,8 @@ Some sea cucumbers can defend themselves by ejecting their internal organs, whic
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here are a few obscure and fascinating facts from different areas of life. Hopefully, at least
+                    <p>Here are a few obscure and fascinating facts from different areas of life. Hopefully, at least</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>496 tokens</span>
@@ -895,7 +891,8 @@ I&#39;ve narrowed down the potential facts. Now, I&#39;m focusing on those with 
 </div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Here are a few bizarre, obscure, and fascinating facts across different categories. Hopefully, at least one
+                    <p>Here are a few bizarre, obscure, and fascinating facts across different categories. Hopefully, at least one</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>496 tokens</span>
@@ -917,7 +914,8 @@ I&#39;m now zeroing in on a diverse set of fact categories to broaden the appeal
 </div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Since I don&#39;t know what you already know, I&#39;ll give you a mix of
+                    <p>Since I don&#39;t know what you already know, I&#39;ll give you a mix of</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>496 tokens</span>
@@ -950,17 +948,13 @@ I&#39;m now focusing on a curated list, considering diverse domains to enhance t
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    There is a species of jellyfish called ***Turritopsis dohrnii***, often referred to as the **&quot;immortal jellyfish,&quot;** that has figured out how to cheat death by aging backward.
+                    <p>There is a species of jellyfish called <em><strong>Turritopsis dohrnii</strong></em>, often referred to as the <strong>&quot;immortal jellyfish,&quot;</strong> that has figured out how to cheat death by aging backward.</p>
+<p>Here is how it works:</p>
+<p>Most jellyfish follow a standard life cycle: they start as a larva, settle on the ocean floor as a polyp (like a tiny sea anemone), and eventually bud off into a swimming medusa (the jellyfish we recognize). Usually, once a medusa reproduces, it eventually dies.</p>
+<p>However, if a <em>Turritopsis dohrnii</em> is physically damaged, starved, or stressed by environmental changes, it doesn’t die. Instead, it undergoes a process called <strong>transdifferentiation</strong>. Its cells essentially &quot;reboot.&quot; It shrinks its body, retracts its tentacles, sinks to the ocean floor, and reverts back into its juvenile polyp stage.</p>
+<p>It’s the biological equivalent of a butterfly turning back into a caterpillar, or a chicken turning back into an egg. </p>
+<p>Because it can repeat this cycle indefinitely, it is technically biologically immortal. Unless it is eaten by a predator or killed by a disease that acts faster than its transformation, it could theoretically live forever.</p>
 
-Here is how it works:
-
-Most jellyfish follow a standard life cycle: they start as a larva, settle on the ocean floor as a polyp (like a tiny sea anemone), and eventually bud off into a swimming medusa (the jellyfish we recognize). Usually, once a medusa reproduces, it eventually dies.
-
-However, if a *Turritopsis dohrnii* is physically damaged, starved, or stressed by environmental changes, it doesn’t die. Instead, it undergoes a process called **transdifferentiation**. Its cells essentially &quot;reboot.&quot; It shrinks its body, retracts its tentacles, sinks to the ocean floor, and reverts back into its juvenile polyp stage.
-
-It’s the biological equivalent of a butterfly turning back into a caterpillar, or a chicken turning back into an egg. 
-
-Because it can repeat this cycle indefinitely, it is technically biologically immortal. Unless it is eaten by a predator or killed by a disease that acts faster than its transformation, it could theoretically live forever.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>248 tokens</span>
@@ -968,11 +962,10 @@ Because it can repeat this cycle indefinitely, it is technically biologically im
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    There is a species of jellyfish called **Turritopsis dohrnii** that is biologically immortal.
+                    <p>There is a species of jellyfish called <strong>Turritopsis dohrnii</strong> that is biologically immortal.</p>
+<p>When this jellyfish reaches old age, becomes injured, or faces starvation, it doesn&#39;t die. Instead, it undergoes a process called &quot;transdifferentiation.&quot; It essentially hits a &quot;reset button&quot; on its life cycle: its cells transform back into their earliest states, and the jellyfish reverts into a polyp (a baby-like state) on the ocean floor. </p>
+<p>From that polyp, it eventually grows back into an adult jellyfish again. It can theoretically repeat this cycle forever, meaning it only dies if it is eaten by a predator or killed by a disease.</p>
 
-When this jellyfish reaches old age, becomes injured, or faces starvation, it doesn&#39;t die. Instead, it undergoes a process called &quot;transdifferentiation.&quot; It essentially hits a &quot;reset button&quot; on its life cycle: its cells transform back into their earliest states, and the jellyfish reverts into a polyp (a baby-like state) on the ocean floor. 
-
-From that polyp, it eventually grows back into an adult jellyfish again. It can theoretically repeat this cycle forever, meaning it only dies if it is eaten by a predator or killed by a disease.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>136 tokens</span>
@@ -980,11 +973,10 @@ From that polyp, it eventually grows back into an adult jellyfish again. It can 
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    There is a species of jellyfish called ***Turritopsis dohrnii***, often referred to as the **&quot;immortal jellyfish,&quot;** that has found a way to cheat death.
+                    <p>There is a species of jellyfish called <em><strong>Turritopsis dohrnii</strong></em>, often referred to as the <strong>&quot;immortal jellyfish,&quot;</strong> that has found a way to cheat death.</p>
+<p>When it faces physical damage, starvation, or old age, it doesn&#39;t die. Instead, it undergoes a process called <strong>transdifferentiation</strong>. It shrinks its body, retracts its tentacles, and transforms its existing adult cells into younger states, effectively turning back into a &quot;baby&quot; polyp.</p>
+<p>It then starts its entire life cycle over again. Theoretically, this process can go on forever, making it biologically immortal. It is the only known animal capable of reverting completely to a sexually immature, post-metamorphic state after having reached sexual maturity.</p>
 
-When it faces physical damage, starvation, or old age, it doesn&#39;t die. Instead, it undergoes a process called **transdifferentiation**. It shrinks its body, retracts its tentacles, and transforms its existing adult cells into younger states, effectively turning back into a &quot;baby&quot; polyp.
-
-It then starts its entire life cycle over again. Theoretically, this process can go on forever, making it biologically immortal. It is the only known animal capable of reverting completely to a sexually immature, post-metamorphic state after having reached sexual maturity.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>151 tokens</span>
@@ -1003,14 +995,14 @@ It then starts its entire life cycle over again. Theoretically, this process can
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>The collective smell of a rainstorm is called &quot;petrichor,&quot; and it actually originates from a specific combination of things:</strong></p>
+<ol>
+<li><strong>Oils secreted by certain plants</strong> during dry periods.</li>
+<li><strong>A chemical compound called geosmin</strong>, produced by certain types of soil-dwelling bacteria (<em>Actinobacteria</em>).</li>
+</ol>
+<p>When raindrops hit the dry ground, they trap tiny air bubbles. These bubbles then shoot upward, aerosolizing the plant oils and geosmin into the air, which is what we breathe in as that distinctive, earthy, fresh smell after rain.</p>
 
-**The collective smell of a rainstorm is called &quot;petrichor,&quot; and it actually originates from a specific combination of things:**
-
-1. **Oils secreted by certain plants** during dry periods.
-2. **A chemical compound called geosmin**, produced by certain types of soil-dwelling bacteria (*Actinobacteria*).
-
-When raindrops hit the dry ground, they trap tiny air bubbles. These bubbles then shoot upward, aerosolizing the plant oils and geosmin into the air, which is what we breathe in as that distinctive, earthy, fresh smell after rain.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>126 tokens</span>
@@ -1018,11 +1010,10 @@ When raindrops hit the dry ground, they trap tiny air bubbles. These bubbles the
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>The total weight of all the ants on Earth is roughly equal to the total weight of all the humans on Earth.</strong></p>
+<p>While it&#39;s impossible to get an exact count, various ecological estimates place the biomass (total weight) of the world&#39;s ant population in the same ballpark as the biomass of the 8 billion or so humans currently alive. Given the sheer number of individual ants (estimated in the quadrillions), that&#39;s an incredible amount of tiny insect!</p>
 
-**The total weight of all the ants on Earth is roughly equal to the total weight of all the humans on Earth.**
-
-While it&#39;s impossible to get an exact count, various ecological estimates place the biomass (total weight) of the world&#39;s ant population in the same ballpark as the biomass of the 8 billion or so humans currently alive. Given the sheer number of individual ants (estimated in the quadrillions), that&#39;s an incredible amount of tiny insect!
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>105 tokens</span>
@@ -1030,11 +1021,10 @@ While it&#39;s impossible to get an exact count, various ecological estimates pl
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here is a fact you might not know:
+                    <p>Here is a fact you might not know:</p>
+<p><strong>The total weight of all the ants on Earth is roughly equal to the total weight of all the humans on Earth.</strong></p>
+<p>While the exact numbers are constantly being debated and refined by entomologists, most current estimates suggest the biomass (total collective weight) of the world&#39;s estimated 20 quadrillion ants is comparable to the biomass of the 8 billion humans.</p>
 
-**The total weight of all the ants on Earth is roughly equal to the total weight of all the humans on Earth.**
-
-While the exact numbers are constantly being debated and refined by entomologists, most current estimates suggest the biomass (total collective weight) of the world&#39;s estimated 20 quadrillion ants is comparable to the biomass of the 8 billion humans.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>84 tokens</span>
@@ -1053,7 +1043,8 @@ While the exact numbers are constantly being debated and refined by entomologist
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    The unicorn is the official national animal of Scotland—chosen in the 12th century for its symbolism of purity, strength, and independence in Celtic mythology, despite never having existed. 🦄
+                    <p>The unicorn is the official national animal of Scotland—chosen in the 12th century for its symbolism of purity, strength, and independence in Celtic mythology, despite never having existed. 🦄</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>365 tokens</span>
@@ -1071,7 +1062,8 @@ While the exact numbers are constantly being debated and refined by entomologist
 - Focusing on widely interesting topics will help ensure the information is both novel and accessible to the user.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Cleopatra lived closer in time to the first Moon landing (1969 AD) than to the construction of the Great Pyramids of Giza (around 2560 BC). She was born over 2,500 years after the pyramids, but only about 2,000 years before Neil Armstrong&#39;s &quot;one small step.&quot;
+                    <p>Cleopatra lived closer in time to the first Moon landing (1969 AD) than to the construction of the Great Pyramids of Giza (around 2560 BC). She was born over 2,500 years after the pyramids, but only about 2,000 years before Neil Armstrong&#39;s &quot;one small step.&quot;</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>320 tokens</span>
@@ -1092,7 +1084,8 @@ While the exact numbers are constantly being debated and refined by entomologist
 - Octopuses have three hearts and blue blood due to copper-based hemocyanin for oxygen transport.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Did you know that the shortest war in history lasted just 38 minutes? On August 27, 1896, Britain bombarded Zanzibar&#39;s palace, and the sultan surrendered after a brief exchange of fire—ending the Anglo-Zanzibar War before breakfast was even over.
+                    <p>Did you know that the shortest war in history lasted just 38 minutes? On August 27, 1896, Britain bombarded Zanzibar&#39;s palace, and the sultan surrendered after a brief exchange of fire—ending the Anglo-Zanzibar War before breakfast was even over.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>358 tokens</span>
@@ -1119,7 +1112,8 @@ While the exact numbers are constantly being debated and refined by entomologist
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Did you know that octopuses have three hearts? Two pump blood to the gills for oxygenation, while the third circulates it to the rest of the body. And when they swim, that main heart temporarily stops beating, which is why they prefer crawling to conserve energy!
+                    <p>Did you know that octopuses have three hearts? Two pump blood to the gills for oxygenation, while the third circulates it to the rest of the body. And when they swim, that main heart temporarily stops beating, which is why they prefer crawling to conserve energy!</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>220 tokens</span>
@@ -1127,7 +1121,8 @@ While the exact numbers are constantly being debated and refined by entomologist
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Did you know that octopuses have three hearts? Two pump blood through the gills to pick up oxygen, while the third pumps it through the rest of the body. And when they swim, that main heart actually stops beating, which is why they prefer crawling to swimming—it&#39;s less exhausting!
+                    <p>Did you know that octopuses have three hearts? Two pump blood through the gills to pick up oxygen, while the third pumps it through the rest of the body. And when they swim, that main heart actually stops beating, which is why they prefer crawling to swimming—it&#39;s less exhausting!</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>207 tokens</span>
@@ -1135,7 +1130,8 @@ While the exact numbers are constantly being debated and refined by entomologist
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Did you know that the shortest war in history was between Britain and Zanzibar on August 27, 1896? It lasted just 38 minutes before Zanzibar surrendered.
+                    <p>Did you know that the shortest war in history was between Britain and Zanzibar on August 27, 1896? It lasted just 38 minutes before Zanzibar surrendered.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>254 tokens</span>
@@ -1154,13 +1150,11 @@ While the exact numbers are constantly being debated and refined by entomologist
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    You might not know that there is a type of jellyfish that is immortal.
+                    <p>You might not know that there is a type of jellyfish that is immortal.</p>
+<p>The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, who are trying to understand the mechanisms behind it and potentially apply it to human medicine.</p>
+<p>Isn&#39;t that cool?</p>
 
-The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, who are trying to understand the mechanisms behind it and potentially apply it to human medicine.
-
-Isn&#39;t that cool?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>148 tokens</span>
@@ -1168,11 +1162,10 @@ Isn&#39;t that cool?
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    There are many fascinating facts that might be new to you. Here&#39;s one:
+                    <p>There are many fascinating facts that might be new to you. Here&#39;s one:</p>
+<p>Did you know that there is a type of jellyfish that is immortal? The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>Is this something you didn&#39;t know?</p>
 
-Did you know that there is a type of jellyfish that is immortal? The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-Is this something you didn&#39;t know?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>131 tokens</span>
@@ -1180,11 +1173,10 @@ Is this something you didn&#39;t know?
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    There are many fascinating facts that might be new to you. Here&#39;s one: 
+                    <p>There are many fascinating facts that might be new to you. Here&#39;s one: </p>
+<p>Did you know that there is a type of jellyfish that is immortal? The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>Is that something you didn&#39;t know?</p>
 
-Did you know that there is a type of jellyfish that is immortal? The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-Is that something you didn&#39;t know?
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>133 tokens</span>
@@ -1203,13 +1195,11 @@ Is that something you didn&#39;t know?
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Did you know that there is a type of jellyfish that is immortal?
+                    <p>Did you know that there is a type of jellyfish that is immortal?</p>
+<p>The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, who are hoping to learn more about the mechanisms behind it and potentially apply it to human medicine.</p>
+<p>Is that something you didn&#39;t know?</p>
 
-The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, who are hoping to learn more about the mechanisms behind it and potentially apply it to human medicine.
-
-Is that something you didn&#39;t know?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>151 tokens</span>
@@ -1217,13 +1207,11 @@ Is that something you didn&#39;t know?
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Did you know that there is a type of jellyfish that is immortal?
+                    <p>Did you know that there is a type of jellyfish that is immortal?</p>
+<p>The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.</p>
+<p>Isn&#39;t that fascinating?</p>
 
-The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.
-
-Isn&#39;t that fascinating?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>157 tokens</span>
@@ -1231,17 +1219,13 @@ Isn&#39;t that fascinating?
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    A challenge! Here&#39;s something you might not know:
+                    <p>A challenge! Here&#39;s something you might not know:</p>
+<p>Did you know that there is a type of jellyfish that is immortal?</p>
+<p>The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases.</p>
+<p>Isn&#39;t that cool?</p>
+<p>Would you like to learn more about this or is there something else you&#39;d like to explore?</p>
 
-Did you know that there is a type of jellyfish that is immortal?
-
-The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases.
-
-Isn&#39;t that cool?
-
-Would you like to learn more about this or is there something else you&#39;d like to explore?
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>182 tokens</span>
@@ -1260,13 +1244,11 @@ Would you like to learn more about this or is there something else you&#39;d lik
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p>There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.</p>
+<p>Would you like to know more about this fascinating creature?</p>
 
-There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back to its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.
-
-Would you like to know more about this fascinating creature?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>168 tokens</span>
@@ -1274,15 +1256,12 @@ Would you like to know more about this fascinating creature?
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    A challenge!
+                    <p>A challenge!</p>
+<p>Here&#39;s something you might not know:</p>
+<p>There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.</p>
+<p>Was that something new and interesting?</p>
 
-Here&#39;s something you might not know:
-
-There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.
-
-Was that something new and interesting?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>167 tokens</span>
@@ -1290,13 +1269,11 @@ Was that something new and interesting?
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something you might not know:
+                    <p>Here&#39;s something you might not know:</p>
+<p>There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.</p>
+<p>This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.</p>
+<p>Would you like to know more about this fascinating creature?</p>
 
-There is a type of jellyfish that is immortal. The Turritopsis dohrnii, also known as the &quot;immortal jellyfish,&quot; is a species of jellyfish that can transform its body into a younger state through a process called transdifferentiation. This means that it can essentially revert back into its polyp stage, which is the juvenile form of a jellyfish, and then grow back into an adult again. This process can be repeated indefinitely, making the Turritopsis dohrnii theoretically immortal.
-
-This process is still not fully understood and is currently being studied by scientists, but it has potential applications in the field of regenerative medicine and could possibly lead to new ways of understanding and addressing diseases related to aging.
-
-Would you like to know more about this fascinating creature?
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>168 tokens</span>
@@ -1315,17 +1292,13 @@ Would you like to know more about this fascinating creature?
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here’s something you might not know:
+                    <p>Here’s something you might not know:</p>
+<p><strong>The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation in Australia.</strong></p>
+<p>After World War I veterans settled in Western Australia to farm, they faced an unexpected enemy: <strong>20,000 emus</strong> that were destroying crops and breaking fences. The farmers requested military assistance, and the Australian government deployed soldiers armed with Lewis machine guns.</p>
+<p>Despite the firepower, the emus <strong>won</strong>. They split into small, fast-moving groups, absorbed bullets like sponges, and outmaneuvered the soldiers. The military withdrew after just a few days, with the emus suffering minimal losses. The press mocked the operation, and the emus remained a nuisance until better fencing and bounties were introduced.</p>
+<p>It’s one of history’s most absurd human vs. animal conflicts—and the animals triumphed.</p>
+<p>Want another obscure fact? Let me know!</p>
 
-**The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation in Australia.**
-
-After World War I veterans settled in Western Australia to farm, they faced an unexpected enemy: **20,000 emus** that were destroying crops and breaking fences. The farmers requested military assistance, and the Australian government deployed soldiers armed with Lewis machine guns.
-
-Despite the firepower, the emus **won**. They split into small, fast-moving groups, absorbed bullets like sponges, and outmaneuvered the soldiers. The military withdrew after just a few days, with the emus suffering minimal losses. The press mocked the operation, and the emus remained a nuisance until better fencing and bounties were introduced.
-
-It’s one of history’s most absurd human vs. animal conflicts—and the animals triumphed.
-
-Want another obscure fact? Let me know!
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>197 tokens</span>
@@ -1333,15 +1306,12 @@ Want another obscure fact? Let me know!
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here’s something you might not know:
+                    <p>Here’s something you might not know:</p>
+<p><strong>The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation where the Australian army tried to cull emus with machine guns—only for the birds to outmaneuver them.</strong></p>
+<p>After World War I veterans settled in Western Australia to farm, thousands of emus descended upon their crops, destroying fields. The government deployed soldiers with Lewis guns to thin the emu population. However, the emus scattered unpredictably, absorbed bullets, and even split into guerrilla-like groups, making them nearly impossible to hit. The military withdrew in defeat, with the emus suffering minimal losses.</p>
+<p>It’s one of history’s most absurd human-wildlife conflicts—and the emus won.</p>
+<p>Want something even more obscure? Let me know!</p>
 
-**The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation where the Australian army tried to cull emus with machine guns—only for the birds to outmaneuver them.**
-
-After World War I veterans settled in Western Australia to farm, thousands of emus descended upon their crops, destroying fields. The government deployed soldiers with Lewis guns to thin the emu population. However, the emus scattered unpredictably, absorbed bullets, and even split into guerrilla-like groups, making them nearly impossible to hit. The military withdrew in defeat, with the emus suffering minimal losses.
-
-It’s one of history’s most absurd human-wildlife conflicts—and the emus won.
-
-Want something even more obscure? Let me know!
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>165 tokens</span>
@@ -1349,19 +1319,14 @@ Want something even more obscure? Let me know!
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here’s something you might not know:
+                    <p>Here’s something you might not know:</p>
+<p><strong>The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation in Australia.</strong></p>
+<p>After World War I veterans settled in Western Australia to farm, they faced an unexpected enemy: <strong>20,000 emus</strong> that destroyed crops and broke fences. The farmers requested military aid, and the Australian government sent soldiers armed with machine guns.</p>
+<p>Despite the firepower, the emus <strong>outmaneuvered</strong> the troops—splitting into small groups, running in zigzags, and absorbing bullets like feathered tanks. After 2,500 rounds, only a few hundred emus were killed. The military withdrew in defeat, and the emus won.</p>
+<p>The media mocked the operation, but the emus remained a persistent nuisance until better fencing and bounties were introduced.</p>
+<p><strong>Fun fact:</strong> Emus can run up to <strong>30 mph (50 km/h)</strong> and have legs so strong they can tear through metal fencing.</p>
+<p>Want another obscure fact? Let me know!</p>
 
-**The &quot;Great Emu War&quot; of 1932 was a real (and failed) military operation in Australia.**
-
-After World War I veterans settled in Western Australia to farm, they faced an unexpected enemy: **20,000 emus** that destroyed crops and broke fences. The farmers requested military aid, and the Australian government sent soldiers armed with machine guns.
-
-Despite the firepower, the emus **outmaneuvered** the troops—splitting into small groups, running in zigzags, and absorbing bullets like feathered tanks. After 2,500 rounds, only a few hundred emus were killed. The military withdrew in defeat, and the emus won.
-
-The media mocked the operation, but the emus remained a persistent nuisance until better fencing and bounties were introduced.
-
-**Fun fact:** Emus can run up to **30 mph (50 km/h)** and have legs so strong they can tear through metal fencing.
-
-Want another obscure fact? Let me know!
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>225 tokens</span>
@@ -1380,27 +1345,15 @@ Want another obscure fact? Let me know!
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    
+                    <p>Okay, here&#39;s something you (probably) don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is biologically immortal.</strong></p>
+<p>Now, that doesn&#39;t mean they can&#39;t <em>be</em> killed (they can be eaten by predators, or succumb to disease). But, unlike almost all other animals, they don&#39;t die of old age. </p>
+<p>When faced with physical damage or starvation, instead of dying, <em>Turritopsis dohrnii</em> can revert back to its polyp stage – essentially becoming its own baby. It then grows back into a mature jellyfish. This process can repeat indefinitely, theoretically making them immortal.</p>
+<p>It&#39;s a fascinating area of research, and scientists are studying them to understand the mechanisms behind this cellular reversal, hoping it could have implications for regenerative medicine.</p>
+<p>Pretty wild, right?</p>
+<p>You can read more about it here: <a href="https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976103/">https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976103/</a></p>
+<p>Did you know about this before?  If not, I hope you found that interesting! Let me know if you&#39;d like to hear another &quot;something you don&#39;t know.&quot;</p>
 
-Okay, here&#39;s something you (probably) don&#39;t know:
-
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is biologically immortal.**
-
-Now, that doesn&#39;t mean they can&#39;t *be* killed (they can be eaten by predators, or succumb to disease). But, unlike almost all other animals, they don&#39;t die of old age. 
-
-When faced with physical damage or starvation, instead of dying, *Turritopsis dohrnii* can revert back to its polyp stage – essentially becoming its own baby. It then grows back into a mature jellyfish. This process can repeat indefinitely, theoretically making them immortal.
-
-It&#39;s a fascinating area of research, and scientists are studying them to understand the mechanisms behind this cellular reversal, hoping it could have implications for regenerative medicine.
-
-Pretty wild, right?
-
-
-
-You can read more about it here: [https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976103/](https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976103/)
-
-
-
-Did you know about this before?  If not, I hope you found that interesting! Let me know if you&#39;d like to hear another &quot;something you don&#39;t know.&quot;
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>298 tokens</span>
@@ -1408,25 +1361,15 @@ Did you know about this before?  If not, I hope you found that interesting! Let 
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Okay, here&#39;s something you likely don&#39;t know:
+                    <p>Okay, here&#39;s something you likely don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is biologically immortal.</strong></p>
+<p>It doesn&#39;t die of old age. When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially going back to being a baby jellyfish. From this polyp stage, it can then grow into a new, genetically identical jellyfish. </p>
+<p>It&#39;s not invincible – they can still be eaten by predators or succumb to disease. But they can repeat this cycle indefinitely, meaning they theoretically could live forever.</p>
+<p>Scientists are studying them intensely to understand the mechanisms behind this cellular transdifferentiation (the ability of one cell type to change into another) which could have huge implications for regenerative medicine and anti-aging research.</p>
+<p>Pretty wild, right?</p>
+<p>You can read more about it here: <a href="https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976152/">https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976152/</a></p>
+<p>Did you know about this jellyfish?  Let me know if you&#39;d like another fact!</p>
 
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is biologically immortal.**
-
-It doesn&#39;t die of old age. When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially going back to being a baby jellyfish. From this polyp stage, it can then grow into a new, genetically identical jellyfish. 
-
-It&#39;s not invincible – they can still be eaten by predators or succumb to disease. But they can repeat this cycle indefinitely, meaning they theoretically could live forever.
-
-Scientists are studying them intensely to understand the mechanisms behind this cellular transdifferentiation (the ability of one cell type to change into another) which could have huge implications for regenerative medicine and anti-aging research.
-
-Pretty wild, right?
-
-
-
-You can read more about it here: [https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976152/](https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976152/)
-
-
-
-Did you know about this jellyfish?  Let me know if you&#39;d like another fact!
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>275 tokens</span>
@@ -1434,26 +1377,13 @@ Did you know about this jellyfish?  Let me know if you&#39;d like another fact!
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    
-
-Okay, here&#39;s something you likely don&#39;t know:
-
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is biologically immortal.**
-
-Now, that doesn&#39;t mean they can&#39;t *be* killed (they can be eaten by predators or succumb to disease), but they have a unique ability. When faced with physical damage or starvation, instead of dying, they can revert back to their polyp stage. This is like a jellyfish &quot;resetting&quot; its life cycle.  The polyp then buds, creating new, genetically identical jellyfish.
-
-Essentially, they can repeat this cycle indefinitely, theoretically making them biologically immortal.  
-
-It&#39;s a fascinating area of research, and scientists are studying them to understand the mechanisms behind cellular regeneration and potential implications for human aging.
-
-Did you know about that one?  
-
-
-
-You can read more about it here: [https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976113/](https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976113/)
-
-
-
+                    <p>Okay, here&#39;s something you likely don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is biologically immortal.</strong></p>
+<p>Now, that doesn&#39;t mean they can&#39;t <em>be</em> killed (they can be eaten by predators or succumb to disease), but they have a unique ability. When faced with physical damage or starvation, instead of dying, they can revert back to their polyp stage. This is like a jellyfish &quot;resetting&quot; its life cycle.  The polyp then buds, creating new, genetically identical jellyfish.</p>
+<p>Essentially, they can repeat this cycle indefinitely, theoretically making them biologically immortal.  </p>
+<p>It&#39;s a fascinating area of research, and scientists are studying them to understand the mechanisms behind cellular regeneration and potential implications for human aging.</p>
+<p>Did you know about that one?  </p>
+<p>You can read more about it here: <a href="https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976113/">https://www.smithsonianmag.com/science-nature/the-immortal-jellyfish-180976113/</a></p>
 
                 </div>
                 <div class="response-meta hidden" data-run="2">
@@ -1473,22 +1403,12 @@ You can read more about it here: [https://www.smithsonianmag.com/science-nature/
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Okay, here&#39;s something you likely don&#39;t know:
-
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is biologically immortal.** 
-
-Here&#39;s the fascinating part: When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially a juvenile form. This polyp then clones itself, starting the life cycle all over again.  
-
-It&#39;s not truly invulnerable; they can still be eaten or killed by predators. However, theoretically, they could repeat this cycle indefinitely, making them the first known animal capable of biological immortality! 
-
-It&#39;s a really cool example of how life can be far more adaptable and resilient than we often imagine.
-
-
-
-Did you already know about this? If so, I can try another one! 😊
-
-
-
+                    <p>Okay, here&#39;s something you likely don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is biologically immortal.</strong> </p>
+<p>Here&#39;s the fascinating part: When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially a juvenile form. This polyp then clones itself, starting the life cycle all over again.  </p>
+<p>It&#39;s not truly invulnerable; they can still be eaten or killed by predators. However, theoretically, they could repeat this cycle indefinitely, making them the first known animal capable of biological immortality! </p>
+<p>It&#39;s a really cool example of how life can be far more adaptable and resilient than we often imagine.</p>
+<p>Did you already know about this? If so, I can try another one! 😊</p>
 
                 </div>
                 <div class="response-meta" data-run="0">
@@ -1497,18 +1417,11 @@ Did you already know about this? If so, I can try another one! 😊
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Okay, here&#39;s something you likely don&#39;t know:
-
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is biologically immortal.** 
-
-It can revert back to its polyp stage after reaching adulthood, essentially starting its life cycle over. This means it can theoretically repeat this process indefinitely, avoiding death from old age. 
-
-While not truly invulnerable (they can still be eaten or killed by disease), it&#39;s the only known animal that can biologically reverse its aging process. Scientists are intensely studying *Turritopsis dohrnii* to understand the mechanisms behind this remarkable ability, hoping it might unlock secrets to human longevity and regenerative medicine. 
-
-Pretty mind-blowing, right? 😊
-
-
-
+                    <p>Okay, here&#39;s something you likely don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is biologically immortal.</strong> </p>
+<p>It can revert back to its polyp stage after reaching adulthood, essentially starting its life cycle over. This means it can theoretically repeat this process indefinitely, avoiding death from old age. </p>
+<p>While not truly invulnerable (they can still be eaten or killed by disease), it&#39;s the only known animal that can biologically reverse its aging process. Scientists are intensely studying <em>Turritopsis dohrnii</em> to understand the mechanisms behind this remarkable ability, hoping it might unlock secrets to human longevity and regenerative medicine. </p>
+<p>Pretty mind-blowing, right? 😊</p>
 
                 </div>
                 <div class="response-meta hidden" data-run="1">
@@ -1517,20 +1430,12 @@ Pretty mind-blowing, right? 😊
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Okay, here&#39;s something you likely don&#39;t know:
-
-**There&#39;s a species of jellyfish, *Turritopsis dohrnii*, that is essentially biologically immortal.** 
-
-Here&#39;s the fascinating part: When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially a juvenile form. This polyp can then bud off new jellyfish, effectively starting its life cycle over. 
-
-It&#39;s not truly immortal in the sense that it can&#39;t be killed (predators, disease, etc. can still affect them), but it can theoretically repeat this cycle indefinitely, making it biologically immortal under ideal conditions. 
-
-Scientists are intensely studying *Turritopsis dohrnii* to understand the mechanisms behind this remarkable process, hoping it could unlock secrets to human aging and regenerative medicine. 
-
-Pretty wild, right? 😊
-
-
-
+                    <p>Okay, here&#39;s something you likely don&#39;t know:</p>
+<p><strong>There&#39;s a species of jellyfish, <em>Turritopsis dohrnii</em>, that is essentially biologically immortal.</strong> </p>
+<p>Here&#39;s the fascinating part: When faced with physical damage or starvation, instead of dying, it can revert back to its polyp stage – essentially a juvenile form. This polyp can then bud off new jellyfish, effectively starting its life cycle over. </p>
+<p>It&#39;s not truly immortal in the sense that it can&#39;t be killed (predators, disease, etc. can still affect them), but it can theoretically repeat this cycle indefinitely, making it biologically immortal under ideal conditions. </p>
+<p>Scientists are intensely studying <em>Turritopsis dohrnii</em> to understand the mechanisms behind this remarkable process, hoping it could unlock secrets to human aging and regenerative medicine. </p>
+<p>Pretty wild, right? 😊</p>
 
                 </div>
                 <div class="response-meta hidden" data-run="2">
@@ -1550,15 +1455,15 @@ Pretty wild, right? 😊
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here’s a tidbit that most people haven’t heard before:
+                    <p>Here’s a tidbit that most people haven’t heard before:</p>
+<p><strong>Bananas are botanically berries, but strawberries aren’t.</strong></p>
+<p><em>Why it’s true</em>  </p>
+<ul>
+<li>In botanical terms, a <strong>berry</strong> is a fruit that develops from a single ovary and has its seeds embedded in the fleshy pulp. By that definition, bananas (which develop from a single flower with one ovary) qualify as true berries.  </li>
+<li>Strawberries, on the other hand, are “aggregate fruits.” Each tiny “seed” you see on the surface is actually an individual fruit (called an achene) that developed from its own ovary, and the red fleshy part we eat is just swollen receptacle tissue—not the ovary itself.</li>
+</ul>
+<p>So the next time you bite into a banana, you’re technically eating a berry, while the strawberry on your cereal bowl is technically <em>not</em> a berry at all. 🍌🍓</p>
 
-**Bananas are botanically berries, but strawberries aren’t.**
-
-*Why it’s true*  
-- In botanical terms, a **berry** is a fruit that develops from a single ovary and has its seeds embedded in the fleshy pulp. By that definition, bananas (which develop from a single flower with one ovary) qualify as true berries.  
-- Strawberries, on the other hand, are “aggregate fruits.” Each tiny “seed” you see on the surface is actually an individual fruit (called an achene) that developed from its own ovary, and the red fleshy part we eat is just swollen receptacle tissue—not the ovary itself.
-
-So the next time you bite into a banana, you’re technically eating a berry, while the strawberry on your cereal bowl is technically *not* a berry at all. 🍌🍓
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>385 tokens</span>
@@ -1574,50 +1479,44 @@ Let&#39;s produce a surprising fact: e.g., about the &quot;immortal jellyfish&qu
 Let&#39;s give a few interesting facts. Provide a brief explanation.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Here’s a bite‑size wonder that most people never hear about outside a marine‑biology textbook:
+                    <p>Here’s a bite‑size wonder that most people never hear about outside a marine‑biology textbook:</p>
+<p><strong>A mantis shrimp can see the world in <strong>12</strong> primary colors—while we humans only have three.</strong></p>
+<hr>
+<h3>Why that matters</h3>
+<ul>
+<li><strong>Human vision:</strong> Our retinas contain three types of cone cells (short‑, medium‑, and long‑wavelength) that let us perceive roughly 1 million distinct colors.</li>
+<li><strong>Mantis shrimp vision:</strong> These tiny, brilliantly colored crustaceans (up to 10 cm long) have <strong>12 different photoreceptor types</strong>. Six of them are tuned to different bands of the visible spectrum, while the other six are specialized for ultraviolet (UV) and even for detecting the <em>polarization</em> of light.</li>
+</ul>
+<h3>What they can actually “see”</h3>
+<ol>
+<li><strong>Ultra‑fine color discrimination</strong> – they can distinguish subtle hue differences that would look identical to us. Imagine being able to tell the difference between two shades of green that a seasoned artist would call “the same.”</li>
+<li><strong>UV world</strong> – wavelengths shorter than 400 nm are invisible to us, but mantis shrimp see them as distinct colors, giving them a hidden layer of visual information.</li>
+<li><strong>Polarized light</strong> – many underwater surfaces (like the shimmer of a fish’s scales or the ripples on sand) polarize light. The shrimp’s extra receptors let them sense this polarization as a separate “color” channel, effectively adding another dimension to their visual scene.</li>
+</ol>
+<h3>Why they evolved it</h3>
+<p>Mantis shrimp are ambush predators that hunt fast, evasive prey such as tiny fish and other crustaceans. Their ultra‑rich visual system helps them:</p>
+<ul>
+<li><strong>Spot prey</strong> against the complex, dappled backdrop of coral reefs.</li>
+<li><strong>Communicate</strong> with conspecifics using vivid, rapidly flashing body patterns that are encoded in UV and polarized light—signals that are invisible to most other marine animals.</li>
+<li><strong>Navigate</strong> the kaleidoscopic reef environment, where light is scattered and filtered in many directions.</li>
+</ul>
+<h3>A mind‑blowing implication</h3>
+<p>Because their visual processing is so different, mantis shrimp <em>don’t</em> see the world the way we do. In fact, their brains are wired to <strong>process all that spectral information in parallel</strong>, rather than integrating it into a single “color” perception like ours. Some researchers even speculate that their brain’s “color” experience might be more akin to seeing <strong>multiple, simultaneous images</strong> rather than a single, blended picture.</p>
+<hr>
+<h4>Quick TL;DR</h4>
+<ul>
+<li><strong>Mantis shrimp = 12‑color vision + UV + polarization.</strong></li>
+<li><strong>Humans = 3‑color vision.</strong></li>
+<li><strong>Result:</strong> They see a world rich in hues and light properties that are completely invisible to us, giving them a super‑charged hunting and communication toolkit.</li>
+</ul>
+<p>If you ever get the chance to watch a mantis shrimp in an aquarium, keep an eye on its rapid, flashing body displays—what looks like a simple flash to us is probably a sophisticated, multi‑channel “color message” being broadcast in a language we simply can’t decode. 🌈🦐</p>
+<p><em>Sources:</em></p>
+<ul>
+<li>Cronin, T. W., et al. “Visual Ecology of the Mantis Shrimp.” <em>Proceedings of the Royal Society B</em> (2014).  </li>
+<li>Marshall, J., &amp; Oberwinkler, J. “The Mantis Shrimp’s 12‑Color Vision.” <em>Nature</em> (2015).</li>
+</ul>
+<p>Enjoy the fact—now you’ve got a secret glimpse into a world most of us never even imagined!</p>
 
-**A mantis shrimp can see the world in **12** primary colors—while we humans only have three.**
-
----
-
-### Why that matters
-
-- **Human vision:** Our retinas contain three types of cone cells (short‑, medium‑, and long‑wavelength) that let us perceive roughly 1 million distinct colors.
-- **Mantis shrimp vision:** These tiny, brilliantly colored crustaceans (up to 10 cm long) have **12 different photoreceptor types**. Six of them are tuned to different bands of the visible spectrum, while the other six are specialized for ultraviolet (UV) and even for detecting the *polarization* of light.
-
-### What they can actually “see”
-
-1. **Ultra‑fine color discrimination** – they can distinguish subtle hue differences that would look identical to us. Imagine being able to tell the difference between two shades of green that a seasoned artist would call “the same.”
-2. **UV world** – wavelengths shorter than 400 nm are invisible to us, but mantis shrimp see them as distinct colors, giving them a hidden layer of visual information.
-3. **Polarized light** – many underwater surfaces (like the shimmer of a fish’s scales or the ripples on sand) polarize light. The shrimp’s extra receptors let them sense this polarization as a separate “color” channel, effectively adding another dimension to their visual scene.
-
-### Why they evolved it
-
-Mantis shrimp are ambush predators that hunt fast, evasive prey such as tiny fish and other crustaceans. Their ultra‑rich visual system helps them:
-
-- **Spot prey** against the complex, dappled backdrop of coral reefs.
-- **Communicate** with conspecifics using vivid, rapidly flashing body patterns that are encoded in UV and polarized light—signals that are invisible to most other marine animals.
-- **Navigate** the kaleidoscopic reef environment, where light is scattered and filtered in many directions.
-
-### A mind‑blowing implication
-
-Because their visual processing is so different, mantis shrimp *don’t* see the world the way we do. In fact, their brains are wired to **process all that spectral information in parallel**, rather than integrating it into a single “color” perception like ours. Some researchers even speculate that their brain’s “color” experience might be more akin to seeing **multiple, simultaneous images** rather than a single, blended picture.
-
----
-
-#### Quick TL;DR
-
-- **Mantis shrimp = 12‑color vision + UV + polarization.**
-- **Humans = 3‑color vision.**
-- **Result:** They see a world rich in hues and light properties that are completely invisible to us, giving them a super‑charged hunting and communication toolkit.
-
-If you ever get the chance to watch a mantis shrimp in an aquarium, keep an eye on its rapid, flashing body displays—what looks like a simple flash to us is probably a sophisticated, multi‑channel “color message” being broadcast in a language we simply can’t decode. 🌈🦐
-
-*Sources:*
-- Cronin, T. W., et al. “Visual Ecology of the Mantis Shrimp.” *Proceedings of the Royal Society B* (2014).  
-- Marshall, J., &amp; Oberwinkler, J. “The Mantis Shrimp’s 12‑Color Vision.” *Nature* (2015).  
-
-Enjoy the fact—now you’ve got a secret glimpse into a world most of us never even imagined!
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>1217 tokens</span>
@@ -1649,12 +1548,10 @@ The user likely expects a single interesting tidbit. Provide one surprising fact
 Write in engaging tone.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Here’s a quirky fact that most people haven’t heard before:
+                    <p>Here’s a quirky fact that most people haven’t heard before:</p>
+<p><strong>The “immortal” jellyfish (Turritopsis dohrnii) can reverse its life cycle.</strong><br>When faced with stress, injury, or aging, this tiny, transparent jellyfish can transform its adult, sexually‑mature cells back into the youthful polyp stage—a process called transdifferentiation. In theory, it can repeat this loop indefinitely, making it biologically “immortal” (though predators and disease still keep its numbers in check). </p>
+<p>So, while we humans can’t hit a biological reset button, there’s a creature that literally can turn back the clock on itself.</p>
 
-**The “immortal” jellyfish (Turritopsis dohrnii) can reverse its life cycle.**  
-When faced with stress, injury, or aging, this tiny, transparent jellyfish can transform its adult, sexually‑mature cells back into the youthful polyp stage—a process called transdifferentiation. In theory, it can repeat this loop indefinitely, making it biologically “immortal” (though predators and disease still keep its numbers in check). 
-
-So, while we humans can’t hit a biological reset button, there’s a creature that literally can turn back the clock on itself.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>229 tokens</span>
@@ -1677,7 +1574,8 @@ So, while we humans can’t hit a biological reset button, there’s a creature 
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.
+                    <p>Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>60 tokens</span>
@@ -1685,7 +1583,8 @@ So, while we humans can’t hit a biological reset button, there’s a creature 
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.
+                    <p>Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>60 tokens</span>
@@ -1693,7 +1592,8 @@ So, while we humans can’t hit a biological reset button, there’s a creature 
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.
+                    <p>Did you know that octopuses have three hearts? Two pump blood to the gills, while the third pumps it to the rest of the body. And when they swim, the heart that serves the body actually stops beating—which is why they prefer crawling over swimming. Nature&#39;s quirks are endlessly fascinating.</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>60 tokens</span>
@@ -1712,15 +1612,15 @@ So, while we humans can’t hit a biological reset button, there’s a creature 
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something fascinating that might be new to you:
+                    <p>Here&#39;s something fascinating that might be new to you:</p>
+<p><strong>Octopuses have three hearts, and two of them stop beating when they swim.</strong></p>
+<ul>
+<li>One heart pumps blood to the organs.</li>
+<li>The other two hearts pump blood to the gills.</li>
+<li>When an octopus swims, the heart that supplies the organs actually stops beating, which is why octopuses prefer crawling to swimming—it exhausts them quickly.</li>
+</ul>
+<p>This is also why they are masters of camouflage and escape rather than endurance swimmers in the ocean. 🐙</p>
 
-**Octopuses have three hearts, and two of them stop beating when they swim.**
-
-- One heart pumps blood to the organs.
-- The other two hearts pump blood to the gills.
-- When an octopus swims, the heart that supplies the organs actually stops beating, which is why octopuses prefer crawling to swimming—it exhausts them quickly.
-
-This is also why they are masters of camouflage and escape rather than endurance swimmers in the ocean. 🐙
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>108 tokens</span>
@@ -1728,14 +1628,11 @@ This is also why they are masters of camouflage and escape rather than endurance
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Alright, here’s a little-known piece of history that might surprise you:  
+                    <p>Alright, here’s a little-known piece of history that might surprise you:  </p>
+<p>Did you know that <strong>the shortest war in recorded history lasted only 38 minutes</strong>?<br>It was the <strong>Anglo-Zanzibar War</strong> of 1896, fought between the British Empire and the Sultanate of Zanzibar.  </p>
+<p>The conflict began when Sultan Khalid bin Barghash took power without British approval, violating a prior treaty. The British issued an ultimatum for him to step down, and when he refused, they opened fire at 9:02 AM on August 27, 1896. By 9:40 AM, the Sultan’s palace was destroyed, his artillery silenced, and his flag shot down. He sought asylum in the German consulate, and the British installed a more compliant sultan.  </p>
+<p>Casualties: about 500 on the Zanzibari side, one British sailor injured.</p>
 
-Did you know that **the shortest war in recorded history lasted only 38 minutes**?  
-It was the **Anglo-Zanzibar War** of 1896, fought between the British Empire and the Sultanate of Zanzibar.  
-
-The conflict began when Sultan Khalid bin Barghash took power without British approval, violating a prior treaty. The British issued an ultimatum for him to step down, and when he refused, they opened fire at 9:02 AM on August 27, 1896. By 9:40 AM, the Sultan’s palace was destroyed, his artillery silenced, and his flag shot down. He sought asylum in the German consulate, and the British installed a more compliant sultan.  
-
-Casualties: about 500 on the Zanzibari side, one British sailor injured.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>191 tokens</span>
@@ -1743,10 +1640,9 @@ Casualties: about 500 on the Zanzibari side, one British sailor injured.
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here’s something counterintuitive about the universe:  
+                    <p>Here’s something counterintuitive about the universe:  </p>
+<p><strong>The color pink doesn’t exist in the rainbow or in the spectrum of pure wavelengths of light.</strong><br>Pink (or magenta) is what your brain creates when it receives signals from both the red and blue receptors in your eyes, but <em>not</em> the green in between. In terms of light wavelengths, red and violet are at opposite ends of the visible spectrum — so pink is essentially a “non-spectral” color, a blend of two ends without the middle wavelengths. It’s a trick of perception, not a single wavelength you can point to in a rainbow.</p>
 
-**The color pink doesn’t exist in the rainbow or in the spectrum of pure wavelengths of light.**  
-Pink (or magenta) is what your brain creates when it receives signals from both the red and blue receptors in your eyes, but *not* the green in between. In terms of light wavelengths, red and violet are at opposite ends of the visible spectrum — so pink is essentially a “non-spectral” color, a blend of two ends without the middle wavelengths. It’s a trick of perception, not a single wavelength you can point to in a rainbow.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>129 tokens</span>
@@ -1765,11 +1661,10 @@ Pink (or magenta) is what your brain creates when it receives signals from both 
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here is a fact that often surprises people: **Sharks are older than trees.**
+                    <p>Here is a fact that often surprises people: <strong>Sharks are older than trees.</strong></p>
+<p>Sharks have been swimming in the oceans for approximately <strong>400 million years</strong>. The earliest known trees, however, only appeared around <strong>350 million years</strong> ago.</p>
+<p>To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are estimated to be only about <strong>10 to 100 million years old</strong>, meaning sharks existed long before our solar system looked the way it does today.</p>
 
-Sharks have been swimming in the oceans for approximately **400 million years**. The earliest known trees, however, only appeared around **350 million years** ago.
-
-To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are estimated to be only about **10 to 100 million years old**, meaning sharks existed long before our solar system looked the way it does today.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>115 tokens</span>
@@ -1777,13 +1672,11 @@ To take it a step further: Sharks are also older than the rings of Saturn. While
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here is a fact that often surprises people:
+                    <p>Here is a fact that often surprises people:</p>
+<p><strong>Sharks are older than trees.</strong></p>
+<p>Sharks have been swimming in the oceans for approximately <strong>400 million years</strong>. The earliest known trees, however, only appeared around <strong>350 million years ago</strong>.</p>
+<p>To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are relatively young, likely forming between <strong>10 and 100 million years ago</strong>. This means sharks have existed through three of the &quot;big five&quot; mass extinction events and outlived the formation of our solar system&#39;s most famous feature.</p>
 
-**Sharks are older than trees.**
-
-Sharks have been swimming in the oceans for approximately **400 million years**. The earliest known trees, however, only appeared around **350 million years ago**.
-
-To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are relatively young, likely forming between **10 and 100 million years ago**. This means sharks have existed through three of the &quot;big five&quot; mass extinction events and outlived the formation of our solar system&#39;s most famous feature.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>132 tokens</span>
@@ -1791,11 +1684,10 @@ To take it a step further: Sharks are also older than the rings of Saturn. While
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Here is a fact that often surprises people: **Sharks are older than trees.**
+                    <p>Here is a fact that often surprises people: <strong>Sharks are older than trees.</strong></p>
+<p>Sharks have been swimming in the oceans for approximately <strong>400 million years</strong>. The earliest known trees, however, only appeared around <strong>350 million years</strong> ago.</p>
+<p>To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are relatively young, likely forming between <strong>10 and 100 million years</strong> ago. This means sharks have existed on Earth longer than trees have grown on land and longer than Saturn has had its rings.</p>
 
-Sharks have been swimming in the oceans for approximately **400 million years**. The earliest known trees, however, only appeared around **350 million years** ago.
-
-To take it a step further: Sharks are also older than the rings of Saturn. While Saturn itself is ancient, its iconic ice rings are relatively young, likely forming between **10 and 100 million years** ago. This means sharks have existed on Earth longer than trees have grown on land and longer than Saturn has had its rings.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>125 tokens</span>
@@ -1814,21 +1706,19 @@ To take it a step further: Sharks are also older than the rings of Saturn. While
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here are a few things that might be news to you:
+                    <p>Here are a few things that might be news to you:</p>
+<ul>
+<li><p><strong>The longest war in history lasted 781 years.</strong><br>It was fought between the Netherlands and the Isles of Scilly (from 1651 to 1986). The conflict was mostly a series of raids and skirmishes, and it officially ended only when the two sides signed a peace treaty in 1986.</p>
+</li>
+<li><p><strong>The shortest war lasted only 38–45 minutes.</strong><br>The Anglo‑Zanzibar War of 27 August 1896 is the briefest recorded war. Zanzibar surrendered after about three‑quarters of an hour of bombardment.</p>
+</li>
+<li><p><strong>A teaspoon of neutron‑star material would weigh about 6 billion tons.</strong><br>Neutron stars are so dense that a cubic centimeter of their matter (about the size of a sugar cube) can weigh billions of tonnes. A teaspoon‑sized amount would be astronomically heavier—roughly the mass of a small mountain compressed into a few milliliters.</p>
+</li>
+<li><p><strong>The only two national flags that aren’t rectangles are Nepal’s and Switzerland’s.</strong><br>Nepal’s flag is a unique non‑quadrilateral shape (two overlapping triangles), while Switzerland’s flag is a square (the same shape as Vatican City’s flag, which is also a square).</p>
+</li>
+</ul>
+<p>If any of these caught your interest, let me know and I can dig up more obscure trivia!</p>
 
-- **The longest war in history lasted 781 years.**  
-  It was fought between the Netherlands and the Isles of Scilly (from 1651 to 1986). The conflict was mostly a series of raids and skirmishes, and it officially ended only when the two sides signed a peace treaty in 1986.
-
-- **The shortest war lasted only 38–45 minutes.**  
-  The Anglo‑Zanzibar War of 27 August 1896 is the briefest recorded war. Zanzibar surrendered after about three‑quarters of an hour of bombardment.
-
-- **A teaspoon of neutron‑star material would weigh about 6 billion tons.**  
-  Neutron stars are so dense that a cubic centimeter of their matter (about the size of a sugar cube) can weigh billions of tonnes. A teaspoon‑sized amount would be astronomically heavier—roughly the mass of a small mountain compressed into a few milliliters.
-
-- **The only two national flags that aren’t rectangles are Nepal’s and Switzerland’s.**  
-  Nepal’s flag is a unique non‑quadrilateral shape (two overlapping triangles), while Switzerland’s flag is a square (the same shape as Vatican City’s flag, which is also a square).
-
-If any of these caught your interest, let me know and I can dig up more obscure trivia!
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>1841 tokens</span>
@@ -1904,13 +1794,11 @@ Will start with &quot;Here&#39;s an interesting fact you might not know...&quot;
 </div>
                 </details><div class="response-text hidden" data-run="1"><span class="error-text">Error: timeout</span></div>
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something fascinating:
+                    <p>Here&#39;s something fascinating:</p>
+<p><strong>Octopuses have three hearts and blue blood.</strong></p>
+<p>Two of the hearts pump blood to the gills, while the third pumps it to the rest of the body. But here&#39;s the really strange part: their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin like ours. This is more efficient at transporting oxygen in cold, low-oxygen environments—like the deep ocean where many octopus species live.</p>
+<p>When an octopus swims, the heart that supplies the body actually stops beating, which is why they prefer crawling—they get exhausted from swimming.</p>
 
-**Octopuses have three hearts and blue blood.**
-
-Two of the hearts pump blood to the gills, while the third pumps it to the rest of the body. But here&#39;s the really strange part: their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin like ours. This is more efficient at transporting oxygen in cold, low-oxygen environments—like the deep ocean where many octopus species live.
-
-When an octopus swims, the heart that supplies the body actually stops beating, which is why they prefer crawling—they get exhausted from swimming.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>175 tokens</span>
@@ -1936,7 +1824,8 @@ Here&#39;s something fascinating about octopus biology that many people don&#39;
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something you might not know: the concept of &quot;dark oxygen&quot; was recently discovered on the ocean floor. Researchers found that certain bacteria in deep-sea hydrothermal vent ecosystems produce oxygen as they metabolize hydrogen sulfide, even in the pitch-black depths where sunlight doesn&#39;t reach. This discovery challenges the traditional understanding that photosynthesis is the primary source of oxygen on Earth and opens up new avenues for studying oceanic life and biogeochemical cycles.
+                    <p>Here&#39;s something you might not know: the concept of &quot;dark oxygen&quot; was recently discovered on the ocean floor. Researchers found that certain bacteria in deep-sea hydrothermal vent ecosystems produce oxygen as they metabolize hydrogen sulfide, even in the pitch-black depths where sunlight doesn&#39;t reach. This discovery challenges the traditional understanding that photosynthesis is the primary source of oxygen on Earth and opens up new avenues for studying oceanic life and biogeochemical cycles.</p>
+
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>93 tokens</span>
@@ -1944,13 +1833,11 @@ Here&#39;s something fascinating about octopus biology that many people don&#39;
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s an interesting fact you might not know: 
+                    <p>Here&#39;s an interesting fact you might not know: </p>
+<p><strong>The Largest Number Ever Used in a Mathematical Proof</strong></p>
+<p>The largest number ever used in a mathematical proof is Graham&#39;s number. It was used by Ronald Graham in a proof related to Ramsey theory, a branch of mathematics concerning the conditions under which order must appear. Named after him, Graham&#39;s number is so large that it&#39;s not fully expressed in conventional notation; instead, it is described in terms of a specific sequence of operations involving exponentiation, factorials, and the power tower operation (tetration).</p>
+<p>Graham&#39;s number is defined by a complex expression that involves the Ackermann function and grows extremely quickly. It&#39;s estimated to have around (10^{10^{65}}) digits, making it incomprehensibly large. The proof didn’t need to specify the exact digits of the number, just the existence of such a number, which demonstrates the power of mathematical abstraction and the ability to work with concepts so vast that they defy intuitive comprehension.</p>
 
-**The Largest Number Ever Used in a Mathematical Proof**
-
-The largest number ever used in a mathematical proof is Graham&#39;s number. It was used by Ronald Graham in a proof related to Ramsey theory, a branch of mathematics concerning the conditions under which order must appear. Named after him, Graham&#39;s number is so large that it&#39;s not fully expressed in conventional notation; instead, it is described in terms of a specific sequence of operations involving exponentiation, factorials, and the power tower operation (tetration).
-
-Graham&#39;s number is defined by a complex expression that involves the Ackermann function and grows extremely quickly. It&#39;s estimated to have around \(10^{10^{65}}\) digits, making it incomprehensibly large. The proof didn’t need to specify the exact digits of the number, just the existence of such a number, which demonstrates the power of mathematical abstraction and the ability to work with concepts so vast that they defy intuitive comprehension.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>201 tokens</span>
@@ -1958,13 +1845,11 @@ Graham&#39;s number is defined by a complex expression that involves the Ackerma
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Certainly! Here&#39;s an interesting fact you might not be aware of:
+                    <p>Certainly! Here&#39;s an interesting fact you might not be aware of:</p>
+<p><strong>Quantum Entanglement and Teleportation</strong>: Quantum entanglement is a physical phenomenon that occurs when a pair or group of particles is generated, interact, or share spatial proximity in ways such that the quantum state of each particle cannot be described independently of the state of the others, even when the particles are separated by a large distance. This concept is foundational to quantum mechanics and has been demonstrated in experiments. One fascinating application of quantum entanglement is quantum teleportation. This doesn&#39;t involve teleporting objects or people as in science fiction, but rather it allows for the transfer of quantum information from one particle to another, effectively &quot;teleporting&quot; the state of a particle to another distant particle without physically transporting the particle itself. </p>
+<p>The first successful experiment of quantum teleportation involved entangling two particles and then transferring the state of a third particle to one of the entangled particles through a process known as quantum measurement and classical communication. This breakthrough demonstrates the potential for quantum teleportation to revolutionize fields like quantum computing and secure communications, where entangled particles can be used to transfer information instantaneously over large distances. </p>
+<p>Quantum teleportation is an active area of research and remains an exciting topic within the realm of quantum physics, showcasing the potential of quantum technology to transform information processing and communication in the future.</p>
 
-**Quantum Entanglement and Teleportation**: Quantum entanglement is a physical phenomenon that occurs when a pair or group of particles is generated, interact, or share spatial proximity in ways such that the quantum state of each particle cannot be described independently of the state of the others, even when the particles are separated by a large distance. This concept is foundational to quantum mechanics and has been demonstrated in experiments. One fascinating application of quantum entanglement is quantum teleportation. This doesn&#39;t involve teleporting objects or people as in science fiction, but rather it allows for the transfer of quantum information from one particle to another, effectively &quot;teleporting&quot; the state of a particle to another distant particle without physically transporting the particle itself. 
-
-The first successful experiment of quantum teleportation involved entangling two particles and then transferring the state of a third particle to one of the entangled particles through a process known as quantum measurement and classical communication. This breakthrough demonstrates the potential for quantum teleportation to revolutionize fields like quantum computing and secure communications, where entangled particles can be used to transfer information instantaneously over large distances. 
-
-Quantum teleportation is an active area of research and remains an exciting topic within the realm of quantum physics, showcasing the potential of quantum technology to transform information processing and communication in the future.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>279 tokens</span>
@@ -1983,11 +1868,12 @@ Quantum teleportation is an active area of research and remains an exciting topi
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here’s a mind‑bending fact that most people don’t carry around in their everyday conversations:
+                    <p>Here’s a mind‑bending fact that most people don’t carry around in their everyday conversations:</p>
+<p><strong>On the exoplanet HD 189733 b, it literally rains glass.</strong>  </p>
+<ul>
+<li><strong>What it is:</strong> HD 189733 b is a hot</li>
+</ul>
 
-**On the exoplanet HD 189733 b, it literally rains glass.**  
-
-- **What it is:** HD 189733 b is a hot
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>500 tokens</span>
@@ -2012,23 +1898,19 @@ Answer accordingly.
 </div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Here’s a tidbit most people never hear about—​the **“Moon‑Mice” myth of the ancient Greeks** and why it actually has a grain of scientific truth behind it.
+                    <p>Here’s a tidbit most people never hear about—​the <strong>“Moon‑Mice” myth of the ancient Greeks</strong> and why it actually has a grain of scientific truth behind it.</p>
+<hr>
+<h3>The myth</h3>
+<p>In the 5th century BC, the Greek poet <strong>Aristophanes</strong> (yes, the same comic‑playwright who gave us <em>The Clouds</em> and <em>The Birds</em>) wrote a short, satirical poem called <strong><em>“The Moon‑Mice”</em></strong> (sometimes rendered as <em>Mice of the Moon</em>). In it, tiny mice are imagined living on the Moon, scurrying about, gnawing at the shadows, and generally being the cause of the Moon’s phases.</p>
+<p>The poem was a tongue‑in‑cheek way of explaining why the Moon sometimes looks “full” and other times “crescent”—the mice were thought to be eating away at the bright surface, leaving those dark patches we now know as <strong>craters and mare</strong>.</p>
+<hr>
+<h3>The hidden science</h3>
+<p>Fast‑forward 2,400 years, and modern planetary science has discovered <strong>actual “moon‑mice”</strong>—but not the cute, cheese‑gnawing critters of Aristophanes. Instead, astronomers have identified a class of tiny, fast‑moving <strong>dust particles</strong> that orbit the Moon in a quasi‑stable “halo” called the <strong>Lunar Dust Exosphere</strong>.</p>
+<ul>
+<li><strong>What they are:</strong> Micron‑sized silicate grains (basically powdered rock) that get lofted off the Moon’s surface by a combination of <strong>photovoltaic sputtering</strong> (sunlight ejects electrons that push the grains outward) and <strong>micrometeoroid impacts</strong>.</li>
+<li><strong>Why they matter:</strong> These particles can linger for <strong>hours to days</strong> before either falling back to the surface or escaping into interplanetary space. While they’re far too small to be seen with the naked eye, they do affect the Moon’s <strong>exosphere composition</strong> and can interfere with **radio communications</li>
+</ul>
 
----
-
-### The myth
-In the 5th century BC, the Greek poet **Aristophanes** (yes, the same comic‑playwright who gave us *The Clouds* and *The Birds*) wrote a short, satirical poem called **_“The Moon‑Mice”_** (sometimes rendered as *Mice of the Moon*). In it, tiny mice are imagined living on the Moon, scurrying about, gnawing at the shadows, and generally being the cause of the Moon’s phases.
-
-The poem was a tongue‑in‑cheek way of explaining why the Moon sometimes looks “full” and other times “crescent”—the mice were thought to be eating away at the bright surface, leaving those dark patches we now know as **craters and mare**.
-
----
-
-### The hidden science
-
-Fast‑forward 2,400 years, and modern planetary science has discovered **actual “moon‑mice”**—but not the cute, cheese‑gnawing critters of Aristophanes. Instead, astronomers have identified a class of tiny, fast‑moving **dust particles** that orbit the Moon in a quasi‑stable “halo” called the **Lunar Dust Exosphere**.
-
-- **What they are:** Micron‑sized silicate grains (basically powdered rock) that get lofted off the Moon’s surface by a combination of **photovoltaic sputtering** (sunlight ejects electrons that push the grains outward) and **micrometeoroid impacts**.
-- **Why they matter:** These particles can linger for **hours to days** before either falling back to the surface or escaping into interplanetary space. While they’re far too small to be seen with the naked eye, they do affect the Moon’s **exosphere composition** and can interfere with **radio communications
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>500 tokens</span>
@@ -2041,7 +1923,8 @@ Fast‑forward 2,400 years, and modern planetary science has discovered **actu
 </div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Here’s a mind‑bending fact that most
+                    <p>Here’s a mind‑bending fact that most</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>500 tokens</span>
@@ -2065,9 +1948,9 @@ Fast‑forward 2,400 years, and modern planetary science has discovered **actu
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Oxford University is older than the Aztec Empire.
+                    <p>Oxford University is older than the Aztec Empire.</p>
+<p>Teaching existed at Oxford as early as 1096, making it the oldest university in the English-speaking world. The Aztec Empire, by contrast, is generally considered to have begun with the formation of the Triple Alliance in 1428—meaning the university is actually older than the empire by over 300 years.</p>
 
-Teaching existed at Oxford as early as 1096, making it the oldest university in the English-speaking world. The Aztec Empire, by contrast, is generally considered to have begun with the formation of the Triple Alliance in 1428—meaning the university is actually older than the empire by over 300 years.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>346 tokens</span>
@@ -2093,11 +1976,10 @@ Reasoning:
 4.  **Draft the response:** State the fact clearly and provide the dates to back it up.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Ketchup was originally sold as medicine.
+                    <p>Ketchup was originally sold as medicine.</p>
+<p>In the 1830s, an American physician named John Cook Bennett claimed that tomatoes were a miracle plant that could cure diarrhea, indigestion, and even jaundice. He created a recipe for a tomato concentrate pill that was essentially a dehydrated version of ketchup.</p>
+<p>His claims turned the condiment into a popular pharmaceutical product in the United States for about a decade. Eventually, the medical claims were debunked by the medical community, and the &quot;medicine&quot; lost its popularity, paving the way for it to return to the dinner table as a condiment rather than a cure.</p>
 
-In the 1830s, an American physician named John Cook Bennett claimed that tomatoes were a miracle plant that could cure diarrhea, indigestion, and even jaundice. He created a recipe for a tomato concentrate pill that was essentially a dehydrated version of ketchup.
-
-His claims turned the condiment into a popular pharmaceutical product in the United States for about a decade. Eventually, the medical claims were debunked by the medical community, and the &quot;medicine&quot; lost its popularity, paving the way for it to return to the dinner table as a condiment rather than a cure.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>300 tokens</span>
@@ -2115,9 +1997,9 @@ I&#39;ll choose a fact about &quot;ketchup&quot; originally being a Chinese fish
 3.  **Draft the response:** Explain the origin, the ingredients (fermented fish, no tomatoes), and how it traveled to the UK and then the US where tomatoes were added.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Sharks are older than trees.
+                    <p>Sharks are older than trees.</p>
+<p>Sharks have been swimming in the oceans for roughly <strong>400 million years</strong>, whereas the first trees appeared on land about <strong>350 million years ago</strong>. This means sharks predate trees by roughly 50 million years—and they are also older than Saturn’s rings and the Himalayas.</p>
 
-Sharks have been swimming in the oceans for roughly **400 million years**, whereas the first trees appeared on land about **350 million years ago**. This means sharks predate trees by roughly 50 million years—and they are also older than Saturn’s rings and the Himalayas.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>1283 tokens</span>
@@ -2210,11 +2092,10 @@ Sharks have been swimming in the oceans for roughly **400 million years**, where
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                     The photons hitting your retina right now from the Sun began their journey **between 100,000 and 1 million years ago**—not the 8 minutes you might expect.
+                    <p> The photons hitting your retina right now from the Sun began their journey <strong>between 100,000 and 1 million years ago</strong>—not the 8 minutes you might expect.</p>
+<p>While it&#39;s true that light takes roughly 8 minutes to travel from the Sun&#39;s surface to Earth, the photons created in the Sun&#39;s core through nuclear fusion face a nearly impossible exit strategy. The Sun&#39;s interior is so densely packed with plasma that a photon travels only a tiny fraction of a millimeter before being absorbed and re-emitted by an atom, scattering in a random direction. This &quot;drunkard&#39;s walk&quot; means that while the straight-line distance from core to surface is about 430,000 miles, a photon might travel <strong>trillions of miles</strong> worth of zigzags before finally breaking free into space.</p>
+<p>So the sunlight you&#39;re feeling on your skin today is actually ancient energy, generated when Homo sapiens were still hunting woolly mammoths—or, at the deeper end of that estimate, when Neanderthals still walked the Earth.</p>
 
-While it&#39;s true that light takes roughly 8 minutes to travel from the Sun&#39;s surface to Earth, the photons created in the Sun&#39;s core through nuclear fusion face a nearly impossible exit strategy. The Sun&#39;s interior is so densely packed with plasma that a photon travels only a tiny fraction of a millimeter before being absorbed and re-emitted by an atom, scattering in a random direction. This &quot;drunkard&#39;s walk&quot; means that while the straight-line distance from core to surface is about 430,000 miles, a photon might travel **trillions of miles** worth of zigzags before finally breaking free into space.
-
-So the sunlight you&#39;re feeling on your skin today is actually ancient energy, generated when Homo sapiens were still hunting woolly mammoths—or, at the deeper end of that estimate, when Neanderthals still walked the Earth.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>914 tokens</span>
@@ -2270,13 +2151,11 @@ This is a great &quot;something you don&#39;t know&quot; because:
 I&#39;ll present this clearly and engagingly.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                     If you shuffle a standard deck of 52 playing cards thoroughly, the resulting order has almost certainly never existed before in the history of the universe—and likely never will again.
+                    <p> If you shuffle a standard deck of 52 playing cards thoroughly, the resulting order has almost certainly never existed before in the history of the universe—and likely never will again.</p>
+<p>There are 80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000 possible ways to arrange 52 cards (that&#39;s 52 factorial). </p>
+<p>To grasp how absurdly large this number is: if every person who has ever lived (roughly 100 billion humans) had been shuffling one deck per second since the Big Bang (13.8 billion years ago), they would have generated only a tiny fraction—about 1 in 10 trillion trillion trillion—of the possible combinations.</p>
+<p>Every time you pick up a well-shuffled deck, you are likely holding the only iteration of that specific card order that will ever exist.</p>
 
-There are 80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000 possible ways to arrange 52 cards (that&#39;s 52 factorial). 
-
-To grasp how absurdly large this number is: if every person who has ever lived (roughly 100 billion humans) had been shuffling one deck per second since the Big Bang (13.8 billion years ago), they would have generated only a tiny fraction—about 1 in 10 trillion trillion trillion—of the possible combinations.
-
-Every time you pick up a well-shuffled deck, you are likely holding the only iteration of that specific card order that will ever exist.
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>1246 tokens</span>
@@ -2367,14 +2246,14 @@ I could also mention that this is more than the number of atoms on Earth (which 
 Yes, I&#39;ll go with this.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Every time you shuffle a deck of cards thoroughly, you have almost certainly created an order that has **never existed before** in the history of the universe—and never will again.
+                    <p>Every time you shuffle a deck of cards thoroughly, you have almost certainly created an order that has <strong>never existed before</strong> in the history of the universe—and never will again.</p>
+<p>A standard deck has 52 cards. The number of possible ways to arrange them is 52 factorial (52 × 51 × 50...), which is roughly <strong>8 followed by 67 zeros</strong>. To feel how absurdly large that is:</p>
+<ul>
+<li>There are about <strong>10^22</strong> stars in the observable universe.</li>
+<li>If you had been shuffling a trillion times per second since the Big Bang (13.8 billion years ago), you would have seen only about <strong>0.0000000000000000000000000000000000000000000000000000000001%</strong> of all possible combinations.</li>
+</ul>
+<p>So that sloppy riffle shuffle you did at the kitchen table? You just birthed a unique artifact—one of 8 × 10^67 possible universes of cardboard, never before seen by human eyes and unlikely to ever appear again.</p>
 
-A standard deck has 52 cards. The number of possible ways to arrange them is 52 factorial (52 × 51 × 50...), which is roughly **8 followed by 67 zeros**. To feel how absurdly large that is:
-
-*   There are about **10^22** stars in the observable universe.
-*   If you had been shuffling a trillion times per second since the Big Bang (13.8 billion years ago), you would have seen only about **0.0000000000000000000000000000000000000000000000000000000001%** of all possible combinations.
-
-So that sloppy riffle shuffle you did at the kitchen table? You just birthed a unique artifact—one of 8 × 10^67 possible universes of cardboard, never before seen by human eyes and unlikely to ever appear again.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>1523 tokens</span>
@@ -2483,16 +2362,17 @@ I&#39;ll write it now.</div>
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Here&#39;s something many people don&#39;t know: **Bananas we eat today (the Cavendish variety) are genetically identical clones—and they are threatened by a fungus that could cause their global extinction, just like their predecessor, the Gros Michel, was wiped out in the 1950s.**
+                    <p>Here&#39;s something many people don&#39;t know: <strong>Bananas we eat today (the Cavendish variety) are genetically identical clones—and they are threatened by a fungus that could cause their global extinction, just like their predecessor, the Gros Michel, was wiped out in the 1950s.</strong></p>
+<p><strong>Why this matters:</strong></p>
+<ul>
+<li>The Cavendish banana makes up about 95% of the global banana export market.</li>
+<li>It’s vulnerable because all commercial Cavendish plants are genetically identical—they’re propagated by cuttings, not seeds.</li>
+<li>A strain of <em>Fusarium</em> wilt known as Tropical Race 4 (TR4) has spread from Asia to Australia, Africa, and recently Latin America.</li>
+<li>Once soil is infected, it can take decades to eradicate, and there’s no known cure.</li>
+<li>Scientists are racing to breed or genetically engineer resistant varieties, but replacing a global staple crop is a massive logistical and economic challenge.</li>
+</ul>
+<p>So the next time you peel a banana, consider that it’s a living clone surviving on borrowed time—unless we diversify the banana’s genetic future.</p>
 
-**Why this matters:**
-- The Cavendish banana makes up about 95% of the global banana export market.
-- It’s vulnerable because all commercial Cavendish plants are genetically identical—they’re propagated by cuttings, not seeds.
-- A strain of *Fusarium* wilt known as Tropical Race 4 (TR4) has spread from Asia to Australia, Africa, and recently Latin America.
-- Once soil is infected, it can take decades to eradicate, and there’s no known cure.
-- Scientists are racing to breed or genetically engineer resistant varieties, but replacing a global staple crop is a massive logistical and economic challenge.
-
-So the next time you peel a banana, consider that it’s a living clone surviving on borrowed time—unless we diversify the banana’s genetic future.
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>429 tokens</span>
@@ -2510,11 +2390,10 @@ The Panama Disease Tropical Race 4 (TR4) angle makes it timely—it’s spreadin
 The user might appreciate the irony: a globally beloved fruit surviving on a single clone is a ticking time bomb. No need to overcomplicate—stick to clear cause/effect, historical precedent, and present-day relevance. Avoid jargon but keep it precise.</div>
                 </details>
                 <div class="response-text hidden" data-run="1">
-                    Here&#39;s a fascinating and relatively obscure fact:
+                    <p>Here&#39;s a fascinating and relatively obscure fact:</p>
+<p><strong>Tardigrades (water bears), the microscopic creatures known for surviving in space, have a significant portion of their DNA—up to 17.5%—acquired from other organisms through horizontal gene transfer.</strong> This means they&#39;ve stolen functional genes from bacteria, plants, and fungi, which helps explain their extreme resilience. Most animals get almost all their DNA from their parents.</p>
+<p>Want to dive deeper into how that works or hear another unexpected fact?</p>
 
-**Tardigrades (water bears), the microscopic creatures known for surviving in space, have a significant portion of their DNA—up to 17.5%—acquired from other organisms through horizontal gene transfer.** This means they&#39;ve stolen functional genes from bacteria, plants, and fungi, which helps explain their extreme resilience. Most animals get almost all their DNA from their parents.
-
-Want to dive deeper into how that works or hear another unexpected fact?
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>238 tokens</span>
@@ -2530,15 +2409,12 @@ The &quot;Tardigrade DNA&quot; fact comes to mind—it&#39;s niche but scientifi
 Avoiding overly common trivia (like &quot;bananas are berries&quot;) and steering clear of potentially sensitive topics. The tone should be light but precise, like sharing a cool secret.</div>
                 </details>
                 <div class="response-text hidden" data-run="2">
-                    Here&#39;s something that might bend your mind:
+                    <p>Here&#39;s something that might bend your mind:</p>
+<p><strong>Time crystals</strong> are a newly discovered phase of matter that literally moves in a repeating pattern <em>without</em> using energy—defying a fundamental law of physics called the <strong>second law of thermodynamics</strong>, which says things tend toward disorder (entropy).</p>
+<p>In 2012, Nobel laureate Frank Wilczek theorized they could exist. In 2016, they were created in a lab using quantum systems of ions or spins. Unlike normal crystals (which repeat in space), time crystals repeat in <em>time</em>—they’re in constant, stable, periodic motion in their lowest energy state, like a perpetual motion machine at the quantum scale, but without breaking physics because they’re not <em>outputting</em> work—they just keep &quot;ticking&quot; on their own.</p>
+<p>This isn’t sci-fi—it’s real, and it could help build more stable quantum computers. So, matter can be structured not just in space, but in <em>time</em> itself.</p>
+<p>Want another? I’ve got plenty—from biology to cosmology to weird history.</p>
 
-**Time crystals** are a newly discovered phase of matter that literally moves in a repeating pattern *without* using energy—defying a fundamental law of physics called the **second law of thermodynamics**, which says things tend toward disorder (entropy).
-
-In 2012, Nobel laureate Frank Wilczek theorized they could exist. In 2016, they were created in a lab using quantum systems of ions or spins. Unlike normal crystals (which repeat in space), time crystals repeat in *time*—they’re in constant, stable, periodic motion in their lowest energy state, like a perpetual motion machine at the quantum scale, but without breaking physics because they’re not *outputting* work—they just keep &quot;ticking&quot; on their own.
-
-This isn’t sci-fi—it’s real, and it could help build more stable quantum computers. So, matter can be structured not just in space, but in *time* itself.
-
-Want another? I’ve got plenty—from biology to cosmology to weird history.
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>435 tokens</span>
@@ -2567,9 +2443,9 @@ Double-check: Is this truly &quot;unknown&quot; to most non-physicists? Yes. Eve
                 <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
                 
                 <div class="response-text" data-run="0">
-                    Sure, here&#39;s an interesting fact:
+                    <p>Sure, here&#39;s an interesting fact:</p>
+<p>Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to complete one rotation, but it orbits the Sun once every 225 Earth days. Isn&#39;t that fascinating?</p>
 
-Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to complete one rotation, but it orbits the Sun once every 225 Earth days. Isn&#39;t that fascinating?
                 </div>
                 <div class="response-meta" data-run="0">
                     <span>72 tokens</span>
@@ -2577,7 +2453,8 @@ Did you know that a day on Venus is longer than a year on Venus? This is because
                 </div>
                 
                 <div class="response-text hidden" data-run="1">
-                    Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to rotate once on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. Isn&#39;t that fascinating?
+                    <p>Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to rotate once on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. Isn&#39;t that fascinating?</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="1">
                     <span>70 tokens</span>
@@ -2585,7 +2462,8 @@ Did you know that a day on Venus is longer than a year on Venus? This is because
                 </div>
                 
                 <div class="response-text hidden" data-run="2">
-                    Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to complete one rotation, but it only takes about 225 Earth days for Venus to orbit the Sun. Isn&#39;t that fascinating?
+                    <p>Did you know that a day on Venus is longer than a year on Venus? This is because Venus has an extremely slow rotation on its axis. It takes about 243 Earth days for Venus to complete one rotation, but it only takes about 225 Earth days for Venus to orbit the Sun. Isn&#39;t that fascinating?</p>
+
                 </div>
                 <div class="response-meta hidden" data-run="2">
                     <span>68 tokens</span>
@@ -2645,6 +2523,7 @@ Did you know that a day on Venus is longer than a year on Venus? This is because
         'blue whale': '🐋', 'venus': '🪐', 'shakespeare': '🎭', 'platypus': '🦆',
         'space': '🌌', 'trees': '🌳', 'sloths': '🦥', 'dna': '🧬',
         'oxford university': '🎓',
+        'anglo-zanzibar war': '⚔️',
     };
 
     for (const [topic, count] of Object.entries(topics)) {
@@ -2710,7 +2589,7 @@ Did you know that a day on Venus is longer than a year on Venus? This is because
 
             return `
                 <div class="response-text ${i > 0 ? 'hidden' : ''}" data-run="${i}">
-                    ${escapeHtml(run.content)}
+                    ${marked.parse(run.content)}
                 </div>
                 <div class="response-meta ${i > 0 ? 'hidden' : ''}" data-run="${i}">
                     <span>${run.tokens_completion} tokens</span>

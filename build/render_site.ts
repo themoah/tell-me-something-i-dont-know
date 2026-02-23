@@ -18,6 +18,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { marked } from 'marked';
+
+marked.use({ async: false });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_DIR = path.join(__dirname, '..', 'site');
@@ -72,6 +75,7 @@ const TOPIC_EMOJIS: Record<string, string> = {
     'blue whale': '\u{1F40B}', 'venus': '\u{1FA90}', 'shakespeare': '\u{1F3AD}', 'platypus': '\u{1F986}',
     'space': '\u{1F30C}', 'trees': '\u{1F333}', 'sloths': '\u{1F9A5}', 'dna': '\u{1F9EC}',
     'oxford university': '\u{1F393}',
+    'anglo-zanzibar war': '\u2694\uFE0F',
 };
 
 function escapeHtml(str: string): string {
@@ -150,7 +154,7 @@ function renderModelCards(models: Model[]): string {
 
             responsesHTML += `
                 <div class="response-text${hidden}" data-run="${i}">
-                    ${escapeHtml(run.content || '')}
+                    ${marked.parse(run.content || '') as string}
                 </div>
                 <div class="response-meta${hidden}" data-run="${i}">
                     <span>${run.tokens_completion} tokens</span>
