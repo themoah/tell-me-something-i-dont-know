@@ -32,6 +32,7 @@ interface ModelConfig {
   name: string;
   provider: string;
   license: string;
+  released?: string;
 }
 
 interface Config {
@@ -59,6 +60,7 @@ interface ModelEntry {
   name: string;
   provider: string;
   license: string;
+  released?: string;
   runs: RunResult[];
 }
 
@@ -307,6 +309,7 @@ async function main() {
       name: model.name,
       provider: model.provider,
       license: model.license,
+      ...(model.released ? { released: model.released } : {}),
       runs,
     });
 

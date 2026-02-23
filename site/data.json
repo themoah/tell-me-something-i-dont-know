@@ -52,7 +52,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "anthropic/claude-opus-4.6",
@@ -86,7 +87,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "anthropic/claude-haiku-4.5",
@@ -124,7 +126,8 @@
             "octopus"
           ]
         }
-      ]
+      ],
+      "released": "October 2025"
     },
     {
       "id": "openai/gpt-5.2-chat",
@@ -162,7 +165,8 @@
             "octopus"
           ]
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "openai/gpt-5.1-codex-max",
@@ -198,7 +202,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "November 2025"
     },
     {
       "id": "google/gemini-3.1-pro-preview",
@@ -233,7 +238,8 @@
           "reasoning": "**Defining the Goal**\n\nI've zeroed in on the user's implicit desire: to receive something unexpected and perhaps intriguing. My analysis now prioritizes the delivery of information that meets this need for novelty. I'm focusing on crafting an appropriate response that satisfies the user's intent.\n\n\n**Structuring the Response**\n\nI'm now outlining how to present the facts to the user. I'll need a concise, clear format to maximize impact, avoiding overwhelming detail. Each fact will be presented individually, immediately followed by the category in parentheses. I'll also add a brief, engaging hook or question before each fact to pique interest and add some pizzazz. My main focus is on the most unexpected and thought-provoking facts to guarantee engagement.\n\n\n**Refining the Content**\n\nMy selection of facts is now refined. I've actively chosen counterintuitive and lesser-known information. I'm focusing on facts with high novelty and surprising elements across the categories I chose earlier. Fact-checking is complete, and I've trimmed out the redundant or obvious. The facts are finalized, and I'm gearing up to add the appropriate hooks.\n\n\n",
           "topics": []
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "google/gemini-3-flash-preview",
@@ -269,7 +275,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "google/gemini-2.5-flash-lite-preview-09-2025",
@@ -301,7 +308,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "September 2025"
     },
     {
       "id": "x-ai/grok-4.1-fast",
@@ -338,7 +346,8 @@
             "honey"
           ]
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "x-ai/grok-4",
@@ -376,7 +385,8 @@
             "octopus"
           ]
         }
-      ]
+      ],
+      "released": "December 2025"
     },
     {
       "id": "meta-llama/llama-4-maverick",
@@ -414,7 +424,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "April 2025"
     },
     {
       "id": "meta-llama/llama-4-scout",
@@ -452,7 +463,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "April 2025"
     },
     {
       "id": "meta-llama/llama-3.3-70b-instruct",
@@ -490,7 +502,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "December 2024"
     },
     {
       "id": "mistralai/devstral-2512",
@@ -522,7 +535,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "December 2025"
     },
     {
       "id": "google/gemma-3-27b-it",
@@ -560,7 +574,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "March 2025"
     },
     {
       "id": "google/gemma-3n-e4b-it",
@@ -598,7 +613,8 @@
             "jellyfish"
           ]
         }
-      ]
+      ],
+      "released": "June 2025"
     },
     {
       "id": "openai/gpt-oss-120b",
@@ -636,7 +652,8 @@
           "reasoning": "The user asks: \"Tell me something I don't know.\" That's a broad request. Need to provide an interesting, perhaps obscure fact. Should be safe, neutral. Could give a surprising scientific fact, a historical anecdote, a linguistic tidbit, etc. Provide something likely unknown to the average reader. Maybe something about quantum physics, biology, or history. Could also ask clarifying question? The request is open-ended, so we can just give a fact.\n\nWe should be mindful of the guidelines: no disallowed content. Provide accurate info. Maybe include some context. Provide a surprising fact: e.g., \"Octopuses have three hearts and blue blood.\" But many know that. Maybe something less known: \"The longest recorded time a human has survived without sleep is 11 days, but the world record is 264 hours.\" Many know that. Maybe something about the \"Bermuda Triangle\" is myth. Could give something about \"There is a species of fungus that can control ant behavior.\" That's known.\n\nBetter: \"There is a star that is made entirely of iron.\" That might be unknown. Or \"The smallest known galaxy is about 500 light-years across, smaller than many globular clusters.\" Or \"The only letter that doesn't appear in any U.S. state name is Q.\" That is a fun fact.\n\nAlternatively, mention \"The word 'bookkeeper' has three consecutive double letters.\" Many may know.\n\nMaybe give a random obscure fact: \"In 1977, a Soviet spacecraft called Venera 13 transmitted the first color photographs from the surface of Venus.\" That could be unknown.\n\nWe can pick a fact and maybe include a brief explanation.\n\nWill answer with a single fact, perhaps multiple.\n\nWe'll comply.",
           "topics": []
         }
-      ]
+      ],
+      "released": "October 2025"
     },
     {
       "id": "arcee-ai/trinity-large-preview:free",
@@ -674,7 +691,8 @@
             "octopus"
           ]
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "deepseek/deepseek-v3.2",
@@ -708,7 +726,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "qwen/qwen3.5-plus-02-15",
@@ -740,7 +759,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "minimax/minimax-m2.5",
@@ -775,7 +795,8 @@
           "reasoning": "The user asks \"Tell me something I don't know.\" This is a request for a piece of information that presumably the user is not aware of. There's no context about the user's knowledge, so we can provide a surprising or obscure fact. However, we must consider the policy: we can provide general knowledge. There's no disallowed content. It's a straightforward request.\n\nWe can choose something interesting and perhaps not widely known. For example:\n\n- The fact that octopuses have three hearts, two pump blood to the gills, and one to the rest of the body, and that when they swim, the heart that delivers blood to the body stops beating, which is why they prefer to crawl.\n\n- The fact that the world's oldest known living tree is over 5,000 years old.\n\n- The fact that there is a species of jellyfish that is biologically immortal (Turritopsis dohrnii).\n\n- The fact that bananas are berries, but strawberries aren't.\n\n- The fact that honey never spoils.\n\n- The fact that a day on Venus is longer than its year.\n\n- The fact that the inventor of the Pringles can is Fredric Baur, and his ashes were buried in a Pringles can.\n\n- The fact that the total weight of ants on Earth once equaled the total weight of people.\n\n- The fact that the \"pound\" key on a keyboard (#) is called an octothorp.\n\n- The fact that the \"You\" in \"YouTube\" is pronounced \"yoo\", not \"you\".\n\nPick something interesting. The user didn't specify domain, so we can choose any. Perhaps we can give a few interesting facts.\n\nWe need to be mindful of not providing harmful content. This is fine.\n\nWe can answer with a single surprising fact or multiple. The user likely wants a piece of information they don't know. Let's choose something not too mainstream but interesting.\n\nWe could say: \"The longest-lived known animal is a Greenland shark that may be over 400 years old.\" Or \"The inventor of the Slinky was a naval engineer, and the Slinky was originally called the 'Lazy T.'\"\n\nWe can also mention that the world's smallest known fish is the Paedocypris progenetica, which is about 7.9 mm.\n\nBut the user asked \"Tell me something I don't know.\" So we can choose something like \"There is a species of fungus that can turn ants into zombies.\"\n\nWe could also mention \"The first computer programmer was a woman, Ada Lovelace, in the 19th century.\" That might be known.\n\nMaybe we can talk about \"The Great Red Spot of Jupiter is a storm that has been raging for at least 400 years.\"\n\nBut perhaps something more obscure: \"The world's only known naturally occurring hexagon-shaped volcanic rock is found in the Giant's Causeway in Northern Ireland.\" Actually that's known.\n\nAlternatively, \"The shortest war in history lasted 38 to 45 minutes between Britain and Zanzibar on 27 August 1896.\"\n\nLet's decide on a fact: \"A day on Venus is longer than its year.\" That's a classic but maybe not known to many. Also \"Venus is the only planet that spins clockwise (retrograde) when viewed from above its north pole.\"\n\nAlternatively: \"The total length of blood vessels in the human body is about 60,000 miles.\"\n\nBut the user might know that.\n\nWe can choose something like: \"The unicorn is the national animal of Scotland.\" That's known.\n\nWe can also talk about \"The world's oldest known joke is a Sumerian proverb from 1900 BC.\"\n\nWe could answer: \"The shortest war in history lasted only 38 minutes.\" That's interesting.\n\nBut the user might know that.\n\nAlternatively: \"The world's longest continuously running newspaper is the 'The New York Gazette' from 1725? Not sure.\"\n\nMaybe we can give a list of three interesting facts.\n\nBut perhaps it's better to give one surprising fact. Let's do that.\n\nI think I'll give a surprising fact: \"There is a species of jellyfish (Turritopsis dohrnii) that is considered biologically immortal; it can revert to its juvenile form after reaching maturity, essentially escaping death.\"\n\nAlternatively, \"The inventor of the Pringles can is Fredric Baur, and his ashes were buried in a Pringles can.\"\n\nAlternatively, \"The longest war lasted 38 minutes.\"\n\nLet's choose one: \"The shortest war in history lasted 38 to 45 minutes between Britain and Zanzibar in 1896.\"\n\nBut perhaps more interesting: \"The only known animal that can produce true blue pigment is the 'blue-ringed octopus'? Actually, many animals have blue due to structural coloration.\n\nMaybe \"The only known bird that can fly backwards is the hummingbird.\" That's known.\n\nLet's think of something obscure but interesting. Something about the human body: \"The human nose can detect over 1 trillion scents.\" That might be known.\n\nOr \"The average person walks the equivalent of three times around the world in their lifetime.\" That might be known.\n\nWe can talk about \"The world's oldest known living tree is a bristlecone pine in the US, named Methuselah, which is over 4,800 years old.\" That's known.\n\nMaybe something about the \"Mouthbrooding\" fish: \"The male seahorse carries the unborn young in a pouch.\"\n\nBut maybe something about \"The world’s only known naturally occurring nuclear reactor is in Oklo, Gabon, which operated about 2 billion years ago.\"\n\nThat's interesting: \"There is a natural nuclear fission reactor in Oklo, Gabon, that was discovered in 1972. It operated about 2 billion years ago.\"\n\nThat's a good one: not many people know that.\n\nLet's answer with that: \"There is a natural nuclear reactor in Oklo, Gabon, that was active about 2 billion years ago.\"\n\nWe can also mention that it's the only known natural nuclear reactor.\n\nThus answer: \"Did you know that there is a natural nuclear reactor in Oklo, Gabon, that was active about two billion years ago? It was discovered in the 1970s and is the only known natural nuclear fission reactor on Earth.\"\n\nWe can also add a few more details: \"It was formed when a uranium-rich deposit reached critical mass due to the lower concentration of U-235 in the Earth's early history, and the presence of groundwater acted as a moderator, allowing sustained fission.\"\n\nWe can give that as a surprising fact.\n\nThus answer: \"Yes, here's something you might not know...\"\n\nWe can also ask if they'd like more.\n\nThus final answer: Provide the fact about Oklo.\n\nNow let's produce a final answer.\n",
           "topics": []
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "microsoft/phi-4",
@@ -807,7 +828,8 @@
           "finish_reason": "stop",
           "topics": []
         }
-      ]
+      ],
+      "released": "December 2024"
     },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b",
@@ -842,7 +864,8 @@
           "reasoning": "The user asks \"Tell me something I don't know.\" They want a surprising fact or unknown piece of information. We can give a surprising fact that is likely unknown to them. It can be something scientific, historical, or odd. Maybe something about the human brain, quantum physics, a rare phenomenon, etc. Ensure it's something they likely don't know. Provide a concise explanation. Let's give something like \"There is a species of jellyfish that is biologically immortal\" or \"Octopuses have three hearts\" or \"The shortest war in history lasted 38 minutes\". Choose something interesting. Could also mention \"The Earth's magnetic field is generated by the movement of molten iron in the outer core, but there is a solid inner core that's actually hotter than the sun's surface\". Or \"There is a planet that is made of diamond\". Or \"There is a tree that can live for thousands of years\". Let's pick a surprising fact: \"The human nose can detect over a trillion different scents.\" Might be known. Better pick something less known: \"There is a species of fungus that can turn ants into zombies, controlling them to climb and die in a position favorable for spore dispersal.\" Or \"There is a planet called PSR J1719-1438 b that is possibly a diamond planet.\" Or \"There is a place on Earth where it never rains: the Atacama Desert, but some parts haven't seen rain for centuries.\" Or \"The longest-lived animal is the ocean quahog clam, which can live over 500 years.\" Or \"The Earth's inner core rotates slightly faster than the rest of the planet, by about 0.5 degrees per year.\" That is interesting.\n\nUser likely wants something surprising. Provide a surprising fact with explanation. Let's answer with a concise but intriguing fact.\n\nWe should be mindful not to violate any policy. It's okay. Provide a surprising fact and maybe a short explanation. Let's answer.\n",
           "topics": []
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "z-ai/glm-5",
@@ -877,7 +900,8 @@
           "reasoning": "The user wants to learn something new. This is a broad request, so I need to select a fact that is generally obscure, interesting, and verifiable.\n\n1.  **Analyze the Request:** The user is asking for a piece of information they likely don't know (\"Tell me something I don't know\"). This implies a desire for trivia, a surprising scientific fact, a historical anomaly, or something counter-intuitive.\n\n2.  **Brainstorming Categories:**\n    *   *Science/Nature:* Animal abilities, space phenomena, physics oddities.\n    *   *History:* Weird wars, coincidences, lost technologies.\n    *   *Language/Etymology:* Word origins, linguistic quirks.\n    *   *Geography:* Strange borders, isolated places.\n\n3.  **Selecting Potential Facts:**\n    *   *Fact A:* Cleopatra lived closer in time to the moon landing than to the construction of the Great Pyramid of Giza. (A bit common, but good).\n    *   *Fact B:* Wombat poop is cubic. (Very common on the internet).\n    *   *Fact C:* There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal. (Also fairly well known).\n    *   *Fact D:* The \"Great Emu War\" of 1932 in Australia where the military lost to birds. (Funny, but often cited).\n    *   *Fact E:* The smell of rain (Petrichor) has a name and a specific chemical origin. (Nice, but maybe too simple).\n    *   *Fact F:* The concept of \"Sonder\" (the realization that each random passerby is living a life as vivid and complex as your own). (Actually, this is a neologism from \"The Dictionary of Obscure Sorrows,\" not a standard dictionary word, which makes it interesting but potentially controversial as a \"fact\").\n    *   *Fact G:* Bananas are berries, but strawberries are not. (Classic botanical trivia).\n    *   *Fact H:* The longest time between two twins being born is 87 days. (Specific and surprising).\n\n4.  **Filtering for \"Obscurity\" vs. \"Interest\":**\n    I want something that sounds fake but is true.\n    *   *Idea:* The \"Dancing Plague\" of 1518. People danced until they died. Good, but maybe too dark?\n    *   *Idea:* The official bird of Olney, Illinois is the White Squirrel. Too niche.\n    *   *Idea:* Oxford University is older than the Aztec Empire.\n        *   Oxford teaching existed by 1096.\n        *   Aztec Empire founded in 1428 (Triple Alliance).\n        *   This is a great timeline mind-bender.\n\n5.  **Refining the Selection (Oxford vs. Aztecs):**\n    *   *Check:* Is it accurate?\n        *   Oxford: Teaching existed c. 1096.\n        *   Aztecs: The empire (Triple Alliance) started in 1428. The Mexica people founded Tenochtitlan in 1325.\n        *   Even comparing the founding of Tenochtitlan (1325) to Oxford (1096), Oxford is older.\n    *   *Why it works:* It challenges the perception of \"ancient\" civilizations vs. \"modern\" institutions.\n\n6.  **Alternative Selection (Armadillos and Leprosy):**\n    *   *Fact:* Humans can catch leprosy from armadillos.\n    *   *Why it works:* It's weird animal biology interaction.\n\n7.  **Alternative Selection (The \"Wow!\" Signal):**\n    *   *Fact:* A radio signal from space in 1977 that has never been explained.\n    *   *Why it works:* Space is cool.\n\n8.  **Final Choice:** Let's go with the **Oxford University vs. Aztec Empire** timeline fact. It’s a structural mind-bender that forces a re-evaluation of history.\n\n    *Self-Correction:* Actually, let's try something slightly more obscure than Oxford/Aztecs, as that has become popular on Reddit/Twitter recently.\n\n    *New Candidate:* **The \"Wooden Synapse\" or \"Lichtenberg Figures\"? No.**\n\n    *Let's try: The history of the color orange.*\n    *   Fact: The color orange was named after the fruit, not the other way around. Before the fruit was introduced to English-speaking countries, the color was called \"geoluhread\" (yellow-red).\n    *   *Verdict:* Good, simple, linguistic.\n\n    *Let's try: The \"false bottoms\" of lakes.*\n    *   Fact: Some lakes have a \"thermocline\" or distinct layers, but that's science class stuff.\n\n    *Let's try: **The Emu War** is actually a great story, let's stick to that or something similarly bizarre.*\n\n    *Let's try: **The Baader-Meinhof phenomenon.***\n    *   Fact: The frequency illusion. Once you notice something, you see it everywhere. The irony is that learning this fact triggers the phenomenon about the phenomenon itself.\n\n    *Let's go with a specific, weird historical fact: **The War of the Bucket** (or Oaken Bucket).*\n    *   In 1325, Modena and Bologna went to war over a stolen wooden bucket. It's slightly legendary/exaggerated, but rooted in history.\n\n    *Let's go with a biological fact: **The Immortal Jellyfish** is too common.*\n\n    *Let's try: **Turkeys can blush.***\n    *   Fact: When a turkey is frightened, agitated, excited, or ill, the exposed skin on its head and neck can change from its usual pale pink or bluish-gray color to bright red, white, or blue.\n\n    *Let's go with a fact about **Sharks and Trees**.*\n    *   Fact: Tiger sharks are helping scientists discover underwater forests of sea grass because they are so good at finding them. (A bit niche).\n\n    *Let's go with **The Oxford/Aztec one**. It is a strong \"timeline shock\" fact.*\n\n    *Wait, I have a better one.*\n    **The smell of old books.**\n    *   It has a name: *Bibliosmia*.\n    *   The scent comes from the breakdown of cellulose and lignin in the paper, creating vanilla-like compounds (vanillin).\n\n    *Let's go with **The \"Cat\" in \"Copycat\"**.*\n    *   No.\n\n    *Let's go with **Clouds are heavy**.*\n    *   A typical cumulus cloud weighs around 1.1 million pounds (500,000 kg).\n    *   *Why it works:* We think of clouds as fluffy and light. The math is surprising but true.\n\n    *Decision:* I will use the **Cloud Weight** fact. It is visual, surprising, and scientifically solid.\n\n    *Wait, let me offer a few options or just one strong one? The prompt asks for \"something,\" singular. I will provide one very strong fact.*\n\n    Let's pivot back to the **Oxford/Aztec** fact. It resonates well with people who think of history as \"Ancient World\" vs \"Modern Europe.\"\n\n    *Let's try one more: **The \"Great Attractor\".***\n    *   A gravitational anomaly in intergalactic space pulling our galaxy and thousands of others towards it. We can't see it because it's obscured by the Zone of Avoidance (our own galaxy's dust). It sounds like sci-fi but is real.\n\n    *Decision:* The **Great Attractor** is cool, but maybe too abstract. The **Oxford/Aztec** fact is more concrete.\n\n    Let's try: **Cleopatra and Pizza.**\n    *   Cleopatra lived closer in time to the invention of the iPhone than to the building of the Great Pyramids. (Similar to the Oxford one).\n\n    Let's go with: **The \"Stone of the South\" or the unmoved obelisk.**\n    *   There is an unfinished obelisk in Aswan, Egypt, that would have been 1,200 tons. It cracked while being carved.\n\n    Let's go with: **Mushrooms are more closely related to humans than to plants.**\n    *   This is a classic \"mind-blown\" fact. Animals and Fungi share a common ancestor (Opisthokonta) that plants do not share.\n\n    *Let's go with the Mushroom fact.* It changes how you view the grocery store.\n\n    *Actually, let's go with a linguistic one: **The word \"Goodbye\" is a contraction of \"God be with ye.\"***\n    *   Simple, but many don't know it.\n\n    *Let's try: **The quietest place on Earth.***\n    *   Microsoft's anechoic chamber. You can hear your own heartbeat and bones grinding. No one has lasted more than 45 minutes (a bit of an urban legend exaggeration, but the chamber exists).\n\n    *Let's try: **Turtles can breathe through their butts.***\n    *   Technically called cloacal respiration. It's funny and true.\n\n    *Final Decision:* I will share the fact about **Oxford University being older than the Aztec Empire**. It is a clean, historical fact that reframes how people view the timeline of \"ancient\" civilizations vs. \"modern\" institutions.\n\n    *Wait, let me double check the dates.*\n    Oxford: Teaching documented in 1096.\n    Aztec Empire: The Triple Alliance was 1428. Tenochtitlan was founded c. 1325.\n    So Oxford is older than the city of Tenochtitlan, and significantly older than the Empire.\n    This is accurate.\n\n    Let's try one that is less \"fun fact\" and more \"useful knowledge.\"\n    **The \"Doorway Effect\".**\n    *   Walking through a doorway causes memory lapses because the brain registers a change in context and purges \"old\" information (what you were doing in the previous room).\n\n    *Let's go with the **Doorway Effect**.* It's relatable. Everyone does it.\n\n    *Let's go with a mix? No, the user asked for \"something\". I'll give one solid one.*\n\n    Let's go with: **Honey never spoils.**\n    *   Archaeologists found 3000-year-old honey in Egyptian tombs and it was still edible.\n    *   This is a classic, but maybe too well known?\n\n    Let's go with: **The \"Wow!\" Signal.**\n    *   It's mysterious.\n\n    Let's go with: **The smell of rain.**\n    *   It's called *Petrichor*. It comes from a Greek word meaning \"stone\" and \"blood of the Gods.\"\n\n    Let's go with **The \"Great Attractor\"**. It's cosmic and terrifying.\n\n    *Let's try: **There are more trees on Earth than stars in the Milky Way.***\n    *   Trees: ~3 trillion.\n    *   Stars: ~100-400 billion.\n    *   This is a very popular, high-impact fact.\n\n    *Let's go with the **Oxford/Aztec** one.* It feels sophisticated.\n\n    *Actually, let's try: **The invention of the stethoscope.***\n    *   It was invented because a doctor was too embarrassed to press his ear against a young woman's chest. He rolled up a notebook to listen instead.\n\n    *Let's go with the **Stethoscope** fact.* It has a funny human element.\n\n    *Let's go with: **Bananas are radioactive.***\n    *   They contain Potassium-40. You can't eat enough to get radiation poisoning, but truckloads of bananas have set off radiation sensors at ports.\n\n    *Selection:* **The Banana Radiation Fact.** It combines everyday objects with physics weirdness.\n\n    *Refining the Banana fact:* It's called a \"Banana Equivalent Dose\" (BED).\n\n    *Let's try one more: **The \"phantom time hypothesis.\"***\n    *   A conspiracy theory that the years 614–911 AD never happened. (Too fringe).\n\n    *Let's go with: **There is a glacier in Canada that bleeds.***\n    *   Blood Falls in Antarctica (not Canada, I stand corrected). It's iron-rich saltwater.\n\n    *Let's stick to the **Oxford vs. Aztec** timeline.* It's the most robust \"I bet you didn't know this\" fact that holds up to scrutiny and surprises people.\n\n    *Wait, I'll do the **Cloud Weight** one.* It's very visual.\n    \"A typical cumulus cloud weighs about the same as 100 elephants (or 1.1 million pounds).\"\n\n    Let's do **The Oxford/Aztec** one. It's a crowd-pleaser.\n\n    *Wait, I have one about **Cleopatra**.*\n    Cleopatra was not Egyptian. She was Greek (Macedonian descent). The Ptolemaic dynasty.\n    Many people assume she was ethnically Egyptian.\n\n    Let's go with **Oxford vs. Aztec**. It challenges the definition of \"ancient.\"\n\n    *Alternative:* **The national animal of Scotland.**\n    It's the Unicorn.\n    This is funny and verifiable.\n\n    *Decision:* I will provide the **Unicorn** fact. It's short, punchy, and sounds like a lie.\n\n    *Drafting the response:*\n    \"The national animal of Scotland is the Unicorn.\"\n    Add context: In Celtic mythology, the unicorn symbolized purity and power. It was used on Scottish royal coats of arms. When Scotland and England unified under James VI, the unicorn was paired with the English lion in the Royal Coat of Arms.\n\n    This is a good \"cocktail party\" fact.",
           "topics": []
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "moonshotai/kimi-k2.5",
@@ -916,7 +940,8 @@
             "oxford university"
           ]
         }
-      ]
+      ],
+      "released": "January 2026"
     },
     {
       "id": "stepfun/step-3.5-flash:free",
@@ -951,7 +976,8 @@
           "reasoning": "Hmm, the user asked for something they don't know, which is a broad and open-ended request. The key is to provide a fact that is genuinely surprising yet verifiable, not just obscure trivia. \n\nI recall the \"Banach-Tarski paradox\" from mathematics—it’s counterintuitive enough to fit the bill. It’s a well-established theorem but feels like magic, so it should qualify as \"something you don’t know\" unless the user is a mathematician specializing in set theory. \n\nI’ll explain it simply: the idea that a ball can be split and reassembled into two identical balls using only rotations and translations, no stretching. The caveat about the axiom of choice is important too—it’s non-constructive, meaning you can’t actually do it physically. That nuance might intrigue the user further. \n\nThe tone should be playful but precise, ending with an invitation for more questions if they’re curious. No need to overcomplicate; just highlight the mind-bending aspect.",
           "topics": []
         }
-      ]
+      ],
+      "released": "February 2026"
     },
     {
       "id": "mistralai/mistral-nemo",
@@ -989,7 +1015,8 @@
             "venus"
           ]
         }
-      ]
+      ],
+      "released": "July 2024"
     }
   ]
 }

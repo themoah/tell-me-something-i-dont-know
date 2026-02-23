@@ -10,6 +10,7 @@
 - `build/models.yaml` is **append-only** — never remove or modify existing entries; raw text append preserves comments
 - Models with `:` in their OpenRouter ID (`:free`, `:nitro`, `:extended`) are provider variants — skip them
 - `site/data.json` is committed to git; Cloudflare Pages deploys it statically (no build step)
+- Website runs on **Cloudflare Pages** — all features must be supported by it (static hosting, no server-side rendering, no edge functions required)
 
 ## OpenRouter API
 - Models list: `GET https://openrouter.ai/api/v1/models` — returns all 300+ models, no popularity sort

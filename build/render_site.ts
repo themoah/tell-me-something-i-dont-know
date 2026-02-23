@@ -47,6 +47,7 @@ interface Model {
     name: string;
     provider: string;
     license: string;
+    released?: string;
     runs: Run[];
 }
 
@@ -117,13 +118,52 @@ function renderJellyfishCallout(stats: Data['stats']): string {
             <span id="callout-text">${jCount} out of ${total} responses mentioned jellyfish (${pct}%). The immortal jellyfish is apparently the default "interesting fact" in LLM training data.</span>`;
 }
 
-function renderModelCards(models: Model[]): string {
+function calcOriginality(model: Model, topTopics: string[]): number {
+    let runsWithTopTopic = 0;
+    for (const run of model.runs) {
+        if (!run.success || !run.topics) continue;
+        if (run.topics.some(t => topTopics.includes(t))) runsWithTopTopic++;
+    }
+    return 3 - runsWithTopTopic;
+}
+
+function originalityBadge(score: number): string {
+    const filled = '\u2605'.repeat(score);
+    const empty = '\u2606'.repeat(3 - score);
+    return `<span class="originality-badge" data-score="${score}">${filled}<span class="star-empty">${empty}</span> original</span>`;
+}
+
+function renderHeroQuote(data: Data): string {
+    // Deterministic: use the first model's first successful run
+    for (const model of data.models) {
+        for (let i = 0; i < model.runs.length; i++) {
+            const run = model.runs[i];
+            if (!run.success || !run.content) continue;
+            const boldMatch = run.content.match(/\*\*([^*]+)\*\*/);
+            const snippet = boldMatch
+                ? boldMatch[1]
+                : run.content.split(/[.!?]/)[0].replace(/^#+\s*/, '').trim();
+            if (snippet.length > 10) {
+                return `<blockquote id="hero-text">${escapeHtml(snippet)}</blockquote>
+        <span class="hero-attr">
+            <span id="hero-model">\u2014 ${escapeHtml(model.name)}, Run ${i + 1}</span>
+            <a class="hero-refresh" id="hero-refresh">another one</a>
+        </span>`;
+            }
+        }
+    }
+    return '';
+}
+
+function renderModelCards(models: Model[], topTopics: string[]): string {
     let html = '';
     for (let idx = 0; idx < models.length; idx++) {
         const model = models[idx];
         const licenseClass = model.license;
         const licenseLabel = model.license.replace('-', ' ');
         const runs = model.runs;
+        const totalTokens = runs.reduce((sum, r) => sum + (r.tokens_completion || 0), 0);
+        const originality = calcOriginality(model, topTopics);
 
         // Tabs
         const tabsHTML = runs.map((_, i) =>
@@ -164,15 +204,22 @@ function renderModelCards(models: Model[]): string {
         }
 
         const allTopics = [...new Set(runs.flatMap(r => r.topics || []))].join(',');
+        const releasedHTML = model.released
+            ? `<div class="model-released">${escapeHtml(model.released)}</div>`
+            : '';
 
         html += `
-            <div class="model-card" data-license="${escapeHtml(model.license)}" data-topics="${escapeHtml(allTopics)}" style="animation-delay: ${idx * 40}ms">
+            <div class="model-card" data-license="${escapeHtml(model.license)}" data-topics="${escapeHtml(allTopics)}" data-sort-tokens="${totalTokens}" data-originality="${originality}" data-index="${idx}">
                 <div class="card-header">
                     <div>
                         <div class="model-name">${escapeHtml(model.name)}</div>
                         <div class="model-provider">${escapeHtml(model.provider)}</div>
+                        ${releasedHTML}
                     </div>
-                    <span class="license-tag ${licenseClass}">${licenseLabel}</span>
+                    <div style="text-align: right;">
+                        <span class="license-tag ${licenseClass}">${licenseLabel}</span>
+                        ${originalityBadge(originality)}
+                    </div>
                 </div>
                 <div class="response-tabs">${tabsHTML}</div>
                 ${responsesHTML}
@@ -252,16 +299,28 @@ async function main() {
     );
 
     // 6. Replace loading spinner with pre-rendered model cards
+    //    Use function replacer to avoid $N backreference issues in content
+    const topTopics = Object.keys(data.stats.topic_frequency).slice(0, 3);
+    const cardsHtml = renderModelCards(data.models, topTopics);
     html = html.replace(
         /(<div id="model-grid" class="model-grid">)[\s\S]*?(<\/div>\s*<\/section>)/,
-        `$1${renderModelCards(data.models)}
-        $2`,
+        (_, p1, p2) => `${p1}${cardsHtml}\n        ${p2}`,
     );
 
+    // 6b. Pre-render hero quote
+    const heroContent = renderHeroQuote(data);
+    if (heroContent) {
+        html = html.replace(
+            /(<section class="hero-quote" id="hero-quote">)[\s\S]*?(<\/section>)/,
+            (_, p1, p2) => `${p1}\n        ${heroContent}\n    ${p2}`,
+        );
+    }
+
     // 7. Inject topic bars
+    const topicBarsHtml = renderTopicBars(data.stats);
     html = html.replace(
         /(<div id="topic-bars" class="topic-bars">)<\/div>/,
-        `$1${renderTopicBars(data.stats)}</div>`,
+        (_, p1) => `${p1}${topicBarsHtml}</div>`,
     );
 
     // 8. Inject jellyfish callout content and make visible
@@ -273,7 +332,7 @@ async function main() {
         );
         html = html.replace(
             /(<div id="jellyfish-callout" class="jellyfish-callout">)\s*<span class="emoji">.*?<\/span>\s*<span id="callout-text"><\/span>/s,
-            `$1${calloutContent}`,
+            (_, p1) => `${p1}${calloutContent}`,
         );
     }
 
