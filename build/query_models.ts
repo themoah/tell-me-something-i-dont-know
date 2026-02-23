@@ -79,7 +79,7 @@ async function queryModel(
   const headers: Record<string, string> = {
     Authorization: `Bearer ${apiKey}`,
     'Content-Type': 'application/json',
-    'HTTP-Referer': 'https://tellmesomethingidontknow.ai',
+    'HTTP-Referer': 'https://tellmesomethingidontknow.fyi',
     'X-Title': "Tell Me Something I Don't Know",
   };
 
