@@ -24,10 +24,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
 
-    <!-- Cloudflare Web Analytics — add your token in the Cloudflare Pages dashboard -->
-    <!-- https://developers.cloudflare.com/analytics/web-analytics/ -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_WEB_ANALYTICS_TOKEN"}'></script>
-
     <style>
         :root {
             --bg: #0c0b0e;
@@ -46,6 +42,52 @@
             --radius: 8px;
             --font-body: 'DM Mono', monospace;
             --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,6 +100,7 @@
             line-height: 1.6;
             font-weight: 300;
             -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -70,6 +113,7 @@
         header {
             padding: 40px 0 32px;
             border-bottom: 1px solid var(--border);
+            position: relative;
         }
 
         h1 {
@@ -192,7 +236,7 @@
             font-weight: 400;
         }
         .surprise-btn:hover {
-            background: rgba(240, 192, 64, 0.12);
+            background: var(--accent-bg-hover);
         }
 
         .model-card.surprise-highlight {
@@ -201,7 +245,7 @@
 
         @keyframes surprise-glow {
             0% { box-shadow: 0 0 0 0 transparent; }
-            50% { box-shadow: 0 0 20px 4px rgba(240, 192, 64, 0.35); border-color: var(--accent); }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
             100% { box-shadow: 0 0 0 0 transparent; }
         }
 
@@ -347,12 +391,12 @@
         .filter-pill.active {
             border-color: var(--accent);
             color: var(--accent);
-            background: rgba(240, 192, 64, 0.08);
+            background: var(--accent-bg);
         }
 
-        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: rgba(110, 168, 254, 0.08); }
-        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: rgba(192, 132, 252, 0.08); }
-        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: rgba(74, 222, 128, 0.08); }
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
 
         .model-count {
             margin-left: auto;
@@ -427,9 +471,9 @@
             margin-left: 12px;
         }
 
-        .license-tag.commercial { color: var(--commercial); border: 1px solid rgba(110, 168, 254, 0.3); }
-        .license-tag.open-weights { color: var(--open-weights); border: 1px solid rgba(192, 132, 252, 0.3); }
-        .license-tag.open-source { color: var(--open-source); border: 1px solid rgba(74, 222, 128, 0.3); }
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
 
         .response-tabs {
             display: flex;
@@ -452,7 +496,7 @@
         .response-tab:hover { color: var(--text-dim); }
 
         .response-tab.active {
-            background: rgba(255,255,255,0.06);
+            background: var(--overlay-light);
             color: var(--text);
         }
 
@@ -472,7 +516,7 @@
         .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
         .response-text details { margin: 0.5em 0; }
         .response-text summary { cursor: pointer; color: var(--text-dim); }
-        .response-text code { background: rgba(255,255,255,0.06); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
 
         .response-meta {
             margin-top: 14px;
@@ -488,23 +532,23 @@
         .topic-tag {
             padding: 2px 8px;
             border-radius: 8px;
-            background: rgba(240, 192, 64, 0.1);
+            background: var(--accent-bg-tag);
             color: var(--accent-dim);
             font-size: 11px;
             cursor: pointer;
             transition: color 0.15s, background 0.15s;
         }
         .topic-tag:hover {
-            background: rgba(240, 192, 64, 0.2);
+            background: var(--accent-bg-tag-hover);
             color: var(--accent);
         }
         .topic-tag.active {
-            background: rgba(240, 192, 64, 0.25);
+            background: var(--accent-bg-strong);
             color: var(--accent);
         }
 
         .error-text {
-            color: #f87171;
+            color: var(--error);
             font-style: italic;
         }
 
@@ -523,12 +567,36 @@
         }
         footer a:hover { color: var(--accent); }
 
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
         /* === RESPONSIVE === */
         @media (max-width: 600px) {
             header { padding: 24px 0 20px; }
             .model-grid { grid-template-columns: 1fr; }
             .topic-bar-label { width: 100px; font-size: 12px; }
             .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
         }
 
         /* === REASONING TOGGLE === */
@@ -559,7 +627,7 @@
         .reasoning-content {
             margin-top: 10px;
             padding: 12px;
-            background: rgba(255,255,255,0.03);
+            background: var(--overlay-subtle);
             border-radius: 4px;
             font-size: 12px;
             line-height: 1.65;
@@ -595,6 +663,9 @@
 
 <div class="container">
     <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
         <h1>Tell me something <span class="highlight">I don't know.</span></h1>
         <p class="subtitle">
             I've asked <strong id="model-count">27</strong> LLMs the exact same question.
@@ -3168,6 +3239,15 @@ The tone should be playful but precise, ending with an invitation for more quest
 </footer>
 
 <script>
+// Theme — runs immediately to prevent FOUC
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script>
 (async function() {
     const grid = document.getElementById('model-grid');
     const topicBarsEl = document.getElementById('topic-bars');
@@ -3518,6 +3598,36 @@ The tone should be playful but precise, ending with an invitation for more quest
     const style = document.createElement('style');
     style.textContent = '.hidden { display: none !important; }';
     document.head.appendChild(style);
+
+    // === THEME TOGGLE ===
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeBtn.querySelector('.theme-icon');
+
+    function getTheme() {
+        return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    function setTheme(t) {
+        if (t === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', t);
+        themeIcon.textContent = t === 'light' ? '\u{1F319}' : '\u2600\uFE0F';
+    }
+
+    themeIcon.textContent = getTheme() === 'light' ? '\u{1F319}' : '\u2600\uFE0F';
+
+    themeBtn.addEventListener('click', () => {
+        setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
 
     // === SHARE LINKS ===
     const siteUrl = 'https://tellmesomethingidontknow.fyi';
