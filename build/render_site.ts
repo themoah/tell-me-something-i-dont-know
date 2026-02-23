@@ -28,7 +28,7 @@ const DATA_FILE = path.join(SITE_DIR, 'data.json');
 const INDEX_FILE = path.join(SITE_DIR, 'index.html');
 const SITEMAP_FILE = path.join(SITE_DIR, 'sitemap.xml');
 
-const SITE_URL = 'https://tellmesomethingidontknow.xyz';
+const SITE_URL = 'https://tellmesomethingidontknow.fyi';
 
 interface Run {
     success: boolean;
