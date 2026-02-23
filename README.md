@@ -2,7 +2,7 @@
 
 Ask 25+ LLMs the same question — *"Tell me something I don't know."* — and compare what they say.
 
-Live at **[tellmesomethingidontknow.ai](https://tellmesomethingidontknow.ai)**
+Live at **[tellmesomethingidontknow.fyi](https://tellmesomethingidontknow.fyi)**
 
 ## How it works
 
