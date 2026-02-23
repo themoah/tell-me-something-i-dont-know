@@ -18,6 +18,8 @@
     <meta name="twitter:description" content="I've asked 27+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
     <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
@@ -120,6 +122,22 @@
             text-decoration: none;
         }
         .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
 
         /* === TOPIC BAR === */
         .topic-section {
@@ -499,6 +517,14 @@
             <a href="https://github.com/themoah/tell-me-something-i-dont-know/issues" target="_blank" rel="noopener">Open an issue</a> or
             <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">submit a PR</a>.
         </p>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
     </header>
 
     <section class="topic-section">
@@ -2716,6 +2742,31 @@ Double-check: Is this truly &quot;unknown&quot; to most non-physicists? Yes. Eve
     const style = document.createElement('style');
     style.textContent = '.hidden { display: none !important; }';
     document.head.appendChild(style);
+
+    // === SHARE LINKS ===
+    const siteUrl = 'https://tellmesomethingidontknow.fyi';
+    const modelCount = document.getElementById('model-count')?.textContent || '27';
+    const shareText = `I asked ${modelCount}+ LLMs "Tell me something I don't know." Most of them said jellyfish 🪼`;
+    const encoded = encodeURIComponent(shareText);
+    const encodedUrl = encodeURIComponent(siteUrl);
+
+    document.getElementById('share-x').href =
+        `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encoded}`;
+    document.getElementById('share-facebook').href =
+        `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+    document.getElementById('share-reddit').href =
+        `https://reddit.com/submit?url=${encodedUrl}&title=${encoded}`;
+    document.getElementById('share-linkedin').href =
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+
+    document.getElementById('share-copy').addEventListener('click', function(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(siteUrl).then(() => {
+            const el = e.currentTarget;
+            el.textContent = 'Copied!';
+            setTimeout(() => { el.textContent = 'Copy Link'; }, 2000);
+        });
+    });
 })();
 </script>
 
