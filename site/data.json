@@ -4,23 +4,24 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-03-05T16:04:48.486Z",
-    "total_models": 30
+    "generated_at": "2026-03-05T19:00:17.696Z",
+    "total_models": 32
   },
   "stats": {
-    "total_models": 30,
-    "total_responses": 89,
-    "total_tokens": 38389,
+    "total_models": 32,
+    "total_responses": 95,
+    "total_tokens": 40198,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "jellyfish": 22,
-      "octopus": 15,
+      "jellyfish": 23,
+      "octopus": 16,
       "honey": 4,
       "venus": 4,
       "cleopatra": 2,
       "oxford university": 2,
       "trees": 1,
-      "anglo-zanzibar war": 1
+      "anglo-zanzibar war": 1,
+      "bananas": 1
     }
   },
   "models": [
@@ -1132,6 +1133,81 @@
             "trees",
             "anglo-zanzibar war"
           ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "name": "GPT-5.4",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Bananas are berries, but strawberries aren’t.\n\nIn botany, a “berry” means a fruit that develops from a single ovary and has seeds embedded in the flesh. By that definition, bananas, grapes, and tomatoes qualify. Strawberries don’t, because their tiny “seeds” on the outside are actually separate fruits called achenes.\n\nIf you want, I can tell you something stranger, darker, more useful, or more mind-blowing.",
+          "tokens_prompt": 13,
+          "tokens_completion": 98,
+          "finish_reason": "stop",
+          "topics": [
+            "bananas"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts and blue blood.\n\nTwo hearts pump blood to the gills, and the third pumps it to the rest of the body. Their blood is blue because it uses hemocyanin, a copper-based molecule, to carry oxygen, instead of iron-based hemoglobin like ours.\n\nOne especially strange detail: when an octopus swims, the heart that supplies the body often stops beating, which is one reason octopuses prefer crawling over swimming—it’s less exhausting.\n\nIf you want, I can tell you something stranger, more useful, or more mind-blowing.",
+          "tokens_prompt": 13,
+          "tokens_completion": 122,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Honey never truly “spoils” if it stays sealed and dry.\n\nArchaeologists have found ancient honey in Egyptian tombs that was still edible thousands of years later. That’s because honey is naturally hostile to microbes: it has very low water content, high sugar concentration, and is mildly acidic. Bacteria and fungi usually can’t grow in it.\n\nWhat *does* happen is quality changes:\n- it may crystallize,\n- darken,\n- or lose aroma over time.\n\nBut that usually isn’t spoilage in the normal sense. If you want, I can tell you another surprising fact in science, history, or space.",
+          "tokens_prompt": 13,
+          "tokens_completion": 132,
+          "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-pro",
+      "name": "GPT-5.4 Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s one:\n\n**There are lightning-like flashes that happen *above* thunderstorms, in spaceward air, called _sprites_.**\n\nThey’re huge, red, jellyfish-shaped bursts of electricity that can appear **50–90 km above a storm**, far higher than normal lightning. They last only a few milliseconds, so for a long time people thought reports of them were myths or pilot error. They were only **accidentally photographed in 1989**.\n\nA few neat details:\n\n- They’re triggered by powerful lightning strikes below them.\n- They can spread across **tens of kilometers**.\n- They’re part of a whole family of upper-atmosphere events with names like **elves**, **blue jets**, and **gigantic jets**.\n\nSo a thunderstorm doesn’t just flash downward toward Earth — sometimes it also flashes **upward toward the edge of space**.\n\nIf you want, I can tell you something even stranger.",
+          "tokens_prompt": 13,
+          "tokens_completion": 476,
+          "finish_reason": "stop",
+          "reasoning": "**Finding intriguing facts**\n\nI need to respond to the prompt, \"Tell me something I don't know,\" by providing an interesting and non-obvious fact. I want to ensure it's surprising, accurate, and concise, so I'll consider topics like octopuses or time crystals but avoid clichés. A great choice might be about sprites, a type of lightning, which are red, jellyfish-like flashes seen above thunderstorms. This fact is fascinating and likely unknown to many, especially as they were only discovered in 1989.**Creating a concise summary**\n\nI want to provide a clear and concise explanation about sprites, which are transient luminous events that occur above thunderstorms. They typically appear at altitudes of 50-90 km and are caused by electrical breakdowns high above the clouds after positive lightning strikes. Interestingly, sprites can be larger than a city and last only for milliseconds. I think I might also add a question or two as a bonus if the user is interested in learning more!",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "I don’t know what you already know, but here’s a good bet:\n\n**Sharks are older than trees.**\n\nShark ancestors were swimming in the oceans **over 400 million years ago**, while the first true trees didn’t appear until about **385 million years ago**.\n\nSo for millions of years, Earth had sharks before it had forests.\n\nIf you want, I can tell you something weirder, darker, or more beautiful.",
+          "tokens_prompt": 13,
+          "tokens_completion": 481,
+          "finish_reason": "stop",
+          "reasoning": "**Considering surprising facts**\n\nThe user is asking for something surprising they might not know, which is open-ended. I should provide an interesting fact, maybe something lesser-known. I want to acknowledge that I don’t know their knowledge level, so I might say something like, “I don’t know what you already know, but how about this?”  \n\nI’m thinking about facts like honeybees sensing electric fields on flowers, which is definitely interesting and not too common. That feels like a great choice!**Choosing interesting facts**\n\nI want to provide the user with a surprising fact that's likely new to them. Something like, “Did you know sharks are older than trees? The earliest sharks appeared over 400 million years ago, while the first true trees showed up around 385 million years ago.” It feels concise, captivating, and scientifically solid. I’ll phrase it confidently, maybe noting I can share more if they’re interested. This gives the user a neat nugget of knowledge!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "I don’t know what you know, but here’s a good candidate:\n\n**Scallops can have up to 200 eyes, and they don’t use lenses the way our eyes do. They use tiny mirrors.**\n\nEach little blue dot around the edge of a scallop’s shell is an eye. Instead of focusing light with a lens onto the retina, many scallop eyes use a **concave mirror made of guanine crystals** to reflect light and form an image. It’s a bit like a biological telescope.\n\nEven stranger: those eyes are good at detecting **movement and changes in light**, which helps scallops spot predators like starfish.\n\nSo yes: a humble scallop is basically carrying around a ring of mirror-based eyes.\n\nIf you want, I can give you:\n- a weird biology fact\n- a mind-bending space fact",
+          "tokens_prompt": 13,
+          "tokens_completion": 500,
+          "finish_reason": "length",
+          "reasoning": "**Finding an interesting fact**\n\nI need to give a response to the prompt, \"Tell me something I don't know.\" This involves providing an obscure fact likely to surprise the user. Since I can't really know what they already know, it’s best to say something like, “I don’t know what you know, but here’s a delightfully obscure fact…” It could be about octopuses or physics. Maybe I should consider facts like “The shortest war in history lasted 38-45 minutes” or something similar, avoiding the overly common.**Crafting an interesting response**\n\nI can start my answer with, \"I don’t know what you know, but here’s a weird one…\" and then present an intriguing fact. Since the prompt is open-ended, I'll focus on just one interesting fact, but I might also suggest that there are categories they could explore if they want more. I should aim to craft my response with a bit of flair, making it engaging without overwhelming the user. Keeping it concise and fascinating is key!",
+          "topics": []
         }
       ]
     }
