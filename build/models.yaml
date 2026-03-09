@@ -89,6 +89,12 @@ models:
     license: "commercial"
     released: "December 2025"
 
+  - id: "inception/mercury-2"
+    name: Mercury 2
+    provider: "inception"
+    license: "commerical"
+    released: "March 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"
