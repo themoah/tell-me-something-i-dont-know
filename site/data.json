@@ -4,16 +4,16 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-03-12T14:54:10.918Z",
-    "total_models": 37
+    "generated_at": "2026-03-12T15:00:26.085Z",
+    "total_models": 39
   },
   "stats": {
-    "total_models": 37,
-    "total_responses": 110,
-    "total_tokens": 78425,
+    "total_models": 39,
+    "total_responses": 115,
+    "total_tokens": 80873,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "jellyfish": 24,
+      "jellyfish": 25,
       "octopus": 17,
       "honey": 4,
       "venus": 4,
@@ -1392,6 +1392,76 @@
           "topics": [
             "bananas"
           ]
+        }
+      ]
+    },
+    {
+      "id": "openrouter/hunter-alpha",
+      "name": "Hunter Alpha",
+      "provider": "openrouter",
+      "license": "Unknown",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one that tends to surprise people:\n\n**Humans can smell rain better than sharks can smell blood.**\n\nThe distinctive earthy scent that rises when rain hits dry soil — called *petrichor* — is largely caused by a molecule called **geosmin**, produced by soil bacteria. Humans can detect geosmin at concentrations as low as **5 parts per trillion**. For comparison, sharks detect blood at roughly 1 part per million.\n\nSo you're about 200 times more sensitive to the smell of approaching rain than a shark is to its most famous target.\n\nNobody's entirely sure *why* we're so attuned to it, but one leading theory is that our ancestors evolved to associate that smell with water sources and fertile ground — essentially, survival. Which means every time you step outside after a storm and take that deep, satisfying breath, you're experiencing a tiny echo of something your brain has been wired to chase for hundreds of thousands of years.\n\nWant me to dig into something else unexpected?",
+          "tokens_prompt": 2055,
+          "tokens_completion": 514,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is a fun, open-ended request. I should share something genuinely interesting and perhaps surprising - something that's not commonly known but is verifiable and fascinating.\n\nLet me think of something good...\n\nThere are many interesting facts I could share. Let me pick something that's genuinely surprising and not widely known. I want to avoid overly common \"fun facts\" and instead share something with real depth.\n\nHere's an interesting one: The Voynich Manuscript is often mentioned, but that's pretty well known now.\n\nHow about something like:\n\n- The fact that octopuses have three hearts and blue blood is fairly well known.\n\n- Something about language or history might be good.\n\nHere's a genuinely interesting one: There's a phenomenon called \"target fixation\" where pilots during WWII would sometimes crash into the very thing they were trying to avoid because they were staring at it. This has broader applications in psychology and driving.\n\nOr: The smell of rain (petrichor) has a specific chemical name and origin - it's caused by a compound called geosmin, produced by soil bacteria called Streptomyces. Humans are extraordinarily sensitive to geosmin - we can detect it at concentrations as low as 5 parts per trillion, which is more sensitive than sharks are to blood.\n\nThat's a good one! It's specific, surprising, and has a nice \"wow\" factor.\n\nLet me craft a warm, conversational response sharing this.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's one that tends to surprise people:\n\nThere's a jellyfish called *Turritopsis dohrnii* that is effectively biologically immortal. When it reaches the end of its natural lifespan or gets injured, it can revert its cells back to an earlier developmental stage — essentially transforming itself from an adult back into a juvenile polyp — and then grow up again. It can repeat this cycle indefinitely.\n\nIt doesn't just slow aging or regenerate a limb. It literally rewinds its own life. Scientists call it \"transdifferentiation,\" where one type of cell transforms into a completely different type. No other known animal can do this so thoroughly.\n\nOf course, in practice they still die — predators, disease, and environmental hazards get them. But biologically, there's no built-in expiration date. It's the closest thing to real-life immortality we've found in the animal kingdom.\n\nIs there a particular subject you're curious about? I might have more obscure facts tucked away.",
+          "tokens_prompt": 2055,
+          "tokens_completion": 568,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is a fun, open-ended request. I should share something genuinely interesting and perhaps less commonly known. Let me think of something fascinating that might surprise them.\n\nI could share something from science, history, nature, or a surprising fact. Let me pick something that's genuinely interesting and not too commonly known.\n\nHere's one: There's a phenomenon called \"sonoluminescence\" where sound waves can create tiny flashes of light in liquid. When a bubble in a liquid is hit by sound waves at the right frequency, it collapses so violently that the interior reaches temperatures hotter than the surface of the sun for a brief moment, emitting light.\n\nOr I could share something about biology, like how octopuses have three hearts and blue blood.\n\nOr something about space, like how there's a planet made of diamond (55 Cancri e).\n\nLet me pick something that's genuinely surprising and thought-provoking. I'll go with something about the human body or nature that's less commonly discussed.\n\nActually, here's a good one: The shortest war in history lasted only 38-45 minutes between Britain and Zanzibar on August 27, 1896.\n\nOr: Honey never spoils. Archaeologists have found 3,000-year-old honey in Egyptian tombs that was still edible.\n\nLet me share something more unique and less commonly shared. How about:\n\nThere's a species of jellyfish (Turritopsis dohrnii) that is biologically immortal. When it reaches the end of its life, it can revert back to its juvenile polyp stage and start its life cycle over again. It can theoretically do this indefinitely.\n\nThis is genuinely fascinating and not everyone knows about it.",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "timeout"
+        }
+      ]
+    },
+    {
+      "id": "openrouter/healer-alpha",
+      "name": "Healer Alpha",
+      "provider": "openrouter",
+      "license": "Unknown",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one that might shift how you see the world:\n\n**Trees talk to each other — and they share.**\n\nBeneath the forest floor exists a vast network of mycorrhizal fungi that connects tree roots together, sometimes spanning miles. Scientists call it the \"Wood Wide Web.\"\n\nThrough this network, trees can:\n\n- **Send chemical warning signals** when attacked by insects, prompting neighboring trees to preemptively produce defensive chemicals before the threat even arrives.\n- **Share resources.** Mother trees — older, larger ones — shuttle carbon, water, and nutrients to struggling seedlings through these fungal threads, even of different species.\n- **Recognize their own kin.** Studies have shown trees direct more resources to their offspring than to strangers.\n\nThe most striking part: when a tree is dying, it dumps its remaining carbon and nutrients into the network — essentially a final gift to the forest community.\n\nThis challenges the old assumption that forests are just a collection of individuals competing for light. They're more like a cooperative system with communication, resource sharing, and something that looks, from a certain angle, like generosity.\n\nThe researcher Suzanne Simard, who discovered much of this, wrote a book called *Finding the Mother Tree* if you want to go deeper.\n\nWhat's wild is how recent this understanding is — and how much we still don't know about what's happening underground.\n\nWant to hear something else, or go deeper on this?",
+          "tokens_prompt": 2091,
+          "tokens_completion": 711,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is an open-ended, fun request. I should share something interesting, surprising, and genuinely educational - a fact or insight that most people wouldn't know. Let me think of something compelling.\n\nI could share something from science, history, psychology, nature, or an unusual cultural fact. Let me think of something that would be genuinely surprising and thought-provoking.\n\nSome options:\n1. The \"sleeping beauty\" problem in probability\n2. Octopus facts (they have 3 hearts, blue blood, etc.)\n3. The fact that there are more possible games of chess than atoms in the observable universe\n4. Honey never spoils - 3000 year old honey found in Egyptian tombs was still edible\n5. The \"overview effect\" astronauts experience\n6. Bananas are berries but strawberries aren't\n7. Tardigrades can survive in space\n8. The Fermi Paradox\n9. The fact that trees can communicate through underground fungal networks\n10. Stomachs produce a new lining every few days to prevent self-digestion\n\nLet me pick something that's both surprising and has some depth to it - something that might genuinely make them think. The mycorrhizal networks (\"wood wide web\") is fascinating and most people don't know about it. Or I could talk about something more unusual...\n\nActually, let me go with something about the nature of time or perception, or maybe something from biology that's genuinely mind-bending.\n\nI think I'll share about the mycorrhizal networks - how trees communicate and share resources underground through fungal networks. It's a wonderful example of cooperation in nature that challenges our assumptions about competition in ecosystems.\n\nOr I could share about how your body replaces most of its cells over about 7 years, meaning you're essentially a different person physically - which raises philosophical questions about identity.\n\nLet me go with the tree communication one - it's poetic, surprising, and has real scientific backing.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Of course. Here’s something that often surprises people:\n\nIn 1919, in Boston, a massive storage tank containing over 2 million gallons of molasses burst, sending a wave of sticky syrup through the streets at about 35 miles per hour. The \"Great Molasses Flood\" killed 21 people, injured 150, and caused extensive damage to buildings and infrastructure.\n\nThe cause was later attributed to a combination of poor tank construction, inadequate steel quality, and rapid filling, which created internal pressure. The cleanup took weeks, and the area reportedly smelled like molasses for decades afterward. This bizarre disaster eventually led to stricter engineering regulations for industrial storage tanks.\n\nIt's a striking reminder that history isn't just about wars and politics—sometimes it's about unexpected, messy, and very sticky engineering failures.",
+          "tokens_prompt": 2091,
+          "tokens_completion": 338,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something unknown to them. This is broad but fun—I can share a fascinating historical or scientific fact that’s often overlooked. \n\nI recall the Great Molasses Flood of 1919—it’s obscure, vivid, and has unexpected consequences. The key is to present it engagingly: start with the dramatic event, explain the cause, and end with its lasting impact. \n\nSince the user didn’t specify a topic, I’ll avoid overly technical jargon and keep it conversational. The tone should match the curiosity of the request—warm but precise. No need for disclaimers unless the fact is contested, which this isn’t. \n\nLet’s structure it: hook with the event, detail the disaster, then tie it to modern safety regulations. That’ll make it memorable and useful.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s something you might not know:  \n\nThere’s a vast, invisible ecosystem inside you—and in every human—that scientists call the **“biological dark matter.”**  \n\nIt refers to the millions of microbial species living in and on your body—bacteria, fungi, viruses, and archaea—that we still can’t fully identify or study because they can’t be grown in a lab. Most of what we know about human microbes comes from the small fraction we can culture. The rest is a genetic and metabolic mystery, influencing everything from your immune system and mood to how you process food and even how you respond to medications.  \n\nSome researchers now believe this “dark matter” may hold keys to understanding chronic diseases, mental health, and longevity—yet it remains largely uncharted.  \n\nIt’s a reminder that what we don’t know can be just as vast—and just as important—as what we do.",
+          "tokens_prompt": 2091,
+          "tokens_completion": 317,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something unexpected or novel. Since they didn't specify a topic, I can choose something that's both surprising and universally interesting. \n\nI recall that the concept of \"biological dark matter\" is a great example - it's a scientific term most people haven't encountered, and it ties together microbiology, ecology, and human health in a way that feels almost poetic. \n\nThe metaphor of an \"invisible ecosystem\" helps make it tangible. I should present it as a discovery rather than just a fact, emphasizing how it reshapes our understanding of life itself. The phrasing should feel like sharing a secret about the world.",
+          "topics": []
         }
       ]
     }
