@@ -90,9 +90,21 @@ models:
     released: "December 2025"
 
   - id: "inception/mercury-2"
-    name: Mercury 2
+    name: "Mercury 2"
     provider: "inception"
     license: "commerical"
+    released: "March 2026"
+
+  - id: "x-ai/grok-4.20-beta"
+    name: "Grok 4.20 Beta"
+    provider: "xAI"
+    license: "commercial"
+    released: "March 2026"
+
+  - id: "x-ai/grok-4.20-multi-agent-beta"
+    name: "Grok 4.20 Multi-Agent Beta"
+    provider: "xAi"
+    license: "commercial"
     released: "March 2026"
 
   # === Open Weights ===
@@ -143,6 +155,12 @@ models:
     provider: "Qwen"
     license: "open-weights"
     released: "February 2026"
+
+  - id: "bytedance-seed/seed-2.0-lite"
+    name: "Seed 2.0 Lite"
+    provider: "bytedance"
+    license: "open-weights"
+    released: "March 2026"
 
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
@@ -204,3 +222,23 @@ models:
     provider: "Mistral"
     license: "open-source"
     released: "July 2024"
+
+  - id: "nvidia/nemotron-3-super-120b-a12b:free"
+    name: "Nemotron 3 Super"
+    provider: "Nvidia"
+    license: "open-source"
+    released: "March 2026"
+
+  # === Unknown ===
+
+  - id: "openrouter/hunter-alpha"
+    name: "Hunter Alpha"
+    provider: "openrouter"
+    license: "Unknown"
+    released: "March 2026"
+  
+  - id: "openrouter/healer-alpha"
+    name: "Healer Alpha"
+    provider: "openrouter"
+    license: "Unknown"
+    released: "March 2026"
