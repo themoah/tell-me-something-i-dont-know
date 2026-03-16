@@ -162,6 +162,12 @@ models:
     license: "open-weights"
     released: "March 2026"
 
+  - id: "z-ai/glm-5-turbo"
+    name: "Z.ai GLM 5 Turbo"
+    proivder: "Z.ai"
+    license: "open-weights"
+    released: "March 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"
