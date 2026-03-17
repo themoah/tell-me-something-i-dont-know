@@ -235,6 +235,12 @@ models:
     license: "open-source"
     released: "March 2026"
 
+  - id: "mistralai/mistral-small-2603"
+    name: "Mistral Small 4"
+    provider: "Mistral"
+    license: "open-source"
+    released: "March 2026"
+
   # === Unknown ===
 
   - id: "openrouter/hunter-alpha"
