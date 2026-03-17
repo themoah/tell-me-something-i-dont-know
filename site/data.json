@@ -4,20 +4,20 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-03-17T14:01:03.293Z",
-    "total_models": 41
+    "generated_at": "2026-03-17T20:33:41.261Z",
+    "total_models": 43
   },
   "stats": {
-    "total_models": 41,
-    "total_responses": 121,
-    "total_tokens": 85783,
+    "total_models": 43,
+    "total_responses": 127,
+    "total_tokens": 86366,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "jellyfish": 25,
-      "octopus": 17,
+      "octopus": 19,
       "honey": 7,
-      "venus": 4,
-      "bananas": 3,
+      "venus": 5,
+      "bananas": 5,
       "cleopatra": 2,
       "oxford university": 2,
       "trees": 1,
@@ -1535,6 +1535,82 @@
           "finish_reason": "stop",
           "topics": [
             "honey"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-mini",
+      "name": "GPT - 5.4 Mini",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a weird one:\n\n**Bananas are berries, but strawberries aren’t.**\n\nIn botanical terms, a berry is a fruit that develops from a single ovary and usually has multiple seeds embedded in the flesh. Bananas fit that definition. Strawberries don’t—they’re aggregate fruits, meaning they come from multiple ovaries of one flower.\n\nIf you want, I can give you a few more “wait, what?” facts like that.",
+          "tokens_prompt": 13,
+          "tokens_completion": 94,
+          "finish_reason": "stop",
+          "topics": [
+            "bananas"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a neat one:\n\n**A day on Venus is longer than a year on Venus.**  \nVenus takes about **243 Earth days** to rotate once on its axis, but only about **225 Earth days** to orbit the Sun.\n\nSo if you lived there, the Sun would rise again before “one year” had passed. Also, Venus spins **backward** compared with most planets.\n\nIf you want, I can give you:\n- a weird science fact,\n- a mind-bending math fact, or\n- a surprising history fact.",
+          "tokens_prompt": 13,
+          "tokens_completion": 117,
+          "finish_reason": "stop",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a weird one:\n\n**Bananas are berries, but strawberries aren’t.**\n\nBotanically, a berry is a fruit that develops from a single flower with one ovary and usually has multiple seeds embedded in the flesh. Bananas fit that definition. Strawberries don’t—they’re “aggregate fruits” with seeds on the outside.\n\nIf you want, I can give you:\n- a stranger fact,\n- a science fact,\n- or a fact that sounds fake but is true.",
+          "tokens_prompt": 13,
+          "tokens_completion": 103,
+          "finish_reason": "stop",
+          "topics": [
+            "bananas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-nano",
+      "name": "GPT - 5.4 Nano",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a fact that many people don’t know: **octopuses have three hearts**—two pump blood to the **gills**, and the third pumps oxygenated blood to the rest of the body. Also, **their blood is blue** because it uses copper-based hemocyanin instead of iron-based hemoglobin.",
+          "tokens_prompt": 13,
+          "tokens_completion": 71,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s one little fact that surprises a lot of people:\n\n**Your brain can “fill in” missing visual information—so you might not actually see what’s objectively there.**  \nFor example, many blind spots in your vision (including the **optic disc**, where the optic nerve exits your eye) are compensated for by your brain using surrounding context. So even though there’s literally no input from that spot, you typically *don’t* notice anything missing.\n\nIf you want, I can give you a “random” fact in a specific area (space, biology, tech, weird history, etc.).",
+          "tokens_prompt": 13,
+          "tokens_completion": 126,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s a lesser-known fact: **Octopuses have three hearts**—two that pump blood to the **gills** and a third that pumps blood to the rest of the body. Also, **their blood contains hemocyanin** (a copper-based molecule), which is why it’s **blue** instead of red.",
+          "tokens_prompt": 13,
+          "tokens_completion": 72,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
           ]
         }
       ]
