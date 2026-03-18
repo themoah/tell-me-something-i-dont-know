@@ -119,6 +119,12 @@ models:
     license: "commercial"
     released: "March 2026"
 
+  - id: "minimax/minimax-m2.7"
+    name: "MiniMax M2.7"
+    provider: "MiniMax"
+    license: "commercial"
+    released: "March 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"

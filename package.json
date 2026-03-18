@@ -1,6 +1,6 @@
 {
   "name": "tell-me-something-i-dont-know",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "scripts": {
     "query": "tsx build/query_models.ts",
