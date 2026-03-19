@@ -4,17 +4,17 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-03-18T19:04:18.662Z",
-    "total_models": 44
+    "generated_at": "2026-03-19T16:00:00.778Z",
+    "total_models": 46
   },
   "stats": {
-    "total_models": 44,
-    "total_responses": 130,
-    "total_tokens": 90176,
+    "total_models": 46,
+    "total_responses": 136,
+    "total_tokens": 91833,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "jellyfish": 26,
-      "octopus": 19,
+      "octopus": 24,
       "honey": 7,
       "bananas": 6,
       "venus": 5,
@@ -1652,6 +1652,88 @@
           "topics": [
             "bananas"
           ]
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "MiMo-V2-Pro",
+      "provider": "Xiaomi",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s something fascinating that many people don’t know: **octopuses have three hearts and blue blood**.  \n\nTwo of their hearts pump blood to the gills, where it picks up oxygen, while the third heart circulates it to the rest of the body. Their blood is blue because it contains **hemocyanin**, a copper-based protein that carries oxygen more efficiently in cold, low-oxygen environments—unlike our iron-based hemoglobin, which makes our blood red.  \n\nEven more interesting: when an octopus swims, the heart that delivers blood to the body actually *stops beating*, which is why they prefer crawling—swimming exhausts them!  \n\nWant to dive deeper into this or hear something else surprising? 😊",
+          "tokens_prompt": 257,
+          "tokens_completion": 319,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they don't know. This is a broad request, so I should pick an interesting and lesser-known fact. \n\nI recall that octopuses have three hearts and blue blood—two hearts pump blood to the gills, while the third pumps it to the body. Their blood is copper-based, which makes it blue. This is a fun and surprising fact that many people aren’t aware of. \n\nI can explain it in a conversational way, keeping it simple and engaging. The user might appreciate a mix of biology and a touch of humor. I’ll avoid overcomplicating it and just share the key points. \n\nSince the user didn’t specify a topic, this feels like a safe yet intriguing choice. If they want more, they can ask follow-up questions.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something that might surprise you: **octopuses have three hearts**. Two pump blood to the gills to pick up oxygen, and one pumps it to the rest of the body. Even more fascinating—the heart that delivers blood to the body actually stops beating when the octopus swims, which is why they prefer crawling; swimming exhausts them!  \n\nAnd if that’s not strange enough, their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin to transport oxygen.  \n\nNature is full of quiet wonders, isn’t it? 🐙",
+          "tokens_prompt": 257,
+          "tokens_completion": 267,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they don't know—quite an open-ended request. Since they didn’t specify a topic, I can choose something intriguing and universally relatable. \n\nI recall that octopuses have three hearts and blue blood, which is both surprising and scientifically interesting. It’s the kind of fact that feels almost fictional but is actually true. \n\nI’ll present it in a conversational way, adding a bit of vivid imagery to make it engaging. The user might appreciate the poetic contrast between the alien-like biology and the familiar ocean setting. \n\nNo need to overcomplicate it—just share the fact clearly and let the wonder speak for itself. If they want more, they’ll ask.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something that might surprise you: **octopuses have three hearts and blue blood.**  \n\nTwo hearts pump blood to the gills, while the third circulates it to the rest of the body. Their blood is blue because it uses copper-based hemocyanin for oxygen transport (instead of iron-based hemoglobin like in humans), which is more efficient in cold, low-oxygen environments.  \n\nIf you ever feel overwhelmed, just remember — even with three hearts, octopuses still manage to stay remarkably calm and clever! 🐙💙",
+          "tokens_prompt": 257,
+          "tokens_completion": 253,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they don't know—a pretty open-ended request. Since I can't know what they already know, I should pick an interesting fact that's both surprising and educational. \n\nI recall that octopuses have blue blood due to copper-based hemocyanin, which is efficient for oxygen transport in cold, low-oxygen environments. That’s a neat biological tidbit that many people might not be aware of. \n\nI’ll frame it as a fun fact and keep the tone light and engaging, maybe adding a bit about why it’s useful for them. No need to overcomplicate it—just share the knowledge and let them enjoy it.",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2-omni",
+      "name": "MiMo-V2-Omni",
+      "provider": "Xiaomi",
+      "license": "commercial",
+      "released": "March 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Sure! Here’s a fascinating fact most people don’t know:\n\n**Octopuses have three hearts and blue blood.**  \nTwo hearts pump blood through the gills, while the third pumps it to the rest of the body. Their blood is blue because it uses copper-based hemocyanin (instead of iron-based hemoglobin like humans) to carry oxygen.  \n\nBut here’s the really surprising part: **each of their eight arms has its own mini-brain** (a cluster of neurons), so an octopus can think and act with its arms independently—even if severed, the arms can still react to stimuli for a short time!  \n\nIt’s like having a decentralized intelligence system. Makes you wonder what they’re “thinking” about while solving puzzles or escaping aquarium tanks.  \n\nWant to explore more about animal intelligence, space, or human history? I’ve got plenty more where that came from. 🐙",
+          "tokens_prompt": 258,
+          "tokens_completion": 308,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user wants to learn something new, which is a broad and open-ended request. I should pick something fascinating but not overly obscure, with a touch of whimsy to make it memorable. \n\nThe concept of octopus intelligence comes to mind—it’s scientifically grounded but often surprising to people. Their distributed nervous system and problem-solving abilities are perfect for a \"wow\" moment. \n\nI’ll structure it with a hook (the \"nine brains\" idea), a clear explanation of their unique biology, and end with an open question to invite further curiosity. Keeping it conversational but precise.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "How about this: Did you know that octopuses have **three hearts** and **blue blood**?\n\nTwo of their hearts pump blood through the gills, while the third circulates it to the rest of the body. Their blood is blue because it uses a copper-based protein called hemocyanin to transport oxygen, unlike our iron-based hemoglobin which makes our blood red.\n\nEven more fascinating — when an octopus swims, its main heart actually **stops beating**. That’s why they prefer crawling; swimming exhausts them because their organs are essentially oxygen-starved during the motion.\n\nIt’s one of the many reasons they’re considered some of the most alien-like creatures on Earth. Would you like to hear more about them or something from a different field?",
+          "tokens_prompt": 258,
+          "tokens_completion": 325,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they might not know, which is a broad and open-ended request. I should aim for a fact that is both surprising and educational, ideally something that connects different fields of knowledge. \n\nThe example about octopus brains came to mind because it’s a striking intersection of biology and technology—something that feels almost sci-fi but is grounded in real research. It also ties into broader themes like biomimicry and the future of robotics, which might spark further curiosity. \n\nI’ll keep the tone conversational but precise, avoiding jargon unless I explain it. The goal is to leave the user with a “wow” moment and maybe a new perspective on how nature inspires innovation. If they’re intrigued, they can ask follow-ups, but for now, a single, vivid example should suffice.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Did you know that honey, when stored properly, never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Its low moisture content, acidic pH, and natural hydrogen peroxide production make it an inhospitable environment for bacteria and microorganisms.  \n\nWould you like to hear another surprising fact? 😊",
+          "tokens_prompt": 258,
+          "tokens_completion": 185,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they don't know, which is a broad and open-ended request. I need to choose a fact that's both surprising and verifiable. \n\nThe honey never spoiling fact comes to mind—it's counterintuitive enough to be interesting. I can explain why it happens scientifically to add depth. \n\nI should keep it concise but engaging, ending with an invitation for them to ask more if they're curious. That leaves room for further conversation if they want it.",
+          "topics": []
         }
       ]
     }
