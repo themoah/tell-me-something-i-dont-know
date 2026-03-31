@@ -143,6 +143,12 @@ models:
     license: "commercial"
     released: "March 2026"
 
+  - id: "qwen/qwen3.6-plus-preview:free"
+    name: "Qwen 3.6 Plus Preview"
+    provider: "Qwen"
+    license: "commercial"
+    released: "March 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"
