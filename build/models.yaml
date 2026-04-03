@@ -210,6 +210,18 @@ models:
     license: "open-weights"
     released: "March 2026"
 
+  - id: "z-ai/glm-5v-turbo"
+    name: "Z.ai GLM 5v Turbo"
+    provider: "Z.ai"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "google/gemma-4-31b-it"
+    name: "Gemma 4 31B"
+    provider: "Google"
+    license: "open-weights"
+    released: "April 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"
@@ -283,6 +295,12 @@ models:
     license: "open-source"
     released: "March 2026"
 
+  - id: "arcee-ai/trinity-large-thinking"
+    name: "Trinity Large Thinking"
+    provider: "Arcee AI"
+    license: "open-source"
+    released: "April 2026"
+
   # === Unknown ===
 
   - id: "openrouter/hunter-alpha"
@@ -296,3 +314,5 @@ models:
     provider: "openrouter"
     license: "Unknown"
     released: "March 2026"
+
+
