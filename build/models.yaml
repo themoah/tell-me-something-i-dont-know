@@ -155,6 +155,12 @@ models:
     license: "commercial"
     released: "April 2026"
 
+  - id: "anthropic/claude-opus-4.7"
+    name: "Claude Opus 4.7"
+    provider: "Anthropic"
+    license: "commercial"
+    released: "April 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"

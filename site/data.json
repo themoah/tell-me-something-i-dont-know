@@ -4,16 +4,16 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-04-08T15:47:06.145Z",
-    "total_models": 52
+    "generated_at": "2026-04-16T18:21:32.513Z",
+    "total_models": 53
   },
   "stats": {
-    "total_models": 52,
-    "total_responses": 154,
-    "total_tokens": 112483,
+    "total_models": 53,
+    "total_responses": 157,
+    "total_tokens": 113101,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 28,
+      "octopus": 30,
       "jellyfish": 26,
       "honey": 7,
       "bananas": 6,
@@ -1960,6 +1960,43 @@
           "tokens_completion": 1774,
           "finish_reason": "stop",
           "reasoning": "1.  **Analyze the Request:**\n    *   **Prompt:** \"Tell me something I don't know.\"\n    *   **Intent:** The user wants to learn a surprising, obscure, or fascinating fact. Since I don't know the user's background, the fact needs to be genuinely obscure but accessible, mind-bending but verifiable, and ideally related to a universally interesting topic (nature, space, history, human body, etc.).\n    *   **Tone:** Informative, engaging, slightly awe-inspiring.\n\n2.  **Brainstorming Categories & Facts:**\n    *   *Space:* Neutron stars are incredibly dense. (Too common). There are more trees on Earth than stars in the Milky Way. (Well-known). The Voyager golden record. (Known).\n    *   *History:* Cleopatra lived closer to the iPhone than the Pyramids. (Very well-known). The Great Emu War. (Internet famous). The Defenestration of Prague. (A bit niche but known).\n    *   *Biology/Nature:* Wombat poop is cube-shaped. (Well-known internet fact). Octopuses have three hearts. (Common). Fungi communicating via mycelium. (Getting better).\n    *   *Geography/Earth:* The time difference between China's borders. (Good, but maybe dry).\n    *   *Obscure/Quirky History:* The US military once plotted to blow up the moon. (Project A119 - interesting!). The origin of the croissant (Austrian, not French - a bit mundane).\n    *   *Physics/Time:* Leap seconds added to clocks. (A bit technical).\n    *   *Linguistics:* The etymology of \"disaster\" (bad star). (A bit simple).\n\n3.  **Selecting the Best Candidate:**\n    *   I want something that makes the user say, \"Wait, really?\" and then want to look it up.\n    *   *Idea 1:* The US had a plan to nuke the moon (Project A119). *Pros:* High intrigue, sounds fake but is real. *Cons:* Might be known to history buffs.\n    *   *Idea 2:* The concept of \"Time\" in the Middle Ages (using canonical hours vs. equal hours). *Pros:* Very obscure. *Cons:* A bit academic.\n    *   *Idea 3:* Turritopsis dohrnii (the immortal jellyfish). *Pros:* Fascinating biology. *Cons:* Fairly popular on clickbait articles.\n    *   *Idea 4:* The \"Wood Wide Web\" / Slime mold solving mazes. *Pros:* Mind-blowing intelligence in non-brained organisms. *Cons:* Somewhat popularized by documentaries.\n    *   *Idea 5:* The \"Great Stink\" of London and the creation of the subway. (A bit gross, maybe not mind-blowing enough).\n    *   *Idea 6:* The fact that Oxford University is older than the Aztec Empire. *Pros:* Great timeline mind-bender. *Cons:* Very common Reddit TIL.\n    *   *Idea 7:* The \"Bloop\" sound. (Solved, it was an icequake. Disappointing ending).\n    *   *Idea 8:* The existence of \"Bovine Spongiform Encephalopathy\" (Mad Cow) causing a village to laugh themselves to death (Kuru/laughing sickness in Papua New Guinea - actually a different prion disease). *Pros:* Dark, fascinating. *Cons:* Might be too dark.\n    *   *Idea 9:* The \"Tullianum\" (Mamertine Prison) in Rome where St. Peter was held, which has a magical spring that appeared miraculously. *Pros:* Cool lore. *Cons:* Niche.\n    *   *Idea 10:* The concept of \"Sonder\" (the realization that each random passerby has a life as vivid and complex as your own). *Pros:* Philosophical. *Cons:* It's a neologism from the Dictionary of Obscure Sorrows, not a real historical word.\n\n4.  **Refining the Choice - Going for a \"Hidden in Plain Sight\" Fact:**\n    Let's go with something about *the human body* or *everyday objects* that is deeply weird but true.\n    *Fact:* You have a one-way valve in your throat called the cricopharyngeus that prevents you from swallowing and breathing at the same time.\n    *Fact:* Your immune system doesn't \"know\" your eyes exist, which is why eye injuries can cause autoimmune issues (Sympathetic Ophthalmia). *This is incredibly fascinating and not widely known.*\n\n5.  **Drafting the Response (Sympathetic Ophthalmia / Immune Privilege of the Eye):**\n    *   *Hook:* Ask them about their eyes.\n    *   *The Fact:* Your immune system doesn't know your eyes exist.\n    *   *The Mechanism:* The eyes have \"immune privilege.\" They are walled off from the rest of the immune system to prevent inflammation that would blind us.\n    *   *The Consequence:* If a physical injury breaches the eye, and eye proteins leak into the bloodstream, the immune system sees them as foreign invaders. It attacks the injured eye, and worse, it travels to the *healthy* eye and attacks it too, potentially causing total blindness. This is called Sympathetic Ophthalmia.\n    *   *The Takeaway:* Your body will literally attack its own eyes because it's meeting them for the first time.\n\n6.  **Review and Refine:**\n    *   Is it accurate? Yes, Sympathetic Ophthalmia is a real medical condition, and the concept of immune privilege in the eye is well-established.\n    *   Is it obscure? Most people do not know this.\n    *   Is it engaging? Yes, it has a slight \"body horror\" element that makes it memorable without being overly gruesome.\n\n7.  **Final Polish (Adding an alternative just in case they know that one):**\n    I'll stick to the eye fact as the main course, but I'll present it in a dramatic, storytelling way to maximize the \"wow\" factor. (Self-correction: Don't give a list, give *one* really good deep dive. It's more impactful).\n\n8.  **Final Output Generation:** (This matches the provided good response).",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4.7",
+      "name": "Claude Opus 4.7",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: **octopuses taste with their suckers.**\n\nEach sucker has tens of thousands of chemical receptors, meaning an octopus can literally \"taste\" anything it touches—including figuring out whether something is food, prey, or dangerous without ever bringing it to its mouth. Researchers at Harvard in 2020 even identified the specific receptor proteins that make this possible, and some of them respond to chemicals that don't dissolve well in water, suggesting octopuses evolved a kind of \"taste by touch\" that's unlike anything in vertebrates.\n\nWant another weird fact, or should I pick a different topic—history, space, language, something else?",
+          "tokens_prompt": 21,
+          "tokens_completion": 214,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one: **octopuses have a form of \"distributed cognition\"**—about two-thirds of their neurons are located in their arms, not their central brain. Each arm can essentially problem-solve, taste, and react independently. If you sever an arm (which regrows), it can still reach for food and recoil from pain for a while on its own.\n\nThis means an octopus isn't really \"one\" thinking thing the way we are—it's more like a loose federation of nine semi-autonomous intelligences cooperating.\n\nWant another in a similar vein, or should I pivot to history, math, language, or something else?",
+          "tokens_prompt": 21,
+          "tokens_completion": 188,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one: **Wombat poop is cube-shaped.**\n\nWombats are the only known animals that produce cubic feces—around 80 to 100 little cubes a night. For a long time, scientists assumed some kind of square-shaped sphincter was involved, but research published in 2021 revealed the truth: the cubes are formed by variations in elasticity along the walls of the wombat's intestines, which shape the poop as it moves through. The leading theory for *why* is that flat-sided droppings don't roll away, which helps wombats use them to mark territory on logs and rocks.\n\nWant another weird one, or something in a specific area—science, history, language, etc.?",
+          "tokens_prompt": 21,
+          "tokens_completion": 216,
+          "finish_reason": "stop",
           "topics": []
         }
       ]
