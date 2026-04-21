@@ -234,6 +234,12 @@ models:
     license: "open-weights"
     released: "April 2026"
 
+  - id: "moonshotai/kimi-k2.6"
+    name: "Kimi K2.6"
+    provider: "Moonshot AI"
+    license: "open-weights"
+    released: "April 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"
@@ -310,6 +316,12 @@ models:
   - id: "arcee-ai/trinity-large-thinking"
     name: "Trinity Large Thinking"
     provider: "Arcee AI"
+    license: "open-source"
+    released: "April 2026"
+
+  - id: "inclusionai/ling-2.6-flash:free"
+    name: "Ling 2.6 Flash"
+    provider: "Inclusion AI"
     license: "open-source"
     released: "April 2026"
 
