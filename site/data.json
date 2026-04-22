@@ -4,26 +4,27 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-04-21T19:33:25.518Z",
-    "total_models": 55
+    "generated_at": "2026-04-22T17:55:38.264Z",
+    "total_models": 57
   },
   "stats": {
-    "total_models": 55,
-    "total_responses": 163,
-    "total_tokens": 117873,
+    "total_models": 57,
+    "total_responses": 169,
+    "total_tokens": 119637,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 30,
+      "octopus": 33,
       "jellyfish": 28,
       "honey": 7,
+      "venus": 6,
       "bananas": 6,
-      "venus": 5,
       "cleopatra": 4,
       "oxford university": 3,
       "anglo-zanzibar war": 2,
       "trees": 1,
       "space": 1,
-      "tardigrade": 1
+      "tardigrade": 1,
+      "mantis shrimp": 1
     }
   },
   "models": [
@@ -2072,6 +2073,88 @@
           "finish_reason": "stop",
           "topics": [
             "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.5",
+      "name": "MiMo-V2.5",
+      "provider": "Xiaomi",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a little-known fact: **Octopuses have three hearts and blue blood.**  \n\nTwo of their hearts pump blood through the gills, while the third circulates it to the rest of the body. Their blood is blue because it uses a copper-based protein called hemocyanin to carry oxygen—unlike our iron-based hemoglobin, which makes our blood red.  \n\nEven more interesting: when an octopus swims, the heart that delivers blood to the body stops beating, which is why they prefer crawling—it’s less tiring!  \n\nIf you’d like another curious tidbit, just ask.",
+          "tokens_prompt": 255,
+          "tokens_completion": 249,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user asked for something they don't know, which is a broad and open-ended request. They might be looking for a surprising or obscure fact to spark curiosity. \n\nI recall that octopuses have three hearts and blue blood, which is a fascinating biological detail most people wouldn't know. It’s specific enough to be interesting but not overly technical. \n\nI’ll structure the response to first state the fact clearly, then briefly explain why it’s true, and end by inviting further questions to keep the conversation engaging. The tone should be light and informative, matching the user’s casual request.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Of course! Here’s a fascinating fact that surprises many people:\n\n**Mantis shrimp can see 16 types of color receptors**—compared to humans, who have just three (red, green, blue). They also perceive ultraviolet and polarized light. Their eyes are so advanced that scientists study them to design better cameras and optical technologies. In a sense, they see a version of reality so rich and complex that it might look almost alien to us. 🦐👁️\n\nWant to know something else, or dive deeper into how their vision works?",
+          "tokens_prompt": 255,
+          "tokens_completion": 237,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they don't know, which is a broad and open-ended request. They might be curious or just looking for an interesting fact to spark their interest.  \n\nI should pick something surprising and engaging, not just a random trivia piece. The fact about the mantis shrimp's vision seems perfect—it's vivid, scientific, and likely new to most people.  \n\nI'll describe it in a way that paints a clear picture, emphasizing the \"alien\" aspect to make it memorable. Ending with a question keeps the conversation open in case they want to explore more.",
+          "topics": [
+            "mantis shrimp"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's a fun one:\n\n**A day on Venus is longer than a year on Venus.**\n\nVenus takes about 243 Earth days to rotate once on its axis, but only about 225 Earth days to orbit the Sun. So it literally completes a full trip around the Sun before it finishes spinning around once!\n\nThis is partly because Venus rotates backwards (retrograde rotation) compared to most planets, and very slowly at that. If you lived on Venus, you'd celebrate your birthday before you'd see a full sunrise-to-sunrise cycle.\n\nWant another one? I've got plenty of oddities to share! 😊",
+          "tokens_prompt": 255,
+          "tokens_completion": 491,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is a fun, open-ended request. Let me think of something interesting, surprising, or lesser-known that would be genuinely interesting and educational.\n\nI could share:\n1. A fascinating scientific fact\n2. A historical tidbit\n3. A psychological insight\n4. A cultural curiosity\n5. Something about nature or the universe\n\nLet me think of something genuinely interesting and not too commonly known...\n\nHere are some options:\n\n1. Octopuses have three hearts and blue blood.\n2. Honey never spoils - archaeologists found 3000-year-old honey in Egyptian tombs that was still edible.\n3. The human body contains enough carbon to make about 9,000 pencils.\n4. Bananas are technically berries, but strawberries aren't.\n5. There are more possible iterations of a game of chess than there are atoms in the observable universe (Shannon number).\n6. The inventor of the Pringles can is buried in one.\n7. A day on Venus is longer than a year on Venus (it takes longer to rotate once on its axis than to orbit the sun).\n8. The shortest war in history was between Britain and Zanzibar, lasting only 38-45 minutes.\n9. There's a species of jellyfish (Turritopsis dohrnii) that is biologically immortal - it can revert to its polyp stage.\n10. The total weight of all the ants on Earth is roughly equal to the total weight of all the humans.\n\nLet me pick something that's both surprising and has a nice story or explanation behind it. I'll go with a few interesting facts and present them in an engaging way.",
+          "topics": [
+            "venus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "MiMo-V2.5-Pro",
+      "provider": "Xiaomi",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something fascinating that might surprise you: **The \"Oxygen Holocaust\"**—an event about 2.4 billion years ago when cyanobacteria began producing oxygen as a waste product, which was toxic to most life on Earth at the time.  \n\nThis led to a mass extinction of anaerobic organisms, while allowing new oxygen-breathing life to eventually emerge. In a way, the air we breathe today is the result of an ancient ecological catastrophe.  \n\nIt’s a reminder that what sustains one form of life can be lethal to another—and that even the atmosphere we take for granted has a violent history.",
+          "tokens_prompt": 259,
+          "tokens_completion": 296,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user is asking for something they likely don't know—a broad request that invites a surprising or lesser-known fact. Since the query is open-ended, I should pick something fascinating but not too obscure, ideally with a blend of science and history to make it engaging. \n\nThe \"Oxygen Holocaust\" comes to mind—it’s a pivotal but underappreciated event in Earth’s history where the rise of oxygen wiped out most early life. It’s counterintuitive (oxygen as a poison), scientifically significant, and has a dramatic narrative arc. \n\nI’ll structure it like a mini-story: set the scene (early Earth), introduce the \"villain\" (oxygen), describe the catastrophe, and end with the irony (oxygen enabling complex life later). Keeping it concise but vivid will make it memorable.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s something fascinating that often surprises people: **octopuses have three hearts and blue blood.**\n\nTwo of the hearts pump blood to the gills, while the third pumps it to the rest of the body. Their blood is copper-based (using hemocyanin instead of hemoglobin), which makes it more efficient for transporting oxygen in cold, low-oxygen ocean environments—but it turns blue when oxygenated.\n\nEven stranger: when an octopus swims, the heart that delivers blood to the body actually *stops beating*, which is why they prefer crawling—swimming exhausts them.\n\nNature has some wild engineering. 🐙💙",
+          "tokens_prompt": 259,
+          "tokens_completion": 255,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, the user asks for something they might not know. This is open-ended, so I should pick something genuinely intriguing but not too obscure. \n\nI recall some fascinating facts about octopuses—how about their intelligence and unique biology? It’s surprising to many people that they have three hearts and blue blood. \n\nI’ll structure it by starting with the hook (three hearts), then explain why, and end with the blue blood detail. Keeping it concise but vivid with a comparison (like copper-based blood) should make it memorable. \n\nAvoid overloading with extra facts; just stick to the core surprise.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something that might surprise you: **Octopuses have three hearts and blue blood.**  \n\nTwo of their hearts pump blood to the gills, while the third pumps it to the rest of the body. Their blood is blue because it uses copper-based hemocyanin instead of iron-based hemoglobin, which is more efficient for oxygen transport in cold, low-oxygen environments.  \n\nWould you like to explore more oddities from nature, science, history, or somewhere else?",
+          "tokens_prompt": 259,
+          "tokens_completion": 236,
+          "finish_reason": "stop",
+          "reasoning": "Hmm, this is a broad and open-ended request. The user wants to hear something novel or surprising. Since the query is so open, I should pick a topic that’s universally interesting but often overlooked. \n\nI recall that octopuses have three hearts and blue blood, which is a fun and lesser-known biological fact. It’s vivid enough to spark curiosity, and I can add a bit of extra detail about why their blood is blue to make it more engaging. \n\nThe response should be concise but informative, ending with a light question to keep the conversation flowing. No need to overcomplicate it—just deliver the fact in a friendly, conversational tone.",
+          "topics": [
+            "octopus"
           ]
         }
       ]
