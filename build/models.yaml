@@ -252,6 +252,12 @@ models:
     license: "open-weights"
     released: "April 2026"
 
+  - id: "tencent/hy3-preview:free"
+    name: "Hy3 Preview"
+    provider: "Tencent"
+    license: "open-weights"
+    released: "April 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"
