@@ -53,6 +53,7 @@ interface RunResult {
   topics?: string[];
   reasoning?: string;
   error?: string;
+  timed_out?: boolean;
 }
 
 interface ModelEntry {
@@ -124,8 +125,12 @@ async function queryModel(
     };
   } catch (e: unknown) {
     const err = e as Error;
-    if (err.name === 'TimeoutError') {
-      return { success: false, content: null, error: 'timeout' };
+    const timedOut =
+      err.name === 'TimeoutError' ||
+      err.name === 'AbortError' ||
+      (typeof err.message === 'string' && err.message.toLowerCase().includes('timeout'));
+    if (timedOut) {
+      return { success: false, content: null, error: 'timeout', timed_out: true };
     }
     return { success: false, content: null, error: (err.message ?? String(e)).slice(0, 200) };
   }
@@ -290,6 +295,17 @@ async function main() {
         process.stdout.write(` ↻(retry ${retries}, max_tokens=${boostedTokens})`);
         await sleep(1000);
         result = await queryModel(model.id, prompt, temperature, boostedTokens, apiKey!);
+      }
+
+      if (!result.success && result.timed_out) {
+        if (!append) {
+          throw new Error(
+            `Timeout querying ${model.name} (${model.id}) on run ${runIdx + 1}/${runsPerModel}. Failing entire run.`,
+          );
+        }
+        process.stdout.write(' ✗(timeout)');
+        runs.push(result);
+        break;
       }
 
       if (result.success) {

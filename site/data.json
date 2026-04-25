@@ -4,17 +4,17 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-04-25T12:59:38.526Z",
-    "total_models": 60
+    "generated_at": "2026-04-25T13:27:33.009Z",
+    "total_models": 62
   },
   "stats": {
-    "total_models": 60,
-    "total_responses": 178,
-    "total_tokens": 125007,
+    "total_models": 62,
+    "total_responses": 182,
+    "total_tokens": 125845,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 33,
-      "jellyfish": 28,
+      "octopus": 34,
+      "jellyfish": 29,
       "honey": 7,
       "venus": 7,
       "bananas": 6,
@@ -2264,6 +2264,66 @@
           "tokens_completion": 221,
           "finish_reason": "stop",
           "reasoning": "**Providing an interesting fact**\n\nI need to respond to the user asking for something they don't know. I should provide a concise and interesting fact that's likely unknown. Maybe I could say something like, \"Did you know mitochondria can be inherited paternally, which is quite rare?\" Or I could mention a surprising wasp-related fact. It's important to ensure the fact is true, and I should also invite the user to share what they already know or ask about a specific domain to tailor my response. Let's finalize this!",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "name": "DeepSeek v4 Flash",
+      "provider": "DeepSeek",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something you likely don't know:\n\n**Cows have regional accents.** Just like humans, calves in different herds develop subtle variations in their moos, influenced by the social group they grow up in. A study from the University of Sydney found that cows form distinct vocal \"dialects\" based on their herd's unique social dynamics, and they can even recognize and respond to the specific moos of their friends. So, a cow from a farm in Texas might sound slightly different from one raised in the English countryside.",
+          "tokens_prompt": 12,
+          "tokens_completion": 106,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "timeout",
+          "timed_out": true
+        }
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek v4 Pro",
+      "provider": "DeepSeek",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s something genuinely surprising: **There is a species of jellyfish that can essentially live forever.**\n\nIt’s called *Turritopsis dohrnii*, often nicknamed the \"immortal jellyfish.\" When it faces starvation, physical damage, or other life-threatening stress, it doesn't necessarily die. Instead, it can undergo a process called **transdifferentiation**.\n\nIts cells transform back into a younger state—essentially reverting from the adult medusa stage back to its earlier polyp stage (like a butterfly turning back into a caterpillar). From there, it can mature again, potentially repeating this cycle indefinitely. Biologically speaking, it has no fixed lifespan.\n\nNow, here’s the kicker you probably *really* don’t know: This process isn't a perfect \"reset.\" While it can revert its *body*, new research suggests that as it cycles through these rebirths, it accumulates genetic mutations and cellular wear-and-tear, much like photocopying a photocopy. So, while it’s biologically immortal in theory, in the wild it still usually ends up dying from disease or predation before it can achieve jellyfish nirvana.",
+          "tokens_prompt": 12,
+          "tokens_completion": 238,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something fascinating and counterintuitive: **Octopuses can edit their own RNA, and they do it more than almost any other animal.**\n\nWe usually learn that DNA is the fixed blueprint, RNA is the faithful messenger, and proteins are the final product. But octopuses (and other cephalopods like squid and cuttlefish) break that rule on a massive scale through a process called **RNA editing**.\n\nInstead of sticking to the protein recipe written in their DNA, they have enzymes that chemically change the sequence of the RNA messenger *after* it's been copied from the DNA. This can swap one nucleotide for another, effectively rewriting the genetic instructions on the fly. The result is a protein that’s different from what the original gene encoded.\n\nWhy is this a big deal?\n\n- **Scale:** In humans, RNA editing is rare and mostly happens in non-coding regions. In the common squid, researchers found editing at over 57,000 sites in its nervous system, the vast majority changing the actual protein sequence.\n- **Brain Power:** This editing is heavily concentrated in the genes that control their complex nervous systems. It’s thought to be a key reason for their extraordinary intelligence, problem-solving abilities, and complex behaviors, despite having a brain architecture radically different from vertebrates.\n- **The Evolutionary Trade-Off:** This flexibility comes at a staggering cost. To allow RNA editing, the DNA around those sites must be highly conserved and can't mutate freely. This has dramatically slowed down the octopus genome's evolution compared to its relatives. They sacrificed long-term genetic adaptability for short-term neurological flexibility.\n\nSo, an octopus isn't just running a fixed program; it's live-hacking its own brain's source code in response to its environment. They're literally rewriting themselves in real-time.",
+          "tokens_prompt": 12,
+          "tokens_completion": 366,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something genuinely surprising: **Bananas are technically berries, but strawberries are not.**\n\nIn botanical terms, a \"berry\" is a fruit produced from a single flower with one ovary that has three distinct fleshy layers. Bananas fit this definition perfectly. Strawberries, on the other hand, are \"aggregate fruits\" because they form from a flower with multiple ovaries. Those tiny seeds on the outside of a strawberry? Each one is technically its own individual fruit, called an achene.\n\nBotany is full of these quiet rebellions against common language—watermelons are berries too, but raspberries are not.",
+          "tokens_prompt": 12,
+          "tokens_completion": 128,
+          "finish_reason": "stop",
           "topics": []
         }
       ]

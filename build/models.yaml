@@ -270,6 +270,18 @@ models:
     license: "open-weights"
     released: "April 2026"
 
+  - id: "deepseek/deepseek-v4-flash"
+    name: "DeepSeek v4 Flash"
+    provider: "DeepSeek"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "deepseek/deepseek-v4-pro"
+    name: "DeepSeek v4 Pro"
+    provider: "DeepSeek"
+    license: "open-weights"
+    released: "April 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"
