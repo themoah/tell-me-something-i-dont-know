@@ -3336,6 +3336,12 @@ The tone should be playful but precise, ending with an invitation for more quest
         return `<span class="originality-badge" data-score="${score}">${filled}<span class="star-empty">${empty}</span> original</span>`;
     }
 
+    function parseReleasedToTimestamp(released) {
+        if (!released) return Number.MAX_SAFE_INTEGER;
+        const parsed = Date.parse(`${released} 01`);
+        return Number.isNaN(parsed) ? Number.MAX_SAFE_INTEGER : parsed;
+    }
+
     // === RENDER MODEL CARDS ===
     let cardsHTML = '';
     for (let idx = 0; idx < data.models.length; idx++) {
@@ -3350,6 +3356,7 @@ The tone should be playful but precise, ending with an invitation for more quest
 
         const totalTokens = runs.reduce((sum, r) => sum + (r.tokens_completion || 0), 0);
         const originality = calcOriginality(model);
+        const releasedTimestamp = parseReleasedToTimestamp(model.released);
         const releasedHTML = model.released
             ? `<div class="model-released">${escapeHtml(model.released)}</div>`
             : '';
@@ -3385,7 +3392,7 @@ The tone should be playful but precise, ending with an invitation for more quest
 
         const allTopics = [...new Set(runs.flatMap(r => r.topics || []))].join(',');
         cardsHTML += `
-            <div class="model-card" data-license="${model.license}" data-topics="${allTopics}" data-sort-tokens="${totalTokens}" data-originality="${originality}" data-index="${idx}">
+            <div class="model-card" data-license="${model.license}" data-topics="${allTopics}" data-sort-tokens="${totalTokens}" data-originality="${originality}" data-index="${idx}" data-sort-released="${releasedTimestamp}">
                 <div class="card-header">
                     <div>
                         <div class="model-name">${escapeHtml(model.name)}</div>
@@ -3562,7 +3569,9 @@ The tone should be playful but precise, ending with an invitation for more quest
                     return parseInt(b.dataset.originality) - parseInt(a.dataset.originality)
                         || a.querySelector('.model-name').textContent.localeCompare(b.querySelector('.model-name').textContent);
                 default:
-                    return parseInt(a.dataset.index) - parseInt(b.dataset.index);
+                    return parseInt(b.dataset.sortReleased) - parseInt(a.dataset.sortReleased)
+                        || a.querySelector('.model-name').textContent.localeCompare(b.querySelector('.model-name').textContent)
+                        || parseInt(a.dataset.index) - parseInt(b.dataset.index);
             }
         });
 
@@ -3575,6 +3584,8 @@ The tone should be playful but precise, ending with an invitation for more quest
             applySort();
         });
     });
+
+    applySort();
 
     // === SURPRISE ME ===
     document.getElementById('surprise-btn').addEventListener('click', () => {
