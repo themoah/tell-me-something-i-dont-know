@@ -203,6 +203,12 @@ models:
     license: "commercial"
     released: "April 2026"
 
+  - id: "x-ai/grok-4.3"
+    name: "Grok 4.3"
+    provider: "xAI"
+    license: "commercial"
+    released: "May 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"
