@@ -324,6 +324,12 @@ models:
     license: "open-weights"
     released: "April 2026"
 
+  - id: "ibm-granite/granite-4.1-8b"
+    name: "Granite 4.1 8B"
+    provider: "IBM"
+    license: "open-weights"
+    released: "April 2026"
+
   # === Open Source ===
   - id: "arcee-ai/trinity-large-preview:free"
     name: "Trinity Large"

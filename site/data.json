@@ -4,22 +4,22 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-01T12:27:01.098Z",
-    "total_models": 70
+    "generated_at": "2026-05-01T12:29:25.909Z",
+    "total_models": 71
   },
   "stats": {
-    "total_models": 70,
-    "total_responses": 204,
-    "total_tokens": 173806,
+    "total_models": 71,
+    "total_responses": 207,
+    "total_tokens": 174437,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 38,
       "jellyfish": 30,
-      "honey": 7,
+      "honey": 8,
       "venus": 7,
+      "anglo-zanzibar war": 6,
       "bananas": 6,
       "cleopatra": 4,
-      "anglo-zanzibar war": 4,
       "oxford university": 3,
       "trees": 2,
       "space": 1,
@@ -2620,6 +2620,45 @@
           "finish_reason": "stop",
           "reasoning": "We need to respond: \"Tell me something I don't know.\" It's an open-ended request. We should give an interesting fact that's likely unknown to the user. Could be something obscure. Ensure it's not common knowledge. Maybe about the ocean, a scientific discovery, a historical nuance. Could mention that honey never spoils, but that's known. Maybe \"the longest word in English contains 45 letters\" etc. Or something like \"the Eiffel Tower can be 15 cm taller during summer due to thermal expansion.\" That's known. Maybe something about the \"Mongolian death worm\" myth, or \"the shortest war in history was between Zanzibar and England lasting 38 minutes.\" Might be known. Let's pick something truly obscure: \"There is a species of fungus that turns ants into zombies by manipulating their behavior, then grows from their heads.\" That's known but maybe not by everyone. Or \"The 'Great Emu War' of 1932 in Australia.\" Might be known.\n\nBetter: \"In 1977, a NASA probe carried a golden record with sounds of Earth; the probability that any alien civilization will ever find it is effectively zero.\" Not sure.\n\nMaybe talk about \"the human nose can remember 50,000 different scents, and the scent of rain (petrichor) is actually a combination of plant oils and geosmin released when soil dries.\" That's interesting.\n\nOr \"The longest recorded flight of a chicken is 13 seconds.\" Not sure.\n\nMaybe a fact about the universe: \"There are more possible chess games than atoms in the observable universe.\" That's known.\n\nLet's give something surprising: \"The world’s oldest known piece of chewing gum is 9,000 years old, found in a Swedish bog.\" Not sure.\n\nMaybe \"The 'Mona Lisa' has no eyebrows because it was the fashion in Renaissance Florence to shave them.\" That's a myth.\n\nBetter: \"The shortest war in recorded history was between Britain and Zanzibar in 1896, lasting 38 minutes.\"\n\nBut many people might know that.\n\nMaybe a scientific fact: \"If you could fold a piece of paper 42 times, it would reach the moon.\" That's known.\n\nWe need something the user likely doesn't know. Let's pick something obscure: \"The 'Immortal jellyfish' (Turritopsis dohrnii) can revert its adult cells back to a juvenile state, essentially making it biologically immortal.\" That's known but maybe not common.\n\nOr \"In 1918, a flu pandemic killed more people than World War I.\" That's known.\n\nLet's go with something about the \"Great Pacific Garbage Patch\" being larger than Texas? It's known.\n\nMaybe \"The word 'set' has the most definitions in the English language, with over 430 senses listed in the Oxford English Dictionary.\" That's interesting.\n\nOr \"The Eiffel Tower was originally intended to be a temporary structure for the 1889 World's Fair and was almost dismantled in 1909.\"\n\nLet's choose a fact that is truly obscure: \"In 1975, a Soviet scientist named Victor Krasnok discovered a new species of frog that could freeze solid and then thaw back to life, but the research was suppressed due to political reasons.\" Not sure.\n\nMaybe better: \"The longest recorded time a person has held their breath underwater is 24 minutes and 3 seconds, achieved by Spanish monk Alnita S.\" Not sure.\n\nLet's pick a fact about the \"Mpemba effect\": \"Hot water can freeze faster than cold water under certain conditions, a phenomenon known as the Mpemba effect, which is still not fully understood.\" That's interesting and not widely known.\n\nWe'll answer: \"Did you know that hot water can freeze faster than cold water, called the Mpemba effect?\" And give explanation. That's something many might not know.\n\nWe'll keep tone friendly.\n",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "ibm-granite/granite-4.1-8b",
+      "name": "Granite 4.1 8B",
+      "provider": "IBM",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Sure! Here's a fascinating fact you might not know:\n\n**Honey Never Spoils:** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey's low water content and high acidity create an environment that inhibits bacterial growth, allowing it to remain viable for millennia under the right conditions.\n\nThis remarkable longevity is why honey was considered a sacred food in many ancient cultures and was often used in religious rituals and as offerings to the gods.",
+          "tokens_prompt": 16,
+          "tokens_completion": 104,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Certainly! Here's a fascinating fact that many people don't know:\n\n**The shortest war in history** lasted only about 40 minutes. It was fought between Zanzibar and England in 1896. \n\nOn August 27, 1896, Sultan Hamad bin Thuwaini, who had willingly cooperated with British colonial administration, died. His nephew, Khalid bin Bargash, seized power in a coup. The British, wishing to install a pro-British sultan, delivered an ultimatum to Khalid, demanding that he stand down and leave the palace. Khalid refused, and instead assembled an army of about 2,800 men and a few artillery pieces to defend the palace. \n\nThe British, under Admiral Harry Rawson, responded swiftly with a naval bombardment and aerial reconnaissance (one of the first uses of aircraft in warfare). The palace was quickly captured, and Khalid fled. The war officially ended at 9:40 AM on August 28, 1896, making it the shortest recorded conflict in history. Khalid's reign lasted less than a day. \n\nThis brief but dramatic event underscores the complex interplay of colonial politics and local power struggles in the late 19th century.",
+          "tokens_prompt": 16,
+          "tokens_completion": 255,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Sure! Here's a fascinating fact you might not know:\n\n**The shortest war in history** lasted only about 40 minutes. It was fought between Zanzibar and England in 1896. On August 27, 1896, Sultan Hamad bin Thuwaini, who had willingly cooperated with British colonial administration, died. His nephew, Khalid bin Bargash, seized power in what amounted to a coup d'état. The British viewed Khalid as being less cooperative than his predecessor, so they delivered an ultimatum demanding that he stand down and leave the palace. Khalid refused, and instead assembled a force of about 2,800 men to defend the palace. The British, under Rear-Admiral Harry Rawson, responded by bombarding the palace and other key locations on Zanzibar Town. The shelling lasted approximately 40 minutes, after which Khalid's forces surrendered, marking the end of the conflict. The war resulted in fewer than 500 Zanzibari casualties (mostly from the palace defenses) and only one British sailor injured. Khalid himself fled to the German consulate, and the British promptly placed Sultan Hamud bin Muhammed on the throne, restoring the status quo ante. This brief but intense conflict is often cited as the shortest war in recorded history.",
+          "tokens_prompt": 16,
+          "tokens_completion": 272,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
         }
       ]
     }
