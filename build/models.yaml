@@ -185,6 +185,18 @@ models:
     license: "commercial"
     released: "April 2026"
 
+  - id: "qwen/qwen3.6-max-preview"
+    name: "Qwen 3.6 Max Preview"
+    provider: "Qwen"
+    license: "commercial"
+    released: "April 2026"
+
+  - id: "qwen/qwen3.6-flash"
+    name: "Qwen 3.6 Flash"
+    provider: "Qwen"
+    license: "commercial"
+    released: "April 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"
@@ -279,6 +291,24 @@ models:
   - id: "deepseek/deepseek-v4-pro"
     name: "DeepSeek v4 Pro"
     provider: "DeepSeek"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "qwen/qwen3.6-27b"
+    name: "Qwen 3.6 27B"
+    provider: "Qwen"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "qwen/qwen3.6-35b-a3b"
+    name: "Qwen 3.6 35B A3B"
+    provider: "Qwen"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "qwen/qwen3.6-flash"
+    name: "Qwen 3.6 Flash"
+    provider: "Qwen"
     license: "open-weights"
     released: "April 2026"
 
