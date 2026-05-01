@@ -409,6 +409,12 @@ models:
     license: "open-source"
     released: "April 2026"
 
+  - id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+    name: "Nemotron 3 Nano Omni 30B A3B Reasoning"
+    provider: "NVIDIA"
+    license: "open-source"
+    released: "April 2026"
+
   # === Unknown ===
 
   - id: "openrouter/hunter-alpha"
