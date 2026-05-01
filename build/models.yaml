@@ -197,6 +197,12 @@ models:
     license: "commercial"
     released: "April 2026"
 
+  - id: "poolside/laguna-m.1:free"
+    name: "Laguna M.1"
+    provider: "Poolside"
+    license: "commercial"
+    released: "April 2026"
+
   # === Open Weights ===
   - id: "meta-llama/llama-4-maverick"
     name: "Llama 4 Maverick"
@@ -309,6 +315,12 @@ models:
   - id: "qwen/qwen3.6-flash"
     name: "Qwen 3.6 Flash"
     provider: "Qwen"
+    license: "open-weights"
+    released: "April 2026"
+
+  - id: "poolside/laguna-xs.2:free"
+    name: "Laguna XS.2"
+    provider: "Poolside"
     license: "open-weights"
     released: "April 2026"
 
