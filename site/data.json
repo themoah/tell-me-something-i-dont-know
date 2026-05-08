@@ -4,18 +4,18 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-01T12:34:35.834Z",
-    "total_models": 72
+    "generated_at": "2026-05-08T08:00:20.264Z",
+    "total_models": 77
   },
   "stats": {
-    "total_models": 72,
-    "total_responses": 210,
-    "total_tokens": 176825,
+    "total_models": 77,
+    "total_responses": 222,
+    "total_tokens": 178925,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 38,
-      "jellyfish": 31,
-      "honey": 8,
+      "octopus": 43,
+      "jellyfish": 33,
+      "honey": 11,
       "venus": 7,
       "anglo-zanzibar war": 7,
       "bananas": 6,
@@ -2699,6 +2699,173 @@
           "topics": [
             "anglo-zanzibar war"
           ]
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "name": "Google: Gemini 3.1 Flash Lite",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here is something that sounds like a myth, but is a documented biological reality: **There is a species of jellyfish that is biologically immortal.**\n\nThe *Turritopsis dohrnii*, also known as the \"immortal jellyfish,\" has a unique way of cheating death. When it becomes physically damaged, starving, or reaches the end of its natural life, it can undergo a process called **transdifferentiation**.\n\nEssentially, it can pull its adult cells back into a youthful, undifferentiated state. It transforms its entire body back into a polyp—the earliest stage of its life cycle—and starts its life over again from scratch. It’s the equivalent of a butterfly deciding it wants to turn back into a caterpillar, and then back into an egg, indefinitely.\n\nBecause of this, unless it is eaten by a predator or killed by a disease, it theoretically never has to die of old age. Scientists are currently studying them intensely, hoping to unlock the secrets of how they \"reset\" their cellular clocks, which could one day have massive implications for human aging and regenerative medicine.",
+          "tokens_prompt": 9,
+          "tokens_completion": 220,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here is something that sounds like science fiction but is a biological reality: **Trees can \"talk\" to each other and share resources through an underground fungal network.**\n\nIt is often referred to as the **\"Wood Wide Web.\"**\n\nHere is how it works:\n\n1.  **The Fungal Internet:** Most trees have a symbiotic relationship with mycorrhizal fungi. These fungi grow tiny, thread-like filaments called *mycelium* that wrap around tree roots, extending far into the soil.\n2.  **Resource Sharing:** Through these fungal connections, trees can actually trade sugars, nitrogen, and phosphorus. If a tree is in a shaded area and struggling to photosynthesize, older, larger trees (sometimes called \"Mother Trees\") can send them extra nutrients to help them survive.\n3.  **Warning Signals:** Trees use this network to send chemical signals. If a tree is being attacked by beetles or aphids, it can release chemical distress signals through its roots. Neighboring trees receive these messages and begin producing bitter chemicals or toxins in their leaves to \"vaccinate\" themselves against the incoming pests before they ever arrive.\n\n**Why this is mind-blowing:**\nFor a long time, scientists viewed forests as a collection of individual trees competing for sunlight and space. We now know that, under the surface, a forest is actually a highly social, cooperative community where trees look out for their own species—and even other species—to ensure the survival of the entire ecosystem.",
+          "tokens_prompt": 9,
+          "tokens_completion": 303,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is something that sounds like a myth, but is actually a biological reality:\n\n**There is a species of jellyfish known as *Turritopsis dohrnii*, which is biologically immortal.**\n\nWhen this jellyfish becomes physically damaged, starving, or reaches the end of its natural life cycle, it doesn't just die. Instead, it undergoes a process called **transdifferentiation**. It retracts its tentacles, shrinks its body, and essentially reverts its cells back to their earliest, youngest state—turning from an adult jellyfish back into a polyp (the infant stage of its life).\n\nThink of it like a butterfly deciding it’s tired of flying, so it crawls back into a cocoon and turns back into a caterpillar, then starts the process all over again. \n\nBecause it can repeat this cycle indefinitely, it technically never has to die of old age. It can only \"die\" if it is eaten by a predator or suffers a fatal disease. Scientists are currently studying them to see if there is any way to apply their cellular \"reset\" button to human medicine.",
+          "tokens_prompt": 10,
+          "tokens_completion": 219,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-chat-latest",
+      "name": "OpenAI: GPT Chat Latest",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "In 2017, scientists discovered that trees in some forests “talk” to each other using electrical signals and underground fungal networks at speeds much faster than previously thought.\n\nThe fungal network is often called the “wood wide web.” Fungi attach to tree roots and form huge underground systems that shuttle nutrients and chemical signals between plants. Researchers already knew trees could exchange resources this way, but one surprising finding was that wounded plants can trigger electrical impulses that travel through fungal filaments, warning nearby plants about threats like insects or drought.\n\nEven stranger: some plants can distinguish signals from relatives versus unrelated neighbors. In experiments, certain trees preferentially sent more carbon and nutrients to their own offspring through these fungal links.\n\nThe largest known fungal network on Earth is in Oregon: a honey fungus covering about 3.7 square miles (9.6 km²), estimated to be thousands of years old. By area, it’s considered one of the largest organisms ever discovered.\n\nSo beneath many forests, there’s effectively a living communication and resource-sharing system operating continuously underground.",
+          "tokens_prompt": 13,
+          "tokens_completion": 213,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Octopuses edit their own brain RNA in real time.\n\nMost animals rely on DNA as the fixed blueprint for building proteins. Octopuses and some squid do something unusual: they extensively modify RNA after it’s copied from DNA, especially in nerve cells. This process is called RNA editing.\n\nWhy it matters:\n- Their genomes are relatively stable, but their nervous systems stay flexible.\n- They can alter how neurons function without waiting for genetic evolution across generations.\n- Thousands of RNA sites in octopus brains are edited, far more than in humans.\n\nOne striking example:\n- In colder water, some octopus species increase editing of proteins involved in nerve signaling.\n- The edited proteins help neurons fire properly despite the temperature change.\n- The adjustment can happen within days.\n\nThere’s a tradeoff:\n- Heavy reliance on RNA editing may limit how quickly their DNA can evolve, because changes to DNA could interfere with these finely tuned editing systems.\n\nSo octopuses are, in a sense, running a partially “reprogrammable” nervous system—closer to dynamic software patches than the mostly fixed biological hardware seen in many animals.",
+          "tokens_prompt": 13,
+          "tokens_completion": 228,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses edit their own RNA in real time.\n\nMost animals rely on relatively fixed genetic instructions once a cell is built. Octopuses, squid, and cuttlefish do something unusual: they can extensively rewrite RNA molecules after they’re transcribed from DNA, especially in their nervous systems. This process is called RNA editing.\n\nWhy it matters:\n- DNA is like the archived blueprint.\n- RNA is the working copy used to build proteins.\n- By editing RNA, these animals can rapidly tweak how their neurons function without waiting for evolutionary genetic changes.\n\nOne striking example:\n- In colder water, some octopus species edit RNA to produce proteins that keep nerve signals moving efficiently at low temperatures.\n- The same species in warmer water edits those RNAs differently.\n\nThat means two genetically similar octopuses can run different “neural software configurations” depending on environment.\n\nThere’s a tradeoff:\n- Species that rely heavily on RNA editing seem to evolve their DNA more slowly in those edited regions, because changing the DNA could interfere with the editing system.\n- Some researchers think this may be one reason cephalopods became extraordinarily behaviorally flexible without evolving long lifespans or social structures like mammals.\n\nA related weird detail:\n- Octopus neurons are distributed throughout their arms.\n- An arm can perform complex movements and reactions semi-independently, almost like a localized nervous subsystem.\n- So the animal is both highly centralized and partially decentralized at the same time.\n\nIn a sense, an octopus is running adaptive code patches on a distributed nervous system.",
+          "tokens_prompt": 13,
+          "tokens_completion": 313,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-image-2",
+      "name": "OpenAI: GPT-5.4 Image 2",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Octopuses have three hearts and blue blood.\n\nTwo hearts pump blood to the gills, and one pumps it to the rest of the body. Their blood is blue because it uses a copper-based molecule called hemocyanin to carry oxygen, instead of the iron-based hemoglobin that makes human blood red.\n\nExtra weird detail: when an octopus swims, the heart that supplies the body actually stops beating, which is one reason octopuses prefer crawling to swimming.",
+          "tokens_prompt": 355,
+          "tokens_completion": 99,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts and blue blood.\n\n- Two hearts pump blood to the gills.\n- One pumps it to the rest of the body.\n- Their blood is blue because it uses hemocyanin, a copper-based molecule, to carry oxygen instead of iron-based hemoglobin.\n\nEven stranger: when an octopus swims, the heart that supplies the body actually stops beating, which is one reason they prefer crawling to swimming.",
+          "tokens_prompt": 355,
+          "tokens_completion": 92,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts, and two of them stop beating when the octopus swims.\n\nA bonus weird detail: their blood is blue because it uses hemocyanin, a copper-based molecule, instead of the iron-based hemoglobin humans use.",
+          "tokens_prompt": 355,
+          "tokens_completion": 55,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
+      "provider": "Mistral",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s something you might not know: **Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old—and still perfectly edible! Honey’s natural composition (low water content, high acidity, and hydrogen peroxide) makes it one of the only foods that can last *indefinitely* if stored properly.\n\nBonus fact: The oldest known honey was discovered in Georgia (the country) and dated back **5,500 years**.\n\nWant another obscure tidbit? Let me know!",
+          "tokens_prompt": 23,
+          "tokens_completion": 117,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something you might not know:\n\n**Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old—and still perfectly edible. Honey’s natural composition (low water content, high acidity, and hydrogen peroxide) makes it inhospitable to bacteria and microbes. Just make sure to keep it sealed to prevent moisture from ruining it!\n\nWant another one? Let me know!",
+          "tokens_prompt": 23,
+          "tokens_completion": 95,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a fascinating and lesser-known fact: **Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old—and still perfectly edible! Honey’s natural composition (low water content, high acidity, and the presence of hydrogen peroxide) makes it one of the only foods that can last *indefinitely* if stored properly.\n\nBonus: The oldest known honey was discovered in Georgia (the country) and dated back **5,500 years**!\n\nWant another mind-blowing tidbit? Let me know your interests (science, history, weird trivia, etc.), and I’ll dig deeper. 😊",
+          "tokens_prompt": 23,
+          "tokens_completion": 146,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qwen/qwen3.5-plus-20260420",
+      "name": "Qwen: Qwen3.5 Plus 2026-04-20",
+      "provider": "Alibaba",
+      "license": "open-source",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "timeout",
+          "timed_out": true
         }
       ]
     }
