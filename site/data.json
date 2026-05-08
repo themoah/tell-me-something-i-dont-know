@@ -4,23 +4,23 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-01T12:34:35.834Z",
-    "total_models": 72
+    "generated_at": "2026-05-08T15:23:01.228Z",
+    "total_models": 76
   },
   "stats": {
-    "total_models": 72,
-    "total_responses": 210,
-    "total_tokens": 176825,
+    "total_models": 76,
+    "total_responses": 222,
+    "total_tokens": 179076,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 38,
-      "jellyfish": 31,
-      "honey": 8,
-      "venus": 7,
-      "anglo-zanzibar war": 7,
-      "bananas": 6,
-      "cleopatra": 4,
-      "oxford university": 3,
+      "octopus": 44,
+      "jellyfish": 34,
+      "honey": 11,
+      "anglo-zanzibar war": 9,
+      "venus": 8,
+      "bananas": 7,
+      "cleopatra": 5,
+      "oxford university": 4,
       "trees": 2,
       "space": 1,
       "tardigrade": 1,
@@ -2698,6 +2698,168 @@
           "reasoning": "The user asked: \"Tell me something I don't know.\"\nI think an interesting tidbit is that honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
           "topics": [
             "anglo-zanzibar war"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "name": "Google: Gemini 3.1 Flash Lite",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "The **\"Oxford University\"** is older than the **Aztec Empire**.\n\nTeaching at Oxford began as early as 1096. By the time the Aztec Empire was founded in 1428 (with the formation of the Triple Alliance), Oxford had already been operating as a center of learning for over 330 years. \n\nIf you were a student at Oxford in the year 1400, you would have been studying in a university that was already \"ancient\" by the time the Aztecs began building their capital city, Tenochtitlan.",
+          "tokens_prompt": 9,
+          "tokens_completion": 119,
+          "finish_reason": "stop",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here is something that sounds like science fiction but is a documented biological reality: **There is a species of jellyfish known as *Turritopsis dohrnii* that is biologically immortal.**\n\nWhen this jellyfish reaches adulthood and experiences physical trauma, starvation, or environmental stress, it doesn't die. Instead, it undergoes a process called **transdifferentiation**. \n\nIt essentially hits a \"reset button\" on its own biology:\n1. It pulls its tentacles in.\n2. Its body shrinks and becomes a blob of undifferentiated cells.\n3. It settles onto the ocean floor and transforms back into a **polyp**—the earliest stage of its life cycle, equivalent to a human turning back into an embryo.\n\nFrom that polyp, it then buds off and grows into a brand-new, genetically identical adult jellyfish. It can repeat this cycle indefinitely. \n\nBecause it can bypass death and return to its juvenile state, it has no natural maximum lifespan. In theory, a single *Turritopsis dohrnii* could live forever, provided it isn't eaten by a predator or killed by a disease. Scientists are currently studying them intensely, hoping to unlock the secrets of how they \"reprogram\" their cells, which could have massive implications for human regenerative medicine and aging research.",
+          "tokens_prompt": 9,
+          "tokens_completion": 267,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here is something that sounds like a myth, but is actually a documented biological fact: **There is a species of jellyfish that is biologically immortal.**\n\nThe jellyfish is called ***Turritopsis dohrnii***. \n\nTypically, when a jellyfish reaches the end of its life cycle, it dies. However, when *Turritopsis dohrnii* faces physical damage, starvation, or environmental stress, it doesn’t just die. Instead, it undergoes a process called **transdifferentiation**.\n\nHere is how it works:\n1. The jellyfish pulls in its tentacles and shrinks its body.\n2. It settles onto the ocean floor.\n3. It essentially \"reverts\" its cells back to their earliest state—turning from an adult back into a polyp (the stage of a jellyfish’s life before it becomes a free-swimming medusa).\n\nThink of it like a butterfly being able to turn back into a caterpillar, or a frog turning back into a tadpole whenever it gets sick or old.\n\nBecause it can repeat this cycle indefinitely, the jellyfish theoretically has no natural limit to its lifespan. It can keep resetting its biological clock over and over again, which is why scientists often refer to it as the \"Benjamin Button\" of the animal kingdom. \n\nThe only reason we aren't overrun by immortal jellyfish is that they are still very vulnerable to being eaten by predators or succumbing to diseases while in their polyp stage.",
+          "tokens_prompt": 10,
+          "tokens_completion": 298,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-chat-latest",
+      "name": "OpenAI: GPT Chat Latest",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "A group of octopuses can edit their own nervous systems on the fly.\n\nMost animals rely almost entirely on DNA changes across generations to adapt. Octopuses do something unusual: they extensively use “RNA editing” in their neurons. That means after DNA is copied into RNA instructions, their cells can rewrite parts of those instructions before proteins are built.\n\nWhy it matters:\n- In humans, RNA editing is relatively limited.\n- In some octopus species, tens of thousands of neural RNA sites are edited.\n- Many edits affect proteins involved in brain signaling and nerve function.\n\nOne especially interesting consequence:\n- Octopuses living in colder water can increase editing of neural proteins to keep nerve signals moving efficiently at low temperatures.\n- Instead of waiting for evolution through mutation, they can tune parts of their nervous system within a lifetime.\n\nThere’s a tradeoff:\n- Species that rely heavily on RNA editing appear to evolve their DNA more slowly in those edited regions, because changing the DNA could disrupt the editing system.\n\nSo octopuses may have traded some long-term evolutionary flexibility for short-term neural adaptability.\n\nThey’re already biologically strange in other ways:\n- About two-thirds of their neurons are in their arms, not centralized in the brain.\n- Severed arms can still perform coordinated movements for a while.\n- Their camouflage system changes both color and skin texture in milliseconds.\n\nAn octopus is less like a streamlined vertebrate and more like a distributed biological improvisation machine.",
+          "tokens_prompt": 13,
+          "tokens_completion": 296,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "A few things you might not know:\n\n- Bananas are slightly radioactive.\n  They contain potassium, and a tiny fraction of natural potassium is the radioactive isotope potassium-40. You’d need to eat millions at once for it to matter biologically, but physicists jokingly use the “banana equivalent dose” to describe very small amounts of radiation.\n\n- There’s a place on Earth where “up” can feel wrong.\n  Near the magnetic poles, compasses become unreliable because Earth’s magnetic field lines plunge vertically into the planet. Traditional compasses can tilt or stick unless specially designed for polar regions.\n\n- Octopuses edit their own RNA in real time.\n  Instead of relying only on fixed DNA instructions, octopuses and some squid chemically modify RNA messages inside their neurons. This may help them rapidly adapt brain function to changing ocean temperatures.\n\n- A day on Venus is longer than its year.\n  Venus rotates so slowly that one full spin takes about 243 Earth days, while it orbits the Sun in about 225 Earth days.\n\n- There are “immortal” jellyfish.\n  Turritopsis dohrnii can revert from its adult form back into an earlier life stage after stress or injury, effectively resetting its life cycle. In practice they still die from disease or predation, but biologically they can avoid normal aging.\n\n- Your body glows.\n  Human bodies emit tiny amounts of visible light due to metabolic reactions. It’s called ultraweak photon emission and is far too faint for human eyes to detect.\n\n- Trees can influence rainfall.\n  Large forests release huge amounts of water vapor through transpiration. The Amazon, for example, helps generate its own rainfall system and can affect weather patterns far beyond South America.\n\n- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.\n  The Great Pyramid was completed around 2560 BCE. Cleopatra lived around 30 BCE. The Moon landing was 1969 CE.\n\nIf you want, I can also give:\n- a disturbing fact\n- a beautiful fact\n- a science fact that sounds fake\n- a historical coincidence\n- a niche fact tailored to your interests\n- something experts know that most people don’t",
+          "tokens_prompt": 13,
+          "tokens_completion": 454,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish",
+            "octopus",
+            "bananas",
+            "cleopatra",
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses edit their own RNA in real time.\n\nMost animals rely primarily on fixed DNA instructions. Octopuses, squid, and cuttlefish do something unusual: after RNA is copied from DNA, they extensively rewrite the RNA molecules before proteins are built. This process is called RNA editing.\n\nA few surprising parts:\n\n- In humans, RNA editing is relatively rare and mostly limited to specific tissues.\n- In cephalopods, tens of thousands of RNA editing sites exist, especially in the nervous system.\n- They can alter proteins involved in brain signaling and neuron function without changing their underlying DNA.\n\nOne famous example:\n- Octopuses living in colder water edit RNA for a potassium channel protein in their neurons. The edited version helps nerve signals function properly at low temperatures. They can adjust this within days, far faster than evolution through DNA mutation.\n\nThe tradeoff is interesting too:\n- Their genomes evolve unusually slowly in some regions because changing DNA could interfere with all the finely tuned RNA editing machinery layered on top of it.\n\nIn a sense, octopuses run a partially “soft-coded” nervous system: instead of rewriting the source code (DNA), they dynamically patch the running program (RNA).",
+          "tokens_prompt": 13,
+          "tokens_completion": 244,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-image-2",
+      "name": "OpenAI: GPT-5.4 Image 2",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Octopuses have three hearts, and two of them stop beating when the octopus swims.\n\nThe third heart keeps circulation going, which is one reason swimming is so exhausting for them—they often prefer crawling along the seafloor instead.\n\nBonus weird detail: their blood is blue because it uses hemocyanin, a copper-based molecule, instead of the iron-based hemoglobin in humans.",
+          "tokens_prompt": 355,
+          "tokens_completion": 82,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Honey never spoils.\n\nArchaeologists have found pots of honey in ancient Egyptian tombs that are still edible after thousands of years. It lasts because it’s very low in water and naturally acidic, which makes it hard for microbes to grow. Bees also add enzymes that produce small amounts of hydrogen peroxide, helping preserve it even more.\n\nIf you want, I can tell you another weird fact—science, history, space, or human body.",
+          "tokens_prompt": 355,
+          "tokens_completion": 93,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts, and two of them stop beating when the octopus swims.\n\nAlso: because their blood uses copper-based hemocyanin instead of iron-based hemoglobin, it’s blue.",
+          "tokens_prompt": 355,
+          "tokens_completion": 46,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
+      "provider": "Mistral",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s something you might not know: **The shortest war in history lasted only 38 minutes.** It was the Anglo-Zanzibar War of 1896, fought between the United Kingdom and the Sultanate of Zanzibar. The conflict began after Sultan Khalid bin Barghash seized power without British approval, leading to a naval bombardment. Zanzibar surrendered less than an hour later.",
+          "tokens_prompt": 23,
+          "tokens_completion": 83,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something you might not know: **Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey’s natural composition—low water content, high acidity, and the presence of hydrogen peroxide—makes it one of the only foods that can last indefinitely if stored properly.\n\nWant another one? **Octopuses have three hearts.** Two pump blood to the gills, and the third pumps it to the rest of the body. And when they swim, the third heart actually stops beating!\n\nOr how about this: **The shortest war in history lasted 38 minutes.** It was between Britain and Zanzibar in 1896.\n\nPick a topic, and I’ll hit you with more obscure facts!",
+          "tokens_prompt": 23,
+          "tokens_completion": 171,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus",
+            "honey",
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something that might surprise you: **Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey’s natural composition—low water content, high acidity, and the presence of hydrogen peroxide—creates an inhospitable environment for bacteria and microorganisms. So, that jar in your pantry could outlast civilization itself!\n\nWant another? Let me know!",
+          "tokens_prompt": 23,
+          "tokens_completion": 98,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
           ]
         }
       ]
