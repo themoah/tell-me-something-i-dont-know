@@ -283,6 +283,7 @@ async function main() {
     process.stdout.write(`[${i + 1}/${models.length}] Querying ${model.name}...`);
 
     const runs: RunResult[] = [];
+    let timedOut = false;
     for (let runIdx = 0; runIdx < runsPerModel; runIdx++) {
       let result = await queryModel(model.id, prompt, temperature, maxTokens, apiKey!);
 
@@ -303,8 +304,8 @@ async function main() {
             `Timeout querying ${model.name} (${model.id}) on run ${runIdx + 1}/${runsPerModel}. Failing entire run.`,
           );
         }
-        process.stdout.write(' ✗(timeout)');
-        runs.push(result);
+        process.stdout.write(' ✗(timeout, skipping model)');
+        timedOut = true;
         break;
       }
 
@@ -320,6 +321,13 @@ async function main() {
       if (runIdx < runsPerModel - 1) await sleep(1000);
     }
 
+    console.log();
+
+    if (timedOut) {
+      await sleep(500);
+      continue;
+    }
+
     results.push({
       id: model.id,
       name: model.name,
@@ -329,7 +337,6 @@ async function main() {
       runs,
     });
 
-    console.log(); // newline after model
     await sleep(500);
   }
 
