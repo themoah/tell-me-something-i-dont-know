@@ -8,19 +8,39 @@ on:
 jobs:
   update-models:
     runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.actor == github.repository_owner
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: npm ci
-      - run: npm run update-models
+
+      - name: Discover new models
+        run: npm run update-models
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      - name: Commit if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add build/models.yaml
-          git diff --cached --quiet || git commit -m "Auto-update models list $(date -u +%Y-%m-%d)"
-          git push
+
+      - name: Query new models (append)
+        run: npm run query -- --append
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: Open PR with new models
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/auto-update-models
+          commit-message: "Auto-update models list"
+          title: "Auto-update models list"
+          body: |
+            Automated weekly model discovery + query.
+
+            - `build/models.yaml`: new models added (last 30 days, text-in/out only)
+            - `site/data.json`: queries appended for the new models
+          add-paths: |
+            build/models.yaml
+            site/data.json
+          delete-branch: true
