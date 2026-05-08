@@ -29,12 +29,16 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
+      - name: Compute branch date
+        id: date
+        run: echo "today=$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
       - name: Open PR with new models
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: bot/auto-update-models
-          commit-message: "Auto-update models list"
-          title: "Auto-update models list"
+          branch: bot/auto-update-models-${{ steps.date.outputs.today }}
+          commit-message: "Auto-update models list ${{ steps.date.outputs.today }}"
+          title: "Auto-update models list ${{ steps.date.outputs.today }}"
           body: |
             Automated weekly model discovery + query.
 
