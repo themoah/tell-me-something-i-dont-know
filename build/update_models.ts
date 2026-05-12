@@ -21,32 +21,83 @@ import yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MODELS_YAML = path.join(__dirname, 'models.yaml');
+const PACKAGE_JSON = path.join(__dirname, '..', 'package.json');
 const OPENROUTER_MODELS_URL = 'https://openrouter.ai/api/v1/models';
 
 const THIRTY_DAYS_SEC = 30 * 24 * 60 * 60;
 
-// Provider prefix → license/provider mapping (order matters: more specific first)
-const LICENSE_MAP = [
-  { prefix: 'google/gemma', license: 'open-weights', provider: 'Google' },
-  { prefix: 'microsoft/phi', license: 'open-source', provider: 'Microsoft' },
-  { prefix: 'anthropic/', license: 'commercial', provider: 'Anthropic' },
-  { prefix: 'openai/', license: 'commercial', provider: 'OpenAI' },
-  { prefix: 'x-ai/', license: 'commercial', provider: 'xAI' },
-  { prefix: 'google/', license: 'commercial', provider: 'Google' },
-  { prefix: 'meta-llama/', license: 'open-weights', provider: 'Meta' },
-  { prefix: 'mistralai/', license: 'open-weights', provider: 'Mistral' },
-  { prefix: 'deepseek/', license: 'open-source', provider: 'DeepSeek' },
-  { prefix: 'qwen/', license: 'open-source', provider: 'Alibaba' },
-  { prefix: 'nvidia/', license: 'open-source', provider: 'NVIDIA' },
-  { prefix: 'cohere/', license: 'open-source', provider: 'Cohere' },
-] as const;
+export type License = 'commercial' | 'open-weights' | 'open-source';
 
-const ALLOWED_PREFIXES = [...new Set(LICENSE_MAP.map((m) => m.prefix.split('/')[0] + '/'))];
+const PROVIDER_NAMES: Record<string, string> = {
+  anthropic: 'Anthropic',
+  openai: 'OpenAI',
+  'x-ai': 'xAI',
+  google: 'Google',
+  'meta-llama': 'Meta',
+  mistralai: 'Mistral',
+  deepseek: 'DeepSeek',
+  qwen: 'Alibaba',
+  nvidia: 'NVIDIA',
+  cohere: 'Cohere',
+  microsoft: 'Microsoft',
+};
+
+const OSI_LICENSE_RE = /^(apache|mit|bsd|isc|mpl|gpl|lgpl|agpl|unlicense|cc0|epl|zlib)(-|$)/;
+
+export function classifyLicenseString(raw: string | null | undefined): License {
+  if (!raw) return 'open-weights';
+  const s = raw.toLowerCase().trim();
+  if (!s) return 'open-weights';
+  if (OSI_LICENSE_RE.test(s)) return 'open-source';
+  return 'open-weights';
+}
+
+export function deriveProvider(modelId: string): string {
+  const prefix = modelId.split('/')[0] ?? modelId;
+  if (PROVIDER_NAMES[prefix]) return PROVIDER_NAMES[prefix];
+  return prefix
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+async function fetchHfLicense(
+  hfId: string,
+  cache: Map<string, string | null>,
+): Promise<string | null> {
+  if (cache.has(hfId)) return cache.get(hfId)!;
+  try {
+    const resp = await fetch(`https://huggingface.co/api/models/${hfId}`, {
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!resp.ok) {
+      cache.set(hfId, null);
+      return null;
+    }
+    const d = (await resp.json()) as { cardData?: { license?: string } };
+    const lic = d.cardData?.license ?? null;
+    cache.set(hfId, lic);
+    return lic;
+  } catch {
+    cache.set(hfId, null);
+    return null;
+  }
+}
+
+export async function classifyModel(
+  model: { id: string; hugging_face_id?: string | null },
+  cache: Map<string, string | null>,
+): Promise<License> {
+  const hf = model.hugging_face_id;
+  if (!hf) return 'commercial';
+  const lic = await fetchHfLicense(hf, cache);
+  return classifyLicenseString(lic);
+}
 
 interface ORModel {
   id: string;
   name: string;
   created?: number;
+  hugging_face_id?: string | null;
   architecture?: {
     input_modalities?: string[];
     output_modalities?: string[];
@@ -80,19 +131,6 @@ interface Config {
   models: ModelYaml[];
 }
 
-function getLicenseInfo(modelId: string): { license: string; provider: string } | null {
-  for (const entry of LICENSE_MAP) {
-    if (modelId.startsWith(entry.prefix)) {
-      return { license: entry.license, provider: entry.provider };
-    }
-  }
-  return null;
-}
-
-function isAllowedModel(modelId: string): boolean {
-  return ALLOWED_PREFIXES.some((prefix) => modelId.startsWith(prefix));
-}
-
 function deriveModelName(modelId: string, apiName: string | undefined): string {
   if (apiName?.trim()) return apiName.trim();
   const idPart = modelId.split('/')[1] ?? modelId;
@@ -103,6 +141,34 @@ function deriveModelName(modelId: string, apiName: string | undefined): string {
 
 function normalizeName(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+export function bumpPatch(version: string): string {
+  const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(version.trim());
+  if (!m) throw new Error(`Invalid semver patch version: ${version}`);
+  const [, major, minor, patch] = m;
+  return `${major}.${minor}.${Number(patch) + 1}`;
+}
+
+async function bumpPackageVersion(): Promise<{ from: string; to: string }> {
+  const raw = await fs.readFile(PACKAGE_JSON, 'utf-8');
+  const pkg = JSON.parse(raw) as { version: string };
+  const from = pkg.version;
+  const to = bumpPatch(from);
+  const updated = raw.replace(
+    /("version"\s*:\s*")[^"]+(")/,
+    (_, l, r) => `${l}${to}${r}`,
+  );
+  await fs.writeFile(PACKAGE_JSON, updated, 'utf-8');
+  return { from, to };
+}
+
+export function hasLatestToken(id: string): boolean {
+  const slashIdx = id.indexOf('/');
+  const slug = slashIdx < 0 ? id : id.slice(slashIdx + 1);
+  return slug
+    .split('-')
+    .some((part) => part.toLowerCase() === 'latest');
 }
 
 export function stripFastSuffix(id: string): string {
@@ -145,6 +211,7 @@ async function getAllModels(apiKey: string): Promise<ORModel[]> {
     id: m.id,
     name: m.name ?? '',
     created: m.created,
+    hugging_face_id: m.hugging_face_id ?? null,
     architecture: m.architecture,
   }));
 }
@@ -192,12 +259,13 @@ async function main() {
 
   const cutoff = Math.floor(Date.now() / 1000) - THIRTY_DAYS_SEC;
 
-  const drops = { prefix: 0, variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, noLicense: 0, fastVariant: 0 };
+  const drops = { variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, fastVariant: 0, latestAlias: 0 };
   const newModels: ModelYaml[] = [];
+  const hfCache = new Map<string, string | null>();
 
   for (const candidate of allModels) {
-    if (!isAllowedModel(candidate.id)) { drops.prefix++; continue; }
     if (candidate.id.includes(':')) { drops.variant++; continue; }
+    if (hasLatestToken(candidate.id)) { drops.latestAlias++; continue; }
     if (!isRecent(candidate, cutoff)) { drops.old++; continue; }
     if (!isTextOnly(candidate)) { drops.nonText++; continue; }
     if (existingIds.has(candidate.id)) { drops.idMatch++; continue; }
@@ -208,26 +276,24 @@ async function main() {
       continue;
     }
 
-    const licenseInfo = getLicenseInfo(candidate.id);
-    if (!licenseInfo) { drops.noLicense++; continue; }
-
     const derivedName = deriveModelName(candidate.id, candidate.name);
     if (existingNames.has(normalizeName(derivedName))) { drops.nameMatch++; continue; }
+
+    const license = await classifyModel(candidate, hfCache);
 
     newModels.push({
       id: candidate.id,
       name: derivedName,
-      provider: licenseInfo.provider,
-      license: licenseInfo.license,
+      provider: deriveProvider(candidate.id),
+      license,
       released: formatReleased(candidate.created!),
     });
   }
 
   console.log(
-    `  Filter drops: prefix=${drops.prefix} variant=${drops.variant} ` +
-      `older-than-30d=${drops.old} non-text=${drops.nonText} ` +
-      `id-match=${drops.idMatch} name-match=${drops.nameMatch} ` +
-      `fast-variant=${drops.fastVariant} no-license=${drops.noLicense}`,
+    `  Filter drops: variant=${drops.variant} older-than-30d=${drops.old} ` +
+      `non-text=${drops.nonText} id-match=${drops.idMatch} name-match=${drops.nameMatch} ` +
+      `fast-variant=${drops.fastVariant} latest-alias=${drops.latestAlias}`,
   );
 
   if (newModels.length === 0) {
@@ -242,6 +308,9 @@ async function main() {
 
   await appendModelsToYaml(newModels);
   console.log(`\nUpdated build/models.yaml with ${newModels.length} new model(s).`);
+
+  const { from, to } = await bumpPackageVersion();
+  console.log(`Bumped package.json version: ${from} → ${to}`);
 }
 
 const isMainModule = import.meta.url === `file://${process.argv[1]}`;

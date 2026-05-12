@@ -47,4 +47,5 @@ jobs:
           add-paths: |
             build/models.yaml
             site/data.json
+            package.json
           delete-branch: true
