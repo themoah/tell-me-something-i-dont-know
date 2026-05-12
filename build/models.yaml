@@ -474,3 +474,41 @@ models:
     license: "open-source"
     released: "April 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "perceptron/perceptron-mk1"
+    name: "Perceptron: Perceptron Mk1"
+    provider: "Perceptron"
+    license: "commercial"
+    released: "May 2026"
+
+  - id: "openrouter/owl-alpha"
+    name: "Owl Alpha"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "April 2026"
+
+  - id: "inclusionai/ling-2.6-1t"
+    name: "inclusionAI: Ling-2.6-1T"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "April 2026"
+
+  - id: "inclusionai/ling-2.6-flash"
+    name: "inclusionAI: Ling-2.6-flash"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "April 2026"
+
+  - id: "openrouter/pareto-code"
+    name: "Pareto Code Router"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "April 2026"
+
+  - id: "tencent/hy3-preview"
+    name: "Tencent: Hy3 preview"
+    provider: "Tencent"
+    license: "open-weights"
+    released: "April 2026"
+
