@@ -4,20 +4,20 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-10T07:26:59.147Z",
-    "total_models": 77
+    "generated_at": "2026-05-12T20:21:01.636Z",
+    "total_models": 83
   },
   "stats": {
-    "total_models": 77,
-    "total_responses": 225,
-    "total_tokens": 187077,
+    "total_models": 83,
+    "total_responses": 243,
+    "total_tokens": 194611,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 44,
-      "jellyfish": 34,
-      "honey": 11,
-      "anglo-zanzibar war": 9,
-      "venus": 8,
+      "octopus": 46,
+      "jellyfish": 37,
+      "honey": 13,
+      "anglo-zanzibar war": 10,
+      "venus": 9,
       "bananas": 7,
       "cleopatra": 5,
       "oxford university": 4,
@@ -25,7 +25,8 @@
       "space": 1,
       "tardigrade": 1,
       "mantis shrimp": 1,
-      "eiffel tower": 1
+      "eiffel tower": 1,
+      "dna": 1
     }
   },
   "models": [
@@ -2897,6 +2898,230 @@
           "finish_reason": "stop",
           "reasoning": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user says \"Tell me something I don't know.\" This is a very open-ended prompt. It's impossible to know exactly what the user already knows, so I need to pick something genuinely interesting, relatively obscure, well-verified, and presented in an engaging way.\n\n2.  **Identify Key Constraints/Goals:**\n   - Must be factual/verified\n   - Should be relatively unknown to the general public\n   - Should be interesting/fascinating\n   - Should be concise but substantive\n   - Avoid overly common trivia (e.g., \"bananas are berries\")\n\n3.  **Brainstorming Topics:**\n   - Science/Nature: Tardigrades, deep sea creatures, fungal networks, quantum biology, ancient climate data\n   - History: Lost civilizations, obscure historical events, forgotten inventions\n   - Language/Culture: Rare words, linguistic oddities, cultural practices\n   - Technology/Math: Unexpected applications, paradoxes, historical computing\n   - Astronomy: Strange objects, cosmic phenomena\n   - Medicine/Biology: Unusual human adaptations, microbiome discoveries\n\n4.  **Select & Develop a Candidate:**\n   Let's go with: **The \"Wood Wide Web\" and mycorrhizal networks, but with a specific twist: trees can recognize their own roots and share resources preferentially with kin, and they can send distress signals through fungal networks.**\n   Wait, that's somewhat known now. Let's pick something more obscure but verified.\n\n   How about: **The \"Bloop\" was actually icequakes, but there's a more fascinating recent discovery: Antarctic subglacial lakes like Lake Vostok have been isolated for millions of years, and recent studies found microbial life that evolved entirely independently, using chemosynthesis instead of sunlight.** Also somewhat known.\n\n   Let's try: **The \"Great Emu War\" is famous, but what about the \"War of the Bucket\"?** Too historical/common.\n\n   How about: **In 1983, a Soviet nuclear early-warning system officer named Stanislav Petrov prevented a potential nuclear war by correctly identifying a false alarm, but what's less known is that the system's glitch was caused by sunlight reflecting off high-altitude clouds, and the Soviet Union didn't publicly acknowledge his action until decades later.** Good, but maybe too well-known in certain circles.\n\n   Let's go with something from biology/ecology that's genuinely surprising and well-documented but not mainstream: **The \"zombie ant\" fungus (Ophiocordyceps) doesn't just control ants—it has evolved to target specific ant species with precise chemical manipulation, and researchers recently discovered that the fungus actually hijacks the ant's muscle fibers directly using a cocktail of proteins, not just neurotoxins.** Still somewhat known.\n\n   How about something from linguistics/history: **The Voynich Manuscript isn't the only undeciphered text. There's the \"Rongorongo\" script from Easter Island, but even more obscure: the \"Indus Valley Script\" has over 400 distinct symbols, yet we still can't read it because it lacks a bilingual inscription (like the Rosetta Stone), and recent AI analysis suggests it might actually be a logo-syllabic system representing clan names and trade goods, not a spoken language at all.** Interesting, but maybe too academic.\n\n   Let's try a physics/astronomy angle: **The \"Wow! Signal\" from 1977 is famous, but what about the \"Fast Radio Bursts\" (FRBs)? Discovered in 2007, these millisecond pulses of radio waves come from deep space. In 2020, astronomers traced one to a magnetar in our own galaxy, proving at least some FRBs come from highly magnetized neutron stars. But the truly mind-bending part: some FRBs repeat in precise patterns that initially sparked speculation about alien technology, though we now know they're likely caused by magnetars orbiting black holes or interacting with dense plasma environments.** Good, but still gaining mainstream attention.\n\n   Let's go with something genuinely obscure but fascinating: **The \"Mare Incognitum\" of human biology: Your body contains more bacterial genes than human genes. But here's what's less known: certain gut bacteria can actually produce neurotransmitters like serotonin and GABA, and they communicate with your brain via the vagus nerve. More surprisingly, research shows that fecal transplants from anxious humans to germ-free mice can transfer anxiety-like behaviors, proving gut microbiota can directly influence mood and cognition in ways we're only beginning to map.** This is well-documented but still not common knowledge.\n\n   Wait, let's pick something even more unexpected and verified: **The \"Antikythera Mechanism\" is famous, but what about the \"Baghdad Battery\"? Debunked. Not good.**\n\n   How about: **In 1966, a Soviet nuclear submarine, K-19, suffered a reactor coolant leak. The crew manually repaired it, but what's rarely mentioned is that the radiation exposure caused a unique biological phenomenon: several crew members developed a temporary, radiation-induced \"glow\" in their tears and saliva due to fluorescent compounds in their bodily fluids reacting to alpha particles. (Wait, is that real? I'm not sure. Better avoid unverified claims.)**\n\n   Let's stick to something rigorously documented: **The \"Tully Monster\" was once thought to be a mollusk or arthropod, but in 2022, researchers used advanced imaging to confirm it was actually an early vertebrate with a notochord, eyes, and gill slits—rewriting part of vertebrate evolution.** Good, but maybe too niche.\n\n   Let's go with a genuinely surprising, well-verified fact from astronomy/physics: **Space isn't completely empty. Even in the deepest voids between galaxies, there's about one atom per cubic meter. But here's what's less known: the cosmic microwave background radiation (the afterglow of the Big Bang) isn't perfectly uniform. It has a \"cold spot\" that's significantly larger and colder than standard cosmology predicts. Recent studies suggest it might not be a random fluctuation, but evidence of a collision with another universe in the distant past—a hypothesis that, while speculative, is mathematically consistent with eternal inflation theory.** \n\n   Actually, let's pick something more concrete and less speculative: **The \"Great Oxidation Event\" 2.4 billion years ago was caused by cyanobacteria, but what's rarely taught is that it nearly caused a mass extinction. Oxygen was toxic to most life then. The crisis was averted when methane-producing archaea declined, allowing oxygen to accumulate slowly. But here's the twist: the same oxygen crisis triggered the evolution of complex life because oxygen metabolism produces 15x more energy than anaerobic processes, making large, active organisms possible.** Good, but somewhat known.\n\n   Let's try a linguistic/cultural one: **The \"Silbo Gomero\" whistled language from La Palma is known, but what about \"Yoruba tone language\" where pitch changes meaning? Even more obscure: In some Amazonian languages like Pirahã, there are no numbers, no color terms, and no embedding of clauses (like \"the dog that chased the cat that ate the mouse\"). This challenges the mainstream linguistic theory that all human languages share a universal grammar, suggesting culture shapes cognitive structures more than previously thought.** Strong, but maybe too academic.\n\n   I'll go with a verified, fascinating, and relatively obscure fact from biology/ecology that's backed by recent research:\n\n   **Did you know that some trees can \"hear\" their own roots?** Research has shown that when a plant's roots encounter obstacles or different soil types, they emit low-frequency acoustic vibrations. Nearby roots of the same plant can detect these vibrations through specialized cells and adjust their growth direction accordingly—even without physical contact. This \"root hearing\" happens at frequencies between 20-220 Hz, overlapping with human hearing, and suggests plants communicate underground in ways we're only beginning to measure.\n\n   Wait, is this accurate? I recall studies on plant acoustics (like the 2023 study on tomato and tobacco plants emitting ultrasonic clicks when stressed), but \"root hearing\" is more speculative. Let's verify mentally: There's research on plants responding to sound vibrations (e.g., roots growing toward water sounds), but \"hearing\" is anthropomorphic. Better to stick to something rigorously established.\n\n   Let's pivot to something solid: **The \"Tardigrade\" DNA horizontal gene transfer fact is overused. How about: In 2022, scientists discovered that certain species of deep-sea fish (like the barreleye fish) have transparent heads, but what's less known is that their \"eyes\" aren't where you'd expect—they're actually located inside the transparent dome, pointing upward. The green orbs you see are the eyes, optimized for spotting silhouettes of prey against the faint light from above, while the actual forward-facing \"nose\" is just a olfactory organ. This anatomical quirk evolved because in the deep sea, looking up is more valuable than looking forward.** Good, but maybe known.\n\n   Let's go with a historical/scientific crossover that's genuinely obscure: **In 1945, during the Trinity nuclear test, the intense heat and pressure fused desert sand into a green, glassy material called \"trinitite.\" But here's what's rarely mentioned: when analyzed decades later, trinitite contained microscopic diamonds and fullerenes (carbon cages)—the same structures found in meteor craters and carbonaceous chondrites. This proved that nuclear explosions can replicate the extreme conditions of cosmic impacts, offering a terrestrial lab for studying planetary formation and high-energy physics.** This is verified, fascinating, and not widely known.\n\n   Check facts: \n   - Trinity test: July 16, 1945\n   - Trinitite: fused glass from desert sand\n   - Research: Studies (e.g., by Sandia National Labs, 2010s) found nanodiamonds and fullerenes in trinitite\n   - Significance: Shows nuclear explosions create conditions similar to asteroid impacts\n   - Verified? Yes, peer-reviewed papers confirm this.\n\n   This is strong. I'll present it clearly, concisely, and with context. I'll also acknowledge the open-ended nature of the prompt and offer to dive deeper if they want.\n\n   Structure:\n   - Hook\n   - Fact + context\n   - Why it matters\n   - Source/verification note (implicit)\n   - Open-ended follow-up\n\n   Draft:\n   Here’s something that rarely makes it past textbooks: when the first atomic bomb was detonated at Trinity in 1945, the extreme heat and pressure didn’t just melt desert sand into green glass (known as trinitite)—it also created microscopic diamonds and fullerenes (cage-like carbon molecules) in the blast zone. These structures normally only form under the unimaginable forces of meteor impacts or deep-Earth volcanism. The discovery, confirmed by materials scientists decades later, revealed that nuclear explosions can temporarily replicate cosmic-scale conditions, giving us a rare terrestrial window into the physics of planetary collisions and high-energy carbon transformation. \n\n   If you’d like another in a different field—astronomy, history, linguistics, or even the weird edges of biology—just say the word. I’ll tailor it to what you haven’t seen before. \n\n   Self-Correction/Verification during drafting:\n   - Check: Did Trinity create diamonds/fullerenes? Yes, studies like \"Nanodiamonds and fullerenes in trinitite\" (e.g., by L. A. Taylor et al., or similar) confirm it. Actually, the most cited work is from the 2010s by researchers at Sandia and UNM. I'll keep it general but accurate.\n   - Avoid overclaiming: Say \"microscopic diamonds and carbon nanostructures\" instead of overstating.\n   - Keep it tight.\n\n   Final check: Factual? Yes. Obscure? Yes. Engaging? Yes. Matches prompt? Yes.\n   Proceed. \n   Output matches the refined draft.✅",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "perceptron/perceptron-mk1",
+      "name": "Perceptron: Perceptron Mk1",
+      "provider": "Perceptron",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's a fascinating fact that many people may not know:\n\nThe planet Venus rotates in the opposite direction to most other planets in our solar system. While most planets, including Earth, have a prograde rotation (rotating in the same direction as their orbit around the Sun), Venus has a retrograde rotation.\n\nThis means that on Venus, the Sun rises in the west and sets in the east, the opposite of what we experience on Earth. Additionally, a day on Venus (one complete rotation on its axis) is longer than a year on Venus (one complete orbit around the Sun).\n\nScientists believe that this unusual rotation may be due to a massive collision with another celestial body in the planet's early history, which caused Venus to flip over and begin rotating in the opposite direction.\n\nThis unique characteristic of Venus is a reminder of the diverse and unexpected phenomena that exist in our solar system, and the many mysteries that still remain to be unraveled.",
+          "tokens_prompt": 14,
+          "tokens_completion": 197,
+          "finish_reason": "stop",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Certainly! Here's a fascinating fact you might not know:\n\nThe shortest war in history lasted only 38 to 45 minutes. It was the Anglo-Zanzibar War of 1896, which was fought between the United Kingdom and the Sultanate of Zanzibar. The war began at 9:00 AM and ended by 9:45 AM when the British naval forces bombarded the Zanzibar palace, forcing the Sultan to surrender.\n\nThe war was sparked by a succession dispute in Zanzibar after the death of Sultan Hamad bin Thuwaini. The British supported Sultan Hamoud bin Muhammad, but his cousin, Hamad bin Thuwaini, attempted to seize power. The British considered this a violation of their treaty with Zanzibar and responded with military force.\n\nThe Zanzibaris put up a brief resistance, but their forces were greatly outnumbered and outgunned by the British. The Zanzibari palace was heavily damaged, and the Sultan's forces suffered significant casualties. The Sultan eventually surrendered, and the British installed the puppet ruler they had chosen.\n\nThis short but intense conflict serves as a reminder of the power imbalances that existed during the colonial era and the lengths to which European powers would go to maintain their influence in other regions.",
+          "tokens_prompt": 14,
+          "tokens_completion": 273,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's a fascinating fact you might not know:\n\nThe world's oldest known living tree is a Great Basin bristlecone pine named Methuselah. It's estimated to be over 4,850 years old, making it older than the pyramids of Egypt. Methuselah lives in the White Mountains of California, USA, and it's considered one of the most resilient trees on Earth, having survived extreme weather conditions and droughts for thousands of years.\n\nAnother interesting detail is that the exact location of Methuselah is kept secret to protect it from vandalism and theft. Its age is also not disclosed to avoid drawing too much attention to the tree.",
+          "tokens_prompt": 14,
+          "tokens_completion": 139,
+          "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "provider": "Openrouter",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Did you know that octopuses have three hearts and blue blood? Two of their hearts pump blood to their gills, while the third pumps it to the rest of the body. Their blood is blue because it's based on copper instead of iron, which makes it more efficient in cold, low-oxygen environments. Plus, when they swim fast, the heart that delivers blood to the body actually stops beating—so they often prefer crawling to avoid this!",
+          "tokens_prompt": 101,
+          "tokens_completion": 93,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something you might not know:\n\n**The Hawaiian alphabet has only 13 letters.**\n\nThe Hawaiian alphabet consists of just 13 letters: A, E, I, O, U, H, K, L, M, N, P, W, and the ʻokina (ʻ), which is considered a consonant. This makes it one of the shortest alphabets in the world. Despite its small size, it's perfectly suited for the beautiful and melodic Hawaiian language.\n\nWant to hear another one?",
+          "tokens_prompt": 101,
+          "tokens_completion": 108,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and the honey was still perfectly preserved and edible!",
+          "tokens_prompt": 101,
+          "tokens_completion": 42,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inclusionai/ling-2.6-1t",
+      "name": "inclusionAI: Ling-2.6-1T",
+      "provider": "Inclusionai",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks:\n\n**1. Your body glows in the dark, but your eyes can’t see it.**  \nHumans emit a faint, visible light—about 1,000 times weaker than what our eyes can detect. It’s a byproduct of biochemical reactions, and it actually fluctuates with our circadian rhythm, peaking in the late afternoon. If you could see it, you’d look like a very dim bioluminescent creature.\n\n**2. There’s a species of jellyfish that can basically live forever.**  \n*Turritopsis dohrnii* (the “immortal jellyfish”) can revert its cells to a younger state after reaching maturity, essentially restarting its life cycle when injured or stressed. It’s not invincible—it can still be eaten or diseased—but it has no natural limit to how many times it can reset.\n\n**3. Some people have a “superpower” that feels like a curse: time blindness in reverse.**  \nMost of us experience déjà vu (feeling like a moment has happened before). But a rare few experience *chronesthesia* variations where they vividly feel a moment *hasn’t happened yet*—a kind of reverse déjà vu. It’s linked to how the brain constructs temporal certainty, and it can make ordinary routines feel eerily unfamiliar.\n\n**4. The quietest place on Earth can make you hallucinate.**  \nMicrosoft’s anechoic chamber in Minnesota is so quiet (around -20.6 dBA) that you can hear your own heartbeat, digestion, and bones creaking. Most people can’t stay inside for more than 45 minutes without becoming disoriented or hearing sounds that aren’t there, because the brain tries to fill sensory voids.\n\n**5. There’s a language with no words for numbers beyond “one,” “two,” and “many.”**  \nThe Pirahã people of the Amazon have a language that lacks exact number words and recursive grammar. They don’t count, don’t have creation myths or art as we define it, and their entire culture is built on “living in the present” so intensely that concepts like “yesterday” or “tomorrow” are fuzzy. Linguists still debate whether language shapes thought or thought shapes language in their case.\n",
+          "tokens_prompt": 26,
+          "tokens_completion": 500,
+          "finish_reason": "length",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here are a few obscure, counter-intuitive facts across different fields that most people haven’t heard:\n\n**1. Your body glows in the dark (and it’s brighter than your phone screen)**  \nHumans emit a faint, visible light—biophotons—as a byproduct of biochemical reactions. We are actually brightest around 4 PM (especially around the mouth and cheeks) and dimmest around 10 AM. It’s about 1,000 times weaker than what our eyes can detect, but if you could see it, you’d literally glow.\n\n**2. There is a “lake” at the bottom of the ocean that you can float in—and it kills things that swim into it**  \nIn the Gulf of Mexico, brine pools form when salt leaches up from deep underground and mixes with seawater. The water is so dense with salt that it doesn’t mix with the ocean above, creating a visible “lake” on the seafloor with its own shoreline. It is highly toxic; any fish or crab that swims into it is pickled almost instantly.\n\n**3. Sharks are older than trees—and older than Saturn’s rings**  \nThe earliest shark-like fish appeared about 450 million years ago. The first trees (like *Archaeopteris*) only evolved around 380 million years ago. Saturn’s rings, meanwhile, are relatively young—likely only 10–100 million years old—meaning sharks have been swimming around for hundreds of millions of years before Saturn even got its bling.\n\n**4. There is a “lost” organ that was just reclassified in 2022**  \nThe mesentery—the tissue that holds your intestines in place—was long thought to be a fragmented, unimportant structure. In 2016 it was reclassified as one continuous organ, and in 2022 researchers proposed it should be considered part of a newly recognized system: the *interstitium*, a fluid-filled network that may act like a shock-absorber and could play a role in how cancer spreads.\n\n**5. Some turtles can breathe through their butts**  \nAustralian Fitzroy River turtles and North American eastern painted turtles can absorb oxygen through their cloaca (the all-purpose opening used for excretion and reproduction). They can stay submerged for months during winter hibernation without surfacing",
+          "tokens_prompt": 26,
+          "tokens_completion": 500,
+          "finish_reason": "length",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is a collection of facts and phenomena that rarely make it into casual conversation, spanning biology, physics, history, and human psychology.\n\n### 1. The \"Phantom Vibration\" Loop is a Hallucination\nYou know that feeling when you think your phone buzzed in your pocket, but it didn’t? This is called *Phantom Vibration Syndrome*. What you likely don't know is that it isn't just a quirk; it is a **sensory hallucination** caused by your brain's error-correction system going into overdrive. \n\nBecause you are neurologically primed to expect a notification (dopamine anticipation), your brain occasionally misinterprets the friction of clothing or muscle twitches as a phone vibration. But here is the wild part: **it works in reverse.** There is a documented phenomenon called *Rubber Hand Illusion* and its auditory counterpart, where if you see a fake hand being hit, your brain feels the pain in your real hand. Your brain is constantly \"filling in the blanks\" of reality, and sometimes it guesses wrong.\n\n### 2. Trees Share Resources via an Underground Internet\nMost people know trees compete for sunlight. What they don't know is that below the soil, trees often cooperate. They do this through a network of fungi called the **Wood Wide Web** (mycorrhizal networks). \n\nThe fungi attach to tree roots, trading soil nutrients for tree sugars. But the fungi also connect different trees together. A dying tree will dump its remaining carbon and nitrogen into the network for neighboring trees to use. Even more astonishing, a \"mother tree\" can recognize its own saplings and pump them extra water and nutrients, while actively starving the saplings of competing species.\n\n### 3. Time Travel is Happening Right Now (But Only Forward)\nEinstein proved that gravity slows down time. This is called *Gravitational Time Dilation*. Because the Earth’s core is deeper in a gravity well than the top of your head, **time is passing slightly slower at your feet than at your head.** Over the course of your life, your feet age a fraction of a nanosecond slower than your scalp. \n\nFurthermore, GPS satellites have to constantly correct for the fact that time is moving faster for them in orbit (farther from Earth's gravity) than it is for us on the ground. If engineers",
+          "tokens_prompt": 26,
+          "tokens_completion": 500,
+          "finish_reason": "length",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "inclusionai/ling-2.6-flash",
+      "name": "inclusionAI: Ling-2.6-flash",
+      "provider": "Inclusionai",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Sure, I’d be happy to share something fascinating! Here’s a lesser-known fact:\n\nOctopuses have **three hearts** and blue blood.  \nTwo hearts pump blood to the gills, while the third pumps it to the rest of the body. The blue color comes from **hemocyanin**, a copper-based protein that transports oxygen (unlike humans’ iron-based hemoglobin). This adaptation is especially useful in cold, low-oxygen environments.\n\nEven cooler: When an octopus swims, the heart that delivers blood to the body actually *stops beating*—which is why they often prefer crawling to swimming, as swimming can be tiring.\n\nWould you like another surprising fact about animals, space, or something else?",
+          "tokens_prompt": 26,
+          "tokens_completion": 155,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Sure, here's something you might not know: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. This is due to honey's low water content and acidic pH, which inhibit the growth of bacteria and microorganisms. So, if you ever find an old jar in your pantry, it should still be good—just check the expiration date, just in case!",
+          "tokens_prompt": 26,
+          "tokens_completion": 95,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Sure, let me share something fascinating that you might not know. Did you know that there's a type of jellyfish that is biologically immortal? The Turritopsis dohrnii, commonly known as the \"immortal jellyfish,\" has the unique ability to revert back to its juvenile form after reaching maturity. When faced with environmental stress, injury, or old age, it can transform its cells back into a younger state, essentially starting its life cycle all over again. This process, known as transdifferentiation, allows it to bypass death and potentially live forever, at least in theory. Isn't nature incredible?",
+          "tokens_prompt": 26,
+          "tokens_completion": 125,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openrouter/pareto-code",
+      "name": "Pareto Code Router",
+      "provider": "Openrouter",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "In 2016, scientists discovered that the wood frog (*Rana sylvatica*) can survive being frozen solid for weeks at a time. Its heart stops, its breathing ceases, and up to 70% of its body water turns to ice. It accomplishes this by flooding its cells with glucose, which acts as a natural antifreeze, preventing ice crystals from forming inside the cells and shredding them. When spring arrives, the frog thaws from the inside out and hops away as if nothing happened.",
+          "tokens_prompt": 12,
+          "tokens_completion": 167,
+          "finish_reason": "stop",
+          "reasoning": "We are asked: \"Tell me something I don't know.\" This is a very open-ended request. I need to provide an interesting fact or piece of information that is not commonly known. I'll aim for something surprising, scientifically intriguing, or historically obscure. I'll make sure it's accurate and concise.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The dot over a lowercase \"i\" or \"j\" is called a **tittle**.",
+          "tokens_prompt": 12,
+          "tokens_completion": 482,
+          "finish_reason": "stop",
+          "reasoning": "We are asked: \"Tell me something I don't know.\" This is a very open-ended request. I need to provide an interesting fact or piece of information that is not commonly known. I should aim for something surprising, counterintuitive, or obscure. Since I don't know the user's knowledge base, I'll pick something that is generally not widely known. I'll choose a fact from science, history, or a quirky tidbit. For example: \"Octopuses have three hearts, and two of them stop beating when they swim.\" That's relatively well-known. Maybe something more obscure: \"The Eiffel Tower can grow more than 6 inches during the summer due to thermal expansion.\" Still somewhat known. Perhaps: \"There's a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.\" That's known too. I'll go for something less common: \"The voices of the original Mickey Mouse and Minnie Mouse, Walt Disney and his wife Lillian, were married in real life.\" That's not entirely accurate; Walt did voice Mickey, but Minnie was voiced by several actresses, though Lillian was not one of them. Actually, Walt Disney provided the voice for Mickey Mouse, and Minnie Mouse was voiced by Marcellite Garner, among others. So that's false. I need a true fact.\n\nHow about: \"Bananas are berries, but strawberries are not.\" That's a botanical fact that surprises many. Still, it's become quite popular. Maybe: \"There's a town in Norway where the sun doesn't rise for 4 months.\" That's polar night, known. \n\nI'll think of something more niche: \"The dot over the letter 'i' is called a tittle.\" That's a fun linguistic fact. Or \"The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.\" That's a classic.\n\nI'll pick the tittle one, as it's a neat piece of trivia. I'll phrase it: \"The dot over a lowercase 'i' or 'j' is called a 'tittle'.\" That's something many people don't know. I'll provide that.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "You can hear the temperature of water.\n\nWhen you pour hot water into a cup, the sound it makes is noticeably lower in pitch than cold water. This happens because hot water is less viscous, which changes the size and behavior of the bubbles that form during pouring, lowering the frequency of the splashes. With a little practice, you can reliably tell the difference just by listening.",
+          "tokens_prompt": 12,
+          "tokens_completion": 186,
+          "finish_reason": "stop",
+          "reasoning": "We need to respond with \"Tell me something I don't know.\" This is a very open-ended request. The user wants an interesting fact or piece of information that is likely unknown to them. I should provide a surprising, obscure, or counterintuitive fact. I can choose something from science, history, nature, etc. I'll aim for something that is genuinely obscure and fascinating. I'll craft a concise response with one fact, perhaps with a brief explanation. No need for extra fluff. I'll just deliver the fact.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "tencent/hy3-preview",
+      "name": "Tencent: Hy3 preview",
+      "provider": "Tencent",
+      "license": "open-weights",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's a fun botanical fact that surprises most people: **Bananas are technically berries, but strawberries aren't.**  \n\nBotanists define a true berry as a fruit that develops from a single flower with one ovary, and has its seeds embedded in the fleshy part of the fruit. Bananas fit this perfectly—they grow from a single ovary, and those tiny black specks inside are actually vestigial seeds (wild bananas have much larger, inedible seeds!).  \n\nStrawberries, on the other hand, are what's called an *aggregate accessory fruit*. The red, juicy part we eat isn't the actual fruit at all—it's the swollen receptacle (the part of the flower that holds the ovaries). The real fruits are the tiny yellow \"seeds\" dotting the outside, called achenes. Each achene is a separate small fruit with a single seed inside!  \n\nIf you want a bonus weird fact: Humans share roughly 60% of their *functional DNA* with bananas (though that's shared genetic code for basic cellular processes, not that we're 60% banana-shaped, obviously).",
+          "tokens_prompt": 20,
+          "tokens_completion": 1008,
+          "finish_reason": "stop",
+          "reasoning": "Got it, the user said \"Tell me something I don't know.\" First, I need to pick something that's not super common knowledge but also not too obscure. Let's think... Maybe something about everyday things? Oh, right, the fact that bananas are berries but strawberries aren't! Wait, is that too common? Maybe not for everyone. Wait, let's check: Botanically, a berry is a fruit that develops from a single flower with a single ovary, and has seeds embedded in the flesh. So bananas fit that—they have tiny seeds inside (the black dots), develop from one ovary. Strawberries are aggregate fruits, from multiple ovaries of one flower, and the \"seeds\" are actually achenes, the real fruit is the red part which is the receptacle. That's a good one. But maybe add another one? Or make it more interesting. Wait, maybe something about space? No, maybe something more relatable. Wait, another one: Octopuses have three hearts, but that's also somewhat known. Wait, what about the fact that the \"smell\" of rain is called petrichor? That's a term people might not know. Or wait, here's a good one: Humans share about 60% of their DNA with bananas. Oh, that's a fun fact. Wait, but let's make sure it's accurate. Let me confirm: Yes, the 60% figure is often cited for shared genes, though it's not exact, but it's a common fun fact. Wait, but maybe combine a few? No, the user said \"something\", so one solid fact is better. Wait, let's go with the banana/berry one first, explain it clearly, then maybe add a bonus? Wait, no, let's make it engaging. Let's start with that, explain why, then maybe another if it's good. Wait, but let's make sure it's not something everyone knows. Let's see: Let's pick the petrichor one? No, maybe the banana is better. Wait, let's structure it: Start with a hook, then the fact, then the explanation. Let's see:\n\n\"Here's a fun botanical fact that surprises most people: **Bananas are technically berries, but strawberries aren't.** \n\nBotanists define a berry as a fruit that develops from a single flower with one ovary, and has its seeds embedded in the fleshy part of the fruit. Bananas fit this perfectly—they grow from a single ovary, and those tiny black specks inside are actually vestigial seeds. \n\nStrawberries, on the other hand, are what's called an *aggregate accessory fruit*. The red, juicy part we eat isn't the actual fruit at all—it's the swollen receptacle (the part of the flower that holds the ovaries). The real fruits are the tiny yellow \"seeds\" dotting the outside, which are called achenes. Each achene is a separate small fruit with a single seed inside! \n\nIf you want a bonus weird fact: Humans share roughly 60% of their DNA with bananas (though that's shared *genes*, not that we're 60% banana-shaped, obviously).\"\n\nWait, that's good. Let's check if that's accurate. Yes, the berry definition is correct. Aggregate fruit: yes, strawberries are aggregate accessory fruits. Achenes: correct. The DNA fact: yes, that's a common figure, though it's worth noting it's shared genetic material, not that we're 60% identical in all ways. That should work. It's something most people don't know, explained clearly, maybe a bonus. Yeah, that's a good response.",
+          "topics": [
+            "dna"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a fascinating, lesser-known fact about nature:  \n\nThere’s a species of ant called the **exploding ant** (*Camponotus saundersi*), native to Southeast Asia, that defends its colony by literally blowing itself up. These ants have oversized glands in their abdomens filled with a sticky, toxic yellow secretion. When threatened by predators (like rival ants or insects), they contract their abdominal muscles so forcefully that their bodies rupture, spraying the toxic glue onto enemies. This glue immobilizes small attackers and can even kill them—all while the ant sacrifices itself to protect its nest.  \n\nScientists call this behavior \"autothysis,\" and it’s one of the most extreme examples of self-sacrifice in the animal kingdom! 🐜💥",
+          "tokens_prompt": 20,
+          "tokens_completion": 1839,
+          "finish_reason": "stop",
+          "reasoning": "Got it, the user said \"Tell me something I don't know.\" First, I need to pick something that's not super common knowledge, but also not too obscure that it's not interesting. Let me think... Maybe something about animals? Or space? Wait, there's a cool fact about octopuses—wait no, maybe something more unexpected. Oh, right! The fact that there's a species of jellyfish that's biologically immortal? Wait, but maybe that's known. Wait, another one: Did you know that the \"smell\" of rain has a name? Petrichor, but maybe that's common too. Wait, let's think of something more unique. Oh! Here's a good one: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Wait, but is that well-known? Maybe, but let's add a twist. Wait, no—wait another fact: The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes. Oh, that's a good one, but maybe some people know that. Wait, let's go for something more science-y but accessible. Oh! Here's a cool one: Human bodies contain trace amounts of gold—about 0.2 milligrams, mostly in our blood. But wait, another one: There's a planet made of diamonds? No, that's Kepler-16b? No, wait, 55 Cancri e is a super-Earth thought to be composed largely of carbon, which under high pressure could be diamond. But maybe that's known. Wait, let's think of something about everyday things. Oh! Did you know that the \"QWERTY\" keyboard layout was designed to slow down typists? Because early typewriters jammed if you typed too fast, so they arranged the keys to separate common letter pairs. Wait, but is that true? Let me confirm—yes, that's the common explanation, though some say it's not entirely accurate, but it's a popular fact. Wait, but maybe the user wants something more surprising. Oh! Here's a good one: Cows have best friends and get stressed when they're separated. Studies have shown that cows form close bonds with other cows, and when they're apart, their cortisol levels (stress hormone) rise. That's cute and maybe not everyone knows that. Wait, but let's make sure it's accurate. Yes, research from the University of Northampton found that cows have preferred social partners and experience stress when separated from them. Alternatively, another fact: The Great Barrier Reef is the largest living structure on Earth, and it's visible from space. But that's known. Wait, let's go for something more obscure. Oh! Did you know that there's a species of mushroom called the \"humongous fungus\" in Oregon that covers over 2,385 acres and is estimated to be between 2,400 and 8,650 years old? It's one of the largest living organisms on Earth. That's a good one. Or wait, another: The inventor of the Pringles can, Fred Baur, was so proud of his creation that he asked to be buried in one. His family honored his wish, and part of his ashes are in a Pringles can. That's quirky and maybe not everyone knows that. Let me pick that one? Or combine a few? Wait, the user said \"something\", so one fact is good, but maybe make it interesting. Let's see: Let's go with the Pringles one, but add a bit of context. Or the cow best friends? Wait, let's check: The Pringles fact is true—Fred Baur, a food storage researcher, invented the cylindrical can, and he did request to be buried in it. His son said they buried part of his ashes in a Pringles can, yes. That's a fun, unexpected fact. Alternatively, the honey one: Honey's low moisture content and acidic pH prevent bacteria from growing, so it never spoils. The Egyptian honey is a great example. Let's see—maybe present one that's both surprising and has a cool backstory. Let's go with the Pringles one, but wait, maybe the user wants something more educational? Or just interesting. Let's mix it up. Wait, another fact: Sharks have been around longer than trees. Sharks first appeared about 400 million years ago, while trees evolved around 350 million years ago. That's a good one too. Let's see—let's pick one that's not too common. Let's go with the shark vs trees fact? Or the Pringles burial? Let's see: Let's choose the shark one because it's a bit more science-y. Wait, but let's confirm: Yes, fossil records show sharks existed in the Devonian period ~419 million years ago, and the first trees (like Archaeopteris) appeared in the Late Devonian ~350 million years ago. So sharks are older than trees by about 50 million years. That's a cool fact. Or the honey one: The oldest honey ever found is from 5,500 years ago in Georgia, but the Egyptian stuff is 3,000 years old. Both are edible. Let's see—maybe present that one, but add a bit of why. Wait, the user said \"something I don't know\", so it's hard to be sure, but pick something that's not super mainstream. Let's go with the shark and trees fact, but let's make it engaging. Wait, or the octopus fact: Octopuses have three hearts, blue blood, and their neurons are distributed throughout their body, not just their brain. But that's pretty well-known. Hmm. Wait, another one: The Eiffel Tower grows taller in the summer. Because metal expands when heated, so the iron structure can grow up to 6 inches (15 cm) taller in hot weather. That's a cool fact about a famous landmark. Is that known? Maybe some people know, but not everyone. Let's see—yes, thermal expansion causes the tower to expand, so it's taller in summer. That's a good one. Let's pick that? Or combine a couple? Wait, the user said \"something\", so one is fine. Let's go with the Eiffel Tower fact, but add a bit of detail. Or the Pringles one. Let's see—let's choose the Eiffel Tower one because it's a common landmark, so people might not know that detail. Let me structure it: Start with the fact, explain why, maybe add a fun extra. Wait, but let's make sure it's accurate. Yes, the Eiffel Tower is made of iron, which has a coefficient of thermal expansion of about 12 x 10^-6 per degree Celsius. So if the temperature rises by 20°C (from winter to summer), the 300-meter tower would expand by about 300 * 12e-6 *20 = 0.072 meters, which is 7 cm, but some sources say up to 15 cm (6 inches) because of higher temperature differences. That's correct. Alternatively, the fact that there's a species of ant that can explode to defend its colony—the Camponotus saundersi, or exploding ant, which contracts its abdomen to rupture and spray a toxic glue that immobilizes enemies. That's super cool and not many people know that. Oh, that's a great one! Let's go with that. Let me confirm: Yes, exploding ants (also called suicide ants) are found in Southeast Asia, and they have large glands in their abdomen filled with toxic secretions. When threatened, they contract their muscles to burst their abdomen, releasing the glue which sticks to predators and can kill smaller ones. That's a fascinating, lesser-known fact. Perfect. So I'll present that, explain it clearly, maybe add a bit of context. Let's do that.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s a fascinating biological fact: The *Turritopsis dohrnii*—a tiny (about 4.5mm wide) jellyfish often called the \"immortal jellyfish\"—is the only known animal capable of biologically reversing its aging process.  \n\nWhen stressed by injury, starvation, or sudden temperature changes, it undergoes a process called *transdifferentiation*: its adult cells transform into different cell types (e.g., muscle cells becoming nerve cells) to revert back to its juvenile polyp stage, essentially restarting its life cycle from scratch. This means it does not die of old age, though it can still be killed by predators, disease, or extreme environmental damage. Originally native to the Caribbean, it has now spread to oceans worldwide via ship ballast water.",
+          "tokens_prompt": 20,
+          "tokens_completion": 1125,
+          "finish_reason": "stop",
+          "reasoning": "Got it, the user said \"Tell me something I don't know.\" First, I need to pick something that's not super common knowledge, but also not too obscure that it's useless. Let's think... maybe something about animals? Or science? Wait, there's that thing about octopuses having three hearts, but that's pretty well known now. Oh, wait, what about the fact that honey never spoils? No, that's also common. Hmm, maybe something about language? Or space?\n\nWait, here's a good one: Did you know that there's a species of jellyfish that is biologically immortal? The Turritopsis dohrnii, also called the \"immortal jellyfish.\" When it's stressed or injured, it can revert back to its polyp stage, basically starting its life cycle over again. That's cool, but is that too known? Maybe add a detail: It's not that they can't be eaten or killed by predators, but their cellular process allows them to reverse aging. Yeah, that's a good point to clarify so it's not misleading.\n\nWait another one: The Eiffel Tower grows taller in the summer. Because metal expands when heated, so the iron structure can grow up to 6 inches (15 cm) taller in hot weather. That's a neat fact, maybe less known? Or combine a couple? No, keep it concise. Let's go with the immortal jellyfish first, but make sure to explain it properly. Wait, let's check: Turritopsis dohrnii, yes, it's the only known species that can revert to its juvenile polyp form after reaching sexual maturity, through a process called transdifferentiation, where cells transform from one type to another. That's a key detail. Also, note that they're not invincible—they can still be preyed upon or die from disease, but their biological aging process is reversible. That's important to add so it's accurate.\n\nAlternatively, maybe something about human biology? Like, the human body has more bacteria cells than human cells? Wait, recent studies say it's actually closer to 1:1, but earlier it was thought 10:1. Maybe that's a good update. But let's see, the user might have heard the 10:1 thing, so saying the new research is better. But maybe the jellyfish one is more unique.\n\nWait, let's structure it: Start with a clear statement, then explain, then add a nuance. Let's go with the immortal jellyfish. Let me make sure the facts are right: Turritopsis dohrnii, found in temperate to tropical waters, transdifferentiation allows them to reverse their life cycle. When stressed (like injury, starvation, temperature change), they sink to the ocean floor, their body degenerates into a blob, then reforms into a polyp colony, which then buds into new jellyfish genetically identical to the original. Yep, that's correct. And they're not truly immortal in the sense of indestructible, just that they don't die of old age. That's a good point to include.\n\nAlternatively, another fact: The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes. Oh, that's a classic, but maybe the user hasn't heard it? But let's see, which is more likely to be unknown? Maybe the jellyfish one is more scientific, less common.\n\nWait, let's pick one that's interesting, accurate, and has a bit of depth. Let's go with the immortal jellyfish, but add the nuance. Or maybe combine two? No, keep it simple. Let's write it out:\n\n\"Here's a fascinating biological fact: The *Turritopsis dohrnii*, a small species of jellyfish often called the 'immortal jellyfish,' is the only known animal capable of biologically reversing its aging process. When faced with physical stress, injury, or starvation, it can undergo a process called transdifferentiation—where its adult cells transform into different types of cells—to revert back to its juvenile polyp stage, essentially restarting its life cycle. This means it doesn't die of old age, though it can still be killed by predators, disease, or environmental hazards. It's found in oceans worldwide, originally from the Caribbean but now spread via ship ballast water.\"\n\nThat's good. It's accurate, has details, clarifies the limits (not indestructible), and is something most people don't know. Let me check if there's any mistake: Transdifferentiation is correct, the process is right, the name is correct. Yep. That should work.",
+          "topics": [
+            "jellyfish"
+          ]
         }
       ]
     }
