@@ -26,6 +26,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_DIR = path.join(__dirname, '..', 'site');
 const DATA_FILE = path.join(SITE_DIR, 'data.json');
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const OPENROUTER_MODELS_URL = 'https://openrouter.ai/api/v1/models';
+export const MAX_OUTPUT_PRICE_PER_TOKEN = 50 / 1_000_000;
 
 interface ModelConfig {
   id: string;
@@ -68,6 +70,46 @@ interface ModelEntry {
 async function loadConfig(): Promise<Config> {
   const content = await fs.readFile(path.join(__dirname, 'models.yaml'), 'utf-8');
   return yaml.load(content) as Config;
+}
+
+async function fetchOutputPrices(apiKey: string): Promise<Map<string, number>> {
+  const resp = await fetch(OPENROUTER_MODELS_URL, {
+    headers: { Authorization: `Bearer ${apiKey}` },
+    signal: AbortSignal.timeout(30_000),
+  });
+  if (!resp.ok) throw new Error(`Failed to fetch model prices: HTTP ${resp.status}`);
+  const data = (await resp.json()) as {
+    data?: Array<{ id: string; pricing?: { completion?: string } }>;
+  };
+  const map = new Map<string, number>();
+  for (const m of data.data ?? []) {
+    const p = parseFloat(m.pricing?.completion ?? '');
+    if (Number.isFinite(p)) map.set(m.id, p);
+  }
+  return map;
+}
+
+export interface PriceFilterResult<T> {
+  kept: T[];
+  skipped: Array<{ model: T; pricePerToken: number }>;
+}
+
+export function priceFilter<T extends { id: string }>(
+  models: T[],
+  priceMap: Map<string, number>,
+  maxPerToken: number,
+): PriceFilterResult<T> {
+  const kept: T[] = [];
+  const skipped: Array<{ model: T; pricePerToken: number }> = [];
+  for (const m of models) {
+    const p = priceMap.get(m.id);
+    if (p !== undefined && p > maxPerToken) {
+      skipped.push({ model: m, pricePerToken: p });
+    } else {
+      kept.push(m);
+    }
+  }
+  return { kept, skipped };
 }
 
 async function queryModel(
@@ -243,6 +285,18 @@ async function main() {
     );
   }
 
+  if (apiKey) {
+    const priceMap = await fetchOutputPrices(apiKey);
+    const { kept, skipped } = priceFilter(models, priceMap, MAX_OUTPUT_PRICE_PER_TOKEN);
+    if (skipped.length) {
+      const list = skipped
+        .map((s) => `${s.model.name} ($${(s.pricePerToken * 1_000_000).toFixed(2)}/1M out)`)
+        .join(', ');
+      console.log(`Skipping ${skipped.length} model(s) above $50/1M output: ${list}`);
+    }
+    models = kept;
+  }
+
   // Load existing data if appending
   const existingIds = new Set<string>();
   let existingData: ModelEntry[] = [];
@@ -364,7 +418,10 @@ async function main() {
   console.log(`Top topics: ${JSON.stringify(stats.topic_frequency, null, 2)}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

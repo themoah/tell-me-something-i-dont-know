@@ -105,6 +105,19 @@ function normalizeName(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
+export function stripFastSuffix(id: string): string {
+  const slashIdx = id.indexOf('/');
+  if (slashIdx < 0) return id;
+  const prefix = id.slice(0, slashIdx);
+  const slug = id.slice(slashIdx + 1);
+  if (!slug) return id;
+  const stripped = slug
+    .split('-')
+    .filter((part) => part.toLowerCase() !== 'fast')
+    .join('-');
+  return `${prefix}/${stripped}`;
+}
+
 function isRecent(m: ORModel, cutoff: number): boolean {
   return typeof m.created === 'number' && m.created >= cutoff;
 }
@@ -179,7 +192,7 @@ async function main() {
 
   const cutoff = Math.floor(Date.now() / 1000) - THIRTY_DAYS_SEC;
 
-  const drops = { prefix: 0, variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, noLicense: 0 };
+  const drops = { prefix: 0, variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, noLicense: 0, fastVariant: 0 };
   const newModels: ModelYaml[] = [];
 
   for (const candidate of allModels) {
@@ -188,6 +201,12 @@ async function main() {
     if (!isRecent(candidate, cutoff)) { drops.old++; continue; }
     if (!isTextOnly(candidate)) { drops.nonText++; continue; }
     if (existingIds.has(candidate.id)) { drops.idMatch++; continue; }
+
+    const baseId = stripFastSuffix(candidate.id);
+    if (baseId !== candidate.id && existingIds.has(baseId)) {
+      drops.fastVariant++;
+      continue;
+    }
 
     const licenseInfo = getLicenseInfo(candidate.id);
     if (!licenseInfo) { drops.noLicense++; continue; }
@@ -207,7 +226,8 @@ async function main() {
   console.log(
     `  Filter drops: prefix=${drops.prefix} variant=${drops.variant} ` +
       `older-than-30d=${drops.old} non-text=${drops.nonText} ` +
-      `id-match=${drops.idMatch} name-match=${drops.nameMatch} no-license=${drops.noLicense}`,
+      `id-match=${drops.idMatch} name-match=${drops.nameMatch} ` +
+      `fast-variant=${drops.fastVariant} no-license=${drops.noLicense}`,
   );
 
   if (newModels.length === 0) {
@@ -224,7 +244,10 @@ async function main() {
   console.log(`\nUpdated build/models.yaml with ${newModels.length} new model(s).`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
