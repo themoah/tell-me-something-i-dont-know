@@ -512,3 +512,17 @@ models:
     license: "open-weights"
     released: "April 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "inclusionai/ring-2.6-1t"
+    name: "inclusionAI: Ring-2.6-1T"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "May 2026"
+
+  - id: "baidu/qianfan-ocr-fast"
+    name: "Baidu: Qianfan-OCR-Fast"
+    provider: "Baidu"
+    license: "commercial"
+    released: "April 2026"
+

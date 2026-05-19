@@ -4,25 +4,25 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-12T20:21:01.636Z",
-    "total_models": 83
+    "generated_at": "2026-05-18T10:26:44.180Z",
+    "total_models": 85
   },
   "stats": {
-    "total_models": 83,
-    "total_responses": 243,
-    "total_tokens": 194611,
+    "total_models": 85,
+    "total_responses": 249,
+    "total_tokens": 197389,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 46,
-      "jellyfish": 37,
-      "honey": 13,
-      "anglo-zanzibar war": 10,
-      "venus": 9,
+      "jellyfish": 38,
+      "honey": 14,
+      "anglo-zanzibar war": 11,
+      "venus": 10,
       "bananas": 7,
-      "cleopatra": 5,
-      "oxford university": 4,
+      "cleopatra": 6,
+      "oxford university": 6,
       "trees": 2,
-      "space": 1,
+      "space": 2,
       "tardigrade": 1,
       "mantis shrimp": 1,
       "eiffel tower": 1,
@@ -3122,6 +3122,87 @@
           "topics": [
             "jellyfish"
           ]
+        }
+      ]
+    },
+    {
+      "id": "inclusionai/ring-2.6-1t",
+      "name": "inclusionAI: Ring-2.6-1T",
+      "provider": "Inclusionai",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here are a few things you might not know:\n\n**Oxford University is older than the Aztec Empire.** Teaching at Oxford has been documented as far back as 1096, while the Aztec Empire (Tenochtitlán) wasn't founded until 1325. That means scholars in England were debating philosophy for over two centuries before the Aztecs even built their capital on a lake in central Mexico.\n\n**Venus's day is longer than its year.** It takes Venus 243 Earth days to complete one rotation on its axis, but only 225 Earth days to orbit the Sun. So a single \"day\" on Venus — sunrise to sunrise — actually lasts about 117 Earth days due to its retrograde spin, making it the slowest-spinning planet in our solar system.\n\n**There's a species of jellyfish that is biologically immortal.** *Turritopsis dohrnii*, sometimes called the \"immortal jellyfish,\" can revert from its adult medusa stage back to its juvenile polyp stage when stressed or injured, essentially restarting its life cycle indefinitely. Scientists are studying it to better understand aging and cellular regeneration.\n\nAnd one more for fun: **Switzerland has accidentally invaded its tiny neighbor Liechtenstein — multiple times.** In 2007, around 170 Swiss soldiers crossed the unmarked border during a training exercise and ended up in Liechtenstein before anyone realized. The most gracious invasion in history: when Liechtenstein noticed, they said they weren't even aware it had happened.",
+          "tokens_prompt": 31,
+          "tokens_completion": 812,
+          "finish_reason": "stop",
+          "reasoning": "\n\nThe user is asking me to tell them something they don't know. This is an open-ended, conversational request. The goal is to share a genuinely surprising, obscure, or fascinating fact that most people wouldn't commonly know. I should pick something that is verifiable, interesting, and has that \"wow\" factor. Let me think of some good candidates:\n\n1. **Octopuses have three hearts and blue blood** — relatively well known.\n2. **Honey never spoils** — fairly well known.\n3. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — this is a classic but still surprising.\n4. **There are more possible iterations of a game of chess than atoms in the observable universe** — the Shannon number (~10^120) vs. atoms (~10^80).\n5. **Trees can communicate with each other through underground fungal networks** — the \"wood wide web,\" known from the book *The Hidden Life of Trees*.\n6. **A day on Venus is longer than a year on Venus** — Venus takes 243 Earth days to rotate once but only 225 Earth days to orbit the Sun.\n7. **There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal** — reverts to its juvenile polyp stage.\n8. **Oxford University is older than the Aztec Empire** — Oxford was teaching as early as 1096, the Aztec Empire was founded in 1428.\n\nLet me go with a few layered facts to give a rich, interesting answer. I'll pick a few that span different domains and are genuinely surprising. The Venus fact and the Oxford/Aztec one are great. Let me also think of something more obscure:\n\n- **Tardigrades can survive the vacuum of space** — known but still wild.\n- **The inventor of the Pringles can, Fredric Baur, was buried in one** — quirky and surprising.\n- **Switzerland accidentally invaded Liechtenstein multiple times** — charming and little-known.\n\nI'll craft a response with a handful of genuinely surprising facts across different domains to maximize the chance that at least one is new to the user.\\",
+          "topics": [
+            "jellyfish",
+            "oxford university",
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one that surprises most people:\n\n**Honeybees can recognize individual human faces.**\n\nUsing a process called *configural processing*, bees learn to distinguish between different human faces by piecing together the relative arrangement of features — eyes, nose, mouth — rather than recognizing any single feature on its own. In experiments at the University of Cambridge and the Université de Toulouse, bees were trained to associate specific human face images with a sugar-water reward, and they consistently picked the correct face out of a lineup, even when presented with novel images mixed in.\n\nWhat makes this remarkable is that a bee brain has roughly 960,000 neurons — about 0.01% the number in a human brain. It challenges our assumption that complex facial recognition requires a large, sophisticated brain and suggests that the computational strategy for recognizing faces may be far simpler than we thought.\n\n---\n\nAnd a bonus: **Oxford University began teaching in 1096 — making it older than the Aztec Empire, which wasn't founded until 1325.** By the time the Aztecs were building Tenochtitlan, Oxford was already over 200 years old and well established as a center of learning.",
+          "tokens_prompt": 31,
+          "tokens_completion": 786,
+          "finish_reason": "stop",
+          "reasoning": "\n\nThe user is asking me to share something surprising, obscure, or lesser-known. This is an open-ended conversational request. Let me think of genuinely interesting, lesser-known facts across various domains — science, history, biology, linguistics, etc. — and pick something that's both true and genuinely surprising.\n\nLet me brainstorm a few candidates:\n\n1. **Tardigrades can survive in space** — somewhat well-known now.\n2. **Honey never spoils** — fairly well-known.\n3. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — moderately well-known.\n4. **There are more possible iterations of a game of chess than atoms in the observable universe** — somewhat known among nerdy crowds.\n5. **Octopuses have three hearts and blue blood** — fairly well-known.\n6. **Trees can communicate with each other through underground fungal networks (the \"Wood Wide Web\")** — gaining popularity but still lesser-known to most.\n\nLet me think of something more obscure:\n\n- **The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the iron.** This is moderately known.\n- **There exists a species of jellyfish (Turritopsis dohrnii) that can revert to its juvenile polyp stage, essentially making it biologically immortal.** Somewhat known.\n- **Bananas are radioactive** — they contain potassium-40. Moderately known.\n\nHow about something truly obscure:\n\n- **Oxford University is older than the Aztec Empire.** Teaching at Oxford began as early as 1096, while the Aztec Empire (Tenochtitlan) was founded in 1325. This is a good one.\n\n- **The inventor of the Pringles can, Fredric Baur, was buried in one.** This is a quirky, lesser-known fact.\n\n- **Lake Baikal in Siberia contains about 20% of the world's unfrozen surface fresh water** — more than all the Great Lakes combined.\n\n- **Honeybees can recognize human faces** — using a technique called \"configural processing\" where they process the arrangement of features.\n\n- **There is a planet made of diamond** — 55 Cancri e, though this is debated.\n\nLet me go with something genuinely surprising and verifiable. I'll share a few lesser-known facts and make it engaging.",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here are a few things that tend to genuinely surprise people:\n\n**Cleopatra lived closer in time to the Moon landing (1969) than to the building of the Great Pyramid of Giza.** The Great Pyramid was built around 2560 BCE. Cleopatra lived around 30 BCE. The Moon landing was in 1969 CE. That means roughly 2,530 years separated Cleopatra from the Pyramid, but only about 2,000 years separated her from the Moon landing. Ancient history is far longer than most people intuitively feel.\n\n**Wombats poop cubes.** Not round, not cylindrical — actual cubes. Researchers discovered that the wombat's intestinal walls have varying elasticity, which shapes the feces into neat cubic pellets. Scientists believe this helps the droppings stay in place (they don't roll away) as a form of territorial marking.\n\n**There is a species of fungus (*Ophiocordyceps unilateralis*) that infects ants, hijacks their nervous system, and forces them to climb to a specific height on a plant, clamp down on a leaf vein, and then — only then — does the fungus sprout a fruiting body out of the ant's head to release spores.** The fungus essentially turns the ant into a zombie puppet with surgical precision.\n\n**A single teaspoon of neutron star material would weigh about 6 billion tons** — roughly the mass of Mount Everest compressed into something that would fit on a spoon.\n\nAny one of those might be new to you — but together, they paint a wonderfully weird picture of the universe we live in.",
+          "tokens_prompt": 31,
+          "tokens_completion": 824,
+          "finish_reason": "stop",
+          "reasoning": "\n\nThe user is asking me to \"tell them something they don't know.\" This is an open-ended, conversational request. It's hard to know what any specific person already knows or doesn't know, so the best approach is to share a genuinely surprising, fascinating, or lesser-known fact that most people would find novel. I should aim for something that is:\n\n- Verifiably true\n- Genuinely surprising or counterintuitive\n- Not commonly discussed in everyday conversation\n- Interesting across a wide audience\n\nLet me think of some candidates:\n\n1. **Octopuses have three hearts and blue blood** — fairly well known.\n2. **Honey never spoils** — somewhat well known.\n3. **Trees can communicate through underground fungal networks (the \"Wood Wide Web\")** — moderately known but still fascinating.\n4. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — a classic but still surprising one.\n5. **There are more possible iterations of a game of chess than atoms in the observable universe** — known among chess/math enthusiasts but surprising to many.\n6. **Bananas are radioactive** — known by some.\n7. **Tardigrades can survive in the vacuum of space** — moderately known.\n8. **Oxford University is older than the Aztec Empire** — a good one.\n9. **Wombats poop cubes** — fun and lesser-known.\n10. **There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal** — moderately known.\n\nLet me go with a rich, multi-layered response that gives them a few genuinely surprising facts, and let me pick ones that are less commonly circulated. I'll focus on ones that are verifiable and genuinely mind-bending.\n\nI think I'll lead with the Cleopatra/Great Pyramid time gap fact (it's a temporal mind-bender), add the wombat cube poop (delightfully weird), and maybe one more obscure one like the fact that there are more synapses in the human brain than stars in the Milky Way galaxy, or that some parasites can alter host behavior (like Toxoplasma making mice unafraid of cats).\n\nLet me craft a compelling response.",
+          "topics": [
+            "cleopatra",
+            "space"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baidu/qianfan-ocr-fast",
+      "name": "Baidu: Qianfan-OCR-Fast",
+      "provider": "Baidu",
+      "license": "commercial",
+      "released": "April 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "There are many things you may not know, so I'll provide you with some interesting facts:\n\n1. The average person blinks about 15 times per minute. However, when they are sleeping, they blink about 10 times per minute.\n2. The average person has about 400,000 hairs on their head. Over time, people lose about 50 to 75 hairs per day as part of their natural hair cycle.\n3. Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.\n4. A group of flamingos is called a \"flamboyance.\"\n5. The human body can survive for about 10 minutes without oxygen.\n6. The longest fingernails ever measured were 24 inches long (about 60 cm) and were grown by a woman in Norway in 2012.\n7. The shortest war in history was between Sweden and Denmark on August 1, 1813, and August 1, 1814. It lasted only 24 hours.\n\nThese are just a few examples of the many fascinating things you may not know. Let me know if you would like more information on any of these topics or on other subjects.",
+          "tokens_prompt": 16,
+          "tokens_completion": 277,
+          "finish_reason": "stop",
+          "topics": [
+            "honey",
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "I'm here to share knowledge and learn with you. What specific topic would you like to know more about?",
+          "tokens_prompt": 16,
+          "tokens_completion": 23,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Sure, here's something you might not know: the human stomach has a protective layer called the mucous membrane that keeps it from digesting itself. This layer is so effective that stomach acid can digest many other things, like paper and plastic, but the stomach is safe.",
+          "tokens_prompt": 16,
+          "tokens_completion": 56,
+          "finish_reason": "stop",
+          "topics": []
         }
       ]
     }
