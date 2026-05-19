@@ -4,13 +4,13 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-18T10:26:44.180Z",
-    "total_models": 85
+    "generated_at": "2026-05-19T18:34:32.888Z",
+    "total_models": 86
   },
   "stats": {
-    "total_models": 85,
-    "total_responses": 249,
-    "total_tokens": 197389,
+    "total_models": 86,
+    "total_responses": 252,
+    "total_tokens": 202363,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 46,
@@ -3202,6 +3202,42 @@
           "tokens_prompt": 16,
           "tokens_completion": 56,
           "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.5-flash",
+      "name": "Google: Gemini 3.5 Flash",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "The most kissed face in human history belongs to a young, unidentified woman who drowned in the River Seine in Paris in the late 19th century. \n\nIf you have ever taken a CPR class, you have probably kissed her.\n\nHere is the story:\n\nIn the late 1880s, the body of a young woman was pulled from the Seine. Because there were no signs of violence on her body, it was assumed she had taken her own life. In those days, unidentified bodies were put on display in the morgue window in the hopes that someone would recognize them. \n\nNo one claimed her, but the pathologist on duty was so captivated by her peaceful expression and slight, Mona Lisa-like smile that he commissioned a plaster cast of her face. \n\nOver the next few decades, copies of this death mask—known as *L'Inconnue de la Seine* (The Unknown Woman of the Seine)—became a massive cultural phenomenon. It was hung in bohemian living rooms across Europe, inspiring poetry, novels, and fashion trends. She became an icon of romanticized tragedy.\n\nFast forward to the 1950s. A toy maker named Åsmund Lærdal was asked to create a training mannequin for the newly invented life-saving technique of CPR. Lærdal wanted the mannequin to have a natural, non-threatening face, particularly for male trainees who might be hesitant to practice mouth-to-mouth on a male doll. \n\nRemembering the mask of *L'Inconnue* hanging on the wall of his grandparents' house, he decided to use her face. \n\nThe doll was named **Resusci Anne**. Since her creation, it is estimated that more than 300 million people have been trained in CPR using her face, making this unidentified 19th-century Parisian teenager the most kissed face in human history.",
+          "tokens_prompt": 9,
+          "tokens_completion": 1758,
+          "finish_reason": "stop",
+          "reasoning": "**Discovering Obscure Knowledge**\n\nI'm currently exploring fascinating but little-known scientific phenomena. My focus is on uncovering those unique, often counterintuitive, insights that truly broaden understanding and spark curiosity.\n\n**Refining Topic Selections**\n\nI'm sifting through potential topics, aiming for that sweet spot of engaging, informative, and subtly surprising. My current contemplation involves balancing fascinating phenomena with accessibility and a touch of novelty, leaning towards options that offer a compelling narrative arc.\n\n**Evaluating Fascinating Facts**\n\nI'm currently weighing several compelling, yet lesser-known, scientific tidbits. My focus is on those that offer a genuine \"wow\" factor, with the glymphatic system in particular showing strong promise for its intriguing biological relevance.\n\n**Selecting Compelling Narratives**\n\nI'm leaning towards \"L'Inconnue de la Seine\" for its profoundly human and surprisingly widespread impact, offering an uncanny yet accessible story that resonates universally.\n\n**Developing Narrative Hooks**\n\nI'm crafting an engaging introduction to the story of \"L'Inconnue de la Seine,\" aiming to immediately captivate with the paradox of a tragically unknown woman becoming the most kissed face globally through CPR mannequins.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Your immune system doesn't actually know that you have eyes. \n\nThis is due to a phenomenon called **ocular immune privilege**. \n\nTo protect your vision, your eyes are physically sequestered from the rest of your body’s immune system by a blood-retina barrier. The inside of your eyes also contains special molecules that actively suppress any immune response. This is because inflammation—the immune system's standard way of fighting off threats—would easily damage the delicate tissues needed for sight and cause blindness. \n\nBecause of this barrier, your systemic immune system is largely unaware that your eyes exist. \n\nHowever, this creates a bizarre and terrifying medical risk called **sympathetic ophthalmia**:\n\nIf one of your eyes suffers a severe physical trauma (like being punctured), ocular proteins can leak out into the rest of your body and enter your general bloodstream. Because your immune system has never encountered these proteins before, it doesn't recognize them as \"you.\" It treats them as a foreign threat, creates antibodies, and launches a full-scale attack.\n\nBut the immune system doesn't just attack the injured eye—it follows the trail back to the source and begins attacking your **healthy, uninjured eye** as well. Left untreated, your own immune system can completely blind you in both eyes because of an injury to just one.\n\nFortunately, modern medicine can prevent this using powerful immunosuppressive drugs, or, in extreme cases, by removing the damaged eye before the immune system can \"discover\" it.",
+          "tokens_prompt": 9,
+          "tokens_completion": 1209,
+          "finish_reason": "stop",
+          "reasoning": "**Discovering Unknowns**\n\nI'm actively exploring avenues for novel information. My current focus is on delving into niche scientific discoveries and historical curiosities, aiming to unearth a truly surprising fact for you.\n\n**Exploring Biological Wonders**\n\nI've been sifting through remarkable natural phenomena. My recent thoughts are gravitating towards the astonishing \"Wood Wide Web\" and the complex kin recognition and altruistic behaviors observed in trees through mycorrhizal networks.\n\n**Unveiling Ocular Mysteries**\n\nI've zeroed in on a fascinating fact: my immune system is essentially oblivious to the existence of my eyes, a state known as ocular immune privilege. This unique biological arrangement prevents inflammation, but a severe injury can trigger a terrifying autoimmune response, potentially impacting my other eye.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is a fact that sounds like science fiction, but is completely true: \n\n**Spiders can fly—and they do it using electricity.**\n\nFor centuries, humans observed spiders shooting out webs and floating away into the sky, a behavior called \"ballooning.\" Scientists assumed the spiders were just catching light breezes like a kite. However, this didn't explain how spiders could launch themselves on completely windless days, or how they managed to climb to altitudes of 2.5 miles (4 km) and travel hundreds of miles out into the open ocean.\n\nIn 2018, researchers at the University of Bristol solved the mystery: **spiders are riding the Earth's electric field.**\n\nHere is how it works:\n* **The Earth's Battery:** The Earth has a natural, constant electrical circuit. The ground has a negative charge, and the upper atmosphere has a positive charge. This is called the Atmospheric Potential Gradient (APG). \n* **The Launch:** When a spider wants to travel, it climbs to a high point and stands on its tiptoes. It has tiny, incredibly sensitive hairs on its legs called *trichobothria*. When the electric field is strong enough, these hairs stand on end (just like your hair does when you rub a balloon on your head). \n* **The Static Lift:** Sensing the electricity, the spider releases a stream of silk. As the silk leaves the spider’s body, it picks up a negative charge. Because like charges repel, the negatively charged silk is repelled by the negatively charged ground, shooting the spider upward into the air. \n\nEssentially, spiders are natural electrostatic gliders. They can control their altitude by letting out more silk or cutting it, navigating the invisible electrical currents of our atmosphere.",
+          "tokens_prompt": 9,
+          "tokens_completion": 2007,
+          "finish_reason": "stop",
+          "reasoning": "**Discovering Obscure Knowledge**\n\nI'm deep in exploration, seeking those truly unique insights. My focus is on unearthing surprising, verifiable, and fascinating nuggets of information that most wouldn't readily encounter, aiming to deliver a genuine \"aha!\" moment.\n\n**Unearthing Novel Information**\n\nI'm currently investigating the peculiar phenomenon of \"flying spiders,\" specifically their use of Earth's electrostatic field for ballooning. This seems far more novel and intriguing than common biological trivia, offering a truly unique angle for discovery.\n\n**Finding Unique Facts**\n\nMy current focus is on discovering obscure, verifiable, and utterly fascinating facts. I've found a particularly compelling detail about Pharaoh Ramesses II being issued a passport for travel. It's precisely the kind of surprising historical tidbit I aim to unearth.\n\n**Evaluating Intriguing Discoveries**\n\nI'm weighing the marvel of spiders utilizing Earth's electrostatic field for flight against the charming absurdity of Ramesses II needing a passport. Both are verified, but the spider fact offers a more profound scientific wonder.\n\n**Selecting Fascinating Facts**\n\nI'm currently refining my focus, leaning towards the astonishing \"warm\" ice, specifically Ice XVIII. Its superionic, electrically conductive nature under immense pressure, existing within gas giants, offers a truly mind-bending scientific marvel to explore.\n\n**Drafting Spider Flight**\n\nI'm currently drafting an explanation for spider electric flight, focusing on how they sense and ride Earth's atmospheric electromagnetic field. This novel mechanism, recently proven, provides a truly surprising and verifiable scientific marvel.\n\n",
           "topics": []
         }
       ]
