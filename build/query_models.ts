@@ -45,7 +45,7 @@ interface Config {
   models: ModelConfig[];
 }
 
-interface RunResult {
+export interface RunResult {
   success: boolean;
   content: string | null;
   tokens_prompt?: number;
@@ -110,6 +110,28 @@ export function priceFilter<T extends { id: string }>(
     }
   }
   return { kept, skipped };
+}
+
+export function shouldRetryRunResult(result: Pick<RunResult, 'success' | 'content' | 'finish_reason'>): boolean {
+  if (!result.success) return false;
+  return !result.content?.trim() || result.finish_reason === 'length';
+}
+
+export function retryTokenBudgets(maxTokens: number): number[] {
+  return [10000, 20000, 40000].filter((tokens) => tokens > maxTokens);
+}
+
+function incompleteRunResult(result: RunResult): RunResult {
+  return {
+    success: false,
+    content: null,
+    tokens_prompt: result.tokens_prompt,
+    tokens_completion: result.tokens_completion,
+    tokens_reasoning: result.tokens_reasoning,
+    finish_reason: result.finish_reason,
+    ...(result.reasoning ? { reasoning: result.reasoning } : {}),
+    error: `incomplete response after retries: finish_reason=${result.finish_reason ?? 'unknown'}`,
+  };
 }
 
 async function queryModel(
@@ -341,15 +363,17 @@ async function main() {
     for (let runIdx = 0; runIdx < runsPerModel; runIdx++) {
       let result = await queryModel(model.id, prompt, temperature, maxTokens, apiKey!);
 
-      // Retry if model returned success but empty content (e.g. reasoning ate all tokens)
-      const retryTokens = [2500, 5000, 10000];
-      let retries = 0;
-      while (result.success && (!result.content || !result.content.trim()) && retries < retryTokens.length) {
+      // Retry if the model returned no answer text or hit the output-token cap.
+      const retryTokens = retryTokenBudgets(maxTokens);
+      for (let retries = 0; shouldRetryRunResult(result) && retries < retryTokens.length; retries++) {
         const boostedTokens = retryTokens[retries];
-        retries++;
-        process.stdout.write(` ↻(retry ${retries}, max_tokens=${boostedTokens})`);
+        process.stdout.write(` ↻(retry ${retries + 1}, max_tokens=${boostedTokens})`);
         await sleep(1000);
         result = await queryModel(model.id, prompt, temperature, boostedTokens, apiKey!);
+      }
+
+      if (shouldRetryRunResult(result)) {
+        result = incompleteRunResult(result);
       }
 
       if (!result.success && result.timed_out) {

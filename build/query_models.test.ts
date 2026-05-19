@@ -1,6 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { priceFilter, MAX_OUTPUT_PRICE_PER_TOKEN } from './query_models.ts';
+import {
+  priceFilter,
+  MAX_OUTPUT_PRICE_PER_TOKEN,
+  retryTokenBudgets,
+  shouldRetryRunResult,
+} from './query_models.ts';
 
 const cap = MAX_OUTPUT_PRICE_PER_TOKEN;
 
@@ -46,4 +51,45 @@ test('empty input returns empty result', () => {
 
 test('MAX_OUTPUT_PRICE_PER_TOKEN equals $50 per 1M tokens', () => {
   assert.equal(MAX_OUTPUT_PRICE_PER_TOKEN, 50 / 1_000_000);
+});
+
+test('does not retry complete successful content', () => {
+  assert.equal(
+    shouldRetryRunResult({ success: true, content: 'Complete answer', finish_reason: 'stop' }),
+    false,
+  );
+});
+
+test('retries successful empty content', () => {
+  assert.equal(shouldRetryRunResult({ success: true, content: '', finish_reason: 'stop' }), true);
+});
+
+test('retries successful whitespace-only content', () => {
+  assert.equal(shouldRetryRunResult({ success: true, content: '   \n\t', finish_reason: 'stop' }), true);
+});
+
+test('retries successful content truncated by token limit', () => {
+  assert.equal(
+    shouldRetryRunResult({
+      success: true,
+      content: 'Here is a mind-bending fact about the human body and the nature of reality:\n\n**',
+      finish_reason: 'length',
+    }),
+    true,
+  );
+});
+
+test('does not retry unsuccessful results', () => {
+  assert.equal(
+    shouldRetryRunResult({ success: false, content: null }),
+    false,
+  );
+});
+
+test('retryTokenBudgets uses 4x larger token caps', () => {
+  assert.deepEqual(retryTokenBudgets(500), [10000, 20000, 40000]);
+});
+
+test('retryTokenBudgets skips budgets that do not increase the current max tokens', () => {
+  assert.deepEqual(retryTokenBudgets(10000), [20000, 40000]);
 });
