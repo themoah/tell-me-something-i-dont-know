@@ -526,3 +526,11 @@ models:
     license: "commercial"
     released: "April 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "google/gemini-3.5-flash"
+    name: "Google: Gemini 3.5 Flash"
+    provider: "Google"
+    license: "commercial"
+    released: "May 2026"
+
