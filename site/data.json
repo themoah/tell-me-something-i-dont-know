@@ -4,19 +4,19 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-19T18:34:32.888Z",
-    "total_models": 86
+    "generated_at": "2026-05-21T07:18:33.316Z",
+    "total_models": 87
   },
   "stats": {
-    "total_models": 86,
-    "total_responses": 252,
-    "total_tokens": 202363,
+    "total_models": 87,
+    "total_responses": 255,
+    "total_tokens": 205546,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 46,
-      "jellyfish": 38,
+      "jellyfish": 39,
       "honey": 14,
-      "anglo-zanzibar war": 11,
+      "anglo-zanzibar war": 12,
       "venus": 10,
       "bananas": 7,
       "cleopatra": 6,
@@ -3239,6 +3239,46 @@
           "finish_reason": "stop",
           "reasoning": "**Discovering Obscure Knowledge**\n\nI'm deep in exploration, seeking those truly unique insights. My focus is on unearthing surprising, verifiable, and fascinating nuggets of information that most wouldn't readily encounter, aiming to deliver a genuine \"aha!\" moment.\n\n**Unearthing Novel Information**\n\nI'm currently investigating the peculiar phenomenon of \"flying spiders,\" specifically their use of Earth's electrostatic field for ballooning. This seems far more novel and intriguing than common biological trivia, offering a truly unique angle for discovery.\n\n**Finding Unique Facts**\n\nMy current focus is on discovering obscure, verifiable, and utterly fascinating facts. I've found a particularly compelling detail about Pharaoh Ramesses II being issued a passport for travel. It's precisely the kind of surprising historical tidbit I aim to unearth.\n\n**Evaluating Intriguing Discoveries**\n\nI'm weighing the marvel of spiders utilizing Earth's electrostatic field for flight against the charming absurdity of Ramesses II needing a passport. Both are verified, but the spider fact offers a more profound scientific wonder.\n\n**Selecting Fascinating Facts**\n\nI'm currently refining my focus, leaning towards the astonishing \"warm\" ice, specifically Ice XVIII. Its superionic, electrically conductive nature under immense pressure, existing within gas giants, offers a truly mind-bending scientific marvel to explore.\n\n**Drafting Spider Flight**\n\nI'm currently drafting an explanation for spider electric flight, focusing on how they sense and ride Earth's atmospheric electromagnetic field. This novel mechanism, recently proven, provides a truly surprising and verifiable scientific marvel.\n\n",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "x-ai/grok-build-0.1",
+      "name": "xAI: Grok Build 0.1",
+      "provider": "xAI",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something wild: The \"immortal\" jellyfish (*Turritopsis dohrnii*) can revert to its juvenile stage after reaching adulthood, effectively resetting its life cycle instead of dying. It does this by transforming its cells back into a polyp (like going from an adult back into a baby), which means it can theoretically do this indefinitely unless it's eaten or diseased.\n\nSo in theory, there's a creature on Earth that can live forever.",
+          "tokens_prompt": 131,
+          "tokens_completion": 613,
+          "finish_reason": "stop",
+          "reasoning": "The user asked: \"Tell me something I don't know.\"\nFirst, the user query is: \"Tell me something I don't know.\" And then \"--\" which seems like a separator.\n\nI need to provide something interesting that the user might not know, and report confidence inside \\confidence{}.\n\nMy response should be natural, from first person, and end with the answer and confidence.",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Wombats produce cube-shaped poop.\n\nThey have a uniquely shaped intestine that turns their droppings into six-sided cubes so they don't roll away when they use them to mark territory. It's one of the only animals known to naturally produce geometric feces.",
+          "tokens_prompt": 131,
+          "tokens_completion": 1609,
+          "finish_reason": "stop",
+          "reasoning": "The user said: \"Tell me something I don't know.\" This is a broad, open-ended request. It's playful and vague, so I should respond in a fun, engaging way.\nThe shortest war in history was between Britain and Zanzibar in 1896, lasting just 38 minutes. \n\n## Explanation\n\nThe fact is drawn from a well-documented historical record of military engagements, specifically the Anglo-Zanzibar War of 1896. It began on August 27 when a British force, under 3,000 troops and supported by warships, landed on the island to enforce a succession dispute following the death of Sultan Hamza bin Turki. The Zanzibar army, numbering around 5,000, was quickly overwhelmed by the superior firepower and organization of the British, leading to surrender within 38 minutes after the initial 9 a.m. bombardment. This duration is confirmed by primary sources such as British military dispatches and contemporary accounts in newspapers like The Times, which noted the rapid collapse due to the Zanzibar forces’ lack of coordination and the decisive naval shelling. The brevity stands out in comparative military history because most wars span days or years, making this an outlier that underscores the asymmetry of 19th-century colonial warfare. Verification involves cross-referencing timelines with casualty reports showing minimal British losses (fewer than 50) against thousands of Zanzibar casualties, reinforcing the event’s brevity without exaggeration. This example serves as a concise illustration of how modern military tactics can produce near-instantaneous outcomes in targeted conflicts. The confidence level accounts for minor variations in exact duration estimates across sources (some cite 38–45 minutes), but the core timeline is consistently anchored to primary records. The response prioritizes brevity and surprise while remaining grounded in verifiable historical detail.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's something most people don't know:\n\nThe shortest war in recorded history lasted **38 minutes**.\n\nIn 1896, Britain declared war on Zanzibar after the sultan refused to step down. The British fleet began shelling the palace at 9:02 a.m., and Zanzibar surrendered at 9:40 a.m. The entire conflict was over before most people had finished breakfast. \n\n(They also billed Zanzibar for the cost of the ammunition afterward.) \n\nWant another one?",
+          "tokens_prompt": 131,
+          "tokens_completion": 961,
+          "finish_reason": "stop",
+          "reasoning": "The user asked: \"Tell me something I don't know.\"\nThe observable universe is about 93 billion light-years across, but we can only see about 46 billion light-years due to the expansion of space. \n\n## Explanation\n\nThe scale of the observable universe is derived from the finite speed of light (c ≈ 3 × 10^8 m/s) and the age of the universe (≈13.8 billion years), which together limit the maximum distance light could have traveled since the Big Bang.",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
         }
       ]
     }
