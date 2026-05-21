@@ -534,3 +534,11 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "x-ai/grok-build-0.1"
+    name: "xAI: Grok Build 0.1"
+    provider: "xAI"
+    license: "commercial"
+    released: "May 2026"
+
