@@ -542,3 +542,11 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "qwen/qwen3.7-max"
+    name: "Qwen: Qwen3.7 Max"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "May 2026"
+
