@@ -21,13 +21,15 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
+import { hasFastToken, MAX_OUTPUT_PRICE_PER_TOKEN } from './filters.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_DIR = path.join(__dirname, '..', 'site');
 const DATA_FILE = path.join(SITE_DIR, 'data.json');
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const OPENROUTER_MODELS_URL = 'https://openrouter.ai/api/v1/models';
-export const MAX_OUTPUT_PRICE_PER_TOKEN = 50 / 1_000_000;
+
+export { MAX_OUTPUT_PRICE_PER_TOKEN } from './filters.ts';
 
 interface ModelConfig {
   id: string;
@@ -305,6 +307,13 @@ async function main() {
     models = models.filter((m) =>
       filters.some((f) => m.id.toLowerCase().includes(f) || m.name.toLowerCase().includes(f)),
     );
+  }
+
+  // Never query "fast" model variants, even if they linger in the append-only yaml.
+  const fastModels = models.filter((m) => hasFastToken(m.id));
+  if (fastModels.length) {
+    console.log(`Skipping ${fastModels.length} fast model(s): ${fastModels.map((m) => m.name).join(', ')}`);
+    models = models.filter((m) => !hasFastToken(m.id));
   }
 
   if (apiKey) {
