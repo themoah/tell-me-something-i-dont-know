@@ -550,3 +550,17 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "anthropic/claude-opus-4.8-fast"
+    name: "Anthropic: Claude Opus 4.8 (Fast)"
+    provider: "Anthropic"
+    license: "commercial"
+    released: "May 2026"
+
+  - id: "anthropic/claude-opus-4.8"
+    name: "Anthropic: Claude Opus 4.8"
+    provider: "Anthropic"
+    license: "commercial"
+    released: "May 2026"
+
