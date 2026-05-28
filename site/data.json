@@ -4,28 +4,28 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-05-25T10:33:27.358Z",
-    "total_models": 88
+    "generated_at": "2026-05-28T18:31:49.934Z",
+    "total_models": 90
   },
   "stats": {
-    "total_models": 88,
-    "total_responses": 258,
-    "total_tokens": 214173,
+    "total_models": 90,
+    "total_responses": 264,
+    "total_tokens": 215690,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 46,
+      "octopus": 47,
       "jellyfish": 39,
-      "honey": 14,
+      "honey": 19,
       "anglo-zanzibar war": 12,
       "venus": 10,
-      "bananas": 7,
+      "bananas": 8,
       "cleopatra": 6,
       "oxford university": 6,
       "trees": 2,
       "space": 2,
+      "eiffel tower": 2,
       "tardigrade": 1,
       "mantis shrimp": 1,
-      "eiffel tower": 1,
       "dna": 1
     }
   },
@@ -3314,6 +3314,85 @@
           "tokens_completion": 2904,
           "finish_reason": "stop",
           "reasoning": "Here's a thinking process that leads to the suggested response:\n\n1.  **Analyze the Request:**\n    *   **Prompt:** \"Tell me something I don't know.\"\n    *   **Challenge:** I don't know the user's background, interests, or existing knowledge base. Therefore, I need to provide something highly obscure, counterintuitive, or a fascinating intersection of fields that the average person (even a well-read one) is unlikely to know.\n    *   **Goal:** Deliver a mind-bending, verifiable, and engaging fact or concept, explained clearly.\n\n2.  **Brainstorming Categories & Candidates:**\n    *   *Space/Physics:* Time dilation, quantum entanglement, the Great Attractor. (Too common).\n    *   *Biology/Nature:* Cordyceps, immortal jellyfish, mantis shrimp vision. (Too common).\n    *   *History:* The Emu War, dancing plague. (Too common).\n    *   *Language/Linguistics:* Pirahã language, Bouba/Kiki effect. (A bit niche, but maybe too academic).\n    *   *Earth Science/Geology:* Deep biosphere, point Nemo. (A bit common).\n    *   *Technology/Computing:* How GPS relies on relativity, the Y2K38 problem. (Too common).\n    *   *Weird/Obscure Intersections:*\n        *   *Idea 1:* The fact that trees communicate via mycorrhizal networks (Wood Wide Web). -> *Too popular now.*\n        *   *Idea 2:* The \"Bloop\" was just an icequake. -> *A bit disappointing.*\n        *   *Idea 3:* The concept of \"Phantom Time Hypothesis.\" -> *Fun, but it's a fringe conspiracy theory, not a solid fact.*\n        *   *Idea 4:* The biological and historical reality of *chimerism* and how it affects DNA testing. -> *Good, but maybe a bit true-crime podcast.*\n        *   *Idea 5:* The \"Time Crystal\" phase of matter. -> *Very cool, hard to explain simply.*\n        *   *Idea 6:* The fact that the color magenta doesn't actually exist on the visible light spectrum. -> *Excellent. It's mind-bending, easy to explain, and almost nobody knows the \"why\" behind it.*\n        *   *Idea 7:* The \"Great Oxidation Event\" and how oxygen was originally a toxic pollutant that caused a mass extinction. -> *Good, but often taught in advanced bio.*\n        *   *Idea 8:* The mathematical concept of \"Gabriel's Horn\" (finite volume, infinite surface area). -> *Very cool, but requires math visualization.*\n        *   *Idea 9:* The \"Wood Frog\" freezing solid. -> *A bit common.*\n        *   *Idea 10:* How the invention of the shipping container changed global geopolitics and the physical shape of cities. -> *Fascinating, but a bit dry.*\n\n3.  **Selecting the Best Candidate:**\n    *   Let's go with **Idea 6: Magenta doesn't exist on the light spectrum.** It challenges everyday perception, is scientifically accurate, and has a \"whoa\" factor.\n    *   *Alternative Backup:* Let's add a second one just in case they are a physics/color nerd. How about **The \"Smell of Rain\" (Petrichor) is actually a bacterial byproduct that we evolved to be hyper-sensitive to.** (A bit common).\n    *   *Let's try a historical/biological crossover:* **The fact that humans have a \"second brain\" (enteric nervous system) that produces 95% of the body's serotonin.** (Getting more common).\n    *   *Let's go with an obscure historical/scientific anomaly:* **The \"Year Without a Summer\" (1816) caused by Mt. Tambora, which directly led to the invention of the bicycle and the writing of Frankenstein.** (Very cool intersection of history, climate, and pop culture).\n\n    *Decision:* Let's do **Magenta** as the primary mind-bender, and briefly mention the **Tambora/Frankenstein/Bicycle** connection as a bonus historical mind-bender. Actually, let's focus deeply on *one* incredibly fascinating, lesser-known phenomenon to keep it impactful: **The \"Bystander Effect\" of the Immune System (Trogocytosis) OR The fact that we are currently living in the \"Meghalayan\" age, but let's go with the \"Color Magenta\" and \"Time perception in the brain\".**\n\n    *Wait, let's look for something truly obscure but undeniable.*\n    How about: **The \"Phantom Limb\" phenomenon isn't just in the brain; it's partly due to the nervous system in the remaining stump, but more interestingly, you can cure phantom limb pain using a mirror box, which tricks the brain.** (A bit well-known).\n\n    Let's go with: **The fact that there is a massive, hidden \"ocean\" inside the Earth's mantle, but it's not liquid water.** (Ringwoodite). *Good, but often clicks-baited.*\n\n    Let's go with: **The \"Language of the Bees\" (Waggle dance) uses quantum mechanics/entanglement?** *No, that's pseudoscience.*\n\n    Let's go with: **The \"Dead Internet Theory\"?** *No, conspiracy.*\n\n    Let's go with: **The biological reality of \"Microchimerism\" - you likely have living cells from your mother, and if you've been pregnant, your children, living in your brain and heart right now.**\n    *Why this is great:* It's deeply personal, biologically verified, emotionally resonant, and relatively unknown outside of specific medical/biology circles.\n\n4.  **Drafting the Microchimerism Response:**\n    *   **Hook:** Acknowledge the challenge (I don't know what you know, so I'll aim for something deeply personal and biologically profound).\n    *   **The Concept:** Microchimerism.\n    *   **The Explanation:** During pregnancy, cells cross the placenta. Fetal cells enter the mother, maternal cells enter the fetus.\n    *   **The Mind-Blowing Part:** These cells don't just disappear. They migrate to organs (brain, heart, skin) and *become* part of the tissue. They can act as stem cells and help heal injuries.\n    *   **The Implication:** If you are a mother, you likely have your children's cells repairing your heart or living in your brain. If you are *anyone*, you likely have your mother's cells inside you. Furthermore, if your mother had a miscarriage or an older sibling before you, you might have *their* cells inside you too.\n    *   **Tone:** Awe-inspiring, scientifically accurate, slightly poetic.\n\n5.  **Refining the Explanation (Self-Correction/Verification during drafting):**\n    *   *Is it true?* Yes, fetal microchimerism is well-documented (e.g., male DNA found in the brains of deceased women who had sons).\n    *   *Is it too creepy?* Frame it beautifully—it's about connection and healing, not parasitism.\n    *   *Let's add a second, totally different fact just in case they are a biology major.*\n    *   *Second Fact:* **The \"Time\" fact.** Time doesn't flow at the same rate at your head as it does at your feet due to gravitational time dilation. (A bit common).\n    *   *Second Fact:* **The \"Banana\" fact.** The artificial banana flavoring is based on the Gros Michel banana, which was wiped out by Panama disease. (Very common internet trivia).\n    *   *Second Fact:* **The \"Trees/Sharks\" fact.** Sharks are older than trees. (Common).\n    *   *Second Fact:* **The \"Saturn's Rings\" fact.** Saturn's rings are temporary and will be gone in 100 million years. (Okay).\n    *   *Second Fact:* **The \"Color\" fact (Magenta).** Let's use Magenta as the second quick-hit fact. It contrasts nicely with the biological/emotional first fact.\n\n6.  **Structuring the Output:**\n    *   **Introduction:** Set the stage.\n    *   **Fact 1 (Biology/Personal):** Microchimerism (The cells of others living inside you).\n    *   **Fact 2 (Physics/Perception):** Magenta doesn't exist (The brain's hack).\n    *   **Conclusion:** A brief wrap-up on how weird reality is.\n\n7.  **Drafting the Content (Iterative refinement for impact):**\n    *   *Microchimerism:* Make sure to mention the 2012 study where researchers found male DNA in the brains of women (proving fetal cells cross the blood-brain barrier). Mention the healing aspect (fetal cells migrating to a wounded heart).\n    *   *Magenta:* Explain the visible spectrum (ROYGBIV). Red is at one end, Violet at the other. They don't touch. When red and violet light hit your eye simultaneously, your brain panics because there is no \"in-between\" wavelength. So, it invents a color: Magenta. It has no wavelength. It's a biological bridge.\n\n8.  **Final Polish:** Check for clarity, engaging tone, and accuracy. Ensure the transition between the deeply emotional/biological fact and the quirky physics/perception fact is smooth. (The resulting text looks strong, hitting both emotional resonance and intellectual curiosity). Let's go. Post-processing the thought trail to ensure no hallucinations. (Male DNA in female brains study: University of Alberta, 2012, published in PLOS One. Magenta: Standard color theory / opponent-process theory. Both solid). Keep it accessible. Keep it fascinating. Let's write the response. \n\n*(Self-Correction during drafting Magenta)*: Make sure to clarify that magenta *as a perception* exists, but it doesn't exist as a *single wavelength of light* on the electromagnetic spectrum. Precision matters.\n\n*(Self-Correction during drafting Microchimerism)*: Clarify that it happens in *both* directions (mother to child, child to mother), and even between twins in the womb.\n\n9.  **Generate Output.** (Proceed to generate the final response based on these structured thoughts).",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4.8-fast",
+      "name": "Anthropic: Claude Opus 4.8 (Fast)",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: **Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Its low moisture content and acidic pH create an environment where bacteria and microorganisms can't survive.\n\nOf course, whether you find this surprising depends on what you already know—so if this is old news to you, let me know your interests and I can dig up something more tailored to genuinely surprise you. (Topics like physics, history, biology, language, or something obscure all work well.)",
+          "tokens_prompt": 16,
+          "tokens_completion": 176,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something that might surprise you: honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. This happens because honey's low moisture content and acidic pH create an environment where bacteria and microorganisms can't survive.\n\nThat said, I don't actually know what *you* personally know, so I might have missed the mark. If you tell me a bit about your interests or areas of expertise, I can try to find something genuinely new to you—whether that's in science, history, language, or something more niche.\n\nIs there a particular topic you'd like an obscure fact about?",
+          "tokens_prompt": 16,
+          "tokens_completion": 202,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something that might surprise you: **honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs—over 3,000 years old—that were still perfectly edible. Its low moisture content and acidic pH create an environment where bacteria can't survive.\n\nBut honestly, whether this is something you *don't* know is a gamble on my part—you might be a beekeeper or a food scientist for all I know.\n\nIf you want, I can aim better. Tell me roughly what you're into (or what you already know a lot about), and I can dig up something genuinely obscure in—or far away from—that area. A few options:\n\n- A weird fact in a field you're unfamiliar with\n- A counterintuitive idea that challenges common assumptions\n- Something genuinely strange about everyday life\n\nWhat sounds good?",
+          "tokens_prompt": 16,
+          "tokens_completion": 262,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4.8",
+      "name": "Anthropic: Claude Opus 4.8",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "May 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something that might surprise you:\n\n**Honey never spoils.** Archaeologists have found pots of honey in ancient Egyptian tombs—over 3,000 years old—that were still perfectly edible. Its low moisture content and acidic pH make it inhospitable to bacteria.\n\nBut of course, I'm guessing at what you don't know. To give you something genuinely new, it'd help to know a bit about you—your field, interests, or what you've already explored. \n\nIn the meantime, here are a few more from different domains:\n\n- **Octopuses have three hearts** and blue blood (copper-based rather than iron-based).\n- **Bananas are radioactive**—they contain potassium-40, an isotope. You'd need to eat millions at once for it to be dangerous, though.\n- **The Eiffel Tower grows** in summer—heat causes the iron to expand, making it up to 15 cm taller.\n- **Wombats produce cube-shaped poop**, which they use to mark territory; the cubes don't roll away.\n\nWant me to go deeper on any of these, or aim at a specific subject you're curious about?",
+          "tokens_prompt": 16,
+          "tokens_completion": 358,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus",
+            "eiffel tower",
+            "honey",
+            "bananas"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something that might surprise you: **honey never spoils**. Archaeologists have found pots of honey in ancient Egyptian tombs—over 3,000 years old—that were still perfectly edible. This is because honey's chemistry (very low moisture, high acidity, and the small amount of hydrogen peroxide bees produce) creates an environment where bacteria and microorganisms simply can't survive.\n\nOf course, I don't actually know what *you* specifically know, so this might be old news to you! If you tell me a bit about your interests or expertise, I could try to dig up something more genuinely novel for you.\n\nWant me to throw out a few facts from different fields—science, history, language, the absurd—and you can tell me which direction is actually surprising?",
+          "tokens_prompt": 16,
+          "tokens_completion": 240,
+          "finish_reason": "stop",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's something that might surprise you: **wombats produce cube-shaped poop.**\n\nThey're the only known animal to create cubic feces—around 80-100 cubes per night. For a long time, nobody understood how a round-ish intestine could produce a six-sided shape. Researchers eventually found that the wombat's intestines have regions of varying elasticity—stiffer and more flexible patches that contract at different rates, molding the poop into cubes as it moves through.\n\nWhy bother? The leading theory is that wombats use their droppings to mark territory and communicate, often placing them on rocks and logs. Cubes don't roll away, so they stay put as little signposts.\n\nOf course, I don't actually know what you *do* or *don't* know—so if this one was already in your repertoire, let me know your interests and I can dig up something more obscure (history, science, language, whatever you like).",
+          "tokens_prompt": 16,
+          "tokens_completion": 279,
+          "finish_reason": "stop",
           "topics": []
         }
       ]
