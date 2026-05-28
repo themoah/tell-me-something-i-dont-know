@@ -18,6 +18,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
+import { hasFastToken, hasLatestToken, MAX_OUTPUT_PRICE_PER_TOKEN } from './filters.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MODELS_YAML = path.join(__dirname, 'models.yaml');
@@ -103,6 +104,7 @@ interface ORModel {
     output_modalities?: string[];
     modality?: string;
   };
+  pricing?: { completion?: string };
 }
 
 interface ModelYaml {
@@ -163,27 +165,6 @@ async function bumpPackageVersion(): Promise<{ from: string; to: string }> {
   return { from, to };
 }
 
-export function hasLatestToken(id: string): boolean {
-  const slashIdx = id.indexOf('/');
-  const slug = slashIdx < 0 ? id : id.slice(slashIdx + 1);
-  return slug
-    .split('-')
-    .some((part) => part.toLowerCase() === 'latest');
-}
-
-export function stripFastSuffix(id: string): string {
-  const slashIdx = id.indexOf('/');
-  if (slashIdx < 0) return id;
-  const prefix = id.slice(0, slashIdx);
-  const slug = id.slice(slashIdx + 1);
-  if (!slug) return id;
-  const stripped = slug
-    .split('-')
-    .filter((part) => part.toLowerCase() !== 'fast')
-    .join('-');
-  return `${prefix}/${stripped}`;
-}
-
 function isRecent(m: ORModel, cutoff: number): boolean {
   return typeof m.created === 'number' && m.created >= cutoff;
 }
@@ -213,6 +194,7 @@ async function getAllModels(apiKey: string): Promise<ORModel[]> {
     created: m.created,
     hugging_face_id: m.hugging_face_id ?? null,
     architecture: m.architecture,
+    pricing: m.pricing,
   }));
 }
 
@@ -259,20 +241,21 @@ async function main() {
 
   const cutoff = Math.floor(Date.now() / 1000) - THIRTY_DAYS_SEC;
 
-  const drops = { variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, fastVariant: 0, latestAlias: 0 };
+  const drops = { variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, fast: 0, tooExpensive: 0, latestAlias: 0 };
   const newModels: ModelYaml[] = [];
   const hfCache = new Map<string, string | null>();
 
   for (const candidate of allModels) {
     if (candidate.id.includes(':')) { drops.variant++; continue; }
     if (hasLatestToken(candidate.id)) { drops.latestAlias++; continue; }
+    if (hasFastToken(candidate.id)) { drops.fast++; continue; }
     if (!isRecent(candidate, cutoff)) { drops.old++; continue; }
     if (!isTextOnly(candidate)) { drops.nonText++; continue; }
     if (existingIds.has(candidate.id)) { drops.idMatch++; continue; }
 
-    const baseId = stripFastSuffix(candidate.id);
-    if (baseId !== candidate.id && existingIds.has(baseId)) {
-      drops.fastVariant++;
+    const outPrice = parseFloat(candidate.pricing?.completion ?? '');
+    if (Number.isFinite(outPrice) && outPrice > MAX_OUTPUT_PRICE_PER_TOKEN) {
+      drops.tooExpensive++;
       continue;
     }
 
@@ -293,7 +276,7 @@ async function main() {
   console.log(
     `  Filter drops: variant=${drops.variant} older-than-30d=${drops.old} ` +
       `non-text=${drops.nonText} id-match=${drops.idMatch} name-match=${drops.nameMatch} ` +
-      `fast-variant=${drops.fastVariant} latest-alias=${drops.latestAlias}`,
+      `fast=${drops.fast} too-expensive=${drops.tooExpensive} latest-alias=${drops.latestAlias}`,
   );
 
   if (newModels.length === 0) {

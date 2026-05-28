@@ -1,44 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  stripFastSuffix,
   classifyLicenseString,
   deriveProvider,
-  hasLatestToken,
   bumpPatch,
 } from './update_models.ts';
-
-test('strips -fast suffix', () => {
-  assert.equal(stripFastSuffix('x-ai/grok-4.1-fast'), 'x-ai/grok-4.1');
-});
-
-test('strips -fast- in middle of slug', () => {
-  assert.equal(stripFastSuffix('x-ai/grok-4.1-fast-mini'), 'x-ai/grok-4.1-mini');
-});
-
-test('is case-insensitive for the token', () => {
-  assert.equal(stripFastSuffix('x-ai/GROK-4.1-FAST'), 'x-ai/GROK-4.1');
-});
-
-test('returns id unchanged when no fast token', () => {
-  assert.equal(stripFastSuffix('x-ai/grok-4.1'), 'x-ai/grok-4.1');
-});
-
-test('does not touch provider prefix', () => {
-  assert.equal(stripFastSuffix('fast-llm/model'), 'fast-llm/model');
-});
-
-test('does not strip substrings (token boundary only)', () => {
-  assert.equal(stripFastSuffix('anthropic/claude-fastlane'), 'anthropic/claude-fastlane');
-});
-
-test('returns input unchanged when no slash', () => {
-  assert.equal(stripFastSuffix('noslash'), 'noslash');
-});
-
-test('returns input unchanged when slug is empty', () => {
-  assert.equal(stripFastSuffix('provider/'), 'provider/');
-});
 
 test('classifyLicenseString: apache-2.0 → open-source', () => {
   assert.equal(classifyLicenseString('apache-2.0'), 'open-source');
@@ -94,30 +60,6 @@ test('deriveProvider: unknown prefix gets title-cased', () => {
 
 test('deriveProvider: hyphenated unknown prefix gets title-cased per word', () => {
   assert.equal(deriveProvider('inception-labs/model'), 'Inception Labs');
-});
-
-test('hasLatestToken: claude-haiku-latest → true', () => {
-  assert.equal(hasLatestToken('anthropic/claude-haiku-latest'), true);
-});
-
-test('hasLatestToken: latest-mini → true (token at start)', () => {
-  assert.equal(hasLatestToken('openai/latest-mini'), true);
-});
-
-test('hasLatestToken: LATEST is case-insensitive', () => {
-  assert.equal(hasLatestToken('openai/GPT-LATEST'), true);
-});
-
-test('hasLatestToken: claude-sonnet-4.6 → false', () => {
-  assert.equal(hasLatestToken('anthropic/claude-sonnet-4.6'), false);
-});
-
-test('hasLatestToken: substring "latestmodel" → false (token boundary)', () => {
-  assert.equal(hasLatestToken('foo/latestmodel'), false);
-});
-
-test('hasLatestToken: no slash, slug only', () => {
-  assert.equal(hasLatestToken('something-latest'), true);
 });
 
 test('bumpPatch: 1.0.25 → 1.0.26', () => {

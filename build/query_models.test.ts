@@ -49,8 +49,8 @@ test('empty input returns empty result', () => {
   assert.equal(skipped.length, 0);
 });
 
-test('MAX_OUTPUT_PRICE_PER_TOKEN equals $50 per 1M tokens', () => {
-  assert.equal(MAX_OUTPUT_PRICE_PER_TOKEN, 50 / 1_000_000);
+test('MAX_OUTPUT_PRICE_PER_TOKEN equals $30 per 1M tokens', () => {
+  assert.equal(MAX_OUTPUT_PRICE_PER_TOKEN, 30 / 1_000_000);
 });
 
 test('does not retry complete successful content', () => {
