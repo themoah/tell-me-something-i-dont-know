@@ -564,3 +564,11 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "stepfun/step-3.7-flash"
+    name: "StepFun: Step 3.7 Flash"
+    provider: "Stepfun"
+    license: "commercial"
+    released: "May 2026"
+
