@@ -572,3 +572,11 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "minimax/minimax-m3"
+    name: "MiniMax: MiniMax M3"
+    provider: "Minimax"
+    license: "open-weights"
+    released: "May 2026"
+
