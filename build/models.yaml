@@ -580,3 +580,17 @@ models:
     license: "open-weights"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "qwen/qwen3.7-plus"
+    name: "Qwen: Qwen3.7 Plus"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "June 2026"
+
+  - id: "openrouter/fusion"
+    name: "OpenRouter: Fusion"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "May 2026"
+
