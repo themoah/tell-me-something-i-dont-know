@@ -594,3 +594,11 @@ models:
     license: "commercial"
     released: "May 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "nvidia/nemotron-3-ultra-550b-a55b"
+    name: "NVIDIA: Nemotron 3 Ultra"
+    provider: "NVIDIA"
+    license: "open-weights"
+    released: "June 2026"
+

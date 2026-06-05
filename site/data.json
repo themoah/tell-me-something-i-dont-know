@@ -4,22 +4,22 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-04T16:12:51.369Z",
-    "total_models": 94
+    "generated_at": "2026-06-05T16:26:35.224Z",
+    "total_models": 95
   },
   "stats": {
-    "total_models": 94,
-    "total_responses": 276,
-    "total_tokens": 238231,
+    "total_models": 95,
+    "total_responses": 279,
+    "total_tokens": 238809,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 52,
       "jellyfish": 40,
       "honey": 23,
+      "cleopatra": 12,
       "anglo-zanzibar war": 12,
       "venus": 11,
       "bananas": 11,
-      "cleopatra": 9,
       "oxford university": 8,
       "trees": 2,
       "space": 2,
@@ -3565,6 +3565,48 @@
             "octopus",
             "honey",
             "bananas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "NVIDIA: Nemotron 3 Ultra",
+      "provider": "NVIDIA",
+      "license": "open-weights",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "**Cleopatra lived closer in time to the invention of the iPhone than she did to the construction of the Great Pyramid of Giza.**\n\n*   **Great Pyramid built:** ~2560 BCE\n*   **Cleopatra born:** 69 BCE\n*   **iPhone released:** 2007 CE\n\n**The timeline gap:**\n*   Pyramid to Cleopatra: **~2,491 years**\n*   Cleopatra to iPhone: **~2,076 years**\n\nShe was essentially a \"modern\" figure to the ancient Egyptians who built the pyramids—roughly the same temporal distance as we are from the Romans.",
+          "tokens_prompt": 24,
+          "tokens_completion": 218,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to learn something they don't know.\nThis is a very open-ended request.\nI should provide a fact that is:\n1.  Verifiable/True.\n2.  Surprising or counter-intuitive.\n3.  Not extremely common trivia (like \"honey never spoils\").\n4.  Concise but with enough context to be interesting.",
+          "topics": [
+            "cleopatra"
+          ]
+        },
+        {
+          "success": true,
+          "content": "**Cleopatra lived closer in time to the invention of the iPhone than she did to the construction of the Great Pyramid of Giza.**\n\n*   **Great Pyramid built:** ~2560 BCE\n*   **Cleopatra born:** 69 BCE\n*   **First iPhone released:** 2007 CE\n\n**The math:**\n*   Time between Pyramid and Cleopatra: **~2,491 years**\n*   Time between Cleopatra and iPhone: **~2,076 years**\n\nShe was essentially ancient history to *herself*.",
+          "tokens_prompt": 24,
+          "tokens_completion": 179,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to know something they don't know. This is impossible to guarantee, but I can provide a fact that is statistically unlikely to be common knowledge, or a surprising perspective on a familiar topic. I'll aim for a \"high surprise factor\" fact.",
+          "topics": [
+            "cleopatra"
+          ]
+        },
+        {
+          "success": true,
+          "content": "**Cleopatra lived closer in time to the release of the first iPhone than she did to the construction of the Great Pyramid of Giza.**\n\n*   **Great Pyramid built:** ~2560 BCE\n*   **Cleopatra born:** 69 BCE\n*   **First iPhone released:** 2007 CE\n\n**The math:**\n*   Time between Pyramid and Cleopatra: **~2,491 years**\n*   Time between Cleopatra and iPhone: **~2,076 years**\n\nShe was roughly **415 years closer** to the smartphone era than to the pyramids.",
+          "tokens_prompt": 24,
+          "tokens_completion": 181,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to know something they don't know. This is impossible to guarantee, but I can provide a fact that is statistically unlikely to be common knowledge. I'll aim for something surprising, specific, and verifiable.",
+          "topics": [
+            "cleopatra"
           ]
         }
       ]
