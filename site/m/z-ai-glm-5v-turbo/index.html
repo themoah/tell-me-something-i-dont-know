@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.ai GLM 5v Turbo — Tell me something I don't know.</title>
+    <meta name="description" content="Z.ai GLM 5v Turbo answers &quot;Tell me something I don&#39;t know.&quot; — Here is a fact that usually blows people&#39;s minds: If you take a standard deck of 52 playing cards and shuffle them thoroughly, the specific order of car…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5v-turbo/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5v-turbo/">
+    <meta property="og:title" content="Z.ai GLM 5v Turbo — Tell me something I don't know.">
+    <meta property="og:description" content="Z.ai GLM 5v Turbo answers &quot;Tell me something I don&#39;t know.&quot; — Here is a fact that usually blows people&#39;s minds: If you take a standard deck of 52 playing cards and shuffle them thoroughly, the specific order of car…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Z.ai GLM 5v Turbo — Tell me something I don't know.">
+    <meta name="twitter:description" content="Z.ai GLM 5v Turbo answers &quot;Tell me something I don&#39;t know.&quot; — Here is a fact that usually blows people&#39;s minds: If you take a standard deck of 52 playing cards and shuffle them thoroughly, the specific order of car…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Z.ai GLM 5v Turbo)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here is a fact that usually blows people's minds:\n\nIf you take a standard deck of 52 playing cards and shuffle them thoroughly, the specific order of cards you are holding is almost certainly **unique in the history of the universe.**\n\nHere is the math:\nThere are **80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000** (roughly $8 \\times 10^{67}$) possible ways to arrange a deck of cards.\n\nTo put that number in perspective:\n*   There are only about $10^{80}$ atoms in the entire observable universe.\n*   If you started shuffling a deck of cards once **every second** since the universe began (13.8 billion years ago), you still wouldn't have come close to seeing every possible combination yet. In fact, you wouldn't even be a billionth of a percent there.\n\nSo, statistically speaking, the order of cards in your hands right now has likely never been held by another human being in history.","author":{"@type":"Organization","name":"Z.ai"}},"suggestedAnswer":[{"@type":"Answer","text":"Here is a fact that usually catches people off guard:\n\n**Sharks are older than trees.**\n\nBy the time the first trees appeared on Earth (about 350–380 million years ago), sharks had already been swimming in the oceans for roughly **50 to 100 million years**.\n\nSharks first evolved roughly 450 million years ago, meaning they have survived at least five mass extinction events, including the one that killed the dinosaurs. They watched the first forests grow from the safety of the sea.","author":{"@type":"Organization","name":"Z.ai"}},{"@type":"Answer","text":"Since I cannot see into your mind, I have to play the odds! Here is a fact that usually catches people off guard because it completely upends our understanding of evolutionary history:\n\n**Sharks are older than trees.**\n\nHere is the breakdown:\n*   **Sharks** have been swimming in our oceans for roughly **450 million years**. They have survived four of the Earth’s five mass extinction events (including the one that killed the dinosaurs).\n*   **Trees** (specifically the earliest vascular plants like *Archaeopteris*) didn't appear until around **350 to 400 million years ago**.\n\nThis means that for roughly **50 to 100 million years**, the oceans were full of sharks, but the land was entirely barren rock with no forests covering it.\n\n***\n\n**Bonus Fact (just in case you knew that one):**\nThe word **\"Mortgage\"** comes from Old French, where *mort* means \"dead\" and *gage* means \"pledge.\" Literally translated, a mortgage is a **\"Death Pledge.\"** The name comes from the idea that the debt obligation either ends when the property is taken (dies) or when the payment is fulfilled (dies).","author":{"@type":"Organization","name":"Z.ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Z.ai GLM 5v Turbo</h1>
+        <p class="subtitle">Z.ai · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Z.ai GLM 5v Turbo</div>
+                        <div class="model-provider">Z.ai</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here is a fact that usually blows people&#39;s minds:</p>
+<p>If you take a standard deck of 52 playing cards and shuffle them thoroughly, the specific order of cards you are holding is almost certainly <strong>unique in the history of the universe.</strong></p>
+<p>Here is the math:
+There are <strong>80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000</strong> (roughly $8 \times 10^{67}$) possible ways to arrange a deck of cards.</p>
+<p>To put that number in perspective:</p>
+<ul>
+<li>There are only about $10^{80}$ atoms in the entire observable universe.</li>
+<li>If you started shuffling a deck of cards once <strong>every second</strong> since the universe began (13.8 billion years ago), you still wouldn&#39;t have come close to seeing every possible combination yet. In fact, you wouldn&#39;t even be a billionth of a percent there.</li>
+</ul>
+<p>So, statistically speaking, the order of cards in your hands right now has likely never been held by another human being in history.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>822 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">The user is asking for &quot;something I don&#39;t know.&quot; This is a broad, open-ended request. The goal is to provide a piece of information that is interesting, surprising, or obscure enough that the user likely hasn&#39;t heard it before.
+
+1.  **Analyze the Request:**
+    *   **Core intent:** Entertainment/Information.
+    *   **Constraint:** Must be something the user (a general entity) likely doesn&#39;t know.
+    *   **Tone:** Conversational, engaging.
+
+2.  **Brainstorming Topics:**
+    *   *Space/Physics:* Wombat cubes? Honey badger immunity?
+    *   *History:* Cleopatra lived closer to the iPhone than the Pyramids? (Common fact). Tupperware parties origin? Emu War?
+    *   *Biology:* Octopus hearts? Blue whale tongue weight?
+    *   *Language:* Origin of &quot;OK&quot;? Longest word?
+
+3.  **Selecting the Best Fact:**
+    *   I want something visceral or counter-intuitive.
+    *   *Candidate 1:* Wombat poop is cube-shaped. (Classic, but maybe too well known).
+    *   *Candidate 2:* There are more possible iterations of a game of chess than atoms in the observable universe. (Strong math/science angle).
+    *   *Candidate 3:* Oxford University is older than the Aztec Empire. (Good historical context).
+    *   *Candidate 4:* A day on Venus is longer than a year on Venus. (Counter-intuitive physics).
+
+4.  **Drafting the Response (Iterative refinement):**
+    Let&#39;s go with the **Wombat Poop** fact but add detail about *why*, or perhaps the **Chess** fact because it boggles the mind.
+    Actually, let&#39;s try something slightly more unique but relatable. How about the **Honey Badger** immunity or the **Shrimp&#39;s heart in its head**?
+
+    Let&#39;s go with the **&quot;Oxford vs. Aztec&quot;** comparison or the **&quot;Cleopatra&quot;** timeline, as those are historically mind-blowing. Or maybe the **Mantis Shrimp** vision.
+
+    Let&#39;s pick: **The number of ways to shuffle a deck of cards.**
+    *Fact:* 52! (52 factorial).
+    *Implication:* It is so large that every time you shuffle a deck, you have likely created a sequence of cards that has never existed in history.
+
+5.  **Final Polish:** State the fact clearly and explain why it&#39;s significant.
+
+    *Selected Fact:* The specific arrangement of a shuffled deck of cards.
+    *Reasoning:* It feels tangible (everyone has held cards) but the scale is incomprehensible.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here is a fact that usually catches people off guard:</p>
+<p><strong>Sharks are older than trees.</strong></p>
+<p>By the time the first trees appeared on Earth (about 350–380 million years ago), sharks had already been swimming in the oceans for roughly <strong>50 to 100 million years</strong>.</p>
+<p>Sharks first evolved roughly 450 million years ago, meaning they have survived at least five mass extinction events, including the one that killed the dinosaurs. They watched the first forests grow from the safety of the sea.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1623 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   User asks: &quot;Tell me something I don&#39;t know.&quot;
+    *   Intent: The user wants an interesting, surprising, or obscure fact. They want to learn something new.
+    *   Constraint: I don&#39;t know what the user knows, so I need to aim for something that is generally not common knowledge but verifiable and interesting.
+
+2.  **Brainstorming Categories:**
+    *   Science (Physics, Biology, Astronomy)
+    *   History
+    *   Language/Etymology
+    *   Nature/Animals
+    *   Technology
+
+3.  **Selecting Candidates:**
+
+    *   *Candidate 1 (History):* Cleopatra lived closer to the iPhone than the Great Pyramid. (A bit cliché/common on the internet now).
+    *   *Candidate 2 (Biology):* Octopuses have three hearts. (Common).
+    *   *Candidate 3 (Astronomy):* There are more trees on Earth than stars in the Milky Way. (Good, but maybe known).
+    *   *Candidate 4 (Physics/Materials):* Vantablack absorbs 99.965% of light. (Cool, but maybe technical).
+    *   *Candidate 5 (Nature/Botany):* Strawberries aren&#39;t berries, but bananas are. (Classic botany fact).
+    *   *Candidate 6 (History/Language):* The word &quot;queue&quot; is just &quot;q&quot; followed by four silent letters. (Funny, but short).
+    *   *Candidate 7 (Geology/Time):* There is a &quot;dinosaur&quot; alive today that predates the T-Rex... wait, birds do that.
+    *   *Candidate 8 (Specific Obscure Fact - The &quot;Wow&quot; Factor):*
+        *   *Idea:* The &quot;Bloop&quot; sound? No.
+        *   *Idea:* Wombat poop is cube-shaped? Yes, that&#39;s usually a hit.
+        *   *Idea:* Oxford University is older than the Aztec Empire. (Strong contender).
+
+4.  **Refining the Selection (The &quot;Oxford vs. Aztec&quot; angle):**
+    *   *Fact:* Teaching at Oxford started as early as 1096. The Aztec Empire is generally considered to have begun with the formation of the Triple Alliance in 1428 (or the rise of Tenochtitlan around 1325). Even with the earlier date (1325), Oxford is significantly older.
+    *   *Why it works:* It challenges our mental timeline of &quot;Old Europe&quot; vs. &quot;Ancient Americas.&quot;
+
+5.  **Refining the Selection (The &quot;Wombat Poop&quot; angle - just in case they want something quirky):**
+    *   Maybe too gross for some?
+
+6.  **Refining the Selection (The &quot;Honey never spoils&quot; angle):**
+    *   A bit common.
+
+7.  **Let&#39;s go with something about the human body or deep time.**
+    *   *Fact:* Atoms.
+    *   *Fact:* The &quot;Muphry&#39;s Law&quot; (ironic misspelling of Murphy&#39;s Law). Meta, funny.
+
+8.  **Decision:** Let&#39;s provide a few options or one really strong, multi-layered fact. I&#39;ll choose the **Oxford University vs. Aztec Empire** comparison because it fundamentally shifts perspective on history, OR the **Wombat cube poop** because it&#39;s bizarrely specific.
+
+    *Actually, let&#39;s go for something about **Sharks and Trees**.*
+    *Fact:* Sharks have been around longer than trees.
+    *Timeline:* Sharks ~400-450 million years. Trees (specifically woody ones like Archaeopteris) ~350-380 million years.
+    *Verdict:* This is a very strong &quot;mind-blowing&quot; fact.
+
+9.  **Drafting the Response:**
+    *   State the fact clearly.
+    *   Provide the context/evidence.
+    *   Add a little flavor text.
+
+10. **Final Polish:**
+    &quot;Sharks are older than trees.&quot;
+    *Explanation:* Sharks evolved roughly 400–450 million years ago. The first true trees (woody plants) appeared about 350–380 million years ago. That means sharks have been swimming in our oceans for nearly 100 million years before a single tree ever grew on land.
+
+11. **Alternative (just in case):** The fact about **Cleopatra and the Moon Landing** being closer than Cleopatra and the Pyramids is also good, but let&#39;s stick to the Shark one as it feels more &quot;natural world&quot; focused and less &quot;human timeline&quot; focused.
+
+    *Self-Correction during drafting:* Let&#39;s give them a choice of *one* really good, slightly obscure fact rather than a list. The shark one is solid.
+
+    *Wait, let&#39;s try something more niche.* How about **The Immortal Jellyfish** (*Turritopsis dohrnii*)?
+    It can revert back to a polyp state after reaching sexual maturity, effectively making it biologically immortal (though it can still be eaten/die by disease).
+
+    *Let&#39;s go with the **Wombat Poop** one actually. It&#39;s visual and weird.*
+    No, let&#39;s go with **The &quot;Wood Wide Web&quot;.**
+    Trees talk to each other through fungal networks underground. This is fascinating biology.
+
+    *Let&#39;s stick to the **Shark vs Tree** fact. It&#39;s punchy.*
+
+12. **Final Output Generation:** (Drafting the response based on the Shark vs. Tree concept).
+
+    *Fact:* Sharks are older than trees.
+    *Details:* Sharks evolved ~450m years ago. Trees evolved ~350m years ago.
+
+    *Let&#39;s add a second one just for value?* No, keep it simple. One strong fact.
+
+    *Let&#39;s try a linguistic one:* The word &quot;**swims**&quot; upside down is still &quot;**swims**.&quot; (Palindromic rotation). Fun, but trivial.
+
+    *Let&#39;s go with the **Mantis Shrimp** vision?* Too common.
+
+    *Let&#39;s go with **Venus&#39; day is longer than its year**.*
+    Venus rotates so slowly that a day (one sunrise to the next) takes longer than its orbit around the sun (a year). This is a classic physics/astronomy mind-bender.
+
+    *Let&#39;s provide the **Venus** fact. It&#39;s scientifically interesting and counter-intuitive.*
+
+    *(Self-Correction)*: Actually, the user asked for &quot;something,&quot; implying a singular interesting nugget. I will provide the **Shark vs. Tree** fact. It resonates well with most people.
+
+    **Revised Plan:**
+    1. Hook: Sharks are older than trees.
+    2. Evidence: Dates.
+    3. Implication: Imagine a shark swimming while the earth had no forests.
+
+    *Alternative Plan (The &quot;Oxford&quot; one is historically dense).*
+    Let&#39;s go with **Oxford vs Aztecs**. It feels more &quot;intellectual.&quot;
+
+    *Final Decision:* I&#39;ll give the **Shark vs. Tree** fact. It&#39;s nature-based and universally shocking.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Since I cannot see into your mind, I have to play the odds! Here is a fact that usually catches people off guard because it completely upends our understanding of evolutionary history:</p>
+<p><strong>Sharks are older than trees.</strong></p>
+<p>Here is the breakdown:</p>
+<ul>
+<li><strong>Sharks</strong> have been swimming in our oceans for roughly <strong>450 million years</strong>. They have survived four of the Earth’s five mass extinction events (including the one that killed the dinosaurs).</li>
+<li><strong>Trees</strong> (specifically the earliest vascular plants like <em>Archaeopteris</em>) didn&#39;t appear until around <strong>350 to 400 million years ago</strong>.</li>
+</ul>
+<p>This means that for roughly <strong>50 to 100 million years</strong>, the oceans were full of sharks, but the land was entirely barren rock with no forests covering it.</p>
+<hr>
+<p><strong>Bonus Fact (just in case you knew that one):</strong>
+The word <strong>&quot;Mortgage&quot;</strong> comes from Old French, where <em>mort</em> means &quot;dead&quot; and <em>gage</em> means &quot;pledge.&quot; Literally translated, a mortgage is a <strong>&quot;Death Pledge.&quot;</strong> The name comes from the idea that the debt obligation either ends when the property is taken (dies) or when the payment is fulfilled (dies).</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2083 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:** The user is asking for &quot;something I don&#39;t know.&quot; This is a classic, open-ended prompt often used to test knowledge breadth, creativity, or to simply learn something interesting.
+
+2.  **Determine the Strategy:**
+    *   *Constraint:* I don&#39;t know what the user *does* know. Therefore, I cannot guarantee novelty with 100% certainty.
+    *   *Goal:* Provide something highly obscure, surprising, or counter-intuitive that has a high probability of being new information.
+    *   *Categories:* Science (Physics/Biology), History, Language/Etymology, Space, Nature.
+    *   *Tone:* Informative, engaging, slightly &quot;fun fact&quot; style.
+
+3.  **Brainstorming Potential Facts:**
+    *   *Idea 1 (Biology):* Octopuses have three hearts and blue blood. (Too common?)
+    *   *Idea 2 (History):* Cleopatra lived closer in time to the Moon landing than the building of the Great Pyramid. (Very popular factoid.)
+    *   *Idea 3 (Physics):* If you take all the empty space out of the atoms that make up every human on Earth, the entire population would fit inside a sugar cube. (Good, but maybe known.)
+    *   *Idea 4 (Language):* The word &quot;set&quot; has the most definitions in the English language. (A bit dry.)
+    *   *Idea 5 (Nature/Space):* There are more trees on Earth than stars in the Milky Way. (Strong contender.)
+    *   *Idea 6 (Obscure History):* The Great Emu War of 1932. (Funny, but maybe too meme-ified.)
+    *   *Idea 7 (Biology/Chemistry):* Bananas are radioactive (Potassium-40). (Common knowledge for science nerds.)
+    *   *Idea 8 (Specific Obscure Fact):* Wombat poop is cube-shaped. (Classic, but good.)
+    *   *Idea 9 (Time/Geology):* There was a time when the Earth&#39;s year was 420 days long because it spun faster. (Solid.)
+    *   *Idea 10 (The &quot;Immortal&quot; Jellyfish):* *Turritopsis dohrnii*. (Interesting.)
+
+4.  **Selecting the Best Option:** I want something that sounds like fiction but is true.
+    *   Let&#39;s go with something about **Mushrooms** or **Space** or **Language**.
+    *   *Let&#39;s try a &quot;Double Whammy&quot;:* A fact about how humans relate to the universe or nature in an unexpected way.
+
+    *   *Selection:* The concept of **Radarange** (first microwave) is okay, but let&#39;s look deeper.
+    *   *How about this one:* **Honey never spoils.** (Known.)
+    *   *How about this one:* **Venus rotates backwards.** (Known.)
+    *   *How about this one:* **There is a species of jellyfish (*Turritopsis dohrnii*) that can revert back to its polyp stage after reaching sexual maturity, effectively making it biologically immortal.**
+        *   *Critique:* This is cool, but fairly common now.
+
+    *   *Let&#39;s try something linguistic/cultural:* **The word &quot;Mortgage&quot; literally means &quot;death pledge.&quot;** (From French *mort* + *gage*). That&#39;s punchy.
+
+    *   *Let&#39;s try something physics-based:* **The &quot;Double Slit Experiment&quot; implies particles behave differently when observed.** (A bit abstract).
+
+    *   *Let&#39;s go with a very specific historical oddity:* **The &quot;Phantom Time Hypothesis&quot;.** (Too conspiracy-theory sounding?)
+
+    *   *Let&#39;s go with a biological weirdness:* **Cows have best friends and get stressed when separated from them.** (Cute, but maybe known).
+
+    *   *Winner Idea:* **The &quot;Wood Wide Web&quot; (Mycorrhizal networks) is fascinating**, but maybe too well-known now.
+
+    *   *New Winner Idea:* **The &quot;Oxford English Dictionary&quot; had an entry for &quot;ghost word&quot; - specifically the word &#39;dord&#39; which existed due to a typo for years.**
+
+    *   *Alternative Winner (Visual/Concrete):* **The surface area of Russia is larger than the surface area of Pluto.** (People underestimate Pluto size).
+
+    *   *Let&#39;s go with a &quot;Mind-blowing Physics&quot; one:* **If you could fold a piece of paper 42 times, it would reach the moon.** (Exponential growth). This is usually a hit because people don&#39;t intuitively grasp exponents.
+
+5.  **Drafting the Response (Iterative refinement):**
+    *   *Topic:* Exponential growth / Paper folding.
+    *   *Fact:* Folding paper 42 times = distance to moon.
+    *   *Why it works:* It challenges intuition.
+    *   *Add-on:* Maybe add a second option just in case they knew that one? Or make the main one really deep.
+
+    *   *Let&#39;s switch to a more &quot;Story&quot; based fact.*
+    *   *Fact:* **The story of &quot;Unsinkable Sam&quot; (the cat who survived three shipwrecks during WWII).** That&#39;s a great narrative.
+
+    *   *Let&#39;s try a &quot;Science/Nature&quot; fact that is truly obscure.*
+    *   *Fact:* **There is a cloud on Saturn called the Hexagon.** (Cool image).
+    *   *Fact:* **Sharks predate trees.** (Trees evolved ~350m years ago, Sharks ~400m+ years ago). This is a strong contender. It reframes the timeline of life.
+
+6.  **Final Selection: Sharks vs. Trees.**
+    *   It&#39;s short, punchy, and changes perspective on evolution.
+    *   *Backup plan:* I&#39;ll provide a few distinct categories to ensure at least one hits.
+
+7.  **Structuring the Output:**
+    *   Acknowledge the difficulty (I don&#39;t know their brain).
+    *   Present the &quot;Sharks vs. Trees&quot; fact.
+    *   Present a &quot;Linguistic&quot; fact (&quot;Mortgage&quot; = Death Pledge).
+    *   Present a &quot;Space&quot; fact (Russia &gt; Pluto).
+
+    *   *Refining the &quot;Shark&quot; fact:* Sharks are ~450 million years old. Trees are ~350 million years old. So sharks have been around for nearly 100 million years before trees existed.
+
+8.  **Final Polish:** Ensure the tone is conversational.
+
+    *(Self-Correction during drafting)*: Actually, let&#39;s give them one really high-quality, detailed &quot;Did you know?&quot; rather than a list, or a curated list of 3 very different things. Let&#39;s go with 3 diverse options.
+
+    Option 1: Biology (Sharks/Trees).
+    Option 2: Etymology (Mortgage).
+    Option 3: Math/Physics (Paper folding).
+
+    Let&#39;s stick to the **Sharks** one as the main highlight, then offer others.
+
+    *Wait, here is a better one regarding human biology:*
+    **You have &quot;taste receptors&quot; in your testicles/ovaries.** (Specifically, TAS1R taste receptors).
+    *Risk:* Might be too weird/inappropriate depending on filters, though scientifically accurate. Let&#39;s avoid potential flagging issues.
+
+    *Back to safe but cool:*
+    **The &quot;Bloop&quot; sound.** (Maybe too unsolved mystery).
+    **The &quot;Wow!&quot; signal.**
+
+    Let&#39;s go with the **&quot;Cleopatra vs. iPhone&quot;** logic but applied elsewhere?
+    No, let&#39;s go with the **Wombat Cube Poop**. No, too common.
+
+    **Let&#39;s go with the &quot;Immortal Jellyfish&quot; but explain it well.**
+    Or... **The fact that there is a man-made star visible from Earth (ISS), but also...**
+
+    Okay, I will provide the **Shark vs Tree** fact as the primary one. It is robust and surprising.
+
+    *Secondary thought:* What if I tell them about **&quot;The Library of Babel&quot;**? (Digital project containing every possible page of text). That is meta and cool.
+
+    *Decision:* I will provide the **Shark vs. Tree** fact, and then a bonus **Linguistic** fact about the word &quot;Squirrel&quot;.
+
+    Let&#39;s write the response focusing on **Sharks being older than Trees**.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/qwen-qwen3.6-plus-preview:free/">← Qwen 3.6 Plus Preview</a>
+            <a href="/">all models</a>
+            <a href="/m/google-gemma-4-31b-it/">Gemma 4 31B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>

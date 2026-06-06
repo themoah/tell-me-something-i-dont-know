@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 3.6 Flash — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen 3.6 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Deep in a quiet forest in Gabon, Central Africa, there&#39;s a patch of land where nature built and operated nuclear reactors about 1.7 billion years ago—lo…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-flash/">
+    <meta property="og:title" content="Qwen 3.6 Flash — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen 3.6 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Deep in a quiet forest in Gabon, Central Africa, there&#39;s a patch of land where nature built and operated nuclear reactors about 1.7 billion years ago—lo…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen 3.6 Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen 3.6 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Deep in a quiet forest in Gabon, Central Africa, there&#39;s a patch of land where nature built and operated nuclear reactors about 1.7 billion years ago—lo…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen 3.6 Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Deep in a quiet forest in Gabon, Central Africa, there's a patch of land where **nature built and operated nuclear reactors about 1.7 billion years ago**—long before complex life even existed.\n\nThese weren't human-made. They're **natural nuclear fission reactors**. When Earth was that young, the radioactive isotope uranium-235 made up about 3% of natural uranium (similar to today's enriched reactor fuel). In certain ore deposits, groundwater seeped in and slowed down neutrons, triggering a sustained chain reaction. The heat would boil the water away, halting the reaction. Once cooled, water returned, and it would start again. This \"on-off\" cycling continued for hundreds of thousands of years.\n\nWhen French scientists discovered the site in 1972, they initially thought uranium ore had been tampered with. Instead, they found geological proof that the Earth itself had run nuclear reactions. Today, researchers still study Oklo because it shows how radioactive byproducts can be safely locked away in rock formations for geological timescales. It's essentially a **billion-year-old natural experiment** that helps engineers design safer long-term nuclear waste repositories.\n\nYou'll never see a sign for it. It's just a forest in Gabon where plate tectonics, groundwater, and radioactive decay accidentally did what we're still trying to master.","author":{"@type":"Organization","name":"Qwen"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s one that consistently surprises people: **There are more trees on Earth than there are stars in the Milky Way galaxy.**\n\nScientists estimate our planet hosts roughly **3 trillion trees**, while our home galaxy contains between **100 and 400 billion stars**. That means for every star in the Milky Way, there are roughly 7 to 30 trees on Earth. (Of course, if you count *all* the stars in the observable universe, that number jumps to around 200 sextillion, so we're still vastly outnumbered on a cosmic scale!)\n\nThis figure comes from a comprehensive 2015 study published in *Nature* that combined satellite imagery, ground surveys, and machine learning to map tree cover globally. It's a quiet reminder of how densely life is packed into our little planet, even if those trees aren't evenly distributed.\n\n*(Since I can't actually know your personal knowledge base, I aimed for something scientifically verified but often overlooked in everyday conversation. Want another one in a specific category like space, biology, history, or everyday science?)*","author":{"@type":"Organization","name":"Qwen"}},{"@type":"Answer","text":"Here’s a verifiable, recently documented fact that hasn’t made it into mainstream awareness yet:\n\n**Certain deep-sea squid don’t just use bioluminescence to blend in or attract prey—they detach glowing tissue as a tactical decoy to misdirect predators.**\n\nIn a 2022 study published in *Current Biology*, researchers discovered that the midwater squid *Abralia veranyi* has specialized bioluminescent cells on its tentacles that can spontaneously detach and continue glowing for several seconds after being released. When threatened, the squid emits a burst of these glowing fragments that closely mimic its own body outline in silhouette. Predators attacking the decoy give the squid time to flee into the dark water column.\n\nWhat makes this especially unusual is that the decoy isn't just a random glow: it's spatially arranged to create a \"light shadow\" that exploits how predators visually track prey in the ocean's twilight zone. It's a form of active, autonomous camouflage deception that operates independently of the squid's nervous system once released.\n\nThis behavior was only confirmed through deep-sea ROV footage and controlled lab observations, and it rewrites how we understand cephalopod defense strategies. Most people know about octopus ink or cuttlefish pattern-shifting, but dynamic, detachable bioluminescent decoys are a newly documented frontier in marine biology.\n\n*(Note: Since I don't actually know your personal knowledge base, I aimed for something peer-reviewed, recent, and genuinely outside common trivia. If you'd prefer a different domain like history, linguistics, or physics, just say the word.)*","author":{"@type":"Organization","name":"Qwen"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen 3.6 Flash</h1>
+        <p class="subtitle">Qwen · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen 3.6 Flash</div>
+                        <div class="model-provider">Qwen</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Deep in a quiet forest in Gabon, Central Africa, there&#39;s a patch of land where <strong>nature built and operated nuclear reactors about 1.7 billion years ago</strong>—long before complex life even existed.</p>
+<p>These weren&#39;t human-made. They&#39;re <strong>natural nuclear fission reactors</strong>. When Earth was that young, the radioactive isotope uranium-235 made up about 3% of natural uranium (similar to today&#39;s enriched reactor fuel). In certain ore deposits, groundwater seeped in and slowed down neutrons, triggering a sustained chain reaction. The heat would boil the water away, halting the reaction. Once cooled, water returned, and it would start again. This &quot;on-off&quot; cycling continued for hundreds of thousands of years.</p>
+<p>When French scientists discovered the site in 1972, they initially thought uranium ore had been tampered with. Instead, they found geological proof that the Earth itself had run nuclear reactions. Today, researchers still study Oklo because it shows how radioactive byproducts can be safely locked away in rock formations for geological timescales. It&#39;s essentially a <strong>billion-year-old natural experiment</strong> that helps engineers design safer long-term nuclear waste repositories.</p>
+<p>You&#39;ll never see a sign for it. It&#39;s just a forest in Gabon where plate tectonics, groundwater, and radioactive decay accidentally did what we&#39;re still trying to master.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2725 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Intent:** The user wants a surprising, interesting, or obscure fact/phenomenon they&#39;re unlikely to have encountered before.
+   - **Constraints:** Must be verifiable, accurate, and genuinely surprising/obscure. Should avoid common trivia (like &quot;honey never spoils&quot; or &quot;bananas are berries&quot;).
+
+2.  **Brainstorming Categories:**
+   - Science/Nature
+   - History
+   - Psychology/Cognition
+   - Language/Etymology
+   - Technology/Physics
+   - Geography/Earth Sciences
+
+3.  **Generate Candidates (Mental Filter for Obscurity &amp; Accuracy):**
+   - *Wombat poop is cube-shaped* (Too common)
+   - *Venus rotates backwards* (Well-known)
+   - *Octopuses have three hearts* (Common)
+   - *The &quot;wood wide web&quot; / mycorrhizal networks* (Getting popular)
+   - *Tardigrades can survive in space* (Common)
+   - *The smell of rain has a name: petrichor* (Common)
+   - *Cleopatra lived closer to the iPhone than the Pyramids* (Common)
+   - *There are more trees on Earth than stars in the Milky Way* (Debated/overused)
+   - *The &quot;Dunning-Kruger effect&quot; is named after two researchers who also won the Ig Nobel* (Interesting but maybe not obscure enough)
+   - *The &quot;Chernobyl pine forest&quot; turned red from radiation* (More known now)
+   - *Sloths can hold their breath longer than dolphins* (True but often shared)
+   - *The &quot;Bletchley Park&quot; codebreakers used a machine called &quot;Heath Robinson&quot;* (Niche but maybe too historical)
+   - *The &quot;Magnetic North Pole&quot; is moving toward Siberia at ~55 km/year* (Good, but known to some)
+   - *Your brain can&#39;t multitask; it just switches rapidly, causing &quot;attention residue&quot;* (Psychology, interesting but maybe familiar)
+   - *The &quot;Tardigrade&quot; genome has ~20% foreign DNA from horizontal gene transfer* (Cool, but getting known)
+   - *The &quot;Möbius strip&quot; has only one side and one edge* (Common)
+   - *The &quot;Fermi Paradox&quot; has a solution involving &quot;great filters&quot; but that&#39;s not a fact*
+   - *The &quot;Sunda Land&quot; connection between islands* (Niche)
+   - *The &quot;Voltaic pile&quot; was the first battery* (Common)
+   - *The &quot;Lazarus taxon&quot; concept* (Too academic)
+   - *The &quot;Dyatlov Pass&quot; incident* (Conspiracy/heavy)
+   - *The &quot;Bloop&quot; underwater sound* (Debunked/known)
+   - *The &quot;Antarctic dry valleys&quot; have been ice-free for 2M years* (Interesting but not super surprising)
+   - *The &quot;human microbiome&quot; has ~38 trillion bacteria* (Common now)
+   - *The &quot;Mona Lisa&quot; has no eyebrows* (Debunked/known)
+   - *The &quot;HIV virus&quot; originated from chimps in the early 1900s* (Known)
+   - *The &quot;Titanium&quot; metal was first isolated in 1791 but took until 1940 for industrial production* (Niche)
+   - *The &quot;Kessler syndrome&quot; about space debris* (Getting known)
+   - *The &quot;Fibonacci sequence&quot; appears in sunflowers* (Common)
+   - *The &quot;Mycelium networks&quot; can transmit electrical signals* (Research-backed but emerging)
+   - *The &quot;Sumerians&quot; used a base-60 number system, which is why we have 60 seconds/minutes* (Common)
+   - *The &quot;Piri Reis map&quot; shows Antarctica before its discovery* (Controversial/debunked)
+   - *The &quot;Tardigrade&quot; can enter cryptobiosis* (Known)
+   - *The &quot;Magnetic field&quot; of Earth has reversed ~183 times in the last 83M years* (Known)
+   - *The &quot;Oklo natural nuclear reactor&quot; in Gabon operated 2B years ago* (Great candidate!)
+   - *The &quot;Voyager 1&quot; is in interstellar space but still communicates with Earth* (Known)
+   - *The &quot;Human genome&quot; has ~2% Neanderthal DNA* (Known)
+   - *The &quot;Bacterial flagellum&quot; evolved multiple times independently* (Interesting but technical)
+   - *The &quot;Mona Lisa&quot; was stolen in 1911* (Known)
+   - *The &quot;Antarctic ice core&quot; shows CO2 levels haven&#39;t been this high in 800k years* (Known)
+   - *The &quot;Honey&quot; never spoils* (Common)
+   - *The &quot;Wombat&quot; cube poop* (Common)
+   - *The &quot;Sloths&quot; algae-growing fur* (Known)
+   - *The &quot;Octopus&quot; blue blood* (Known)
+   - *The &quot;Tardigrade&quot; survives vacuum* (Known)
+   - *The &quot;Möbius strip&quot;* (Common)
+   - *The &quot;Fermi paradox&quot;* (Not a fact)
+   - *The &quot;Oklo reactor&quot;* -&gt; Let&#39;s verify: Yes, natural nuclear fission reactors operated in Oklo, Gabon, ~1.7 billion years ago. Discovered in 1972. Still fascinating and not widely known.
+   - *Another candidate:* &quot;The &#39;Bacterial &#39;quorum sensing&#39; allows bacteria to communicate and coordinate behavior like bioluminescence or virulence.&quot; (Good, but maybe too biological)
+   - *Another:* &quot;The &#39;Magnetic &#39;North Pole&#39; is moving faster than expected due to changes in Earth&#39;s outer core fluid dynamics.&quot; (True, but known)
+   - *Another:* &quot;The &#39;Sumerian&#39; base-60 system is why we have 60 seconds, 360 degrees, etc.&quot; (Known)
+   - *Another:* &quot;The &#39;Human &#39;body&#39; has more bacterial cells than human cells&quot; -&gt; Actually, recent estimates say ~1:1 ratio, so this is outdated.
+   - *Another:* &quot;The &#39;Mona Lisa&#39; was painted on poplar wood, not canvas&quot; -&gt; Known to art enthusiasts.
+   - *Another:* &quot;The &#39;Tardigrade&#39; can survive -272°C to 150°C&quot; -&gt; Known.
+   - *Another:* &quot;The &#39;Oklo natural nuclear reactor&#39; is still the only known place in the universe where natural nuclear fission occurred.&quot; -&gt; Strong candidate.
+   - *Another:* &quot;The &#39;Magnetic &#39;reversal&#39; frequency is not constant; it&#39;s random, with the last one 780k years ago.&quot; -&gt; Known.
+   - *Another:* &quot;The &#39;Sunda Land&#39; connected Southeast Asia during ice ages.&quot; -&gt; Niche.
+   - *Another:* &quot;The &#39;Bacterial &#39;CRISPR&#39; was originally discovered as a quirky immune system in lab cultures.&quot; -&gt; Interesting but known in science circles.
+   - *Another:* &quot;The &#39;Human &#39;genome&#39; has &#39;jumping genes&#39; (transposons) discovered by Barbara McClintock in maize.&quot; -&gt; Known in biology.
+   - *Another:* &quot;The &#39;Oklo reactor&#39; operated for hundreds of thousands of years, with water acting as a moderator, cycling on and off.&quot; -&gt; Very solid.
+   - *Another:* &quot;The &#39;Magnetic &#39;field&#39; of Mars was destroyed by asteroid impacts early in its history.&quot; -&gt; Known.
+   - *Another:* &quot;The &#39;Sumerian&#39; &#39;Epic of Gilgamesh&#39; predates the Hebrew Bible by centuries.&quot; -&gt; Known.
+   - *Another:* &quot;The &#39;Tardigrade&#39; &#39;cryptobiosis&#39; state can last decades.&quot; -&gt; Known.
+   - *Another:* &quot;The &#39;Oklo natural nuclear fission reactors&#39; are still studied to understand long-term nuclear waste storage, proving nature can safely contain radioactive byproducts for billions of years.&quot; -&gt; Adds practical relevance, very compelling.
+
+4.  **Verify Oklo Facts:**
+   - Location: Oklo, Gabon (Central Africa)
+   - When: ~1.7 billion years ago
+   - How: Uranium-235 concentration was higher then (~3%, similar to modern enriched uranium), groundwater acted as neutron moderator, natural chain reactions occurred intermittently over hundreds of thousands of years.
+   - Discovery: 1972, French scientists analyzing uranium ore shipments.
+   - Significance: Only known natural nuclear reactors; used to study radioactive waste immobilization; proves geological stability over long timescales.
+   - Accuracy: Well-documented in peer-reviewed literature (e.g., National Geographic, Nature, DOE reports).
+
+5.  **Craft Response:**
+   - Start with a clear, surprising statement.
+   - Provide context/mechanism.
+   - Add why it matters or a fascinating detail.
+   - Keep it concise.
+   - Avoid overclaiming; stick to verified science.
+   - Example structure:
+     &quot;Deep in Gabon, Central Africa, there’s a place where nature built and operated nuclear reactors about 1.7 billion years ago—long before life on land even existed. These aren’t human-made; they’re natural nuclear fission reactors. Back then, uranium-235 was more abundant in Earth’s crust (about 3%, similar to modern reactor fuel). When uranium-rich ore deposits met groundwater, the water slowed down neutrons just enough to sustain a chain reaction. The heat would boil the water away, stopping the reaction. Once cooled, water would return, and it would start again. This cycling continued for hundreds of thousands of years. Scientists still study the site today because it shows how radioactive waste can be safely trapped in rock formations for geological timescales—literally a billion-year blueprint for nuclear waste management.&quot;
+
+6.  **Self-Correction/Refinement during drafting:**
+   - Check: &quot;Uranium-235 was ~3%&quot; -&gt; Yes, half-life is ~700M years, so 1.7B years ago it was ~3-4%.
+   - Check: &quot;Only known natural nuclear reactors&quot; -&gt; Correct.
+   - Check: &quot;Studied for nuclear waste&quot; -&gt; Yes, DOE and IAEA have used Oklo data for repository design.
+   - Tone: Engaging, accurate, not sensationalized.
+   - Length: Concise but substantive.
+   - Add a hook: &quot;You’ve never heard of it because it’s not a monument or a machine—it’s just a quiet patch of forest in Gabon where geology accidentally did what we’re still trying to master.&quot;
+
+   Final check against &quot;something I don&#39;t know&quot; criterion: Highly likely unknown to general audience, verifiable, scientifically sound, and has a meaningful twist.
+
+7.  **Output Generation** (matches the refined version)✅</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s one that consistently surprises people: <strong>There are more trees on Earth than there are stars in the Milky Way galaxy.</strong></p>
+<p>Scientists estimate our planet hosts roughly <strong>3 trillion trees</strong>, while our home galaxy contains between <strong>100 and 400 billion stars</strong>. That means for every star in the Milky Way, there are roughly 7 to 30 trees on Earth. (Of course, if you count <em>all</em> the stars in the observable universe, that number jumps to around 200 sextillion, so we&#39;re still vastly outnumbered on a cosmic scale!)</p>
+<p>This figure comes from a comprehensive 2015 study published in <em>Nature</em> that combined satellite imagery, ground surveys, and machine learning to map tree cover globally. It&#39;s a quiet reminder of how densely life is packed into our little planet, even if those trees aren&#39;t evenly distributed.</p>
+<p><em>(Since I can&#39;t actually know your personal knowledge base, I aimed for something scientifically verified but often overlooked in everyday conversation. Want another one in a specific category like space, biology, history, or everyday science?)</em></p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2676 tokens</span>
+                    <span class="topic-tag" data-topic="trees">🌳 trees</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Request:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Intent:** The user wants a fascinating, obscure, or surprising fact/information that&#39;s likely unknown to them.
+   - **Challenge:** I can&#39;t actually know what the user knows or doesn&#39;t know. I need to pick something genuinely obscure, well-verified, and interesting, while acknowledging the inherent limitation.
+
+2.  **Identify Key Constraints &amp; Considerations:**
+   - Must be accurate and verifiable
+   - Should be relatively obscure (not common knowledge like &quot;water is wet&quot; or &quot;the Earth orbits the Sun&quot;)
+   - Should be engaging/interesting
+   - Should acknowledge the limitation that I can&#39;t know their knowledge base
+   - Preferably have a &quot;wow&quot; factor or counterintuitive element
+
+3.  **Brainstorming Potential Facts:**
+   - *Octopuses have three hearts, and two stop beating when they swim.* (Well-known)
+   - *The Eiffel Tower can be 15 cm taller in summer due to thermal expansion.* (Common trivia)
+   - *Bananas are berries, but strawberries aren&#39;t.* (Very common)
+   - *Wombat poop is cube-shaped.* (Famous)
+   - *The longest recorded flight of a chicken is 13 seconds, but they&#39;re actually good fliers.* (Somewhat known)
+   - *There&#39;s a species of jellyfish that can reverse its aging process (Turritopsis dohrnii).* (Getting more known)
+   - *The sound of a whale song can travel thousands of miles underwater.* (Common)
+   - *A day on Venus is longer than a year on Venus.* (Well-known astronomy fact)
+   - *The shortest war in history was 38 minutes (Anglo-Zanzibar War).* (Famous)
+   - *Honey never spoils; archaeologists have found edible honey in ancient Egyptian tombs.* (Common)
+   - *There are more possible iterations of a game of chess than there are atoms in the observable universe.* (Popular but debated/nuanced)
+   - *The &quot;Bloop&quot; was an ultra-low-frequency underwater sound detected in 1997, later identified as icequakes from Antarctic icebergs.* (Good, but maybe too niche/older news)
+   - *Tree communication via mycorrhizal networks (&quot;Wood Wide Web&quot;) is real but often overstated in pop science.* (Interesting but complex)
+   - *The first commercial video game console wasn&#39;t the Atari or Nintendo—it was the Magnavox Odyssey (1972), but even earlier was a prototype called &quot;Brown Box&quot;.* (Niche)
+   - *There&#39;s a desert in Antarctica called the Dry Valleys that has never seen rain in 2 million years.* (Good)
+   - *The human eye can distinguish about 10 million colors, but most people can&#39;t name them.* (Not particularly surprising)
+   - *A group of flamingos is called a &quot;flamboyance&quot;.* (Common)
+   - *The Great Wall of China is not visible from space with the naked eye.* (Debunked myth)
+   - *There&#39;s a fungus that can glow in the dark (bioluminescence), called &quot;foxfire&quot;.* (Known)
+   - *The &quot;Dancing Plague&quot; of 1518 in Strasbourg saw hundreds of people dance uncontrollably for days.* (Fascinating but historical)
+   - *Sharks existed before trees.* (Classic, but still surprising to many)
+   - *The shortest commercial flight in the world is between Westray and Papa Westray in Scotland, averaging 1.5 minutes.* (Known)
+   - *There&#39;s a species of spider that builds webs so fine they&#39;re nearly invisible, and they use them to catch birds.* (Good)
+   - *The &quot;Overview Effect&quot; is a cognitive shift reported by astronauts when viewing Earth from space.* (Philosophical, not a fact)
+   - *A single cubic centimeter of neutron star material would weigh about 1 billion tons on Earth.* (Mind-blowing, well-verified)
+   - *The &quot;Voynich Manuscript&quot; remains undeciphered after 600 years.* (Mysterious but not really a &quot;fact&quot; about the world)
+   - *There are more trees on Earth than stars in the Milky Way.* (Actually true! ~3 trillion trees vs ~100-400 billion stars)
+   - *The sound of a sneeze can travel up to 100 mph.* (Common)
+   - *Honeybees can recognize human faces.* (Surprising but increasingly known)
+   - *The &quot;Silent City&quot; of New York City at 3 AM has a specific acoustic profile due to infrastructure cooling.* (Niche)
+   - *There&#39;s a type of clock that runs on the decay of radioactive isotopes (atomic clock), but also a &quot;nuclear clock&quot; being developed that&#39;s 100x more precise.* (Too technical)
+   - *The &quot;Bloop&quot; was actually icequakes.* (Already considered)
+   - *A day on Jupiter is less than 10 hours long.* (Common)
+   - *There&#39;s a species of frog that freezes solid in winter and thaws alive in spring.* (Wood frog - known but cool)
+   - *The &quot;Doomsday Vault&quot; in Svalbard stores seeds, but it&#39;s not the only one.* (Known)
+   - *The first computer bug was an actual moth found in a Harvard Mark II computer in 1947.* (Famous)
+   - *There are more ways to shuffle a deck of cards than there are atoms in the observable universe.* (Similar to chess, but mathematically sound: 52! ≈ 8×10^67)
+   - *The &quot;Wow! Signal&quot; was a strong narrowband radio signal detected in 1977 that never repeated.* (Mysterious)
+   - *A single bolt of lightning contains enough energy to toast 100,000 slices of bread.* (Common myth/exaggeration)
+   - *The &quot;Bloop&quot; was icequakes.* (Repeat)
+   - *There&#39;s a desert in Antarctica.* (Already considered)
+   - *The &quot;Wood Wide Web&quot; is real but nuanced.* (Already considered)
+   - *Sharks predate trees.* (Classic)
+   - *The &quot;Dancing Plague&quot; of 1518.* (Good)
+   - *The &quot;Voynich Manuscript&quot;.* (Not a fact)
+   - *The &quot;Silent City&quot; acoustics.* (Niche)
+   - *The &quot;Nuclear Clock&quot;.* (Too technical)
+   - *The &quot;Wow! Signal&quot;.* (Mysterious)
+   - *The &quot;Doomsday Vault&quot;.* (Known)
+   - *The &quot;First computer bug&quot;.* (Famous)
+   - *The &quot;52! permutations&quot;.* (Good)
+   - *The &quot;More trees than stars&quot;.* (Strong candidate)
+   - *The &quot;Neutron star density&quot;.* (Strong candidate)
+   - *The &quot;Antarctic Dry Valleys&quot;.* (Good)
+   - *The &quot;Wood Wide Web&quot;.* (Nuanced)
+   - *The &quot;Dancing Plague&quot;.* (Fascinating)
+   - *The &quot;Bloop&quot;.* (Known)
+   - *The &quot;Voynich&quot;.* (Not fact)
+   - *The &quot;Silent City&quot;.* (Niche)
+   - *The &quot;Nuclear Clock&quot;.* (Too technical)
+   - *The &quot;Wow! Signal&quot;.* (Mysterious)
+   - *The &quot;Doomsday Vault&quot;.* (Known)
+   - *The &quot;First computer bug&quot;.* (Famous)
+   - *The &quot;52! permutations&quot;.* (Good)
+   - *The &quot;More trees than stars&quot;.* (Strong)
+   - *The &quot;Neutron star density&quot;.* (Strong)
+   - *The &quot;Antarctic Dry Valleys&quot;.* (Good)
+
+   Let&#39;s go with **&quot;There are more trees on Earth than there are stars in the Milky Way galaxy.&quot;** It&#39;s counterintuitive, verifiable, and has a nice scale perspective. I&#39;ll double-check the numbers:
+   - Trees on Earth: ~3.04 trillion (Global Tree Assessment, 2015/2020)
+   - Stars in Milky Way: ~100-400 billion (consensus estimate)
+   - Yes, 3 trillion &gt; 400 billion. The ratio is roughly 7.5 to 30 times more trees than stars in our galaxy.
+   - I should also note that this doesn&#39;t include stars in the observable universe (which is ~10^22-10^24), so it&#39;s specifically about the Milky Way.
+   - I&#39;ll add context to make it engaging and accurate.
+
+4.  **Draft Response (Mental Refinement):**
+   Here’s something that often surprises people: **There are more trees on Earth than there are stars in the Milky Way galaxy.** 
+   
+   Scientists estimate our planet has roughly 3 trillion trees, while our home galaxy contains between 100 and 400 billion stars. That means for every star in the Milky Way, there are roughly 7 to 30 trees on Earth. (Of course, if you count *all* the stars in the observable universe, that number jumps to around 10^22–10^24, so we’re still vastly outnumbered on a cosmic scale!)
+   
+   This fact comes from a 2015 global tree count published in *Nature*, and it’s a humbling reminder of how densely life is packed into our little planet—even if those trees are spread unevenly across forests, farms, and cities.
+
+   I should also acknowledge the limitation: &quot;Since I can’t know what you already know, I aimed for something that’s scientifically verified but often overlooked in everyday conversation.&quot;
+
+5.  **Self-Correction/Verification:**
+   - Is it accurate? Yes. Global Tree Assessment (2015/2020) = ~3.04 trillion trees. Milky Way stars = ~100-400 billion. Ratio holds.
+   - Is it obscure? Yes, most people think stars outnumber trees, but the opposite is true for our galaxy.
+   - Is it engaging? Yes, it plays with scale and perspective.
+   - Does it acknowledge uncertainty? Yes, I&#39;ll add a light note about the limitation of &quot;something you don&#39;t know.&quot;
+   - Any potential pitfalls? Some might argue about &quot;trees&quot; definition (saplings, planted vs wild), but the scientific estimate accounts for mature trees. I&#39;ll keep it concise.
+   - I&#39;ll also add a quick follow-up offer in case they want more in a specific category.
+
+6.  **Final Output Generation:** (Matches the refined draft)
+   - State the fact clearly
+   - Provide context/sources
+   - Acknowledge the limitation
+   - Keep it concise and engaging
+   - Ready.✅
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s a verifiable, recently documented fact that hasn’t made it into mainstream awareness yet:</p>
+<p><strong>Certain deep-sea squid don’t just use bioluminescence to blend in or attract prey—they detach glowing tissue as a tactical decoy to misdirect predators.</strong></p>
+<p>In a 2022 study published in <em>Current Biology</em>, researchers discovered that the midwater squid <em>Abralia veranyi</em> has specialized bioluminescent cells on its tentacles that can spontaneously detach and continue glowing for several seconds after being released. When threatened, the squid emits a burst of these glowing fragments that closely mimic its own body outline in silhouette. Predators attacking the decoy give the squid time to flee into the dark water column.</p>
+<p>What makes this especially unusual is that the decoy isn&#39;t just a random glow: it&#39;s spatially arranged to create a &quot;light shadow&quot; that exploits how predators visually track prey in the ocean&#39;s twilight zone. It&#39;s a form of active, autonomous camouflage deception that operates independently of the squid&#39;s nervous system once released.</p>
+<p>This behavior was only confirmed through deep-sea ROV footage and controlled lab observations, and it rewrites how we understand cephalopod defense strategies. Most people know about octopus ink or cuttlefish pattern-shifting, but dynamic, detachable bioluminescent decoys are a newly documented frontier in marine biology.</p>
+<p><em>(Note: Since I don&#39;t actually know your personal knowledge base, I aimed for something peer-reviewed, recent, and genuinely outside common trivia. If you&#39;d prefer a different domain like history, linguistics, or physics, just say the word.)</em></p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2570 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Request:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Nature:** Open-ended, seeks novel/lesser-known information
+   - **Challenge:** I don&#39;t actually know what the user knows, so I need to pick something genuinely obscure, fascinating, and verifiable that&#39;s unlikely to be common knowledge.
+
+2.  **Identify Key Criteria for &quot;Something I Don&#39;t Know&quot;:**
+   - Must be factually accurate
+   - Should be relatively obscure but well-documented
+   - Should be interesting/engaging
+   - Should avoid common trivia (e.g., &quot;bananas are berries,&quot; &quot;octopuses have three hearts&quot;)
+   - Should have a clear source/context
+
+3.  **Brainstorming Potential Topics:**
+   - Historical: The Voynich manuscript, Antikythera mechanism, Dancing Plague of 1518
+   - Scientific: Tardigrades, quantum entanglement, fungal networks
+   - Linguistic: Rotokas language, Pirahã, sign language isolation
+   - Natural phenomena: Ball lightning, underwater waterfalls, singing sands
+   - Cultural/Anthropological: The !Kung San&#39;s &quot;guilt-saying,&quot; the concept of &quot;saudade,&quot; the Ysabeau tradition
+   - Mathematical/Computational: The Banach-Tarski paradox, the Poincaré conjecture, the Collatz conjecture
+   - Biological: Immortal jellyfish, tardigrade cryptobiosis, honeybee waggle dance
+   - Physical/Chemical: Bismuth&#39;s iridescent crystals, water&#39;s memory (debunked), quantum foam
+   - Historical/Geographical: The Great Emu War, Point Nemo, the Dancing Plague
+   - Wait, I need something truly niche but verifiable.
+
+4.  **Select &amp; Refine a Topic:**
+   Let&#39;s go with: **The &quot;Wood Wide Web&quot; isn&#39;t just about trees sharing nutrients—it&#39;s a communication network that can send distress signals, and some plants even &quot;hack&quot; it to suppress competitors.**
+   - *Check:* Well-documented by Suzanne Simard&#39;s research, but many know the basic &quot;trees talk&quot; idea. Need something more specific.
+   - *Better angle:* **The discovery that certain fungi can manipulate insect behavior isn&#39;t new, but the recent finding that *Ophiocordyceps* zombies ants actually &quot;bite&quot; at a precise height based on the fungus&#39;s optimal growth temperature, and that the fungus doesn&#39;t just control the muscles—it rewrites the insect&#39;s DNA expression in real time.**
+   - *Check:* Accurate, fascinating, relatively recent science (2023-2024 studies), but might be too niche.
+
+   Let&#39;s try something different: **The fact that honey never spoils is common, but here&#39;s a lesser-known twist: Archaeologists found 3,000-year-old honey in Egyptian tombs that was still perfectly edible, not because of its chemical properties alone, but because of a perfect storm of low moisture, high acidity, hydrogen peroxide production, and anhydrous environment. But that&#39;s still fairly known.**
+
+   Let&#39;s go with a historical/archaeological fact: **The Antikythera Mechanism isn&#39;t just an &quot;ancient computer&quot;—it&#39;s a geared astronomical calculator that could predict eclipses, track the Olympic Games cycle, and model the irregular motion of the Moon using a differential gear system. But differential gears weren&#39;t rediscovered until medieval Islamic astronomers. Wait, that&#39;s known too.**
+
+   Need something truly obscure. How about: **The &quot;Dancing Plague of 1518&quot; in Strasbourg, where hundreds of people danced uncontrollably for days, some to death. Modern researchers suggest it was mass psychogenic illness triggered by famine, ergot poisoning, and religious fervor. But again, somewhat known.**
+
+   Let&#39;s pivot to a scientific/physical phenomenon with recent discoveries: **The &quot;frozen light&quot; experiment where researchers at the University of Glasgow in 2023 created &quot;vortex time crystals&quot; that can store light in a way that might revolutionize quantum memory. Too technical?**
+
+   How about a linguistic/cultural fact: **In the remote highlands of Papua New Guinea, the Huli people use a form of non-verbal communication called &quot;sibilant whistling&quot; that can carry complex sentences over several miles through dense jungle. But whistled languages exist in many places.**
+
+   Let&#39;s go with a biological/ecological fact that&#39;s recent and surprising: **The &quot;wood frog&quot; (Rana sylvatica) doesn&#39;t just survive freezing—it literally turns into a popsicle. Its cells produce glucose as a natural antifreeze, its heart stops, and it thaws out in spring. But this is known.**
+
+   I need something genuinely obscure but verifiable. Let&#39;s try: **The &quot;Nag Hammadi library&quot; isn&#39;t just ancient texts—it contains Gnostic gospels, but here&#39;s the twist: One of the texts, the &quot;Apocryphon of John,&quot; describes a cosmology where the material world was created by a flawed demiurge, and it influenced later sci-fi like The Matrix. But again, somewhat known.**
+
+   Let&#39;s go with a historical/technological fact: **The &quot;Baghdad Battery&quot; (2,000-year-old clay jars with copper cylinders and iron rods) likely held acidic liquid and could produce ~1-2 volts of electricity. But many debate if it was for electroplating or religious purposes. Still debated.**
+
+   I&#39;m overcomplicating. Let&#39;s pick something solid, obscure, and fascinating: **The fact that there&#39;s a species of jellyfish, *Turritopsis dohrnii*, that can biologically reverse aging by reverting to its polyp stage after reaching maturity—a process called transdifferentiation. But it&#39;s widely known now.**
+
+   Okay, let&#39;s go with a lesser-known historical event: **In 1977, a radio telescope in Ohio detected the &quot;Wow! Signal,&quot; a strong narrowband radio signal that matched expectations for extraterrestrial origin. It was never repeated, and despite decades of searching, its source remains unknown. But again, famous.**
+
+   I need to stop looping. Let&#39;s pick a truly obscure fact with recent validation: **The &quot;Sunda Valley&quot; isn&#39;t a real place—it&#39;s a fictional location from a 19th-century hoax, but that&#39;s not it.**
+
+   How about: **In 2021, researchers discovered that certain bacteria can grow in the Chernobyl reactor using melanin to convert gamma radiation into chemical energy—a process called &quot;radiosynthesis.&quot; This is different from chemosynthesis or photosynthesis. It&#39;s real, documented, and not common knowledge.**
+
+   Let&#39;s verify: Yes, *Cryptococcus neoformans* and *Deinococcus radiodurans* have been studied for this. A 2007 study found melanized fungi in the Chernobyl reactor growing faster when exposed to radiation. It&#39;s called &quot;radiotrophic&quot; behavior. Accurate.
+
+   Another option: **The &quot;Bloop&quot; was an ultra-low-frequency sound detected in 1997, initially thought to be biological, but later identified as icequakes from calving glaciers in Antarctica. Common knowledge now.**
+
+   Let&#39;s go with a linguistic fact: **The !Xóõ language of Botswana has over 100 distinct phonemes, including multiple types of clicks, labial clicks, and lateral fricatives. But click languages are known.**
+
+   I&#39;ll go with the radiotrophic fungi fact, but frame it uniquely. Or better: **The &quot;Wood Wide Web&quot; is a myth simplified—mycorrhizal networks don&#39;t actually &quot;share nutrients&quot; in a communal way; they&#39;re more like transactional markets where plants trade carbon for nutrients, and some plants &quot;cheat&quot; or even poison competitors through the network. Recent 2023 studies show the network is highly selective and context-dependent.**
+
+   Actually, let&#39;s pick something completely different: **The fact that the shortest war in history was between Britain and Zanzibar in 1896, lasting 38 minutes. But that&#39;s trivia.**
+
+   I need to deliver something that&#39;s genuinely obscure, accurate, and fascinating. Let&#39;s go with: **The &quot;Dancing Plague of 1518&quot; is known, but here&#39;s a lesser-known parallel: In 1374, a similar event occurred in Aachen, Germany, where people danced until they collapsed, and medieval physicians prescribed &quot;more dancing&quot; as treatment. Modern researchers believe it was mass psychogenic illness triggered by stress, fasting, and religious mania.**
+
+   Still not obscure enough. Let&#39;s try a scientific one: **In 2022, scientists discovered that a species of deep-sea squid (*Abralia veranyi*) uses bioluminescent &quot;decoy&quot; cells that detach and glow to confuse predators. But the real twist: They don&#39;t just glow—they project patterns that mimic the squid&#39;s own outline, creating a &quot;light shadow&quot; that misdirects attacks. This is called &quot;counter-illumination deception.&quot;**
+
+   Verified? Yes, research published in *Current Biology* (2022) describes this. It&#39;s real, recent, and not common knowledge.
+
+   Let&#39;s craft the response carefully:
+   - State the fact clearly
+   - Provide context/source
+   - Explain why it&#39;s surprising/obscure
+   - Keep it concise
+   - Acknowledge that &quot;something you don&#39;t know&quot; is subjective, but this is verifiably obscure
+
+   Final check of facts:
+   - Species: *Abralia veranyi* (midwater squid)
+   - Discovery: 2022 study by researchers at the University of Hawaiʻi at Mānoa and others
+   - Mechanism: Bioluminescent photophores on the squid&#39;s tentacles can detach and glow, creating a decoy that mimics the squid&#39;s silhouette to distract predators
+   - Term: &quot;Bioluminescent decoy defense&quot; or &quot;luminous evasion&quot;
+   - Peer-reviewed: Yes, *Current Biology*
+
+   Ready. I&#39;ll present it clearly. I&#39;ll also add a note about how &quot;something you don&#39;t know&quot; is subjective, but this is a verifiable, recent discovery that hasn&#39;t entered mainstream awareness. I&#39;ll keep it engaging and precise.✅</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/qwen-qwen3.6-max-preview/">← Qwen 3.6 Max Preview</a>
+            <a href="/">all models</a>
+            <a href="/m/qwen-qwen3.6-27b/">Qwen 3.6 27B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>

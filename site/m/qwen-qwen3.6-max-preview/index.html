@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 3.6 Max Preview — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen 3.6 Max Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a verified, deeply obscure fact that rarely makes it outside geology and nuclear physics circles: About 1.7 billion years ago, a natural nuclear…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-max-preview/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-max-preview/">
+    <meta property="og:title" content="Qwen 3.6 Max Preview — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen 3.6 Max Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a verified, deeply obscure fact that rarely makes it outside geology and nuclear physics circles: About 1.7 billion years ago, a natural nuclear…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen 3.6 Max Preview — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen 3.6 Max Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a verified, deeply obscure fact that rarely makes it outside geology and nuclear physics circles: About 1.7 billion years ago, a natural nuclear…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen 3.6 Max Preview)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s a verified, deeply obscure fact that rarely makes it outside geology and nuclear physics circles:\n\n**About 1.7 billion years ago, a natural nuclear fission reactor ran continuously for hundreds of thousands of years in what is now Oklo, Gabon.** \n\nIt wasn't built by anyone. It was a precise geological coincidence. At that time, natural uranium contained about 3% uranium-235 (the fissile isotope), roughly the same concentration we artificially enrich for modern reactors. Rainwater seeped into a uranium-rich sandstone deposit, acting as a neutron moderator: it slowed down released neutrons just enough to sustain a chain reaction. When the reaction heated up, the water boiled away, shutting it down. Once the rock cooled, water returned, and the cycle restarted. It pulsed like a geological heartbeat, self-regulating for an estimated 200,000+ years.\n\nScientists only discovered it in 1972 when French nuclear researchers noticed that uranium ore from the mine was mysteriously depleted in U-235. Careful isotopic analysis revealed the unmistakable signature of ancient fission products. Even more striking: the surrounding minerals naturally trapped nearly all the radioactive waste, holding it in place for over a billion years. Today, Oklo is studied as a real-world analog for long-term nuclear waste storage and has even been used to test whether fundamental physical constants have changed over cosmic time.\n\nIt remains the only known natural nuclear reactor on Earth.\n\nIf you want another deep-cut fact (linguistics, neuroscience, ancient tech, or something else), just name the domain.","author":{"@type":"Organization","name":"Qwen"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s something that sounds like science fiction but is rigorously documented: **about 2 billion years ago, the Earth naturally built and operated its own nuclear reactors.**\n\nIn 1972, French scientists analyzing uranium ore from a mine in Oklo, Gabon, noticed something impossible: the uranium was slightly depleted in the isotope U-235. In nature, U-235 makes up about 0.72% of uranium today. The Oklo sample was missing a small but precise fraction. That discrepancy led to a stunning conclusion: **self-sustaining nuclear fission had occurred there, naturally, long before humans existed.**\n\n### How it worked:\n- **Higher U-235 abundance:** Because U-235 decays faster than U-238, natural uranium contained ~3% U-235 two billion years ago (close to the enrichment level used in modern light-water reactors).\n- **Groundwater as a moderator:** Rainwater seeped into the uranium-rich sandstone, slowing neutrons just enough to trigger a chain reaction.\n- **A geological thermostat:** When the reaction heated up, the water boiled away, stopping the fission. Once the rock cooled, water returned, and the cycle repeated. Each \"reactor zone\" pulsed on and off for hundreds of thousands of years, averaging about 100 kilowatts of power (enough to run a few dozen homes).\n\n### Why it matters:\n- The fission byproducts (like specific isotopes of neodymium, ruthenium, and xenon) match exactly what you'd expect from a nuclear reactor, confirming the phenomenon beyond doubt.\n- Remarkably, the radioactive waste stayed almost perfectly contained in the surrounding rock for two billion years. Nuclear engineers still study Oklo to understand how to safely store modern spent fuel over geological timescales.\n- Physicists have even used Oklo's isotopic signatures to test whether fundamental constants of nature (like the fine-structure constant) have changed over billions of years. So far, they haven't.\n\nMost people haven't heard of Oklo because it sits at the intersection of geology, nuclear physics, and deep time, and it doesn't fit neatly into standard curricula. But it's a quiet, verified reminder that Earth's natural processes can accidentally replicate human technology, billions of years before we arrived.\n\nIf you","author":{"@type":"Organization","name":"Qwen"}},{"@type":"Answer","text":"Here’s something genuinely obscure but rigorously documented: **Octopuses don’t just wait for DNA mutations to adapt; they routinely edit their own RNA on the fly, and they do it at a scale unmatched by any other known animal.**\n\nIn most organisms, DNA is the permanent blueprint, and RNA is a short-lived messenger that carries instructions to build proteins. But in octopuses, squid, and cuttlefish, enzymes frequently swap one RNA nucleotide for another (adenosine → inosine) after transcription. This changes the shape and function of the resulting protein without touching the underlying DNA. They do this extensively in genes that govern their nervous system, effectively allowing them to \"tune\" neural signaling, ion channels, and synaptic proteins in response to environmental shifts like temperature changes.\n\nThe fascinating trade-off? This heavy reliance on RNA editing appears to have *slowed down* their actual genomic evolution. While vertebrates accumulate DNA mutations over generations to adapt, cephalopods outsourced much of that flexibility to real-time molecular editing. It’s one reason they exhibit such rapid behavioral plasticity and problem-solving intelligence, yet their DNA evolves unusually slowly compared to other invertebrates.\n\nThis was first detailed in a landmark 2017 *Cell* paper from the Marine Biological Laboratory and has since been replicated and expanded. Humans do perform A-to-I RNA editing too, but mostly in non-coding regions and at a fraction of the rate. Cephalopods are essentially running a different kind of biological \"software update\" system, one that prioritizes immediate neural adaptability over long-term genetic change.\n\nIf you'd like, I can pivot to something equally obscure in linguistics, ancient history, materials science, or cognitive psychology. Just name the domain.","author":{"@type":"Organization","name":"Qwen"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen 3.6 Max Preview</h1>
+        <p class="subtitle">Qwen · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen 3.6 Max Preview</div>
+                        <div class="model-provider">Qwen</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s a verified, deeply obscure fact that rarely makes it outside geology and nuclear physics circles:</p>
+<p><strong>About 1.7 billion years ago, a natural nuclear fission reactor ran continuously for hundreds of thousands of years in what is now Oklo, Gabon.</strong> </p>
+<p>It wasn&#39;t built by anyone. It was a precise geological coincidence. At that time, natural uranium contained about 3% uranium-235 (the fissile isotope), roughly the same concentration we artificially enrich for modern reactors. Rainwater seeped into a uranium-rich sandstone deposit, acting as a neutron moderator: it slowed down released neutrons just enough to sustain a chain reaction. When the reaction heated up, the water boiled away, shutting it down. Once the rock cooled, water returned, and the cycle restarted. It pulsed like a geological heartbeat, self-regulating for an estimated 200,000+ years.</p>
+<p>Scientists only discovered it in 1972 when French nuclear researchers noticed that uranium ore from the mine was mysteriously depleted in U-235. Careful isotopic analysis revealed the unmistakable signature of ancient fission products. Even more striking: the surrounding minerals naturally trapped nearly all the radioactive waste, holding it in place for over a billion years. Today, Oklo is studied as a real-world analog for long-term nuclear waste storage and has even been used to test whether fundamental physical constants have changed over cosmic time.</p>
+<p>It remains the only known natural nuclear reactor on Earth.</p>
+<p>If you want another deep-cut fact (linguistics, neuroscience, ancient tech, or something else), just name the domain.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1491 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Nature:** Open-ended, curiosity-driven, expects a novel/interesting fact or insight.
+   - **Challenge:** I don&#39;t know what the user already knows, so I need to pick something genuinely obscure, well-researched, and fascinating across a broad range of potential knowledge levels.
+
+2.  **Identify Key Requirements:**
+   - Must be factual and verifiable
+   - Should be genuinely obscure or counterintuitive
+   - Ideally spans an interesting domain (science, history, linguistics, biology, etc.)
+   - Should be explained clearly with context
+   - Avoid clichés or commonly shared &quot;fun facts&quot;
+
+3.  **Brainstorming Candidates:**
+   - *Biology:* Tardigrades can survive extreme conditions (too common)
+   - *History:* The Great Emu War (well-known internet meme)
+   - *Linguistics:* The word &quot;set&quot; has the most definitions (common)
+   - *Astronomy:* Venus rotates backwards (fairly known)
+   - *Neuroscience:* Your brain predicts reality before you perceive it (interesting but somewhat known)
+   - *Anthropology/History:* The Voynich manuscript (too famous)
+   - *Ecology:* Trees communicate via mycorrhizal networks (&quot;Wood Wide Web&quot; - popularized recently)
+   - *Physics:* Quantum tunneling in enzymes (too technical?)
+   - *History/Culture:* The 1904 Olympic marathon was chaotic (viral recently)
+   - *Linguistics/History:* The &quot;Dord&quot; ghost word in dictionaries (niche but known to word nerds)
+   - *Biology/Ecology:* Some fungi can &quot;farm&quot; bacteria or manipulate insect behavior (Ophiocordyceps - known)
+   - *Astronomy/Physics:* The universe has a &quot;cold spot&quot; that might be a supervoid or evidence of multiverse (speculative)
+   - *History/Technology:* The Antikythera mechanism (well-documented now)
+   - *Psychology:* The &quot;Doorway Effect&quot; - walking through doors resets working memory (interesting but somewhat known)
+   - *Geology:* There&#39;s a naturally occurring nuclear reactor that operated 2 billion years ago in Oklo, Gabon (fascinating, less commonly known, well-documented)
+
+4.  **Select &amp; Develop Best Candidate:**
+   - **Oklo Natural Nuclear Reactor** stands out:
+     - Factual, scientifically verified
+     - Counterintuitive (natural nuclear fission?)
+     - Rich context (how it worked, why it stopped, implications)
+     - Not mainstream common knowledge
+     - Allows for clear, engaging explanation
+
+5.  **Draft Response (Mental Refinement):**
+   About 2 billion years ago, in what is now Oklo, Gabon, a natural nuclear fission reactor operated continuously for hundreds of thousands of years. It wasn’t built by humans or aliens—it was a perfect geological accident. Groundwater seeped into uranium-rich rock, acting as a neutron moderator (slowing neutrons just enough to sustain a chain reaction). When the reaction heated up, the water boiled away, stopping the reaction. Once it cooled, water returned, and the cycle repeated—like a natural geothermal thermostat. Scientists only discovered it in 1972 when French researchers noticed anomalous uranium isotope ratios in mined ore. The site even safely contained its own nuclear waste, with fission products remaining trapped in surrounding minerals for billions of years. It’s the only known natural nuclear reactor on Earth, and it’s helped scientists understand long-term nuclear waste storage.
+
+6.  **Fact-Check &amp; Verify:**
+   - Location: Oklo, Gabon ✓
+   - Age: ~1.7-2 billion years ago ✓
+   - Mechanism: Groundwater as neutron moderator, self-regulating cycle ✓
+   - Discovery: 1972 by French physicists (Francis Perrin et al.) analyzing uranium from COMUF mine ✓
+   - Isotope anomaly: U-235 depletion (natural is ~0.72%, Oklo samples were as low as 0.44%) ✓
+   - Waste containment: Fission products like neodymium, ruthenium remained immobilized ✓
+   - Uniqueness: Only known natural fission reactor ✓
+   - Scientific relevance: Used to study nuclear waste migration, fine-structure constant stability ✓
+   - All facts align with peer-reviewed sources (e.g., Scientific American, IAEA, Nature)
+
+7.  **Structure Response for Impact:**
+   - Hook: Start with the surprising claim
+   - Explain mechanism clearly (avoid jargon, use analogies)
+   - Add discovery story (human element)
+   - Mention why it matters today
+   - Keep it concise (~150-200 words)
+   - Offer to dive deeper or share another obscure fact
+
+8.  **Final Polish:**
+   Check tone: curious, authoritative but accessible
+   Avoid overclaiming: specify &quot;only known&quot;, &quot;geological accident&quot;, &quot;self-regulating&quot;
+   Ensure accuracy: cross-verify dates, mechanisms, implications
+   Add invitation for follow-up
+
+   All steps complete. Ready to output.✅</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s something that sounds like science fiction but is rigorously documented: <strong>about 2 billion years ago, the Earth naturally built and operated its own nuclear reactors.</strong></p>
+<p>In 1972, French scientists analyzing uranium ore from a mine in Oklo, Gabon, noticed something impossible: the uranium was slightly depleted in the isotope U-235. In nature, U-235 makes up about 0.72% of uranium today. The Oklo sample was missing a small but precise fraction. That discrepancy led to a stunning conclusion: <strong>self-sustaining nuclear fission had occurred there, naturally, long before humans existed.</strong></p>
+<h3>How it worked:</h3>
+<ul>
+<li><strong>Higher U-235 abundance:</strong> Because U-235 decays faster than U-238, natural uranium contained ~3% U-235 two billion years ago (close to the enrichment level used in modern light-water reactors).</li>
+<li><strong>Groundwater as a moderator:</strong> Rainwater seeped into the uranium-rich sandstone, slowing neutrons just enough to trigger a chain reaction.</li>
+<li><strong>A geological thermostat:</strong> When the reaction heated up, the water boiled away, stopping the fission. Once the rock cooled, water returned, and the cycle repeated. Each &quot;reactor zone&quot; pulsed on and off for hundreds of thousands of years, averaging about 100 kilowatts of power (enough to run a few dozen homes).</li>
+</ul>
+<h3>Why it matters:</h3>
+<ul>
+<li>The fission byproducts (like specific isotopes of neodymium, ruthenium, and xenon) match exactly what you&#39;d expect from a nuclear reactor, confirming the phenomenon beyond doubt.</li>
+<li>Remarkably, the radioactive waste stayed almost perfectly contained in the surrounding rock for two billion years. Nuclear engineers still study Oklo to understand how to safely store modern spent fuel over geological timescales.</li>
+<li>Physicists have even used Oklo&#39;s isotopic signatures to test whether fundamental constants of nature (like the fine-structure constant) have changed over billions of years. So far, they haven&#39;t.</li>
+</ul>
+<p>Most people haven&#39;t heard of Oklo because it sits at the intersection of geology, nuclear physics, and deep time, and it doesn&#39;t fit neatly into standard curricula. But it&#39;s a quiet, verified reminder that Earth&#39;s natural processes can accidentally replicate human technology, billions of years before we arrived.</p>
+<p>If you</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>3387 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Nature:** Open-ended, curiosity-driven, expects a novel/interesting fact or concept.
+   - **Challenge:** I don&#39;t know what the user already knows, so I need to pick something genuinely obscure, well-researched, and fascinating across a broad audience. It should be verifiable, not too niche, and ideally span science, history, or culture with a &quot;wow&quot; factor.
+
+2.  **Identify Key Criteria for a Good Response:**
+   - Must be true and verifiable
+   - Should be relatively unknown to the general public
+   - Needs to be engaging and clearly explained
+   - Should avoid overused &quot;fun facts&quot; (e.g., bananas are berries, octopuses have three hearts)
+   - Ideally connects to broader concepts or has an interesting implication
+
+3.  **Brainstorming Potential Topics:**
+   - The &quot;Wood Wide Web&quot; (mycorrhizal networks) - somewhat known now
+   - Tardigrades surviving space - well known
+   - The Voynich manuscript - famous
+   - The fact that Cleopatra lived closer to the iPhone than the pyramids - very common
+   - The &quot;Dancing Plague of 1518&quot; - moderately known
+   - The concept of &quot;phantom time hypothesis&quot; - pseudohistory, avoid
+   - The &quot;Bloop&quot; underwater sound - known
+   - The fact that there&#39;s a lake under Antarctica that hasn&#39;t seen sunlight in millions of years (Lake Vostok) - somewhat known
+   - The &quot;Great Attractor&quot; - known in astronomy circles
+   - The fact that your brain creates false memories every time you recall something - known in psychology
+   - The &quot;Antikythera mechanism&quot; - famous
+   - The &quot;Zombie ant fungus&quot; (Ophiocordyceps) - popularized by The Last of Us
+   - The fact that there are more possible iterations of a game of chess than atoms in the observable universe - common
+   - The &quot;Taos Hum&quot; - mysterious but not well-explained
+   - The fact that trees can &quot;count&quot; (some species track winter chilling hours) - interesting but maybe too niche
+   - The &quot;Dyatlov Pass incident&quot; - famous mystery
+   - The fact that the Earth has a second, temporary moon sometimes (minimoons) - known to astronomy fans
+   - The &quot;Wow! Signal&quot; - famous
+   - The fact that human cells are completely replaced every 7-10 years - myth/debunked
+   - The &quot;Bystander effect&quot; - well known in psych
+   - The fact that there&#39;s a species of jellyfish that can revert to its juvenile form (Turritopsis dohrnii) - known
+   - The &quot;Emu War&quot; - internet famous
+   - The fact that the universe might be a hologram (holographic principle) - theoretical physics, known to some
+   - The &quot;Phantom limb&quot; phenomenon - known
+   - The fact that some languages don&#39;t have words for left/right but use cardinal directions instead (Guugu Yimithirr) - fascinating, less known
+   - The &quot;Mandela Effect&quot; - very known
+   - The fact that there&#39;s a natural nuclear reactor that operated 2 billion years ago in Oklo, Gabon - excellent candidate
+   - The &quot;Bloop&quot; - already considered
+   - The fact that your sense of smell is directly wired to memory/emotion centers (olfactory bulb to amygdala/hippocampus) - somewhat known
+   - The &quot;Dunning-Kruger effect&quot; - very known
+   - The fact that there are more stars in the universe than grains of sand on Earth - common
+   - The &quot;Fermi Paradox&quot; - famous
+   - The fact that some mushrooms can &quot;eat&quot; radiation (radiotrophic fungi) - interesting, less known
+   - The &quot;Great Filter&quot; - known
+   - The fact that the Earth&#39;s rotation is slowing down, making days longer by ~1.8ms per century - known
+   - The &quot;Tunguska event&quot; - famous
+   - The fact that there&#39;s a species of bird that uses tools and teaches its young (New Caledonian crows) - known
+   - The &quot;Bermuda Triangle&quot; - debunked/myth
+   - The fact that your body contains about 0.2mg of gold, mostly in your blood - interesting but trivial
+   - The &quot;Antarctic ozone hole&quot; - known
+   - The fact that some plants can &quot;hear&quot; caterpillars chewing and release defensive chemicals - fascinating, research-backed, less known
+   - The &quot;Philadelphia Experiment&quot; - conspiracy
+   - The fact that the universe has a &quot;cosmic web&quot; structure - known in astronomy
+   - The &quot;Doppler effect&quot; - basic physics
+   - The fact that there&#39;s a lake in Tanzania (Lake Natron) that can calcify animals - somewhat known
+   - The &quot;Voynich manuscript&quot; - already considered
+   - The fact that humans have a &quot;second brain&quot; in the gut (enteric nervous system) - popularized recently
+   - The &quot;Bystander effect&quot; - known
+   - The fact that some languages use whistle speech (Silbo Gomero) - interesting
+   - The &quot;Tardigrade&quot; - known
+   - The fact that the Earth&#39;s magnetic field flips every few hundred thousand years - known
+   - The &quot;Wow! Signal&quot; - known
+   - The fact that there&#39;s a species of frog that freezes solid in winter and thaws back to life (wood frog) - known
+   - The &quot;Dyatlov Pass&quot; - known
+   - The fact that the universe is expanding faster than light (metric expansion) - known in physics
+   - The &quot;Emu War&quot; - known
+   - The fact that some bacteria can survive in nuclear reactors (Deinococcus radiodurans) - known
+   - The &quot;Mandela Effect&quot; - known
+   - The fact that there&#39;s a natural phenomenon called &quot;ball lightning&quot; that science still can&#39;t fully explain - interesting
+   - The &quot;Antikythera mechanism&quot; - known
+   - The fact that your brain uses 20% of your body&#39;s energy despite being 2% of its weight - known
+   - The &quot;Fermi Paradox&quot; - known
+   - The fact that there&#39;s a species of shark that can live for 400+ years (Greenland shark) - known
+   - The &quot;Bloop&quot; - known
+   - The fact that some plants communicate via airborne chemicals when attacked - known in botany circles
+   - The &quot;Great Attractor&quot; - known
+   - The fact that the Earth has a &quot;ring&quot; of space debris - known
+   - The &quot;Taos Hum&quot; - known
+   - The fact that there&#39;s a mathematical constant called &quot;Chaitin&#39;s constant&quot; that&#39;s uncomputable - too niche
+   - The &quot;Phantom time hypothesis&quot; - pseudoscience
+   - The fact that some languages don&#39;t have a word for &quot;blue&quot; and historically didn&#39;t distinguish it from green - interesting, backed by research
+   - The &quot;Dunning-Kruger&quot; - known
+   - The fact that the universe might be finite but unbounded - known in cosmology
+   - The &quot;Zombie ant fungus&quot; - known
+   - The fact that there&#39;s a phenomenon called &quot;spontaneous human combustion&quot; - debunked/misunderstood
+   - The &quot;Oklo natural nuclear reactor&quot; - strong candidate
+   - The fact that some birds navigate using quantum entanglement in their eyes (cryptochrome proteins) - cutting-edge, fascinating, less known
+   - The &quot;Wood Wide Web&quot; - known
+   - The fact that your DNA if uncoiled would stretch to the sun and back multiple times - known
+   - The &quot;Antarctic subglacial lakes&quot; - known
+   - The fact that there&#39;s a species of jellyfish that&#39;s biologically immortal - known
+   - The &quot;Dyatlov Pass&quot; - known
+   - The fact that the Earth&#39;s core is as hot as the surface of the sun - known
+   - The &quot;Wow! Signal&quot; - known
+   - The fact that some mushrooms form massive underground networks (Armillaria ostoyae is the largest organism) - known
+   - The &quot;Bermuda Triangle&quot; - debunked
+   - The fact that there&#39;s a psychological phenomenon called &quot;jamais vu&quot; (opposite of deja vu) - interesting but known
+   - The &quot;Oklo reactor&quot; - let&#39;s verify and develop this one.
+
+4.  **Deep Dive into Oklo Natural Nuclear Reactor:**
+   - **What:** In 1972, French scientists analyzing uranium ore from Oklo, Gabon, found that the U-235 isotope ratio was slightly depleted. This led to the discovery that about 2 billion years ago, natural geological conditions created a self-sustaining nuclear fission reactor.
+   - **How:** Groundwater acted as a neutron moderator, uranium concentration was high enough, and U-235 natural abundance was ~3% (vs 0.7% today) due to radioactive decay over time. The reactor cycled on/off as water boiled away and returned.
+   - **Duration:** Operated intermittently for hundreds of thousands of years.
+   - **Significance:** Proves natural nuclear fission can occur; used to study nuclear waste containment (fission products stayed remarkably localized for 2B years); confirms constancy of fundamental physical constants over geological time.
+   - **Verification:** Well-documented in peer-reviewed literature (e.g., Scientific American, Nature, IAEA reports). Not a fringe theory.
+   - **Why it&#39;s unknown:** Rarely taught outside geology/physics circles; sounds like sci-fi but is rigorously proven.
+
+5.  **Structure the Response:**
+   - Hook: Start with a surprising statement
+   - Explain clearly: What, where, when, how
+   - Why it matters: Scientific implications
+   - Verify: Mention it&#39;s well-documented
+   - Keep it engaging but precise
+   - Avoid overcomplication
+   - Add a &quot;why you probably haven&#39;t heard of it&quot; note if relevant
+
+   Draft:
+   About 2 billion years ago, in what is now Gabon, Africa, the Earth naturally built and operated its own nuclear reactors. Not metaphorically—actual, self-sustaining nuclear fission reactions, running intermittently for hundreds of thousands of years.
+
+   Here’s how it happened: Back then, natural uranium contained about 3% uranium-235 (the fissile isotope), compared to just 0.7% today, because U-235 decays faster than U-238. In a uranium-rich deposit at Oklo, groundwater seeped in and acted as a neutron moderator, slowing neutrons just enough to trigger a chain reaction. When the reaction heated up, the water boiled away, stopping the process. Once it cooled, water returned, and the cycle repeated—like a natural geological thermostat.
+
+   French scientists discovered this in 1972 when they noticed the uranium ore was slightly depleted in U-235. Further analysis revealed fission byproducts like neodymium and ruthenium isotopes in exact ratios you’d expect from a nuclear reactor. The &quot;reactors&quot; ran at low power (about 100 kilowatts each) and safely contained their own radioactive waste for two billion years—something modern engineers still study for insights into long-term nuclear waste storage.
+
+   It’s one of the few cases where geology, nuclear physics, and deep time intersect in a way that sounds like science fiction but is rigorously documented. Most people haven’t heard of it because it doesn’t fit neatly into standard school curricula, and it was overshadowed by Cold War-era nuclear narratives. But it’s a quiet reminder that Earth’s natural processes can accidentally replicate human technology—billions of years before we existed.
+
+   If you want, I can dive into how scientists proved it wasn’t human-made, or how it’s being used to test whether fundamental constants of physics have changed over time.
+
+6.  **Self-Correction/Verification:**
+   - Check facts: 
+     - U-235 abundance 2B years ago: ~3-4% (correct, half-life is ~704M years vs U-238&#39;s 4.5B years)
+     - Discovery: 1972 by Francis Perrin/French CEA (correct)
+     - Location: Oklo, Gabon (correct)
+     - Mechanism: Groundwater moderator, cyclic operation (correct, supported by studies)
+     - Power: ~100 kW average per zone (correct)
+     - Waste containment: Fission products remained localized (correct, studied by IAEA/DOE)
+     - Not human-made: Obviously, predates humans by ~2B years
+     - Fundamental constants: Oklo data used to constrain variation of fine-structure constant (correct, though results show no significant change)
+   - Tone: Engaging, accurate, not sensationalized
+   - Avoids myths, clearly distinguishes fact from speculation
+   - Offers follow-up without being pushy
+   - Length: Concise but substantive
+
+   All checks pass. Ready to output.✅
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s something genuinely obscure but rigorously documented: <strong>Octopuses don’t just wait for DNA mutations to adapt; they routinely edit their own RNA on the fly, and they do it at a scale unmatched by any other known animal.</strong></p>
+<p>In most organisms, DNA is the permanent blueprint, and RNA is a short-lived messenger that carries instructions to build proteins. But in octopuses, squid, and cuttlefish, enzymes frequently swap one RNA nucleotide for another (adenosine → inosine) after transcription. This changes the shape and function of the resulting protein without touching the underlying DNA. They do this extensively in genes that govern their nervous system, effectively allowing them to &quot;tune&quot; neural signaling, ion channels, and synaptic proteins in response to environmental shifts like temperature changes.</p>
+<p>The fascinating trade-off? This heavy reliance on RNA editing appears to have <em>slowed down</em> their actual genomic evolution. While vertebrates accumulate DNA mutations over generations to adapt, cephalopods outsourced much of that flexibility to real-time molecular editing. It’s one reason they exhibit such rapid behavioral plasticity and problem-solving intelligence, yet their DNA evolves unusually slowly compared to other invertebrates.</p>
+<p>This was first detailed in a landmark 2017 <em>Cell</em> paper from the Marine Biological Laboratory and has since been replicated and expanded. Humans do perform A-to-I RNA editing too, but mostly in non-coding regions and at a fraction of the rate. Cephalopods are essentially running a different kind of biological &quot;software update&quot; system, one that prioritizes immediate neural adaptability over long-term genetic change.</p>
+<p>If you&#39;d like, I can pivot to something equally obscure in linguistics, ancient history, materials science, or cognitive psychology. Just name the domain.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2615 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Nature:** Open-ended, curiosity-driven, requests novel/obscure/interesting information.
+   - **Challenge:** I don&#39;t know what the user already knows, so I need to pick something genuinely obscure, well-researched, fascinating, and not commonly discussed in mainstream media or general knowledge.
+
+2.  **Identify Key Criteria for a Good Response:**
+   - Must be factual and verifiable
+   - Should be genuinely obscure or surprising
+   - Should span an interesting domain (science, history, linguistics, nature, etc.)
+   - Should be explained clearly but concisely
+   - Should avoid clichés or overused &quot;fun facts&quot;
+   - Should invite further curiosity
+
+3.  **Brainstorming Potential Topics:**
+   - *Biology/Nature:* Tardigrades, immortal jellyfish, fungal networks, whale songs changing culturally
+   - *History:* The Great Emu War, Voynich manuscript, ancient Roman concrete, the Dancing Plague of 1518
+   - *Linguistics:* Pirahã language (no numbers/recursion), whistled languages, semantic satiation
+   - *Physics/Space:* Time dilation on GPS satellites, rogue planets, quantum entanglement, the Wow! signal
+   - *Psychology/Cognition:* The Mandela effect, tip-of-the-tongue phenomenon, change blindness
+   - *Obscure but verified:* The &quot;Dyson sphere&quot; concept isn&#39;t obscure enough. How about &quot;The Library of Babel&quot; concept? Too philosophical. 
+   - Let&#39;s go with something truly niche but well-documented: **The &quot;Wood Wide Web&quot; is somewhat known now. How about &quot;Crown shyness&quot;?** Getting more common.
+   - What about **&quot;The phenomenon of &#39;brontides&#39; or &#39;mistpouffers&#39; - unexplained booming sounds heard worldwide&quot;**? Interesting but a bit vague.
+   - How about **&quot;The mathematical concept of &#39;Graham&#39;s number&#39; and how it&#39;s so large that writing it down would collapse your brain into a black hole&quot;**? A bit hyperbolic/meme-ish.
+   - Let&#39;s try **&quot;The &#39;Dunbar number&#39; is known. What about &#39;The Tsimané people&#39;s lack of heart disease despite high-carb diet&#39;?&quot;** Good but maybe too niche/medical.
+   - I want something with a strong narrative, verified, and genuinely obscure: **&quot;The &#39;Voynich manuscript&#39; is overdone. How about the &#39;Antikythera mechanism&#39;? Also well-known now.&quot;**
+   - Let&#39;s go with **&quot;The &#39;Bloop&#39; underwater sound&quot;** - somewhat known.
+   - How about **&quot;The fact that bananas are berries, but strawberries aren&#39;t&quot;** - way too common.
+   - Let&#39;s think of something from **linguistics/cognition**: **&quot;The &#39;semantic satiation&#39; effect&quot;** - somewhat known.
+   - How about **&quot;The &#39;Kármán line&#39; isn&#39;t the real edge of space&quot;** - debatable.
+   - Let&#39;s try **&quot;The &#39;Great Oxygenation Event&#39; caused Earth&#39;s first mass extinction&quot;** - known in science circles.
+   - I need something truly fresh. Let&#39;s go with: **&quot;The &#39;Dymaxion map&#39; projection&quot;** - known to geography nerds.
+   - How about **&quot;The &#39;Mandela effect&#39; isn&#39;t real, it&#39;s confabulation + social reinforcement&quot;** - known.
+   - Let&#39;s pivot to something deeply fascinating but rarely discussed: **&quot;The &#39;Woodpecker&#39;s tongue wraps around its brain to prevent concussion&#39;&quot;** - somewhat known.
+   - What about **&quot;The &#39;Tully monster&#39; - an extinct creature so weird it defies classification&quot;** - paleontology nerds know it.
+   - Let&#39;s try **&quot;The fact that your brain creates &#39;false memories&#39; every time you recall something, and memory is reconstructive, not reproductive&quot;** - psychology 101.
+   - I&#39;m overthinking. Let&#39;s pick something genuinely obscure, well-sourced, and mind-expanding: **&quot;The &#39;Library of Alexandria&#39; wasn&#39;t the only great ancient library, and its destruction wasn&#39;t a single event but a slow decline over centuries&quot;** - known to historians.
+   - How about **&quot;The &#39;Phantom Time Hypothesis&#39;&quot;**? Pseudohistory. Avoid.
+   - Let&#39;s go with **&quot;The &#39;Bose-Einstein condensate&#39; state of matter where atoms lose individual identity&quot;** - physics students know it.
+   - I need something that balances obscurity, verifiability, and wonder. Let&#39;s try: **&quot;The &#39;Dancing Plague of 1518&#39;&quot;** - somewhat known.
+   - Wait, here&#39;s a genuinely obscure one: **&quot;The &#39;Great Stink&#39; of 1858 led to modern sewage systems, but fewer know about the &#39;London Fog&#39; of 1952 that killed ~12,000 people and directly created the Clean Air Act&quot;** - known in environmental history.
+   - Let&#39;s try something from **mathematics/logic**: **&quot;Goodstein&#39;s theorem - a statement about numbers that&#39;s true but unprovable in standard arithmetic (Peano axioms), requiring set theory to prove&quot;** - fascinating, verifiable, obscure to non-mathematicians.
+   - Or **&quot;The &#39;Banach-Tarski paradox&#39;&quot;** - known in math circles.
+   - How about **&quot;The &#39;Voynich manuscript&#39; has been partially decoded using AI?&quot;** - controversial/unverified.
+   - Let&#39;s go with something from **biology/ecology**: **&quot;Trees can &#39;count&#39; - some species track winter chilling hours and spring warming days to time bud burst, using epigenetic memory and calcium signaling&quot;** - emerging science, fascinating.
+   - Actually, here&#39;s a solid one: **&quot;The &#39;Dunbar number&#39; is famous, but fewer know about &#39;The Social Brain Hypothesis&#39; extension: human group sizes naturally fracture at ~150, ~500, and ~1,500 due to cognitive limits, and this pattern appears in everything from Neolithic villages to modern corporate structures and online communities.&quot;** - somewhat known.
+   - Let&#39;s try **&quot;The &#39;Mandela effect&#39; has a neurological basis in &#39;source monitoring error&#39;&quot;** - known.
+   - I&#39;m going to pick something truly obscure but well-documented: **&quot;The &#39;Carrington Event&#39; of 1859&quot;** - known to space weather folks.
+   - How about **&quot;The fact that octopuses have three hearts, blue blood, and can edit their own RNA on the fly to adapt to temperature changes&quot;** - the RNA editing part is less known and fascinating.
+   - Yes! **Octopus RNA editing** is a great candidate. Let&#39;s verify:
+     - Cephalopods (especially octopuses and squid) extensively use A-to-I RNA editing, which alters protein function without changing DNA.
+     - They do this far more than any other animal, especially in nervous system genes.
+     - It allows rapid adaptation to environmental changes (like temperature) but slows genomic evolution.
+     - Discovered/published in Cell (2017) and other journals.
+     - It&#39;s verified, mind-blowing, and not common knowledge.
+   - Let&#39;s structure it clearly: state the fact, explain why it&#39;s significant, mention the science briefly, and note why it matters.
+
+4.  **Draft Response (Mental Refinement):**
+   Here’s something genuinely obscure but well-documented: **Octopuses don’t just rely on DNA mutations to evolve—they routinely rewrite their own genetic instructions on the fly using a process called RNA editing, and they do it more than any other known animal.**
+
+   In most creatures, DNA is the master blueprint, and RNA is just a temporary messenger that carries instructions to build proteins. But in octopuses (and some other cephalopods), enzymes frequently swap out one RNA building block for another (adenosine to inosine), which changes the resulting protein’s function without altering the underlying DNA. They do this extensively in genes related to their nervous system, effectively allowing them to “tune” their brain chemistry and neural signaling in response to environmental changes like temperature shifts.
+
+   The trade-off? This heavy reliance on RNA editing seems to have slowed down their actual DNA evolution. While most animals accumulate genetic mutations over generations to adapt, octopuses outsourced much of that flexibility to real-time molecular editing. It’s one reason they’re so behaviorally complex and adaptable, yet their genomes evolve unusually slowly.
+
+   This was first detailed in a landmark 2017 *Cell* study and has since reshaped how biologists think about genetic flexibility. It also hints at why cephalopod intelligence evolved so differently from vertebrate intelligence—they’re literally running a different kind of biological software.
+
+   If you want, I can dive into how this compares to human RNA editing (we do it too, but barely), or explore another obscure corner of science, history, or linguistics.
+
+5.  **Self-Correction/Verification:**
+   - Is it accurate? Yes. A-to-I RNA editing in cephalopods is well-documented (Rosenthal lab, MBL, Cell 2017, plus follow-ups).
+   - Is it obscure? Yes, outside marine biology/neuroscience circles, it&#39;s rarely discussed.
+   - Is it sensationalized? I avoided &quot;they rewrite their DNA&quot; (common misconception) and clarified it&#39;s RNA editing, not DNA change. I noted the trade-off accurately.
+   - Is it engaging? Yes, connects to intelligence, evolution, and biological &quot;software.&quot;
+   - Does it invite follow-up? Yes, offers paths to explore.
+   - Tone: Curious, precise, not condescending.
+   - Length: Concise but substantive.
+
+   One minor adjustment: Clarify that humans do RNA editing too, but cephalopods do it at an extraordinary scale, especially in neural tissues. Also, note that &quot;rewriting genetic instructions&quot; is metaphorical; it&#39;s post-transcriptional modification. I&#39;ll make sure the language is precise.
+
+6.  **Final Output Generation:** (Matches the refined draft)✅
+   - Fact: Cephalopod RNA editing
+   - Accuracy: Verified via peer-reviewed literature
+   - Obscurity: High for general audience
+   - Structure: Hook → Explanation → Significance → Trade-off → Source/Context → Invitation
+   - Ready.✅</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/deepseek-deepseek-v4-pro/">← DeepSeek v4 Pro</a>
+            <a href="/">all models</a>
+            <a href="/m/qwen-qwen3.6-flash/">Qwen 3.6 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>

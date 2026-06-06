@@ -29,6 +29,12 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
+      - name: Render static site (index + model pages + sitemap)
+        run: npm run build-site
+
+      - name: Regenerate OG image
+        run: npm run generate-og
+
       - name: Compute branch date
         id: date
         run: echo "today=$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
@@ -47,5 +53,9 @@ jobs:
           add-paths: |
             build/models.yaml
             site/data.json
+            site/index.html
+            site/m
+            site/sitemap.xml
+            site/og.png
             package.json
           delete-branch: true

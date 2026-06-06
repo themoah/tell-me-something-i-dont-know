@@ -1,0 +1,19 @@
+# Cloudflare Pages headers — static site, no functions/SSR.
+
+# HTML: always revalidate so new builds show up immediately.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Versioned-by-content static assets: cache a day.
+/app.js
+  Cache-Control: public, max-age=86400
+/og.png
+  Cache-Control: public, max-age=86400
+/favicon.svg
+  Cache-Control: public, max-age=86400
+
+# Public data API: short cache.
+/data.json
+  Cache-Control: public, max-age=3600

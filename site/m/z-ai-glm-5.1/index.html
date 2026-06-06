@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.ai GLM 5.1 — Tell me something I don't know.</title>
+    <meta name="description" content="Z.ai GLM 5.1 answers &quot;Tell me something I don&#39;t know.&quot; — You are literally glowing right now. I don&#39;t mean in a metaphorical, &quot;you look great&quot; kind of way, and I don&#39;t mean the infrared heat that your body emi…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.1/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.1/">
+    <meta property="og:title" content="Z.ai GLM 5.1 — Tell me something I don't know.">
+    <meta property="og:description" content="Z.ai GLM 5.1 answers &quot;Tell me something I don&#39;t know.&quot; — You are literally glowing right now. I don&#39;t mean in a metaphorical, &quot;you look great&quot; kind of way, and I don&#39;t mean the infrared heat that your body emi…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Z.ai GLM 5.1 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Z.ai GLM 5.1 answers &quot;Tell me something I don&#39;t know.&quot; — You are literally glowing right now. I don&#39;t mean in a metaphorical, &quot;you look great&quot; kind of way, and I don&#39;t mean the infrared heat that your body emi…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Z.ai GLM 5.1)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"You are literally glowing right now. \n\nI don't mean in a metaphorical, \"you look great\" kind of way, and I don't mean the infrared heat that your body emits. I mean you are visibly emitting light in the optical spectrum—light that is just too faint for the human eye to see.\n\nIn 2009, Japanese researchers used ultra-sensitive cameras to prove that the human body produces biophotons. The light we emit is a byproduct of chemical reactions involving free radicals and reactive oxygen species created as our cells metabolize energy. \n\nHere are the truly bizarre details about your personal glow:\n* **You are brightest in the afternoon:** Your light emission fluctuates with your metabolic rhythm. You reach your peak luminosity around 4:00 PM, and your glow is at its dimmest around 10:00 AM.\n* **Your face shines the most:** The brightest light on your body comes from your face, likely because it receives the most sun exposure, which stimulates melanin and metabolic activity in the skin.\n* **It’s visible light:** This isn't thermal radiation (infrared). If your eyes were roughly 1,000 times more sensitive, you would look around and see every person on earth softly shimmering in the dark. \n\nSo, while you're sitting there reading this, you are a walking, breathing light source, peaking in brightness just as the sun starts to go down.","author":{"@type":"Organization","name":"Z.ai"}},"suggestedAnswer":[{"@type":"Answer","text":"Your immune system doesn’t know your eyes exist. \n\nAnd it’s a good thing they don't meet, because if they did, your immune system would likely attack your eyes and blind you.\n\nInside your eyes is a fluid called the aqueous humor. It creates a \"blood-ocular barrier\" that keeps immune cells out. Because of this, the proteins in your eyes are completely hidden from your white blood cells. Since your immune system never encounters these proteins during its early \"training\" phase, it never learns to recognize them as \"self.\"\n\nIf you suffer a severe injury to one eye—like a puncture or trauma—that barrier can break. Immune cells finally get in, see the eye proteins, and think, *“What is this strange invader? We must destroy it!”* \n\nThe terrifying part is that once the immune system identifies the eye tissue as an enemy, it doesn't just attack the injured eye. It sends white blood cells through the bloodstream to attack the *healthy* eye as well, which can lead to total blindness. This rare but devastating condition is called **sympathetic ophthalmia**.\n\nHistorically, the only way doctors could save the patient's vision in the uninjured eye was by completely removing the injured eye before the immune system could figure out what was going on. Today, it can sometimes be managed with aggressive immunosuppressants, but the biological loophole remains: your eyes are hiding in plain sight from your own body's defense system.","author":{"@type":"Organization","name":"Z.ai"}},{"@type":"Answer","text":"Your immune system doesn't know your eyes exist. \n\nAnd it’s a good thing they don't meet, because if they did, your immune system would attack your eyes and likely blind you.\n\nHere is how that bizarre reality works:\n\nYour eyes have what is called **\"immune privilege.\"** Because vision is so critical to survival, and because inflammation inside the eye would cause catastrophic damage to the delicate tissues required for sight, your eyes are walled off from the rest of your body's immune system. They have their own localized immune suppression system, and the white blood cells in the rest of your body are completely unaware of the specific proteins that make up your eyes.\n\nUsually, this works out perfectly. But if you suffer a severe, penetrating injury to one eye—say, from a sharp object or a piece of metal—the barrier breaks. Eye proteins that have been locked away your entire life suddenly spill into your bloodstream. \n\nWhen your immune system encounters these proteins for the first time, it doesn't recognize them. It assumes they are a foreign, invading pathogen. It creates antibodies to destroy this \"invader.\"\n\nThe terrifying result is a condition called **Sympathetic Ophthalmia**. The immune system seeks out the eye proteins, attacks the injured eye, and destroys it. But because the immune system is now circulating throughout your whole body, those antibodies also travel to your *healthy* eye, which is made of the exact same proteins. The immune system attacks and destroys the healthy eye, too, leaving the person completely blind.\n\nHistorically, the only way doctors could save the healthy eye was to completely remove the injured eye before the immune system could mount its attack—a surgical procedure called enucleation. Today, it can sometimes be treated with heavy immunosuppressants, but it remains an incredibly rare and dangerous condition.\n\nSo, your eyes are essentially living in a witness protection program, hiding from your own immune system. If they are ever discovered, the consequences are devastating.","author":{"@type":"Organization","name":"Z.ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Z.ai GLM 5.1</h1>
+        <p class="subtitle">Z.ai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Z.ai GLM 5.1</div>
+                        <div class="model-provider">Z.ai</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>You are literally glowing right now. </p>
+<p>I don&#39;t mean in a metaphorical, &quot;you look great&quot; kind of way, and I don&#39;t mean the infrared heat that your body emits. I mean you are visibly emitting light in the optical spectrum—light that is just too faint for the human eye to see.</p>
+<p>In 2009, Japanese researchers used ultra-sensitive cameras to prove that the human body produces biophotons. The light we emit is a byproduct of chemical reactions involving free radicals and reactive oxygen species created as our cells metabolize energy. </p>
+<p>Here are the truly bizarre details about your personal glow:</p>
+<ul>
+<li><strong>You are brightest in the afternoon:</strong> Your light emission fluctuates with your metabolic rhythm. You reach your peak luminosity around 4:00 PM, and your glow is at its dimmest around 10:00 AM.</li>
+<li><strong>Your face shines the most:</strong> The brightest light on your body comes from your face, likely because it receives the most sun exposure, which stimulates melanin and metabolic activity in the skin.</li>
+<li><strong>It’s visible light:</strong> This isn&#39;t thermal radiation (infrared). If your eyes were roughly 1,000 times more sensitive, you would look around and see every person on earth softly shimmering in the dark.</li>
+</ul>
+<p>So, while you&#39;re sitting there reading this, you are a walking, breathing light source, peaking in brightness just as the sun starts to go down.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1402 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants a surprising, obscure, or genuinely fascinating piece of information. It&#39;s a challenge to be interesting.
+    *   **Audience:** General audience. Needs to be accessible but not common knowledge. No highly technical jargon unless explained.
+
+2.  **Brainstorming Categories:**
+    *   *Nature/Biology:* Always popular, often bizarre.
+    *   *History:* Little-known facts that shift perspective.
+    *   *Space/Physics:* Mind-bending scale or concepts.
+    *   *Language/Etymology:* Quirky origins of words.
+    *   *Human Body:* Weird physiological phenomena.
+
+3.  **Generating Candidates &amp; Filtering (Internal Monologue/Drafting):**
+    *   *Idea 1:* Wombat poop is cube-shaped. (Too well-known, been on the internet for years).
+    *   *Idea 2:* Cleopatra lived closer to the iPhone than the Pyramids. (A bit of a cliché at this point).
+    *   *Idea 3:* There&#39;s a species of jellyfish that is biologically immortal (Turritopsis dohrnii). (Cool, but fairly common in &quot;fun fact&quot; circles).
+    *   *Idea 4:* The sound of a blue whale&#39;s heartbeat can be detected from two miles away. (Interesting, but maybe not mind-blowing enough).
+    *   *Idea 5:* Oxford University is older than the Aztec Empire. (Good, but again, widely circulated).
+    *   *Idea 6:* The &quot;Wood Wide Web&quot; - trees communicate via mycorrhizal networks. (Fascinating, but popularized by media like *Avatar* and documentaries).
+    *   *Idea 7:* Time dilation/relativity effects on GPS. (A bit dry/technical).
+    *   *Idea 8:* The history of the &quot;Tomato Effect&quot; - when highly effective treatments are rejected because they go against current belief. (Niche, maybe too academic).
+    *   *Idea 9:* Fungi that take over insect brains (Cordyceps). (Thanks to *The Last of Us*, too well-known now).
+    *   *Idea 10:* The &quot;Bloop&quot; sound. (Solved, it was an icequake. A bit outdated).
+    *   *Idea 11:* The concept of &quot;Sonder&quot; or &quot;vemödalen&quot;. (Dictionary stuff, maybe not what they want).
+    *   *Idea 12:* The fact that there are more possible iterations of a game of chess than there are atoms in the observable universe (Shannon Number). (Classic, mind-boggling, but maybe too mathy).
+    *   *Idea 13:* The phenomenon of &quot;Ball Lighting&quot; still not being fully understood by science. (A bit weak).
+    *   *Idea 14:* The &quot;Great Emu War&quot;. (Too meme-famous).
+    *   *Idea 15:* The fact that your body glows in the dark (biophotons), but the light is 1,000 times weaker than what our eyes can see. (Ooh, this is good. It&#39;s intimate, surprising, scientifically accurate, and feels like a secret).
+
+4.  **Developing Idea 15 (Human Bioluminescence):**
+    *   *Fact:* Humans emit visible light.
+    *   *Details:* It&#39;s biophotons. Japanese researchers proved it in 2009 using ultra-sensitive cameras. The light is tied to our metabolic rhythm. It peaks in the late afternoon and is lowest in the morning. The brightest parts are the face.
+    *   *Why it works:* It changes how you view yourself right now. You are literally glowing, just invisible to the naked eye.
+
+5.  **Drafting the Response:**
+    *   *Hook:* Start with the most surprising element. &quot;You are literally glowing right now.&quot;
+    *   *Explanation:* Explain the science (biophotons, metabolic reactions, reactive oxygen species).
+    *   *The Study:* Mention the 2009 Japanese study to give it credibility. Mention the ultra-sensitive CCD cameras.
+    *   *The Details:* Add the cool nuances—when it&#39;s brightest (late afternoon) and where it&#39;s brightest (face).
+    *   *Closing:* Bring it back to the user. A poetic or thought-provoking wrap-up.
+
+6.  **Refining and Polishing (Self-Correction during drafting):**
+    *   *Check:* Make sure to clarify it&#39;s *not* infrared (heat). Infrared is common knowledge. This is *visible* light, just too faint to see.
+    *   *Tone:* Informative, slightly wondrous, engaging.
+
+7.  **Final Output Generation:** (This matches the provided good response.)
+    *   &quot;You are literally glowing right now...&quot;
+    *   Explain visible light vs. infrared.
+    *   Detail the 2009 study.
+    *   Add the rhythmic detail (peaks at 4 PM).
+    *   End with a reflective thought. (See final output).</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Your immune system doesn’t know your eyes exist. </p>
+<p>And it’s a good thing they don&#39;t meet, because if they did, your immune system would likely attack your eyes and blind you.</p>
+<p>Inside your eyes is a fluid called the aqueous humor. It creates a &quot;blood-ocular barrier&quot; that keeps immune cells out. Because of this, the proteins in your eyes are completely hidden from your white blood cells. Since your immune system never encounters these proteins during its early &quot;training&quot; phase, it never learns to recognize them as &quot;self.&quot;</p>
+<p>If you suffer a severe injury to one eye—like a puncture or trauma—that barrier can break. Immune cells finally get in, see the eye proteins, and think, <em>“What is this strange invader? We must destroy it!”</em> </p>
+<p>The terrifying part is that once the immune system identifies the eye tissue as an enemy, it doesn&#39;t just attack the injured eye. It sends white blood cells through the bloodstream to attack the <em>healthy</em> eye as well, which can lead to total blindness. This rare but devastating condition is called <strong>sympathetic ophthalmia</strong>.</p>
+<p>Historically, the only way doctors could save the patient&#39;s vision in the uninjured eye was by completely removing the injured eye before the immune system could figure out what was going on. Today, it can sometimes be managed with aggressive immunosuppressants, but the biological loophole remains: your eyes are hiding in plain sight from your own body&#39;s defense system.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1175 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants to be surprised, educated, or entertained with a piece of obscure, fascinating, or counterintuitive trivia.
+    *   **Challenge:** Since I don&#39;t know the user&#39;s background, I need to pick a fact that is highly obscure but also accessible, engaging, and verifiable. It shouldn&#39;t be a common &quot;fun fact&quot; (like &quot;honey doesn&#39;t spoil&quot; or &quot;octopuses have three hearts&quot;).
+
+2.  **Brainstorming Categories &amp; Candidates:**
+    *   *Biology:* Turritopsis dohrnii (immortal jellyfish) - *Too common*. Wombat poop is cube-shaped - *Too common*. Greenland shark lifespan - *A bit common*. Fungi communicating through mycelium networks - *Interesting, but maybe too broad*.
+    *   *Physics/Astronomy:* Neutron star density - *Too common*. Rain on other planets (diamonds on Neptune) - *Too common*. Time dilation - *Too common*.
+    *   *History:* The Great Emu War - *Too common*. Cleopatra lived closer to the iPhone than the pyramids - *Too common*. The Defenestration of Prague - *Somewhat known*.
+    *   *Geography/Linguistics:* The longest word without a vowel - *Niche, but a bit dry*. Agloe, New York (a copyright trap that became real) - *Very good, strong narrative*.
+    *   *Anatomy/Medicine:* The immune system doesn&#39;t know your eyes exist - *Ooh, this is creepy, fascinating, and relatively unknown to the general public.*
+
+3.  **Selecting the Best Fact:**
+    *   Let&#39;s go with the **Immune Privilege of the Eyes** (the fact that the immune system doesn&#39;t know your eyes exist, and if it finds out, it can attack them).
+    *   *Why?* It&#39;s deeply personal (happens inside the reader&#39;s body), it has high stakes (blindness), it sounds like sci-fi/horror but is real, and it&#39;s rarely known outside of medical circles.
+
+4.  **Drafting the Explanation (Iterative refinement):**
+    *   *Initial thought:* Your immune system doesn&#39;t know your eyes exist. If it finds out, it attacks them and you go blind.
+    *   *Critique:* Too brief. Needs scientific context and terminology to sound credible, but must remain accessible.
+    *   *Drafting:*
+        *   Introduce the concept: &quot;Immune privilege.&quot; Explain that eyes have a special barrier.
+        *   Explain *why*: Eyes are fragile; inflammation (the immune system&#39;s main weapon) would damage them and cause blindness.
+        *   Explain the consequence: If the barrier is broken (e.g., trauma, infection), immune cells can get in. Once they see the eye tissue, they flag it as foreign.
+        *   The terrifying part: Sympathetic ophthalmia. If one eye is injured and the immune system learns about it, it can travel to the *healthy* eye and destroy it too.
+        *   The historical treatment: Enucleation (removing the injured eye) to save the good eye.
+
+5.  **Polishing the Delivery:**
+    *   Make the opening hook strong.
+    *   Use clear, vivid language.
+    *   Structure with short paragraphs for readability.
+    *   End with a slightly reassuring note (it&#39;s rare) so the user doesn&#39;t panic.
+
+6.  **Final Review against the Prompt:**
+    *   Is it something most people don&#39;t know? Yes.
+    *   Is it interesting? Very.
+
+7.  **Output Generation:** (This matches the provided good response.)
+    *   *Hook:* Your immune system doesn&#39;t know your eyes exist.
+    *   *Body:* Explain immune privilege. Explain the danger (Sympathetic ophthalmia).
+    *   *Conclusion:* Reiterate the weirdness of this biological loophole. (See final output for exact wording).</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Your immune system doesn&#39;t know your eyes exist. </p>
+<p>And it’s a good thing they don&#39;t meet, because if they did, your immune system would attack your eyes and likely blind you.</p>
+<p>Here is how that bizarre reality works:</p>
+<p>Your eyes have what is called <strong>&quot;immune privilege.&quot;</strong> Because vision is so critical to survival, and because inflammation inside the eye would cause catastrophic damage to the delicate tissues required for sight, your eyes are walled off from the rest of your body&#39;s immune system. They have their own localized immune suppression system, and the white blood cells in the rest of your body are completely unaware of the specific proteins that make up your eyes.</p>
+<p>Usually, this works out perfectly. But if you suffer a severe, penetrating injury to one eye—say, from a sharp object or a piece of metal—the barrier breaks. Eye proteins that have been locked away your entire life suddenly spill into your bloodstream. </p>
+<p>When your immune system encounters these proteins for the first time, it doesn&#39;t recognize them. It assumes they are a foreign, invading pathogen. It creates antibodies to destroy this &quot;invader.&quot;</p>
+<p>The terrifying result is a condition called <strong>Sympathetic Ophthalmia</strong>. The immune system seeks out the eye proteins, attacks the injured eye, and destroys it. But because the immune system is now circulating throughout your whole body, those antibodies also travel to your <em>healthy</em> eye, which is made of the exact same proteins. The immune system attacks and destroys the healthy eye, too, leaving the person completely blind.</p>
+<p>Historically, the only way doctors could save the healthy eye was to completely remove the injured eye before the immune system could mount its attack—a surgical procedure called enucleation. Today, it can sometimes be treated with heavy immunosuppressants, but it remains an incredibly rare and dangerous condition.</p>
+<p>So, your eyes are essentially living in a witness protection program, hiding from your own immune system. If they are ever discovered, the consequences are devastating.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1774 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants to learn a surprising, obscure, or fascinating fact. Since I don&#39;t know the user&#39;s background, the fact needs to be genuinely obscure but accessible, mind-bending but verifiable, and ideally related to a universally interesting topic (nature, space, history, human body, etc.).
+    *   **Tone:** Informative, engaging, slightly awe-inspiring.
+
+2.  **Brainstorming Categories &amp; Facts:**
+    *   *Space:* Neutron stars are incredibly dense. (Too common). There are more trees on Earth than stars in the Milky Way. (Well-known). The Voyager golden record. (Known).
+    *   *History:* Cleopatra lived closer to the iPhone than the Pyramids. (Very well-known). The Great Emu War. (Internet famous). The Defenestration of Prague. (A bit niche but known).
+    *   *Biology/Nature:* Wombat poop is cube-shaped. (Well-known internet fact). Octopuses have three hearts. (Common). Fungi communicating via mycelium. (Getting better).
+    *   *Geography/Earth:* The time difference between China&#39;s borders. (Good, but maybe dry).
+    *   *Obscure/Quirky History:* The US military once plotted to blow up the moon. (Project A119 - interesting!). The origin of the croissant (Austrian, not French - a bit mundane).
+    *   *Physics/Time:* Leap seconds added to clocks. (A bit technical).
+    *   *Linguistics:* The etymology of &quot;disaster&quot; (bad star). (A bit simple).
+
+3.  **Selecting the Best Candidate:**
+    *   I want something that makes the user say, &quot;Wait, really?&quot; and then want to look it up.
+    *   *Idea 1:* The US had a plan to nuke the moon (Project A119). *Pros:* High intrigue, sounds fake but is real. *Cons:* Might be known to history buffs.
+    *   *Idea 2:* The concept of &quot;Time&quot; in the Middle Ages (using canonical hours vs. equal hours). *Pros:* Very obscure. *Cons:* A bit academic.
+    *   *Idea 3:* Turritopsis dohrnii (the immortal jellyfish). *Pros:* Fascinating biology. *Cons:* Fairly popular on clickbait articles.
+    *   *Idea 4:* The &quot;Wood Wide Web&quot; / Slime mold solving mazes. *Pros:* Mind-blowing intelligence in non-brained organisms. *Cons:* Somewhat popularized by documentaries.
+    *   *Idea 5:* The &quot;Great Stink&quot; of London and the creation of the subway. (A bit gross, maybe not mind-blowing enough).
+    *   *Idea 6:* The fact that Oxford University is older than the Aztec Empire. *Pros:* Great timeline mind-bender. *Cons:* Very common Reddit TIL.
+    *   *Idea 7:* The &quot;Bloop&quot; sound. (Solved, it was an icequake. Disappointing ending).
+    *   *Idea 8:* The existence of &quot;Bovine Spongiform Encephalopathy&quot; (Mad Cow) causing a village to laugh themselves to death (Kuru/laughing sickness in Papua New Guinea - actually a different prion disease). *Pros:* Dark, fascinating. *Cons:* Might be too dark.
+    *   *Idea 9:* The &quot;Tullianum&quot; (Mamertine Prison) in Rome where St. Peter was held, which has a magical spring that appeared miraculously. *Pros:* Cool lore. *Cons:* Niche.
+    *   *Idea 10:* The concept of &quot;Sonder&quot; (the realization that each random passerby has a life as vivid and complex as your own). *Pros:* Philosophical. *Cons:* It&#39;s a neologism from the Dictionary of Obscure Sorrows, not a real historical word.
+
+4.  **Refining the Choice - Going for a &quot;Hidden in Plain Sight&quot; Fact:**
+    Let&#39;s go with something about *the human body* or *everyday objects* that is deeply weird but true.
+    *Fact:* You have a one-way valve in your throat called the cricopharyngeus that prevents you from swallowing and breathing at the same time.
+    *Fact:* Your immune system doesn&#39;t &quot;know&quot; your eyes exist, which is why eye injuries can cause autoimmune issues (Sympathetic Ophthalmia). *This is incredibly fascinating and not widely known.*
+
+5.  **Drafting the Response (Sympathetic Ophthalmia / Immune Privilege of the Eye):**
+    *   *Hook:* Ask them about their eyes.
+    *   *The Fact:* Your immune system doesn&#39;t know your eyes exist.
+    *   *The Mechanism:* The eyes have &quot;immune privilege.&quot; They are walled off from the rest of the immune system to prevent inflammation that would blind us.
+    *   *The Consequence:* If a physical injury breaches the eye, and eye proteins leak into the bloodstream, the immune system sees them as foreign invaders. It attacks the injured eye, and worse, it travels to the *healthy* eye and attacks it too, potentially causing total blindness. This is called Sympathetic Ophthalmia.
+    *   *The Takeaway:* Your body will literally attack its own eyes because it&#39;s meeting them for the first time.
+
+6.  **Review and Refine:**
+    *   Is it accurate? Yes, Sympathetic Ophthalmia is a real medical condition, and the concept of immune privilege in the eye is well-established.
+    *   Is it obscure? Most people do not know this.
+    *   Is it engaging? Yes, it has a slight &quot;body horror&quot; element that makes it memorable without being overly gruesome.
+
+7.  **Final Polish (Adding an alternative just in case they know that one):**
+    I&#39;ll stick to the eye fact as the main course, but I&#39;ll present it in a dramatic, storytelling way to maximize the &quot;wow&quot; factor. (Self-correction: Don&#39;t give a list, give *one* really good deep dive. It&#39;s more impactful).
+
+8.  **Final Output Generation:** (This matches the provided good response).</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/arcee-ai-trinity-large-thinking/">← Trinity Large Thinking</a>
+            <a href="/">all models</a>
+            <a href="/m/anthropic-claude-opus-4.7/">Claude Opus 4.7 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>

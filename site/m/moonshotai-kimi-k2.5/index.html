@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi K2.5 — Tell me something I don't know.</title>
+    <meta name="description" content="Kimi K2.5 answers &quot;Tell me something I don&#39;t know.&quot; — You can hear with your eyes. There&#39;s a phenomenon called the McGurk Effect that proves your brain doesn&#39;t just listen to sound—it watches faces. When yo…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k2.5/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k2.5/">
+    <meta property="og:title" content="Kimi K2.5 — Tell me something I don't know.">
+    <meta property="og:description" content="Kimi K2.5 answers &quot;Tell me something I don&#39;t know.&quot; — You can hear with your eyes. There&#39;s a phenomenon called the McGurk Effect that proves your brain doesn&#39;t just listen to sound—it watches faces. When yo…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimi K2.5 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Kimi K2.5 answers &quot;Tell me something I don&#39;t know.&quot; — You can hear with your eyes. There&#39;s a phenomenon called the McGurk Effect that proves your brain doesn&#39;t just listen to sound—it watches faces. When yo…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Kimi K2.5)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":" You can hear with your eyes.\n\nThere's a phenomenon called the **McGurk Effect** that proves your brain doesn't just listen to sound—it watches faces. When you see someone speak, your visual cortex overrides your auditory processing, even when you know exactly what's being said.\n\nHere's how it works: If you watch a video of someone silently mouthing the word *\"fafa\"* while the audio plays the sound *\"baba,\"* you won't hear either correctly. Instead, your brain manufactures a compromise: you'll swear you heard *\"vava\"* or *\"thatha.\"* Your eyes convince your ears they heard something that was never actually said.\n\nThe wild part? Even after you learn about the effect, watch the video a dozen times, and consciously focus on the actual audio, you **still** can't hear the real sound. The illusion is unbreakable because it's happening below conscious thought—your brain is stitching together sensory inputs before you have a say in the matter.\n\nIt was discovered by accident in 1976 when Harry McGurk asked his lab technician to dub a video, and the result revealed that human speech perception isn't just hearing plus lip-reading added together. It's a complete sensory fusion where vision often dominates. You don't just hear voices; you see them.","author":{"@type":"Organization","name":"Moonshot AI"}},"suggestedAnswer":[{"@type":"Answer","text":"Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid of Giza.\n\n**The math:**\n*   The Great Pyramid was completed around **2560 BCE**\n*   Cleopatra died in **30 BCE**\n*   The Moon landing was in **1969 CE**\n\nThat means Cleopatra was separated from the pyramid builders by roughly **2,500 years**, but only **2,000 years** separated her from Neil Armstrong. \n\nWe tend to compress \"ancient history\" into a single mental category, but the Egyptian civilization lasted so long that its earliest monuments were already older to Cleopatra than Cleopatra is to us.","author":{"@type":"Organization","name":"Moonshot AI"}},{"@type":"Answer","text":"Oxford University is older than the Aztec Empire.\n\nThe university's teaching traditions date back to 1096, while the Aztec Triple Alliance—the political entity we think of as the \"Aztec Empire\"—wasn't formed until 1428. This means Oxford was already a bustling center of learning, complete with established colleges and scholastic traditions, for over 300 years before the Aztecs even began building Tenochtitlan on that lake in Mexico.\n\nWe tend to file \"medieval European universities\" and \"ancient Mesoamerican civilizations\" in separate mental boxes of \"old,\" but they weren't just concurrent—they were separated by centuries, with Oxford being the elder institution.","author":{"@type":"Organization","name":"Moonshot AI"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Kimi K2.5</h1>
+        <p class="subtitle">Moonshot AI · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>January 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Kimi K2.5</div>
+                        <div class="model-provider">Moonshot AI</div>
+                        <div class="model-released">January 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p> You can hear with your eyes.</p>
+<p>There&#39;s a phenomenon called the <strong>McGurk Effect</strong> that proves your brain doesn&#39;t just listen to sound—it watches faces. When you see someone speak, your visual cortex overrides your auditory processing, even when you know exactly what&#39;s being said.</p>
+<p>Here&#39;s how it works: If you watch a video of someone silently mouthing the word <em>&quot;fafa&quot;</em> while the audio plays the sound <em>&quot;baba,&quot;</em> you won&#39;t hear either correctly. Instead, your brain manufactures a compromise: you&#39;ll swear you heard <em>&quot;vava&quot;</em> or <em>&quot;thatha.&quot;</em> Your eyes convince your ears they heard something that was never actually said.</p>
+<p>The wild part? Even after you learn about the effect, watch the video a dozen times, and consciously focus on the actual audio, you <strong>still</strong> can&#39;t hear the real sound. The illusion is unbreakable because it&#39;s happening below conscious thought—your brain is stitching together sensory inputs before you have a say in the matter.</p>
+<p>It was discovered by accident in 1976 when Harry McGurk asked his lab technician to dub a video, and the result revealed that human speech perception isn&#39;t just hearing plus lip-reading added together. It&#39;s a complete sensory fusion where vision often dominates. You don&#39;t just hear voices; you see them.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1170 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content"> The user is asking me to tell them something they don&#39;t know. This is a very open-ended request, and I need to consider a few things:
+
+1. I don&#39;t actually know what the user knows or doesn&#39;t know, so I should pick something interesting, specific, and somewhat obscure that has a good chance of being new information.
+
+2. It should be factual, verifiable, and interesting.
+
+3. I should avoid overly common trivia (like &quot;honey never spoils&quot; or &quot;bananas are berries&quot;) that most people might already know.
+
+4. The topic could be from science, history, linguistics, nature, or technology.
+
+Some options:
+- The Voynich Manuscript (undeciphered medieval book)
+- The fact that octopuses have three hearts and blue blood
+- The Great Emu War in Australia
+- The fact that the Oxford English Dictionary was largely written by a murderer in an asylum (William Chester Minor)
+- The Antonine Wall vs Hadrian&#39;s Wall
+- The existence of &quot;time crystals&quot; in physics
+- The fact that wombat poop is cube-shaped
+- The McGurk Effect in perception
+- The fact that the US has a &quot;Strategic Petroleum Reserve&quot; but also a &quot;Strategic Helium Reserve&quot; (and why)
+- The existence of the &quot;Bootes Void&quot; or other cosmic voids
+
+I think I&#39;ll go with something about the McGurk Effect because it&#39;s fascinating, not widely known, and demonstrates something fundamental about perception. Or perhaps something about the Oxford English Dictionary and William Chester Minor.
+
+Actually, let me go with something about the &quot;Great Firewall of China&quot; having a strange quirk, or perhaps something about how the human body replaces cells.
+
+Wait, here&#39;s a good one: The fact that when you look at the moon during the day (which you can do), you&#39;re seeing the same phase that people on the opposite side of Earth see at night, but inverted. No, that&#39;s too obvious.
+
+How about: The fact that the Oxford English Dictionary was largely written by a murderer who was imprisoned in an insane asylum. That&#39;s the William Chester Minor story. It&#39;s compelling, true, and educational.
+
+Or: The fact that there are trees that are older than the written history of some civilizations, specifically &quot;Pando&quot; (the aspen clone) or individual bristlecone pines.
+
+Or: The fact that the national animal of Scotland is the unicorn.
+
+Or: The fact that there is a species of jellyfish that is biologically immortal (Turritopsis dohrnii).
+
+Or: The fact that the shortest war in history was between Britain and Zanzibar in 1896 and lasted 38 minutes.
+
+Or: The fact that Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.
+
+I think I&#39;ll go with the William Chester Minor/OED story because it&#39;s rich in detail and connects language, history, and human tragedy. It&#39;s also something that feels like &quot;insider knowledge&quot; about a very famous reference work.
+
+Structure:
+1. Hook: The OED is one of the most authoritative dictionaries...
+2. Twist: ...but much of it was written by a madman and murderer.
+3. Details: William Chester Minor, American Civil War surgeon, killed a man in London, was committed to Broadmoor Criminal Lunatic Asylum, had access to books, contributed thousands of quotations.
+4. Connection: He corresponded with James Murray (the editor) for years before Murray discovered he was in an asylum.
+5. Why it&#39;s interesting: It shows how knowledge can come from unexpected places, and it&#39;s a poignant story about obsession and mental illness.
+
+Alternative: The &quot;McGurk Effect&quot; is also good because it&#39;s about perception and demonstrates something the user can actually test themselves.
+
+Actually, I&#39;ll go with the McGurk Effect because it&#39;s interactive and mind-blowing. People can watch a video of it to verify.
+
+Content:
+- Explain what it is: Visual information overrides auditory information in speech perception.
+- The example: When you hear &quot;ba ba ba&quot; but see lips making &quot;fa fa fa,&quot; you hear &quot;fa fa fa.&quot;
+- The mechanism: Your brain integrates visual and auditory cues, and vision dominates when there&#39;s conflict.
+- Why it matters: It shows that what we &quot;hear&quot; isn&#39;t just about our ears; perception is multisensory and constructive.
+
+This is something most people don&#39;t know and can actually experience.
+
+Let me write this clearly. </div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid of Giza.</p>
+<p><strong>The math:</strong></p>
+<ul>
+<li>The Great Pyramid was completed around <strong>2560 BCE</strong></li>
+<li>Cleopatra died in <strong>30 BCE</strong></li>
+<li>The Moon landing was in <strong>1969 CE</strong></li>
+</ul>
+<p>That means Cleopatra was separated from the pyramid builders by roughly <strong>2,500 years</strong>, but only <strong>2,000 years</strong> separated her from Neil Armstrong. </p>
+<p>We tend to compress &quot;ancient history&quot; into a single mental category, but the Egyptian civilization lasted so long that its earliest monuments were already older to Cleopatra than Cleopatra is to us.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1293 tokens</span>
+                    <span class="topic-tag" data-topic="cleopatra">👑 cleopatra</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a very open-ended request. Since I don&#39;t know what the user already knows, I should provide an interesting, surprising, or obscure fact that is relatively unknown to the general public but still accessible and engaging.
+
+Some options:
+1. A scientific fact about biology/physics/chemistry
+2. A historical tidbit
+3. A linguistic oddity
+4. A mathematical curiosity
+5. Something about human perception or psychology
+
+I&#39;ll go with something that combines biology and history - the fact that wombat poop is cube-shaped, or perhaps something about octopuses having three hearts. But those are fairly well-known &quot;fun facts.&quot;
+
+Let me think of something more obscure but interesting:
+- The fact that Napoleon wasn&#39;t actually that short (he was average height)
+- That honey never spoils (archaeologists have found edible honey in ancient Egyptian tombs)
+- That bananas are berries but strawberries aren&#39;t
+- That Oxford University is older than the Aztec Empire
+
+Actually, I really like the Oxford/Aztec one because it puts historical timelines in perspective that most people don&#39;t realize. It challenges our assumptions about &quot;ancient&quot; vs &quot;modern.&quot;
+
+Another good one: The T-Rex lived closer in time to humans than to the Stegosaurus. That&#39;s a mind-bending temporal fact.
+
+Or: There are more possible iterations of a game of chess than there are atoms in the observable universe (Shannon number).
+
+Or: Cleopatra lived closer to the moon landing than to the building of the Great Pyramid.
+
+I think I&#39;ll go with the Cleopatra/Pyramid/Moon landing one, or perhaps the T-Rex/Stegosaurus one. The Cleopatra one is particularly striking because we tend to lump all &quot;ancient&quot; history together.
+
+Actually, let me go with something more sensory/unexpected: The fact that if you could fold a piece of paper 42 times, it would reach the moon. This is a good math demonstration of exponential growth.
+
+But maybe something more biological and weird: Sloths can hold their breath longer than dolphins (40 minutes vs 8-10 minutes) because their metabolism is so slow and they can basically turn off their lungs.
+
+Or: The human brain has more synapses than there are stars in the Milky Way galaxy (roughly 100 trillion vs 100-400 billion).
+
+I think I&#39;ll provide the Cleopatra fact because it really reshuffles mental timelines effectively.
+
+Wait, I want to check if this is accurate:
+- Great Pyramid of Giza: completed around 2560 BCE
+- Cleopatra VII: lived 69-30 BCE
+- Moon landing: 1969 CE
+- Distance Cleopatra to pyramid: ~2500 years
+- Distance Cleopatra to moon landing: ~2000 years
+So yes, she is closer to us.
+
+Actually, I&#39;ll go with something more obscure but equally mind-bending: **Vending machines kill more people per year than sharks do.** This is true and surprising.
+
+Or: **The national animal of Scotland is the unicorn.**
+
+Or: **A jiffy is an actual unit of time** (1/100th of a second in computing, or the time light takes to travel 1 cm in physics).
+
+I think I&#39;ll go with the Scotland/unicorn one combined with a bit of context about why, or perhaps the fact that **from the time the first commercial jetliner entered service to the time humans landed on the moon was only about 16 years** (1952 to 1969). That shows how rapidly aviation advanced.
+
+But actually, I think the most &quot;I didn&#39;t know that&quot; feeling comes from biological facts that contradict intuition. Like the fact that **you have never actually touched anything** due to electromagnetic repulsion between atoms.
+
+Or: **Water can boil and freeze at the same time** (the triple point).
+
+I think I&#39;ll go with the **Cleopatra and the Pyramids** fact because it&#39;s historically grounded and makes people recontextualize time. It&#39;s specific, verifiable, and genuinely surprising to most people.
+
+Structure:
+- State the fact clearly
+- Provide the dates to verify
+- Brief explanation of why this feels counterintuitive (our compression of &quot;ancient&quot; history)
+
+Let me double-check the dates:
+- Great Pyramid of Giza: c. 2580–2560 BCE (let&#39;s say ~2560 BCE)
+- Cleopatra VII: 69 BCE – 30 BCE (died 30 BCE)
+- Moon landing: July 20, 1969 CE
+
+Time from pyramid to Cleopatra: ~2560 - 30 = ~2530 years
+Time from Cleopatra to moon landing: 1969 - (-30) = 1999 years
+
+So yes, she is roughly 500 years closer to the moon landing than to the pyramid construction.
+
+Actually, I should verify if there&#39;s any debate about these dates, but generally, this is accepted as true.
+
+Alternative: **Oxford University is older than the Aztec Empire.**
+- Oxford: teaching existed in some form from 1096, university recognized ~1200
+- Aztec Empire: founded 1428 (Triple Alliance)
+This is also true and surprising.
+
+I think the Cleopatra one is more striking because both events (pyramids and moon landing) seem like &quot;ancient history&quot; vs &quot;modern times&quot; in our heads, but Cleopatra bridges them.
+
+Final check: Is there anything problematic about this fact? No, it&#39;s a straightforward chronology comparison.
+
+I&#39;ll present it clearly and concisely.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Oxford University is older than the Aztec Empire.</p>
+<p>The university&#39;s teaching traditions date back to 1096, while the Aztec Triple Alliance—the political entity we think of as the &quot;Aztec Empire&quot;—wasn&#39;t formed until 1428. This means Oxford was already a bustling center of learning, complete with established colleges and scholastic traditions, for over 300 years before the Aztecs even began building Tenochtitlan on that lake in Mexico.</p>
+<p>We tend to file &quot;medieval European universities&quot; and &quot;ancient Mesoamerican civilizations&quot; in separate mental boxes of &quot;old,&quot; but they weren&#39;t just concurrent—they were separated by centuries, with Oxford being the elder institution.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1201 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a very open-ended request, so I need to consider:
+
+1. The user could be anyone, so I don&#39;t actually know what they know or don&#39;t know
+2. I should provide something interesting, specific, and relatively obscure but verifiable
+3. It should be something that most people wouldn&#39;t know, but is still accessible and engaging
+4. I could choose from various domains: science, history, linguistics, nature, technology, etc.
+
+Some options:
+- The fact that octopuses have three hearts and blue blood
+- That honey never spoils (archaeologists have found edible honey in ancient Egyptian tombs)
+- That bananas are berries but strawberries aren&#39;t
+- The &quot;Baader-Meinhof phenomenon&quot; (frequency illusion)
+- That Oxford University is older than the Aztec Empire
+- That wombat poop is cube-shaped
+- The shortest war in history was 38-45 minutes (Anglo-Zanzibar War)
+- That clouds are incredibly heavy (average cumulus cloud weighs about 1.1 million pounds)
+
+I think I&#39;ll go with something that combines counterintuitive physics/biology with a bit of &quot;everyday wonder&quot; - probably the cloud weight fact or the wombat poop fact, or perhaps something about time perception or linguistic quirks.
+
+Actually, I like the Oxford vs Aztec Empire comparison because it really puts time in perspective. Or maybe something about how the human body replaces cells constantly but we still feel like continuous selves.
+
+Let me go with the fact that **clouds are incredibly heavy** - most people look at them as light and fluffy, but they actually weigh tons. This is surprising and leads to the question of why they don&#39;t fall (which involves air resistance and updrafts).
+
+Alternative: The fact that **clever Hans** (the counting horse) wasn&#39;t actually counting but reading human body language - this is a good psychology/history fact.
+
+Or: **Velcro was invented after a Swiss engineer noticed burrs sticking to his dog&#39;s fur** - actually, this might be commonly known.
+
+Let me go with the **Oxford University vs Aztec Empire** timeline - it&#39;s mind-bending because we tend to think of ancient civilizations and medieval Europe as completely separate eras, but they overlapped significantly.
+
+Oxford University: Teaching existed in some form from 1096, officially recognized/organized by 1167.
+Aztec Empire: Founded in 1428 (Triple Alliance).
+So Oxford is about 200+ years older than the Aztec Empire.
+
+This is a good &quot;something you don&#39;t know&quot; because it challenges our chronological assumptions.
+
+Wait, I should verify this. Yes, Oxford&#39;s teaching traces back to 1096, though the university as we know it developed later. The Aztec Triple Alliance was formed in 1428. So yes, Oxford is older by roughly 300 years.
+
+Another good one: **Sharks are older than trees**. Sharks appeared around 400 million years ago, trees around 350 million years ago. That&#39;s also a good mind-bender.
+
+I think I&#39;ll go with the sharks/trees one or the Oxford/Aztec one. The shark one is more &quot;natural history&quot; and surprising because we think of trees as so ancient and fundamental.
+
+Actually, I want to provide something a bit more obscure but still fascinating. How about: **The patent for the fire hydrant was lost in a fire.** This is ironic and memorable, though I need to check if it&#39;s true. Actually, it&#39;s disputed - the patent office burned down in 1836, destroying many patents, but the fire hydrant invention is credited to various people around 1801-1813.
+
+Better: **Nintendo was founded in 1889.** Before they made video games, they made playing cards (hanafuda). This is surprising because we associate them with modern technology.
+
+Or: **The current U.S. flag was designed by a high school student for a class project.** Robert G. Heft designed it in 1958 for a school project and got a B- initially, but it was later adopted officially.
+
+I think I&#39;ll go with the **Nintendo** fact or the **flag** fact. Both are surprising connections between ancient-seeming companies/events and modern times.
+
+Actually, let me go with something more scientific and philosophical: **You have never touched anything in your life.** At the atomic level, electrons repel each other, so what we feel as &quot;touch&quot; is actually electromagnetic repulsion at very small distances. Your atoms never actually make contact with other atoms.
+
+This is technically true but might be pedantic.
+
+Let me go with the **Oxford/Aztec** one or the **Shark/Tree** one. I&#39;ll provide the Oxford one with the context that challenges our perception of &quot;ancient.&quot;
+
+Final choice: **Oxford University is older than the Aztec Empire.** This creates a temporal paradox in our minds because we associate universities with medieval Europe (old but not &quot;ancient&quot;) and Aztecs with ancient civilizations, but Oxford predates the Aztec Empire by about 200 years.
+
+I&#39;ll present this clearly and maybe add a secondary fact for good measure.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/z-ai-glm-5/">← GLM-5</a>
+            <a href="/">all models</a>
+            <a href="/m/stepfun-step-3.5-flash:free/">Step 3.5 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tencent: Hy3 preview — Tell me something I don't know.</title>
+    <meta name="description" content="Tencent: Hy3 preview answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s a fun botanical fact that surprises most people: Bananas are technically berries, but strawberries aren&#39;t. Botanists define a true berry as a fru…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/tencent-hy3-preview/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/tencent-hy3-preview/">
+    <meta property="og:title" content="Tencent: Hy3 preview — Tell me something I don't know.">
+    <meta property="og:description" content="Tencent: Hy3 preview answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s a fun botanical fact that surprises most people: Bananas are technically berries, but strawberries aren&#39;t. Botanists define a true berry as a fru…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tencent: Hy3 preview — Tell me something I don't know.">
+    <meta name="twitter:description" content="Tencent: Hy3 preview answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s a fun botanical fact that surprises most people: Bananas are technically berries, but strawberries aren&#39;t. Botanists define a true berry as a fru…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Tencent: Hy3 preview)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's a fun botanical fact that surprises most people: **Bananas are technically berries, but strawberries aren't.**  \n\nBotanists define a true berry as a fruit that develops from a single flower with one ovary, and has its seeds embedded in the fleshy part of the fruit. Bananas fit this perfectly—they grow from a single ovary, and those tiny black specks inside are actually vestigial seeds (wild bananas have much larger, inedible seeds!).  \n\nStrawberries, on the other hand, are what's called an *aggregate accessory fruit*. The red, juicy part we eat isn't the actual fruit at all—it's the swollen receptacle (the part of the flower that holds the ovaries). The real fruits are the tiny yellow \"seeds\" dotting the outside, called achenes. Each achene is a separate small fruit with a single seed inside!  \n\nIf you want a bonus weird fact: Humans share roughly 60% of their *functional DNA* with bananas (though that's shared genetic code for basic cellular processes, not that we're 60% banana-shaped, obviously).","author":{"@type":"Organization","name":"Tencent"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s a fascinating, lesser-known fact about nature:  \n\nThere’s a species of ant called the **exploding ant** (*Camponotus saundersi*), native to Southeast Asia, that defends its colony by literally blowing itself up. These ants have oversized glands in their abdomens filled with a sticky, toxic yellow secretion. When threatened by predators (like rival ants or insects), they contract their abdominal muscles so forcefully that their bodies rupture, spraying the toxic glue onto enemies. This glue immobilizes small attackers and can even kill them—all while the ant sacrifices itself to protect its nest.  \n\nScientists call this behavior \"autothysis,\" and it’s one of the most extreme examples of self-sacrifice in the animal kingdom! 🐜💥","author":{"@type":"Organization","name":"Tencent"}},{"@type":"Answer","text":"Here’s a fascinating biological fact: The *Turritopsis dohrnii*—a tiny (about 4.5mm wide) jellyfish often called the \"immortal jellyfish\"—is the only known animal capable of biologically reversing its aging process.  \n\nWhen stressed by injury, starvation, or sudden temperature changes, it undergoes a process called *transdifferentiation*: its adult cells transform into different cell types (e.g., muscle cells becoming nerve cells) to revert back to its juvenile polyp stage, essentially restarting its life cycle from scratch. This means it does not die of old age, though it can still be killed by predators, disease, or extreme environmental damage. Originally native to the Caribbean, it has now spread to oceans worldwide via ship ballast water.","author":{"@type":"Organization","name":"Tencent"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Tencent: Hy3 preview</h1>
+        <p class="subtitle">Tencent · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Tencent: Hy3 preview</div>
+                        <div class="model-provider">Tencent</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s a fun botanical fact that surprises most people: <strong>Bananas are technically berries, but strawberries aren&#39;t.</strong>  </p>
+<p>Botanists define a true berry as a fruit that develops from a single flower with one ovary, and has its seeds embedded in the fleshy part of the fruit. Bananas fit this perfectly—they grow from a single ovary, and those tiny black specks inside are actually vestigial seeds (wild bananas have much larger, inedible seeds!).  </p>
+<p>Strawberries, on the other hand, are what&#39;s called an <em>aggregate accessory fruit</em>. The red, juicy part we eat isn&#39;t the actual fruit at all—it&#39;s the swollen receptacle (the part of the flower that holds the ovaries). The real fruits are the tiny yellow &quot;seeds&quot; dotting the outside, called achenes. Each achene is a separate small fruit with a single seed inside!  </p>
+<p>If you want a bonus weird fact: Humans share roughly 60% of their <em>functional DNA</em> with bananas (though that&#39;s shared genetic code for basic cellular processes, not that we&#39;re 60% banana-shaped, obviously).</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1008 tokens</span>
+                    <span class="topic-tag" data-topic="dna">🧬 dna</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; First, I need to pick something that&#39;s not super common knowledge but also not too obscure. Let&#39;s think... Maybe something about everyday things? Oh, right, the fact that bananas are berries but strawberries aren&#39;t! Wait, is that too common? Maybe not for everyone. Wait, let&#39;s check: Botanically, a berry is a fruit that develops from a single flower with a single ovary, and has seeds embedded in the flesh. So bananas fit that—they have tiny seeds inside (the black dots), develop from one ovary. Strawberries are aggregate fruits, from multiple ovaries of one flower, and the &quot;seeds&quot; are actually achenes, the real fruit is the red part which is the receptacle. That&#39;s a good one. But maybe add another one? Or make it more interesting. Wait, maybe something about space? No, maybe something more relatable. Wait, another one: Octopuses have three hearts, but that&#39;s also somewhat known. Wait, what about the fact that the &quot;smell&quot; of rain is called petrichor? That&#39;s a term people might not know. Or wait, here&#39;s a good one: Humans share about 60% of their DNA with bananas. Oh, that&#39;s a fun fact. Wait, but let&#39;s make sure it&#39;s accurate. Let me confirm: Yes, the 60% figure is often cited for shared genes, though it&#39;s not exact, but it&#39;s a common fun fact. Wait, but maybe combine a few? No, the user said &quot;something&quot;, so one solid fact is better. Wait, let&#39;s go with the banana/berry one first, explain it clearly, then maybe add a bonus? Wait, no, let&#39;s make it engaging. Let&#39;s start with that, explain why, then maybe another if it&#39;s good. Wait, but let&#39;s make sure it&#39;s not something everyone knows. Let&#39;s see: Let&#39;s pick the petrichor one? No, maybe the banana is better. Wait, let&#39;s structure it: Start with a hook, then the fact, then the explanation. Let&#39;s see:
+
+&quot;Here&#39;s a fun botanical fact that surprises most people: **Bananas are technically berries, but strawberries aren&#39;t.** 
+
+Botanists define a berry as a fruit that develops from a single flower with one ovary, and has its seeds embedded in the fleshy part of the fruit. Bananas fit this perfectly—they grow from a single ovary, and those tiny black specks inside are actually vestigial seeds. 
+
+Strawberries, on the other hand, are what&#39;s called an *aggregate accessory fruit*. The red, juicy part we eat isn&#39;t the actual fruit at all—it&#39;s the swollen receptacle (the part of the flower that holds the ovaries). The real fruits are the tiny yellow &quot;seeds&quot; dotting the outside, which are called achenes. Each achene is a separate small fruit with a single seed inside! 
+
+If you want a bonus weird fact: Humans share roughly 60% of their DNA with bananas (though that&#39;s shared *genes*, not that we&#39;re 60% banana-shaped, obviously).&quot;
+
+Wait, that&#39;s good. Let&#39;s check if that&#39;s accurate. Yes, the berry definition is correct. Aggregate fruit: yes, strawberries are aggregate accessory fruits. Achenes: correct. The DNA fact: yes, that&#39;s a common figure, though it&#39;s worth noting it&#39;s shared genetic material, not that we&#39;re 60% identical in all ways. That should work. It&#39;s something most people don&#39;t know, explained clearly, maybe a bonus. Yeah, that&#39;s a good response.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s a fascinating, lesser-known fact about nature:  </p>
+<p>There’s a species of ant called the <strong>exploding ant</strong> (<em>Camponotus saundersi</em>), native to Southeast Asia, that defends its colony by literally blowing itself up. These ants have oversized glands in their abdomens filled with a sticky, toxic yellow secretion. When threatened by predators (like rival ants or insects), they contract their abdominal muscles so forcefully that their bodies rupture, spraying the toxic glue onto enemies. This glue immobilizes small attackers and can even kill them—all while the ant sacrifices itself to protect its nest.  </p>
+<p>Scientists call this behavior &quot;autothysis,&quot; and it’s one of the most extreme examples of self-sacrifice in the animal kingdom! 🐜💥</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1839 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; First, I need to pick something that&#39;s not super common knowledge, but also not too obscure that it&#39;s not interesting. Let me think... Maybe something about animals? Or space? Wait, there&#39;s a cool fact about octopuses—wait no, maybe something more unexpected. Oh, right! The fact that there&#39;s a species of jellyfish that&#39;s biologically immortal? Wait, but maybe that&#39;s known. Wait, another one: Did you know that the &quot;smell&quot; of rain has a name? Petrichor, but maybe that&#39;s common too. Wait, let&#39;s think of something more unique. Oh! Here&#39;s a good one: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Wait, but is that well-known? Maybe, but let&#39;s add a twist. Wait, no—wait another fact: The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes. Oh, that&#39;s a good one, but maybe some people know that. Wait, let&#39;s go for something more science-y but accessible. Oh! Here&#39;s a cool one: Human bodies contain trace amounts of gold—about 0.2 milligrams, mostly in our blood. But wait, another one: There&#39;s a planet made of diamonds? No, that&#39;s Kepler-16b? No, wait, 55 Cancri e is a super-Earth thought to be composed largely of carbon, which under high pressure could be diamond. But maybe that&#39;s known. Wait, let&#39;s think of something about everyday things. Oh! Did you know that the &quot;QWERTY&quot; keyboard layout was designed to slow down typists? Because early typewriters jammed if you typed too fast, so they arranged the keys to separate common letter pairs. Wait, but is that true? Let me confirm—yes, that&#39;s the common explanation, though some say it&#39;s not entirely accurate, but it&#39;s a popular fact. Wait, but maybe the user wants something more surprising. Oh! Here&#39;s a good one: Cows have best friends and get stressed when they&#39;re separated. Studies have shown that cows form close bonds with other cows, and when they&#39;re apart, their cortisol levels (stress hormone) rise. That&#39;s cute and maybe not everyone knows that. Wait, but let&#39;s make sure it&#39;s accurate. Yes, research from the University of Northampton found that cows have preferred social partners and experience stress when separated from them. Alternatively, another fact: The Great Barrier Reef is the largest living structure on Earth, and it&#39;s visible from space. But that&#39;s known. Wait, let&#39;s go for something more obscure. Oh! Did you know that there&#39;s a species of mushroom called the &quot;humongous fungus&quot; in Oregon that covers over 2,385 acres and is estimated to be between 2,400 and 8,650 years old? It&#39;s one of the largest living organisms on Earth. That&#39;s a good one. Or wait, another: The inventor of the Pringles can, Fred Baur, was so proud of his creation that he asked to be buried in one. His family honored his wish, and part of his ashes are in a Pringles can. That&#39;s quirky and maybe not everyone knows that. Let me pick that one? Or combine a few? Wait, the user said &quot;something&quot;, so one fact is good, but maybe make it interesting. Let&#39;s see: Let&#39;s go with the Pringles one, but add a bit of context. Or the cow best friends? Wait, let&#39;s check: The Pringles fact is true—Fred Baur, a food storage researcher, invented the cylindrical can, and he did request to be buried in it. His son said they buried part of his ashes in a Pringles can, yes. That&#39;s a fun, unexpected fact. Alternatively, the honey one: Honey&#39;s low moisture content and acidic pH prevent bacteria from growing, so it never spoils. The Egyptian honey is a great example. Let&#39;s see—maybe present one that&#39;s both surprising and has a cool backstory. Let&#39;s go with the Pringles one, but wait, maybe the user wants something more educational? Or just interesting. Let&#39;s mix it up. Wait, another fact: Sharks have been around longer than trees. Sharks first appeared about 400 million years ago, while trees evolved around 350 million years ago. That&#39;s a good one too. Let&#39;s see—let&#39;s pick one that&#39;s not too common. Let&#39;s go with the shark vs trees fact? Or the Pringles burial? Let&#39;s see: Let&#39;s choose the shark one because it&#39;s a bit more science-y. Wait, but let&#39;s confirm: Yes, fossil records show sharks existed in the Devonian period ~419 million years ago, and the first trees (like Archaeopteris) appeared in the Late Devonian ~350 million years ago. So sharks are older than trees by about 50 million years. That&#39;s a cool fact. Or the honey one: The oldest honey ever found is from 5,500 years ago in Georgia, but the Egyptian stuff is 3,000 years old. Both are edible. Let&#39;s see—maybe present that one, but add a bit of why. Wait, the user said &quot;something I don&#39;t know&quot;, so it&#39;s hard to be sure, but pick something that&#39;s not super mainstream. Let&#39;s go with the shark and trees fact, but let&#39;s make it engaging. Wait, or the octopus fact: Octopuses have three hearts, blue blood, and their neurons are distributed throughout their body, not just their brain. But that&#39;s pretty well-known. Hmm. Wait, another one: The Eiffel Tower grows taller in the summer. Because metal expands when heated, so the iron structure can grow up to 6 inches (15 cm) taller in hot weather. That&#39;s a cool fact about a famous landmark. Is that known? Maybe some people know, but not everyone. Let&#39;s see—yes, thermal expansion causes the tower to expand, so it&#39;s taller in summer. That&#39;s a good one. Let&#39;s pick that? Or combine a couple? Wait, the user said &quot;something&quot;, so one is fine. Let&#39;s go with the Eiffel Tower fact, but add a bit of detail. Or the Pringles one. Let&#39;s see—let&#39;s choose the Eiffel Tower one because it&#39;s a common landmark, so people might not know that detail. Let me structure it: Start with the fact, explain why, maybe add a fun extra. Wait, but let&#39;s make sure it&#39;s accurate. Yes, the Eiffel Tower is made of iron, which has a coefficient of thermal expansion of about 12 x 10^-6 per degree Celsius. So if the temperature rises by 20°C (from winter to summer), the 300-meter tower would expand by about 300 * 12e-6 *20 = 0.072 meters, which is 7 cm, but some sources say up to 15 cm (6 inches) because of higher temperature differences. That&#39;s correct. Alternatively, the fact that there&#39;s a species of ant that can explode to defend its colony—the Camponotus saundersi, or exploding ant, which contracts its abdomen to rupture and spray a toxic glue that immobilizes enemies. That&#39;s super cool and not many people know that. Oh, that&#39;s a great one! Let&#39;s go with that. Let me confirm: Yes, exploding ants (also called suicide ants) are found in Southeast Asia, and they have large glands in their abdomen filled with toxic secretions. When threatened, they contract their muscles to burst their abdomen, releasing the glue which sticks to predators and can kill smaller ones. That&#39;s a fascinating, lesser-known fact. Perfect. So I&#39;ll present that, explain it clearly, maybe add a bit of context. Let&#39;s do that.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s a fascinating biological fact: The <em>Turritopsis dohrnii</em>—a tiny (about 4.5mm wide) jellyfish often called the &quot;immortal jellyfish&quot;—is the only known animal capable of biologically reversing its aging process.  </p>
+<p>When stressed by injury, starvation, or sudden temperature changes, it undergoes a process called <em>transdifferentiation</em>: its adult cells transform into different cell types (e.g., muscle cells becoming nerve cells) to revert back to its juvenile polyp stage, essentially restarting its life cycle from scratch. This means it does not die of old age, though it can still be killed by predators, disease, or extreme environmental damage. Originally native to the Caribbean, it has now spread to oceans worldwide via ship ballast water.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1125 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning · ? tokens</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; First, I need to pick something that&#39;s not super common knowledge, but also not too obscure that it&#39;s useless. Let&#39;s think... maybe something about animals? Or science? Wait, there&#39;s that thing about octopuses having three hearts, but that&#39;s pretty well known now. Oh, wait, what about the fact that honey never spoils? No, that&#39;s also common. Hmm, maybe something about language? Or space?
+
+Wait, here&#39;s a good one: Did you know that there&#39;s a species of jellyfish that is biologically immortal? The Turritopsis dohrnii, also called the &quot;immortal jellyfish.&quot; When it&#39;s stressed or injured, it can revert back to its polyp stage, basically starting its life cycle over again. That&#39;s cool, but is that too known? Maybe add a detail: It&#39;s not that they can&#39;t be eaten or killed by predators, but their cellular process allows them to reverse aging. Yeah, that&#39;s a good point to clarify so it&#39;s not misleading.
+
+Wait another one: The Eiffel Tower grows taller in the summer. Because metal expands when heated, so the iron structure can grow up to 6 inches (15 cm) taller in hot weather. That&#39;s a neat fact, maybe less known? Or combine a couple? No, keep it concise. Let&#39;s go with the immortal jellyfish first, but make sure to explain it properly. Wait, let&#39;s check: Turritopsis dohrnii, yes, it&#39;s the only known species that can revert to its juvenile polyp form after reaching sexual maturity, through a process called transdifferentiation, where cells transform from one type to another. That&#39;s a key detail. Also, note that they&#39;re not invincible—they can still be preyed upon or die from disease, but their biological aging process is reversible. That&#39;s important to add so it&#39;s accurate.
+
+Alternatively, maybe something about human biology? Like, the human body has more bacteria cells than human cells? Wait, recent studies say it&#39;s actually closer to 1:1, but earlier it was thought 10:1. Maybe that&#39;s a good update. But let&#39;s see, the user might have heard the 10:1 thing, so saying the new research is better. But maybe the jellyfish one is more unique.
+
+Wait, let&#39;s structure it: Start with a clear statement, then explain, then add a nuance. Let&#39;s go with the immortal jellyfish. Let me make sure the facts are right: Turritopsis dohrnii, found in temperate to tropical waters, transdifferentiation allows them to reverse their life cycle. When stressed (like injury, starvation, temperature change), they sink to the ocean floor, their body degenerates into a blob, then reforms into a polyp colony, which then buds into new jellyfish genetically identical to the original. Yep, that&#39;s correct. And they&#39;re not truly immortal in the sense of indestructible, just that they don&#39;t die of old age. That&#39;s a good point to include.
+
+Alternatively, another fact: The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes. Oh, that&#39;s a classic, but maybe the user hasn&#39;t heard it? But let&#39;s see, which is more likely to be unknown? Maybe the jellyfish one is more scientific, less common.
+
+Wait, let&#39;s pick one that&#39;s interesting, accurate, and has a bit of depth. Let&#39;s go with the immortal jellyfish, but add the nuance. Or maybe combine two? No, keep it simple. Let&#39;s write it out:
+
+&quot;Here&#39;s a fascinating biological fact: The *Turritopsis dohrnii*, a small species of jellyfish often called the &#39;immortal jellyfish,&#39; is the only known animal capable of biologically reversing its aging process. When faced with physical stress, injury, or starvation, it can undergo a process called transdifferentiation—where its adult cells transform into different types of cells—to revert back to its juvenile polyp stage, essentially restarting its life cycle. This means it doesn&#39;t die of old age, though it can still be killed by predators, disease, or environmental hazards. It&#39;s found in oceans worldwide, originally from the Caribbean but now spread via ship ballast water.&quot;
+
+That&#39;s good. It&#39;s accurate, has details, clarifies the limits (not indestructible), and is something most people don&#39;t know. Let me check if there&#39;s any mistake: Transdifferentiation is correct, the process is right, the name is correct. Yep. That should work.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/openrouter-pareto-code/">← Pareto Code Router</a>
+            <a href="/">all models</a>
+            <a href="/m/inclusionai-ring-2.6-1t/">inclusionAI: Ring-2.6-1T →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js"></script>
+
+</body>
+</html>
