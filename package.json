@@ -5,7 +5,7 @@
   "scripts": {
     "query": "tsx build/query_models.ts",
     "update-models": "tsx build/update_models.ts",
-    "preview": "cd site && python3 -m http.server 3000",
+    "preview": "npx --yes http-server site -p 3000",
     "build-site": "tsx build/render_site.ts",
     "generate-og": "tsx build/generate_og.ts",
     "build": "tsx build/render_site.ts && tsx build/generate_og.ts",

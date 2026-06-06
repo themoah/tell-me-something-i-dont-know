@@ -1,12 +1,12 @@
 # Cloudflare Pages headers — static site, no functions/SSR.
+# Rules are cumulative; later, more-specific rules override earlier ones.
 
-# HTML: always revalidate so new builds show up immediately.
-/
-  Cache-Control: public, max-age=0, must-revalidate
-/*.html
+# Default for every route (incl. clean-URL pages like /m/<slug>/): always
+# revalidate so a new build is picked up immediately.
+/*
   Cache-Control: public, max-age=0, must-revalidate
 
-# Versioned-by-content static assets: cache a day.
+# Static assets: cache longer (override the default above).
 /app.js
   Cache-Control: public, max-age=86400
 /og.png

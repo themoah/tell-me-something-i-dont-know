@@ -113,6 +113,7 @@ export function dedupeBySlug(models: Model[]): Model[] {
 export function metaDescription(model: Model): string {
     const run = model.runs.find(r => r.success && r.content);
     const text = (run?.content || '')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // [text](url) -> text
         .replace(/[#*`>_~\[\]]/g, '')
         .replace(/\s+/g, ' ')
         .trim();
@@ -135,10 +136,19 @@ function originalityBadge(score: number): string {
     return `<span class="originality-badge" data-score="${score}">${filled}<span class="star-empty">${empty}</span> original</span>`;
 }
 
-function parseReleasedToTimestamp(released?: string): number {
+const MONTHS: Record<string, number> = {
+    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+};
+
+/** Parse "October 2025" -> timestamp, without engine-dependent Date.parse. */
+export function parseReleasedToTimestamp(released?: string): number {
     if (!released) return Number.MAX_SAFE_INTEGER;
-    const parsed = Date.parse(`${released} 01`);
-    return Number.isNaN(parsed) ? Number.MAX_SAFE_INTEGER : parsed;
+    const [monthStr, yearStr] = released.trim().toLowerCase().split(/\s+/);
+    const month = MONTHS[monthStr];
+    const year = parseInt(yearStr, 10);
+    if (month === undefined || Number.isNaN(year)) return Number.MAX_SAFE_INTEGER;
+    return new Date(year, month, 1).getTime();
 }
 
 function renderTopicBars(stats: Data['stats']): string {
@@ -348,16 +358,18 @@ function renderModelPage(
     const { tabsHTML, responsesHTML } = renderRunBlocks(model.runs);
 
     // Per-page <head>: swap title/description/canonical/og/twitter + QAPage JSON-LD.
+    // Replacer functions are used so dynamic values containing `$` are inserted
+    // literally (a string 2nd arg would expand `$1`, `$&`, `$$`, etc).
     let head = sharedHead
-        .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
-        .replace(/(<meta name="description" content=")[^"]*(">)/, `$1${desc}$2`)
-        .replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${url}$2`)
-        .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${url}$2`)
-        .replace(/(<meta property="og:title" content=")[^"]*(">)/, `$1${title}$2`)
-        .replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${desc}$2`)
-        .replace(/(<meta name="twitter:title" content=")[^"]*(">)/, `$1${title}$2`)
-        .replace(/(<meta name="twitter:description" content=")[^"]*(">)/, `$1${desc}$2`)
-        .replace('<!-- LD_JSON_SLOT -->', buildModelLdJson(model));
+        .replace(/<title>[\s\S]*?<\/title>/, () => `<title>${title}</title>`)
+        .replace(/(<meta name="description" content=")[^"]*(">)/, (_, p1, p2) => p1 + desc + p2)
+        .replace(/(<link rel="canonical" href=")[^"]*(">)/, (_, p1, p2) => p1 + url + p2)
+        .replace(/(<meta property="og:url" content=")[^"]*(">)/, (_, p1, p2) => p1 + url + p2)
+        .replace(/(<meta property="og:title" content=")[^"]*(">)/, (_, p1, p2) => p1 + title + p2)
+        .replace(/(<meta property="og:description" content=")[^"]*(">)/, (_, p1, p2) => p1 + desc + p2)
+        .replace(/(<meta name="twitter:title" content=")[^"]*(">)/, (_, p1, p2) => p1 + title + p2)
+        .replace(/(<meta name="twitter:description" content=")[^"]*(">)/, (_, p1, p2) => p1 + desc + p2)
+        .replace('<!-- LD_JSON_SLOT -->', () => buildModelLdJson(model));
 
     const prevLink = prev ? `<a href="/m/${slugify(prev.id)}/">← ${escapeHtml(prev.name)}</a>` : '<span></span>';
     const nextLink = next ? `<a href="/m/${slugify(next.id)}/">${escapeHtml(next.name)} →</a>` : '<span></span>';
@@ -461,9 +473,11 @@ async function main() {
     html = html.replace(/I've asked \d+\+? LLMs/g, `I've asked ${modelCount}+ LLMs`);
     html = html.replace(/(twitter:description" content="I've asked )\d+\+?/, `$1${modelCount}+`);
 
-    html = html.replace('<!-- LD_JSON_SLOT -->', buildIndexLdJson(data));
-    html = html.replace('<!-- SLOT:hero -->', renderHero(candidates));
-    html = html.replace('<!-- SLOT:topicbars -->', renderTopicBars(data.stats));
+    // Replacer functions: slot content is model-derived HTML/JSON that may contain
+    // `$` (prices, code), which a string 2nd arg would expand (`$&`, `$$`, …).
+    html = html.replace('<!-- LD_JSON_SLOT -->', () => buildIndexLdJson(data));
+    html = html.replace('<!-- SLOT:hero -->', () => renderHero(candidates));
+    html = html.replace('<!-- SLOT:topicbars -->', () => renderTopicBars(data.stats));
 
     const callout = renderJellyfishCallout(data.stats);
     if (callout) {
@@ -471,13 +485,13 @@ async function main() {
             '<div id="jellyfish-callout" class="jellyfish-callout" style="display:none">',
             '<div id="jellyfish-callout" class="jellyfish-callout">',
         );
-        html = html.replace('<!-- SLOT:callout -->', callout);
+        html = html.replace('<!-- SLOT:callout -->', () => callout);
     }
 
-    html = html.replace('<!-- SLOT:cards -->', renderModelCards(data.models, topTopics));
+    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(data.models, topTopics));
     html = html.replace(
         '<!-- SLOT:hero_data -->',
-        `<script>window.__HERO=${JSON.stringify(candidates)};</script>`,
+        () => `<script>window.__HERO=${JSON.stringify(candidates)};</script>`,
     );
 
     await fs.writeFile(INDEX_FILE, html, 'utf-8');
