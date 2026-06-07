@@ -17,6 +17,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
 
@@ -29,6 +30,12 @@ const TEMPLATE_FILE = path.join(SITE_DIR, 'index.template.html');
 const INDEX_FILE = path.join(SITE_DIR, 'index.html');
 const SITEMAP_FILE = path.join(SITE_DIR, 'sitemap.xml');
 const MODELS_DIR = path.join(SITE_DIR, 'm');
+const APP_JS_FILE = path.join(SITE_DIR, 'app.js');
+
+/** Stamp /app.js refs with a content hash so a new build busts the 24h cache. */
+function bustAppJs(html: string, version: string): string {
+    return html.replaceAll('src="/app.js"', `src="/app.js?v=${version}"`);
+}
 
 const SITE_URL = 'https://tellmesomethingidontknow.fyi';
 const PROMPT = 'Tell me something I don\'t know.';
@@ -91,9 +98,25 @@ export function escapeHtml(str: unknown): string {
         .replace(/'/g, '&#39;');
 }
 
-/** Stable, URL-safe slug from an OpenRouter model id. */
+/** Stable, URL-safe slug from an OpenRouter model id.
+ * Current ids are lowercase [a-z0-9./-]; this also neutralises any stray
+ * unsafe char (e.g. ':') without changing existing slugs. */
 export function slugify(id: string): string {
-    return id.replace(/\//g, '-');
+    return id
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+/** Safely embed a JSON value inside a <script> tag — prevents `</script>`
+ * breakout and U+2028/2029 issues from model-supplied content. */
+export function serializeForScriptTag(value: unknown): string {
+    return JSON.stringify(value)
+        .replace(/<\/script/gi, '<\\/script')
+        .replace(/<!--/g, '<\\!--')
+        .replace(/\u2028/g, '\\u2028')
+        .replace(/\u2029/g, '\\u2029');
 }
 
 /** Keep first occurrence per slug — data.json can contain duplicate model ids. */
@@ -227,7 +250,7 @@ function renderRunBlocks(runs: Run[]) {
         }).join(' ');
         const reasoningBlock = run.reasoning ? `
                 <details class="reasoning-block${hidden}" data-run="${i}">
-                    <summary>show reasoning · ${run.tokens_reasoning ?? '?'} tokens</summary>
+                    <summary>show reasoning${run.tokens_reasoning != null ? ` · ${run.tokens_reasoning} tokens` : ''}</summary>
                     <div class="reasoning-content">${escapeHtml(run.reasoning)}</div>
                 </details>` : '';
         responsesHTML += `
@@ -250,7 +273,7 @@ function renderModelCards(models: Model[], topTopics: string[]): string {
     let html = '';
     for (let idx = 0; idx < models.length; idx++) {
         const model = models[idx];
-        const licenseLabel = model.license.replace('-', ' ');
+        const licenseLabel = escapeHtml(model.license.replace('-', ' '));
         const originality = calcOriginality(model, topTopics);
         const released = parseReleasedToTimestamp(model.released);
         const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
@@ -301,7 +324,7 @@ function buildIndexLdJson(data: Data): string {
             url: `${SITE_URL}/m/${slugify(m.id)}/`,
         })),
     };
-    return `<script type="application/ld+json">${JSON.stringify(webPage)}</script>\n<script type="application/ld+json">${JSON.stringify(itemList)}</script>`;
+    return `<script type="application/ld+json">${serializeForScriptTag(webPage)}</script>\n<script type="application/ld+json">${serializeForScriptTag(itemList)}</script>`;
 }
 
 function buildModelLdJson(model: Model): string {
@@ -323,7 +346,7 @@ function buildModelLdJson(model: Model): string {
             ...(answers.length > 1 ? { suggestedAnswer: answers.slice(1).map(toAnswer) } : {}),
         },
     };
-    return `<script type="application/ld+json">${JSON.stringify(qaPage)}</script>`;
+    return `<script type="application/ld+json">${serializeForScriptTag(qaPage)}</script>`;
 }
 
 function buildSitemap(data: Data): string {
@@ -352,7 +375,7 @@ function renderModelPage(
     const url = `${SITE_URL}/m/${slug}/`;
     const title = `${escapeHtml(model.name)} — Tell me something I don't know.`;
     const desc = escapeHtml(metaDescription(model));
-    const licenseLabel = model.license.replace('-', ' ');
+    const licenseLabel = escapeHtml(model.license.replace('-', ' '));
     const originality = calcOriginality(model, topTopics);
     const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
     const { tabsHTML, responsesHTML } = renderRunBlocks(model.runs);
@@ -433,7 +456,7 @@ function renderModelPage(
         </p>
         <p style="margin-top: 8px;">
             <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
-            Made with <3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
         </p>
     </div>
 </footer>
@@ -465,6 +488,9 @@ async function main() {
     const topTopics = Object.keys(data.stats.topic_frequency).slice(0, 3);
     const candidates = heroCandidates(data);
 
+    const appJs = await fs.readFile(APP_JS_FILE, 'utf-8');
+    const appVersion = crypto.createHash('sha256').update(appJs).digest('hex').slice(0, 8);
+
     // ---- index.html ----
     let html = template;
     html = html.replace(/(<strong id="model-count">)[^<]*(<\/strong>)/, `$1${modelCount}$2`);
@@ -488,13 +514,13 @@ async function main() {
         html = html.replace('<!-- SLOT:callout -->', () => callout);
     }
 
-    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(data.models, topTopics));
+    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(dedupeBySlug(data.models), topTopics));
     html = html.replace(
         '<!-- SLOT:hero_data -->',
-        () => `<script>window.__HERO=${JSON.stringify(candidates)};</script>`,
+        () => `<script>window.__HERO=${serializeForScriptTag(candidates)};</script>`,
     );
 
-    await fs.writeFile(INDEX_FILE, html, 'utf-8');
+    await fs.writeFile(INDEX_FILE, bustAppJs(html, appVersion), 'utf-8');
     console.log(`Rendered index.html with ${data.models.length} model cards`);
 
     // ---- per-model pages ----
@@ -507,7 +533,7 @@ async function main() {
         const next = i < uniqueModels.length - 1 ? uniqueModels[i + 1] : null;
         const dir = path.join(MODELS_DIR, slugify(model.id));
         await fs.mkdir(dir, { recursive: true });
-        await fs.writeFile(path.join(dir, 'index.html'), renderModelPage(model, sharedHead, prev, next, topTopics), 'utf-8');
+        await fs.writeFile(path.join(dir, 'index.html'), bustAppJs(renderModelPage(model, sharedHead, prev, next, topTopics), appVersion), 'utf-8');
     }
     console.log(`Rendered ${uniqueModels.length} model pages into site/m/`);
 

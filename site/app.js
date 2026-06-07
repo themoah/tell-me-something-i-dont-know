@@ -24,12 +24,14 @@
     }
 
     // === SHARE LINKS === (present on every page)
-    const siteUrl = 'https://tellmesomethingidontknow.fyi';
+    // Share the current page (canonical if set), so model pages share their own URL.
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const pageUrl = (canonical && canonical.href) || window.location.href;
     const shareCountEl = document.getElementById('model-count');
     const modelCount = (shareCountEl && shareCountEl.textContent) || '27';
     const shareText = `I asked ${modelCount}+ LLMs "Tell me something I don't know." Most of them said jellyfish \u{1FAB4}`;
     const enc = encodeURIComponent(shareText);
-    const encUrl = encodeURIComponent(siteUrl);
+    const encUrl = encodeURIComponent(pageUrl);
     const setHref = (id, href) => { const el = document.getElementById(id); if (el) el.href = href; };
     setHref('share-x', `https://twitter.com/intent/tweet?url=${encUrl}&text=${enc}`);
     setHref('share-facebook', `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`);
@@ -39,7 +41,7 @@
     if (copyBtn) {
         copyBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            navigator.clipboard.writeText(siteUrl).then(() => {
+            navigator.clipboard.writeText(pageUrl).then(() => {
                 const el = e.currentTarget;
                 el.textContent = 'Copied!';
                 setTimeout(() => { el.textContent = 'Copy Link'; }, 2000);
