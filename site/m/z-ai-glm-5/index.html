@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM-5 — Tell me something I don't know.</title>
+    <meta name="description" content="GLM-5 answers &quot;Tell me something I don&#39;t know.&quot; — In the 18th century, wealthy landowners in England took the trend of landscaping to a bizarre extreme by hiring &quot;garden hermits.&quot; These were real people…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5/">
+    <meta property="og:title" content="GLM-5 — Tell me something I don't know.">
+    <meta property="og:description" content="GLM-5 answers &quot;Tell me something I don&#39;t know.&quot; — In the 18th century, wealthy landowners in England took the trend of landscaping to a bizarre extreme by hiring &quot;garden hermits.&quot; These were real people…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GLM-5 — Tell me something I don't know.">
+    <meta name="twitter:description" content="GLM-5 answers &quot;Tell me something I don&#39;t know.&quot; — In the 18th century, wealthy landowners in England took the trend of landscaping to a bizarre extreme by hiring &quot;garden hermits.&quot; These were real people…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to GLM-5)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"In the 18th century, wealthy landowners in England took the trend of landscaping to a bizarre extreme by hiring **\"garden hermits.\"**\n\nThese were real people hired to live in secluded huts, caves, or follies on the estate. They were typically contracted to act the part of a wise hermit—refusing to cut their hair or nails, wearing ragged robes, and remaining mostly silent—for a set period of years.\n\nIt was essentially a form of living theater. Having a \"philosophical hermit\" on your property was considered a high-status conversation piece for guests, meant to evoke a sense of ancient wisdom and melancholy. Some hermits were even contractually forbidden from leaving the property or cleaning themselves to maintain the illusion.","author":{"@type":"Organization","name":"Z.ai"}},"suggestedAnswer":[{"@type":"Answer","text":"There is a species of shrimp called the **pistol shrimp** (or snapping shrimp) that can snap its claw so fast it creates a cavitation bubble that momentarily reaches temperatures hotter than the surface of the sun.\n\nHere is how it works:\n1.  **The Snap:** The shrimp snaps its specialized claw shut at speeds of around 60 mph.\n2.  **The Bubble:** This creates a high-velocity water jet that generates a low-pressure bubble.\n3.  **The Collapse:** When the bubble collapses, it produces a sound that can reach **218 decibels** (louder than a gunshot or a jet engine takeoff).\n4.  **The Heat:** For a split second, the collapsing bubble reaches temperatures of roughly **8,000 degrees Fahrenheit** (about 4,400 degrees Celsius). The surface of the sun is approximately 10,000 degrees Fahrenheit.\n\nThis burst of energy is so intense it creates a brief flash of light (called sonoluminescence) and is used by the shrimp to stun or kill prey.","author":{"@type":"Organization","name":"Z.ai"}},{"@type":"Answer","text":"The national animal of Scotland is the **Unicorn**.\n\nWhile it might seem like a mythical creature belongs in a fantasy novel rather than a country's official heraldry, the unicorn has been a Scottish heraldic symbol since the 12th century. It was chosen because, in ancient mythology, the unicorn was seen as the natural enemy of the lion (which is the national animal of England), a symbolism that goes back to a time when the two nations were fierce rivals.\n\nToday, you can see the unicorn on the Royal Coat of Arms of the United Kingdom, where it is chained. In mythology, the unicorn was considered a wild, untamable beast, so the chains represent the immense power required to subdue it.","author":{"@type":"Organization","name":"Z.ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>GLM-5</h1>
+        <p class="subtitle">Z.ai · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>February 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">GLM-5</div>
+                        <div class="model-provider">Z.ai</div>
+                        <div class="model-released">February 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>In the 18th century, wealthy landowners in England took the trend of landscaping to a bizarre extreme by hiring <strong>&quot;garden hermits.&quot;</strong></p>
+<p>These were real people hired to live in secluded huts, caves, or follies on the estate. They were typically contracted to act the part of a wise hermit—refusing to cut their hair or nails, wearing ragged robes, and remaining mostly silent—for a set period of years.</p>
+<p>It was essentially a form of living theater. Having a &quot;philosophical hermit&quot; on your property was considered a high-status conversation piece for guests, meant to evoke a sense of ancient wisdom and melancholy. Some hermits were even contractually forbidden from leaving the property or cleaning themselves to maintain the illusion.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1400 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to know something they don&#39;t know. This is a very open-ended prompt.
+Since I don&#39;t know the user&#39;s background, interests, or knowledge base, I need to select a fact that is generally obscure, interesting, and surprising to the average person. It should be verifiable but not commonly taught in standard curricula.
+
+Potential topics:
+1.  **Science/Nature:** Bioluminescence, strange animal behaviors, space phenomena.
+2.  **History:** Little-known historical anecdotes, etymology of words.
+3.  **Language/Linguistics:** Untranslatable words, strange grammar rules.
+4.  **Geography:** Odd borders, time zone quirks.
+
+Let&#39;s brainstorm a few specific facts:
+*   *Fact A:* Cleopatra lived closer in time to the iPhone than to the Great Pyramid of Giza. (A classic, but maybe too well-known now).
+*   *Fact B:* Wombat poop is cubic. (Also becoming fairly common knowledge).
+*   *Fact C:* There is a species of jellyfish that is biologically immortal. (Turritopsis dohrnii). Interesting.
+*   *Fact D:* The smell of rain has a name (Petrichor). (Many people know this).
+*   *Fact E:* The longest place name in Europe is a Welsh town. (Llanfairpwllgwyngyll...).
+*   *Fact F:* Bananas are berries, strawberries are not. (Classic botanical trivia).
+*   *Fact G:* The &quot;Great Emu War&quot; in Australia. (Funny, but widely circulated on the internet).
+
+Let&#39;s try something slightly more niche but fascinating.
+How about the concept of &quot;Sonder&quot;? It&#39;s a neologism, but powerful.
+Or something about the vastness of time?
+Or something about the human body?
+
+Let&#39;s go with a linguistic/philosophical fact that is often surprising: The color orange was named after the fruit, not the other way around. Before the fruit was introduced to English speakers, the color was simply called &quot;geoluhread&quot; (yellow-red).
+
+Let&#39;s try another one: The history of the &quot;Duel of the Violins&quot; or something about Mozart?
+Actually, let&#39;s go with something about the unobservable universe.
+
+*Candidate:* The observable universe is huge, but the *actual* universe is likely much, much larger, possibly infinite. But that&#39;s abstract.
+
+Let&#39;s try a specific historical oddity.
+*Candidate:* The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted 38 to 45 minutes. (A bit common).
+
+Let&#39;s try a biological fact that sounds fake but is true.
+*Candidate:* Sloths can hold their breath longer than dolphins.
+*Sloths:* Can slow their heart rate to 1/3rd normal, allowing them to hold breath for up to 40 minutes.
+*Dolphins:* Need to breathe air, usually hold breath for 10-15 minutes.
+This is surprising and verifiable.
+
+Let&#39;s try a geographical fact.
+*Candidate:* Russia has 11 time zones, but France has more (12) due to its overseas territories. (Or 13 depending on counting methods). This is a good &quot;gotcha&quot; fact.
+
+Let&#39;s try a word origin fact.
+*Candidate:* The word &quot;tragedy&quot; comes from the Greek word *tragoidia*, which literally means &quot;goat song.&quot; Why? Because goats were either the prize for the best play or sacrificed to the god Dionysus at the festivals where these plays were performed.
+
+Let&#39;s try a physics/space fact.
+*Candidate:* A day on Venus is longer than a year on Venus. Venus rotates so slowly on its axis that one rotation takes 243 Earth days, but it orbits the sun in 225 Earth days.
+
+Decision: The Venus fact is a strong contender because it challenges our basic intuition about days and years. The &quot;Goat Song&quot; fact is also good for etymology lovers. The Sloth fact is fun.
+
+Let&#39;s go with the **Venus** fact, but maybe add a twist about the smell of Venus to make it extra interesting? No, stick to the time fact, it&#39;s cleaner.
+
+Wait, let&#39;s try something even more obscure.
+*Fact:* In the 18th century, it was fashionable for wealthy people in England to hire &quot;ornamental hermits&quot; to live in their gardens. They would live in grottos and act melancholic for the entertainment of guests.
+This is bizarre, historical, and definitely something most people don&#39;t know.
+
+Let&#39;s go with the **Ornamental Hermits** fact. It&#39;s weird, specific, and memorable.
+
+*Refining the response:*
+1. State the fact clearly.
+2. Provide context (time period, location).
+3. Explain the job description (living in a grotto, growing long hair/beards, not speaking).
+4. Mention it was a status symbol.
+
+Alternative option: **The &quot;Green Flash&quot; at sunset.** It&#39;s a real optical phenomenon, not just a pirate legend.
+Alternative option: **Honey never spoils.** (Edible honey found in Egyptian tombs). A bit common.
+
+Let&#39;s stick with the **Ornamental Hermits**. It feels like a &quot;fun fact&quot; that would actually surprise someone at a dinner party.
+
+*Drafting the response:*
+Did you know that in the 18th century, wealthy landowners in England would sometimes hire &quot;garden hermits&quot; to live on their estates?
+These hermits were real people hired to live in grottos or crude huts on the property. They were expected to refrain from washing, cutting their hair, or speaking to anyone, all to appear more &quot;authentic&quot; and melancholic for the amusement of the landowner and their guests. It was considered a high-status luxury to have a living &quot;philosophical&quot; decoration in your garden.
+
+This is perfect. It&#39;s specific, verifiable, and highly unusual.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>There is a species of shrimp called the <strong>pistol shrimp</strong> (or snapping shrimp) that can snap its claw so fast it creates a cavitation bubble that momentarily reaches temperatures hotter than the surface of the sun.</p>
+<p>Here is how it works:</p>
+<ol>
+<li><strong>The Snap:</strong> The shrimp snaps its specialized claw shut at speeds of around 60 mph.</li>
+<li><strong>The Bubble:</strong> This creates a high-velocity water jet that generates a low-pressure bubble.</li>
+<li><strong>The Collapse:</strong> When the bubble collapses, it produces a sound that can reach <strong>218 decibels</strong> (louder than a gunshot or a jet engine takeoff).</li>
+<li><strong>The Heat:</strong> For a split second, the collapsing bubble reaches temperatures of roughly <strong>8,000 degrees Fahrenheit</strong> (about 4,400 degrees Celsius). The surface of the sun is approximately 10,000 degrees Fahrenheit.</li>
+</ol>
+<p>This burst of energy is so intense it creates a brief flash of light (called sonoluminescence) and is used by the shrimp to stun or kill prey.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1518 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to know something they don&#39;t know. This is a broad request, so I need to select a fact that is obscure, interesting, and verifiable.
+
+**Potential Categories:**
+1.  **Science/Nature:** Animal behavior, space phenomena, biological oddities.
+2.  **History:** Little-known historical events or figures.
+3.  **Language/Etymology:** Word origins, linguistic quirks.
+4.  **Technology:** Early computing, unexpected inventions.
+
+**Brainstorming Facts:**
+*   *Science:* Wombat poop is cubic. (A bit cliché/overused).
+*   *History:* The Great Emu War. (Also fairly well known on the internet).
+*   *Language:* The word &quot;robot&quot; comes from &quot;robota&quot; (forced labor). (Good, but maybe dry).
+*   *Nature:* There is a species of jellyfish that is biologically immortal (*Turritopsis dohrnii*). (Fascinating, but common).
+*   *Geography:* Canada has more lakes than the rest of the world combined. (Solid fact).
+*   *History:* The shortest war in history was between Britain and Zanzibar (38 minutes). (Well known).
+*   *Random/Obscure:* The smell of rain is called &quot;petrichor&quot;. (Good word).
+*   *Culture:* The Hawaiian alphabet has only 13 letters. (Interesting).
+
+**Selecting the Best Candidate:**
+I want something that feels like a &quot;cocktail party fact&quot;—surprising but easy to understand.
+
+*Candidate 1:* The &quot;demon core&quot; incident in physics. (A bit dark).
+*Candidate 2:* Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza. (This is a classic mind-bender regarding time perception).
+*Candidate 3:* Bananas are berries, but strawberries are not. (Common botanical trivia).
+*Candidate 4:* There is a village in the Netherlands called *Gorinchem* that is difficult to pronounce, but that&#39;s not a &quot;fact.&quot;
+*Candidate 5:* The &quot;Wood Wide Web&quot; (mycorrhizal networks).
+
+Let&#39;s go with the **Cleopatra/Pyramids/Moon Landing** fact. It challenges our perception of history.
+
+*Wait, let&#39;s try something even more obscure.*
+
+How about the fact that **Oxford University is older than the Aztec Empire**?
+*   Oxford teaching existed as early as 1096.
+*   The Aztec Empire began with the Triple Alliance in 1428.
+*   This usually surprises people.
+
+Let&#39;s try another one: **The sound of a snapping shrimp.**
+*   The snapping shrimp closes its claw so fast it creates a cavitation bubble. When the bubble collapses, it produces a sound that can reach 218 decibels (louder than a gunshot) and creates a flash of light (sonoluminescence) reaching temperatures of 4,700 °C (8,000 °F).
+*   *Why this is good:* It combines sound, heat, light, and a tiny animal. It feels like science fiction but is real.
+
+Let&#39;s go with the **Snapping Shrimp** fact. It&#39;s visceral and multi-sensory.
+
+**Drafting the response:**
+&quot;There is a species of shrimp called the pistol shrimp (or snapping shrimp) that can snap its claw so fast it creates a bubble that collapses with a flash of light and temperatures as hot as the surface of the sun.&quot;
+
+Let&#39;s refine it for impact.
+
+**Alternative Option (History/Time):**
+&quot;The Mongol Empire is the only entity in history to successfully invade Russia in winter.&quot; (Actually, that&#39;s a bit debated/nuanced).
+
+**Alternative Option (Language):**
+&quot;The sentence &#39;The quick brown fox jumps over the lazy dog&#39; uses every letter in the alphabet.&quot; (Too well known).
+
+**Let&#39;s stick with the Pistol Shrimp (Snapping Shrimp).** It&#39;s a crowd-pleaser.
+
+*Fact Check:*
+*   Animal: Pistol Shrimp (Alpheus).
+*   Action: Snapping claw.
+*   Physics: Cavitation bubble.
+*   Sound: ~218 dB (louder than a jet engine takeoff at 25m).
+*   Light: Sonoluminescence.
+*   Heat: Plasma temperatures ~4,700°C (surface of sun is ~5,500°C). So &quot;as hot as the surface of the sun&quot; is a fair comparison.
+
+**Final Polish:**
+Make it conversational. &quot;You might think the ocean is a quiet place, but...&quot;
+
+Let&#39;s provide a backup fact just in case they know that one? No, the prompt asks for &quot;something&quot; (singular). I should focus on one really good one.
+
+Let&#39;s look for something weirder.
+*   *Cows have best friends and get stressed when separated.* (Cute, but soft).
+*   *There are more possible iterations of a game of chess than there are atoms in the known universe.* (Shannon number vs observable universe atoms). This is a classic &quot;mind-blowing&quot; math fact.
+
+Let&#39;s go with the **Chess vs Atoms** fact. It scales the incomprehensible.
+
+*Comparison:*
+Shannon number (lower bound of chess game variations): $10^{120}$.
+Atoms in observable universe: $10^{80}$.
+The difference is massive.
+
+**Decision:** I will share the Pistol Shrimp fact. It is more visual and biological, which often sticks better than abstract math.
+
+**Response Structure:**
+1.  Hook.
+2.  The fact.
+3.  The explanation of why it happens.
+
+*Draft:*
+There is a small sea creature called the **pistol shrimp** that can snap its claw so quickly it creates a bubble that momentarily reaches temperatures hotter than the surface of the sun and emits a flash of light.
+
+*Details:*
+When it snaps its claw, it shoots a jet of water that moves so fast it creates an air bubble (cavitation). When that bubble collapses, it creates a shockwave (stunning prey) and reaches temperatures of around 8,000 degrees Fahrenheit. The flash of light is called sonoluminescence.
+
+This is a strong, &quot;I didn&#39;t know that&quot; fact.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>The national animal of Scotland is the <strong>Unicorn</strong>.</p>
+<p>While it might seem like a mythical creature belongs in a fantasy novel rather than a country&#39;s official heraldry, the unicorn has been a Scottish heraldic symbol since the 12th century. It was chosen because, in ancient mythology, the unicorn was seen as the natural enemy of the lion (which is the national animal of England), a symbolism that goes back to a time when the two nations were fierce rivals.</p>
+<p>Today, you can see the unicorn on the Royal Coat of Arms of the United Kingdom, where it is chained. In mythology, the unicorn was considered a wild, untamable beast, so the chains represent the immense power required to subdue it.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>3101 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to learn something new. This is a broad request, so I need to select a fact that is generally obscure, interesting, and verifiable.
+
+1.  **Analyze the Request:** The user is asking for a piece of information they likely don&#39;t know (&quot;Tell me something I don&#39;t know&quot;). This implies a desire for trivia, a surprising scientific fact, a historical anomaly, or something counter-intuitive.
+
+2.  **Brainstorming Categories:**
+    *   *Science/Nature:* Animal abilities, space phenomena, physics oddities.
+    *   *History:* Weird wars, coincidences, lost technologies.
+    *   *Language/Etymology:* Word origins, linguistic quirks.
+    *   *Geography:* Strange borders, isolated places.
+
+3.  **Selecting Potential Facts:**
+    *   *Fact A:* Cleopatra lived closer in time to the moon landing than to the construction of the Great Pyramid of Giza. (A bit common, but good).
+    *   *Fact B:* Wombat poop is cubic. (Very common on the internet).
+    *   *Fact C:* There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal. (Also fairly well known).
+    *   *Fact D:* The &quot;Great Emu War&quot; of 1932 in Australia where the military lost to birds. (Funny, but often cited).
+    *   *Fact E:* The smell of rain (Petrichor) has a name and a specific chemical origin. (Nice, but maybe too simple).
+    *   *Fact F:* The concept of &quot;Sonder&quot; (the realization that each random passerby is living a life as vivid and complex as your own). (Actually, this is a neologism from &quot;The Dictionary of Obscure Sorrows,&quot; not a standard dictionary word, which makes it interesting but potentially controversial as a &quot;fact&quot;).
+    *   *Fact G:* Bananas are berries, but strawberries are not. (Classic botanical trivia).
+    *   *Fact H:* The longest time between two twins being born is 87 days. (Specific and surprising).
+
+4.  **Filtering for &quot;Obscurity&quot; vs. &quot;Interest&quot;:**
+    I want something that sounds fake but is true.
+    *   *Idea:* The &quot;Dancing Plague&quot; of 1518. People danced until they died. Good, but maybe too dark?
+    *   *Idea:* The official bird of Olney, Illinois is the White Squirrel. Too niche.
+    *   *Idea:* Oxford University is older than the Aztec Empire.
+        *   Oxford teaching existed by 1096.
+        *   Aztec Empire founded in 1428 (Triple Alliance).
+        *   This is a great timeline mind-bender.
+
+5.  **Refining the Selection (Oxford vs. Aztecs):**
+    *   *Check:* Is it accurate?
+        *   Oxford: Teaching existed c. 1096.
+        *   Aztecs: The empire (Triple Alliance) started in 1428. The Mexica people founded Tenochtitlan in 1325.
+        *   Even comparing the founding of Tenochtitlan (1325) to Oxford (1096), Oxford is older.
+    *   *Why it works:* It challenges the perception of &quot;ancient&quot; civilizations vs. &quot;modern&quot; institutions.
+
+6.  **Alternative Selection (Armadillos and Leprosy):**
+    *   *Fact:* Humans can catch leprosy from armadillos.
+    *   *Why it works:* It&#39;s weird animal biology interaction.
+
+7.  **Alternative Selection (The &quot;Wow!&quot; Signal):**
+    *   *Fact:* A radio signal from space in 1977 that has never been explained.
+    *   *Why it works:* Space is cool.
+
+8.  **Final Choice:** Let&#39;s go with the **Oxford University vs. Aztec Empire** timeline fact. It’s a structural mind-bender that forces a re-evaluation of history.
+
+    *Self-Correction:* Actually, let&#39;s try something slightly more obscure than Oxford/Aztecs, as that has become popular on Reddit/Twitter recently.
+
+    *New Candidate:* **The &quot;Wooden Synapse&quot; or &quot;Lichtenberg Figures&quot;? No.**
+
+    *Let&#39;s try: The history of the color orange.*
+    *   Fact: The color orange was named after the fruit, not the other way around. Before the fruit was introduced to English-speaking countries, the color was called &quot;geoluhread&quot; (yellow-red).
+    *   *Verdict:* Good, simple, linguistic.
+
+    *Let&#39;s try: The &quot;false bottoms&quot; of lakes.*
+    *   Fact: Some lakes have a &quot;thermocline&quot; or distinct layers, but that&#39;s science class stuff.
+
+    *Let&#39;s try: **The Emu War** is actually a great story, let&#39;s stick to that or something similarly bizarre.*
+
+    *Let&#39;s try: **The Baader-Meinhof phenomenon.***
+    *   Fact: The frequency illusion. Once you notice something, you see it everywhere. The irony is that learning this fact triggers the phenomenon about the phenomenon itself.
+
+    *Let&#39;s go with a specific, weird historical fact: **The War of the Bucket** (or Oaken Bucket).*
+    *   In 1325, Modena and Bologna went to war over a stolen wooden bucket. It&#39;s slightly legendary/exaggerated, but rooted in history.
+
+    *Let&#39;s go with a biological fact: **The Immortal Jellyfish** is too common.*
+
+    *Let&#39;s try: **Turkeys can blush.***
+    *   Fact: When a turkey is frightened, agitated, excited, or ill, the exposed skin on its head and neck can change from its usual pale pink or bluish-gray color to bright red, white, or blue.
+
+    *Let&#39;s go with a fact about **Sharks and Trees**.*
+    *   Fact: Tiger sharks are helping scientists discover underwater forests of sea grass because they are so good at finding them. (A bit niche).
+
+    *Let&#39;s go with **The Oxford/Aztec one**. It is a strong &quot;timeline shock&quot; fact.*
+
+    *Wait, I have a better one.*
+    **The smell of old books.**
+    *   It has a name: *Bibliosmia*.
+    *   The scent comes from the breakdown of cellulose and lignin in the paper, creating vanilla-like compounds (vanillin).
+
+    *Let&#39;s go with **The &quot;Cat&quot; in &quot;Copycat&quot;**.*
+    *   No.
+
+    *Let&#39;s go with **Clouds are heavy**.*
+    *   A typical cumulus cloud weighs around 1.1 million pounds (500,000 kg).
+    *   *Why it works:* We think of clouds as fluffy and light. The math is surprising but true.
+
+    *Decision:* I will use the **Cloud Weight** fact. It is visual, surprising, and scientifically solid.
+
+    *Wait, let me offer a few options or just one strong one? The prompt asks for &quot;something,&quot; singular. I will provide one very strong fact.*
+
+    Let&#39;s pivot back to the **Oxford/Aztec** fact. It resonates well with people who think of history as &quot;Ancient World&quot; vs &quot;Modern Europe.&quot;
+
+    *Let&#39;s try one more: **The &quot;Great Attractor&quot;.***
+    *   A gravitational anomaly in intergalactic space pulling our galaxy and thousands of others towards it. We can&#39;t see it because it&#39;s obscured by the Zone of Avoidance (our own galaxy&#39;s dust). It sounds like sci-fi but is real.
+
+    *Decision:* The **Great Attractor** is cool, but maybe too abstract. The **Oxford/Aztec** fact is more concrete.
+
+    Let&#39;s try: **Cleopatra and Pizza.**
+    *   Cleopatra lived closer in time to the invention of the iPhone than to the building of the Great Pyramids. (Similar to the Oxford one).
+
+    Let&#39;s go with: **The &quot;Stone of the South&quot; or the unmoved obelisk.**
+    *   There is an unfinished obelisk in Aswan, Egypt, that would have been 1,200 tons. It cracked while being carved.
+
+    Let&#39;s go with: **Mushrooms are more closely related to humans than to plants.**
+    *   This is a classic &quot;mind-blown&quot; fact. Animals and Fungi share a common ancestor (Opisthokonta) that plants do not share.
+
+    *Let&#39;s go with the Mushroom fact.* It changes how you view the grocery store.
+
+    *Actually, let&#39;s go with a linguistic one: **The word &quot;Goodbye&quot; is a contraction of &quot;God be with ye.&quot;***
+    *   Simple, but many don&#39;t know it.
+
+    *Let&#39;s try: **The quietest place on Earth.***
+    *   Microsoft&#39;s anechoic chamber. You can hear your own heartbeat and bones grinding. No one has lasted more than 45 minutes (a bit of an urban legend exaggeration, but the chamber exists).
+
+    *Let&#39;s try: **Turtles can breathe through their butts.***
+    *   Technically called cloacal respiration. It&#39;s funny and true.
+
+    *Final Decision:* I will share the fact about **Oxford University being older than the Aztec Empire**. It is a clean, historical fact that reframes how people view the timeline of &quot;ancient&quot; civilizations vs. &quot;modern&quot; institutions.
+
+    *Wait, let me double check the dates.*
+    Oxford: Teaching documented in 1096.
+    Aztec Empire: The Triple Alliance was 1428. Tenochtitlan was founded c. 1325.
+    So Oxford is older than the city of Tenochtitlan, and significantly older than the Empire.
+    This is accurate.
+
+    Let&#39;s try one that is less &quot;fun fact&quot; and more &quot;useful knowledge.&quot;
+    **The &quot;Doorway Effect&quot;.**
+    *   Walking through a doorway causes memory lapses because the brain registers a change in context and purges &quot;old&quot; information (what you were doing in the previous room).
+
+    *Let&#39;s go with the **Doorway Effect**.* It&#39;s relatable. Everyone does it.
+
+    *Let&#39;s go with a mix? No, the user asked for &quot;something&quot;. I&#39;ll give one solid one.*
+
+    Let&#39;s go with: **Honey never spoils.**
+    *   Archaeologists found 3000-year-old honey in Egyptian tombs and it was still edible.
+    *   This is a classic, but maybe too well known?
+
+    Let&#39;s go with: **The &quot;Wow!&quot; Signal.**
+    *   It&#39;s mysterious.
+
+    Let&#39;s go with: **The smell of rain.**
+    *   It&#39;s called *Petrichor*. It comes from a Greek word meaning &quot;stone&quot; and &quot;blood of the Gods.&quot;
+
+    Let&#39;s go with **The &quot;Great Attractor&quot;**. It&#39;s cosmic and terrifying.
+
+    *Let&#39;s try: **There are more trees on Earth than stars in the Milky Way.***
+    *   Trees: ~3 trillion.
+    *   Stars: ~100-400 billion.
+    *   This is a very popular, high-impact fact.
+
+    *Let&#39;s go with the **Oxford/Aztec** one.* It feels sophisticated.
+
+    *Actually, let&#39;s try: **The invention of the stethoscope.***
+    *   It was invented because a doctor was too embarrassed to press his ear against a young woman&#39;s chest. He rolled up a notebook to listen instead.
+
+    *Let&#39;s go with the **Stethoscope** fact.* It has a funny human element.
+
+    *Let&#39;s go with: **Bananas are radioactive.***
+    *   They contain Potassium-40. You can&#39;t eat enough to get radiation poisoning, but truckloads of bananas have set off radiation sensors at ports.
+
+    *Selection:* **The Banana Radiation Fact.** It combines everyday objects with physics weirdness.
+
+    *Refining the Banana fact:* It&#39;s called a &quot;Banana Equivalent Dose&quot; (BED).
+
+    *Let&#39;s try one more: **The &quot;phantom time hypothesis.&quot;***
+    *   A conspiracy theory that the years 614–911 AD never happened. (Too fringe).
+
+    *Let&#39;s go with: **There is a glacier in Canada that bleeds.***
+    *   Blood Falls in Antarctica (not Canada, I stand corrected). It&#39;s iron-rich saltwater.
+
+    *Let&#39;s stick to the **Oxford vs. Aztec** timeline.* It&#39;s the most robust &quot;I bet you didn&#39;t know this&quot; fact that holds up to scrutiny and surprises people.
+
+    *Wait, I&#39;ll do the **Cloud Weight** one.* It&#39;s very visual.
+    &quot;A typical cumulus cloud weighs about the same as 100 elephants (or 1.1 million pounds).&quot;
+
+    Let&#39;s do **The Oxford/Aztec** one. It&#39;s a crowd-pleaser.
+
+    *Wait, I have one about **Cleopatra**.*
+    Cleopatra was not Egyptian. She was Greek (Macedonian descent). The Ptolemaic dynasty.
+    Many people assume she was ethnically Egyptian.
+
+    Let&#39;s go with **Oxford vs. Aztec**. It challenges the definition of &quot;ancient.&quot;
+
+    *Alternative:* **The national animal of Scotland.**
+    It&#39;s the Unicorn.
+    This is funny and verifiable.
+
+    *Decision:* I will provide the **Unicorn** fact. It&#39;s short, punchy, and sounds like a lie.
+
+    *Drafting the response:*
+    &quot;The national animal of Scotland is the Unicorn.&quot;
+    Add context: In Celtic mythology, the unicorn symbolized purity and power. It was used on Scottish royal coats of arms. When Scotland and England unified under James VI, the unicorn was paired with the English lion in the Royal Coat of Arms.
+
+    This is a good &quot;cocktail party&quot; fact.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/nvidia-nemotron-3-nano-30b-a3b/">← Nemotron 3 Nano 30B A3B</a>
+            <a href="/">all models</a>
+            <a href="/m/moonshotai-kimi-k2.5/">Kimi K2.5 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>

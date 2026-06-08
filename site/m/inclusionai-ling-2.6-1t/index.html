@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inclusionAI: Ling-2.6-1T — Tell me something I don't know.</title>
+    <meta name="description" content="inclusionAI: Ling-2.6-1T answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks: 1. Your body glows in the dark, but you…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/inclusionai-ling-2.6-1t/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/inclusionai-ling-2.6-1t/">
+    <meta property="og:title" content="inclusionAI: Ling-2.6-1T — Tell me something I don't know.">
+    <meta property="og:description" content="inclusionAI: Ling-2.6-1T answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks: 1. Your body glows in the dark, but you…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="inclusionAI: Ling-2.6-1T — Tell me something I don't know.">
+    <meta name="twitter:description" content="inclusionAI: Ling-2.6-1T answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks: 1. Your body glows in the dark, but you…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to inclusionAI: Ling-2.6-1T)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks:\n\n**1. Your body glows in the dark, but your eyes can’t see it.**  \nHumans emit a faint, visible light—about 1,000 times weaker than what our eyes can detect. It’s a byproduct of biochemical reactions, and it actually fluctuates with our circadian rhythm, peaking in the late afternoon. If you could see it, you’d look like a very dim bioluminescent creature.\n\n**2. There’s a species of jellyfish that can basically live forever.**  \n*Turritopsis dohrnii* (the “immortal jellyfish”) can revert its cells to a younger state after reaching maturity, essentially restarting its life cycle when injured or stressed. It’s not invincible—it can still be eaten or diseased—but it has no natural limit to how many times it can reset.\n\n**3. Some people have a “superpower” that feels like a curse: time blindness in reverse.**  \nMost of us experience déjà vu (feeling like a moment has happened before). But a rare few experience *chronesthesia* variations where they vividly feel a moment *hasn’t happened yet*—a kind of reverse déjà vu. It’s linked to how the brain constructs temporal certainty, and it can make ordinary routines feel eerily unfamiliar.\n\n**4. The quietest place on Earth can make you hallucinate.**  \nMicrosoft’s anechoic chamber in Minnesota is so quiet (around -20.6 dBA) that you can hear your own heartbeat, digestion, and bones creaking. Most people can’t stay inside for more than 45 minutes without becoming disoriented or hearing sounds that aren’t there, because the brain tries to fill sensory voids.\n\n**5. There’s a language with no words for numbers beyond “one,” “two,” and “many.”**  \nThe Pirahã people of the Amazon have a language that lacks exact number words and recursive grammar. They don’t count, don’t have creation myths or art as we define it, and their entire culture is built on “living in the present” so intensely that concepts like “yesterday” or “tomorrow” are fuzzy. Linguists still debate whether language shapes thought or thought shapes language in their case.\n","author":{"@type":"Organization","name":"Inclusionai"}},"suggestedAnswer":[{"@type":"Answer","text":"Here are a few obscure, counter-intuitive facts across different fields that most people haven’t heard:\n\n**1. Your body glows in the dark (and it’s brighter than your phone screen)**  \nHumans emit a faint, visible light—biophotons—as a byproduct of biochemical reactions. We are actually brightest around 4 PM (especially around the mouth and cheeks) and dimmest around 10 AM. It’s about 1,000 times weaker than what our eyes can detect, but if you could see it, you’d literally glow.\n\n**2. There is a “lake” at the bottom of the ocean that you can float in—and it kills things that swim into it**  \nIn the Gulf of Mexico, brine pools form when salt leaches up from deep underground and mixes with seawater. The water is so dense with salt that it doesn’t mix with the ocean above, creating a visible “lake” on the seafloor with its own shoreline. It is highly toxic; any fish or crab that swims into it is pickled almost instantly.\n\n**3. Sharks are older than trees—and older than Saturn’s rings**  \nThe earliest shark-like fish appeared about 450 million years ago. The first trees (like *Archaeopteris*) only evolved around 380 million years ago. Saturn’s rings, meanwhile, are relatively young—likely only 10–100 million years old—meaning sharks have been swimming around for hundreds of millions of years before Saturn even got its bling.\n\n**4. There is a “lost” organ that was just reclassified in 2022**  \nThe mesentery—the tissue that holds your intestines in place—was long thought to be a fragmented, unimportant structure. In 2016 it was reclassified as one continuous organ, and in 2022 researchers proposed it should be considered part of a newly recognized system: the *interstitium*, a fluid-filled network that may act like a shock-absorber and could play a role in how cancer spreads.\n\n**5. Some turtles can breathe through their butts**  \nAustralian Fitzroy River turtles and North American eastern painted turtles can absorb oxygen through their cloaca (the all-purpose opening used for excretion and reproduction). They can stay submerged for months during winter hibernation without surfacing","author":{"@type":"Organization","name":"Inclusionai"}},{"@type":"Answer","text":"Here is a collection of facts and phenomena that rarely make it into casual conversation, spanning biology, physics, history, and human psychology.\n\n### 1. The \"Phantom Vibration\" Loop is a Hallucination\nYou know that feeling when you think your phone buzzed in your pocket, but it didn’t? This is called *Phantom Vibration Syndrome*. What you likely don't know is that it isn't just a quirk; it is a **sensory hallucination** caused by your brain's error-correction system going into overdrive. \n\nBecause you are neurologically primed to expect a notification (dopamine anticipation), your brain occasionally misinterprets the friction of clothing or muscle twitches as a phone vibration. But here is the wild part: **it works in reverse.** There is a documented phenomenon called *Rubber Hand Illusion* and its auditory counterpart, where if you see a fake hand being hit, your brain feels the pain in your real hand. Your brain is constantly \"filling in the blanks\" of reality, and sometimes it guesses wrong.\n\n### 2. Trees Share Resources via an Underground Internet\nMost people know trees compete for sunlight. What they don't know is that below the soil, trees often cooperate. They do this through a network of fungi called the **Wood Wide Web** (mycorrhizal networks). \n\nThe fungi attach to tree roots, trading soil nutrients for tree sugars. But the fungi also connect different trees together. A dying tree will dump its remaining carbon and nitrogen into the network for neighboring trees to use. Even more astonishing, a \"mother tree\" can recognize its own saplings and pump them extra water and nutrients, while actively starving the saplings of competing species.\n\n### 3. Time Travel is Happening Right Now (But Only Forward)\nEinstein proved that gravity slows down time. This is called *Gravitational Time Dilation*. Because the Earth’s core is deeper in a gravity well than the top of your head, **time is passing slightly slower at your feet than at your head.** Over the course of your life, your feet age a fraction of a nanosecond slower than your scalp. \n\nFurthermore, GPS satellites have to constantly correct for the fact that time is moving faster for them in orbit (farther from Earth's gravity) than it is for us on the ground. If engineers","author":{"@type":"Organization","name":"Inclusionai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>inclusionAI: Ling-2.6-1T</h1>
+        <p class="subtitle">Inclusionai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">inclusionAI: Ling-2.6-1T</div>
+                        <div class="model-provider">Inclusionai</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here are a few things that rarely make it into casual conversation, spanning science, history, and human quirks:</p>
+<p><strong>1. Your body glows in the dark, but your eyes can’t see it.</strong><br>Humans emit a faint, visible light—about 1,000 times weaker than what our eyes can detect. It’s a byproduct of biochemical reactions, and it actually fluctuates with our circadian rhythm, peaking in the late afternoon. If you could see it, you’d look like a very dim bioluminescent creature.</p>
+<p><strong>2. There’s a species of jellyfish that can basically live forever.</strong><br><em>Turritopsis dohrnii</em> (the “immortal jellyfish”) can revert its cells to a younger state after reaching maturity, essentially restarting its life cycle when injured or stressed. It’s not invincible—it can still be eaten or diseased—but it has no natural limit to how many times it can reset.</p>
+<p><strong>3. Some people have a “superpower” that feels like a curse: time blindness in reverse.</strong><br>Most of us experience déjà vu (feeling like a moment has happened before). But a rare few experience <em>chronesthesia</em> variations where they vividly feel a moment <em>hasn’t happened yet</em>—a kind of reverse déjà vu. It’s linked to how the brain constructs temporal certainty, and it can make ordinary routines feel eerily unfamiliar.</p>
+<p><strong>4. The quietest place on Earth can make you hallucinate.</strong><br>Microsoft’s anechoic chamber in Minnesota is so quiet (around -20.6 dBA) that you can hear your own heartbeat, digestion, and bones creaking. Most people can’t stay inside for more than 45 minutes without becoming disoriented or hearing sounds that aren’t there, because the brain tries to fill sensory voids.</p>
+<p><strong>5. There’s a language with no words for numbers beyond “one,” “two,” and “many.”</strong><br>The Pirahã people of the Amazon have a language that lacks exact number words and recursive grammar. They don’t count, don’t have creation myths or art as we define it, and their entire culture is built on “living in the present” so intensely that concepts like “yesterday” or “tomorrow” are fuzzy. Linguists still debate whether language shapes thought or thought shapes language in their case.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>500 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span>
+                </div>
+                
+                <div class="response-text hidden" data-run="1">
+                    <p>Here are a few obscure, counter-intuitive facts across different fields that most people haven’t heard:</p>
+<p><strong>1. Your body glows in the dark (and it’s brighter than your phone screen)</strong><br>Humans emit a faint, visible light—biophotons—as a byproduct of biochemical reactions. We are actually brightest around 4 PM (especially around the mouth and cheeks) and dimmest around 10 AM. It’s about 1,000 times weaker than what our eyes can detect, but if you could see it, you’d literally glow.</p>
+<p><strong>2. There is a “lake” at the bottom of the ocean that you can float in—and it kills things that swim into it</strong><br>In the Gulf of Mexico, brine pools form when salt leaches up from deep underground and mixes with seawater. The water is so dense with salt that it doesn’t mix with the ocean above, creating a visible “lake” on the seafloor with its own shoreline. It is highly toxic; any fish or crab that swims into it is pickled almost instantly.</p>
+<p><strong>3. Sharks are older than trees—and older than Saturn’s rings</strong><br>The earliest shark-like fish appeared about 450 million years ago. The first trees (like <em>Archaeopteris</em>) only evolved around 380 million years ago. Saturn’s rings, meanwhile, are relatively young—likely only 10–100 million years old—meaning sharks have been swimming around for hundreds of millions of years before Saturn even got its bling.</p>
+<p><strong>4. There is a “lost” organ that was just reclassified in 2022</strong><br>The mesentery—the tissue that holds your intestines in place—was long thought to be a fragmented, unimportant structure. In 2016 it was reclassified as one continuous organ, and in 2022 researchers proposed it should be considered part of a newly recognized system: the <em>interstitium</em>, a fluid-filled network that may act like a shock-absorber and could play a role in how cancer spreads.</p>
+<p><strong>5. Some turtles can breathe through their butts</strong><br>Australian Fitzroy River turtles and North American eastern painted turtles can absorb oxygen through their cloaca (the all-purpose opening used for excretion and reproduction). They can stay submerged for months during winter hibernation without surfacing</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>500 tokens</span>
+                    
+                </div>
+                
+                <div class="response-text hidden" data-run="2">
+                    <p>Here is a collection of facts and phenomena that rarely make it into casual conversation, spanning biology, physics, history, and human psychology.</p>
+<h3>1. The &quot;Phantom Vibration&quot; Loop is a Hallucination</h3>
+<p>You know that feeling when you think your phone buzzed in your pocket, but it didn’t? This is called <em>Phantom Vibration Syndrome</em>. What you likely don&#39;t know is that it isn&#39;t just a quirk; it is a <strong>sensory hallucination</strong> caused by your brain&#39;s error-correction system going into overdrive. </p>
+<p>Because you are neurologically primed to expect a notification (dopamine anticipation), your brain occasionally misinterprets the friction of clothing or muscle twitches as a phone vibration. But here is the wild part: <strong>it works in reverse.</strong> There is a documented phenomenon called <em>Rubber Hand Illusion</em> and its auditory counterpart, where if you see a fake hand being hit, your brain feels the pain in your real hand. Your brain is constantly &quot;filling in the blanks&quot; of reality, and sometimes it guesses wrong.</p>
+<h3>2. Trees Share Resources via an Underground Internet</h3>
+<p>Most people know trees compete for sunlight. What they don&#39;t know is that below the soil, trees often cooperate. They do this through a network of fungi called the <strong>Wood Wide Web</strong> (mycorrhizal networks). </p>
+<p>The fungi attach to tree roots, trading soil nutrients for tree sugars. But the fungi also connect different trees together. A dying tree will dump its remaining carbon and nitrogen into the network for neighboring trees to use. Even more astonishing, a &quot;mother tree&quot; can recognize its own saplings and pump them extra water and nutrients, while actively starving the saplings of competing species.</p>
+<h3>3. Time Travel is Happening Right Now (But Only Forward)</h3>
+<p>Einstein proved that gravity slows down time. This is called <em>Gravitational Time Dilation</em>. Because the Earth’s core is deeper in a gravity well than the top of your head, <strong>time is passing slightly slower at your feet than at your head.</strong> Over the course of your life, your feet age a fraction of a nanosecond slower than your scalp. </p>
+<p>Furthermore, GPS satellites have to constantly correct for the fact that time is moving faster for them in orbit (farther from Earth&#39;s gravity) than it is for us on the ground. If engineers</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>500 tokens</span>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/openrouter-owl-alpha/">← Owl Alpha</a>
+            <a href="/">all models</a>
+            <a href="/m/inclusionai-ling-2.6-flash/">inclusionAI: Ling-2.6-flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>

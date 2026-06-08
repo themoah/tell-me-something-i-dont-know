@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hy3 Preview — Tell me something I don't know.</title>
+    <meta name="description" content="Hy3 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell,…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/tencent-hy3-preview-free/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/tencent-hy3-preview-free/">
+    <meta property="og:title" content="Hy3 Preview — Tell me something I don't know.">
+    <meta property="og:description" content="Hy3 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell,…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hy3 Preview — Tell me something I don't know.">
+    <meta name="twitter:description" content="Hy3 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell,…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Hy3 Preview)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell, but also hundreds of tree seeds.  \n\nCommand module pilot Stuart Roosa—a former U.S. Forest Service smokejumper—partnered with the agency to carry ~500 seeds of five species (loblolly pine, sycamore, sweetgum, redwood, and Douglas fir) in a sealed canister. The plan was to germinate them after the mission to study if space travel affected growth. A small mishap occurred: the canister leaked during flight, so scientists feared the seeds were ruined. But when they returned to Earth, nearly all germinated normally.  \n\nThese \"Moon trees\" were planted across the U.S. (and a few overseas) for the 1976 Bicentennial—at the White House, state capitols, universities, and even the Kennedy Space Center. Many original Moon trees still stand today, and their offspring (grown from seeds of the Moon trees) are called \"Second Generation Moon Trees.\" One original loblolly pine even grows at the Smithsonian National Museum of American History!  \n\nIt’s a quiet, living legacy of the Apollo program you can still see (and touch) in person. 🌙🌲","author":{"@type":"Organization","name":"Tencent"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s a little-known story about \"moon trees\" that blends space history, forestry, and a quiet tribute to firefighters:  \n\nIn 1971, during the Apollo 14 mission, command module pilot Stuart Roosa (a former U.S. Forest Service smokejumper, or wildland firefighter) carried 500+ tree seeds with him into lunar orbit. He wanted to honor his old firefighting colleagues and the role of forests in American life. The seeds (of loblolly pine, sycamore, sweetgum, redwood, and Douglas fir) circled the moon 34 times alongside astronauts Alan Shepard and Edgar Mitchell, who walked on the lunar surface below.  \n\nWhen Roosa returned to Earth, the seeds were germinated—some successfully, some not—and the resulting seedlings were planted across the U.S. (and a few other countries) as part of the 1976 Bicentennial celebrations. Many people who planted or visited these trees had no idea they’d grown from moon-orbiting seeds at the time.  \n\nDozens of these original moon trees are still alive today: you can find a sycamore at the White House, a loblolly pine at the National Arboretum in D.C., and others in national parks, schools, and even a cemetery in Alabama. As a modern update, NASA repeated the experiment in 2022 with the Artemis I mission, sending new tree seeds around the moon—those seedlings are now being planted globally too, carrying on the quiet, leafy legacy of Apollo 14.  \n\nMost people don’t realize there are living trees on Earth that have \"been to the moon\" (well, orbited it) and keep growing decades later! 🌙🌲","author":{"@type":"Organization","name":"Tencent"}},{"@type":"Answer","text":"Here’s a lesser-known blend of history, science, and Cold War trivia:  \n\nIn 1962, the U.S. conducted a nuclear test code-named **Starfish Prime** 250 miles (400 km) above the Pacific Ocean—well into space, above the Earth’s atmosphere. When the 1.4-megaton hydrogen bomb detonated, it didn’t just create a massive explosion: it knocked out electrical systems 900 miles away in Hawaii (blowing fuses, plunging parts of Honolulu into darkness, and triggering false burglar alarms), damaged or destroyed ~1/3 of the satellites then in low Earth orbit, and produced a vivid, red artificial aurora that stretched from Hawaii to New Zealand, visible for hours after the blast.  \n\nWhat makes this wild is it was one of the first real-world proofs of the **electromagnetic pulse (EMP)** effect—something scientists had only theorized about until then. The test was so disruptive it forced major changes in how military and civilian infrastructure (from power grids to satellites) are hardened against EMP threats today.  \n\nOh, and a tiny bonus: The explosion also left a lingering belt of radiation in space that lingered for years, complicating early crewed space missions like Apollo!","author":{"@type":"Organization","name":"Tencent"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Hy3 Preview</h1>
+        <p class="subtitle">Tencent · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Hy3 Preview</div>
+                        <div class="model-provider">Tencent</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell, but also hundreds of tree seeds.  </p>
+<p>Command module pilot Stuart Roosa—a former U.S. Forest Service smokejumper—partnered with the agency to carry ~500 seeds of five species (loblolly pine, sycamore, sweetgum, redwood, and Douglas fir) in a sealed canister. The plan was to germinate them after the mission to study if space travel affected growth. A small mishap occurred: the canister leaked during flight, so scientists feared the seeds were ruined. But when they returned to Earth, nearly all germinated normally.  </p>
+<p>These &quot;Moon trees&quot; were planted across the U.S. (and a few overseas) for the 1976 Bicentennial—at the White House, state capitols, universities, and even the Kennedy Space Center. Many original Moon trees still stand today, and their offspring (grown from seeds of the Moon trees) are called &quot;Second Generation Moon Trees.&quot; One original loblolly pine even grows at the Smithsonian National Museum of American History!  </p>
+<p>It’s a quiet, living legacy of the Apollo program you can still see (and touch) in person. 🌙🌲</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1269 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; Hmm, first, I need to pick something that&#39;s not super common knowledge but also not too obscure. Let&#39;s think... Maybe something about the natural world? Or human biology? Wait, there&#39;s that thing about octopuses having three hearts, but that&#39;s pretty well-known now. What about something with a fun twist?
+
+Oh, right! The fact that bananas are berries, but strawberries aren&#39;t. Wait, but is that still a thing people don&#39;t know? Maybe, but let&#39;s go deeper. Wait, another one: honey never spoils. But again, maybe common. Wait, what about the &quot;Moon trees&quot;? Oh, that&#39;s a cool one. Let me recall: during the Apollo 14 mission, Stuart Roosa, the command module pilot, took hundreds of tree seeds with him to the Moon, right? Then when they got back, the seeds were germinated, and those trees were planted all over the US and other countries. And they&#39;re called Moon trees. Do people know that? Probably not most.
+
+Wait, let&#39;s check details: Stuart Roosa was a former forest service smokejumper, so he had a connection to trees. The seeds were of various species: loblolly pine, sycamore, sweetgum, redwood, Douglas fir. They orbited the Moon 34 times. When they returned, most seeds germinated successfully, and the resulting trees were planted at places like the White House, state capitols, universities, even the 1976 Bicentennial. Some are still alive today. That&#39;s a neat fact.
+
+Or maybe something about language? Like, the word &quot;nerd&quot; was first popularized by Dr. Seuss in &quot;If I Ran the Zoo&quot; (1950), where a &quot;nerd&quot; is a creature. But again, maybe some know that.
+
+Wait, another one: Crows can recognize human faces and hold grudges against specific people. But that&#39;s also somewhat known.
+
+Wait, let&#39;s go with the Moon trees. Let&#39;s structure it: start with the fact, give context (Apollo 14, Stuart Roosa), details about the seeds, what happened after, where they are now, maybe a fun note like some are still growing. Let&#39;s make sure it&#39;s accurate. Let me confirm: Yes, Apollo 14 was 1971, Roosa took about 500 seeds from the US Forest Service. The seeds were in a container that leaked during the flight, so they thought they were ruined, but most still germinated. The trees are called Moon trees, and there&#39;s a registry of them. Some are at the Kennedy Space Center, the White House, etc. That&#39;s a good one because it&#39;s a mix of space history and botany, not too obscure but definitely not common knowledge.
+
+Alternatively, maybe something about the human body: The stomach gets a new lining every few days to prevent it from digesting itself. But that&#39;s also known.
+
+Wait, let&#39;s go with Moon trees. Let&#39;s present it in a clear, engaging way. Let&#39;s start with the hook: &quot;Here’s a space-botany fact you might not know: During the 1971 Apollo 14 mission, the Moon orbited not just astronauts Alan Shepard and Edgar Mitchell, but also hundreds of tree seeds.&quot; Then explain Stuart Roosa&#39;s background, the seeds, the mishap, the germination, the planting, and current status. Maybe add that there are &quot;Second Generation Moon Trees&quot; now, grown from seeds of the original Moon trees. That&#39;s a nice touch.
+
+Wait, let&#39;s make sure it&#39;s accurate. Let me check: Stuart Roosa was indeed a smokejumper for the U.S. Forest Service before becoming an astronaut, so he partnered with the Forest Service to bring the seeds. The seeds were: loblolly pine, sycamore, sweetgum, redwood, Douglas fir. They were in a packet that was in Roosa&#39;s personal kit, which leaked, so the seeds got exposed to vacuum? No, wait, the container was a sealed aluminum canister, but it developed a leak, so the seeds were exposed to the spacecraft&#39;s atmosphere, not vacuum. When they got back, the Forest Service thought the seeds were contaminated, but they germinated normally. The resulting trees were planted across the U.S. and some overseas, including at the White House, the U.S. Capitol, and various universities. The original Moon trees are still standing in some places, and their offspring are called Second Generation Moon Trees. That&#39;s all correct.
+
+Yes, that&#39;s a great fact. It&#39;s interesting, has a good story, combines different fields. Let&#39;s write that out clearly.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s a little-known story about &quot;moon trees&quot; that blends space history, forestry, and a quiet tribute to firefighters:  </p>
+<p>In 1971, during the Apollo 14 mission, command module pilot Stuart Roosa (a former U.S. Forest Service smokejumper, or wildland firefighter) carried 500+ tree seeds with him into lunar orbit. He wanted to honor his old firefighting colleagues and the role of forests in American life. The seeds (of loblolly pine, sycamore, sweetgum, redwood, and Douglas fir) circled the moon 34 times alongside astronauts Alan Shepard and Edgar Mitchell, who walked on the lunar surface below.  </p>
+<p>When Roosa returned to Earth, the seeds were germinated—some successfully, some not—and the resulting seedlings were planted across the U.S. (and a few other countries) as part of the 1976 Bicentennial celebrations. Many people who planted or visited these trees had no idea they’d grown from moon-orbiting seeds at the time.  </p>
+<p>Dozens of these original moon trees are still alive today: you can find a sycamore at the White House, a loblolly pine at the National Arboretum in D.C., and others in national parks, schools, and even a cemetery in Alabama. As a modern update, NASA repeated the experiment in 2022 with the Artemis I mission, sending new tree seeds around the moon—those seedlings are now being planted globally too, carrying on the quiet, leafy legacy of Apollo 14.  </p>
+<p>Most people don’t realize there are living trees on Earth that have &quot;been to the moon&quot; (well, orbited it) and keep growing decades later! 🌙🌲</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1199 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; First, I need to pick something that&#39;s not super common, but also not too obscure. Let&#39;s think... Maybe something about everyday things that people don&#39;t realize?
+
+Wait, what about the fact that many common fruits we eat are actually not berries in the botanical sense, but some things we don&#39;t think of as berries are? Like, bananas are berries, but strawberries aren&#39;t? Wait, but maybe that&#39;s a bit known. Let&#39;s go deeper.
+
+Oh, right! The &quot;moon trees&quot; — that&#39;s a cool one. Let me check: In 1971, during the Apollo 14 mission, astronaut Stuart Roosa took hundreds of tree seeds with him to the moon&#39;s orbit. He was a former smokejumper (forest firefighter), so he wanted to bring seeds as a tribute. The seeds orbited the moon 34 times, then were brought back to Earth, germinated, and planted all over the US and some other countries. There are still moon trees alive today, like a loblolly pine at the White House, or ones in national parks.
+
+Wait, is that true? Let me confirm: Yes, Stuart Roosa was the command module pilot for Apollo 14, he carried seeds of five tree species: loblolly pine, sycamore, sweetgum, redwood, and Douglas fir. Some seeds were germinated successfully, others not, but many were planted as part of the US Bicentennial in 1976. There&#39;s even a registry of moon trees now.
+
+Alternatively, another thing: Octopuses have three hearts, but that&#39;s pretty well-known. What about the fact that the inventor of the Pringles can is now buried in one? No, that&#39;s a bit morbid. Wait, the moon trees are nice, positive, and not everyone knows about them.
+
+Wait, but maybe combine a couple? Or make sure it&#39;s accurate. Let me structure it: Start with a hook, explain the moon tree story, add some details like where they are now, maybe a fun fact that some people didn&#39;t know the seeds had been to the moon when they were planted.
+
+Wait, also, let&#39;s check if there&#39;s a more recent one? No, moon trees are a classic lesser-known fact. Alternatively, the fact that honey never spoils? No, that&#39;s common. Wait, what about the &quot;Duckworth-Lewis method&quot; in cricket? No, maybe too niche.
+
+Wait, another one: The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes. That&#39;s a good one too. But let&#39;s see, which is more interesting? Maybe the moon trees are more relatable, but the 38-minute war is surprising.
+
+Wait, let&#39;s go with the moon trees first, but maybe add another? No, the user said &quot;tell me something&quot;, so one solid thing is better. Let me make sure the details are right: Apollo 14, 1971, Stuart Roosa, seeds orbited the moon, germinated, planted across the US, some still alive. Yes, that&#39;s correct.
+
+Wait, also, there&#39;s a &quot;moon tree&quot; in Washington D.C. at the National Arboretum? Let me check: Yes, there&#39;s a sycamore moon tree there. And in 2023, a new moon tree was planted at the Kennedy Space Center, grown from seeds that were on the Artemis I mission in 2022, so that&#39;s a modern update. Oh, that&#39;s a good addition—so it&#39;s not just a historical thing, there are new ones now too.
+
+So putting it all together: Start with the moon tree fact, explain the origin, the Apollo 14 connection, Stuart Roosa&#39;s background, what happened to the seeds, where they are now, and the recent Artemis I moon trees. That should be something most people don&#39;t know.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s a lesser-known blend of history, science, and Cold War trivia:  </p>
+<p>In 1962, the U.S. conducted a nuclear test code-named <strong>Starfish Prime</strong> 250 miles (400 km) above the Pacific Ocean—well into space, above the Earth’s atmosphere. When the 1.4-megaton hydrogen bomb detonated, it didn’t just create a massive explosion: it knocked out electrical systems 900 miles away in Hawaii (blowing fuses, plunging parts of Honolulu into darkness, and triggering false burglar alarms), damaged or destroyed ~1/3 of the satellites then in low Earth orbit, and produced a vivid, red artificial aurora that stretched from Hawaii to New Zealand, visible for hours after the blast.  </p>
+<p>What makes this wild is it was one of the first real-world proofs of the <strong>electromagnetic pulse (EMP)</strong> effect—something scientists had only theorized about until then. The test was so disruptive it forced major changes in how military and civilian infrastructure (from power grids to satellites) are hardened against EMP threats today.  </p>
+<p>Oh, and a tiny bonus: The explosion also left a lingering belt of radiation in space that lingered for years, complicating early crewed space missions like Apollo!</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1299 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Got it, the user said &quot;Tell me something I don&#39;t know.&quot; First, I need to pick a topic that&#39;s not super common, maybe something from science or history that&#39;s surprising but verified. Let&#39;s think... Oh, right, there&#39;s the fact about octopuses having three hearts and blue blood. Wait, but maybe that&#39;s a bit known? Let me check—no, maybe not everyone knows the details. Wait, another one: the Eiffel Tower grows taller in summer because of thermal expansion. Wait, but that&#39;s also somewhat known. Wait, what about something more niche? Oh, here&#39;s one: male seahorses are the ones that get pregnant and give birth. Wait, but maybe that&#39;s known too. Wait, let&#39;s think of something less common. Oh! There&#39;s a species of jellyfish called Turritopsis dohrnii, often called the &quot;immortal jellyfish&quot; because it can revert back to its polyp stage after reaching maturity, effectively resetting its life cycle. But wait, is that widely known? Maybe not to everyone. Wait, another one: In 1962, the US tested a nuclear bomb in space, which created an artificial aurora visible for hundreds of miles. That&#39;s the Starfish Prime test. Let me confirm: yes, on July 9, 1962, the US detonated a 1.4 megaton hydrogen bomb 250 miles above the Pacific Ocean. The explosion knocked out streetlights in Hawaii, damaged satellites, and created a red aurora that was seen from Hawaii to New Zealand. That&#39;s a cool fact, and maybe not everyone knows it. Wait, but let&#39;s make sure it&#39;s accurate. Let me verify: Starfish Prime was part of the Dominic test series, the bomb was detonated at an altitude of 400 kilometers (248 miles), yes, it caused an electromagnetic pulse (EMP) that affected Hawaii, about 900 miles away, blowing fuses and knocking out streetlights. The aurora was visible for hours. That&#39;s a good one. Alternatively, maybe something about language? Like, there&#39;s a language in Botswana called &quot;Silbo Gomero&quot; which is a whistled form of Spanish used on the island of La Gomera in the Canary Islands. Wait, but Silbo Gomero is Spanish, not Botswana—my mistake. Let&#39;s correct that: Silbo Gomero is a whistled language from La Gomera, Canary Islands, used to communicate across deep ravines. It&#39;s UNESCO recognized. But maybe the nuclear test fact is more surprising. Wait, another angle: Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. That&#39;s a classic, but maybe the user doesn&#39;t know it. But let&#39;s go with something less common. Oh! There&#39;s a phenomenon called &quot;ball lightning&quot;—glowing, spherical objects that appear during thunderstorms, sometimes passing through closed windows. It&#39;s rare, but scientifically documented. For example, in 2014, Chinese scientists captured it on camera for the first time, measuring its spectrum and confirming it&#39;s a plasma. Wait, but maybe the Starfish Prime fact is more concrete. Let me structure it: Start with a hook, then the fact, details, why it&#39;s interesting. Let&#39;s see:
+
+&quot;Here&#39;s a lesser-known historical and scientific tidbit: In 1962, the United States conducted a nuclear weapons test code-named &#39;Starfish Prime&#39; high above the Pacific Ocean—specifically, 250 miles (400 km) up in space, well above the Earth&#39;s atmosphere. When the 1.4-megaton hydrogen bomb detonated, it didn&#39;t just create a massive explosion: it knocked out electrical systems 900 miles away in Hawaii (blowing fuses and plunging parts of Honolulu into darkness), damaged or destroyed about one-third of the satellites then in low Earth orbit, and produced a vivid, red artificial aurora that stretched from Hawaii all the way to New Zealand, visible for hours after the blast. 
+
+What makes this especially wild is that it was one of the first real-world demonstrations of an electromagnetic pulse (EMP) effect—something that, at the time, scientists were only beginning to understand. The test was so impactful that it led to major changes in how both military and civilian infrastructure are hardened against EMP attacks today.&quot;
+
+Wait, is that accurate? Let&#39;s check: Yes, Starfish Prime&#39;s EMP caused widespread electrical disruptions in Hawaii, including triggering burglar alarms, knocking out streetlights, and damaging microwave links. Satellites like Telstar were affected, and some failed shortly after. The aurora was indeed visible over a huge area. That&#39;s a solid fact, not too common, and has interesting context. Alternatively, if the user prefers something more biological, maybe the immortal jellyfish, but the nuclear test is more concrete. Let&#39;s go with that, but make sure it&#39;s clear and engaging. Also, avoid anything too gross or controversial. Yeah, that works.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/xiaomi-mimo-v2.5-pro/">← MiMo-V2.5-Pro</a>
+            <a href="/">all models</a>
+            <a href="/m/openai-gpt-5.5/">GPT-5.5 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>

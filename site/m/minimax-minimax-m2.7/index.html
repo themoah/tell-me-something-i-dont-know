@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMax M2.7 — Tell me something I don't know.</title>
+    <meta name="description" content="MiniMax M2.7 answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a number that most people don’t realize is that large: The number of possible unique shuffles of a standard 52‑card deck (52 ! ≈ 8 × 10⁶⁷) is ast…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/minimax-minimax-m2.7/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/minimax-minimax-m2.7/">
+    <meta property="og:title" content="MiniMax M2.7 — Tell me something I don't know.">
+    <meta property="og:description" content="MiniMax M2.7 answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a number that most people don’t realize is that large: The number of possible unique shuffles of a standard 52‑card deck (52 ! ≈ 8 × 10⁶⁷) is ast…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MiniMax M2.7 — Tell me something I don't know.">
+    <meta name="twitter:description" content="MiniMax M2.7 answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a number that most people don’t realize is that large: The number of possible unique shuffles of a standard 52‑card deck (52 ! ≈ 8 × 10⁶⁷) is ast…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to MiniMax M2.7)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s a number that most people don’t realize is that large:\n\n**The number of possible unique shuffles of a standard 52‑card deck (52 ! ≈ 8 × 10⁶⁷) is astronomically larger than the total number of atoms on Earth (≈ 10⁵⁰).**  \n\nIn other words, every time you thoroughly shuffle a deck of cards, the exact ordering you create has almost certainly never existed before—*not in all of human history, not even if every person on the planet had been shuffling a new deck every second since the universe began.*  \n\nThe contrast is striking: the universe is about 13.8 billion years old, and there are roughly 8 billion people on Earth. Even if each of those 8 billion people shuffled a fresh deck 1 billion times per second for the entire age of the cosmos, they would still produce a tiny, tiny fraction of the 52 ! possible arrangements.  \n\nSo the next time you deal a hand of poker or perform a card trick, you’re holding a configuration that is, for all practical purposes, one‑of‑a‑kind.","author":{"@type":"Organization","name":"MiniMax"}},"suggestedAnswer":[{"@type":"Answer","text":"**Did you know there’s a jellyfish that can technically live forever?**\n\nThe tiny **Turritopsis dohrnii**, often called the “immortal jellyfish,” has a remarkable trick: when it gets old, damaged, or stressed, it can revert its cells back to their earliest, most primitive state and then develop all over again as a fresh polyp. In other words, it can **cycle back to its juvenile form** indefinitely, effectively cheating death.\n\n- **How it works:** The process, called **transdifferentiation**, lets the jellyfish transform differentiated cells (like muscle or nerve cells) into other cell types. It essentially “resets” its life clock.\n- **Where it lives:** It’s found in oceans worldwide, drifting in warm tropical waters.\n- **Why it matters:** Scientists study it to understand cellular aging and the limits of regeneration—knowledge that could one day inform medicine for age‑related diseases.\n\nSo, while most organisms follow a one‑way path from birth to death, *Turritopsis dohrnii* hits a **reset button** and starts over, making it the only known animal that can claim true biological “immortality.” 🐙✨","author":{"@type":"Organization","name":"MiniMax"}},{"@type":"Answer","text":"Here’s a little‑known fact that might surprise you:  \n\n**Bananas are berries, but strawberries aren’t.**  \n\nIn botanical terms, a berry is a fruit that develops from a single ovary and usually contains multiple seeds. By that definition, bananas, avocados, grapes, and tomatoes are all technically berries.  \n\nStrawberries, on the other hand, develop from a flower with multiple ovaries, and the “seeds” you see on the outside are actually individual ovaries (each containing a seed). So they’re classified as “aggregate fruits,” not berries.  \n\nIt’s a quirky quirk of plant taxonomy that makes a great conversation starter! If you’d like more surprising tidbits, just let me know.","author":{"@type":"Organization","name":"MiniMax"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>MiniMax M2.7</h1>
+        <p class="subtitle">MiniMax · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>March 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">MiniMax M2.7</div>
+                        <div class="model-provider">MiniMax</div>
+                        <div class="model-released">March 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s a number that most people don’t realize is that large:</p>
+<p><strong>The number of possible unique shuffles of a standard 52‑card deck (52 ! ≈ 8 × 10⁶⁷) is astronomically larger than the total number of atoms on Earth (≈ 10⁵⁰).</strong>  </p>
+<p>In other words, every time you thoroughly shuffle a deck of cards, the exact ordering you create has almost certainly never existed before—<em>not in all of human history, not even if every person on the planet had been shuffling a new deck every second since the universe began.</em>  </p>
+<p>The contrast is striking: the universe is about 13.8 billion years old, and there are roughly 8 billion people on Earth. Even if each of those 8 billion people shuffled a fresh deck 1 billion times per second for the entire age of the cosmos, they would still produce a tiny, tiny fraction of the 52 ! possible arrangements.  </p>
+<p>So the next time you deal a hand of poker or perform a card trick, you’re holding a configuration that is, for all practical purposes, one‑of‑a‑kind.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1917 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says &quot;Tell me something I don&#39;t know.&quot; This is a vague request. The user wants an interesting piece of knowledge. The assistant should produce a surprising fact. The user hasn&#39;t specified a domain; could be any. The assistant should think of an obscure or surprising fact across a range: science, history, nature, etc. They want something they don&#39;t know. But we don&#39;t know what the user knows. We need to give an interesting, perhaps surprising, fact. Should not be too generic. Must be correct, with potential references. Ensure we do not violate any policies. This is safe. We can give a fact about, say, octopus having three hearts, the fact that honey never spoils, the fact that bananas are berries but strawberries aren&#39;t, the fact that the shortest war in history lasted 38-45 minutes, the fact that the inventor of the Pringles can is Fredric Baur, and his ashes were placed in a Pringles can, etc. That would be surprising.
+
+But we can also mention something like &quot;The Great Barrier Reef is visible from outer space.&quot; Or &quot;The world&#39;s oldest known living tree is over 5,000 years old.&quot; Or &quot;The human nose can detect over 1 trillion smells.&quot; Or &quot;The Eiffel Tower can be 15 cm taller in summer due to expansion.&quot; That is surprising.
+
+Alternatively, something about astronomy: &quot;Neutron stars are so dense that a teaspoon of their material would weigh about 6 billion tons.&quot;
+
+We can also talk about language: &quot;The word &#39;set&#39; has the most definitions in English.&quot; Or &quot;The word &#39;pronoun&#39; has 6 letters but is often mispronounced.&quot; But that&#39;s less surprising.
+
+Better to give a clear fact with some context. Possibly something about a unique property of some material: &quot;Water can boil and freeze at the same time under certain pressure/temperature, called the triple point.&quot; That&#39;s interesting.
+
+We should also perhaps mention a lesser known historical fact: &quot;Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.&quot; That&#39;s surprising.
+
+We can combine multiple. The user wants something they don&#39;t know. So we can deliver a short piece with perhaps a brief explanation, maybe 2-3 sentences. Something surprising.
+
+We must not give false information. Provide accurate. Let&#39;s think of a few that are less known.
+
+Potential facts:
+
+- The shortest war in history was between Britain and Zanzibar on 27 August 1896; it lasted 38 minutes.
+
+- Honey never spoils; archaeologists have found 3000-year-old honey in Egyptian tombs still edible.
+
+- A day on Venus is longer than a year on Venus.
+
+- Octopuses have three hearts and blue blood.
+
+- The inventor of the Pringles can, Fredric Baur, was buried in a Pringles can.
+
+- Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.
+
+- The human brain can store approximately 2.5 petabytes of data.
+
+- The world&#39;s smallest known vertebrate is the Paedophryne amauensis frog, about 7.7 mm long.
+
+- The Great Red Spot on Jupiter is a storm that has been raging for at least 400 years.
+
+- The smell of rain is called petrichor.
+
+- The Pacific Ocean is larger than all the land on Earth combined.
+
+- A group of flamingos is called a flamboyance.
+
+- There are more stars in the universe than grains of sand on Earth.
+
+- The Eiffel Tower can be 15 cm taller in summer because heat expands the iron.
+
+- The total weight of ants on Earth equals the total weight of all humans.
+
+Pick one. Probably choose something like &quot;Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.&quot; That is surprising.
+
+But maybe better to choose &quot;Honey never spoils.&quot; That is a classic but still surprising. But the user may know it. Also many may know that honey is preserved. The Cleopatra fact is less known.
+
+Alternatively, &quot;The inventor of the Pringles can was buried in a Pringles can.&quot; That is quirky.
+
+But the user might be into odd facts. Provide a short surprising fact with a brief explanation. Could be about the &quot;triple point&quot; of water, where it can simultaneously be solid, liquid, and gas. That&#39;s a surprising physics fact.
+
+But also we can talk about &quot;The world&#39;s driest desert is the McMurdo Dry Valleys in Antarctica.&quot; That may be surprising.
+
+Or &quot;The human eye can distinguish about 10 million different colors.&quot; That is interesting.
+
+Alternatively, &quot;There are more possible iterations of a deck of cards (52!) than atoms on Earth.&quot; That is a popular fact. Many people don&#39;t know that.
+
+Actually, the number of permutations of a deck of cards is 52! ≈ 8×10^67, which is far greater than the estimated number of atoms on Earth (~10^50). That&#39;s mind-blowing.
+
+We can give that.
+
+Now, how to phrase it: &quot;Did you know that the number of possible arrangements of a standard 52-card deck (52 factorial) is so large that it&#39;s greater than the number of atoms on Earth?&quot; That&#39;s a fact. Many people don&#39;t know.
+
+Let&#39;s include a short context: &quot;That means if you shuffle a deck thoroughly, it&#39;s virtually certain that no identical shuffle has ever occurred before.&quot;
+
+We can also add a note: &quot;Even if every person on Earth shuffled a deck every second since the birth of the universe, the odds of two identical shuffles are still astronomically low.&quot;
+
+That would be interesting.
+
+But we need to ensure the numbers are correct.
+
+Calculate 52! = product from 1 to 52. Let&#39;s approximate: log10(52!) = sum(log10(i)). Using known values: log10(52!) ≈ 67. The exact value is about 8.0658175e+67. Number of atoms on Earth: Earth mass ≈ 5.972e24 kg. Using average atomic mass about 1.66e-27 kg (hydrogen). So number of atoms ~ 3.6e51. But more precise, about 10^50. So indeed 52! &gt;&gt; 10^50.
+
+Thus that is correct.
+
+So the answer: &quot;The number of possible shuffles of a deck of cards is larger than the number of atoms on Earth.&quot; That is a fact.
+
+But maybe also mention &quot;The number of possible unique shuffles is greater than the number of grains of sand on all the world&#39;s beaches.&quot; That is also interesting. But we can just mention one.
+
+We can also mention the Cleopatra fact. But maybe combine two facts? The request: &quot;Tell me something I don&#39;t know.&quot; Probably one fact is sufficient. But we can provide a few interesting facts.
+
+But be careful not to overload. Could provide 2 or 3, but ensure they are not too common. However the user asked for &quot;something I don&#39;t know.&quot; We can present a selection of surprising facts, possibly a bullet list.
+
+Better to provide a single well-elaborated fact. It will be more impactful.
+
+Thus, I will answer with a surprising fact about the permutations of a deck of cards.
+
+We can also include a short explanation of why it&#39;s surprising. For instance, &quot;Because the number is so huge, any time you shuffle a deck, you are virtually guaranteed to produce an arrangement that has never existed before.&quot;
+
+Additionally, we could also talk about &quot;The Cleopatra fact&quot; as a secondary. But the instruction &quot;Tell me something I don&#39;t know.&quot; It might be interpreted as &quot;Give me a piece of information.&quot; So we can give one fact. However it&#39;s not disallowed to provide more than one. But better to be safe: one strong fact.
+
+Thus answer: &quot;The number of possible unique shuffles of a standard 52-card deck (52 factorial) is greater than the estimated number of atoms on Earth. This means that if you shuffle a deck thoroughly, it&#39;s virtually certain that the exact ordering has never occurred before in history.&quot;
+
+Alternatively, also mention &quot;If you shuffle a deck every second since the universe began, you&#39;d still be far from exhausting all possibilities.&quot;
+
+Make it interesting and show the magnitude.
+
+Thus answer.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p><strong>Did you know there’s a jellyfish that can technically live forever?</strong></p>
+<p>The tiny <strong>Turritopsis dohrnii</strong>, often called the “immortal jellyfish,” has a remarkable trick: when it gets old, damaged, or stressed, it can revert its cells back to their earliest, most primitive state and then develop all over again as a fresh polyp. In other words, it can <strong>cycle back to its juvenile form</strong> indefinitely, effectively cheating death.</p>
+<ul>
+<li><strong>How it works:</strong> The process, called <strong>transdifferentiation</strong>, lets the jellyfish transform differentiated cells (like muscle or nerve cells) into other cell types. It essentially “resets” its life clock.</li>
+<li><strong>Where it lives:</strong> It’s found in oceans worldwide, drifting in warm tropical waters.</li>
+<li><strong>Why it matters:</strong> Scientists study it to understand cellular aging and the limits of regeneration—knowledge that could one day inform medicine for age‑related diseases.</li>
+</ul>
+<p>So, while most organisms follow a one‑way path from birth to death, <em>Turritopsis dohrnii</em> hits a <strong>reset button</strong> and starts over, making it the only known animal that can claim true biological “immortality.” 🐙✨</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1446 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says &quot;Tell me something I don&#39;t know.&quot;
+
+We need to respond with something interesting, obscure, possibly surprising. It&#39;s an open-ended request. Could give a fun fact, an obscure scientific fact, historical oddity, a quirky piece of trivia.
+
+We must comply with policy: no disallowed content. This is safe. We should ensure we respond with something that is unknown to many. Provide a surprising fact, maybe in a concise but engaging way.
+
+The user wants something they don&#39;t know. We could ask for context (like what field they&#39;re interested) but they just want something unknown. We can give a variety of facts.
+
+We should aim to be accurate, not overly vague. Provide a &quot;did you know&quot; that is unique.
+
+We could talk about &quot;Octopuses have three hearts and blue blood,&quot; but many know that. Perhaps something more obscure: &quot;Honey never spoils; archaeologists have found 3000-year-old honey in Egyptian tombs that is still edible.&quot; Many know that but maybe not all.
+
+Alternatively, talk about &quot;The Great Wall of China is not visible from space with the naked eye,&quot; but that&#39;s known.
+
+Better to give something like &quot;A day on Venus is longer than its year,&quot; but that&#39;s known.
+
+We could talk about &quot;The inventor of the Pringles can, Fredric Baur, had his ashes placed inside a Pringles can when he died.&quot; That&#39;s interesting. Many may not know.
+
+Or &quot;The shortest war in history lasted 38 to 45 minutes, between Britain and Zanzibar in 1896.&quot; But that&#39;s known to some.
+
+We can also talk about &quot;The Eiffel Tower can grow 15 centimeters taller during hot summer days due to thermal expansion.&quot; Some know.
+
+We can give a random unknown fact about animals: &quot;Crows can recognize human faces and hold grudges.&quot; Many know.
+
+Maybe &quot;The inventor of the modern calendar, or something about the reason why we have leap years.&quot;
+
+Another obscure fact: &quot;The Amazon rainforest produces about 20% of the world&#39;s oxygen.&quot; That&#39;s known.
+
+Perhaps something about plants: &quot;Bananas are berries, but strawberries aren&#39;t.&quot; This is interesting.
+
+We could mention that &quot;The first computer programmer was a woman, Ada Lovelace.&quot;
+
+But the user wants something they don&#39;t know. Could try to produce a fact that is surprising.
+
+Alternatively, talk about &quot;The world&#39;s oldest known living tree is over 5,000 years old, located in California.&quot; Might be known.
+
+Alternatively, &quot;The smell of rain is called petrichor.&quot; That&#39;s known.
+
+Maybe talk about &quot;The human nose can detect over one trillion different scents.&quot; Known.
+
+Another: &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; Many might not know.
+
+But something more surprising: &quot;There are more possible iterations of a chess game than atoms in the observable universe.&quot; That&#39;s known.
+
+Maybe talk about &quot;The ocean is deeper than the tallest mountain is tall.&quot; That&#39;s known.
+
+Better to give something less known: &quot;The total weight of ants on Earth roughly equals the total weight of humans.&quot; Some might not know.
+
+But maybe something about &quot;The tongue prints are unique like fingerprints.&quot; That might be new.
+
+Could talk about &quot;The human brain can store the equivalent of 2.5 million gigabytes of data.&quot; Known.
+
+Perhaps talk about &quot;The longest snake ever found was 7.67 meters (25 ft) long.&quot; Known.
+
+We could talk about &quot;The moon is slowly drifting away from Earth at about 3.8 cm per year.&quot; Some know.
+
+But we could talk about something in physics: &quot;The concept of &#39;absolute zero&#39; is unattainable, but we have gotten within a fraction of a degree above it.&quot;
+
+Alternatively, something about mathematics: &quot;The sum of the numbers 1 to 100 is 5050, but there is a formula that Gauss discovered.&quot;
+
+Better to give something random: &quot;The world&#39;s oldest known joke is a Sumerian proverb from around 1900 BC about flatulence.&quot; That is obscure.
+
+Ok maybe we can give a short list of one fact, making it interesting.
+
+We could also ask follow-up: &quot;Would you like more?&quot; But the user asked directly.
+
+I think I&#39;ll respond with a single fact, perhaps an obscure one about human biology: &quot;Your stomach gets a new lining every 3-4 days to prevent it from digesting itself.&quot; That is interesting.
+
+Alternatively, &quot;There are more trees on Earth than stars in the Milky Way.&quot; That&#39;s known.
+
+Alternatively, &quot;Humans share 60% of their DNA with bananas.&quot; That&#39;s known.
+
+We can give an odd fact about the Olympics: &quot;The ancient Olympic games lasted for 5 days.&quot;
+
+Better to choose something unknown but also fascinating: &quot;The inventor of the Pringles can, Fredric Baur, asked his children to bury his ashes in a Pringles can.&quot; That&#39;s obscure.
+
+Alternatively, &quot;There is a species of jellyfish that is biologically immortal: Turritopsis dohrnii.&quot; Many may not know.
+
+I think I&#39;ll mention the immortal jellyfish and maybe a short explanation. That is a great fact.
+
+Thus answer: &quot;Did you know the &#39;immortal jellyfish&#39; can revert its cells back to its earliest form and develop again, essentially cheating death?&quot;
+
+Add some context. Make it engaging.
+
+We could also mention &quot;The world’s oldest known living organism is a 80,000-year-old fungal network in Oregon.&quot;
+
+Alternatively, something about the Universe: &quot;The largest known star, UY Scuti, has a radius about 1,700 times that of the Sun.&quot;
+
+Ok.
+
+I&#39;ll answer with the immortal jellyfish fact, perhaps also mention it&#39;s called Turritopsis dohrnii.
+
+We can also mention that it&#39;s only one known species that can age backwards.
+
+Let&#39;s produce final answer: Provide the fact, some explanation, maybe how it works (transdifferentiation). It&#39;s surprising.
+
+Will also keep tone engaging.
+
+Proceed.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s a little‑known fact that might surprise you:  </p>
+<p><strong>Bananas are berries, but strawberries aren’t.</strong>  </p>
+<p>In botanical terms, a berry is a fruit that develops from a single ovary and usually contains multiple seeds. By that definition, bananas, avocados, grapes, and tomatoes are all technically berries.  </p>
+<p>Strawberries, on the other hand, develop from a flower with multiple ovaries, and the “seeds” you see on the outside are actually individual ovaries (each containing a seed). So they’re classified as “aggregate fruits,” not berries.  </p>
+<p>It’s a quirky quirk of plant taxonomy that makes a great conversation starter! If you’d like more surprising tidbits, just let me know.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>447 tokens</span>
+                    <span class="topic-tag" data-topic="bananas">🍌 bananas</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking &quot;Tell me something I don&#39;t know.&quot; This is a vague request, but we can comply. We can provide a surprising or interesting fact that a user might not know. It&#39;s not disallowed content. It&#39;s a request for a random fact. So we can comply.
+
+We must ensure not to break any policy. Provide a fact from a range of topics. Something like &quot;Honey never spoils.&quot; That&#39;s a well-known but some might not know. Or &quot;Octopuses have three hearts.&quot; Or &quot;Bananas are berries, but strawberries aren&#39;t.&quot; Or &quot;A day on Venus is longer than its year.&quot; Or &quot;There are more stars in the universe than grains of sand.&quot; Provide a short but interesting fact.
+
+We can also ask follow-up if they&#39;d like more. But the request is straightforward. So we can respond with something interesting.
+
+Let&#39;s pick a fact: The Great Wall of China is not visible from space with the naked eye. That is a common myth. But we can state that it&#39;s a myth.
+
+Alternatively, something about the number of possible unique chess games being more than atoms in the observable universe.
+
+Or &quot;A group of flamingos is called a flamboyance.&quot; That&#39;s cute.
+
+Alternatively, &quot;The inventor of the Pringles can is Fredric Baur, and his ashes were placed in a Pringles can.&quot; That&#39;s macabre.
+
+We should ensure no disallowed content.
+
+Thus respond with a fun fact. Provide context.
+
+We should respond in a friendly tone.
+
+Now proceed.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/openai-gpt-5.4-nano/">← GPT - 5.4 Nano</a>
+            <a href="/">all models</a>
+            <a href="/m/xiaomi-mimo-v2-pro/">MiMo-V2-Pro →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>

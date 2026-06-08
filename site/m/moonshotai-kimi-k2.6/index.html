@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi K2.6 — Tell me something I don't know.</title>
+    <meta name="description" content="Kimi K2.6 answers &quot;Tell me something I don&#39;t know.&quot; — The Oxford Electric Bell has been ringing continuously since 1840—and no one is entirely sure what the battery inside it is made of. It sits in a displa…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k2.6/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k2.6/">
+    <meta property="og:title" content="Kimi K2.6 — Tell me something I don't know.">
+    <meta property="og:description" content="Kimi K2.6 answers &quot;Tell me something I don&#39;t know.&quot; — The Oxford Electric Bell has been ringing continuously since 1840—and no one is entirely sure what the battery inside it is made of. It sits in a displa…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimi K2.6 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Kimi K2.6 answers &quot;Tell me something I don&#39;t know.&quot; — The Oxford Electric Bell has been ringing continuously since 1840—and no one is entirely sure what the battery inside it is made of. It sits in a displa…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Kimi K2.6)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"The **Oxford Electric Bell** has been ringing continuously since **1840**—and no one is entirely sure what the battery inside it is made of.\n\nIt sits in a display case at the University of Oxford and consists of two brass bells with a metal clapper swinging between them, driven by a pair of \"dry piles\" (an early form of battery). It has rung roughly **10 billion times** so far.\n\nScientists have theories about the composition, but the only way to know for certain would be to take the apparatus apart—which would end the experiment. So, for nearly two centuries, it has just kept going, quietly outlasting every human who has ever watched it.","author":{"@type":"Organization","name":"Moonshot AI"}},"suggestedAnswer":[{"@type":"Answer","text":"Because the universe is expanding at an accelerating rate, we are living in a uniquely privileged — and temporary — window of cosmic history.\n\nIn roughly 100 billion years, any intelligent civilization that arises in our local galaxy group will look out into the night sky and conclude, with perfect scientific rigor, that the universe is static, eternal, and contains only a single galaxy. They will find no evidence of the Big Bang. The cosmic microwave background will have been stretched into undetectable nothingness. The redshift of distant galaxies will be invisible, because those galaxies will have receded beyond the cosmic event horizon faster than their light can ever reach us. Even the abundance of light elements will have become ambiguous without the context of an expanding universe.\n\nIn short, the correct answer to the ultimate question of where everything came from is literally evaporating as we speak. Future astronomers will be born into a universe that actively hides its own origin story — and they will have no way of knowing what we know right now.","author":{"@type":"Organization","name":"Moonshot AI"}},{"@type":"Answer","text":"Teaching began at Oxford University in **1096**—more than 330 years before the Aztec Empire was founded in **1428**.\n\nIt’s easy to file both under “ancient history,” but Oxford had already been around long enough to develop colleges, dismiss students for rowdy behavior, and weather the Black Death before the Aztecs even formed their Triple Alliance in the Valley of Mexico.","author":{"@type":"Organization","name":"Moonshot AI"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Kimi K2.6</h1>
+        <p class="subtitle">Moonshot AI · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Kimi K2.6</div>
+                        <div class="model-provider">Moonshot AI</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>The <strong>Oxford Electric Bell</strong> has been ringing continuously since <strong>1840</strong>—and no one is entirely sure what the battery inside it is made of.</p>
+<p>It sits in a display case at the University of Oxford and consists of two brass bells with a metal clapper swinging between them, driven by a pair of &quot;dry piles&quot; (an early form of battery). It has rung roughly <strong>10 billion times</strong> so far.</p>
+<p>Scientists have theories about the composition, but the only way to know for certain would be to take the apparatus apart—which would end the experiment. So, for nearly two centuries, it has just kept going, quietly outlasting every human who has ever watched it.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1048 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a very open-ended prompt. Since I don&#39;t know what the user already knows, I should provide an interesting, surprising, or obscure fact that most people are unlikely to know. 
+
+I should pick something that is:
+1. Verifiably true
+2. Interesting and memorable
+3. Not commonly known trivia
+4. Potentially mind-bending or counterintuitive
+
+Some options:
+- The fact that oxford university is older than the aztec empire
+- The fact that honey never spoils
+- The fact that there are more trees on Earth than stars in the Milky Way (actually, this might be debatable/commonly known)
+- The fact that wombat poop is cube-shaped
+- The fact that bananas are berries but strawberries aren&#39;t
+- The fact that the national animal of Scotland is the unicorn
+- The fact that Cleopatra lived closer in time to the moon landing than to the building of the Great Pyramid
+- The fact that a day on Venus is longer than a year on Venus
+- The fact that octopuses have three hearts and blue blood
+- The fact that the shortest war in history lasted 38 minutes (Anglo-Zanzibar War)
+
+Let me go with something perhaps slightly more obscure but fascinating:
+
+&quot;The Ottoman Empire still existed the last time the Chicago Cubs won the World Series before 2016.&quot; Wait, the Cubs won in 1908 and the Ottoman Empire ended in 1922, so that&#39;s false. Actually, the Ottoman Empire existed when the Cubs last won before 2016 (1908). So that works but let me check: Cubs won in 1908, Ottoman Empire dissolved 1922. Yes, that&#39;s true.
+
+But maybe something more scientific/counterintuitive:
+
+&quot;The human body has more bacterial cells than human cells&quot; - though this is commonly cited, recent research suggests it might be closer to a 1:1 ratio, so this might be outdated.
+
+How about: &quot;Nintendo was founded in 1889&quot; - surprising because we associate them with video games, but they started as a playing card company. This is pretty well known though.
+
+&quot;A cloud can weigh more than a million pounds.&quot; This is surprising and true.
+
+&quot;There&#39;s a species of jellyfish that is biologically immortal.&quot; (Turritopsis dohrnii)
+
+&quot;The acronym &#39;OMG&#39; was first used in a letter to Winston Churchill in 1917.&quot;
+
+Wait, I like the jellyfish one, or maybe something about time perception.
+
+How about this: &quot;The present year is closer to the year 2050 than to the year 1990.&quot; Let&#39;s check: 2024 - 1990 = 34 years. 2050 - 2024 = 26 years. Yes, that&#39;s true and mind-bending for people who think of the 90s as &quot;10 years ago.&quot;
+
+But that might be too depressing/common.
+
+Let me go with something more obscure and delightful:
+
+&quot;The Oxford Electric Bell in Oxford University has been ringing continuously since 1840, and nobody knows exactly what the battery is made of because they don&#39;t want to take it apart to find out.&quot;
+
+Wait, is this true? Let me verify mentally. The Oxford Electric Bell (also called Clarendon Dry Pile) was set up in 1840 and has rung about 10 billion times. It consists of two dry piles (a type of battery) and nobody wants to dismantle it to examine the exact composition because it would ruin the experiment. Yes, this is true and fascinating.
+
+Another option: &quot;Wombats poop cubes.&quot; This is true and bizarre.
+
+Another: &quot;The national animal of Scotland is the unicorn.&quot;
+
+Another: &quot;A jiffy is an actual unit of time.&quot; (In physics, it&#39;s the time light takes to travel 1 cm, or in computing, 1/100th of a second).
+
+I&#39;ll go with the Oxford Electric Bell. It&#39;s specific, fascinating, and most people won&#39;t know it.
+
+Let me double-check facts:
+- Located in the Clarendon Laboratory, Oxford University
+- Set up in 1840
+- Has been ringing continuously (though the bell itself is barely audible now)
+- The exact composition of the dry piles is unknown because examining them would require disassembling the apparatus
+- It&#39;s one of the world&#39;s longest-running experiments
+
+Yes, this is accurate and interesting.
+
+I should present it clearly and engagingly.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Because the universe is expanding at an accelerating rate, we are living in a uniquely privileged — and temporary — window of cosmic history.</p>
+<p>In roughly 100 billion years, any intelligent civilization that arises in our local galaxy group will look out into the night sky and conclude, with perfect scientific rigor, that the universe is static, eternal, and contains only a single galaxy. They will find no evidence of the Big Bang. The cosmic microwave background will have been stretched into undetectable nothingness. The redshift of distant galaxies will be invisible, because those galaxies will have receded beyond the cosmic event horizon faster than their light can ever reach us. Even the abundance of light elements will have become ambiguous without the context of an expanding universe.</p>
+<p>In short, the correct answer to the ultimate question of where everything came from is literally evaporating as we speak. Future astronomers will be born into a universe that actively hides its own origin story — and they will have no way of knowing what we know right now.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2529 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a very open-ended request. I need to provide an interesting, surprising, or obscure fact or piece of information that most people are unlikely to know. 
+
+I should avoid:
+- Common trivia that everyone knows (e.g., &quot;bananas are berries&quot;)
+- Potentially harmful information
+- Overly controversial topics
+- Anything too personal
+
+Good options:
+- A historical oddity
+- A scientific phenomenon with a fascinating twist
+- A linguistic curiosity
+- A mathematical paradox or pattern
+- An obscure natural phenomenon
+
+Let me think of something genuinely surprising and well-verified:
+
+1. **The &quot;Wow! signal&quot;** - maybe too well known?
+2. **Trees communicate via fungal networks** - fairly well known now
+3. **The shortest war in history was 38-45 minutes** (Anglo-Zanzibar War) - somewhat known
+4. **Octopuses have three hearts, blue blood, and their arms contain most of their neurons** - fairly known
+5. **There&#39;s a species of jellyfish that is biologically immortal** (Turritopsis dohrnii) - somewhat known
+6. **The word &quot;set&quot; has the most definitions in English** - somewhat known
+7. **Vending machines kill more people per year than sharks** - often cited, maybe apocryphal/ misleading
+8. **Neutrinos pass through us constantly** - somewhat known
+
+Let me go for something more obscure but fascinating:
+
+**The McGurk Effect** - interesting but might be known to some.
+
+**The fact that the human body glows in visible light** (biophotons) - very dimly, but true. Could be interesting.
+
+**Oxford University is older than the Aztec Empire** - fairly well circulated.
+
+**Nintendo was founded in 1889** - fairly known.
+
+**The Tardigrade (water bear) survival** - well known.
+
+**The largest living organism is a fungus in Oregon (Armillaria ostoyae)** - somewhat known.
+
+**Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** - very well known.
+
+Let me think of something more niche:
+
+- **The Great Emu War** - somewhat known
+- **A day on Venus is longer than a year on Venus** - well known
+- **Honey never spoils** - well known
+
+How about something from mathematics or physics that&#39;s counterintuitive:
+
+- **If you shuffle a deck of cards thoroughly, that exact order has almost certainly never existed before in the history of card shuffling.** This is a great one. The number of possible permutations of a 52-card deck is 52 factorial (8.07 × 10^67). It&#39;s so large that every time you shuffle a deck, you are almost certainly holding an arrangement that has never existed before and will likely never exist again. This is mind-blowing and verifiable.
+
+Or from history:
+
+- **The country of Liechtenstein once accidentally invaded Switzerland with 80 soldiers... and came back with 81** (they made a friend). This is charming and true (1866).
+
+Or from biology:
+
+- **Sloths can hold their breath longer than dolphins** (40 minutes vs 10-15 minutes) due to incredibly slow metabolisms and adaptations. This is true and surprising.
+
+Or from astronomy:
+
+- **There&#39;s a star called BPM 37093, or &quot;Lucy,&quot; that is a diamond the size of Earth.** It&#39;s a white dwarf with a crystallized carbon core. True and fascinating.
+
+Or from linguistics:
+
+- **The D2C (Double Deception Chirp) or the fact that some languages don&#39;t have words for &quot;left&quot; and &quot;right&quot; and use cardinal directions instead.** (Guugu Yimithirr). Fascinating.
+
+I think I&#39;ll go with the **deck of cards** fact because it&#39;s mathematically profound and genuinely mind-expanding. But let me make sure to frame it well.
+
+Alternatively, the **Liechtenstein** one is fun and memorable.
+
+Or: **The average cloud weighs about 1.1 million pounds.** Counterintuitive because they float.
+
+Actually, let me go with something even more obscure and philosophical/scientific:
+
+**The &quot;bootstrap paradox&quot; in time travel has a real-world analog in DNA:** some viruses have been found to contain genetic sequences that appear to have been stolen from their hosts... but in some cases, the host organisms actually acquired those sequences from the viruses millions of years ago. So the genes exist in a causal loop—no clear origin.
+
+But that might be too complex.
+
+Let&#39;s go with the **shuffled deck** fact. It&#39;s clean, verifiable, and awe-inspiring.
+
+Wait, actually, there&#39;s something even cooler: **The Fermi Paradox and the &quot;Great Filter&quot;** might be too well-known.
+
+How about: **When you look at a rainbow, you&#39;re seeing a unique optical phenomenon that exists only for your eyes.** The rainbow is a full circle (not an arc), but the ground blocks the bottom half. More importantly, no two people see the exact same rainbow because the antisolar point is centered differently for each observer. It&#39;s a personal optical illusion. This is true and elegant.
+
+But the deck of cards is stronger.
+
+Let me write about the deck of cards. I&#39;ll make it punchy and clear.
+
+Structure:
+1. State the fact directly.
+2. Explain the math briefly (52!).
+3. Give a comparison to make it visceral.
+4. Close with the implication.
+
+Actually, I want to make sure it&#39;s something truly likely unknown. The deck thing is popular on Reddit. Let me think of something more obscure.
+
+**The Pythagorean comma:** In music theory, if you tune a piano using perfect fifths (frequency ratio 3:2) all the way around the circle, when you get back to C, you&#39;re not actually at C. You&#39;re off by about 23 cents. This is why equal temperament exists. Might be too niche.
+
+**Sharks predate trees.** Sharks have existed for about 400 million years, while trees (as we know them) evolved around 350-360 million years ago. So sharks are older than trees. This is true and surprising.
+
+**Otters have pockets.** Sea otters have loose skin under their forearms where they store rocks and food. Very cute, somewhat known.
+
+**Wombat poop is cube-shaped.** Known.
+
+**The U.S. Navy uses Xbox controllers to operate submarine periscopes.** Known.
+
+**There is a species of frog that gives birth through its mouth.** (Gastric-brooding frog). True, extinct, fascinating.
+
+**The total weight of all ants on Earth is roughly equal to the total weight of all humans.** Often cited, disputed, but still interesting.
+
+**The human eye has a blind spot where the optic nerve exits the retina, but your brain fills it in.** Known.
+
+**The Vatican has its own observatory, and the director is an astronomer who studies meteorites.** (Guy Consolmagno). Interesting but niche.
+
+**Bananas are slightly radioactive due to potassium-40.** Known.
+
+**If you fold a piece of paper 42 times, it would reach the moon.** Known.
+
+**The national animal of Scotland is the unicorn.** Known.
+
+**A jiffy is an actual unit of time.** Known (1/100th second in physics, or Planck time).
+
+**The word &quot;quiz&quot; was allegedly invented as a bet in Dublin in 1791.** Apocryphal.
+
+Let&#39;s go with **sharks are older than trees**. It&#39;s concise, scientifically accurate, and mind-bending from a temporal perspective.
+
+Wait, I recall something even better: **Turtles can breathe through their butts** (cloacal respiration). True for some species. But somewhat known.
+
+How about a historical fact:
+**In 1912, a Parisian orphanage held a raffle where the prizes were live babies.** This is true and horrifying. The &quot;Lottery of the Twins&quot; or similar? Actually, there was a &quot;baby raffle&quot; in 1912 at a Paris foundling hospital to raise money. It happened. But maybe too dark.
+
+**The shortest scheduled commercial flight in the world is between Westray and Papa Westray in Scotland, lasting about 90 seconds.** Known.
+
+**Oxford University is older than the Aztec Empire.** Known.
+
+**The current U.S. flag was designed by a high school student for a class project. He got a B-.** (Robert Heft). Known.
+
+Let&#39;s pivot to a profound physics/cosmology fact that is less commonly discussed:
+
+**Most of the universe can never be observed.** Due to the expansion of the universe accelerating, there are galaxies whose light will never reach us because the space between us is expanding faster than light can traverse it (this is allowed because it&#39;s space itself expanding). This means the &quot;observable universe&quot; is a shrinking fraction of the total universe. Even more striking: if humans had evolved 100 billion years from now, we would think the universe consisted of just one galaxy (the merged Milky Way/Andromeda), because everything else would have receded beyond our cosmic horizon. The Big Bang itself would be undetectable. This is a profound and true cosmological fact.
+
+This is excellent. It&#39;s called the &quot;Future Cosmic Horizon&quot; or &quot;disappearing universe&quot; problem. Let me verify the details:
+- Yes, because of dark energy and accelerating expansion, the Hubble sphere and event horizon mean distant galaxies are receding faster than c.
+- In ~100 billion years, the cosmic microwave background will be redshifted beyond detectability.
+- Future civilizations would not be able to infer the Big Bang because all evidence (CMB, redshift of galaxies, abundance of light elements) would be gone or inaccessible.
+- They would see a static, eternal universe with one giant galaxy.
+
+This is genuinely something most people don&#39;t know, and it&#39;s deeply profound. It challenges the idea that science converges on truth regardless of epoch.
+
+I&#39;ll present this clearly.
+
+Alternative: **You have never seen your own face.** You&#39;ve seen reflections and photos, but not your actual face directly (without mirrors/reflections). Philosophical, somewhat known.
+
+I&#39;ll go with the **disappearing universe / lost cosmology** fact. It&#39;s scientifically robust and deeply humbling.
+
+Draft:
+&quot;Here is something humbling: because the universe is expanding at an accelerating rate, we are living in a uniquely privileged time when the truth about the cosmos is still visible. In roughly 100 billion years, any intelligent life that arises in our galaxy will look out into the void and conclude—incorrectly but logically—that the universe is static, eternal, and contains only a single galaxy. All evidence of the Big Bang, including the cosmic microwave background and the redshift of distant galaxies, will have stretched beyond detection or disappeared beyond the cosmic event horizon. They will be unable to discover that the universe had a beginning. In other words, the correct answer to the ultimate question of where everything came from is literally evaporating as we speak, and future astronomers will be born into a universe that hides its own history.&quot;
+
+That&#39;s strong. Let me refine it slightly for readability and tone.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Teaching began at Oxford University in <strong>1096</strong>—more than 330 years before the Aztec Empire was founded in <strong>1428</strong>.</p>
+<p>It’s easy to file both under “ancient history,” but Oxford had already been around long enough to develop colleges, dismiss students for rowdy behavior, and weather the Black Death before the Aztecs even formed their Triple Alliance in the Valley of Mexico.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>762 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a very open-ended request. Since I don&#39;t know what the user already knows, I should provide an interesting, counterintuitive, or obscure fact that is likely to be new to most people. 
+
+I should pick something that is:
+1. Verifiably true
+2. Interesting/surprising
+3. Not extremely common knowledge
+4. Potentially useful or thought-provoking
+
+Some options:
+- Honey never spoils (somewhat common)
+- Bananas are berries, strawberries aren&#39;t (fairly common)
+- Octopuses have three hearts (fairly common)
+- The shortest war in history was 38 minutes (Zanzibar)
+- More time separates Stegosaurus from T-Rex than T-Rex from us
+- Wombat poop is cube-shaped
+- Oxford University is older than the Aztec Empire
+- Cleopatra lived closer to the moon landing than to the building of the Great Pyramid
+- A day on Venus is longer than a year on Venus
+- Most clouds weigh around a million pounds
+
+I think I&#39;ll go with the Venus fact, or perhaps the Oxford/Aztec fact, or the T-Rex/Stegosaurus fact. These are mind-bending in terms of time perception.
+
+Actually, let me go with something a bit more obscure but equally surprising: **The inventor of the frisbee was turned into a frisbee after he died.** Walter Morrison invented the frisbee, and his ashes were molded into a frisbee. That&#39;s pretty memorable.
+
+Or: **Nintendo was founded in 1889.** Most people think of them as a video game company from the 1980s, but they started as a playing card company in the 19th century.
+
+Or: **There are more possible iterations of a game of chess than there are atoms in the observable universe.** (Shannon number vs atoms).
+
+Let me go with the Nintendo one combined with a bit more context, or perhaps the chess one. The chess fact is mathematically fascinating.
+
+Actually, let me go with something more biological and weird: **The mantis shrimp has 12-16 color receptors (cones) in its eyes, compared to humans&#39; 3.** But wait, studies suggest they might not see more colors - they actually process color differently, more like a scanner. That&#39;s interesting and counterintuitive.
+
+Or: **If you could fold a piece of paper 42 times, it would reach the moon.** (Mathematically true, though physically impossible).
+
+I think I&#39;ll provide the **paper folding to the moon** fact because it&#39;s mathematically surprising and easy to verify, but many people haven&#39;t thought about exponential growth this way.
+
+Wait, let me reconsider. The user said &quot;Tell me something I don&#39;t know&quot; - singular. I should give one really good fact, not a list.
+
+Let me go with: **Oxford University is older than the Aztec Empire.**
+
+Teaching at Oxford began in 1096. The Aztec Empire was founded in 1428. That&#39;s a difference of over 300 years. This is a great fact because it challenges our mental timeline of &quot;Old World&quot; vs &quot;New World&quot; civilizations.
+
+I&#39;ll present this clearly and concisely, perhaps with a bit of context to make it land properly.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/anthropic-claude-opus-4.7/">← Claude Opus 4.7</a>
+            <a href="/">all models</a>
+            <a href="/m/inclusionai-ling-2.6-flash-free/">Ling 2.6 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>

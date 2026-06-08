@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 3.6 35B A3B — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen 3.6 35B A3B answers &quot;Tell me something I don&#39;t know.&quot; — I can&#39;t know what you already know, but here&#39;s something genuinely obscure that most people haven&#39;t encountered: At standard atmospheric pressure, heliu…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-35b-a3b/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.6-35b-a3b/">
+    <meta property="og:title" content="Qwen 3.6 35B A3B — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen 3.6 35B A3B answers &quot;Tell me something I don&#39;t know.&quot; — I can&#39;t know what you already know, but here&#39;s something genuinely obscure that most people haven&#39;t encountered: At standard atmospheric pressure, heliu…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen 3.6 35B A3B — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen 3.6 35B A3B answers &quot;Tell me something I don&#39;t know.&quot; — I can&#39;t know what you already know, but here&#39;s something genuinely obscure that most people haven&#39;t encountered: At standard atmospheric pressure, heliu…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen 3.6 35B A3B)","answerCount":1,"acceptedAnswer":{"@type":"Answer","text":"I can't know what you already know, but here's something genuinely obscure that most people haven't encountered:\n\n**At standard atmospheric pressure, helium is the only element in the universe that cannot be turned into a solid, no matter how close to absolute zero you get.**\n\nIf you cool helium to 0 Kelvin (-273.15°C) at 1 atmosphere of pressure, it remains a liquid forever. It only solidifies if you simultaneously apply extreme pressure (roughly 25 times Earth's atmospheric pressure) *and* cool it down. Even then, it forms a very delicate quantum solid that behaves more like a superfluid than a traditional crystal.\n\n**Why it matters:** This happens because helium atoms are so light and interact so weakly with each other that their quantum zero-point energy (the inherent jitter they have even at absolute zero) is strong enough to prevent them from locking into a fixed lattice. It's one of the most striking real-world examples of quantum mechanics overriding classical intuition, and it's why liquid helium is essential for cooling MRI machines, particle accelerators, and quantum computers.\n\nIf you've heard this before, let me know your interests and I'll dig into something more tailored.","author":{"@type":"Organization","name":"Qwen"}}}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen 3.6 35B A3B</h1>
+        <p class="subtitle">Qwen · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>April 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen 3.6 35B A3B</div>
+                        <div class="model-provider">Qwen</div>
+                        <div class="model-released">April 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can&#39;t know what you already know, but here&#39;s something genuinely obscure that most people haven&#39;t encountered:</p>
+<p><strong>At standard atmospheric pressure, helium is the only element in the universe that cannot be turned into a solid, no matter how close to absolute zero you get.</strong></p>
+<p>If you cool helium to 0 Kelvin (-273.15°C) at 1 atmosphere of pressure, it remains a liquid forever. It only solidifies if you simultaneously apply extreme pressure (roughly 25 times Earth&#39;s atmospheric pressure) <em>and</em> cool it down. Even then, it forms a very delicate quantum solid that behaves more like a superfluid than a traditional crystal.</p>
+<p><strong>Why it matters:</strong> This happens because helium atoms are so light and interact so weakly with each other that their quantum zero-point energy (the inherent jitter they have even at absolute zero) is strong enough to prevent them from locking into a fixed lattice. It&#39;s one of the most striking real-world examples of quantum mechanics overriding classical intuition, and it&#39;s why liquid helium is essential for cooling MRI machines, particle accelerators, and quantum computers.</p>
+<p>If you&#39;ve heard this before, let me know your interests and I&#39;ll dig into something more tailored.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>3096 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Here&#39;s a thinking process:
+
+1.  **Analyze User Input:**
+   - **Request:** &quot;Tell me something I don&#39;t know.&quot;
+   - **Nature:** Open-ended, seeks novelty, curiosity-driven.
+   - **Challenge:** I can&#39;t know what the user already knows, so I need to pick something genuinely obscure, fascinating, and verifiable, while acknowledging the limitation.
+
+2.  **Key Requirements for the Response:**
+   - Must be factually accurate
+   - Should be relatively unknown to the general public
+   - Should be interesting/engaging
+   - Should include context or explanation to make it meaningful
+   - Should acknowledge the inherent limitation (can&#39;t know what they know)
+
+3.  **Brainstorming Topics:**
+   - Biology/Neuroscience: &quot;Your brain can&#39;t process visual input during saccades, but your brain fills in the gaps so you don&#39;t notice.&quot;
+   - History: &quot;The shortest war in history lasted 38-45 minutes (Anglo-Zanzibar War, 1896).&quot;
+   - Physics/Space: &quot;Neutron stars can spin up to 716 times per second.&quot;
+   - Linguistics: &quot;The word &#39;set&#39; has the most definitions in English (over 430 in the OED).&quot;
+   - Nature/Animals: &quot;Crows recognize and remember human faces for years.&quot;
+   - Geography: &quot;Russia has 11 time zones.&quot;
+   - Psychology: &quot;The Baader-Meinhof phenomenon (frequency illusion).&quot;
+   - Technology/Computing: &quot;The first computer bug was an actual moth found in a Harvard computer in 1947.&quot;
+   - Obscure but fascinating: &quot;The &#39;Wood Wide Web&#39; - trees communicate via fungal networks, sharing nutrients and warning signals.&quot;
+   - Let&#39;s go with something truly niche but verifiable: **The &quot;Dancing Plague&quot; of 1518, or maybe something about time/physics? Wait, let&#39;s pick something about human biology/psychology that&#39;s counterintuitive.**
+   - Actually, let&#39;s go with: **&quot;Your body contains more bacterial cells than human cells&quot;** - but that&#39;s somewhat known now (recent studies show it&#39;s roughly 1:1).
+   - How about: **&quot;The shortest commercial flight in the world takes 1.5 minutes&quot;** - but that&#39;s known.
+   - Let&#39;s try: **&quot;There&#39;s a species of jellyfish that is biologically immortal&quot;** (Turritopsis dohrnii) - fairly known.
+   - Need something genuinely obscure. How about: **&quot;The &#39;Overview Effect&#39; isn&#39;t just astronauts&#39; thing - studies show it can be induced in people who view Earth from space via VR, but it&#39;s rare.&quot;** - Not quite.
+   - Let&#39;s go with a historical/scientific oddity: **&quot;In 1945, the U.S. Army tried to use bats as incendiary weapons. The &#39;bat bomb&#39; project was canceled because of a test fire that accidentally burned down an army base.&quot;** - Interesting, but somewhat known.
+   - How about: **&quot;There&#39;s a lake in Antarctica that has been sealed under ice for over 1 million years, and it contains microbial life that evolved completely independently of surface life.&quot;** - Lake Whillans or Vostok. Vostok is known. Lake Whillans was discovered in 2013.
+   - Let&#39;s pick something about **language/etymology**: **&quot;The word &#39;nerd&#39; was coined by Dr. Seuss in 1950&#39;s &#39;If I Ran the Zoo&#39; as a creature type, and wasn&#39;t used to describe a person until the 1950s/60s.&quot;** - Known.
+   - Let&#39;s try **physics/astronomy**: **&quot;If you could fold a piece of paper 42 times, it would reach the Moon.&quot;** - Classic, but many know it.
+   - How about: **&quot;The total weight of all ants on Earth is roughly equal to the total weight of all humans.&quot;** - Often cited, but debated.
+   - Let&#39;s go with something truly niche but well-documented: **&quot;The &#39;Tumucumaque Mountains&#39; in the Amazon are so remote that they were completely unmapped until 2003, despite being larger than Switzerland.&quot;** - Good, but maybe too geography-focused.
+   - Let&#39;s try **psychology/cognition**: **&quot;Your brain uses about 20% of your body&#39;s energy despite being only 2% of your weight, and it runs on glucose, but during fasting, it can run on ketones.&quot;** - Known.
+   - I need something that&#39;s verifiable, fascinating, and genuinely obscure. Let&#39;s go with: **&quot;The &#39;Doorway Effect&#39; - walking through a door causes your brain to &#39;archive&#39; memories of the previous room, making you forget why you walked in.&quot;** - This is real, studied, and not widely known.
+   - Actually, let&#39;s pick something more concrete and surprising: **&quot;There&#39;s a species of shark that can reproduce without mating (parthenogenesis) in captivity, but it&#39;s extremely rare in the wild.&quot;** - Known.
+   - How about: **&quot;The &#39;Silent Spring&#39; book by Rachel Carson was so influential that the chemical company that manufactured DDT sued her, but lost, and DDT was eventually banned in the US.&quot;** - Historical, but known.
+   - Let&#39;s try a **biological marvel**: **&quot;The immortal jellyfish (Turritopsis dohrnii) can revert to its polyp stage after reaching adulthood, essentially resetting its biological clock.&quot;** - Known.
+   - I&#39;ll go with something about **time/physics**: **&quot;A day on Venus is longer than a year on Venus.&quot;** - Actually, Venus&#39;s day is 243 Earth days, year is 225 Earth days. True, but somewhat known.
+   - Let&#39;s try **linguistics/communication**: **&quot;The Inuit languages have dozens of words for snow, but that&#39;s a myth. The real fact: they have highly specific words for snow conditions based on texture, formation, and safety.&quot;** - Too meta.
+   - How about: **&quot;The &#39;Wood Wide Web&#39; - trees share carbon and nutrients through mycorrhizal fungi networks, and &#39;mother trees&#39; can preferentially send resources to their own seedlings.&quot;** - Good, but increasingly known.
+   - Let&#39;s pick something **historical but obscure**: **&quot;In 1908, a man named John T. McCutcheon coined the term &#39;jazz&#39; in a cartoon, but it wasn&#39;t used to describe music until 1913, and its origin is likely from the word &#39;jasm&#39; meaning energy/spirit.&quot;** - Niche.
+   - Actually, I&#39;ll go with a **scientific fact that&#39;s counterintuitive and well-documented**: **&quot;Your body produces about 10 billion new red blood cells every second, and if laid end to end, they&#39;d circle the Earth 2.5 times in a day.&quot;** - Let&#39;s verify: ~2 million RBCs produced per second? Wait, actually it&#39;s about 2-3 million per second. Let me check: Human body has ~20-30 trillion RBCs, lifespan ~120 days. 25 trillion / (120*24*3600) ≈ 24 million per second. So 10 billion/day? Actually, ~2 million per second is more accurate. I&#39;ll adjust to be precise: &quot;Your bone marrow produces about 2 million red blood cells every second.&quot;
+   - Let&#39;s try something **truly obscure but fascinating**: **&quot;The &#39;Dyatlov Pass incident&#39; remains unsolved, but recent studies suggest a slab avalanche could explain the tent tears and missing eyes.&quot;** - Too speculative.
+   - How about: **&quot;There&#39;s a species of tardigrade that can survive the vacuum of space, extreme radiation, and temperatures from near absolute zero to 300°F, by entering a state called cryptobiosis.&quot;** - Known.
+   - I&#39;ll go with **a historical/linguistic oddity**: **&quot;The word &#39;awesome&#39; wasn&#39;t used to mean &#39;impressive&#39; until the 1980s. Before that, it literally meant &#39;inspiring awe or terror, often with reverence or dread.&#39;&quot;** - Interesting, but maybe not obscure enough.
+   - Let&#39;s try **a physics/chemistry fact**: **&quot;Liquid water can exist at temperatures above its boiling point if it&#39;s under pressure, but the real mind-bender: water can be frozen at room temperature if the pressure is reduced enough.&quot;** - Phase diagram of water is known.
+   - I&#39;ll go with **a biological/ecological fact**: **&quot;The &#39;Pando&#39; aspen grove in Utah is a single genetic organism covering 106 acres, weighing ~6,000 tons, and estimated to be 14,000-80,000 years old.&quot;** - Known to some, but fascinating.
+   - Actually, let&#39;s pick something **truly niche and verifiable**: **&quot;In 2012, scientists discovered a species of fungus that grows on plastic waste in the gut of waxworms, and it can break down polyethylene in just a few months.&quot;** - *Galleria mellonella* and *Pseudomonas* or *Aspergillus*? Actually, it&#39;s *Ideonella sakaiensis* for PET plastic, discovered in 2016. Waxworms were shown to degrade polyethylene in 2017 (Lasagna-Bowman et al.). It&#39;s real but not widely known.
+   - Let&#39;s go with **a cognitive/neurological phenomenon**: **&quot;The &#39;Zeigarnik Effect&#39; - your brain remembers unfinished tasks better than completed ones, which is why you keep thinking about that one thing you forgot to do.&quot;** - Known.
+   - I need something that&#39;s genuinely surprising, accurate, and not commonly discussed. How about: **&quot;The total number of stars in the observable universe is roughly 70 billion trillion (7×10²²), but if you counted one star per second, it would take over 2 quintillion years.&quot;** - Known.
+   - Let&#39;s try **a historical/technological oddity**: **&quot;The first computer virus was created in 1971 as an experiment called &#39;Creeper,&#39; which displayed &#39;I&#39;M THE CREEPER: CATCH ME IF YOU CAN.&#39; It wasn&#39;t malicious, just a proof of concept.&quot;** - Known.
+   - I&#39;ll go with **a biological fact about humans**: **&quot;Your stomach lining replaces itself every 3 to 4 days, because the acid it produces would otherwise digest the stomach itself.&quot;** - Common knowledge.
+   - Let&#39;s try **a geography/climate fact**: **&quot;The Amazon River discharges more water than the next seven largest rivers combined, and it contributes about 20% of all freshwater entering the ocean.&quot;** - Known.
+   - I&#39;m overcomplicating. Let&#39;s pick something **truly obscure but well-documented and fascinating**: **&quot;The &#39;Bloop&#39; - an ultra-low-frequency underwater sound detected in 1997 was so loud it could be heard across the entire Pacific Ocean. It was later identified as icequakes (seismic activity from glaciers calving), not a biological source.&quot;** - Known to podcast listeners.
+   - How about: **&quot;There&#39;s a species of octopus that uses coconut shells as portable shelters, carrying them around and assembling them when needed.&quot;** - *Amphioctopus marginatus* - documented, but known.
+   - Let&#39;s go with **a linguistic/etymological fact**: **&quot;The word &#39;fluent&#39; originally meant &#39;flowing&#39; (from Latin fluere), and was first used to describe language ability in the 1600s, but originally referred to speech that flowed smoothly like water.&quot;** - Not particularly obscure.
+   - I&#39;ll try **a physics/chemistry fact**: **&quot;Helium is the only element that cannot be solidified at standard pressure, no matter how cold it gets. It only solidifies under extreme pressure (over 25 atmospheres).&quot;** - True, and fascinating.
+   - Let&#39;s verify: Helium-4 remains liquid down to absolute zero at 1 atm. It requires ~25 atm to solidify. Correct.
+   - This is good. It&#39;s scientifically accurate, counterintuitive, and not commonly known outside physics/chemistry circles.
+   - I&#39;ll frame it clearly, acknowledge the limitation (&quot;I can&#39;t know what you already know, but here&#39;s something genuinely obscure...&quot;), explain it simply, and add context.
+
+   Structure:
+   - Acknowledge limitation
+   - Present fact clearly
+   - Explain why it&#39;s surprising/counterintuitive
+   - Add brief context/mechanism
+   - Keep it concise
+   - Verify accuracy one last time: Helium at 1 atm remains liquid at 0K, requires ~25 atm to solidify. Correct. Nobel Prize in Physics 1913 (Kamerlingh Onnes) discovered liquid helium. Superfluidity at 2.17K. All consistent.
+   - Ready. Output matches response.✅</div>
+                </details><div class="response-text hidden" data-run="1"><span class="error-text">Error: timeout</span></div>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/qwen-qwen3.6-27b/">← Qwen 3.6 27B</a>
+            <a href="/">all models</a>
+            <a href="/m/poolside-laguna-m.1-free/">Laguna M.1 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>
