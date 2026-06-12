@@ -602,3 +602,17 @@ models:
     license: "open-weights"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "nex-agi/nex-n2-pro:free"
+    name: "Nex AGI: Nex-N2-Pro (free)"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "June 2026"
+
+  - id: "nvidia/nemotron-3.5-content-safety:free"
+    name: "NVIDIA: Nemotron 3.5 Content Safety (free)"
+    provider: "NVIDIA"
+    license: "open-weights"
+    released: "June 2026"
+

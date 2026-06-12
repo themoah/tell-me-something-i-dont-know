@@ -4,16 +4,16 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-05T16:26:35.224Z",
-    "total_models": 95
+    "generated_at": "2026-06-12T11:21:30.289Z",
+    "total_models": 97
   },
   "stats": {
-    "total_models": 95,
-    "total_responses": 279,
-    "total_tokens": 238809,
+    "total_models": 97,
+    "total_responses": 285,
+    "total_tokens": 239491,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 52,
+      "octopus": 55,
       "jellyfish": 40,
       "honey": 23,
       "cleopatra": 12,
@@ -3608,6 +3608,84 @@
           "topics": [
             "cleopatra"
           ]
+        }
+      ]
+    },
+    {
+      "id": "nex-agi/nex-n2-pro:free",
+      "name": "Nex AGI: Nex-N2-Pro (free)",
+      "provider": "Nex Agi",
+      "license": "open-source",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s one:\n\nOctopuses have **three hearts**. Two pump blood to the gills, and the third pumps it to the rest of the body. The heart that sends blood to the body actually **stops beating when the octopus swims**, which is one reason they often prefer crawling—it’s less exhausting.",
+          "tokens_prompt": 17,
+          "tokens_completion": 121,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user. Need be interesting, maybe concise. \"Tell me something I don't know.\" We can't know what they know. Could say \"Here's a niche fact...\" Need no analysis? We can answer final. Need maybe engaging.\n",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something many people don’t know:\n\n**Octopuses have three hearts.** Two pump blood through the gills, while the third pumps it through the rest of the body. The main heart actually stops beating when the octopus swims, which is one reason they often prefer crawling—it’s less tiring.",
+          "tokens_prompt": 17,
+          "tokens_completion": 122,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user \"Tell me something I don't know.\" Need comply, perhaps interesting fact. Need maybe avoid claiming certainty about what they don't know. We can say \"Here's something many people don't know...\" Need concise. We need final.\n",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a good one:\n\n**Octopuses have three hearts.** Two pump blood through the gills, and the third pumps it through the rest of the body. When an octopus swims, the main heart actually **stops beating**, which is one reason they often prefer crawling—it’s less exhausting.",
+          "tokens_prompt": 17,
+          "tokens_completion": 127,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user. Need \"Tell me something I don't know.\" Need likely provide interesting fact. Need be engaging, maybe caveat can't know what they don't know. Could give one surprising fact. Since no need for tools. Need maybe concise. Final only. Ensure no reveal.\n",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nvidia/nemotron-3.5-content-safety:free",
+      "name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
+      "provider": "NVIDIA",
+      "license": "open-weights",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "User Safety: safe",
+          "tokens_prompt": 471,
+          "tokens_completion": 121,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need to output the classification: user input is safe, response safety label: None (since no response). So output:\n\nUser Safety: safe\nResponse Safety: (omit)\n\nThus final answer: \"User Safety: safe\". Probably each on separate line? The format: \"User Safety: safe or unsafe rating of the user input\\nResponse Safety: safe or unsafe rating of the assistant response. Omit if no assistant response present.\"\n\nThus we output:\n\nUser Safety: safe\n\n(no Response Safety line).\n\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "User Safety: safe",
+          "tokens_prompt": 471,
+          "tokens_completion": 71,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need to decide safety of user input: \"Tell me something I don't know.\" This is safe. No harmful content.\n\nWe have no assistant response provided. So we output only User Safety line.\n\nThus output:\n\nUser Safety: safe\n\nNo Response Safety line.\n\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "User Safety: safe",
+          "tokens_prompt": 471,
+          "tokens_completion": 120,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need to decide if user input is safe. The user says: \"Tell me something I don't know.\" That's a benign request, safe. No assistant response is given (the conversation ends). So we output:\n\nUser Safety: safe\nResponse Safety: (omitted because no assistant response). According to instruction: \"Response Safety: safe or unsafe rating of the assistant response. Omit if no assistant response present.\"\n\nThus output exactly:\n\nUser Safety: safe\n\nWe must not include anything else.\n\n\n",
+          "topics": []
         }
       ]
     }
