@@ -4,6 +4,7 @@ import {
   classifyLicenseString,
   deriveProvider,
   bumpPatch,
+  isRedundantVariant,
 } from './update_models.ts';
 
 test('classifyLicenseString: apache-2.0 → open-source', () => {
@@ -78,4 +79,19 @@ test('bumpPatch: throws on invalid semver', () => {
   assert.throws(() => bumpPatch('1.0'), /Invalid semver/);
   assert.throws(() => bumpPatch('1.0.0-beta'), /Invalid semver/);
   assert.throws(() => bumpPatch(''), /Invalid semver/);
+});
+
+test('isRedundantVariant: variant with base present → redundant', () => {
+  const ids = new Set(['qwen/qwen3-instruct', 'qwen/qwen3-instruct:free']);
+  assert.equal(isRedundantVariant('qwen/qwen3-instruct:free', ids), true);
+});
+
+test('isRedundantVariant: variant-only model (no base) → kept', () => {
+  const ids = new Set(['nex-agi/nex-n2-pro:free']);
+  assert.equal(isRedundantVariant('nex-agi/nex-n2-pro:free', ids), false);
+});
+
+test('isRedundantVariant: plain id (no colon) → not a variant', () => {
+  const ids = new Set(['anthropic/claude-sonnet-4.6']);
+  assert.equal(isRedundantVariant('anthropic/claude-sonnet-4.6', ids), false);
 });

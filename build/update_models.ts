@@ -165,6 +165,17 @@ async function bumpPackageVersion(): Promise<{ from: string; to: string }> {
   return { from, to };
 }
 
+// A `:` in the id marks a provider routing variant (`:free`, `:nitro`,
+// `:extended`). Skip it only when the plain base model is also listed —
+// then the base entry already covers it. If the model exists *only* as a
+// variant (no base id present), keep it; otherwise it would be dropped
+// entirely. See README/CLAUDE.md variant rule.
+export function isRedundantVariant(id: string, allIds: Set<string>): boolean {
+  const colon = id.indexOf(':');
+  if (colon === -1) return false;
+  return allIds.has(id.slice(0, colon));
+}
+
 function isRecent(m: ORModel, cutoff: number): boolean {
   return typeof m.created === 'number' && m.created >= cutoff;
 }
@@ -235,6 +246,7 @@ async function main() {
 
   const yamlContent = await fs.readFile(MODELS_YAML, 'utf-8');
   const config = yaml.load(yamlContent) as Config;
+  const allIds = new Set(allModels.map((m) => m.id));
   const existingIds = new Set(config.models.map((m) => m.id));
   const existingNames = new Set(config.models.map((m) => normalizeName(m.name)));
   console.log(`  Existing models in YAML: ${existingIds.size}`);
@@ -246,7 +258,7 @@ async function main() {
   const hfCache = new Map<string, string | null>();
 
   for (const candidate of allModels) {
-    if (candidate.id.includes(':')) { drops.variant++; continue; }
+    if (isRedundantVariant(candidate.id, allIds)) { drops.variant++; continue; }
     if (hasLatestToken(candidate.id)) { drops.latestAlias++; continue; }
     if (hasFastToken(candidate.id)) { drops.fast++; continue; }
     if (!isRecent(candidate, cutoff)) { drops.old++; continue; }
