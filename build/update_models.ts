@@ -169,7 +169,7 @@ async function bumpPackageVersion(): Promise<{ from: string; to: string }> {
 // `:extended`). Skip it only when the plain base model is also listed —
 // then the base entry already covers it. If the model exists *only* as a
 // variant (no base id present), keep it; otherwise it would be dropped
-// entirely. See README/CLAUDE.md variant rule.
+// entirely. See CLAUDE.md variant rule.
 export function isRedundantVariant(id: string, allIds: Set<string>): boolean {
   const colon = id.indexOf(':');
   if (colon === -1) return false;
