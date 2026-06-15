@@ -4,23 +4,23 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-12T11:21:30.289Z",
-    "total_models": 97
+    "generated_at": "2026-06-15T11:00:07.492Z",
+    "total_models": 98
   },
   "stats": {
-    "total_models": 97,
-    "total_responses": 285,
-    "total_tokens": 239491,
+    "total_models": 98,
+    "total_responses": 288,
+    "total_tokens": 240430,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 55,
       "jellyfish": 40,
       "honey": 23,
+      "venus": 12,
       "cleopatra": 12,
       "anglo-zanzibar war": 12,
-      "venus": 11,
       "bananas": 11,
-      "oxford university": 8,
+      "oxford university": 10,
       "trees": 2,
       "space": 2,
       "eiffel tower": 2,
@@ -3686,6 +3686,48 @@
           "finish_reason": "stop",
           "reasoning": "\nWe need to decide if user input is safe. The user says: \"Tell me something I don't know.\" That's a benign request, safe. No assistant response is given (the conversation ends). So we output:\n\nUser Safety: safe\nResponse Safety: (omitted because no assistant response). According to instruction: \"Response Safety: safe or unsafe rating of the assistant response. Omit if no assistant response present.\"\n\nThus output exactly:\n\nUser Safety: safe\n\nWe must not include anything else.\n\n\n",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "MoonshotAI: Kimi K2.7 Code",
+      "provider": "Moonshotai",
+      "license": "open-weights",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": " Here’s a surprising one: **Oxford University is older than the Aztec Empire.**\n\nTeaching at Oxford began in **1096**, while the Aztec city-state of Tenochtitlan is generally dated to **1325**. That means Oxford had already been around for more than 200 years by the time the Aztecs founded their capital.",
+          "tokens_prompt": 15,
+          "tokens_completion": 221,
+          "finish_reason": "stop",
+          "reasoning": " We need answer user request: \"Tell me something I don't know.\" This is open-ended. Need provide an interesting fact likely unknown. Should be accurate, concise, perhaps surprising. Need avoid claiming certainty about user's knowledge. Could give a fascinating fact with source. Need be helpful. Maybe mention that we don't know what they know, but here's something many don't know. Example: \"The shortest war in history lasted 38-45 minutes.\" Or \"Oxford University is older than the Aztec Empire.\" Or \"Wombat poop is cube-shaped.\" Or \"There are more trees on Earth than stars in the Milky Way.\" Choose one with evidence.\n\nNeed produce final answer only, perhaps with a bit of context. Keep moderate length.",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": true,
+          "content": " You might not know that a single day on Venus is longer than its entire year.\n\nVenus rotates so slowly that one full spin takes about **243 Earth days**, while it orbits the Sun in only about **225 Earth days**. So the sun rises roughly twice per Venusian year, and very slowly at that.",
+          "tokens_prompt": 15,
+          "tokens_completion": 287,
+          "finish_reason": "stop",
+          "reasoning": " We need answer user: \"Tell me something I don't know.\" This is open-ended. Need provide an interesting fact or concept likely unknown. Should be safe, accurate, engaging. Could be a surprising fact about nature, history, math, etc. We should maybe frame as \"Here's something you might not know...\" Since we don't know user, phrase as might not know. Ensure fact not too obscure that could be false. Good options: honey never spoils, octopuses have three hearts, bananas are berries, clouds weigh huge, the shortest war, etc. But user asks \"something I don't know\" maybe wants a cool random fact. We can provide one with brief explanation.\n\nNeed avoid overclaiming. Use \"You might not know that...\" Provide citation not needed. Could include detail. Let's choose: \"A day on Venus is longer than a year on Venus.\" Explanation: Venus rotates very slowly; sidereal day = 243 Earth days, orbital period = 225 Earth days. That's surprising and likely unknown.\n\nNeed answer directly. Maybe ask if they want more. Keep concise.",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a surprising fact: **Oxford University is older than the Aztec Empire.**\n\nTeaching at Oxford began around **1096**, while the Aztec Empire as we usually think of it wasn’t founded until **1428** — more than 300 years later. So by the time the Aztecs were establishing their capital of Tenochtitlán, Oxford had already been around for centuries.",
+          "tokens_prompt": 15,
+          "tokens_completion": 431,
+          "finish_reason": "stop",
+          "reasoning": "We need answer user: 'Tell me something I don't know.' We need provide an interesting fact likely unknown. Must be helpful, accurate, concise. Could choose an obscure fact with context. Need avoid claiming user doesn't know for certain. Phrase as 'Here’s something you might not know...' Provide a verifiable fact, maybe about biology, history, science. Let's pick something surprising: 'Wombat poop is cube-shaped.' Explain why: intestes have varying elasticity creating cubes. It's well-known but many don't. Or 'Bananas are berries, strawberries aren't.' Or 'The Vatican has its own astronomical observatory and the pope's official title includes the acronym ...' Hmm.\n\nNeed perhaps one fact with a bit of detail. Since instruction says 'Tell me something I don't know' open-ended. Provide an interesting fact.\n\nLet's choose: 'There is a species of jellyfish (Turritopsis dohrnii) that can biologically revert to its juvenile form after reaching maturity, effectively making it potentially immortal—though it can still die to disease or predation.' That's something many don't know. Include explanation.\n\nAlternatively 'Oxford University is older than the Aztec Empire; teaching began around 1096, while the Aztec Empire was founded in 1428.' That's surprising and easy to verify.\n\nLet's decide. The user wants 'something I don't know'. We can give multiple? Maybe one with caveat. We don't actually know what they know, so phrase 'Here’s a surprising fact you may not know'.\n\nNeed no tool, direct answer. Final with a fact and brief context. Let's use Oxford vs Aztec Empire. It's a common 'mind-blowing' fact. Provide dates and context.",
+          "topics": [
+            "oxford university"
+          ]
         }
       ]
     }

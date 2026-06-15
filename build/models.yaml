@@ -616,3 +616,11 @@ models:
     license: "open-weights"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "moonshotai/kimi-k2.7-code"
+    name: "MoonshotAI: Kimi K2.7 Code"
+    provider: "Moonshotai"
+    license: "open-weights"
+    released: "June 2026"
+
