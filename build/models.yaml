@@ -624,3 +624,35 @@ models:
     license: "open-weights"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "google/gemini-3.1-flash-image"
+    name: "Google: Nano Banana 2 (Gemini 3.1 Flash Image)"
+    provider: "Google"
+    license: "commercial"
+    released: "June 2026"
+
+  - id: "google/gemini-3-pro-image"
+    name: "Google: Nano Banana Pro (Gemini 3 Pro Image)"
+    provider: "Google"
+    license: "commercial"
+    released: "June 2026"
+
+  - id: "cohere/north-mini-code:free"
+    name: "Cohere: North Mini Code (free)"
+    provider: "Cohere"
+    license: "open-source"
+    released: "June 2026"
+
+  - id: "z-ai/glm-5.2"
+    name: "Z.ai: GLM 5.2"
+    provider: "Z Ai"
+    license: "open-source"
+    released: "June 2026"
+
+  - id: "nex-agi/nex-n2-pro"
+    name: "Nex AGI: Nex-N2-Pro"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "June 2026"
+
