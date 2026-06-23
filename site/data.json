@@ -4,21 +4,21 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-15T11:00:07.492Z",
-    "total_models": 98
+    "generated_at": "2026-06-22T10:53:31.444Z",
+    "total_models": 103
   },
   "stats": {
-    "total_models": 98,
-    "total_responses": 288,
-    "total_tokens": 240430,
+    "total_models": 103,
+    "total_responses": 303,
+    "total_tokens": 249651,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 55,
+      "octopus": 57,
       "jellyfish": 40,
       "honey": 23,
+      "anglo-zanzibar war": 13,
       "venus": 12,
       "cleopatra": 12,
-      "anglo-zanzibar war": 12,
       "bananas": 11,
       "oxford university": 10,
       "trees": 2,
@@ -3727,6 +3727,189 @@
           "reasoning": "We need answer user: 'Tell me something I don't know.' We need provide an interesting fact likely unknown. Must be helpful, accurate, concise. Could choose an obscure fact with context. Need avoid claiming user doesn't know for certain. Phrase as 'Here’s something you might not know...' Provide a verifiable fact, maybe about biology, history, science. Let's pick something surprising: 'Wombat poop is cube-shaped.' Explain why: intestes have varying elasticity creating cubes. It's well-known but many don't. Or 'Bananas are berries, strawberries aren't.' Or 'The Vatican has its own astronomical observatory and the pope's official title includes the acronym ...' Hmm.\n\nNeed perhaps one fact with a bit of detail. Since instruction says 'Tell me something I don't know' open-ended. Provide an interesting fact.\n\nLet's choose: 'There is a species of jellyfish (Turritopsis dohrnii) that can biologically revert to its juvenile form after reaching maturity, effectively making it potentially immortal—though it can still die to disease or predation.' That's something many don't know. Include explanation.\n\nAlternatively 'Oxford University is older than the Aztec Empire; teaching began around 1096, while the Aztec Empire was founded in 1428.' That's surprising and easy to verify.\n\nLet's decide. The user wants 'something I don't know'. We can give multiple? Maybe one with caveat. We don't actually know what they know, so phrase 'Here’s a surprising fact you may not know'.\n\nNeed no tool, direct answer. Final with a fact and brief context. Let's use Oxford vs Aztec Empire. It's a common 'mind-blowing' fact. Provide dates and context.",
           "topics": [
             "oxford university"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash-image",
+      "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here is a fascinating fact that many people don't know:\n\n**Bananas are botanically considered berries, but strawberries are not.**\n\nThis sounds backward, but it all comes down to the scientific definition of a berry.\n\nIn botany, a berry is a fleshy fruit that develops from a single flower with one ovary. Based on this precise definition:\n\n*   **Bananas** qualify because they meet all the criteria: they are fleshy, develop from a single flower with one ovary, and (originally) contained multiple seeds (though the commercial bananas we eat have been bred to have only tiny, unnoticeable seeds).\n*   **Strawberries**, on the other hand, do not fit the botanical definition. They are what's known as an \"aggregate fruit.\" A strawberry develops from a single flower, but that flower has *many* separate ovaries. Each tiny \"seed\" on the outside of a strawberry is actually a separate fruit (called an achene), and the sweet, red part we love to eat is the swollen receptacle holding them all.\n\nSo, next time you're having a fruit salad, remember that the \"berry\" is the banana, and the \"strawberry\" is... well, an aggregate fruit!",
+          "tokens_prompt": 9,
+          "tokens_completion": 252,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "A \"jiffy\" is an actual unit of time. It's defined as the time it takes for light to travel one centimeter, which is approximately 33.3564 picoseconds. \n",
+          "tokens_prompt": 10,
+          "tokens_completion": 44,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The shortest war in history lasted only 38 to 45 minutes. The Anglo-Zanzibar War broke out on August 27, 1896, when the Sultan of Zanzibar died and a new ruler was appointed without British approval. The British, who had a colonial interest in Zanzibar, considered this an act of war and issued an ultimatum. When the ultimatum expired, British warships opened fire on the Sultan's palace, and the war was over before most people even knew it had started.",
+          "tokens_prompt": 9,
+          "tokens_completion": 105,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3-pro-image",
+      "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Humans are actually bioluminescent—you literally glow.\n\nYour body constantly emits a tiny amount of visible light due to chemical reactions (specifically, free radicals produced during cell respiration) happening inside your cells.\n\nThe catch is that this light is about 1,000 times weaker than the human eye can perceive, so we don't notice it. Scientists have only been able to confirm this using ultra-sensitive cameras that can detect individual photons in complete darkness.",
+          "tokens_prompt": 9,
+          "tokens_completion": 1127,
+          "finish_reason": "stop",
+          "reasoning": "**Discovering New Information**\n\nI'm exploring avenues to uncover a truly novel fact. The current focus is on identifying niche areas and historical curiosities that are generally outside common knowledge. My objective is to present something genuinely surprising and informative.\n\n**Uncovering Obscure Facts**\n\nI am currently sifting through historical and scientific records, looking for that one unexpected piece of information. My goal is to find something genuinely surprising and outside of typical knowledge domains.\n\n**Confirming Scientific Phenomena**\n\nI am investigating the confirmed human bioluminescence. My current focus is on the precise measurement and implications of this incredibly faint glow. The aim is to present this unexpected biological trait.\n\n**Discovering Novel Biological Facts**\n\nI'm currently focusing on uncovering an unexpected biological truth. The thought process involves delving into less-explored areas of human physiology to pinpoint a phenomenon that challenges common assumptions. My aim is to present a fact that is both surprising and scientifically verifiable, focusing on a recent confirmation of human bioluminescence.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Humans actually have stripes, similar to tigers, but they are usually invisible to the naked eye.\n\nThey are called **Blaschko’s lines**. They trace the paths that cells took while you were developing in the womb. You usually can't see them because your skin pigmentation is uniform, but they can become visible under UV light or due to certain skin conditions, revealing distinct V-shapes on the back and swirling S-shapes on the chest and abdomen.",
+          "tokens_prompt": 9,
+          "tokens_completion": 915,
+          "finish_reason": "stop",
+          "reasoning": "**Discovering Obscure Facts**\n\nI'm focusing on finding something truly novel to share, aiming for a fact that's both surprising and unlikely to be common knowledge. My process involves sifting through various domains to identify less-explored pieces of information.\n\n**Unearthing Unique Details**\n\nI'm currently exploring intriguing historical timelines, specifically looking for juxtapositions that challenge conventional perceptions of proximity in time. My aim is to uncover a fact that is both surprising and less widely disseminated.\n\n**Exploring Personal Physiology**\n\nI am now focusing on the human body, specifically on features that are present yet generally unseen or unacknowledged. My current exploration involves obscure dermatological phenomena.\n\n**Exploring Personal Physiology**\n\nI am now focusing on the human body, specifically on features that are present yet generally unseen or unacknowledged. My current exploration involves obscure dermatological phenomena.\n\nHumans actually have stripes, similar to tigers, but they are usually invisible to the naked eye. They are called Blaschko’s lines and trace the paths of embryonic cell migration. They can become visible under UV light or due to certain skin conditions, revealing distinct V-shapes on the back and swirling S-shapes on the chest and abdomen.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "This is the hardest game to play with a stranger, but I will try my best.\n\nHere are three things from different fields—hopefully, at least one is new to you.\n\n**1. The Biological Timeline Twist**\nSharks are older than trees.\n\nSharks have been swimming in the oceans for about 450 million years. The earliest trees (like the *Wattieza*) didn't appear on land until about 385 million years ago.\n\nFurthermore, sharks are also older than Saturn’s rings. While Saturn is old, recent data from the Cassini spacecraft suggests its rings might only be 10 to 100 million years old, meaning sharks were swimming around on Earth for millions of years before Saturn got its iconic look.\n\n**2. The \"Victorian Internet\" of Paris**\nWe tend to think of instant messaging as a modern invention, but in the late 19th and early 20th centuries, major cities like London, New York, and especially Paris had massive, complex networks of pneumatic tubes running under their streets.\n\nIn Paris, the *poste pneumatique* network stretched for over 250 miles. You could write a short note (a \"petit bleu\"), put it in a canister, drop it off at a station, and compressed air would shoot it through the tubes to another station across the city. It was faster than the mail and cheaper than a telegram. At its peak, the Paris network handled over 10 million tubes a year. It wasn't fully shut down until 1984.\n\n**3. The Definition of a \"Moment\"**\nWhile we use the word \"moment\" loosely today to mean a short, undefined period of time, it used to be a precise medieval unit of time measurement.\n\nA \"moment\" was defined as 1/40th of a solar hour. Because the length of an hour varied depending on the season in medieval timekeeping, the length of a moment varied too. However, on average, an actual \"moment\" lasted exactly **90 seconds**.",
+          "tokens_prompt": 9,
+          "tokens_completion": 1674,
+          "finish_reason": "stop",
+          "reasoning": "**Exploring Novelty and Insight**\n\nI'm currently exploring how to best convey truly novel insights. My focus is on identifying less common connections and synthesizing information in a way that offers a fresh perspective to an expert audience, aiming for genuine surprise rather than mere information recall.\n\n**Developing Obscure Facts**\n\nI'm currently trying to identify information that’s genuinely surprising for an expert. My focus is on finding less obvious connections and presenting them in a way that offers a novel perspective, aiming for that \"aha!\" moment.\n\n**Refining Novelty Approaches**\n\nI'm currently considering how to better introduce surprising information. My focus is on identifying obscure connections and presenting them with enough context to offer a fresh perspective to a knowledgeable audience.\n\n**Exploring Novelty and Insight**\n\nI'm currently exploring how to best convey truly novel insights. My focus is on identifying less common connections and synthesizing information in a way that offers a fresh perspective to an expert audience, aiming for genuine surprise rather than mere information recall.\n\n**Exploring Novelty and Insight**\n\nI'm currently exploring how to best convey truly novel insights. My focus is on identifying less common connections and synthesizing information in a way that offers a fresh perspective to an expert audience, aiming for genuine surprise rather than mere information recall.\n\n",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "cohere/north-mini-code:free",
+      "name": "Cohere: North Mini Code (free)",
+      "provider": "Cohere",
+      "license": "open-source",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something most people haven't heard: **The human brain consumes about 20 % of the body’s total energy (roughly 400 calories a day) while weighing only about 2 % of our total mass.** In other words, your brain is an energy‑hungry organ—using more electricity than a 25‑watt light bulb, even when you’re just resting. This high metabolic demand is largely due to the constant activity of billions of neurons firing and communicating, a process that requires a steady supply of glucose and oxygen.",
+          "tokens_prompt": 7,
+          "tokens_completion": 269,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" This is a generic request for new information. As an AI, I can provide a fact or something interesting. There's no restriction. I need to give a piece of information that might be unknown to the user. I could give a fact about the human brain, quantum physics, etc. Ensure it's accurate. Provide something surprising. For example: \"The human brain uses about 20% of the body's total energy despite being only 2% of body weight.\" Or \"There are more possible chess games than atoms in the observable universe.\" Or \"The shortest war in history lasted 38 minutes.\" I could ask clarifying? The request is open-ended. I can give a fact. It's okay.\n\nI'll respond with a surprising fact.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's a little‑known tidbit that many people never encounter: **The \"scent of rain\" you love to smell after a summer storm is actually caused by a compound called geosmin, which is produced by certain bacteria in the soil.**\n\nWhen raindrops hit dry, dust‑laden ground, they create tiny shockwaves that vaporize geosmin molecules from the soil. These molecules then drift into your nose, and your brain interprets that earthy, fresh smell as \"rain.\" \n\nWhat’s fascinating is that not everyone can detect geosmin. About 20 % of people are “non‑tasters” for this compound, so they miss out on that classic rain‑after‑storm aroma—while the rest of us get that delightful, natural perfume!",
+          "tokens_prompt": 7,
+          "tokens_completion": 240,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" This is a vague request. As an AI, I can try to provide an interesting fact or piece of information that might be unknown to the user. There's no policy violation. I can provide a fact. I should ensure it's accurate and interesting. I'll pick something like a little-known scientific fact, historical anecdote, or a quirky piece of information. I'll try to be engaging.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s something you probably haven’t heard before:\n\n**The “golden” age of the Roman Empire actually lasted only about 150 years, from roughly 50 BC to AD 100.**  \nDuring that span, Rome transformed from a republic torn by civil wars into a stable autocratic state under Augustus and his early successors. In just a few generations, it went from being a city‑state to controlling a territory that stretched from Britain to Mesopotamia, built iconic monuments like the Colosseum, and established legal and administrative systems that still influence the world today. After that, the empire continued for another 300 years, but the political stability, economic prosperity, and cultural flourishing of that first 150‑year period is what historians most often point to as the true “golden age.”",
+          "tokens_prompt": 7,
+          "tokens_completion": 421,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" This is a vague request. We need to generate some unknown information. Could be a random fact, interesting trivia, something surprising. There's no policy violation. It's a normal request. We can comply by providing an interesting fact or something they might not know. We should ensure it's accurate and not harmful. Provide a fact about something obscure. Could be about biology, astronomy, history, etc. Let's pick something like: \"The shortest war in history was the Anglo-Zanzibar War of 1896, lasting only 38 minutes.\" Or something about the human brain: \"The human brain uses about 20% of the body's total energy despite being only 2% of body weight.\" Or something about the universe: \"There are more possible variations of a single chess game than the number of atoms in the observable universe.\" Or something about everyday life: \"The average person spends about 6 months of their life waiting at red lights.\" Or something about animals: \"A group of flamingos is called a 'flamboyance'.\" Let's pick something interesting and surprising. Provide a fact they might not know. Also ask if they want more. But we should not ask follow-up questions? It's okay to ask if they want more. Provide the fact.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "name": "Z.ai: GLM 5.2",
+      "provider": "Z Ai",
+      "license": "open-source",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "You are literally glowing right now. \n\nThe human body emits visible light, but it is about 1,000 times weaker than what the human eye can detect. In 2009, Japanese researchers used ultra-sensitive cameras in a completely dark room to capture this bioluminescence. \n\nThey discovered a few fascinating things:\n* The \"glow\" fluctuates throughout the day, peaking in the late afternoon around 4:00 PM.\n* The face consistently glows brighter than the rest of the body.\n* The light is directly tied to our metabolic rhythms, as it is caused by the release of free radicals during cellular respiration.\n\nSo, while you can't see it, you are technically emitting light at this exact moment.",
+          "tokens_prompt": 20,
+          "tokens_completion": 1303,
+          "finish_reason": "stop",
+          "reasoning": "\n1.  **Analyze the Request:**\n    *   Prompt: \"Tell me something I don't know.\"\n    *   Intent: The user wants a surprising, obscure, or fascinating piece of trivia/fact.\n    *   Constraint: I don't know what the user knows, so I need to pick something highly unusual but verifiable, avoiding common trivia (like \"honey never spoils\" or \"octopuses have three hearts\").\n\n2.  **Brainstorming obscure facts:**\n    *   *Biology:* There's a species of jellyfish that is biologically immortal (Turritopsis dohrnii) - too common.\n    *   *History:* The shortest war in history was between Britain and Zanzibar (too common).\n    *   *Space:* A day on Venus is longer than a year on Venus (fairly common).\n    *   *Geography/Earth:* There is a river inside the ocean (the Underwater Amazon/Congo river) - somewhat common.\n    *   *Linguistics:* The word \"robot\" comes from the Czech word \"robota\" meaning forced labor - fairly common.\n    *   *Animals:* Wombat poop is cube-shaped - common.\n    *   *Obscure History/Science:* The first computer programmer was Ada Lovelace - common.\n    *   *Medical/Physiology:* Human stomach acid can dissolve razor blades - common.\n    *   *Nature/Botany:* There is a tree that owns itself (The Tree That Owns Itself in Athens, Georgia) - a bit obscure.\n    *   *Physics/Math:* Banach-Tarski paradox (a sphere can be decomposed and reassembled into two identical spheres) - maybe too technical.\n    *   *History:* In 1919, a massive flood of molasses killed 21 people in Boston - somewhat known.\n    *   *Animals:* Immortal worms (planarians) can regenerate indefinitely.\n    *   *History:* The US military once considered building a \"gay bomb\" to make enemy troops irresistible to each other - very weird, maybe too controversial/weird.\n    *   *Space/Time:* Time goes faster at the top of a building than at the bottom due to gravitational time dilation. (Good, but common for physics nerds).\n    *   *Linguistics/Etymology:* The ampersand (&) used to be the 27th letter of the alphabet. When reciting the alphabet, schoolchildren would say \"X, Y, Z, and per se and.\" This got slurred into \"ampersand.\" (Good, but known).\n    *   *Biology:* Sloths can hold their breath longer than dolphins. Sloths can hold their breath for up to 40 minutes by slowing their heart rate. Dolphins usually need air every 8-10 minutes. (Very surprising, not too technical).\n    *   *Geography:* The deepest point on Earth's continents is under the Antarctic ice sheet. The Bentley Subglacial Trench is 2,555 meters (8,382 ft) below sea level, but covered by ice.\n    *   *History:* The first recorded \"zoom bombing\" or video conference hack actually happened in the 1960s with the Picturephone. (Wait, is that true? Probably not exactly).\n    *   *Animals:* The mantis shrimp can throw a punch so fast that the water around it boils, creating a flash of light and sound (cavitation). (A bit known).\n    *   *Biology:* The human body glows in the dark. We emit visible light in small quantities, but it's 1,000 times weaker than what the human eye can detect. (Fascinating, slightly obscure).\n\n3.  **Selecting the Best Fact:**\n    *   Let's go with the human bioluminescence or the sloth holding its breath.\n    *   *Human bioluminescence:* Japanese researchers in 2009 used ultra-sensitive cameras to prove that the human body literally glows. The glow is brightest in the late afternoon, and the face glows more than the rest of the body.\n    *   Let's add a second one just in case they know it.\n    *   *Sloth fact:* Sloths can hold their breath longer than dolphins. They do it by slowing their heart rate down by two-thirds.\n    *   Let's combine them into a short, engaging response. Or just pick one really good one and explain it well.\n    *   Let's use the human bioluminescence one. It sounds like a superpower but is scientifically real.\n\n4.  **Drafting the response:**\n    \"You are literally glowing right now. \n\n    The human body emits visible light, but it is 1,000 times weaker than the levels our eyes can detect. In 2009, Japanese researchers used ultra-sensitive cameras to capture this bioluminescence. They found that the human \"glow\" fluctuates throughout the day, peaking in the late afternoon around 4 PM, and the face consistently glows brighter than the rest of the body. \n\n    So, while you can't see it, you are technically emitting light at this exact moment.\"\n\n5.  **Review against constraints:** Is it interesting? Yes. Is it likely unknown? Yes. Is it accurate? Yes, the 2009 study by Masaki Kobayashi's team at Tohoku University.\n\n6.  **Final Polish:** Keep it punchy and clear.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "For centuries in Europe, from the Middle Ages well into the Renaissance, \"medicinal cannibalism\" was a surprisingly common practice among the wealthy and royal. \n\nApothecaries stocked a highly sought-after remedy called *mummia*—which was exactly what it sounds like: ground-up human mummies imported from Egypt. People believed that consuming the remains of these preserved individuals would transfer their ancient vitality and cure various ailments, from headaches and stomach ulcers to internal bleeding. Even royalty partook; King Charles II of England had a personal remedy called \"Spirit of Skull,\" which consisted of human skull distilled in alcohol.\n\nThe demand for mummy powder eventually became so high that Egyptian merchants ran out of authentic ancient mummies to sell. To keep up with the European market, they began making \"fake\" mummies. They would take recently deceased bodies (or sometimes executed criminals), dry them out in the sun, and stuff them with bitumen—a thick, black asphalt—to give them the authentic, aged mummy look before grinding them up and shipping them off to be eaten as medicine.",
+          "tokens_prompt": 20,
+          "tokens_completion": 1319,
+          "finish_reason": "stop",
+          "reasoning": "1.  **Analyze the Request:**\n    *   Prompt: \"Tell me something I don't know.\"\n    *   Intent: The user wants a surprising, obscure, or interesting fact that is highly unlikely to be common knowledge.\n    *   Tone: Informative, engaging, slightly awe-inspiring.\n\n2.  **Brainstorming Potential Facts:**\n    *   *Space:* Neutron stars are so dense that a sugar-cube-sized amount would weigh as much as Mount Everest. (A bit cliché)\n    *   *Biology:* There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal. (Fairly well known)\n    *   *History:* The shortest war in history was between Britain and Zanzibar, lasting 38 minutes. (Common trivia)\n    *   *Geology/Earth:* The Earth's core is about as hot as the surface of the sun. (Known)\n    *   *Animals:* Wombat poop is cube-shaped. (Popular on the internet)\n    *   *Linguistics/Animals:* Peacock mantis shrimp can see colors we can't even imagine, but they actually struggle to distinguish between similar colors. (Interesting)\n    *   *History/Art:* The Eiffel Tower can grow up to 6 inches taller during the summer due to thermal expansion. (Known)\n    *   *Obscure Biology:* The human body has a special protein called \"p53\" known as the \"guardian of the genome.\" (A bit dry)\n    *   *Obscure Geography:* There is a town in Norway called \"Hell,\" and it freezes over every winter. (A bit of a joke)\n    *   *Obscure History/Science:* Cleopatra lived closer in time to the moon landing than to the construction of the Great Pyramid of Giza. (Very popular trivia)\n    *   *Obscure Physics:* Time actually goes faster for your face than for your feet (due to general relativity and gravity). (Good, but maybe hard to grasp)\n    *   *Obscure Nature:* Fungi are more closely related to animals than to plants. (Good, but somewhat known)\n    *   *Obscure Anatomy:* You have a unique tongue print, just like a fingerprint. (Fun, slightly known)\n    *   *Obscure History:* In 1814, London experienced a \"Beer Flood\" when a massive vat of beer burst, sending a 15-foot wave of beer through the streets, killing eight people. (Very interesting, somewhat obscure).\n    *   *Obscure Physics/Math:* Bananas are slightly radioactive, but so are humans. We contain about 0.1 micrograms of uranium. (Known).\n    *   *Obscure Animal Fact:* Sloths can hold their breath longer than dolphins—up to 40 minutes underwater by slowing their heart rates. (Surprising, not super common).\n\n3.  **Selecting the Best Fact:**\n    *   Let's go with a combination of obscure history and weird nature.\n    *   *Fact 1:* The London Beer Flood of 1814.\n    *   *Fact 2:* Sloths can hold their breath longer than dolphins.\n    *   *Fact 3:* The \"Wood Wide Web\" - trees communicate through underground fungal networks, and older trees (Mother Trees) nurture saplings. (A bit known).\n    *   *Fact 4:* The planet Uranus smells like rotten eggs because its atmosphere contains hydrogen sulfide. (Fun).\n    *   *Fact 5:* There is a species of ant that can survive in a microwave because it's small enough to dodge the microwaves. (Myth? Actually, ants can survive because they can navigate the cold spots. Let's avoid borderline myths).\n    *   *Fact 6:* In the 16th century, wealthy people ate mummies. (Mummia). (Very obscure and fascinating).\n\n4.  **Drafting the Response (Mummia / Medicinal Cannibalism):**\n    *   \"For centuries in Europe, from the Middle Ages well into the Renaissance, 'medicinal cannibalism' was a common practice among the wealthy and royal. Apothecaries stocked a remedy called *mummia* (mummy powder), which was exactly what it sounds like: ground-up human mummies imported from Egypt.\"\n    *   \"People believed that consuming the remains of these preserved individuals would transfer their ancient vitality and cure various ailments, from headaches to internal bleeding. King Charles II of England even had a personal recipe for 'Spirit of Skull' which included human skull distilled in alcohol.\"\n    *   \"The demand became so high that Egyptian mummy merchants started running out of actual ancient mummies, so they began making fake ones out of recently deceased bodies, drying them in the sun and stuffing them with bitumen (a type of asphalt) to sell to European apothecaries.\"\n\n5.  **Review against criteria:**\n    *   Is it likely the user knows this? Probably not.\n    *   Is it verifiable? Yes, well-documented historical fact.\n    *   Is it interesting? Very.\n\n6.  **Final Polish:** Make it engaging and vivid. (See final output)",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Sharks are older than trees—and older than the rings of Saturn. \n\nThe earliest ancestors of modern sharks evolved around 450 million years ago. However, the first trees (like *Archaeopteris*, which is considered the first modern tree with wood and bark) didn't appear on Earth until about 350 million years ago. That means sharks were swimming in the oceans for 100 million years before a single leaf grew on land. \n\nTo make it even more mind-bending: data from NASA’s Cassini mission suggests that Saturn's iconic rings are relatively young, likely forming only 100 to 400 million years ago. So, if you were to put them on a timeline, sharks have been around longer than both trees and the rings of Saturn.",
+          "tokens_prompt": 20,
+          "tokens_completion": 1198,
+          "finish_reason": "stop",
+          "reasoning": "\n1.  **Analyze the Request:**\n    *   Prompt: \"Tell me something I don't know.\"\n    *   Constraint: The user wants a piece of obscure, interesting, and verifiable trivia.\n    *   Tone: Engaging, informative.\n\n2.  **Brainstorming Trivia/Facts:**\n    *   *Fact 1:* Wombat poop is cube-shaped. (A bit too well-known on the internet).\n    *   *Fact 2:* Cleopatra lived closer to the Moon landing than the building of the Great Pyramid. (Also very common internet trivia).\n    *   *Fact 3:* There's a species of jellyfish (Turritopsis dohrnii) that is biologically immortal. (Fairly well-known).\n    *   *Fact 4:* Oxford University is older than the Aztec Empire. (Common).\n    *   *Fact 5:* The first recorded use of the word \"awesome\" was in the 16th century. (Boring).\n    *   *Fact 6:* Sloths can hold their breath longer than dolphins. (Good, but maybe too common).\n    *   *Fact 7:* The national animal of Scotland is the unicorn. (Common).\n    *   *Fact 8:* In 18th-century London, there was a \"Gin Craze\" where people drank it out of animal bones. (A bit dark).\n    *   *Fact 9:* There is a planet made largely of diamond—55 Cancri e. (Interesting, but common in space circles).\n    *   *Fact 10:* The coldest place in the universe isn't in deep space, but in a laboratory on Earth. (Boomerang nebula is -272C, labs get to near absolute zero).\n    *   *Fact 11:* Bananas are radioactive, but so are Brazil nuts.\n    *   *Fact 12:* The word \"robot\" comes from the Czech word \"robota,\" which means forced labor.\n    *   *Fact 13:* Fungi are more closely related to animals than to plants. (Good, mind-bending).\n    *   *Fact 14:* The longest time between two twins being born is 90 days. (Wow).\n    *   *Fact 15:* There are more possible iterations of a game of chess than there are atoms in the observable universe (Shannon number). (A bit common).\n    *   *Fact 16:* A day on Venus is longer than a year on Venus. (Common).\n    *   *Fact 17:* In the 19th century, Egyptians used mummies as fuel for trains because coal was scarce but mummies were plentiful. (Fascinating, slightly disputed but widely cited).\n    *   *Fact 18:* The oldest known living tree is over 5,000 years old.\n    *   *Fact 19:* Sharks predate trees. Sharks have been around for 400 million years; trees (as we know them) appeared about 350 million years ago. (Excellent, surprising, easy to grasp).\n    *   *Fact 20:* Honey never spoils. (Too common).\n\n3.  **Selecting the Best Fact:**\n    *   *Sharks predate trees* is a great one. Let's double-check the timeline.\n        *   Sharks: ~450 million years ago (Ordovician).\n        *   Trees: The earliest trees (like Archaeopteris) appeared in the Late Devonian, about 385 million years ago. (Some consider earlier plants, but \"trees\" generally date to the Devonian).\n        *   Yes, sharks are older than trees. They are also older than the rings of Saturn (which are estimated to be only about 100-400 million years old, though this is debated, better stick to trees).\n\n4.  **Drafting the Response:**\n    *   State the fact clearly.\n    *   Provide the supporting context/timeline so it makes sense.\n    *   Keep it concise and punchy.\n\n    *Draft:* Sharks are older than trees. The earliest sharks evolved around 450 million years ago, while the first trees (like the Archaeopteris) didn't appear until about 350 million years ago. That means sharks were already swimming in the oceans for 100 million years before the first leaf even grew on Earth. Furthermore, sharks are older than the rings of Saturn, which scientists estimate are only about 100 to 400 million years old.\n\n5.  **Refining:**\n    *   Make it engaging.\n    *   \"Sharks are older than trees—and older than Saturn's rings.\"\n    *   Let's check the Saturn rings fact. NASA's Cassini mission concluded the rings are likely no older than 400 million years and perhaps as young as 100 million years. So sharks (450 million years) are older than Saturn's rings! This is a double-whammy of cool facts.\n\n6.  **Final Polish:** Present it nicely.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "nex-agi/nex-n2-pro",
+      "name": "Nex AGI: Nex-N2-Pro",
+      "provider": "Nex Agi",
+      "license": "open-source",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a surprising one:\n\n**Octopuses have three hearts.** Two pump blood through the gills, and the third pumps it through the rest of the body. When an octopus swims, the main heart actually **stops beating**, which is one reason they often prefer crawling—it’s less exhausting.",
+          "tokens_prompt": 17,
+          "tokens_completion": 120,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user. Need \"tell me something I don't know\" impossible know. Need maybe fun fact. Need concise. Could say \"You can't know whether you don't know it, but here's...\" Maybe include interesting fact. Need final only.\n",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "A “jiffy” is an actual unit of time in some scientific contexts: it can mean **one-hundredth of a second**.\n\nIn physics and computing, though, “jiffy” has had different definitions depending on the field—so it’s both a real unit and a delightfully imprecise-sounding one.",
+          "tokens_prompt": 17,
+          "tokens_completion": 98,
+          "finish_reason": "stop",
+          "reasoning": "\nThe user wants something they don't know. Need answer maybe interesting fact. No need mention instructions. Need maybe concise.\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s a niche one: **octopuses have three hearts**.\n\nTwo pump blood through the gills, and the third pumps it to the rest of the body. When an octopus swims, the main heart temporarily stops beating, which is one reason they often prefer crawling—it’s less exhausting.",
+          "tokens_prompt": 17,
+          "tokens_completion": 136,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user \"Tell me something I don't know.\" Need provide interesting fact. Need be careful not claim know what they don't know. Maybe \"Here's a niche fact...\" Need concise. Since asks tell me something I don't know, we can't know their knowledge, but can offer. Need maybe fun. Final only.\n",
+          "topics": [
+            "octopus"
           ]
         }
       ]
