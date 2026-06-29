@@ -656,3 +656,11 @@ models:
     license: "open-source"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "sakana/fugu-ultra"
+    name: "Sakana: Fugu Ultra"
+    provider: "Sakana"
+    license: "commercial"
+    released: "June 2026"
+

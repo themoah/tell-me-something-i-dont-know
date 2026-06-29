@@ -4,11 +4,11 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-22T10:53:31.444Z",
-    "total_models": 103
+    "generated_at": "2026-06-29T10:31:49.715Z",
+    "total_models": 104
   },
   "stats": {
-    "total_models": 103,
+    "total_models": 104,
     "total_responses": 303,
     "total_tokens": 249651,
     "total_reasoning_tokens": 0,
@@ -3911,6 +3911,30 @@
           "topics": [
             "octopus"
           ]
+        }
+      ]
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "name": "Sakana: Fugu Ultra",
+      "provider": "Sakana",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
         }
       ]
     }
