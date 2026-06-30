@@ -4,16 +4,16 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-22T10:53:31.444Z",
-    "total_models": 103
+    "generated_at": "2026-06-30T18:35:22.550Z",
+    "total_models": 105
   },
   "stats": {
-    "total_models": 103,
-    "total_responses": 303,
-    "total_tokens": 249651,
+    "total_models": 105,
+    "total_responses": 309,
+    "total_tokens": 253337,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 57,
+      "octopus": 60,
       "jellyfish": 40,
       "honey": 23,
       "anglo-zanzibar war": 13,
@@ -3911,6 +3911,78 @@
           "topics": [
             "octopus"
           ]
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-sonnet-5",
+      "name": "Anthropic: Claude Sonnet 5",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: octopuses have three hearts and blue blood.\n\nTwo of the hearts pump blood to the gills, while the third pumps it to the rest of the body. That third heart actually stops beating when the octopus swims, which is part of why they prefer crawling—swimming exhausts them.\n\nThe blue blood comes from a copper-based protein called hemocyanin (instead of the iron-based hemoglobin in human blood), which is more efficient at transporting oxygen in cold, low-oxygen environments like the deep ocean.\n\nWant another one, or something in a particular subject area—science, history, language, etc.?",
+          "tokens_prompt": 16,
+          "tokens_completion": 197,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's an interesting one:\n\n**Octopuses have three hearts and blue blood.** Two hearts pump blood to the gills, while the third pumps it to the rest of the body. Their blood is blue because it uses a copper-based molecule called hemocyanin to carry oxygen, instead of the iron-based hemoglobin that makes our blood red. Copper-based blood is actually more efficient at transporting oxygen in cold, low-oxygen environments—like the deep ocean—which is likely why it evolved this way.\n\nBonus weird fact: when an octopus swims (rather than crawls), one of its hearts actually stops beating, which is part of why they tend to prefer crawling—swimming exhausts them faster.\n\nWant me to keep going with random facts, or pick a specific topic (science, history, language, etc.) you'd like something surprising from?",
+          "tokens_prompt": 16,
+          "tokens_completion": 277,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one: **octopuses have three hearts and blue blood.**\n\nTwo of the hearts pump blood to the gills, while the third pumps it to the rest of the body. That third heart actually stops beating when the octopus swims, which is why they prefer crawling and tend to get tired quickly when swimming—it's energetically costly for them.\n\nThe blue blood comes from a copper-based protein called hemocyanin (instead of the iron-based hemoglobin humans use). Hemocyanin is less efficient at transporting oxygen than hemoglobin, but it works better in cold, low-oxygen environments—handy if you're a creature often lurking in deep, chilly ocean water.\n\nWant me to go in a totally different direction—history, math, language, space—or keep going with weird animal facts?",
+          "tokens_prompt": 16,
+          "tokens_completion": 254,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-image",
+      "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "provider": "Google",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here is a fact that might surprise you:\n\n**Despite being thousands of miles apart, the Andes mountains and the Himalayas were formed by the same tectonic plate.**\n\nHere is a visualization of this concept:\n\n",
+          "tokens_prompt": 10,
+          "tokens_completion": 1595,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is something you likely didn't know:\n\n**The Earth has a second, temporary \"moon.\"**\n\nWhile our large, permanent Moon is the only natural satellite that has been with us for eons, the Earth occasionally captures small asteroids with its gravity. These space rocks get pulled into orbit, becoming temporary \"minimooens\" for a few months or years before escaping back into the solar system.\n\nThey are very small and faint, making them difficult to detect, but astronomers confirmed one such object, 2020 CD3, which orbited Earth between 2018 and 2020.\n\n***\n\nHere is a visualization of this concept:\n\n",
+          "tokens_prompt": 9,
+          "tokens_completion": 141,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is a fact you might not know: **The total mass of all the ants on Earth is roughly equal to the total mass of all the humans.**\n\nScientists estimate that there are about 20 quadrillion ants (20,000,000,000,000,000) currently alive. While individual ants are tiny, their sheer numbers add up to a biomass that rivals our own.\n\nHere is a visual representation of this surprising scale:\n\n",
+          "tokens_prompt": 9,
+          "tokens_completion": 1222,
+          "finish_reason": "stop",
+          "topics": []
         }
       ]
     }
