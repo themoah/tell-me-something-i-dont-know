@@ -676,3 +676,11 @@ models:
     license: "commercial"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "poolside/laguna-xs-2.1"
+    name: "Poolside: Laguna XS 2.1"
+    provider: "Poolside"
+    license: "open-weights"
+    released: "July 2026"
+

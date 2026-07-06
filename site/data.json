@@ -4,11 +4,11 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-30T18:35:22.550Z",
-    "total_models": 105
+    "generated_at": "2026-07-06T10:29:55.914Z",
+    "total_models": 107
   },
   "stats": {
-    "total_models": 105,
+    "total_models": 107,
     "total_responses": 309,
     "total_tokens": 253337,
     "total_reasoning_tokens": 0,
@@ -3983,6 +3983,54 @@
           "tokens_completion": 1222,
           "finish_reason": "stop",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "name": "Sakana: Fugu Ultra",
+      "provider": "Sakana",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        }
+      ]
+    },
+    {
+      "id": "poolside/laguna-xs-2.1",
+      "name": "Poolside: Laguna XS 2.1",
+      "provider": "Poolside",
+      "license": "open-weights",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy\",\"code\":404}}"
         }
       ]
     }
