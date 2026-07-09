@@ -676,3 +676,41 @@ models:
     license: "commercial"
     released: "June 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "x-ai/grok-4.5"
+    name: "xAI: Grok 4.5"
+    provider: "xAI"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "aion-labs/aion-3.0-mini"
+    name: "AionLabs: Aion-3.0-Mini"
+    provider: "Aion Labs"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "aion-labs/aion-3.0"
+    name: "AionLabs: Aion-3.0"
+    provider: "Aion Labs"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "tencent/hy3"
+    name: "Tencent: Hy3"
+    provider: "Tencent"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "nex-agi/nex-n2-mini"
+    name: "Nex AGI: Nex-N2-Mini"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "June 2026"
+
+  - id: "poolside/laguna-xs-2.1"
+    name: "Poolside: Laguna XS 2.1"
+    provider: "Poolside"
+    license: "open-weights"
+    released: "July 2026"
+
