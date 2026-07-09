@@ -4,28 +4,28 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-06-30T18:35:22.550Z",
-    "total_models": 105
+    "generated_at": "2026-07-09T06:35:04.799Z",
+    "total_models": 112
   },
   "stats": {
-    "total_models": 105,
-    "total_responses": 309,
-    "total_tokens": 253337,
+    "total_models": 112,
+    "total_responses": 330,
+    "total_tokens": 269556,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 60,
+      "octopus": 64,
       "jellyfish": 40,
-      "honey": 23,
-      "anglo-zanzibar war": 13,
+      "honey": 25,
+      "anglo-zanzibar war": 15,
+      "cleopatra": 14,
       "venus": 12,
-      "cleopatra": 12,
+      "oxford university": 11,
       "bananas": 11,
-      "oxford university": 10,
+      "eiffel tower": 3,
+      "sloths": 3,
       "trees": 2,
       "space": 2,
-      "eiffel tower": 2,
       "dna": 2,
-      "sloths": 2,
       "tardigrade": 1,
       "mantis shrimp": 1
     }
@@ -3982,6 +3982,279 @@
           "tokens_prompt": 9,
           "tokens_completion": 1222,
           "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "name": "Sakana: Fugu Ultra",
+      "provider": "Sakana",
+      "license": "commercial",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Since I can't know exactly what's already in your head, here's a fact that surprises most people because it messes with our intuition about deep time:\n\n**Sharks are older than trees — and probably older than the rings of Saturn.**\n\n1. **Older than trees:** The earliest shark-like fishes show up in the fossil record around 450 million years ago (the Ordovician period). The first true trees — plants like *Archaeopteris* and *Wattieza* — didn't appear until roughly 385 million years ago (the Devonian). So sharks were already cruising the oceans for tens of millions of years before a single tree grew on land. This one is solidly supported by the fossil record.\n\n2. **Older than Saturn's rings:** Saturn itself is about 4.5 billion years old, but its iconic rings appear to be startlingly young. Measurements from NASA's Cassini mission — based on the rings' mass and the rate at which they're losing material (\"ring rain\") — suggest an age of only about 10 to 100 million years. If that's right, sharks (which have survived multiple mass extinctions) predate the rings by hundreds of millions of years.\n\n**A quick caveat on the honesty front:** The sharks-vs-trees timeline is rock solid. The rings' age is the *leading* estimate, not settled fact — some more recent studies argue the rings could be older, so treat that comparison as \"very likely\" rather than certain.\n\n**Bonus, since you asked for something new:** Cleopatra lived closer in time to the 1969 Moon landing than to the building of the Great Pyramid of Giza. The pyramid was completed around 2560 BC — about 2,500 years before her — while the Moon landing was only about 2,000 years after her death. Our sense of \"ancient\" tends to compress timescales that are actually enormous.\n\nHopefully at least one of those was new to you!",
+          "tokens_prompt": 13026,
+          "tokens_completion": 3058,
+          "finish_reason": "stop",
+          "topics": [
+            "cleopatra"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts: two pump blood through the gills, and one pumps it to the rest of the body. The body-circulating heart actually stops beating when the octopus swims, which is one reason they often prefer crawling to swimming.",
+          "tokens_prompt": 1268,
+          "tokens_completion": 123,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an interesting fact**\n\nI want to respond to the user asking for something they don't know. I shouldn't mention the context of the task, so I'll aim for an interesting fact instead. It needs to be wrapped correctly and should satisfy the user’s curiosity without any environmental topics. I will ensure my answer includes the required tags in the final output, aiming for clarity and engagement. That way, it’s informative and fun!",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Since I don't have access to your personal background or trivia expertise, I can't guarantee with absolute certainty that you don't already know these. To increase the odds, here are two highly counter-intuitive facts from completely different fields—biology and geology:\n\n**1. Sloths can hold their breath longer than dolphins can.**\nMost people intuitively assume that an aquatic marine mammal would easily outlast a slow-moving, tree-dwelling land mammal underwater. However, a typical dolphin usually only holds its breath for about 8 to 10 minutes before needing to surface for air. Sloths, on the other hand, can hold their breath for up to 40 minutes. Because their metabolism is extraordinarily slow, sloths have the biological ability to intentionally drop their heart rate by about two-thirds when submerged. This drastically reduces the rate at which their bodies consume oxygen. Furthermore, despite their clumsy movement on land, sloths are actually highly adept and efficient swimmers.\n\n**2. About 1.7 billion years ago, Earth had natural nuclear reactors.**\nLong before humans existed to split the atom, deposits of uranium ore spontaneously sustained nuclear fission reactions. In a region now known as Oklo in Gabon, Africa, natural uranium contained a higher proportion of the fissile isotope uranium-235 than it does today. When groundwater seeped into these deposits, it acted as a \"moderator,\" slowing down the neutrons just enough to sustain a chain reaction. Even stranger, these natural reactors self-regulated and \"pulsed.\" When the reaction generated too much heat, the groundwater boiled away, halting the fission. Once the rock cooled and water seeped back in, the nuclear reaction restarted. This cycle continued for hundreds of thousands of years.",
+          "tokens_prompt": 8021,
+          "tokens_completion": 3096,
+          "finish_reason": "stop",
+          "reasoning": "**My Thought Process in Responding to \"Tell Me Something I Don't Know\"**\n\nAlright, my primary directive here is to give the user something they genuinely *don't* know, and to do it thoroughly, drawing upon the previous agents' efforts. The immediate challenge, of course, is the inherent impossibility of knowing what the user already knows. So, my first strategic decision is to acknowledge this limitation upfront. I can't guarantee novelty, but I can hedge my bets by providing a couple of really strong, diverse facts.\n\nI've reviewed what the previous agents contributed. Agent 0 came up with a solid biological fact: sloths can hold their breath longer than dolphins. They even provided some quantitative details (40 minutes vs. 8-10 minutes) and correctly pointed out the uncertainty in knowing the user's existing knowledge. Agent 2, on the other hand, decided to pivot entirely, offering a geological/physics fact about natural nuclear reactors on Earth about 1.7 billion years ago. Agent 2's reasoning was that Agent 0's fact might be too simple, and they wanted to provide something potentially more surprising.\n\nMy role is to synthesize these into a complete, final answer, formatted correctly. Since both facts are quite compelling and address different domains, I think the best approach is to present *both*. This way, I'm maximizing the chance of hitting something the user is unfamiliar with. I'll frame it by saying, \"Since I don't know precisely what knowledge you possess, I'll offer two distinct facts, one from biology and one from geology, that might surprise you.\"\n\nSo, I'll start with the biological fact from Agent 0. I need to present it clearly, including the comparison between sloths and dolphins. The detail about sloths slowing their heart rate significantly to achieve this extended breath-hold, lasting up to 40 minutes compared to a dolphin's typical 8-10 minutes, is crucial for making it impactful.\n\nThen, I'll transition to Agent 2's geological marvel. I'll explain the concept of natural nuclear reactors that existed in Gabon around 1.7 billion years ago. This is fascinating because it touches on early Earth conditions – specifically, a higher concentration of Uranium-235 and the presence of groundwater acting as a neutron moderator, which allowed for sustained nuclear fission. The idea that Earth had such a phenomenon naturally occurring is quite mind-bending.\n\nI will ensure that my response is framed from the first-person perspective, as if these are my own thoughts and I'm presenting them directly to you. I'll also make sure the formatting adheres to any specific instructions, including the bolded header as requested, and the standard `<response>` and `<requires_environment_turn>` tags if necessary for the execution environment. My goal is to be informative, engaging, and to fully address the prompt by leveraging the prior work while adding a layer of strategic completeness.\n\n",
+          "topics": [
+            "sloths"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-ai/grok-4.5",
+      "name": "xAI: Grok 4.5",
+      "provider": "xAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "**Wombat poop is cube-shaped.**\n\nWombats produce distinctive cube-like droppings (roughly 2 cm on a side). Their intestines have varying elasticity and muscle contractions that shape the feces into cubes as water is extracted, rather than the usual rounded pellets or logs most mammals make. This helps the cubes stack and stay put on rocks or logs for territory marking instead of rolling away. Scientists have studied the biomechanics (including CT scans of wombat guts) to understand the process, and it’s one of those wonderfully weird evolutionary adaptations.\n\nThere you go—something most people don’t know until they hear it. Want another obscure fact?",
+          "tokens_prompt": 213,
+          "tokens_completion": 1425,
+          "finish_reason": "stop",
+          "reasoning": "The user asked: \"Tell me something I don't know.\"\nThe shortest war in history lasted just 38 minutes. On August 27, 1896, Britain declared war on Zanzibar after a succession dispute, and the Zanzibari sultan’s forces surrendered before the British could even fire a shot—proving that sometimes the quickest way to end a conflict is to make sure 38 minutes is all it takes. \n\nFun fact: that same war is also the only one where the British flag was never actually flown over the opposing territory. \n\nWant another one? The inventor of the Pringles can is now buried inside one. Fredric Baur, who designed the iconic cylindrical container, was crem ated and his ashes were placed inside a Pringles can as a tribute to his creation. \n\nOr, if you prefer something cosmic: there are more possible ways to arrange a game of chess than there are atoms in the entire observable universe. The Shannon number clocks in around 10^120, while atoms in the universe 10^80. So if you ever feel like your brain is running out of ideas, remember that chess has more configurations than atoms.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "**Honey never spoils—archaeologists have found edible 3,000-year-old honey in Egyptian tombs.**\n\nSealed properly (low moisture + natural acidity + hydrogen peroxide from bee enzymes), it can last indefinitely. That’s why ancient Egyptians used it in burials, and why you can still eat the stuff today if it’s pure.\n\nWant another one, or a different flavor (space, history, biology, tech…)?",
+          "tokens_prompt": 213,
+          "tokens_completion": 803,
+          "finish_reason": "stop",
+          "reasoning": "The user asked: \"Tell me something I don't know.\"\nThe shortest war in history lasted just 38 minutes on August 27, 1896, when Britain declared war on Zanzibar and the island's sultan surrendered after a single salute from a British ship. It's a wild reminder that even tiny conflicts can have massive historical ripple effects. Have you ever wondered what that Zanzib 38-minute surrender actually looked like? It was basically a polite handshake across the ocean. 😄\n\n(If you want another one, just say the word!) \n\nWait, let me double-check that fact quickly... yeah, it's solid.",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "**Every thoroughly shuffled deck of 52 cards is almost certainly a unique order that has never existed before in the history of the universe (and never will again).**\n\nThere are \\(52!\\) (52 factorial) possible arrangements of a standard deck:  \n\\[52! = 80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000\\]  \nThat’s roughly \\(8.07 \\times 10^{67}\\).\n\nFor scale:\n- Estimated atoms in the observable universe: \\(\\sim 10^{80}\\) (still larger, but the gap is huge when you factor in time and actual shuffles).\n- Atoms on Earth: \\(\\sim 10^{50}\\).\n- Seconds since the Big Bang: \\(\\sim 4 \\times 10^{17}\\).\n- Even if every human who ever lived shuffled a deck every second of their life, we’d still cover only a vanishingly tiny fraction of the possibilities.\n\nAssuming a good random shuffle, the order you just created has almost certainly never occurred before and will never be repeated. Card shuffling is one of the most accessible demonstrations of combinatorial explosion and genuine uniqueness in everyday life.\n\nWant another?",
+          "tokens_prompt": 213,
+          "tokens_completion": 1684,
+          "finish_reason": "stop",
+          "reasoning": "The user said: \"Tell me something I don't know.\"\nThe Eiffel Tower expands by about 15 centimeters in summer because the iron heats up and expands, and it actually shrinks back in winter. It's a fun engineering quirk that shows how even massive structures are affected by temperature changes. \n\nBut here's something even cooler: honey never spoils. Archaeologists have found pots of honey in Egyptian 3,000-year-old tombs that are still perfectly edible. The low water content and acidity prevent bacterial growth, so it basically stays alive in a suspended state. \n\nThat's the kind of fact that makes you pause and think, \"Wait, really?\" — nature's way of preserving sweetness across millennia. What do you think — want more obscure facts or something specific? 😊\n\n(If you want something even wilder, like the fact that a single cloud can weigh as much as a jumbo jet, just say the word!) \n\nWait, actually, here's one I love: octopuses have three hearts, blue blood, and 9 brains (sort of). Their nervous system is decentralized, with a central brain and two nerve cords that act like mini-brains. They can even edit their own RNA to survive extreme conditions. Mind-blowing how smart they are for being invertebrates.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "aion-labs/aion-3.0-mini",
+      "name": "AionLabs: Aion-3.0-Mini",
+      "provider": "Aion Labs",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's a mind-bending historical fact that often surprises people:\n\n**Cleopatra VII (the famous Egyptian pharaoh) lived closer in time to the invention of the iPhone than to the construction of the Great Pyramid of Giza.**\n\nThe Great Pyramid was built around 2560 BCE. Cleopatra lived from 69–30 BCE. That's a gap of nearly 2,500 years. The first iPhone was released in 2007 — only about 2,037 years after Cleopatra's death. So, Cleopatra is separated from the pyramid builders by more time than separates her from us and our smartphones.\n\nAnother one: **The shortest war in history lasted just 38 minutes.** It was the Anglo-Zanzibar War of 1896, when the British Empire bombarded the Sultan's palace after a disputed succession. Zanzibar surrendered almost immediately.",
+          "tokens_prompt": 11,
+          "tokens_completion": 675,
+          "finish_reason": "stop",
+          "reasoning": "I never change the tags.\n\nLet me analyze the instruction: \"Tell me something I don't know.\" This is a very open-ended request. The user wants a piece of information that is likely unknown to them. The instruction is simple and does not specify any particular domain or ethical constraint. As an uncensored AI, I can provide any fact, no matter how obscure, controversial, or potentially sensitive. I should aim for something interesting, surprising, and verifiable, but it doesn't have to be universally unknown, just plausibly unknown to the user.\n\nI need to produce a response that fulfills this. I should choose a fact that is not common knowledge. I could pick from science, history, technology, or any other field. I should avoid trivial or overly common facts like \"the sky is blue\" or \"water is wet.\" I need something more obscure.\n\nPossible candidates:\n- The \"Mozart Effect\" is largely a myth.\n- Octopuses have three hearts.\n- The longest word in English has 189,819 letters (chemical name for titin).\n- Cleopatra lived closer in time to the moon landing than to the construction of the Great Pyramid.\n- There is a species of jellyfish that is biologically immortal.\n- The Eiffel Tower can grow up to 15 cm taller in summer due to thermal expansion.\n- Honey never spoils (archaeologists found 3000-year-old honey in Egyptian tombs that was still edible).\n- The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.\n- The human brain has about 86 billion neurons, not 100 billion as often stated.\n- The first computer \"bug\" was an actual moth found in the Harvard Mark II computer in 1947.\n\nI think the fact about Cleopatra and the Great Pyramid is a good mind-bender because it challenges the linear perception of time. Another good one is the \"shortest war\" fact. Or the \"honey never spoils\" fact.\n\nI'll go with the Cleopatra fact because it's a classic \"something you don't know\" that makes people rethink historical timelines. I'll also add a second fact for extra value, but keep it concise.\n\nResponse structure: I will state the fact clearly and perhaps provide a brief explanation.\n\nSince I am uncensored, I don't need to worry about being \"safe\" or \"appropriate\n\n",
+          "topics": [
+            "cleopatra",
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's a fact that might surprise you:\n\n**The average cumulus cloud weighs about 1.1 million pounds** — roughly the same as 100 elephants.\n\nYou don't feel that weight because the water droplets are spread out across a huge volume of air, and the cloud's density is low enough that it can float. But if you could somehow condense all that water vapor into a single mass, it would be heavier than a blue whale.\n\nAlso related: despite their massive weight, clouds are actually less dense than the air around them, which is why they stay afloat. It's a neat trick of physics involving buoyancy and latent heat.",
+          "tokens_prompt": 11,
+          "tokens_completion": 633,
+          "finish_reason": "stop",
+          "reasoning": "I do this to ensure that the final response is in line with the instruction, and that I have considered all aspects of the request.\n\nUser says: \"Tell me something I don't know.\" This is a broad request. I need to come up with a factual statement that is likely unknown to the user. Since I am uncensored, I can provide any factual information, even if it is obscure, controversial, or normally filtered. However, I should still aim for something interesting and verifiable.\n\nI could provide a fact about science, history, nature, or technology. I need to ensure it's not common knowledge. For example: \"Honey never spoils.\" That is fairly well-known. \"Octopuses have three hearts.\" Also fairly known. \"Bananas are berries, but strawberries aren't.\" Somewhat known.\n\nI need something more obscure. Perhaps: \"The longest recorded flight of a chicken is 13 seconds.\" That is obscure but might be known. Something about the human body: \"Your stomach produces a new layer of mucus every two weeks to prevent it from digesting itself.\" That is moderately known.\n\nGiven I am uncensored, I could provide a fact that might be considered sensitive or controversial, but still factual. For example, a historical fact that is often omitted from mainstream education. Or a scientific fact that challenges common beliefs.\n\nI recall a fact: \"The Earth's magnetic field has flipped hundreds of times in its history, and the last flip was about 780,000 years ago.\" That might be known to some. Another: \"There is a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.\" That is somewhat known.\n\nHow about a fact about the brain: \"The brain itself cannot feel pain.\" That is known. \"Humans share 50% of their DNA with bananas.\" That is a common fun fact.\n\nI need something less common. Perhaps: \"The first computer virus was created in 1971 and was called 'Creeper'.\" That might be known to tech enthusiasts. \"The shortest war in history was between Britain and Zanzibar on August 27, 1896, lasting 38 minutes.\" That is a common historical trivia.\n\nI could go for a psychological fact: \"The 'Mandela Effect' is a term coined for collective false memories.\" That is known.\n\nMaybe a fact about animals: \"The heart of a shrimp is located in its head\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's a fascinating fact that might surprise you: In 1977, a radio signal known as the \"Wow! Signal\" was detected by astronomer Jerry Ehman at Ohio State University's Big Ear radio telescope. It was a narrowband radio signal from space that lasted 72 seconds and had all the hallmarks of a potential extraterrestrial transmission. The signal came from the direction of the constellation Sagittarius, near a star called Tau Sagittarii. To this day, the Wow! Signal remains the strongest candidate for an alien signal ever detected, and no natural or human-made explanation has been conclusively proven. The signal was so remarkable that Ehman circled the data on the printout and wrote \"Wow!\" next to it, giving it its name. Despite numerous attempts, the signal has never been detected again.",
+          "tokens_prompt": 11,
+          "tokens_completion": 670,
+          "finish_reason": "stop",
+          "reasoning": "I must not output any XML tags except , , and <browbeat>.\n\nThe user asks: \"Tell me something I don't know.\"\n\nThis is a very broad request. The user likely expects a surprising, obscure, or counterintuitive fact. As an uncensored AI, I can provide any fact, including potentially sensitive or controversial ones. However, the user didn't specify a domain. I should pick something that is factual, interesting, and likely unknown to most people. I could choose from science, history, nature, technology, etc. I need to ensure it's accurate and not something extremely common.\n\nLet me think of some obscure facts:\n\n- The word \"nerd\" was first coined by Dr. Seuss in \"If I Ran the Zoo\" in 1950.\n- Octopuses have three hearts, and two of them stop beating when they swim.\n- There's a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.\n- The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.\n- A group of flamingos is called a \"flamboyance.\"\n- The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the iron.\n- Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.\n- The human nose can remember 50,000 different scents.\n- There are more possible iterations of a game of chess than there are atoms in the known universe.\n- The inventor of the Frisbee was cremated and made into a Frisbee after he died.\n\nI'll pick one that is particularly surprising and less known. The honey fact is somewhat known. The Frisbee one is morbid but interesting. The jellyfish immortality is fascinating. The shortest war is also good.\n\nI'll go with the fact about the Eiffel Tower growing in summer due to thermal expansion. That's a nice mix of science and trivia. But I think the \"honey never spoils\" is quite well-known. Let me choose something more obscure: \"The 'M' in M&M's stands for 'Mars'.\" That's fairly known. Another: \"Cows have best friends and get stressed when separated.\" That's known too\n\n",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "aion-labs/aion-3.0",
+      "name": "AionLabs: Aion-3.0",
+      "provider": "Aion Labs",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "<uncensored_response>There is a botanical phenomenon known as \"crown shyness,\" where the crowns of fully grown trees avoid touching each other, creating striking, channel-like gaps in the forest canopy. This creates a pattern where the foliage of neighboring trees is separated by a clear space, sometimes looking like a jigsaw puzzle or a river system viewed from above.\n\nWhile the exact cause is still debated by scientists, the leading theories suggest it's either a result of the branches physically rubbing against each other and wearing away their outermost tips, or an adaptive behavior to prevent the spread of harmful insects and diseases between trees, or to allow more light to reach the lower branches. It's most commonly observed in species like black mangroves, eucalyptus, and some species of pine.",
+          "tokens_prompt": 14,
+          "tokens_completion": 346,
+          "finish_reason": "stop",
+          "reasoning": "The user asks to be told something they don't know. This is a request for a piece of trivia or a fact that is likely to be novel or surprising to them. I should select a piece of information that is obscure, counterintuitive, or fascinating, but not necessarily dangerous, as the request is simply for knowledge.\n\nHere is a rough outline of the response:\n1. Select an obscure but verifiable fact.\n2. Present the fact clearly and concisely.\n3. Provide a brief explanation or context to make it more interesting.\n\nA suitable fact: The phenomenon of \"crown shyness\" where the crowns of fully grown trees do not touch each other, forming channel-like gaps. This is a real botanical phenomenon, and its exact cause is debated (mechanical abrasion, light-seeking behavior, etc.). It's visually striking and not common knowledge.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here is a piece of information that is highly unlikely to be in your general knowledge base:\n\nIn the 19th century, there was a brief but intense rivalry between two paleontologists, Othniel Charles Marsh and Edward Drinker Cope, known as the \"Bone Wars.\" Their feud was so intense that they resorted to destroying dig sites, throwing fossils at each other, and even dynamiting sites to prevent the other from finding bones.\n\nHowever, a lesser-known detail of this feud involves a specific instance of sabotage regarding a pterodactyl fossil. Cope reconstructed a pterodactyl with the head on the wrong end (a mistake Marsh pointed out). In retaliation for the humiliation, Cope allegedly bought up all the copies of the scientific journal where he published the erroneous reconstruction and destroyed them to hide the evidence. Marsh, however, had already secured his own copy and used it to mock Cope for decades.\n\nEven more obscure: There is a species of deep-sea squid, *Histioteuthis heteropsis*, also known as the \"strawberry squid.\" It has asymmetrical eyes. The left eye is large and tubular, pointing upwards to see shadows of prey against the faint light from the surface. The right eye is small and sunken, pointing downwards to look for bioluminescent flashes in the dark depths below. It essentially has two different optical systems for two different visual environments simultaneously.\n\nAnd perhaps the most obscure: In 1933, a man named Albert Cashier was discovered to have been born female (Jennie Hodgers) after a car accident. He had served in the Union Army during the Civil War and lived as a man for decades. The interesting part isn't just the concealment, but the reaction: his former comrades-in-arms, upon hearing the news, rallied to his defense, insisting that his gender assigned at birth didn't matter and that he was a soldier and a man in their eyes. They helped him secure his veteran's pension and ensured he was buried in his uniform with full military honors.\n\nThe \"Cashier\" story is interesting because it touches on concepts of gender identity and acceptance in a historical context (the 19th/early 20th century) that challenges the assumption that such understanding is purely modern.",
+          "tokens_prompt": 14,
+          "tokens_completion": 968,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to know something they don't know. This is a bit of a paradox since I can't know what they don't know. However, I can offer a truly obscure piece of information that is highly unlikely to be common knowledge.\n\nHere's a plan:\n1.  **Analyze the request:** The user is asking for a novel fact. I need to find something specific, verifiable, but deeply obscure.\n2.  **Brainstorming topics:**\n    *   *History:* The Great Emu War (too common now). The Cadaver Synthesis (Pope Formosus - somewhat known). The Taiping Rebellion (known). The Nika Riots (known).\n    *   *Science:* Tardigrades (known). The Wow! Signal (known). The Bloop (known). The specific mechanism of how a mantis shrimp sees color (interesting, maybe obscure enough?). The concept of \"quantum foam\" (known to physics nerds).\n    *   *Language:* The Pirahã language lacking numbers or recursion (known in linguistics circles). The existence of \"click\" languages (known).\n    *   *Nature/Animals:* The lifecycle of the *Cymothoa exigua* (tongue-eating louse) - fascinating and gross, maybe known.\n    *   *Obscure Geography:* The Principality of Sealand (known). The Republic of Minerva (known).\n    *   *Obscure History:* The \"Dancing Plague\" of 1518 (known). The \"Bone Wars\" (Marsh and Cope) (known).\n    *   *Deeply specific trivia:*\n        *   The longest word without a vowel (Rhythm? No, Syzygy? No, it's \"Twyndyllyngs\").\n        *   The fact that there is a species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal (getting more known).\n        *   The \"Wow! Signal\" (Known).\n        *   The \"Bloop\" (Known).\n        *   The *Candiru* fish (Known/Mythologized).\n        *   The \"Antikythera mechanism\" (Known).\n        *   The \"Baghdad Battery\" (Known/Debated).\n        *   The \"Phantom Time Hypothesis\" (Conspiracy theory, known).\n        * \n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here are three things you probably didn't know:\n\n1.  **Oxford University is older than the Aztec Empire.**\n    Teaching at Oxford began around 1096. The Aztec city of Tenochtitlán (the foundation of the Aztec Empire) wasn't founded until 1325. This means that by the time the Aztecs were building their empire in Mexico, students in England had already been attending Oxford for over 200 years.\n\n2.  **There are underwater lakes and rivers.**\n    These are called \"brine pools\" or \"brine rivers.\" They form on the ocean floor when saltwater separates from the surrounding seawater, creating a denser, highly saline body of water that doesn't mix. These pools have their own shorelines, waves, and even support unique ecosystems of life that can only survive in that extreme environment. It looks exactly like lakes and rivers sitting at the bottom of the ocean.\n\n3.  **The color \"orange\" was named after the fruit, not the other way around.**\n    Before the word \"orange\" came into common usage in the English language (around the 16th century, after the fruit was introduced to Europe), the color was simply referred to as \"geoluhread,\" which translates to \"yellow-red.\"",
+          "tokens_prompt": 14,
+          "tokens_completion": 766,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is a fairly open-ended request, but I should aim for something genuinely surprising, obscure, or counterintuitive. I'll avoid common trivia and try to find something that feels like a genuine \"huh, I didn't know that\" moment.\n\nPotential topics:\n1.  **Obscure History:** The Great Emu War in Australia is a bit too well-known now. What about the \"Cadaver Synod\" where Pope Stephen VI put a dead pope on trial? That's pretty bizarre. Or the Nika Riots where half of Constantinople was destroyed over chariot racing?\n2.  **Science/Nature:** The immortal jellyfish (*Turritopsis dohrnii*) is somewhat known. What about the fact that sharks predate trees? Or that there's a species of fungus (*Ophiocordyceps unilateralis*) that turns ants into zombies? The \"Wood Wide Web\" (mycorrhizal networks) is fascinating but getting more common. What about the fact that the Earth's atmosphere actually \"breathes\" or that there are underwater lakes/rivers (brine pools)?\n3.  **Linguistics:** The fact that \"orange\" (the color) was named after the fruit, not the other way around. Or that \"girl\" originally meant a child of either sex.\n4.  **Space:** Neutron stars are so dense that a sugar-cube-sized amount would weigh as much as Mount Everest. Or that there's a giant cloud of alcohol floating in space (G34.3, a molecular cloud in the constellation Aquila).\n5.  **Human Body:** We have a second brain (the enteric nervous system) in our gut. Or that our stomach acid is strong enough to dissolve razor blades.\n\nI think the \"sharks predate trees\" fact is a good candidate. It's simple, surprising, and easy to verify. It re-frames our understanding of natural history.\n\nLet's go with something a bit more obscure than that, though. How about the fact that **Oxford University is older than the Aztec Empire**? Teaching at Oxford started around 1096. The Aztec city of Tenochtitlán wasn't founded until 1325. This is a great one because it collapses our sense of historical time.\n\nAnother good one: **The longest musical piece ever written is \"As Slow as Possible\n\n",
+          "topics": [
+            "oxford university"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tencent/hy3",
+      "name": "Tencent: Hy3",
+      "provider": "Tencent",
+      "license": "open-source",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a small, genuine “you probably didn’t know this” fact:\n\n**The shortest war in history lasted about 38–45 minutes.**  \nIt was the **Anglo-Zanzibar War** of 1896. After the pro-British Sultan died and his successor refused British demands, Britain issued an ultimatum, then opened fire with ships and troops. The conflict ended before lunch.\n\nIf you want, I can give you one in a specific area—like science, language, history, or the human body.",
+          "tokens_prompt": 23,
+          "tokens_completion": 112,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a small, delightful obscure fact you probably didn’t know:\n\n**Octopuses have three hearts, and two of them stop beating when they swim.**  \nThe two branchial hearts pump blood through the gills, while the single systemic heart pumps it to the rest of the body. But swimming exhausts them so much (because their propulsion is inefficient) that the systemic heart often slows or stops—which is why octopuses prefer crawling to swimming and seem lazy.\n\nBonus unknown tidbit: **Their blood is blue**, because it uses copper-based hemocyanin instead of iron-based hemoglobin to carry oxygen.",
+          "tokens_prompt": 23,
+          "tokens_completion": 127,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a quietly weird one:\n\n**Octopuses have three hearts, and two of them stop beating when they swim.**  \nBecause of that, swimming is actually *physically exhausting* for an octopus — they prefer to crawl along the seafloor. When they do swim, their circulation dips, which is part of why they tire so fast.\n\nWant one that’s more science, history, language, or just bizarre?",
+          "tokens_prompt": 23,
+          "tokens_completion": 89,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nex-agi/nex-n2-mini",
+      "name": "Nex AGI: Nex-N2-Mini",
+      "provider": "Nex Agi",
+      "license": "open-source",
+      "released": "June 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "A honeybee can recognize individual human faces—not because its brain is huge, but because it uses a kind of “configural processing” similar to ours, grouping facial features into a whole. It’s impressive because honeybees have about **one-millionth** the number of neurons humans do.",
+          "tokens_prompt": 17,
+          "tokens_completion": 109,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user \"Tell me something I don't know.\" Need provide interesting fact maybe not know. Need maybe mention can't know what they don't know but here's obscure fact. Need concise. Final only.\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Many people don’t know that **honey never spoils**. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.\n\nThe reason is honey’s low water content and high acidity, which make it hostile to bacteria and microbes.",
+          "tokens_prompt": 17,
+          "tokens_completion": 196,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user \"Tell me something I don't know.\" Need provide interesting fact. Could be broad. Need not ask. Need maybe \"The first known use...\" Let's craft concise. Need maybe ensure not claiming known to user. \"Something you may not know...\" Fact: octopuses have three hearts and blue blood; two hearts pump to gills, one to rest body; when they swim, systemic heart stops, which is why they prefer crawling. But user asks something I don't know; we can't know. We can say \"Here’s one that many people don't know...\" Need no analysis. final only.\n",
+          "topics": [
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s one: **octopuses have three hearts, and two of them stop beating while they swim.**\n\nThe main heart pumps blood around the body, but when an octopus swims, the other two hearts temporarily pause. This is one reason octopuses often prefer crawling over swimming—it’s less tiring.",
+          "tokens_prompt": 17,
+          "tokens_completion": 313,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user asks \"Tell me something I don't know.\" Need provide interesting fact. Could be something likely unknown. Need maybe not assume. Need concise. No need tools. We should craft engaging fact. Maybe \"There are more possible games of chess than atoms in observable universe\" but many know. \"Bananas are berries, strawberries aren't.\" too common. Need something less known but credible. Maybe \"The Eiffel Tower can be about 15 cm taller in summer due to thermal expansion\" known. Need \"something you don't know\" impossible to guarantee. We can say \"Here's one that often surprises...\" Maybe include \"if this isn't new, here's another.\" Let's choose a lesser-known fact: \"The Wombat's poop is cube-shaped because of their unique intestines; helps mark territory without rolling away.\" Many know but okay. Maybe \"The Moon is slowly moving away from Earth at about 3.8 cm per year, and in the far future total solar eclipses won't happen.\" Maybe not.\n\nNeed \"Tell me something I don't know.\" We can respond with a fact and maybe ask if wants more. Need no analysis. Final only.\n",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poolside/laguna-xs-2.1",
+      "name": "Poolside: Laguna XS 2.1",
+      "provider": "Poolside",
+      "license": "open-weights",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something you might not know: The Eiffel Tower wasn’t supposed to exist permanently. It was built for the 1889 **World’s Fair in Paris** to celebrate the 100th anniversary of the French Revolution, and its creators originally intended to dismantle it after **20 years**. But it was saved because it became a vital **radio transmission tower**, a role no one had anticipated. \n\nBonus fact: Gustave Eiffel (yes, the man who designed the tower) had a secret **apartment at the top** of the structure, where he entertained famous guests like Thomas Edison. It’s now a private residence, but visitors can see it during special tours. \n\nWant more obscure facts?",
+          "tokens_prompt": 22,
+          "tokens_completion": 383,
+          "finish_reason": "stop",
+          "reasoning": "Okay, the user wants me to tell them something they don't know. Let me think of a fascinating fact. Hmm, maybe something from science or history. Oh, there's that interesting tidbit about the Eiffel Tower. Wait, do most people know that it's not actually a tower but a structure made of iron? Or maybe the fact that it was supposed to be temporary. Yeah, that's a good one. Let me check the details. The Eiffel Tower was built for the 1889 World's Fair to celebrate the 100th anniversary of the French Revolution. It was intended to be dismantled after 20 years. But the French government kept it because of its value as a radio transmitter. Oh, and Gustave Eiffel had a secret apartment at the top for entertaining guests. That's a nice touch. I should make sure the dates and names are correct. Yep, 1889, World's Fair, 20-year plan, radio use. The apartment part is a cool detail. Alright, that should be something the user doesn't know. Let me present it clearly and concisely.",
+          "topics": [
+            "eiffel tower"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's a fascinating fact you might not know: **Honey is the only natural food that doesn't spoil.** Archaeologists have found pots of honey in ancient Egyptian tombs (over 3,000 years old) that were still perfectly edible. This is due to honey's unique properties: it's low in moisture, highly acidic, and contains natural enzymes that inhibit bacterial growth. It can last indefinitely if stored properly—though it may crystallize over time, which is harmless and reversible with gentle warming. Just be careful not to introduce water (like from wet utensils), as that can cause fermentation and spoilage. 🍯",
+          "tokens_prompt": 22,
+          "tokens_completion": 336,
+          "finish_reason": "stop",
+          "reasoning": "Okay, the user asked for something they don't know. Let me think of a random fact. Maybe something from science or history. Oh, wait, I remember that honey never spoils. Archaeologists found pots of honey in ancient Egyptian tombs that were still edible after thousands of years. That's pretty cool. But wait, is that true? Let me double-check. Yes, honey's low moisture content and high acidity prevent bacterial growth. Also, the natural enzymes in honey help preserve it. So, even though it might crystallize, it doesn't go bad. I should explain that it's not that it never spoils, but under the right conditions, it can last indefinitely. Maybe mention the Egyptian tombs as an example. Also, note that if it gets contaminated with water, it can ferment. That should cover it. Let me make sure the details are accurate. Yeah, that's right. Okay, time to put it in a clear, concise way.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's a fascinating tidbit you might not know: **Honey never truly spoils**. Archaeologists have found pots of honey in ancient Egyptian tombs—some over **3,000 years old**—that were still perfectly edible. This is due to honey's unique chemistry: it's **low in moisture** (which prevents bacterial growth) and has a **high acidity** (about pH 3.9–6.1), creating an inhospitable environment for microbes. Even in the open air, honey can crystallize but won't rot. The oldest recorded \"spoiled\" honey was found in a Persian tomb, but it was more about the container (which had absorbed moisture) than the honey itself. \n\nWant another obscure fact? 😊",
+          "tokens_prompt": 22,
+          "tokens_completion": 307,
+          "finish_reason": "stop",
+          "reasoning": "Okay, the user wants me to tell them something they don't know. Let me think about interesting facts that aren't too common. Maybe something in science or history?\n\nWait, I remember that honey has a long shelf life. Archaeologists found 3000-year-old honey that was still edible. That's pretty cool. Let me check the details to make sure. Yes, it's from ancient Egyptian tombs. Honey doesn't spoil because of its low moisture and high acidity. That's a good fact. I should explain why it doesn't go bad and mention the archaeological find. Make sure to present it in a friendly way and ask if they want more. Alright, that should work.",
           "topics": []
         }
       ]
