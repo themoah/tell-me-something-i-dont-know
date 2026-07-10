@@ -4,21 +4,21 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-07-09T06:35:04.799Z",
-    "total_models": 112
+    "generated_at": "2026-07-10T07:18:17.848Z",
+    "total_models": 118
   },
   "stats": {
-    "total_models": 112,
-    "total_responses": 330,
-    "total_tokens": 269556,
+    "total_models": 118,
+    "total_responses": 348,
+    "total_tokens": 279593,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 64,
-      "jellyfish": 40,
+      "octopus": 66,
+      "jellyfish": 43,
       "honey": 25,
       "anglo-zanzibar war": 15,
       "cleopatra": 14,
-      "venus": 12,
+      "venus": 13,
       "oxford university": 11,
       "bananas": 11,
       "eiffel tower": 3,
@@ -4255,6 +4255,233 @@
           "tokens_completion": 307,
           "finish_reason": "stop",
           "reasoning": "Okay, the user wants me to tell them something they don't know. Let me think about interesting facts that aren't too common. Maybe something in science or history?\n\nWait, I remember that honey has a long shelf life. Archaeologists found 3000-year-old honey that was still edible. That's pretty cool. Let me check the details to make sure. Yes, it's from ancient Egyptian tombs. Honey doesn't spoil because of its low moisture and high acidity. That's a good fact. I should explain why it doesn't go bad and mention the archaeological find. Make sure to present it in a friendly way and ask if they want more. Alright, that should work.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-luna-pro",
+      "name": "OpenAI: GPT-5.6 Luna Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "The “immortal jellyfish” (*Turritopsis dohrnii*) can, when injured or starving, revert from its adult form back into a juvenile polyp—essentially resetting its life cycle. It can repeat this process potentially indefinitely, though it can still die from disease, predators, or environmental conditions.",
+          "tokens_prompt": 2327,
+          "tokens_completion": 1161,
+          "finish_reason": "stop",
+          "reasoning": "**Exploring the immortal jellyfish**\n\nI’m considering the fascinating Turritopsis dohrnii, known as the immortal jellyfish. This jellyfish can revert to its juvenile stage and biologically reset itself. However, it’s not truly immortal since it still faces predation. It’s interesting to share that caution is needed when discussing its longevity, as the terms can be misleading. So, I think explaining both its unique ability and its vulnerabilities is important!",
+          "topics": [
+            "jellyfish"
+          ]
+        },
+        {
+          "success": true,
+          "content": "In 1947, engineers debugging Harvard’s Mark II computer found an actual moth trapped inside one of its relays. They taped it into the logbook and wrote “first actual case of bug being found.”  \n\nThe word **“debugging”** already existed, though—the moth merely made the pun literal.",
+          "tokens_prompt": 2249,
+          "tokens_completion": 1134,
+          "finish_reason": "stop",
+          "reasoning": "**Providing a unique fact**\n\nI need to provide an interesting fact, but I want it to be surprising and not too common. Like, \"wombat poop is cube-shaped\" is known, as is \"a day on Venus is longer than a year.\" Something nuanced could be stating that sharks are older than trees, but that's misleading since trees existed 370 million years ago while sharks date back 450 million. Another option could be \"the smell after rain has a name: petrichor.\" I think I’ll go with something like \"a cloud can weigh over a million pounds.\" It’s catchy when you explain that it's due to low density water droplets!**Sharing a surprising fact**\n\nI want to share something genuinely surprising about computer history. For example, the story of the first computer bug being an actual moth is intriguing! However, the term \"bug\" was already in use before that. In 1947, engineers found a moth inside the Harvard Mark II and taped it to the logbook as part of their debugging process. I think I’ll explain it as: \"In 1947, engineers found a moth inside the Harvard Mark II and taped it to the logbook, but 'debugging' existed before that.\" This way, I keep it concise but informative!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Greenland sharks can live for **at least 250 years**, and possibly over **500**—making them the longest-lived vertebrates known. Some females may not reach sexual maturity until they’re roughly **150 years old**. Scientists estimate their age by dating proteins in the lenses of their eyes.",
+          "tokens_prompt": 2674,
+          "tokens_completion": 1392,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an intriguing fact**\n\nI'm thinking about how to share an intriguing fact that isn't too common. Mentioning that bananas are berries but strawberries aren't could be too well-known. I could mention wombat cube poop, but that might be familiar too.   A linguistic fact like the Oxford comma? Maybe something scientifically intriguing, like sharks existing before trees, is interesting but requires clarification.  \nUltimately, I should use a unique fact about a cloud weighing over a million pounds, combining an interesting calculation with a caveat.**Exploring interesting facts**\n\nI'm contemplating an interesting fact to share. The probability that a shuffled deck of cards has a unique order is effectively certain, which is fascinating but perhaps not mind-blowing. I could mention that most oxygen in Earth’s atmosphere comes from ocean microbes, like phytoplankton, rather than forests. Another captivating fact is about Greenland sharks, which can live 250-500 years and reach sexual maturity at around 150 years. This one has a good mix of science and context!",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-luna",
+      "name": "OpenAI: GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a strange one: **some turtles can breathe through their butts**.\n\nCertain freshwater turtles, such as the Fitzroy River turtle, absorb oxygen from water through specialized blood vessels in their cloaca—a process called **cloacal respiration**. It helps them remain underwater for long periods, especially during winter, though they still use their lungs normally when active.",
+          "tokens_prompt": 13,
+          "tokens_completion": 371,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an interesting fact**\n\nI want to share an interesting fact, but I need to avoid the well-known ones. Sure, I could go with wombat poop being cube-shaped, but that's getting common. How about something surprising like sharks being older than trees? Sharks date back around 450 million years, while the earliest trees are about 385 million years old. \n\nAnother fun one is that the dot over the letters 'i' and 'j' is called a tittle! It's a nice piece of language trivia.**Generating a unique fact**\n\nI’m looking for a lesser-known interesting fact. Maybe I could mention Norway's Svalbard Global Seed Vault, but that feels too common. The idea that \"Oxford University is older than the Aztec Empire\" is often cited as well. How about the fact that \"the shortest war in history lasted only 38 minutes\"? It’s good, but likely familiar too. \n\nI could also share that some turtles can actually breathe through their butts, which is called cloacal respiration—especially true for the Fitzroy River turtle. That one's certainly quirky!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The earthy smell after rain has a name: **petrichor**. Much of it comes from **geosmin**, a compound produced by soil bacteria. Humans are extraordinarily sensitive to it—we can detect geosmin at concentrations of only a few parts per trillion, possibly because smelling rain once helped our ancestors locate water.",
+          "tokens_prompt": 13,
+          "tokens_completion": 480,
+          "finish_reason": "stop",
+          "reasoning": "**Finding unique facts**\n\nI want to share an interesting fact, but I need to make sure it’s surprising and concise. For example, most people know bananas are berries, but not everyone knows wombat poop is cube-shaped! It’s a bit more obscure and fun! \n\nI could also mention that Greenland sharks can live up to 500 years, which is intriguing. Another one is that some turtles can breathe through their cloaca. Those might stick with the user a bit more!**Sharing intriguing facts**\n\nI want to share fascinating facts but ensure they’re unique and not too common. For instance, \"The first computer bug was a literal moth found in the Harvard Mark II in 1947.\" That's somewhat known, so I could go with something like, \"Your body emits enough heat to boil about a liter of water each day.\" \n\nI could also mention, \"The smell after rain is called petrichor and comes from geosmin produced by soil bacteria, which humans can detect at incredibly low concentrations.\" That’s interesting and gives a bit of insight!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The “immortal jellyfish” (*Turritopsis dohrnii*) can reverse its life cycle. When injured, starving, or aging, it can transform its adult cells back into an earlier juvenile stage and begin developing again—like a butterfly reverting to a caterpillar. It can repeat this process, though it can still die from disease, predators, or physical harm.",
+          "tokens_prompt": 13,
+          "tokens_completion": 448,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an intriguing fact**\n\nI need to come up with an interesting fact that might surprise the user. Wombat cubes come to mind, but they’re quite common. I could mention that octopuses have three hearts and blue blood, as that's fascinating but not very unique. What about the idea that the human body emits a tiny amount of light, detectable by sensitive cameras? I’ll find something reliable yet unusual, like sharks being older than trees or that Greenland sharks can live for 400 years.**Providing a fascinating fact**\n\nI’ve got a neat fact to share: When properly shuffled, a standard deck of cards likely represents an arrangement that has never existed before, due to the astronomical number of possible combinations—about 52 factorial! Instead of challenging the user, let’s present this intriguing insight along with its context. I want to avoid misleading claims, like the idea that your brain can power a small LED. So, I'll mention the jellyfish species Turritopsis dohrnii, known for reverting to its juvenile stage under stress.",
+          "topics": [
+            "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-terra-pro",
+      "name": "OpenAI: GPT-5.6 Terra Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Octopuses have three hearts and blue blood.\n\nTwo hearts pump blood to the gills, while the third pumps it around the rest of the body. Their blood is blue because it uses hemocyanin—a copper-based molecule—to carry oxygen, rather than the iron-based hemoglobin that makes human blood red.",
+          "tokens_prompt": 1709,
+          "tokens_completion": 300,
+          "finish_reason": "stop",
+          "reasoning": "**Explaining an interesting fact**\n\nI think we need to provide an interesting, perhaps surprising fact and properly explain it. I need to avoid making any assumptions about what the user might already know, so I’ll try phrasing it like, “Here’s something you might not know.” It’s important to keep things concise while still being informative. I want to present the information in a way that's engaging and encourages curiosity!",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Octopuses have three hearts, but two of them stop beating when the octopus swims. That’s one reason octopuses often prefer crawling along the seafloor instead of swimming—they tire quickly.",
+          "tokens_prompt": 1727,
+          "tokens_completion": 377,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an interesting fact**\n\nI'm considering how to share an interesting and maybe surprising fact. It should be clear and succinct, so I’ll focus on something that captures attention but is easy to understand. I want this fact to be engaging, and perhaps it should provoke thought or curiosity. Maybe something about nature, space, or history could work well! Let me think more about what kind of fact could really stand out.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "A jellyfish called *Turritopsis dohrnii* can, under stress or injury, reverse its life cycle: an adult can transform back into a juvenile polyp and begin developing again. It isn’t truly invincible—it can still be eaten or die from disease—but it is one of the few known animals capable of repeatedly “resetting” its biological age.",
+          "tokens_prompt": 1883,
+          "tokens_completion": 534,
+          "finish_reason": "stop",
+          "reasoning": "**Finding intriguing facts**\n\nI want to respond with an interesting fact while keeping it memorable. A common one is that Cleopatra was closer to the moon landing than the pyramids, but that might be too well-known. How about mentioning wombat cube poop or that honey never spoils? I could introduce a less familiar fact like, \"You may not know bananas are berries, but strawberries aren't.\" Another intriguing option is that the shortest war lasted only 38-45 minutes. It's accurate to say that Oxford University is older than the Aztec Empire, too. A good nugget is about Turritopsis dohrnii, a jellyfish that can revert to its juvenile state but isn't invincible.",
+          "topics": [
+            "jellyfish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-terra",
+      "name": "OpenAI: GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "A single shuffled deck of 52 cards can be arranged in about **8 × 10⁶⁷ different orders**.\n\nThat number is so large that if every person on Earth shuffled a deck once per second from the beginning of the universe until now, we would still have sampled an unimaginably tiny fraction of all possible deck orders. In practice, almost every well-shuffled deck has likely never existed before in history.",
+          "tokens_prompt": 13,
+          "tokens_completion": 248,
+          "finish_reason": "stop",
+          "reasoning": "**Finding a fascinating fact**\n\nI need to find an interesting fact to share, while avoiding claims of uncertainty like “you may not know.” I thought about octopuses, but that might be a common pick. What about something surprising, like how a day on Venus is longer than its year? Wombat poop being cube-shaped due to elasticity is cool too! Ultimately, I think I want to share that there are more possible chess games than there are atoms in the observable universe, but I need to clarify that estimate is around 10^120 versus 10^80.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Sharks are older than trees.\n\nThe earliest sharks evolved over 400 million years ago, while the first true trees appeared roughly 385 million years ago. For tens of millions of years, Earth had sharks in its oceans but no forests on land.",
+          "tokens_prompt": 13,
+          "tokens_completion": 292,
+          "finish_reason": "stop",
+          "reasoning": "**Finding interesting facts**\n\nI want to share some intriguing facts, but I need to ensure they’re accurate and engaging. An octopus has a distributed nervous system, which is cool but quite common. The idea of the shortest war lasting just 38-45 minutes is surprising, though it has some uncertainty. I could mention that the continents are moving like fingernails, or that a day on Venus is longer than a year. I want to aim for unknown, compelling facts, so I’m thinking about sharks existing before trees—over 400 million years versus trees at 385 million years. But accuracy is essential here!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "A day on Venus is longer than a year on Venus.\n\nVenus takes about **243 Earth days** to rotate once on its axis, but only about **225 Earth days** to orbit the Sun. So if you stood on Venus, its “day” would outlast its entire year.",
+          "tokens_prompt": 13,
+          "tokens_completion": 95,
+          "finish_reason": "stop",
+          "reasoning": "**Finding interesting facts**\n\nI need to present an interesting fact and think about something like how Cleopatra lived closer to the moon landing than to the construction of the Great Pyramid. That's a common one, but maybe I should look for something more surprising or novel. It's essential that I explain it concisely too. I want to make sure it captures the user's attention and adds value to what I'm sharing!",
+          "topics": [
+            "venus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-sol-pro",
+      "name": "OpenAI: GPT-5.6 Sol Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Glass frogs become more transparent while sleeping by packing about 89% of their red blood cells into their liver. They somehow avoid the dangerous clotting this would normally cause—something researchers hope could inform treatments for blood clots in humans.",
+          "tokens_prompt": 2324,
+          "tokens_completion": 1027,
+          "finish_reason": "stop",
+          "reasoning": "**Finding surprising facts**\n\nI’m looking for an interesting fact but want to avoid the common ones. While octopuses editing RNA is fascinating, I think we should steer away from it. Bananas glowing blue under UV light sounds intriguing. The fact that a day on Venus is longer than its year is also known. How about something less familiar? Like glass frogs hiding their red blood cells in their liver while they sleep, which makes them transparent? I should keep it concise.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Scallops can have up to 200 tiny blue eyes—and each one uses a curved mirror made of guanine crystals to focus light, somewhat like a reflecting telescope rather than a typical lens-based eye.",
+          "tokens_prompt": 2162,
+          "tokens_completion": 817,
+          "finish_reason": "stop",
+          "reasoning": "**Providing playful facts**\n\nI need to share an interesting fact that captures attention! I could say sharks are older than trees, but that’s widely known. Maybe I can present something less familiar, like how a day on Earth isn’t exactly 24 hours? I might mention something unknown, like how fingerprints are formed through buckling instability in fetal skin. Alternatively, I could say scallops have up to 200 eyes that focus with mirrors, similar to telescopes. I'll choose the one that's most surprising!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The Moon orbits **inside Earth’s atmosphere**—technically.\n\nEarth’s ultra-thin outer hydrogen layer, called the **geocorona**, extends at least 630,000 km into space, while the Moon averages about 384,400 km away. It’s so sparse that it behaves like a vacuum, but a few Earth-origin hydrogen atoms are still out there around the Moon.",
+          "tokens_prompt": 2081,
+          "tokens_completion": 875,
+          "finish_reason": "stop",
+          "reasoning": "**Explaining Earth's atmosphere**\n\nI think I need to share a surprising fact. One interesting idea is that Earth's atmosphere, particularly the geocorona, actually extends beyond the moon! It reaches up to about 630,000 km, and the moon orbits within that. It’s a niche concept but fascinating because the geocorona is made up of tenuous hydrogen. I’ll want to phrase this accurately and clearly for the user to appreciate the nuance of it all!",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6-sol",
+      "name": "OpenAI: GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Some sea slugs “steal” chloroplasts from the algae they eat, keep them alive inside their own cells, and use them to photosynthesize—effectively becoming temporarily solar-powered animals.",
+          "tokens_prompt": 13,
+          "tokens_completion": 138,
+          "finish_reason": "stop",
+          "reasoning": "**Searching for intriguing facts**\n\nI need to find an intriguing fact that’s a bit less common and possibly has an interesting caveat. I think about Venus and its day, but that's quite common. Sharks being older than Saturn’s rings is intriguing, but their age is uncertain. Did you know that wombat poop is cube-shaped due to their intestine elasticity? It's quirky! Oh, and sea slugs can steal chloroplasts and photosynthesize. I’ll phrase that nicely for the user!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "About 1.7 billion years ago, nature built its own nuclear reactors beneath what is now Gabon. Uranium deposits at Oklo achieved self-sustaining fission reactions, moderated by groundwater, cycling on and off for hundreds of thousands of years—long before humans existed.",
+          "tokens_prompt": 13,
+          "tokens_completion": 232,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Scallops have up to 200 tiny blue eyes, and each eye focuses light using a **concave mirror made of guanine crystals**—more like a reflecting telescope than a human eye.",
+          "tokens_prompt": 13,
+          "tokens_completion": 116,
+          "finish_reason": "stop",
+          "reasoning": "**Providing intriguing facts**\n\nI want to come up with an intriguing fact for the user, something really unique. \"Some turtles can breathe through their butts,\" while interesting, is too common. I think about how a day on Venus is longer than a year there, which is likely known too. So, let's go with something more obscure: \"Scallop eyes have mirrors instead of lenses like ours, and they have dozens of them!\" That’s a cool fact to explain!",
           "topics": []
         }
       ]
