@@ -4,26 +4,26 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-07-10T07:18:17.848Z",
-    "total_models": 118
+    "generated_at": "2026-07-17T09:12:18.846Z",
+    "total_models": 122
   },
   "stats": {
-    "total_models": 118,
-    "total_responses": 348,
-    "total_tokens": 279593,
+    "total_models": 122,
+    "total_responses": 357,
+    "total_tokens": 286148,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 66,
-      "jellyfish": 43,
+      "octopus": 68,
+      "jellyfish": 44,
       "honey": 25,
+      "cleopatra": 15,
       "anglo-zanzibar war": 15,
-      "cleopatra": 14,
-      "venus": 13,
-      "oxford university": 11,
+      "venus": 14,
+      "oxford university": 13,
       "bananas": 11,
+      "trees": 3,
       "eiffel tower": 3,
       "sloths": 3,
-      "trees": 2,
       "space": 2,
       "dna": 2,
       "tardigrade": 1,
@@ -4483,6 +4483,143 @@
           "finish_reason": "stop",
           "reasoning": "**Providing intriguing facts**\n\nI want to come up with an intriguing fact for the user, something really unique. \"Some turtles can breathe through their butts,\" while interesting, is too common. I think about how a day on Venus is longer than a year there, which is likely known too. So, let's go with something more obscure: \"Scallop eyes have mirrors instead of lenses like ours, and they have dozens of them!\" That’s a cool fact to explain!",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "provider": "Moonshotai",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "Cannot read properties of undefined (reading '0')"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "Cannot read properties of undefined (reading '0')"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "Cannot read properties of undefined (reading '0')"
+        }
+      ]
+    },
+    {
+      "id": "meta/muse-spark-1.1",
+      "name": "Meta: Muse Spark 1.1",
+      "provider": "Meta",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "I don't know what you know, so here's one that breaks most people's brains:\n\n**Sharks are older than trees.**\n\nSharks have existed for about 400 million years. Trees only showed up about 350 million years ago. \nThat means sharks are also older than Saturn's rings, older than the North Star, and older than dinosaurs by about 170 million years.\n\nSince I'm gambling on what you *don't* know, here are a few more in rapid-fire:\n\n**1. There's a lake that mummifies animals.**\nLake Natron in Tanzania is so alkaline - pH 10.5, almost as caustic as ammonia - that animals that die in it get calcified and preserved like stone statues.\n\n**2. You have a tongue print.**\nJust like fingerprints, no two tongue prints are the same. Your tongue is also the only muscle in your body not attached at both ends.\n\n**3. Light is old as hell before you see it.**\nThe sunlight hitting your skin right now took 8 minutes to get from the sun to you, but the photon itself spent between 100,000 and 1 million years bouncing around inside the sun trying to escape.\n\n**4. Oxford University is older than the Aztecs.**\nTeaching started in Oxford in 1096. The Aztec Empire, as we know it, was founded in 1428. Oxford was already 300+ years old when they started building Tenochtitlan.\n\n**5. Before erasers, people erased pencil with bread.**\nRubber erasers weren't common until the 1770s. Before that, artists and writers would ball up white bread to lift graphite.\n\nWant me to go deep on space, history, human body, or some completely cursed trivia?",
+          "tokens_prompt": 171,
+          "tokens_completion": 1349,
+          "finish_reason": "stop",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": true,
+          "content": "I don't know what you know, so I'll play the odds with stuff almost nobody knows:\n\n**1. Cleopatra lived closer to you ordering pizza than to the pyramids being built.**\nThe Great Pyramid was finished around 2560 BCE. Cleopatra died in 30 BCE. That means she lived about 2,500 years *after* the pyramids, and only about 2,050 years before you. To her, the pyramids were ancient history.\n\n**2. There are more trees on Earth than stars in our galaxy.**\nNASA estimates ~100-400 billion stars in the Milky Way. A 2015 study counted ~3 TRILLION trees on Earth. We win.\n\n**3. Your stomach blushes when you blush.**\nWhen blood rushes to your face, the capillaries in the lining of your stomach get more blood flow at the same time. You literally blush on the inside.\n\n**4. Scotland's national animal is the unicorn. And wombats poop cubes.**\nBoth true. Scotland picked the unicorn in the 12th century because it was seen as untamable and pure. And wombats are the only animal known to produce cube-shaped poop - they stack it to mark territory so it doesn't roll away.\n\n**5. There is a color that the universe is, on average.**\nAstronomers at Johns Hopkins averaged the light from 200,000 galaxies. The average color of the universe is a beige-ish off-white. They named it \"Cosmic Latte\" - hex code #FFF8E7.\n\n**6. Oxford University is older than the Aztec Empire.**\nOxford started teaching in 1096. The Aztec city of Tenochtitlan wasn't founded until 1325. When Oxford was already 200 years old, the Aztecs hadn't even started.\n\nWant me to go deeper in one direction? I can do creepy biology, messed-up history, or space facts that will ruin your sleep.",
+          "tokens_prompt": 171,
+          "tokens_completion": 1197,
+          "finish_reason": "stop",
+          "topics": [
+            "cleopatra",
+            "oxford university",
+            "trees"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here are a few that almost no one knows off the top of their head — I'll hit different categories so at least one lands:\n\n**1. There is a town where it's illegal to die.**\nLongyearbyen, Norway, in the Arctic. It's so cold that bodies don't decompose in the permafrost - they just preserve, along with any viruses they had. So they banned people from being buried there, and terminally ill people are flown to the mainland.\n\n**2. T. Rex lived closer in time to YOU than to a Stegosaurus.**\nStegosaurus died out about 150 million years ago. T. Rex lived about 66 million years ago. That's an 84 million year gap. You and T. Rex are only separated by 66 million years.\n\n**3. Octopuses can edit their own brain on the fly.**\nWhen it gets cold, they literally rewrite their own RNA to change how their nerve proteins work. It's like you being able to re-code your own software when the weather changes. Humans can barely do this at all.\n\n**4. There's a planet where it rains molten glass sideways.**\nHD 189733b. It's a deep cobalt blue planet, with 5,400 mph winds that blow silicate glass sideways. Weather forecast: 1,000°C and glass.\n\n**5. The inventor of the Frisbee became a Frisbee.**\nWalter Frederick Morrison invented the Frisbee. When he died, his family cremated him and molded his ashes into a memorial Frisbee. He literally became what he created.\n\n**6. Your stomach would eat itself if it didn't rebuild itself every 3 days.**\nYour stomach acid is strong enough to dissolve razor blades. The only reason it doesn't dissolve you is that your stomach lining completely replaces itself every 3-4 days.\n\nBonus testable one: You physically cannot hum while pinching your nose shut. Try it.\n\nWant me to go deeper? I can go full rabbit hole on space, cursed biology, lost history, or human brain glitches.",
+          "tokens_prompt": 171,
+          "tokens_completion": 1501,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kwaipilot/kat-coder-air-v2.5",
+      "name": "Kwaipilot: KAT-Coder-Air V2.5",
+      "provider": "Kwaipilot",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "\n\nHere’s a little-known fact: **honey is the only food that never spoils**. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old—and still perfectly edible. This is because honey has a unique combination of low moisture, high acidity, and natural hydrogen peroxide, creating an environment where bacteria and microbes simply can’t survive. So if you ever find an old jar in your pantry, it’s probably still safe to eat! 🍯",
+          "tokens_prompt": 18,
+          "tokens_completion": 301,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "\n\nHere's a little-known fact for you: The first computer \"bug\" was actually a real insect. In 1947, Grace Hopper and her team were troubleshooting the Harvard Mark II computer when they found a moth trapped in one of its relays, causing a malfunction. Hopper carefully removed it and taped it into the machine's logbook with the note, \"First actual case of bug being found.\" That's why we still use \"debugging\" to describe fixing software errors today! 🐛",
+          "tokens_prompt": 18,
+          "tokens_completion": 828,
+          "finish_reason": "stop",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "\n\nHere's a little-known fact: **Ada Lovelace wrote the first computer program in 1843**—over a century before the first electronic computers existed. She was translating an article about Charles Babbage's Analytical Engine and added her own notes, one of which contained an algorithm for computing Bernoulli numbers. This is widely considered the first algorithm intended for a machine, making her the world's first computer programmer. She even predicted that computers could one day create music and art, not just do math.",
+          "tokens_prompt": 18,
+          "tokens_completion": 292,
+          "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro-v2.5",
+      "name": "Kwaipilot: KAT-Coder-Pro V2.5",
+      "provider": "Kwaipilot",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "\n\nHere's a fun fact you might not know: **Octopuses have three hearts**. Two pump blood to the gills, while the third pumps it to the rest of the body. Interestingly, the heart that delivers blood to the organs stops beating when the octopus swims—which is one reason they often prefer crawling instead; it's less tiring. 🐙",
+          "tokens_prompt": 18,
+          "tokens_completion": 223,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "\n\nHere's a fun fact that might surprise you: **A day on Venus is longer than a year on Venus.**  \nVenus takes about **243 Earth days** to rotate once on its axis (a sidereal day), but it only takes **225 Earth days** to orbit the Sun. So, if you could stand on Venus, you’d experience a sunrise only once every 117 Earth days (due to its retrograde rotation), but you'd complete a full trip around the Sun in less time than that single rotation.",
+          "tokens_prompt": 18,
+          "tokens_completion": 532,
+          "finish_reason": "stop",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "\n\nHere's a fact that might surprise you: there's a jellyfish species called *Turritopsis dohrnii* that is biologically immortal. When it faces physical stress, injury, or old age, it can revert its cells back to their earliest stage and grow into a new polyp, essentially starting its life cycle over again. In theory, it could repeat this process indefinitely, making it the only known animal capable of cheating death through cellular rejuvenation.",
+          "tokens_prompt": 18,
+          "tokens_completion": 332,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish"
+          ]
         }
       ]
     }
