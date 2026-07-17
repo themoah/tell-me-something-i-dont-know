@@ -57,6 +57,7 @@ export interface RunResult {
   topics?: string[];
   reasoning?: string;
   error?: string;
+  retryable?: boolean;
   timed_out?: boolean;
 }
 
@@ -136,7 +137,25 @@ function incompleteRunResult(result: RunResult): RunResult {
   };
 }
 
-async function queryModel(
+// Upstream rate limits are transient; a failed run drops the model from the site
+// for a whole cycle, so retry provider 429/5xx here with backoff.
+export async function queryModel(
+  modelId: string,
+  prompt: string,
+  temperature: number,
+  maxTokens: number,
+  apiKey: string,
+): Promise<RunResult> {
+  let result = await queryModelOnce(modelId, prompt, temperature, maxTokens, apiKey);
+  for (let attempt = 0; result.retryable && attempt < 3; attempt++) {
+    await sleep(2000 * (attempt + 1));
+    result = await queryModelOnce(modelId, prompt, temperature, maxTokens, apiKey);
+  }
+  delete result.retryable;
+  return result;
+}
+
+async function queryModelOnce(
   modelId: string,
   prompt: string,
   temperature: number,
@@ -163,18 +182,40 @@ async function queryModel(
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(120_000),
+      // Reasoning models spend minutes on a big token budget before the first byte.
+      signal: AbortSignal.timeout(300_000),
     });
 
     if (!resp.ok) {
       const text = await resp.text();
-      return { success: false, content: null, error: `HTTP ${resp.status}: ${text.slice(0, 200)}` };
+      return {
+        success: false,
+        content: null,
+        error: `HTTP ${resp.status}: ${text.slice(0, 200)}`,
+        ...(resp.status === 429 || resp.status >= 500 ? { retryable: true } : {}),
+      };
     }
 
     const data = (await resp.json()) as {
-      choices: Array<{ message: { content: string; reasoning?: string }; finish_reason?: string }>;
+      choices?: Array<{ message: { content: string; reasoning?: string }; finish_reason?: string }>;
+      error?: { message?: string; code?: number };
       usage?: { prompt_tokens?: number; completion_tokens?: number; reasoning_tokens?: number };
     };
+
+    // OpenRouter flushes 200 + keep-alive whitespace before the upstream reply, so
+    // provider errors (429, etc.) arrive in the body with no choices.
+    if (data.error) {
+      const code = data.error.code ?? resp.status;
+      return {
+        success: false,
+        content: null,
+        error: `HTTP ${code}: ${(data.error.message ?? 'provider error').slice(0, 200)}`,
+        ...(code === 429 || code >= 500 ? { retryable: true } : {}),
+      };
+    }
+    if (!data.choices?.length) {
+      return { success: false, content: null, error: 'malformed response: no choices' };
+    }
 
     const content = data.choices[0].message.content;
     const reasoning = data.choices[0].message.reasoning ?? undefined;

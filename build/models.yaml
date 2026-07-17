@@ -752,3 +752,29 @@ models:
     license: "commercial"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "moonshotai/kimi-k3"
+    name: "MoonshotAI: Kimi K3"
+    provider: "Moonshotai"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "meta/muse-spark-1.1"
+    name: "Meta: Muse Spark 1.1"
+    provider: "Meta"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "kwaipilot/kat-coder-air-v2.5"
+    name: "Kwaipilot: KAT-Coder-Air V2.5"
+    provider: "Kwaipilot"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "kwaipilot/kat-coder-pro-v2.5"
+    name: "Kwaipilot: KAT-Coder-Pro V2.5"
+    provider: "Kwaipilot"
+    license: "commercial"
+    released: "July 2026"
+

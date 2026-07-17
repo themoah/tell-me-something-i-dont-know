@@ -3,9 +3,53 @@ import assert from 'node:assert/strict';
 import {
   priceFilter,
   MAX_OUTPUT_PRICE_PER_TOKEN,
+  queryModel,
   retryTokenBudgets,
   shouldRetryRunResult,
 } from './query_models.ts';
+
+// OpenRouter flushes 200 + keep-alive whitespace before the upstream reply, so a
+// provider 429 arrives as a body error with no choices. Must not read choices[0].
+function stubFetch(bodies: unknown[]) {
+  const real = globalThis.fetch;
+  let calls = 0;
+  globalThis.fetch = (async () => {
+    const body = bodies[Math.min(calls++, bodies.length - 1)];
+    return { ok: true, status: 200, json: async () => body, text: async () => JSON.stringify(body) };
+  }) as typeof fetch;
+  return { restore: () => { globalThis.fetch = real; }, calls: () => calls };
+}
+
+const rateLimited = { error: { message: 'Provider returned error', code: 429 } };
+const ok = {
+  choices: [{ message: { content: 'a fact' }, finish_reason: 'stop' }],
+  usage: { prompt_tokens: 1, completion_tokens: 2 },
+};
+
+test('provider error in a 200 body reports the error, not a TypeError', async () => {
+  const f = stubFetch([rateLimited]);
+  try {
+    const r = await queryModel('m', 'p', 0.7, 500, 'k');
+    assert.equal(r.success, false);
+    assert.match(r.error ?? '', /429/);
+    assert.doesNotMatch(r.error ?? '', /Cannot read properties/);
+  } finally {
+    f.restore();
+  }
+});
+
+test('retries a rate-limited provider and keeps the eventual answer', async () => {
+  const f = stubFetch([rateLimited, ok]);
+  try {
+    const r = await queryModel('m', 'p', 0.7, 500, 'k');
+    assert.equal(r.success, true);
+    assert.equal(r.content, 'a fact');
+    assert.equal(r.retryable, undefined);
+    assert.equal(f.calls(), 2);
+  } finally {
+    f.restore();
+  }
+});
 
 const cap = MAX_OUTPUT_PRICE_PER_TOKEN;
 
