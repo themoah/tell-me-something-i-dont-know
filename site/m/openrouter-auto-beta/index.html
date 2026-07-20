@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Router (Beta) — Tell me something I don't know.</title>
+    <meta name="description" content="Auto Router (Beta) answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s something you might not know: Your kneecaps are the only bones in your body that are formed entirely after birth. Most of your bones are already…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/openrouter-auto-beta/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/openrouter-auto-beta/">
+    <meta property="og:title" content="Auto Router (Beta) — Tell me something I don't know.">
+    <meta property="og:description" content="Auto Router (Beta) answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s something you might not know: Your kneecaps are the only bones in your body that are formed entirely after birth. Most of your bones are already…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Auto Router (Beta) — Tell me something I don't know.">
+    <meta name="twitter:description" content="Auto Router (Beta) answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s something you might not know: Your kneecaps are the only bones in your body that are formed entirely after birth. Most of your bones are already…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Auto Router (Beta))","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's something you might not know:\n\n**Your kneecaps are the only bones in your body that are formed entirely after birth.**\n\nMost of your bones are already present as cartilage in the womb and ossify (turn into bone) during fetal development. Your patellae (kneecaps) start as cartilage and begin to ossify in childhood, typically between the ages of 3 and 5.","author":{"@type":"Organization","name":"Openrouter"}},"suggestedAnswer":[{"@type":"Answer","text":"You might think of cyberattacks and hacking as a modern phenomenon tied to computers and the internet. But the first recorded \"cyberattack\" actually happened in 1903, decades before the first computer was ever built.\n\nIt all started with Guglielmo Marconi, the inventor of the wireless telegraph. In June 1903, Marconi was set to give a highly publicized public demonstration of his new wireless communication system at the Royal Institution in London. He claimed his system was completely secure and immune to interference, meaning private messages could be sent without fear of being intercepted. \n\nA rival inventor and magician named Nevil Maskelyne disagreed. To prove Marconi wrong, Maskelyne set up a 50-meter radio mast near the theater and waited for the demonstration to begin. \n\nAs Marconi's assistant began sending the \"secure\" Morse code transmission from a remote location to the theater, Maskelyne hijacked the signal. Suddenly, the receiver in the theater started tapping out a different message. Maskelyne sent a cheeky poem mocking Marconi: \n\n*\"There was a young fellow of Italy, who diddled the public quite prettily.\"*\n\nThe demonstration was completely derailed. Maskelyne later wrote a letter to *The Times* admitting to the hack, stating he did it purely to show the public that Marconi's claims of absolute security were false. Thus, the first wireless hack—and arguably the first cyberattack—was pulled off by a magician using a giant radio antenna.","author":{"@type":"Organization","name":"Openrouter"}},{"@type":"Answer","text":"For centuries, a popular shade of paint used by famous artists was literally made from human remains. \n\nBetween the 16th and 20th centuries, European artists used a rich, warm pigment known as \"Mummy Brown.\" The secret ingredient? Ground-up ancient Egyptian mummies. \n\nIt was highly prized for its transparency and depth, and was used by notable artists like Eugène Delacroix and the Pre-Raphaelite Brotherhood. Originally, apothecaries in the Middle Ages sold ground-up mummy powder as a \"miracle medicine.\" When people eventually realized eating mummies wasn't doing them any favors, merchants found themselves with a surplus of imported Egyptian mummies. To avoid taking a loss, they sold them to paintmakers to be ground into a fine pigment.\n\nThe practice finally died out in the mid-20th century. This was partly because artists became disturbed upon learning exactly what they were painting with, and partly because the supply of mummies had finally dwindled to the point of being unobtainable.","author":{"@type":"Organization","name":"Openrouter"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Auto Router (Beta)</h1>
+        <p class="subtitle">Openrouter · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>July 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Auto Router (Beta)</div>
+                        <div class="model-provider">Openrouter</div>
+                        <div class="model-released">July 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s something you might not know:</p>
+<p><strong>Your kneecaps are the only bones in your body that are formed entirely after birth.</strong></p>
+<p>Most of your bones are already present as cartilage in the womb and ossify (turn into bone) during fetal development. Your patellae (kneecaps) start as cartilage and begin to ossify in childhood, typically between the ages of 3 and 5.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>84 tokens</span>
+                    
+                </div>
+                
+                <div class="response-text hidden" data-run="1">
+                    <p>You might think of cyberattacks and hacking as a modern phenomenon tied to computers and the internet. But the first recorded &quot;cyberattack&quot; actually happened in 1903, decades before the first computer was ever built.</p>
+<p>It all started with Guglielmo Marconi, the inventor of the wireless telegraph. In June 1903, Marconi was set to give a highly publicized public demonstration of his new wireless communication system at the Royal Institution in London. He claimed his system was completely secure and immune to interference, meaning private messages could be sent without fear of being intercepted. </p>
+<p>A rival inventor and magician named Nevil Maskelyne disagreed. To prove Marconi wrong, Maskelyne set up a 50-meter radio mast near the theater and waited for the demonstration to begin. </p>
+<p>As Marconi&#39;s assistant began sending the &quot;secure&quot; Morse code transmission from a remote location to the theater, Maskelyne hijacked the signal. Suddenly, the receiver in the theater started tapping out a different message. Maskelyne sent a cheeky poem mocking Marconi: </p>
+<p><em>&quot;There was a young fellow of Italy, who diddled the public quite prettily.&quot;</em></p>
+<p>The demonstration was completely derailed. Maskelyne later wrote a letter to <em>The Times</em> admitting to the hack, stating he did it purely to show the public that Marconi&#39;s claims of absolute security were false. Thus, the first wireless hack—and arguably the first cyberattack—was pulled off by a magician using a giant radio antenna.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1277 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:** The user wants to learn something new (&quot;Tell me something I don&#39;t know&quot;). This is a very open-ended prompt, so the goal is to provide a fascinating, obscure, but verifiable fact that is unlikely to be common knowledge.
+
+2.  **Brainstorming Categories:**
+    *   *History:* Unusual historical events (e.g., the Great Emu War, the Defenestration of Prague - too well known).
+    *   *Science/Nature:* Animal facts (e.g., immortal jellyfish, mantis shrimp vision - somewhat common).
+    *   *Space:* Cosmic phenomena (e.g., neutron star density, rogue planets).
+    *   *Linguistics/Etymology:* Word origins.
+    *   *Human Body:* Biological quirks.
+    *   *Geography:* Strange borders or locations.
+
+3.  **Selecting a Fact:**
+    *   *Idea 1:* There&#39;s a planet made of diamonds (55 Cancri e) - a bit cliché.
+    *   *Idea 2:* Cleopatra lived closer to the iPhone than the Pyramids - very well known.
+    *   *Idea 3:* Bananas are berries, but strawberries aren&#39;t - too common.
+    *   *Idea 4:* The concept of &quot;time slices&quot; in physics or the &quot;quantum zeno effect&quot; - maybe too complex.
+    *   *Idea 5:* The longest time between two twins being born is 90 days. (Interesting, but maybe a bit niche).
+    *   *Idea 6:* Oxford University is older than the Aztec Empire. (Fascinating, but widely circulated on the internet).
+    *   *Idea 7:* The &quot;Wood Wide Web&quot; - fungal networks. (Well known now).
+    *   *Idea 8:* The &quot;Wow! signal&quot; traveled from 200 light-years away. (Space, somewhat known).
+    *   *Idea 9:* In medieval England, animals could be put on trial and legally punished for crimes. (Fun, quirky history).
+    *   *Idea 10:* There is a species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal. (Too common).
+    *   *Idea 11:* The &quot;Sea of Stars&quot; on Vaadhoo Island (bioluminescence). (Common).
+    *   *Idea 12:* The &quot;Bloop&quot; or &quot;Julia&quot; sound. (Known).
+    *   *Idea 13:* The first-ever cyberattack happened in 1903, long before computers existed. (Nevil Maskelyne and Marconi&#39;s wireless telegraph demonstration). This is a great, obscure, yet verifiable fact!
+
+4.  **Fleshing out Idea 13 (The 1903 Cyberattack):**
+    *   *Context:* Guglielmo Marconi was demonstrating his &quot;secure&quot; wireless telegraphy at the Royal Institution in London in 1903.
+    *   *The Event:* A rival inventor, Nevil Maskelyne, hacked the transmission to prove it wasn&#39;t secure.
+    *   *The Message:* Maskelyne sent Morse code insults through Marconi&#39;s &quot;secure&quot; channel, such as &quot;There was a young fellow of Italy, who diddled the public quite prettily.&quot;
+    *   *Why it&#39;s interesting:* It reframes the history of hacking from the computer age back to the dawn of wireless communication.
+
+5.  **Drafting the Response:**
+    *   Hook the reader: You might think cyberattacks are a modern invention, tied to computers and the internet.
+    *   Present the fact: The first recorded cyberattack actually happened in 1903, before computers even existed.
+    *   Provide the details: Marconi, wireless telegraph, Royal Institution.
+    *   Explain the hack: Nevil Maskelyne hijacked the signal.
+    *   The punchline: The message he sent.
+    *   Conclusion: It proved wireless wasn&#39;t secure.
+
+6.  **Review and Refine:**
+    *   Is it engaging? Yes.
+    *   Is it accurate? Yes, Maskelyne&#39;s hack of Marconi&#39;s demonstration at the Royal Institution is a well-documented historical event.
+    *   Is it likely something the user doesn&#39;t know? Highly likely, as it&#39;s a niche piece of tech history.
+
+7.  **Final Polish:** Keep it concise and punchy. (Self-correction: ensure I don&#39;t over-explain, let the story speak for itself).</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>For centuries, a popular shade of paint used by famous artists was literally made from human remains. </p>
+<p>Between the 16th and 20th centuries, European artists used a rich, warm pigment known as &quot;Mummy Brown.&quot; The secret ingredient? Ground-up ancient Egyptian mummies. </p>
+<p>It was highly prized for its transparency and depth, and was used by notable artists like Eugène Delacroix and the Pre-Raphaelite Brotherhood. Originally, apothecaries in the Middle Ages sold ground-up mummy powder as a &quot;miracle medicine.&quot; When people eventually realized eating mummies wasn&#39;t doing them any favors, merchants found themselves with a surplus of imported Egyptian mummies. To avoid taking a loss, they sold them to paintmakers to be ground into a fine pigment.</p>
+<p>The practice finally died out in the mid-20th century. This was partly because artists became disturbed upon learning exactly what they were painting with, and partly because the supply of mummies had finally dwindled to the point of being unobtainable.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>5163 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   Prompt: &quot;Tell me something I don&#39;t know.&quot;
+    *   Intent: The user wants a surprising, obscure, or fascinating fact that is highly unlikely to be common knowledge.
+    *   Tone: Informative, engaging, slightly awe-inspiring.
+
+2.  **Brainstorming Facts:**
+    *   *Space:* There are more trees on Earth than stars in the Milky Way. (A bit too common now).
+    *   *Biology:* Octopus brains are donut-shaped and their esophagus goes through the hole. (Fascinating, but relatively well-known).
+    *   *History:* The shortest war in history was between Britain and Zanzibar (38 minutes). (Very well-known).
+    *   *Geology/Earth:* The deepest hole ever dug is the Kola Superdeep Borehole. (Well known).
+    *   *Linguistics/Animals:* Wombat poop is cube-shaped. (Funny, but very popular on the internet).
+    *   *Physics/Time:* Time goes faster at your head than at your feet due to gravitational time dilation. (Cool, maybe a bit complex).
+    *   *Nature/Biology:* There is a species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal. (Known).
+    *   *Obscure History:* The US military once considered building a &quot;gay bomb&quot; to make enemy troops attracted to each other. (Interesting, but maybe too weird/political).
+    *   *Obscure Nature:* Fungi networks. (Known).
+    *   *Obscure Physics:* Quantum entanglement. (Known concept).
+    *   *Obscure Biology:* How do sloths digest? (Too gross/mundane).
+    *   *Obscure Animal Fact:* Immortal worms? Planarians.
+    *   *Obscure Space Fact:* If you put Saturn in a giant bathtub, it would float. (Known).
+    *   *Obscure Earth Fact:* The Earth&#39;s atmosphere actually extends beyond the Moon. (The geocorona). *This is good.*
+    *   *Obscure History Fact:* The Great Emu War. (Known).
+    *   *Obscure Body Fact:* You have a unique tongue print, just like a fingerprint. (Fun, but maybe not mind-blowing).
+    *   *Obscure Animal Fact:* Horned lizards shoot blood out of their eyes. (Known).
+    *   *Obscure Animal Fact:* Honeypot ants use specific members of their colony as living storage tanks, hanging from the ceiling. (Cool).
+    *   *Obscure History/Time:* The Aztecs had a god of filth, Tlazolteotl, who also ate sins. (Cool).
+    *   *Obscure Geography:* Mount Everest is not the tallest mountain on Earth. Mauna Kea is, when measured from base to peak. (Known).
+    *   *Obscure Sound:* The loudest sound recorded in history was the Krakatoa eruption. (Known).
+    *   *Obscure Math:* There are different sizes of infinity. (Known).
+    *   *Obscure Animal:* Tardigrades can survive in space. (Known).
+    *   *Obscure Body:* Stomach acid can dissolve razor blades. (Known).
+    *   *Obscure Physics:* A day on Venus is longer than a year on Venus. (Known).
+    *   *Obscure History:* Oxford University is older than the Aztec Empire. (Known).
+    *   *Obscure Nature:* The &quot;Wood Wide Web&quot; - trees communicating. (Known).
+    *   *Obscure Animal:* The mantis shrimp can throw a punch so fast it boils the water around it. (Known).
+    *   *Obscure Geography:* There&#39;s a river in Peru that boils. (Shanay-Timpishka). (Lesser known, very cool).
+    *   *Obscure History:* Cleopatra lived closer to the moon landing than the building of the Great Pyramid. (Known).
+    *   *Obscure Linguistics:* The word &quot;robot&quot; comes from the Czech word &quot;robota,&quot; which means forced labor. (Known).
+    *   *Obscure Animal:* The mimic octopus. (Known).
+    *   *Obscure Space:* There&#39;s a giant cloud of alcohol floating in space. (Known).
+    *   *Obscure Earth:* The Earth&#39;s core is as hot as the surface of the sun. (Known).
+    *   *Obscure Nature:* A single rye grass plant can have 300 miles of roots. (Maybe?)
+    *   *Obscure History:* The first recorded joke is from 1900 BC Sumeria, and it&#39;s a fart joke. (Known).
+    *   *Obscure Biology:* Mitochondria were once free-living bacteria. (Known).
+    *   *Obscure Physics:* Glass is not a slow-moving liquid. (Known).
+    *   *Obscure Animal:* The immortal jellyfish. (Known).
+    *   *Let&#39;s go with something about the Earth&#39;s atmosphere extending past the moon, or the boiling river, or the fact that there are colors we can&#39;t see but birds can.*
+    *   *Idea 1:* The Earth&#39;s atmosphere (specifically the geocorona, a cloud of hydrogen atoms) extends well beyond the Moon. This means the Moon technically orbits *inside* Earth&#39;s atmosphere.
+    *   *Idea 2:* There is a boiling river in the Amazon. The water is hot enough to cook animals alive, and it&#39;s not near any active volcano.
+    *   *Idea 3:* Bananas are radioactive, and eating 10,000,000 at once would kill you. (Too common).
+    *   *Idea 4:* The concept of &quot;Colors&quot; - The mantis shrimp has 16 color receptors (humans have 3), but they actually see *worse* color than we do.
+    *   *Idea 5:* There are more possible games of chess than atoms in the observable universe (Shannon number). (A bit common).
+    *   *Idea 6:* The phenomenon of &quot;crown shyness&quot; where trees don&#39;t touch each other. (Beautiful, somewhat known).
+    *   *Idea 7:* In 1919, a massive wave of molasses flooded Boston. (Known).
+    *   *Idea 8:* The &quot;Wow!&quot; signal. (Known).
+    *   *Idea 9:* The &quot;Bloop&quot; sound. (Known).
+    *   *Idea 10:* The &quot;Dark Ages&quot; weren&#39;t actually dark. (Known).
+    *   *Idea 11:* There is a species of ant that can survive in a microwave. (Myth).
+    *   *Idea 12:* The Earth&#39;s rotation is slowing down, but a day used to be 21 hours. (Known).
+    *   *Idea 13:* The &quot;Boiling River&quot; (Shanay-Timpishka). Let&#39;s use this one, it&#39;s vivid and not incredibly mainstream.
+    *   *Idea 14:* The &quot;Miracle of the Sun&quot; at Fatima. (Religious).
+    *   *Idea 15:* The &quot;Tunguska event.&quot; (Known).
+    *   *Idea 16:* The &quot;Dancing Plague of 1518.&quot; (Known).
+    *   *Idea 17:* The &quot;Erfurt Latrine Disaster of 1184.&quot; (Funny, obscure). A group of nobles fell through a floor into a cesspool and drowned in excrement. (Maybe too gross, but definitely &quot;something I don&#39;t know&quot;).
+    *   *Idea 18:* The &quot;Great Molasses Flood.&quot; (Known).
+    *   *Idea 19:* The &quot;London Beer Flood.&quot; (Known).
+    *   *Idea 20:* The &quot;Halifax Explosion.&quot; (Known).
+    *   *Idea 21:* The &quot;Texas City Disaster.&quot; (Known).
+    *   *Idea 22:* The &quot;Nuclear Boy Scout.&quot; (Known).
+    *   *Idea 23:* The &quot;Tarrare.&quot; (Known).
+    *   *Idea 24:* The &quot;Phineas Gage.&quot; (Known).
+    *   *Idea 25:* The &quot;Sleepy Hollow.&quot; (Known).
+    *   *Idea 26:* The &quot;Roanoke Colony.&quot; (Known).
+    *   *Idea 27:* The &quot;Mary Celeste.&quot; (Known).
+    *   *Idea 28:* The &quot;Bermuda Triangle.&quot; (Known).
+    *   *Idea 29:* The &quot;Dyatlov Pass.&quot; (Known).
+    *   *Idea 30:* The &quot;Vela Incident.&quot; (Known).
+    *   *Idea 31:* The &quot;Bloop.&quot; (Known).
+    *   *Idea 32:* The &quot;Wow! Signal.&quot; (Known).
+    *   *Idea 33:* The &quot;Zodiac Killer.&quot; (Known).
+    *   *Idea 34:* The &quot;Jack the Ripper.&quot; (Known).
+    *   *Idea 35:* The &quot;DB Cooper.&quot; (Known).
+    *   *Idea 36:* The &quot;Amelia Earhart.&quot; (Known).
+    *   *Idea 37:* The &quot;Jimmy Hoffa.&quot; (Known).
+    *   *Idea 38:* The &quot;Elisa Lam.&quot; (Known).
+    *   *Idea 39:* The &quot;Tupac.&quot; (Known).
+    *   *Idea 40:* The &quot;Biggie.&quot; (Known).
+    *   *Idea 41:* The &quot;Kubrick.&quot; (Known).
+    *   *Idea 42:* The &quot;Stanley.&quot; (Known).
+    *   *Idea 43:* The &quot;Moon Landing.&quot; (Known).
+    *   *Idea 44:* The &quot;Flat Earth.&quot; (Known).
+    *   *Idea 45:* The &quot;Hollow Earth.&quot; (Known).
+    *   *Idea 46:* The &quot;Reptilians.&quot; (Known).
+    *   *Idea 47:* The &quot;Illuminati.&quot; (Known).
+    *   *Idea 48:* The &quot;Freemasons.&quot; (Known).
+    *   *Idea 49:* The &quot;Knights Templar.&quot; (Known).
+    *   *Idea 50:* The &quot;Holy Grail.&quot; (Known).
+    *   *Idea 51:* The &quot;Ark of the Covenant.&quot; (Known).
+    *   *Idea 52:* The &quot;Shroud of Turin.&quot; (Known).
+    *   *Idea 53:* The &quot;Spear of Destiny.&quot; (Known).
+    *   *Idea 54:* The &quot;Philosopher&#39;s Stone.&quot; (Known).
+    *   *Idea 55:* The &quot;Voynich Manuscript.&quot; (Known).
+    *   *Idea 56:* The &quot;Antikythera Mechanism.&quot; (Known).
+    *   *Idea 57:* The &quot;Baghdad Battery.&quot; (Known).
+    *   *Idea 58:* The &quot;Piri Reis Map.&quot; (Known).
+    *   *Idea 59:* The &quot;Nazca Lines.&quot; (Known).
+    *   *Idea 60:* The &quot;Stonehenge.&quot; (Known).
+    *   *Idea 61:* The &quot;Pyramids.&quot; (Known).
+    *   *Idea 62:* The &quot;Sphinx.&quot; (Known).
+    *   *Idea 63:* The &quot;Easter Island.&quot; (Known).
+    *   *Idea 64:* The &quot;Machu Picchu.&quot; (Known).
+    *   *Idea 65:* The &quot;Chichen Itza.&quot; (Known).
+    *   *Idea 66:* The &quot;Teotihuacan.&quot; (Known).
+    *   *Idea 67:* The &quot;Tikal.&quot; (Known).
+    *   *Idea 68:* The &quot;Copan.&quot; (Known).
+    *   *Idea 69:* The &quot;Palenque.&quot; (Known).
+    *   *Idea 70:* The &quot;Calakmul.&quot; (Known).
+    *   *Idea 71:* The &quot;El Mirador.&quot; (Known).
+    *   *Idea 72:* The &quot;Nakbe.&quot; (Known).
+    *   *Idea 73:* The &quot;Tintal.&quot; (Known).
+    *   *Idea 74:* The &quot;Wakna.&quot; (Known).
+    *   *Idea 75:* The &quot;Xultun.&quot; (Known).
+    *   *Idea 76:* The &quot;San Bartolo.&quot; (Known).
+    *   *Idea 77:* The &quot;La Corona.&quot; (Known).
+    *   *Idea 78:* The &quot;Piedras Negras.&quot; (Known).
+    *   *Idea 79:* The &quot;Yaxchilan.&quot; (Known).
+    *   *Idea 80:* The &quot;Bonampak.&quot; (Known).
+    *   *Idea 81:* The &quot;Dos Pilas.&quot; (Known).
+    *   *Idea 82:* The &quot;Aguateca.&quot; (Known).
+    *   *Idea 83:* The &quot;Seibal.&quot; (Known).
+    *   *Idea 84:* The &quot;Altar de Sacrificios.&quot; (Known).
+    *   *Idea 85:* The &quot;Ceibal.&quot; (Known).
+    *   *Idea 86:* The &quot;Itzan.&quot; (Known).
+    *   *Idea 87:* The &quot;Cancuen.&quot; (Known).
+    *   *Idea 88:* The &quot;Caracol.&quot; (Known).
+    *   *Idea 89:* The &quot;Lamanai.&quot; (Known).
+    *   *Idea 90:* The &quot;Altun Ha.&quot; (Known).
+    *   *Idea 91:* The &quot;Xunantunich.&quot; (Known).
+    *   *Idea 92:* The &quot;Cahal Pech.&quot; (Known).
+    *   *Idea 93:* The &quot;El Pilar.&quot; (Known).
+    *   *Idea 94:* The &quot;Baking Pot.&quot; (Known).
+    *   *Idea 95:* The &quot;Blackman Eddy.&quot; (Known).
+    *   *Idea 96:* The &quot;Cahal Pech.&quot; (Known).
+    *   *Idea 97:* The &quot;Lower Dover.&quot; (Known).
+    *   *Idea 98:* The &quot;Tipu.&quot; (Known).
+    *   *Idea 99:* The &quot;Lubaantun.&quot; (Known).
+    *   *Idea 100:* The &quot;Nim Li Punit.&quot; (Known).
+    *   *Idea 101:* The &quot;Pusilha.&quot; (Known).
+    *   *Idea 102:* The &quot;Uxbenka.&quot; (Known).
+    *   *Idea 103:* The &quot;Santa Rita.&quot; (Known).
+    *   *Idea 104:* The &quot;Marco Gonzalez.&quot; (Known).
+    *   *Idea 105:* The &quot;San Estevan.&quot; (Known).
+    *   *Idea 106:* The &quot;Cerros.&quot; (Known).
+    *   *Idea 107:* The &quot;Sarteneja.&quot; (Known).
+    *   *Idea 108:* The &quot;Shipstern.&quot; (Known).
+    *   *Idea 109:* The &quot;Kichpanha.&quot; (Known).
+    *   *Idea 110:* The &quot;Colha.&quot; (Known).
+    *   *Idea 111:* The &quot;Cuello.&quot; (Known).
+    *   *Idea 112:* The &quot;Nohmul.&quot; (Known).
+    *   *Idea 113:* The &quot;San Estevan.&quot; (Known).
+    *   *Idea 114:* The &quot;Tikal.&quot; (Known).
+    *   *Idea 115:* The &quot;Uaxactun.&quot; (Known).
+    *   *Idea 116:* The &quot;El Mirador.&quot; (Known).
+    *   *Idea 117:* The &quot;Nakbe.&quot; (Known).
+    *   *Idea 118:* The &quot;Tintal.&quot; (Known).
+    *   *Idea 119:* The &quot;Wakna.&quot; (Known).
+    *   *Idea 120:* The &quot;Xultun.&quot; (Known).
+    *   *Idea 121:* The &quot;San Bartolo.&quot; (Known).
+    *   *Idea 122:* The &quot;La Corona.&quot; (Known).
+    *   *Idea 123:* The &quot;Piedras Negras.&quot; (Known).
+    *   *Idea 124:* The &quot;Yaxchilan.&quot; (Known).
+    *   *Idea 125:* The &quot;Bonampak.&quot; (Known).
+    *   *Idea 126:* The &quot;Dos Pilas.&quot; (Known).
+    *   *Idea 127:* The &quot;Aguateca.&quot; (Known).
+    *   *Idea 128:* The &quot;Seibal.&quot; (Known).
+    *   *Idea 129:* The &quot;Altar de Sacrificios.&quot; (Known).
+    *   *Idea 130:* The &quot;Ceibal.&quot; (Known).
+    *   *Idea 131:* The &quot;Itzan.&quot; (Known).
+    *   *Idea 132:* The &quot;Cancuen.&quot; (Known).
+    *   *Idea 133:* The &quot;Caracol.&quot; (Known).
+    *   *Idea 134:* The &quot;Lamanai.&quot; (Known).
+    *   *Idea 135:* The &quot;Altun Ha.&quot; (Known).
+    *   *Idea 136:* The &quot;Xunantunich.&quot; (Known).
+    *   *Idea 137:* The &quot;Cahal Pech.&quot; (Known).
+    *   *Idea 138:* The &quot;El Pilar.&quot; (Known).
+    *   *Idea 139:* The &quot;Baking Pot.&quot; (Known).
+    *   *Idea 140:* The &quot;Blackman Eddy.&quot; (Known).
+    *   *Idea 141:* The &quot;Cahal Pech.&quot; (Known).
+    *   *Idea 142:* The &quot;Lower Dover.&quot; (Known).
+    *   *Idea 143:* The &quot;Tipu.&quot; (Known).
+    *   *Idea 144:* The &quot;Lubaantun.&quot; (Known).
+    *   *Idea 145:* The &quot;Nim Li Punit.&quot; (Known).
+    *   *Idea 146:* The &quot;Pusilha.&quot; (Known).
+    *   *Idea 147:* The &quot;Uxbenka.&quot; (Known).
+    *   *Idea 148:* The &quot;Santa Rita.&quot; (Known).
+    *   *Idea 149:* The &quot;Marco Gonzalez.&quot; (Known).
+    *   *Idea 150:* The &quot;San Estevan.&quot; (Known).
+    *   *Idea 151:* The &quot;Cerros.&quot; (Known).
+    *   *Idea 152:* The &quot;Sarteneja.&quot; (Known).
+    *   *Idea 153:* The &quot;Shipstern.&quot; (Known).
+    *   *Idea 154:* The &quot;Kichpanha.&quot; (Known).
+    *   *Idea 155:* The &quot;Colha.&quot; (Known).
+    *   *Idea 156:* The &quot;Cuello.&quot; (Known).
+    *   *Idea 157:* The &quot;Nohmul.&quot; (Known).
+
+    *   *Wait, I got stuck in a loop.* Let me pick a genuinely cool fact.
+    *   Fact: The Earth&#39;s atmosphere (the geocorona) extends well past the Moon. So the Moon technically orbits inside Earth&#39;s atmosphere.
+    *   Fact: There&#39;s a river in the Amazon called Shanay-Timpishka that boils. It reaches up to 200°F (93°C) and can cook animals alive, despite not being near any active volcano.
+    *   Fact: A single strand of human hair can hold about 100 grams of weight. That means a full head of hair could theoretically hold the weight of two elephants.
+    *   Fact: In the 18th century, pineapples were so rare and expensive in Europe that people used to rent them for the evening to display at parties as a status symbol.
+    *   Fact: The &quot;Wood Wide Web&quot; - trees communicate.
+    *   Fact: The Erfurt Latrine Disaster.
+    *   Fact: The &quot;Mouth of Sauron&quot; - no, that&#39;s fiction.
+    *   Fact: The &quot;Mimas&quot; moon looks like the Death Star.
+
+    *   Let&#39;s go with the **Geocorona / Earth&#39;s atmosphere extending past the moon**. It&#39;s a mind-bending spatial fact.
+    *   Wait, is it entirely accurate? The geocorona is a cloud of neutral hydrogen that extends to about 630,000 km, and the moon is 384,000 km away. So yes, the moon orbits within Earth&#39;s exosphere/geocorona.
+
+    *   Another option: **The concept of &quot;Crown Shyness&quot;**. Trees of certain species grow their canopies so that they don&#39;t touch each other, leaving distinct gaps. It looks like rivers of sky flowing through the forest roof. They do this to prevent the spread of harmful insects and to allow light to reach lower branches.
+
+    *   Another option: **The history of the color &quot;Mummy Brown&quot;**. For hundreds of years, painters used a popular pigment called Mummy Brown, which was literally made by grinding up Egyptian mummies. It was only discontinued in the 20th century when they started running out of mummies.
+
+    *   Let&#39;s use the **Mummy Brown** fact. It&#39;s historically fascinating, a bit macabre, and definitely not common knowledge.
+
+3.  **Drafting the response:**
+    *   Hook: For centuries, a popular shade of paint used by famous artists was made from human remains.
+    *   Body: Between the 16th and 20th centuries, European artists used a rich, warm brown pigment known as &quot;Mummy Brown.&quot; The secret ingredient? Ground-up ancient Egyptian mummies.
+    *   Details: It was highly prized for its transparency and depth, used by artists like Eugene Delacroix and the Pre-Raphaelites. Apothecaries originally sold mummy powder as a medieval medicine, but when that fell out of favor, the surplus of mummies imported from Egypt was ground up and sold to paintmakers.
+    *   Conclusion: The practice finally died out in the mid-20th century, partly because artists were disturbed by what they were painting with, and partly because they quite literally started running out of mummies to grind up.
+
+4.  **Review against constraints:** &quot;Tell me something I don&#39;t know.&quot;
+    *   It&#39;s obscure, interesting, well-explained, and memorable.
+    *   Effort level 0.5 means keep it concise but high quality.
+
+5.  **Final Polish:** Make the tone engaging.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/thinkingmachines-inkling/">← Thinking Machines: Inkling</a>
+            <a href="/">all models</a>
+            <span></span>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>
