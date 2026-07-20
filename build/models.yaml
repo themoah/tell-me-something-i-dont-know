@@ -778,3 +778,17 @@ models:
     license: "commercial"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "thinkingmachines/inkling"
+    name: "Thinking Machines: Inkling"
+    provider: "Thinkingmachines"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "openrouter/auto-beta"
+    name: "Auto Router (Beta)"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "July 2026"
+
