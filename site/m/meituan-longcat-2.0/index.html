@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meituan: LongCat 2.0 — Tell me something I don't know.</title>
+    <meta name="description" content="Meituan: LongCat 2.0 answers &quot;Tell me something I don&#39;t know.&quot; — The American Civil War ended in 1865, but the last living widow of a Civil War veteran didn&#39;t pass away until 2020. Her name was Helen Viola Jackson. In…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/meituan-longcat-2.0/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/meituan-longcat-2.0/">
+    <meta property="og:title" content="Meituan: LongCat 2.0 — Tell me something I don't know.">
+    <meta property="og:description" content="Meituan: LongCat 2.0 answers &quot;Tell me something I don&#39;t know.&quot; — The American Civil War ended in 1865, but the last living widow of a Civil War veteran didn&#39;t pass away until 2020. Her name was Helen Viola Jackson. In…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meituan: LongCat 2.0 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Meituan: LongCat 2.0 answers &quot;Tell me something I don&#39;t know.&quot; — The American Civil War ended in 1865, but the last living widow of a Civil War veteran didn&#39;t pass away until 2020. Her name was Helen Viola Jackson. In…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Meituan: LongCat 2.0)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"The American Civil War ended in 1865, but the last living widow of a Civil War veteran didn't pass away until **2020**. \n\nHer name was Helen Viola Jackson. In 1936, when she was 17 years old, she married 93-year-old Albert Blight, a Union Army veteran. The marriage was one of convenience—he needed a caretaker, and she needed the financial security. He died a year later, but she remained a Civil War widow for the rest of her life. She kept the marriage a secret for decades, fearing stigma, and only revealed it later in life to claim her widow's pension. She died on December 16, 2020, at the age of 101. \n\nIt’s a staggering reminder of how recently history actually happened. A woman who was alive when the iPhone was invented and when the COVID-19 pandemic started was technically a widow of a war fought 155 years before she died.\n\n***\n\n**Bonus fact from the natural world:** \nYou may have heard of the \"zombie-ant fungus\" (*Ophiocordyceps*), which infects ants and hijacks their minds to force them to climb to a high point so the fungus can rain down spores on their colony. But what most people don't know is that there is a *second* fungus that has evolved specifically to infect the zombie-ant fungus. It acts as a hyperparasite, suppressing the zombie fungus's ability to fruit and spread, essentially saving the ant colony from total destruction.","author":{"@type":"Organization","name":"Meituan"}},"suggestedAnswer":[{"@type":"Answer","text":"There is a microscopic animal that doesn't breathe oxygen.\n\nMeet *Henneguya salminicola*. It is a tiny parasite—related to jellyfish and sea anemones—that infects the muscles of salmon. In 2020, scientists discovered that it has completely lost its mitochondrial DNA. \n\nEvery other known multicellular organism on Earth has mitochondrial DNA, which is the crucial genetic code that tells its cells how to convert oxygen into energy. *H. salminicola* simply ditched the instruction manual. It doesn't breathe, and it doesn't need oxygen to survive at all. It is the only known animal to break this fundamental rule of life on Earth.\n\n***\n\n**Bonus fact from a completely different field:**\n\nThere is a scientific hypothesis that the reason we haven't found aliens yet is that they are hibernating. \n\nIt’s called the **Aestivation Hypothesis**. The idea is that a hyper-advanced alien civilization might have already explored the entire galaxy and is simply waiting. They are aestivating (like a summer hibernation) to conserve energy until the universe cools down. \n\nWhy? According to the laws of thermodynamics, computing requires energy and generates heat. The colder the background temperature of the universe, the more efficiently you can compute. The universe is currently very warm (a brisk -270°C, which is practically boiling for a computer). By waiting trillions of years for the universe to cool down, these aliens could potentially perform 10^30 times more thinking with the same amount of energy. So, they might just be sleeping until the cosmos gets a bit more comfortable.","author":{"@type":"Organization","name":"Meituan"}},{"@type":"Answer","text":"A single day on Venus is longer than an entire year on Venus. \n\nHere is why: A \"day\" is defined by how long it takes a planet to spin once on its axis, and a \"year\" is defined by how long it takes to orbit the sun. Venus has an incredibly slow rotation—it takes about 243 Earth days for Venus to complete just one spin. However, it only takes about 225 Earth days for Venus to orbit the sun. \n\nAs if that wasn't mind-bending enough, Venus also spins *backward* compared to most other planets (a phenomenon called retrograde rotation), which means if you were standing on its surface, the sun would rise in the west and set in the east!\n\nWhat is something *you* know that most people don't?","author":{"@type":"Organization","name":"Meituan"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Meituan: LongCat 2.0</h1>
+        <p class="subtitle">Meituan · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>July 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Meituan: LongCat 2.0</div>
+                        <div class="model-provider">Meituan</div>
+                        <div class="model-released">July 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>The American Civil War ended in 1865, but the last living widow of a Civil War veteran didn&#39;t pass away until <strong>2020</strong>. </p>
+<p>Her name was Helen Viola Jackson. In 1936, when she was 17 years old, she married 93-year-old Albert Blight, a Union Army veteran. The marriage was one of convenience—he needed a caretaker, and she needed the financial security. He died a year later, but she remained a Civil War widow for the rest of her life. She kept the marriage a secret for decades, fearing stigma, and only revealed it later in life to claim her widow&#39;s pension. She died on December 16, 2020, at the age of 101. </p>
+<p>It’s a staggering reminder of how recently history actually happened. A woman who was alive when the iPhone was invented and when the COVID-19 pandemic started was technically a widow of a war fought 155 years before she died.</p>
+<hr>
+<p><strong>Bonus fact from the natural world:</strong> 
+You may have heard of the &quot;zombie-ant fungus&quot; (<em>Ophiocordyceps</em>), which infects ants and hijacks their minds to force them to climb to a high point so the fungus can rain down spores on their colony. But what most people don&#39;t know is that there is a <em>second</em> fungus that has evolved specifically to infect the zombie-ant fungus. It acts as a hyperparasite, suppressing the zombie fungus&#39;s ability to fruit and spread, essentially saving the ant colony from total destruction.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>4542 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">
+1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants a surprising, obscure, or highly interesting fact that expands their knowledge in a way they likely haven&#39;t encountered before.
+    *   **Challenge:** Since I don&#39;t know the user&#39;s background, I need to aim for a fact that is broadly unknown to the general public but verifiable and fascinating. It should span different domains (science, history, nature) to maximize the chance of being new.
+
+2.  **Brainstorming Categories &amp; Facts:**
+    *   *Space:* There&#39;s a planet made of diamond. (Too common). The sun makes a sound but we can&#39;t hear it. (A bit cliché).
+    *   *History:* Cleopatra lived closer to the iPhone than the pyramids. (Very common trivia).
+    *   *Biology/Nature:* Octopuses have three hearts. (Common). Bananas are berries, but strawberries aren&#39;t. (Common). Fungi can communicate with electrical signals. (Interesting, but getting common). Wombat poop is cube-shaped. (Fun, but well-known). Sloths can hold their breath longer than dolphins. (Good, but popular).
+    *   *Human Body:* You are taller in the morning. (Common). Stomach acid can dissolve razor blades. (Cool, but known).
+    *   *Geography/Earth:* There&#39;s a town in Norway where the sun doesn&#39;t set for months. (Common). The driest place in the world is in Antarctica. (Good, but known).
+    *   *Obscure/Deep Cuts:*
+        *   *Fact 1:* The inventor of the Pringles can is buried in one. (Fun, but maybe too niche/famous).
+        *   *Fact 2:* There is a species of jellyfish that is biologically immortal. (Common).
+        *   *Fact 3:* Oxford University is older than the Aztec Empire. (Great historical perspective, but frequently shared).
+        *   *Fact 4:* The Eiffel Tower grows in the summer. (Physics fact, fairly common).
+        *   *Fact 5:* There is a lake in Tanzania (Lake Natron) that turns animals into stone. (Cool, but Natron is well-known).
+        *   *Fact 6:* Cows have best friends and get stressed when separated. (Cute, but common).
+        *   *Fact 7:* The shortest war in history lasted 38 minutes. (Common).
+        *   *Fact 8:* Bananas are radioactive. (Common).
+        *   *Fact 9:* Space has a smell (seared steak, hot metal). (Interesting, but popular).
+        *   *Fact 10:* There is a specific type of fungus that turns ants into zombies and makes them bite onto the underside of leaves at exactly 25cm high. (Ophiocordyceps - very popular due to *The Last of Us*).
+        *   *Fact 11:* The &quot;M&#39;s&quot; in M&amp;Ms stand for Mars and Murrie (Bruce Murrie, son of Hershey&#39;s president). (Good, but common).
+        *   *Fact 12:* There is a species of spider (Myrmarachne) that mimics ants by making its front legs look like ant antennae and even pretending to be a lone ant. (Very specific, creepy, fascinating).
+        *   *Fact 13:* In 1992, a shipping vessel lost 29,000 rubber ducks in the ocean, and oceanographers used them to map ocean currents. (Great story, but well-known).
+        *   *Fact 14:* There is a volcano in Indonesia that spews blue lava. (Actually sulfur, very cool, but known).
+        *   *Fact 15:* Honey never spoils. Archaeologists found 3000-year-old honey in Egyptian tombs that was still edible. (Common).
+        *   *Fact 16:* The total weight of all ants on Earth is roughly equal to the total weight of all humans. (Classic, but mind-blowing).
+        *   *Fact 17:* There&#39;s a place in Ethiopia (Dallol) where water is so acidic it dissolves metal. (Very obscure, extreme environment).
+
+3.  **Selecting the Best Fact:**
+    I want something that combines a sense of wonder with a bit of a &quot;wait, what?&quot; factor. Let&#39;s go with the **Ant weight vs. Human weight** fact, but let&#39;s add a specific, lesser-known twist or choose something even more obscure to ensure it&#39;s truly something they *don&#39;t* know.
+
+    Let&#39;s look at **The Immortal Jellyfish** (Too common).
+    Let&#39;s look at **The Wood Wide Web** (Getting common).
+    Let&#39;s look at **The fact that there are more trees on Earth than stars in the Milky Way.** (Surprising, good, but known).
+
+    How about something about **time and geology**?
+    *Fact:* If you condensed the entire history of Earth into a single 24-hour day, humans appear at 11:59:59 PM. (Common).
+
+    How about an **animal behavior** fact?
+    *Fact:* Sea otters hold hands while they sleep so they don&#39;t drift apart. (Very common).
+    *Fact:* Puffins&#39; beaks glow under UV light. (Interesting, relatively obscure).
+    *Fact:* A group of flamingos is called a &quot;flamboyance.&quot; (Common).
+
+    Let&#39;s go with a **linguistic/historical/biology crossover** that is extremely specific:
+    *The fact that the &quot;C&quot; in the musical notation &quot;C&quot; doesn&#39;t stand for anything, but &quot;Do-Re-Mi&quot; comes from a hymn to St. John.* (A bit dry).
+
+    Let&#39;s try a **geography/physics** fact:
+    *Fact:* There is a place in the Democratic Republic of the Congo where lightning strikes almost every night, but it&#39;s completely silent because it&#39;s too far away. (Catatumbo lightning. Good, but known).
+
+    Let&#39;s go with a **highly specific biological anomaly**:
+    *Fact:* The Turritopsis dohrnii jellyfish can revert its cells back to a younger state, but what most people don&#39;t know is that certain *lobsters* are effectively biologically immortal due to telomerase, they just die because they exhaust themselves molting. (A bit complex).
+
+    Let&#39;s go with a **historical fact** that is genuinely mind-bending and rarely shared:
+    *Fact:* The last living widow of a US Civil War veteran died in 2020. (She married an 81-year-old veteran when she was 17 in the 1930s. This is a great fact because it makes history feel incredibly recent).
+
+    Wait, let&#39;s look at another one:
+    *Fact:* Oxford University is older than the Aztec Empire. (Aztec empire founded 1428, Oxford teaching started 1096).
+    *Fact:* The Eiffel Tower was supposed to be a temporary structure for the 1889 World&#39;s Fair, and was almost dismantled in 1909. It was saved because it was repurposed as a radio antenna. (Good, but known).
+
+    Let&#39;s try a **space fact**:
+    *Fact:* There is a massive cloud of alcohol in space (Sagittarius B2) that contains enough alcohol to fill 400 trillion pints of beer. (Fun, but known).
+    *Fact:* If you could fold a piece of paper 42 times, it would reach the moon. 103 times, it would be the size of the observable universe. (Mathematical, mind-blowing, but common).
+
+    Let&#39;s go with something truly obscure and fascinating from the natural world:
+    *Fact:* The &quot;Bloop&quot; was a famous ultra-low-frequency underwater sound detected by NOAA in 1997, which turned out to be the sound of an icequake (a cracking ice sheet), but before it was identified, it sparked massive conspiracy theories about giant sea monsters. (Good story).
+
+    Let&#39;s try a **human body** fact:
+    *Fact:* Humans have a &quot;diving reflex&quot; where your heart rate slows down and blood vessels constrict when you submerge your face in cold water, even if you&#39;re perfectly safe. (Interesting).
+
+    How about a **technology/history** fact?
+    *Fact:* In the 1930s, the British built a &quot;death ray&quot; that was actually just a powerful radio wave meant to stop engines, but it was abandoned because the power required was impractical. (A bit dry).
+
+    Let&#39;s go with **The Great Emu War**. (Australia lost a war against emus in 1932. Hilarious, but very well known).
+
+    Let&#39;s look at **The fact that there is a species of fungus that takes over ants, but there is a *second* fungus that takes over the *first* fungus**. (Hyperparasitism. This is incredibly cool and obscure).
+    Let&#39;s flesh this out: *Ophiocordyceps* fungus turns ants into zombies. But there is another fungus that infects the *Ophiocordyceps* to stop it from fruiting, essentially saving the ant colony. (Mind-blowing, very specific).
+
+    Let&#39;s try another one just in case:
+    *Fact:* The dot over the lowercase &#39;i&#39; and &#39;j&#39; is called a tittle. (Too simple).
+
+    Let&#39;s try a **geography** fact:
+    *Fact:* Canada has more lakes than the rest of the world&#39;s lakes combined. (Surprising, but known).
+
+    Let&#39;s try a **space** fact:
+    *Fact:* You can fit all the planets in the Milky Way between the Earth and the Moon. (Actually, you can fit all the planets in *our solar system* side-by-side between the Earth and the Moon, with room to spare. This is a fantastic, mind-bending spatial fact that many people don&#39;t know).
+
+    Let&#39;s verify the Earth-Moon / Solar System fact:
+    Distance to moon: ~384,400 km.
+    Diameter of Mercury: 4,879 km
+    Venus: 12,104 km
+    Earth: 12,742 km
+    Mars: 6,779 km
+    Jupiter: 139,820 km
+    Saturn: 116,460 km
+    Uranus: 50,724 km
+    Neptune: 49,244 km
+    Total: ~392,752 km.
+    Wait, the total is actually slightly *more* than the average distance to the moon, but because the moon&#39;s orbit is elliptical, at its closest (perigee) it&#39;s 363,300 km. So they *don&#39;t* quite fit side-by-side at average distance. This fact is often a myth or requires leaving out Earth/Pluto. Let&#39;s skip it to avoid being inaccurate.
+
+    Let&#39;s go back to the **Civil War Widow** fact. It makes history feel shockingly recent.
+    *Fact:* The last widow of a Civil War veteran, Helen Viola Jackson, died in 2020. She was 98 years old. She married a 17-year-old Union soldier, but wait, she was 17 and he was 81? No, she married a Confederate veteran? Let me double-check.
+    Actually, Helen Viola Jackson married a Union veteran named Albert Blighte? No, Albert Blight was 81, she was 17 in 1936. He died a few years later. She kept it a secret for decades because she feared stigma. She died in 2020.
+    Wait, another one: Maudie Hopkins died in 2008. She married an 86-year-old Confederate veteran when she was 19.
+    Another one: Gertrude Janeway died in 2003.
+    This is an amazing fact. &quot;The last widow of the American Civil War died in 2020.&quot; It bridges the gap between the 1860s and the 21st century in a deeply human way.
+
+    Let&#39;s try another one, maybe something about **animals**:
+    *Fact:* Wombat poop is cube-shaped so it doesn&#39;t roll away. (Known).
+    *Fact:* Koala fingerprints are nearly identical to human fingerprints, even under an electron microscope. (Very cool, relatively obscure).
+
+    Let&#39;s try a **language** fact:
+    *Fact:* The word &quot;set&quot; has the most definitions of any word in the English language (over 430). (Known).
+    *Fact:* There is a word in Welsh &quot;Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&quot; which is just a made-up long name to keep the train station open. (Known).
+
+    Let&#39;s try a **food** fact:
+    *Fact:* Peanuts are not nuts; they are legumes. (Known).
+    *Fact:* Coffee beans are actually the pits of a berry. (Known).
+    *Fact:* The &quot;seeds&quot; on the outside of a strawberry are the actual fruits. (Known).
+
+    Let&#39;s go with a **physics/chemistry** fact:
+    *Fact:* Water can exist in three states at once at the &quot;triple point.&quot; (Cool, but known to science folks).
+    *Fact:* Helium can become a &quot;superfluid&quot; that climbs up the walls of a container. (Very cool, a bit niche but known).
+
+    Let&#39;s try a **historical event** that is completely obscure but true:
+    *Fact:* In 1919, a massive flood of molasses in Boston killed 21 people. (The Great Molasses Flood. Very popular trivia).
+
+    How about:
+    *Fact:* There is a species of fungus (Ophiocordyceps) that takes over the minds of ants, but there is a *second* fungus that specializes in infecting the *first* fungus to stop it from spreading too far and wiping out the entire ant colony, which would be bad for the fungus. This is called hyperparasitism. (This is incredibly cool, mind-bending, and rarely discussed outside of niche biology circles).
+
+    Let&#39;s write out the Hyperparasitism fact clearly.
+    1.  Introduce the &quot;zombie-ant fungus&quot; (everyone knows this vaguely).
+    2.  Introduce the twist: there&#39;s a fungus that infects the zombie-ant fungus.
+    3.  Explain *why* (to preserve the host colony).
+    4.  Conclude with a mind-bending thought (fungi keeping fungi in check).
+
+    Let&#39;s consider another option just to be sure:
+    *Fact:* The shortest commercial flight in the world is between the Orkney Islands in Scotland, lasting just 1.5 minutes. (Cool, but known).
+    *Fact:* There is a town in Norway called &quot;Hell&quot; that freezes over every winter. (Pun-based, known).
+
+    Let&#39;s go with a **space fact**:
+    *Fact:* The footprint left by Neil Armstrong on the moon will likely last for at least 100 million years because there is no wind or rain to erode it. (Known).
+
+    Let&#39;s try a **human evolution fact**:
+    *Fact:* Humans share 50% of their DNA with bananas. (Very common).
+
+    Let&#39;s try a **historical figure** fact:
+    *Fact:* Charlie Chaplin once entered a &quot;Charlie Chaplin look-alike contest and lost. (Fun, but known).
+
+    Let&#39;s try an **economics** fact:
+    *Fact:* There is more money printed for the game of Monopoly each year than actual real money printed by the US Federal Reserve. (Known).
+
+    Let&#39;s try an **animal anatomy** fact:
+    *Fact:* A shrimp&#39;s heart is in its head. (Common).
+    *Fact:* Elephants are the only animals that can&#39;t jump. (Common).
+    *Fact:* Flamingos are not naturally pink; their color comes from the beta-carotene in the shrimp and algae they eat. (Known).
+
+    Let&#39;s go back to the **Civil War Widow** fact. It&#39;s incredibly striking because it collapses time. The Civil War ended in 1865. 2020 was 155 years later. The fact that someone collecting a Civil War pension was alive during the COVID-19 pandemic is genuinely mind-blowing.
+
+    Let&#39;s check the facts on this carefully.
+    Helen Viola Jackson (born 1919) married Albert Blight (born 1842, Union Army veteran) in 1936 when she was 17 and he was 93. He died in 1937. She never remarried and kept the marriage secret for decades. She died on December 16, 2020, at the age of 101.
+    Another one: Maudie Hopkins (born 1914) married Confederate veteran William M. Cantrell (born 1847) in 1934 when she was 19 and he was 86. She died in 2008.
+    This is a perfect fact. It&#39;s verifiable, deeply human, and genuinely surprising to almost everyone.
+
+    Let&#39;s present this fact with a bit of narrative flair to make it memorable.
+
+    *Drafting the response:*
+    Start with a hook: &quot;The American Civil War ended in 1865, but its last living widow died in 2020.&quot;
+    Explain the context: The Civil War feels like ancient history, but it was shockingly recent.
+    Tell the story: Helen Viola Jackson, a 17-year-old girl in Missouri, married 93-year-old Union Army veteran Albert Blight in 1936. It was a marriage of convenience so she could get a pension and he would have a caretaker. He died a year later, but she was technically a Civil War widow.
+    Add the mind-blowing perspective: She was alive when Twitter was founded, when the iPhone was released, and when the COVID-19 pandemic started. The gap between 1865 and 2020 was bridged by a single human life.
+
+    Let&#39;s also offer a bonus fact, just in case they already know this one.
+    Bonus fact: Koala fingerprints are so similar to human fingerprints that they have been confused at crime scenes.
+    Or: The &quot;M&#39;s&quot; in M&amp;Mars stand for Forrest Mars, and the other &quot;M&quot; stands for Bruce Murrie (son of Hershey president William Murrie), meaning M&amp;Ms were originally made with Hershey chocolate.
+    Or: There is a species of fungus that infects the &quot;zombie-ant&quot; fungus to stop it from killing the ants. (Hyperparasitism).
+
+    I&#39;ll stick to the Civil War Widow as the main focus because it&#39;s the most &quot;time-collapsing&quot; and emotional fact, and then add the hyperparasitism one as a quick bonus &quot;if you want something from the natural world.&quot;
+
+4.  **Refining the Output:**
+    *   Make the Civil War fact the star.
+    *   Keep it concise but impactful.
+    *   Ensure the tone is engaging.
+    *   Add the bonus fact to cover more ground.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>There is a microscopic animal that doesn&#39;t breathe oxygen.</p>
+<p>Meet <em>Henneguya salminicola</em>. It is a tiny parasite—related to jellyfish and sea anemones—that infects the muscles of salmon. In 2020, scientists discovered that it has completely lost its mitochondrial DNA. </p>
+<p>Every other known multicellular organism on Earth has mitochondrial DNA, which is the crucial genetic code that tells its cells how to convert oxygen into energy. <em>H. salminicola</em> simply ditched the instruction manual. It doesn&#39;t breathe, and it doesn&#39;t need oxygen to survive at all. It is the only known animal to break this fundamental rule of life on Earth.</p>
+<hr>
+<p><strong>Bonus fact from a completely different field:</strong></p>
+<p>There is a scientific hypothesis that the reason we haven&#39;t found aliens yet is that they are hibernating. </p>
+<p>It’s called the <strong>Aestivation Hypothesis</strong>. The idea is that a hyper-advanced alien civilization might have already explored the entire galaxy and is simply waiting. They are aestivating (like a summer hibernation) to conserve energy until the universe cools down. </p>
+<p>Why? According to the laws of thermodynamics, computing requires energy and generates heat. The colder the background temperature of the universe, the more efficiently you can compute. The universe is currently very warm (a brisk -270°C, which is practically boiling for a computer). By waiting trillions of years for the universe to cool down, these aliens could potentially perform 10^30 times more thinking with the same amount of energy. So, they might just be sleeping until the cosmos gets a bit more comfortable.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1629 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">
+1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants a surprising, obscure, or fascinating fact that challenges their current understanding.
+    *   **Challenge:** The user likely knows a lot of common trivia (e.g., &quot;Octopuses have three hearts,&quot; &quot;Honey never spoils&quot;). I need to find something truly niche, counterintuitive, or recently discovered.
+
+2.  **Brainstorming Categories:**
+    *   *Space/Astronomy:* Neutron stars, black holes, dark matter. (Often too common or too abstract).
+    *   *Biology/Nature:* Fungi, deep sea creatures, microscopic life. (Good potential for weirdness).
+    *   *History:* Obscure historical events, weird customs. (Can be hit or miss).
+    *   *Linguistics/Anthropology:* Unusual languages, cognitive quirks. (Interesting, but maybe a bit dry).
+    *   *Physics/Materials:* Time crystals, weird states of mind. (Cool, but maybe hard to explain concisely).
+
+3.  **Selecting and Refining Specific Facts:**
+    *   *Idea 1: Bananas are berries, but strawberries aren&#39;t.* (Too common).
+    *   *Idea 2: There&#39;s a fungus that controls ants.* (Also pretty common pop-science).
+    *   *Idea 3: Wombat poop is cube-shaped.* (Funny, but widely known).
+    *   *Idea 4: The smell of fresh rain.* (Petrichor - too common).
+    *   *Idea 5: Time crystals.* (A bit too physics-heavy).
+    *   *Idea 6: The &quot;Hum&quot; phenomenon.* (Interesting, but maybe too unsolved/mysterious).
+    *   *Idea 7: Trees share nutrients through the &quot;Wood Wide Web&quot;.* (Too common).
+    *   *Idea 8: The mantis shrimp&#39;s vision.* (Too common).
+    *   *Idea 9: The concept of &quot;Synesthesia&quot; or &quot;Tetrachromacy&quot;.* (Getting warmer, but still fairly well-known).
+    *   *Idea 10: The Eukaryotic tree of life and how weird it is (e.g., the fact that fungi are more closely related to animals than plants, or the existence of *Henneguya salminicola* - the jellyfish relative that doesn&#39;t breathe oxygen).*
+        *   *Fact Check on Henneguya salminicola:* It is a parasite that lost its mitochondrial DNA, meaning it doesn&#39;t use oxygen to survive. This is absolutely wild and most people don&#39;t know it. Let&#39;s go with this.
+
+4.  **Drafting the Fact (Iterative improvement):**
+    *   *Draft 1:* There is a parasite called Henneguya salminicola that doesn&#39;t breathe oxygen. It&#39;s related to jellyfish.
+    *   *Critique 1:* A bit dry. Needs more context on *why* it&#39;s mind-blowing. Almost all multicellular life requires oxygen. Finding one that doesn&#39;t is a massive biological anomaly.
+    *   *Draft 2:* Did you know there is a multicellular organism that doesn&#39;t breathe? Meet *Henneguya salminicola*. It&#39;s a tiny parasite related to jellyfish that infects salmon. Scientists discovered it doesn&#39;t have mitochondrial DNA, meaning it doesn&#39;t need oxygen to survive. It&#39;s the only known animal to break this fundamental rule of life.
+    *   *Critique 2:* Good. Let&#39;s make it punchy and engaging. I&#39;ll add a second, slightly different fact just in case the first doesn&#39;t land, or present it as a &quot;bonus.&quot; Let&#39;s do one about space/physics.
+    *   *Bonus Idea:* The fact that a day on Venus is longer than its year. (Too common).
+    *   *Bonus Idea 2:* The existence of &quot;rogue planets&quot; with subsurface oceans kept warm by radioactive decay, potentially harboring life. (Good, but a bit speculative).
+    *   *Bonus Idea 3:* The fact that the human body contains stardust, but specifically, the iron in your blood was forged in a supernova. (Too common).
+    *   *Bonus Idea 4:* The concept of &quot;Quantum Darwinism.&quot; (Too complex).
+    *   *Bonus Idea 5:* There is a species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal. (Too common).
+    *   *Bonus Idea 6:* The &quot;Fermi Paradox&quot; solution involving the &quot;Aestivation Hypothesis&quot; (aliens are hibernating waiting for the universe to cool down to do maximum computing). This is incredibly cool and niche.
+
+5.  **Finalizing the Output Structure:**
+    *   Lead with the most mind-blowing, biologically impossible fact (the oxygen-less animal).
+    *   Explain *why* it&#39;s weird (jellyfish relative, no mitochondria).
+    *   Offer a second, completely different fact from another field (the Aestivation Hypothesis) to ensure at least one hits the mark.
+
+6.  **Writing the Response (similar to the final output):**
+    *   &quot;There is a microscopic animal that doesn&#39;t breathe oxygen.&quot;
+    *   Detail *Henneguya salminicola*.
+    *   Explain the mitochondrial DNA connection.
+    *   Add the space/physics bonus: The Aestivation Hypothesis.
+    *   Explain the Aestivation Hypothesis simply (aliens waiting for the universe to get colder to save computing energy).
+
+7.  **Review against the Prompt:** Does this tell them something they likely don&#39;t know? Yes. Both are highly obscure but grounded in real science. The tone is engaging and informative. (Self-correction: Ensure I explicitly state *why* it&#39;s a big deal—e.g., every other known multicellular organism requires oxygen).
+
+8.  **Final Polish:** (This matches the provided good response).</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>A single day on Venus is longer than an entire year on Venus. </p>
+<p>Here is why: A &quot;day&quot; is defined by how long it takes a planet to spin once on its axis, and a &quot;year&quot; is defined by how long it takes to orbit the sun. Venus has an incredibly slow rotation—it takes about 243 Earth days for Venus to complete just one spin. However, it only takes about 225 Earth days for Venus to orbit the sun. </p>
+<p>As if that wasn&#39;t mind-bending enough, Venus also spins <em>backward</em> compared to most other planets (a phenomenon called retrograde rotation), which means if you were standing on its surface, the sun would rise in the west and set in the east!</p>
+<p>What is something <em>you</em> know that most people don&#39;t?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1172 tokens</span>
+                    <span class="topic-tag" data-topic="venus">🪐 venus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">
+1.  **Analyze the Request:**
+    *   **Prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user is looking for an interesting, surprising, or obscure fact. It&#39;s a classic icebreaker or curiosity test.
+    *   **Challenge:** Since I don&#39;t know the user&#39;s background, I need to provide a fact that is widely surprising but accurate, engaging, and perhaps touches on an unexpected domain.
+
+2.  **Brainstorming Categories:**
+    *   *History:* Cleopatra lived closer to the iPhone than the pyramids. (Too common).
+    *   *Science/Nature:* Wombat poop is cube-shaped. (Funny, but maybe too well-known now).
+    *   *Space:* There are more trees on Earth than stars in the Milky Way. (Cool, but somewhat known).
+    *   *Linguistics:* The word &quot;set&quot; has the most definitions. (A bit dry).
+    *   *Biology:* Turritopsis dohrnii (immortal jellyfish). (Very popular, but still mind-blowing for many).
+    *   *Everyday objects:* The &quot;5-second rule&quot; is a myth. (Boring).
+
+3.  **Selecting the Best Fact:**
+    *   *Idea 1:* The Eiffel Tower grows in summer. (Good, but simple).
+    *   *Idea 2:* Octopuses have three hearts, two of which stop beating when they swim. (Cool, but common).
+    *   *Idea 3:* Cleopatra&#39;s timeline. (Overused).
+    *   *Idea 4:* The inventor of the Pringles can is buried in one. (Fun, but sometimes debated/urban legend-adjacent).
+    *   *Idea 5:* There&#39;s a species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal. (Strong contender).
+    *   *Idea 6:* Bananas are berries, but strawberries aren&#39;t. (Classic botany fact, usually surprises people).
+    *   *Idea 7:* The &quot;M&#39;s&quot; in M&amp;Ms stand for Mars and Murrie. (A bit niche).
+    *   *Idea 8:* A day on Venus is longer than a year on Venus. (Mind-bending physics/astronomy).
+
+4.  **Refining and Formatting the Chosen Fact (Venus):**
+    *   *Fact:* A day on Venus (one full rotation on its axis) takes about 243 Earth days. A year on Venus (one orbit around the sun) takes about 225 Earth days.
+    *   *Why it&#39;s great:* It completely breaks our intuitive understanding of how time works in a solar system. It&#39;s also completely true and verifiable.
+    *   *Bonus/Extra context:* Venus also rotates backwards (retrograde rotation), so the sun rises in the west and sets in the east. Adding this makes it even more mind-bending.
+
+5.  **Drafting the Response:**
+    *   *Opening:* Hook the reader with the core fact.
+    *   *Elaboration:* Explain the numbers so it makes sense.
+    *   *The &quot;Mic Drop&quot; detail:* Add the retrograde rotation fact.
+    *   *Closing:* Engage the user. Ask what *they* know that&#39;s surprising to keep the conversation going.
+
+6.  **Review and Polish (Self-Correction during drafting):**
+    *   *Draft:* &quot;A day on Venus is longer than a year on Venus. It takes 243 Earth days to rotate, but only 225 to orbit the sun. Also, it spins backwards.&quot;
+    *   *Critique:* A bit too blunt. Let&#39;s make it more conversational and engaging.
+    *   *Revision:* &quot;A single day on Venus is longer than an entire year on Venus.&quot; -&gt; Add the specific Earth-day comparisons. -&gt; Add the &quot;sun rises in the west&quot; detail. -&gt; Add a friendly sign-off.
+
+7.  **Final Output Generation:** (This matches the provided good response.)
+    &quot;A single day on Venus is longer than an entire year on Venus.
+    Here is why: A &quot;day&quot; is how long it takes a planet to spin once on its axis, and a &quot;year&quot; is how long it takes to orbit the sun. Venus takes about 243 Earth days to complete one rotation, but it only takes about 225 Earth days to orbit the sun. 
+    As if that wasn&#39;t mind-bending enough, Venus also spins backward compared to most other planets, which means if you were standing on its surface, the sun would rise in the west and set in the east!&quot;
+    *(Added conversational closing)*
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/google-gemini-3.5-flash-lite/">← Google: Gemini 3.5 Flash-Lite</a>
+            <a href="/">all models</a>
+            <span></span>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>
