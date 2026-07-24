@@ -818,3 +818,17 @@ models:
     license: "open-source"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "anthropic/claude-opus-5"
+    name: "Claude Opus 5"
+    provider: "Anthropic"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "inclusionai/ling-3.0-flash:free"
+    name: "Ling-3.0-flash (free)"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "July 2026"
+

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Opus 5 — Tell me something I don't know.</title>
+    <meta name="description" content="Claude Opus 5 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one of my favorites, because it&#39;s a case where scientists got to watch something happen that they thought they&#39;d never see: a language being born…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/anthropic-claude-opus-5/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/anthropic-claude-opus-5/">
+    <meta property="og:title" content="Claude Opus 5 — Tell me something I don't know.">
+    <meta property="og:description" content="Claude Opus 5 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one of my favorites, because it&#39;s a case where scientists got to watch something happen that they thought they&#39;d never see: a language being born…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Opus 5 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Claude Opus 5 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one of my favorites, because it&#39;s a case where scientists got to watch something happen that they thought they&#39;d never see: a language being born…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Claude Opus 5)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one of my favorites, because it's a case where scientists got to watch something happen that they thought they'd never see: **a language being born from scratch.**\n\nBefore the 1970s, Nicaragua had no deaf community to speak of. Deaf children were raised in isolation from one another, each improvising crude \"home signs\" with their families. Then in 1977 the country opened its first large school for deaf children, followed by a vocational school. The teachers focused on lip-reading and Spanish, which mostly failed. But out on the playground and on the buses, a few hundred kids who had never had peers suddenly did — and they started pooling their homemade gestures.\n\nThe first cohort produced something like a pidgin: functional, inconsistent, not much grammar. The interesting part is what the *younger* children did with it. Kids who arrived at the school and learned this rough system from the older students didn't just copy it — they regularized it. They invented consistent grammatical machinery: spatial agreement, systematic verb structure, ways to mark who did what to whom. Within roughly two decades, Nicaraguan Sign Language became a full, complex language, and each new generation of children made it more sophisticated than the input they'd received.\n\nJudy Kegl, an American linguist, arrived in 1986 and realized what she was looking at. It's now one of the strongest pieces of evidence that children don't merely absorb language — they actively impose structure on it, even when the structure isn't there to begin with. The learners were the creators.\n\nThere's a poignant footnote: the oldest members of the community, who missed the critical window, never became fully fluent. Researchers found they struggle with concepts like tracking what someone else falsely believes — suggesting language may be scaffolding for certain kinds of thought, not just a way to report it.\n\nHappy to go somewhere else entirely — history, math, biology, something odd about the ocean. Any direction you'd like?","author":{"@type":"Organization","name":"Anthropic"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one that surprises most people who've absorbed the standard science-class version:\n\n**The Earth has recently been spinning *faster*, and we may soon need to subtract a second from our clocks for the first time in history.**\n\nThe textbook story is that tidal friction from the Moon steadily slows Earth's rotation — about 1.8 milliseconds added to the length of a day per century, with the Moon drifting away from us roughly 3.8 cm a year. That's why we've had to insert \"leap seconds\" into official time, 27 of them since 1972.\n\nBut since around 2020, the trend reversed. Earth started spinning slightly quicker than the standard 86,400-second day, and July 5, 2024 came in about 1.66 milliseconds short — one of the shortest days ever measured. No leap second has been added since the end of 2016. If this continues, timekeepers project we'll need a *negative* leap second — literally skipping a second — around 2029, which has never been done and which a lot of software is unprepared for.\n\nTwo nice wrinkles:\n\n- Nobody fully knows why. The best suspect is the sloshing of Earth's liquid outer core exchanging angular momentum with the mantle above it.\n- Melting polar ice is having the *opposite* effect. Moving all that mass from the poles toward the equator flattens the planet slightly, which slows rotation — like a figure skater extending their arms. One estimate is that human-driven ice melt has already postponed that negative leap second by about three years. Climate change is, in a small and literal way, buying us time.\n\nMeanwhile, the international community voted in 2022 to phase leap seconds out entirely by 2035, letting atomic time and Earth time drift apart for decades before making a bigger correction.\n\nHappy to go somewhere completely different — history, language, biology, math — if you'd rather.","author":{"@type":"Organization","name":"Anthropic"}},{"@type":"Answer","text":"Here's one of my favorites: there's a wild bird in sub-Saharan Africa that actively recruits humans as hunting partners, and the two species have worked out a shared vocabulary for it.\n\nThe greater honeyguide (*Indicator indicator*) eats beeswax, but it can't break into a bees' nest on its own. Humans can, but they're bad at finding nests in dense bush. So honey-hunters among the Yao people in Mozambique make a specific call — a rolling trill followed by a grunt, roughly \"brrrr-hm\" — and honeyguides come to them, then fly ahead in short hops, chattering and waiting, leading them tree by tree to a nest. The hunters smoke out the bees and take the honey; the bird gets the wax and larvae.\n\nThe remarkable part is that this is a two-way signaling system, not just humans exploiting a bird's habits. In an experiment published in 2016, researchers played the traditional call versus control sounds while walking with hunters, and the specific call roughly doubled the chance of being guided and roughly tripled the overall success rate of finding a nest. Later work showed the birds respond preferentially to the call used by their *local* human culture — Mozambican honeyguides prefer the Yao trill-grunt, Tanzanian ones prefer the Hadza's melodic whistle. Two separate traditions, one on each side of the partnership.\n\nAnd here's the detail that makes it strange: honeyguides are brood parasites. They lay their eggs in other birds' nests, and the chicks kill their foster siblings with hooks on their bills. So a honeyguide never meets its parents. Whatever it knows about cooperating with humans, it did not learn from its own kind's family life — which leaves an unresolved question about how the behavior is transmitted at all.\n\nSome researchers think this relationship could be tens of thousands of years old, making it one of the last surviving examples of a kind of mutualism that may once have been more common between humans and wild animals. It's currently disappearing as sugar replaces honey and the hunting traditions fade.\n\nWant more in this vein, or would you rather I aim at a different area — history, math, something in your own field?","author":{"@type":"Organization","name":"Anthropic"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Claude Opus 5</h1>
+        <p class="subtitle">Anthropic · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>July 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Claude Opus 5</div>
+                        <div class="model-provider">Anthropic</div>
+                        <div class="model-released">July 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one of my favorites, because it&#39;s a case where scientists got to watch something happen that they thought they&#39;d never see: <strong>a language being born from scratch.</strong></p>
+<p>Before the 1970s, Nicaragua had no deaf community to speak of. Deaf children were raised in isolation from one another, each improvising crude &quot;home signs&quot; with their families. Then in 1977 the country opened its first large school for deaf children, followed by a vocational school. The teachers focused on lip-reading and Spanish, which mostly failed. But out on the playground and on the buses, a few hundred kids who had never had peers suddenly did — and they started pooling their homemade gestures.</p>
+<p>The first cohort produced something like a pidgin: functional, inconsistent, not much grammar. The interesting part is what the <em>younger</em> children did with it. Kids who arrived at the school and learned this rough system from the older students didn&#39;t just copy it — they regularized it. They invented consistent grammatical machinery: spatial agreement, systematic verb structure, ways to mark who did what to whom. Within roughly two decades, Nicaraguan Sign Language became a full, complex language, and each new generation of children made it more sophisticated than the input they&#39;d received.</p>
+<p>Judy Kegl, an American linguist, arrived in 1986 and realized what she was looking at. It&#39;s now one of the strongest pieces of evidence that children don&#39;t merely absorb language — they actively impose structure on it, even when the structure isn&#39;t there to begin with. The learners were the creators.</p>
+<p>There&#39;s a poignant footnote: the oldest members of the community, who missed the critical window, never became fully fluent. Researchers found they struggle with concepts like tracking what someone else falsely believes — suggesting language may be scaffolding for certain kinds of thought, not just a way to report it.</p>
+<p>Happy to go somewhere else entirely — history, math, biology, something odd about the ocean. Any direction you&#39;d like?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1951 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for something genuinely surprising and interesting, so I&#39;m thinking through some obscure but true facts that go beyond the typical trivia. I&#39;m considering nutmeg as a starting point—it&#39;s a hallucinogenic in large doses and was historically traded for enormous value, with the Dutch even getting involved in its trade routes.
+
+But I&#39;m also weighing other options: the Nicaraguan Sign Language discovery in the 1970s-80s, where deaf children spontaneously created a new language with grammar emerging over generations, feels particularly compelling because it&#39;s a rare window into how language itself develops. There&#39;s also the Wollemi pine, a living fossil discovered in 1994 that&#39;s nearly genetically identical across all individuals, or some lesser-known facts about mantis shrimp color vision that actually contradicts the popular narrative about their superior perception.
+
+I&#39;m considering mathematical concepts like the Banach-Tarski paradox or Gödel&#39;s incompleteness theorems, though those are somewhat familiar to most people. Aphantasia—the inability to visualize mentally, named in 2015—is moderately known now. The 1518 dancing plague of Strasbourg is genuinely intriguing, and there&#39;s something fascinating about how Earth&#39;s inner core may rotate at a different rate than the rest of the planet. The mycorrhizal networks in trees are interesting but increasingly contested, which itself could be the angle. I&#39;m also drawn to the linguistic fact that some languages like Guugu Yimithirr use absolute directions instead of left/right, which actually affects how people think spatially. And there&#39;s something delightful about the obscure reason cashews aren&#39;t sold in shells—the shells contain anacardic acid and urushiol, which are toxic.
+
+Continuing through more candidates: wombat cube poop is fairly well-known now, and the paper-folding-to-the-moon fact is common. The temporal juxtaposition of the last French guillotine execution in 1977 and Star Wars coming out that same year is a nice one. Oxford being older than the Aztec Empire works similarly. Cleopatra living closer to the moon landing than to the Great Pyramid&#39;s construction is semi-known. Nicaraguan Sign Language seems like a genuinely substantive candidate that&#39;s less commonly discussed.
+
+I&#39;ll focus on just one thing and tell it well rather than listing them out — that feels more meaningful. Nicaraguan Sign Language is the pick, told with some depth and context, then I&#39;ll invite the user to steer toward other directions if they want.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one that surprises most people who&#39;ve absorbed the standard science-class version:</p>
+<p><strong>The Earth has recently been spinning <em>faster</em>, and we may soon need to subtract a second from our clocks for the first time in history.</strong></p>
+<p>The textbook story is that tidal friction from the Moon steadily slows Earth&#39;s rotation — about 1.8 milliseconds added to the length of a day per century, with the Moon drifting away from us roughly 3.8 cm a year. That&#39;s why we&#39;ve had to insert &quot;leap seconds&quot; into official time, 27 of them since 1972.</p>
+<p>But since around 2020, the trend reversed. Earth started spinning slightly quicker than the standard 86,400-second day, and July 5, 2024 came in about 1.66 milliseconds short — one of the shortest days ever measured. No leap second has been added since the end of 2016. If this continues, timekeepers project we&#39;ll need a <em>negative</em> leap second — literally skipping a second — around 2029, which has never been done and which a lot of software is unprepared for.</p>
+<p>Two nice wrinkles:</p>
+<ul>
+<li>Nobody fully knows why. The best suspect is the sloshing of Earth&#39;s liquid outer core exchanging angular momentum with the mantle above it.</li>
+<li>Melting polar ice is having the <em>opposite</em> effect. Moving all that mass from the poles toward the equator flattens the planet slightly, which slows rotation — like a figure skater extending their arms. One estimate is that human-driven ice melt has already postponed that negative leap second by about three years. Climate change is, in a small and literal way, buying us time.</li>
+</ul>
+<p>Meanwhile, the international community voted in 2022 to phase leap seconds out entirely by 2035, letting atomic time and Earth time drift apart for decades before making a bigger correction.</p>
+<p>Happy to go somewhere completely different — history, language, biology, math — if you&#39;d rather.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2093 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">I&#39;m trying to think of something genuinely surprising that the user probably hasn&#39;t heard before—something with real substance, not just a quick trivia fact. I&#39;m weighing a few options and leaning toward something like the Earth&#39;s inner core potentially rotating at a different speed than the rest of the planet, which has that perfect blend of mind-bending and scientifically grounded.
+
+But I&#39;m also considering some fresher angles: the self-healing properties of Roman concrete discovered in recent MIT research, or how the Moon experiences moonquakes that can last for hours due to its unique geological properties. These feel less overexposed than the usual viral facts about tardigrades or mantis shrimp.
+
+The most compelling one emerging is the recent discovery about Earth&#39;s rotation actually speeding up over the past few years—we&#39;ve had the shortest days on record since 2020, and there&#39;s talk of potentially needing a negative leap second around 2029. That&#39;s genuinely novel and counterintuitive.
+
+I want to nail the mechanics here: the long-term trend is tidal friction from the Moon gradually slowing Earth&#39;s rotation by about 1.8 milliseconds per century, with the Moon drifting away at roughly 3.8 centimeters yearly. But something&#39;s shifted recently—since around 2020, Earth has been spinning faster than expected, with July 5, 2024 marking one of the shortest days ever recorded.
+
+This speedup is why no leap second has been added since December 2016, and scientists like Duncan Agnew are now predicting we might need a negative leap second around 2029. Interestingly, melting polar ice redistributing mass toward the equator has actually been counteracting this speedup, delaying that negative leap second by roughly three years. The underlying cause—likely shifts in the liquid outer core and core-mantle angular momentum exchange—remains somewhat mysterious, though the decision to abolish leap seconds entirely by 2035 suggests the timekeeping community is ready to move past this problem.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one of my favorites: there&#39;s a wild bird in sub-Saharan Africa that actively recruits humans as hunting partners, and the two species have worked out a shared vocabulary for it.</p>
+<p>The greater honeyguide (<em>Indicator indicator</em>) eats beeswax, but it can&#39;t break into a bees&#39; nest on its own. Humans can, but they&#39;re bad at finding nests in dense bush. So honey-hunters among the Yao people in Mozambique make a specific call — a rolling trill followed by a grunt, roughly &quot;brrrr-hm&quot; — and honeyguides come to them, then fly ahead in short hops, chattering and waiting, leading them tree by tree to a nest. The hunters smoke out the bees and take the honey; the bird gets the wax and larvae.</p>
+<p>The remarkable part is that this is a two-way signaling system, not just humans exploiting a bird&#39;s habits. In an experiment published in 2016, researchers played the traditional call versus control sounds while walking with hunters, and the specific call roughly doubled the chance of being guided and roughly tripled the overall success rate of finding a nest. Later work showed the birds respond preferentially to the call used by their <em>local</em> human culture — Mozambican honeyguides prefer the Yao trill-grunt, Tanzanian ones prefer the Hadza&#39;s melodic whistle. Two separate traditions, one on each side of the partnership.</p>
+<p>And here&#39;s the detail that makes it strange: honeyguides are brood parasites. They lay their eggs in other birds&#39; nests, and the chicks kill their foster siblings with hooks on their bills. So a honeyguide never meets its parents. Whatever it knows about cooperating with humans, it did not learn from its own kind&#39;s family life — which leaves an unresolved question about how the behavior is transmitted at all.</p>
+<p>Some researchers think this relationship could be tens of thousands of years old, making it one of the last surviving examples of a kind of mutualism that may once have been more common between humans and wild animals. It&#39;s currently disappearing as sugar replaces honey and the hunting traditions fade.</p>
+<p>Want more in this vein, or would you rather I aim at a different area — history, math, something in your own field?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2116 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">I&#39;m thinking through what might be genuinely interesting and unfamiliar to share. A few possibilities come to mind—like how wood-eating fungi may have shaped Earth&#39;s geological history, or the Mpemba effect where hot water sometimes freezes faster than cold—though both of these have some scientific debate around them.
+
+Some other candidates are more solidly interesting: the story of how newborn infants were routinely operated on without anesthesia until the 1980s because doctors believed they couldn&#39;t feel pain or form memories, which is genuinely disturbing and less commonly known. There&#39;s also the greater honeyguide bird, which seems to have an interesting behavior I&#39;m starting to recall.
+
+Actually, the honeyguide is the stronger choice here — it&#39;s a wild bird in Tanzania that actively cooperates with humans using specific calls, and humans respond with their own traditional signals. It&#39;s a genuine mutualism between species, not something domesticated, and it&#39;s well-documented by researchers like Claire Spottiswoode. It&#39;s positive, verifiable, and surprising in a way that feels fresh.
+
+I&#39;ll present it with some detail about the actual mechanism — the specific calls that the Yao honey-hunters use, and how dramatically they increase the bird&#39;s willingness to guide them to hives. Then I&#39;ll offer to explore whatever direction interests them most.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/meituan-longcat-2.0/">← Meituan: LongCat 2.0</a>
+            <a href="/">all models</a>
+            <a href="/m/inclusionai-ling-3.0-flash-free/">Ling-3.0-flash (free) →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=a057fd44"></script>
+
+</body>
+</html>
