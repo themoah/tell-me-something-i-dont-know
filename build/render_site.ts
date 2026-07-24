@@ -88,7 +88,7 @@ const TOPIC_EMOJIS: Record<string, string> = {
     'oxford university': '\u{1F393}',
     'anglo-zanzibar war': '⚔️',
     'sharks': '\u{1F988}',
-    'wombats': '\u{1F99B}',
+    'wombats': '\u{1F43E}',
 };
 
 /** Minimum mentions for a topic to appear in the hive-mind bar chart. */
@@ -564,6 +564,11 @@ async function main() {
     // `$` (prices, code), which a string 2nd arg would expand (`$&`, `$$`, …).
     html = html.replace('<!-- LD_JSON_SLOT -->', () => buildIndexLdJson(data));
     html = html.replace('<!-- SLOT:top_topic_claim -->', () => escapeHtml(claim));
+    const leader = topTopic(data.stats);
+    html = html.replace(
+        '<!-- SLOT:hive_mind_emoji -->',
+        () => leader ? topicEmoji(leader) : '\u{1F419}',
+    );
     html = html.replace('<!-- SLOT:hero -->', () => renderHero(candidates));
     html = html.replace('<!-- SLOT:topicbars -->', () => renderTopicBars(data.stats));
 

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, renderTopicBars, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
 
 test('slugify replaces all slashes', () => {
     assert.equal(slugify('anthropic/claude-sonnet-4.6'), 'anthropic-claude-sonnet-4.6');
@@ -56,6 +56,11 @@ test('topTopicClaim uses plural display name for the leader', () => {
     };
     assert.equal(topTopicClaim(stats), 'Octopuses came up more than anything else.');
     assert.equal(topicDisplayName('wood wide web'), 'The wood wide web');
+});
+
+test('wombats topic uses paw prints, not hippo', () => {
+    assert.equal(topicEmoji('wombats'), '🐾');
+    assert.notEqual(topicEmoji('wombats'), '🦛');
 });
 
 test('renderTopicBars omits topics below the threshold', () => {
