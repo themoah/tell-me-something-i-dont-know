@@ -84,10 +84,55 @@ const TOPIC_EMOJIS: Record<string, string> = {
     'jellyfish': '\u{1FAB4}', 'octopus': '\u{1F419}', 'honey': '\u{1F36F}', 'eiffel tower': '\u{1F5FC}',
     'bananas': '\u{1F34C}', 'cleopatra': '\u{1F451}', 'mantis shrimp': '\u{1F990}', 'tardigrade': '\u{1F43B}',
     'blue whale': '\u{1F40B}', 'venus': '\u{1FA90}', 'shakespeare': '\u{1F3AD}', 'platypus': '\u{1F986}',
-    'space': '\u{1F30C}', 'trees': '\u{1F333}', 'sloths': '\u{1F9A5}', 'dna': '\u{1F9EC}',
+    'space': '\u{1F30C}', 'wood wide web': '\u{1F333}', 'sloths': '\u{1F9A5}', 'dna': '\u{1F9EC}',
     'oxford university': '\u{1F393}',
     'anglo-zanzibar war': '⚔️',
+    'sharks': '\u{1F988}',
+    'wombats': '\u{1F99B}',
 };
+
+/** Minimum mentions for a topic to appear in the hive-mind bar chart. */
+export const MIN_TOPIC_BAR_COUNT = 10;
+
+const TOPIC_DISPLAY_NAMES: Record<string, string> = {
+    octopus: 'Octopuses',
+    jellyfish: 'Jellyfish',
+    honey: 'Honey that never spoils',
+    venus: 'Venus',
+    cleopatra: 'Cleopatra',
+    'anglo-zanzibar war': 'The Anglo-Zanzibar War',
+    'oxford university': 'Oxford University',
+    bananas: 'Bananas-as-berries',
+    sharks: 'Sharks',
+    wombats: 'Wombats',
+    'wood wide web': 'The wood wide web',
+    'eiffel tower': 'The Eiffel Tower',
+    sloths: 'Sloths',
+    space: 'Space',
+    dna: 'DNA',
+    tardigrade: 'Tardigrades',
+    'mantis shrimp': 'Mantis shrimp',
+};
+
+export function topTopic(stats: Data['stats']): string | null {
+    const entries = Object.entries(stats.topic_frequency);
+    if (!entries.length) return null;
+    return entries[0][0];
+}
+
+export function topicDisplayName(topic: string): string {
+    return TOPIC_DISPLAY_NAMES[topic] || topic.charAt(0).toUpperCase() + topic.slice(1);
+}
+
+export function topicEmoji(topic: string): string {
+    return TOPIC_EMOJIS[topic] || '\u{1F4CC}';
+}
+
+export function topTopicClaim(stats: Data['stats']): string {
+    const topic = topTopic(stats);
+    if (!topic) return 'The same fun facts keep coming up.';
+    return `${topicDisplayName(topic)} came up more than anything else.`;
+}
 
 export function escapeHtml(str: unknown): string {
     return String(str ?? '')
@@ -174,13 +219,13 @@ export function parseReleasedToTimestamp(released?: string): number {
     return new Date(year, month, 1).getTime();
 }
 
-function renderTopicBars(stats: Data['stats']): string {
-    const topics = stats.topic_frequency;
-    const maxCount = Math.max(...Object.values(topics), 1);
+export function renderTopicBars(stats: Data['stats'], minCount = MIN_TOPIC_BAR_COUNT): string {
+    const topics = Object.entries(stats.topic_frequency).filter(([, count]) => count >= minCount);
+    const maxCount = Math.max(...topics.map(([, c]) => c), 1);
     let html = '';
-    for (const [topic, count] of Object.entries(topics)) {
+    for (const [topic, count] of topics) {
         const pct = (count / maxCount * 100).toFixed(1);
-        const emoji = TOPIC_EMOJIS[topic] || '\u{1F4CC}';
+        const emoji = topicEmoji(topic);
         html += `
             <div class="topic-bar-row" data-topic="${escapeHtml(topic)}">
                 <span class="topic-bar-label">${emoji} ${escapeHtml(topic)}</span>
@@ -193,13 +238,16 @@ function renderTopicBars(stats: Data['stats']): string {
     return html;
 }
 
-function renderJellyfishCallout(stats: Data['stats']): string {
-    const jCount = stats.topic_frequency['jellyfish'];
-    if (!jCount) return '';
+export function renderTopTopicCallout(stats: Data['stats']): string {
+    const topic = topTopic(stats);
+    if (!topic) return '';
+    const count = stats.topic_frequency[topic];
+    if (!count) return '';
     const total = stats.total_responses;
-    const pct = ((jCount / total) * 100).toFixed(0);
-    return `<span class="emoji">\u{1FAB4}</span>
-            <span id="callout-text">${jCount} out of ${total} responses mentioned jellyfish (${pct}%). The immortal jellyfish is apparently the default "interesting fact" in LLM training data.</span>`;
+    const pct = ((count / total) * 100).toFixed(0);
+    const emoji = topicEmoji(topic);
+    return `<span class="emoji">${emoji}</span>
+            <span id="callout-text">${count} out of ${total} responses mentioned ${escapeHtml(topic)} (${pct}%). Apparently the default &quot;interesting fact&quot; in LLM training data.</span>`;
 }
 
 interface HeroCandidate { snippet: string; model: string; run: number; }
@@ -306,7 +354,7 @@ function buildIndexLdJson(data: Data): string {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Tell Me Something I Don\'t Know — LLM Edition',
-        description: `I've asked ${data.meta.total_models} LLMs '${PROMPT}' Most of them said jellyfish.`,
+        description: `I've asked ${data.meta.total_models} LLMs '${PROMPT}' ${topTopicClaim(data.stats)}`,
         url: SITE_URL,
         author: { '@type': 'Person', name: 'Aviv Dozorets', url: 'https://x.com/themoah' },
         dateModified: data.meta.generated_at,
@@ -486,6 +534,9 @@ async function main() {
         year: 'numeric', month: 'long', day: 'numeric',
     });
     const topTopics = Object.keys(data.stats.topic_frequency).slice(0, 3);
+    const claim = topTopicClaim(data.stats);
+    const metaDesc = `I've asked ${modelCount}+ LLMs the same question. ${claim}`;
+    const ogDesc = `I've asked ${modelCount}+ LLMs '${PROMPT}' ${claim}`;
     const candidates = heroCandidates(data);
 
     const appJs = await fs.readFile(APP_JS_FILE, 'utf-8');
@@ -496,16 +547,27 @@ async function main() {
     html = html.replace(/(<strong id="model-count">)[^<]*(<\/strong>)/, `$1${modelCount}$2`);
     html = html.replace(/(<strong id="meta-temp">)[^<]*(<\/strong>)/, `$1${data.meta.temperature}$2`);
     html = html.replace(/(<strong id="meta-date">)[^<]*(<\/strong>)/, `$1${dateStr}$2`);
-    html = html.replace(/I've asked \d+\+? LLMs/g, `I've asked ${modelCount}+ LLMs`);
-    html = html.replace(/(twitter:description" content="I've asked )\d+\+?/, `$1${modelCount}+`);
+    html = html.replace(
+        /(<meta name="description" content=")[^"]*(")/,
+        (_, a, b) => `${a}${escapeHtml(metaDesc)}${b}`,
+    );
+    html = html.replace(
+        /(<meta property="og:description" content=")[^"]*(")/,
+        (_, a, b) => `${a}${escapeHtml(ogDesc)}${b}`,
+    );
+    html = html.replace(
+        /(<meta name="twitter:description" content=")[^"]*(")/,
+        (_, a, b) => `${a}${escapeHtml(ogDesc)}${b}`,
+    );
 
     // Replacer functions: slot content is model-derived HTML/JSON that may contain
     // `$` (prices, code), which a string 2nd arg would expand (`$&`, `$$`, …).
     html = html.replace('<!-- LD_JSON_SLOT -->', () => buildIndexLdJson(data));
+    html = html.replace('<!-- SLOT:top_topic_claim -->', () => escapeHtml(claim));
     html = html.replace('<!-- SLOT:hero -->', () => renderHero(candidates));
     html = html.replace('<!-- SLOT:topicbars -->', () => renderTopicBars(data.stats));
 
-    const callout = renderJellyfishCallout(data.stats);
+    const callout = renderTopTopicCallout(data.stats);
     if (callout) {
         html = html.replace(
             '<div id="jellyfish-callout" class="jellyfish-callout" style="display:none">',

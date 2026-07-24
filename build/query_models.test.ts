@@ -6,6 +6,8 @@ import {
   queryModel,
   retryTokenBudgets,
   shouldRetryRunResult,
+  detectTopics,
+  retagData,
 } from './query_models.ts';
 
 // OpenRouter flushes 200 + keep-alive whitespace before the upstream reply, so a
@@ -136,4 +138,47 @@ test('retryTokenBudgets uses 4x larger token caps', () => {
 
 test('retryTokenBudgets skips budgets that do not increase the current max tokens', () => {
   assert.deepEqual(retryTokenBudgets(10000), [20000, 40000]);
+});
+
+test('detectTopics finds octopus and jellyfish', () => {
+  assert.deepEqual(
+    detectTopics('The octopus has three hearts and blue blood.'),
+    ['octopus'],
+  );
+  assert.deepEqual(
+    detectTopics('Turritopsis dohrnii is the immortal jellyfish.'),
+    ['jellyfish'],
+  );
+});
+
+test('detectTopics finds sharks, wombats, and wood wide web', () => {
+  assert.ok(detectTopics('Sharks are older than trees.').includes('sharks'));
+  assert.ok(detectTopics('Wombats produce cube-shaped poop.').includes('wombats'));
+  assert.ok(
+    detectTopics('Trees share resources through mycorrhizal fungal networks, the wood wide web.')
+      .includes('wood wide web'),
+  );
+});
+
+test('detectTopics does not use the old trees-vs-stars topic', () => {
+  assert.equal(detectTopics('There are more trees on earth than stars in the galaxy.').includes('trees'), false);
+});
+
+test('retagData refreshes topics and stats', () => {
+  const data = {
+    models: [{
+      id: 'm',
+      name: 'M',
+      provider: 'P',
+      license: 'commercial',
+      runs: [
+        { success: true, content: 'An octopus fact.', topics: ['jellyfish'] },
+        { success: false, content: null, topics: ['jellyfish'] },
+      ],
+    }],
+  };
+  const stats = retagData(data);
+  assert.deepEqual(data.models[0].runs[0].topics, ['octopus']);
+  assert.equal(stats.topic_frequency.octopus, 1);
+  assert.equal(stats.total_responses, 1);
 });

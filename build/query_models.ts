@@ -61,7 +61,7 @@ export interface RunResult {
   timed_out?: boolean;
 }
 
-interface ModelEntry {
+export interface ModelEntry {
   id: string;
   name: string;
   provider: string;
@@ -243,7 +243,7 @@ async function queryModelOnce(
   }
 }
 
-function detectTopics(text: string): string[] {
+export function detectTopics(text: string): string[] {
   const lower = text.toLowerCase();
 
   const topicKeywords: Record<string, string[]> = {
@@ -263,8 +263,10 @@ function detectTopics(text: string): string[] {
     space: ['neutron star', 'teaspoon.*star', 'space.*silent'],
     platypus: ['platypus'],
     sloths: ['sloth'],
-    trees: ['more trees.*stars', 'trees on earth.*stars'],
-  'anglo-zanzibar war': ['anglo-zanzibar', 'zanzibar war', 'shortest war', 'shortest recorded war'],
+    'wood wide web': ['wood wide web', 'mycorrhizal', 'fungal network', 'mycelium'],
+    sharks: ['shark'],
+    wombats: ['wombat'],
+    'anglo-zanzibar war': ['anglo-zanzibar', 'zanzibar war', 'shortest war', 'shortest recorded war'],
   };
 
   const topics: string[] = [];
@@ -279,7 +281,15 @@ function detectTopics(text: string): string[] {
   return topics;
 }
 
-function computeStats(models: ModelEntry[]) {
+export interface TopicStats {
+  total_models: number;
+  total_responses: number;
+  total_tokens: number;
+  total_reasoning_tokens: number;
+  topic_frequency: Record<string, number>;
+}
+
+export function computeStats(models: ModelEntry[]): TopicStats {
   const topicCounts: Record<string, number> = {};
   let totalResponses = 0;
   let totalTokens = 0;
@@ -311,6 +321,20 @@ function computeStats(models: ModelEntry[]) {
     total_reasoning_tokens: totalReasoningTokens,
     topic_frequency: topicFrequency,
   };
+}
+
+/** Re-run detectTopics on every successful response and refresh stats. */
+export function retagData(data: { models: ModelEntry[]; stats?: TopicStats }): TopicStats {
+  for (const model of data.models) {
+    for (const run of model.runs) {
+      if (run.success && run.content) {
+        run.topics = detectTopics(run.content);
+      }
+    }
+  }
+  const stats = computeStats(data.models);
+  data.stats = stats;
+  return stats;
 }
 
 function sleep(ms: number) {
