@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tell Me Something I Don't Know — LLM Edition</title>
-    <meta name="description" content="I've asked 27+ LLMs the same question. Most of them said jellyfish.">
+    <meta name="description" content="">
     <link rel="canonical" href="https://tellmesomethingidontknow.fyi/">
     <meta property="og:url" content="https://tellmesomethingidontknow.fyi/">
     <meta property="og:title" content="Tell Me Something I Don't Know — LLM Edition">
-    <meta property="og:description" content="I've asked 27+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tell Me Something I Don't Know — LLM Edition">
-    <meta name="twitter:description" content="I've asked 27+ LLMs 'Tell me something I don't know.' Most of them said jellyfish.">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -699,7 +699,7 @@
         <h1>Tell me something <span class="highlight">I don't know.</span></h1>
         <p class="subtitle">
             I've asked <strong id="model-count"></strong> LLMs the exact same question.
-            Most of them told me about jellyfish.
+            <span id="top-topic-claim"><!-- SLOT:top_topic_claim --></span>
         </p>
         <div class="meta-line">
             <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
@@ -721,7 +721,7 @@
     </section>
 
     <section class="topic-section">
-        <h2>🪼 The Hive Mind — Most Repeated Topics</h2>
+        <h2><span id="hive-mind-emoji"><!-- SLOT:hive_mind_emoji --></span> The Hive Mind — Most Repeated Topics</h2>
         <div id="topic-bars" class="topic-bars"><!-- SLOT:topicbars --></div>
         <div id="jellyfish-callout" class="jellyfish-callout" style="display:none">
             <!-- SLOT:callout -->

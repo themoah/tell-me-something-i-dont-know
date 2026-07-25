@@ -29,7 +29,10 @@
     const pageUrl = (canonical && canonical.href) || window.location.href;
     const shareCountEl = document.getElementById('model-count');
     const modelCount = (shareCountEl && shareCountEl.textContent) || '27';
-    const shareText = `I asked ${modelCount}+ LLMs "Tell me something I don't know." Most of them said jellyfish \u{1FAB4}`;
+    const claimEl = document.getElementById('top-topic-claim');
+    const claim = (claimEl && claimEl.textContent && claimEl.textContent.trim())
+        || 'The same fun facts keep coming up.';
+    const shareText = `I asked ${modelCount}+ LLMs "Tell me something I don't know." ${claim}`;
     const enc = encodeURIComponent(shareText);
     const encUrl = encodeURIComponent(pageUrl);
     const setHref = (id, href) => { const el = document.getElementById(id); if (el) el.href = href; };
