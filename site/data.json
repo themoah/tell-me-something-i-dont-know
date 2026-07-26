@@ -4,25 +4,25 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-07-21T20:48:29.948Z",
-    "total_models": 128
+    "generated_at": "2026-07-26T12:45:58.298Z",
+    "total_models": 130
   },
   "stats": {
-    "total_models": 128,
-    "total_responses": 375,
-    "total_tokens": 318611,
+    "total_models": 130,
+    "total_responses": 381,
+    "total_tokens": 325653,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 68,
       "jellyfish": 45,
       "sharks": 29,
       "honey": 25,
-      "venus": 17,
-      "cleopatra": 15,
+      "venus": 18,
+      "cleopatra": 16,
       "anglo-zanzibar war": 15,
       "wombats": 14,
       "oxford university": 13,
-      "bananas": 11,
+      "bananas": 12,
       "wood wide web": 8,
       "eiffel tower": 4,
       "sloths": 4,
@@ -4927,6 +4927,83 @@
           "topics": [
             "venus"
           ]
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one I find genuinely startling: the most abundant photosynthetic organism on Earth wasn't discovered until 1986.\n\nIt's called *Prochlorococcus*, a marine bacterium about 0.6 micrometers across — small enough that it slipped through the filters and nets oceanographers had been using for a century. There are estimated to be something like 10²⁷ of them, and they're thought to produce a meaningful share of the oxygen in the atmosphere. Sallie Chisholm and colleagues found them essentially by pointing a newly available tool (flow cytometry) at seawater and noticing a signal nobody could account for.\n\nWhat I like about this isn't just the trivia — it's what it implies. We had detailed maps of the ocean floor, we'd been to the Moon, and we'd somehow missed the single most numerous photosynthesizer on the planet, hiding in plain sight in every bucket of seawater. It's a decent reminder that gaps in knowledge often aren't in exotic places; they're in the places our instruments happen to be blind to.\n\nHappy to aim somewhere else if you have a preferred domain — math, history, language, something weirder.",
+          "tokens_prompt": 16,
+          "tokens_completion": 1437,
+          "finish_reason": "stop",
+          "reasoning": "I'm thinking through what might genuinely surprise someone—something interesting but not widely known. Mantis shrimp vision with their polarization sensitivity is fascinating, and while the chess game comparison is famous, there are other compelling options worth considering. Let me settle on something that's both accurate and likely to be new to most people. I'm narrowing down to something with real substance rather than just listing curiosities. The Gombe chimpanzee war is solid, but I'm drawn to something that feels more surprising — like how most of Earth's oxygen actually comes from ocean phytoplankton, specifically Prochlorococcus, which wasn't even discovered until 1986 despite being the most abundant photosynthetic organism on the planet. That's the kind of fact that makes you reconsider what you thought you knew.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's one I find genuinely delightful: **you can read the length of an ancient day in fossil coral.**\n\nCorals lay down thin growth increments daily, bundled into annual bands — a bit like tree rings, but at two scales. In 1963 a paleontologist named John Wells realized this meant fossil corals were clocks. He counted the fine daily ridges between annual bands in Devonian corals, roughly 380 million years old, and got about 400 increments per year instead of 365.\n\nThat's exactly what physics predicted. Tidal friction — the Moon's pull dragging water and rock across a spinning Earth — bleeds rotational energy away, so days get longer while the Moon drifts outward to conserve angular momentum. A Devonian day was around 22 hours. The year's length barely changed, so you just fit more of them in.\n\nTwo things make this especially satisfying. First, the theory came first: Charles Darwin's son George Darwin worked out the tidal-braking math in the 1870s, decades before anyone could check it. Second, we now measure the other end of the same process directly — Apollo astronauts left laser retroreflectors on the Moon, and bouncing lasers off them shows it receding about 3.8 centimeters per year. A fossil in a drawer and a mirror on the Moon are telling you the same story from opposite ends of 400 million years.\n\nThere's a related trick with \"tidal rhythmites\" — layered sediments that record individual tides — which lets you extract not just day length but the ancient lunar month.\n\nWant more in this vein (physical traces of deep time), or would you rather I aim somewhere else entirely — history where the popular story turns out to be wrong, weird math, linguistics?",
+          "tokens_prompt": 16,
+          "tokens_completion": 1999,
+          "finish_reason": "stop",
+          "reasoning": "I'm thinking about what would genuinely surprise someone — something beyond the usual trivia. The Mpemba effect is interesting but fairly well-known, and I'm considering other options like the purpose of wine bottle punts, though I'm still weighing which direction to take. The Dutch tulip mania revision by Anne Goldgar is a strong pick since it genuinely challenges the popular narrative. I'm also drawn to things where common knowledge is actually wrong — like how life expectancy statistics can be misleading due to infant mortality skewing the median, which is a more subtle and interesting point than the well-known examples like Napoleon's height or Viking helmets.\n\nActually, the fossil clock idea is elegant: growth bands in ancient corals and stromatolites record daily cycles, and by counting rings per year we can see that days were shorter in the Devonian — around 21 hours — which confirms the Moon is receding from Earth. It's a beautiful example of fossils functioning as precise instruments. I think I'll lead with this one, keep it focused and well-explained, then offer to explore other directions or go deeper. Wells' work was nicely timed too—his 1963 Nature paper on coral growth rings aligned with tidal friction theory, and George Darwin's earlier work on the topic provided the theoretical foundation that made the observation so compelling.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Trees aren't a thing.\n\nNot in the biological sense, anyway. \"Tree\" isn't a group of related organisms like \"bird\" or \"beetle\" — it's a growth strategy that plants have independently invented dozens of separate times. Wood (lignified secondary xylem) has evolved and then been abandoned again and again across the plant family tree.\n\nThe consequence is that a palm is more closely related to grass than to an oak. A tree fern and a pine share less recent ancestry with each other than you share with a goldfish.\n\nThe strangest part is how easily it happens. On islands, ordinary herbs repeatedly bulk up into trees — the Galápagos has \"tree\" daisies in the sunflower family, the Canary Islands have tree-sized relatives of forget-me-nots. Botanists call it insular woodiness. Give a weed enough time, a mild climate, and no grazers, and it will start reaching for the canopy.\n\nSo \"tree\" is more like \"swimmer\" than like \"fish.\"",
+          "tokens_prompt": 16,
+          "tokens_completion": 1595,
+          "finish_reason": "stop",
+          "reasoning": "I'm thinking about how to approach this—the user wants to learn something surprising, so I should pick something genuinely interesting rather than recycling the usual trivia. I'm avoiding the overused facts and looking for something less commonly known but still fascinating.\n\nI'm considering a few directions: the mathematical elegance of Reuleaux triangles, the strange history of the 1518 dancing plague, how trees aren't actually a coherent biological category but rather a strategy that evolved independently across different lineages—which means some palms are closer relatives to grass than to other trees. That last one feels like a good choice—it's genuinely mind-bending and not something most people encounter. other direction. I'll aim for around 150 words — something genuinely interesting and well-explained without being condescending. The key insight is that \"tree\" isn't a single biological category but rather a growth form that's evolved independently across completely different lineages. Wood itself has appeared and disappeared repeatedly throughout plant evolution. Even herbaceous plants have re-evolved into tree-like forms — tree lobelias, Hawaiian tree species, giant Echium on the Canary Islands. Grasses became bamboo. The point is that what we call a \"tree\" is more about convergent evolution and ecological strategy than a fundamental taxonomic division. It's a shape plants take, not a thing plants are.\n\nA great example to illustrate this: island biogeography shows this pattern beautifully. Herbs repeatedly evolve into trees on islands — insular woodiness — like the giant daisies in the Galápagos, which are sunflowers that became tree-sized. That's the hook I'll use.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash:free",
+      "name": "Ling-3.0-flash (free)",
+      "provider": "Inclusionai",
+      "license": "commercial",
+      "released": "July 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one that tends to surprise people:\n\n**Cleopatra lived closer in time to the Moon landing (1969) than to the construction of the Great Pyramid of Giza.** The Great Pyramid was built around 2560 BCE, Cleopatra ruled around 30 BCE, and the Moon landing was in 1969 CE. So Cleopatra is roughly 2,000 years from the Moon landing, but about 2,530 years from the pyramids. Ancient Egyptian civilization feels impossibly old — but Cleopatra is actually *closer* to us than to the people who built the pyramids.\n\nAnd a bonus: **A day on Venus (one full rotation) is longer than a year on Venus (one orbit around the Sun).** Venus takes about 243 Earth days to spin once on its axis, but only 225 Earth days to complete one orbit around the Sun. So a \"day\" there outlasts a \"year.\"",
+          "tokens_prompt": 28,
+          "tokens_completion": 591,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to share something they don't know — essentially, an interesting or surprising piece of knowledge. The challenge here is that I don't know what the user already knows, so I should pick something that is genuinely surprising, lesser-known, and broadly interesting. Let me think of some candidates:\n\n1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.** — This is a classic mind-bending fact that most people find surprising. The Great Pyramid was built around 2560 BCE, Cleopatra lived around 30 BCE, and the Moon landing was in 1969 CE. So Cleopatra is about 2,000 years from the Moon landing but about 2,530 years from the Great Pyramid.\n\n2. **Honey never spoils.** — Archaeologists have found 3,000-year-old honey in Egyptian tombs that was still edible.\n\n3. **There are more possible iterations of a game of chess than there are atoms in the observable universe.** — The Shannon number estimates this at around 10^120, while atoms in the observable universe are estimated at around 10^80.\n\n4. **Bananas are berries, but strawberries are not.** — Botanical classification vs. culinary classification.\n\n5. **A day on Venus is longer than a year on Venus.** — Venus takes about 243 Earth days to rotate once on its axis but only 225 Earth days to orbit the Sun.\n\nI think I'll go with a few of these, mixing them up for variety and engagement. The Cleopatra one is always a great opener, and the Venus fact is genuinely mind-bending. Let me present this in an engaging way.",
+          "topics": [
+            "cleopatra",
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one that surprises most people:\n\n**Bananas can set off nuclear radiation detectors at border crossings.**\n\nIt's true. Bananas are naturally radioactive — they contain potassium-40, a radioactive isotope of potassium. While the amount is harmless (you'd need to eat roughly 10 million bananas in one sitting to be in any danger), the radiation is real enough to be measurable. In fact, a single banana can cause a Geiger counter to click slightly more.\n\nThis has actually caused real-world problems: shipping containers full of bananas have triggered radiation sensors at ports and border security checkpoints, leading to false alarms and unnecessary inspections. There's even a unit of measurement called the **\"Banana Equivalent Dose\"** (BED), used by physicists to put tiny radiation exposures into relatable context.\n\nSo the next time someone tells you to avoid radiation, just remind them that nature put a little bit of it in your fruit bowl. 🍌",
+          "tokens_prompt": 28,
+          "tokens_completion": 540,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to share something they don't know — a piece of interesting, lesser-known information. This is an open-ended request for a fun or surprising fact. I should aim for something genuinely obscure, accurate, and fascinating. Let me think of something that's not commonly known.\n\nSome ideas:\n- A surprising fact about nature, history, science, or human biology.\n- Something that challenges common assumptions.\n\nLet me go with something I find genuinely interesting:\n\nBananas are radioactive. They contain potassium-40, a naturally occurring radioactive isotope. This is the basis of the \"Banana Equivalent Dose\" (BED), a unit sometimes used in nuclear physics to put radiation exposure into perspective. But here's something even more specific and lesser-known: the concept of the \"banana equivalent dose\" was actually coined as a teaching tool, and the radiation from a single banana is so tiny that you would need to eat roughly 10 million bananas at once to experience any sort of radiation poisoning. But there's an even more fascinating angle: bananas actually have a measurable effect on a radiation detector. If you bring a banana near a Geiger counter, it will click slightly more. This is because potassium-40 decays and emits radiation. More interestingly, the potassium in bananas is so common that even the shipping containers full of bananas at ports can trigger radiation sensors designed to detect nuclear materials, causing false alarms at border security checkpoints. This has actually been a documented logistical issue for customs agencies.\n\nThat's a great one — it connects biology, physics, and real-world policy in a surprising way. Let me go with that.",
+          "topics": [
+            "bananas"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one that might surprise you:\n\n**Lake Natron in Tanzania turns animals into stone-like sculptures.**\n\nThe lake's water is extremely alkaline — with a pH as high as 10.5, comparable to ammonia. It's heated by volcanic activity beneath it and saturated with sodium carbonate and other minerals. When birds or bats fly over the lake and accidentally land on its surface, the high alkalinity essentially calcifies their bodies, preserving them in eerie, lifelike poses that look like stone statues.\n\nThe photographer Nick Brandt captured these preserved creatures in haunting photos for his book *Across the Ravaged Land*, giving them a dignified portrait-like presentation. It's one of the most visually striking and biologically strange natural phenomena on Earth.\n\nThe lake is also the only known regular breeding ground for around 2.5 million lesser flamingos — they thrive there precisely *because* the caustic water keeps predators away.",
+          "tokens_prompt": 28,
+          "tokens_completion": 880,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to share something they don't know. This is an open-ended, curiosity-driven request. The challenge here is that I don't have any prior knowledge about what the user already knows or doesn't know, so I need to pick something genuinely fascinating, surprising, and obscure enough that it's likely to be novel to most people.\n\nLet me think of some candidates:\n\n1. **Tardigrades (water bears) can survive in the vacuum of space** — this is fairly well known now.\n\n2. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — this is a popular \"mind-blowing fact\" that many people have heard.\n\n3. **There's a planet made entirely of diamond (55 Cancri e)** — this has been widely reported.\n\n4. **Honey never spoils** — also fairly well known.\n\n5. **The human body contains enough iron to make a 3-inch nail, enough fat to make 7 bars of soap, and enough carbon to make 900 pencils** — interesting but somewhat generic.\n\n6. **Octopuses have three hearts, blue blood, and nine brains** — the \"nine brains\" part is more nuanced and interesting.\n\n7. **A day on Venus is longer than a year on Venus** — Venus takes about 243 Earth days to rotate once but only 225 Earth days to orbit the Sun. This is genuinely surprising and not as widely known as it should be.\n\n8. **There exists a species of fungus (Ophiocordyceps) that manipulates the behavior of ants, turning them into \"zombie ants\"** — interesting but somewhat known from pop culture.\n\n9. **The inventor of the Pringles can (Fredric Baur) was buried in one** — this is quirky and lesser-known.\n\n10. **The word \"muscle\" comes from the Latin \"musculus,\" meaning \"little mouse,\" because the Romans thought flexing muscles looked like mice moving under the skin** — this is genuinely surprising and delightful.\n\nI think I'll go with the Venus fact, as it's genuinely counterintuitive and not as widely known as it deserves to be. Let me also consider adding a second fact for richness.\n\nActually, let me go with something truly less commonly known. How about this:\n\n**The Great Wall of China is not visible from space with the naked eye** — this is a common myth, but the fact that it's only about 15-30 feet wide (roughly the width of a highway) makes it invisible from low Earth orbit without aid.\n\nOr better yet, let me share something truly obscure and fascinating:\n\n**There is a lake in Tanzania called Lake Natron that turns animals into stone-like sculptures.** The water is extremely alkaline (pH up to 10.5) and contains sodium carbonate and other minerals. Birds and bats that land on the water's surface get calcified and preserved, creating hauntingly beautiful, statue-like remains. The photographer Nick Brandt captured these images.\n\nThat's pretty striking and likely unknown to most people. Let me go with that.",
+          "topics": []
         }
       ]
     }
