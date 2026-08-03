@@ -832,3 +832,23 @@ models:
     license: "commercial"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "deepseek/deepseek-v4-flash-0731"
+    name: "DeepSeek: DeepSeek V4 Flash 0731"
+    provider: "DeepSeek"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "thinkingmachines/inkling-small"
+    name: "Thinking Machines: Inkling Small"
+    provider: "Thinkingmachines"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "qwen/qwen3.7-flash"
+    name: "Qwen: Qwen3.7 Flash"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "July 2026"
+

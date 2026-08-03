@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thinking Machines: Inkling Small — Tell me something I don't know.</title>
+    <meta name="description" content="Thinking Machines: Inkling Small answers &quot;Tell me something I don&#39;t know.&quot; — Here’s one: Wombats are the only known animals that naturally produce cube-shaped poop. Most animals’ scat is round or oval because their intestines are…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/thinkingmachines-inkling-small/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/thinkingmachines-inkling-small/">
+    <meta property="og:title" content="Thinking Machines: Inkling Small — Tell me something I don't know.">
+    <meta property="og:description" content="Thinking Machines: Inkling Small answers &quot;Tell me something I don&#39;t know.&quot; — Here’s one: Wombats are the only known animals that naturally produce cube-shaped poop. Most animals’ scat is round or oval because their intestines are…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thinking Machines: Inkling Small — Tell me something I don't know.">
+    <meta name="twitter:description" content="Thinking Machines: Inkling Small answers &quot;Tell me something I don&#39;t know.&quot; — Here’s one: Wombats are the only known animals that naturally produce cube-shaped poop. Most animals’ scat is round or oval because their intestines are…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Thinking Machines: Inkling Small)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s one: **Wombats are the only known animals that naturally produce cube-shaped poop.**\n\nMost animals’ scat is round or oval because their intestines are basically uniform tubes. But wombats have intestines with regions of different stiffness—some parts are stretchy, others are rigid. As the poop moves through, those varying pressures mold it into flat-sided cubes, usually about 2 cm across.\n\nWhy? They live in rocky, arid parts of Australia and use their droppings to mark territory on boulders and logs. If the poop were round, it would roll away and lose its “message.” Cubes stay put.\n\nScientists at Georgia Tech only figured out the exact biomechanics behind this in recent years (they modeled the intestinal walls to see how the corners form). So unless you’ve read a soft-matter physics paper on marsupial digestion, you probably didn’t know that nature invented a biological 3D printer for poop.\n\nIf you want another, quick bonus: **A day on Venus (243 Earth days) is longer than a year on Venus (225 Earth days).** Because it rotates so slowly backward, the sun rises in the west and sets in the east—twice per orbit.\n\nWhich one was new?","author":{"@type":"Organization","name":"Thinkingmachines"}},"suggestedAnswer":[{"@type":"Answer","text":"Wombats produce cube-shaped poop, and scientists only confirmed exactly *how* in 2018.\n\nMost animals’ intestines have uniform wall stiffness, so their feces come out as tubes or blobs. Wombats have a unique intestinal structure: the walls are stiffer in some regions and more elastic in others. Over the last 8% of their digestive tract, this uneven pressure molds the poo into distinct cubes (usually about 2 cm across).\n\nThe evolutionary reason is practical. Wombats use their droppings to mark territory on rocks, logs, and ledges. Because cubes don’t roll, they stay put—unlike round pellets, which would tumble away on slopes.\n\nSo the next time you see a “cube” in nature, it’s not a Lego; it’s a wombat’s carefully engineered billboard.","author":{"@type":"Organization","name":"Thinkingmachines"}},{"@type":"Answer","text":"Most people know octopuses are smart, but here’s the part they rarely hear: **an octopus’s arms are not fully controlled by its brain.**\n\nAbout two-thirds of its neurons live in its arms, not its head. Each arm has its own local “circuitry,” so they can taste, grab, and explore independently—almost like eight semi-autonomous robots attached to a central coordinator. The brain mostly sends high-level commands like “check that crevice,” and the arm decides how to do it locally.\n\nIt gets weirder: if an arm is severed, it can still react to touch and taste for about an hour, and the suckers have roughly 10,000 neurons each—more processing power than some small animals have in their entire bodies.\n\nSo when an octopus is “thinking,” a lot of that cognition is literally happening in its limbs. Your brain is centralized; an octopus’s is more like a networked cloud with tentacles.\n\n(Also, they have blue blood because they use copper-based hemocyanin instead of iron-based hemoglobin—so they’re literally running on different chemistry than you are.)","author":{"@type":"Organization","name":"Thinkingmachines"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Thinking Machines: Inkling Small</h1>
+        <p class="subtitle">Thinkingmachines · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>July 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Thinking Machines: Inkling Small</div>
+                        <div class="model-provider">Thinkingmachines</div>
+                        <div class="model-released">July 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s one: <strong>Wombats are the only known animals that naturally produce cube-shaped poop.</strong></p>
+<p>Most animals’ scat is round or oval because their intestines are basically uniform tubes. But wombats have intestines with regions of different stiffness—some parts are stretchy, others are rigid. As the poop moves through, those varying pressures mold it into flat-sided cubes, usually about 2 cm across.</p>
+<p>Why? They live in rocky, arid parts of Australia and use their droppings to mark territory on boulders and logs. If the poop were round, it would roll away and lose its “message.” Cubes stay put.</p>
+<p>Scientists at Georgia Tech only figured out the exact biomechanics behind this in recent years (they modeled the intestinal walls to see how the corners form). So unless you’ve read a soft-matter physics paper on marsupial digestion, you probably didn’t know that nature invented a biological 3D printer for poop.</p>
+<p>If you want another, quick bonus: <strong>A day on Venus (243 Earth days) is longer than a year on Venus (225 Earth days).</strong> Because it rotates so slowly backward, the sun rises in the west and sets in the east—twice per orbit.</p>
+<p>Which one was new?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1843 tokens</span>
+                    <span class="topic-tag" data-topic="venus">🪐 venus</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks &quot;Tell me something I don&#39;t know.&quot; This is a classic open-ended request. I need to provide a fact that is likely unknown to the average person, interesting, accurate, and not too obscure or too common. I should avoid things that are too trivial or too likely to be known (like &quot;the sky is blue&quot;). I also need to be careful not to claim something is unknown to *everyone*, since I can&#39;t know the user&#39;s knowledge. So I should frame it as &quot;Here&#39;s something you might not know&quot; or similar.
+
+Possible topics:
+- The octopus has three hearts and blue blood (common but maybe not known to all).
+- The fact that honey never spoils (common).
+- The fact that bananas are berries, strawberries aren&#39;t (common).
+- Something more obscure: The &quot;Great Dying&quot; was worse than the dinosaur extinction. Not exactly &quot;something I don&#39;t know&quot; in a fun way.
+- The fact that in Japan, there are &quot;forest bathing&quot; (shinrin-yoku) and it&#39;s scientifically shown to lower cortisol.
+- The fact that the human nose and ears never stop growing (actually a myth, so avoid).
+- The fact that wombat poop is cube-shaped. This is true, interesting, and often unknown.
+- The fact that the Eiffel Tower can grow/shrink by 15 cm due to thermal expansion.
+- The fact that octopuses have two main eyes and one &quot;pupil&quot; but actually they have complex eyes.
+- The fact that there is a continent under the Pacific called Zealandia, mostly submerged.
+- The fact that the longest word in English without a vowel is &quot;rhythms&quot; (but &quot;y&quot; is sometimes vowel).
+- The fact that the shortest war in history was between Britain and Zanzibar in 1896, lasting 38 minutes.
+- The fact that jellyfish are 95% water and have no brains, but some have eyes.
+- The fact that if you take a teaspoon of neutron star matter, it would weigh about 6 billion tons.
+- The fact that the first computer bug was a moth (true, but famous).
+- The fact that there are more trees on Earth than stars in the Milky Way? Actually recent estimates say about 3 trillion trees vs 100-400 billion stars, so true.
+- The fact that a group of flamingos is called a &quot;flamboyance&quot;.
+- The fact that the human body contains enough carbon to make about 900 pencils.
+- The fact that the ocean is so deep that if you dropped Mount Everest, its peak would still be underwater by over a mile.
+- The fact that in 1969, the US had a secret Army unit of trained bears with parachutes (Project X, but actually it was a real program? Actually it&#39;s a myth/urban legend that they dropped bears; they did train bears for combat but never dropped them. Better avoid if borderline).
+
+Let&#39;s pick something genuinely surprising and verifiable:
+Option 1: The wombat poop cubes. True, they produce cubic feces to prevent rolling away in their habitat (rocky terrains of Australia). This is a fascinating biological fact.
+Option 2: The &quot;Great Attractor&quot; in space pulling us at 2 million mph.
+Option 3: The fact that the human eye can distinguish about 10 million colors, but only about 10,000 shades of green? Not sure.
+Option 4: The fact that there is a &quot;lost&quot; continent of Zealandia, submerged under the Pacific, and it was only recognized recently (2017?). Actually Zealandia was proposed in 2016/2017 and is now recognized by some geologists.
+Option 5: The fact that octopuses have decentralized nervous systems: two-thirds of their neurons are in their arms, not their head.
+Option 6: The fact that the heart of a blue whale is the size of a small car.
+Option 7: The fact that a day on Venus is longer than a year on Venus (243 Earth days vs 225 Earth days).
+Option 8: The fact that bananas are curved because they grow towards the sun (negative geotropism).
+
+I&#39;ll go with the octopus arm neurons or the wombat cubes or Venus day/year. The Venus one is classic but might be known. The wombat cubes is very specific and cool.
+
+Actually, I want to make sure it&#39;s something I don&#39;t know they don&#39;t know. The best approach is to present a few possibilities or pick one and say &quot;You probably don&#39;t know...&quot; but it&#39;s okay.
+
+Let&#39;s choose: **Octopuses have three hearts, blue blood, and—most surprisingly—two-thirds of their neurons are in their arms, meaning each arm can taste, touch, and make decisions independently of the brain.** This is true and mind-blowing.
+
+But maybe even more obscure: **The &quot;Great Silence&quot; or the fact that if you could fold a piece of paper 42 times, it would reach the moon?** That&#39;s a math fact, widely known.
+
+Let&#39;s go with **Wombat poop is cube-shaped** because it&#39;s bizarre and very specific. I can explain why: it&#39;s an adaptation to keep scat from rolling away in their rocky habitat, and it&#39;s formed by the varying stiffness of their intestinal walls.
+
+Wait, is it fully confirmed? Yes, researchers at Georgia Tech (2018) found that the intestinal walls have different stiffness regions that mold the poop into cubes. It&#39;s a real scientific finding.
+
+Another option: **The human body emits light (biophotons) but it&#39;s too weak to see.** True but maybe too technical.
+
+I&#39;ll provide the wombat fact with a bit of context, and also maybe mention the Venus fact as a bonus? The user asked for &quot;something&quot; singular. Let&#39;s stick to one strong one.
+
+Structure:
+- Acknowledge the request.
+- Give the fact: Wombats produce cube-shaped poop.
+- Explain why it&#39;s cool/unknown: It&#39;s one of the only animals to do this; it helps them mark territory on rocks; scientists only recently figured out the mechanism (2018 study from Georgia Tech).
+- Add a quick second layer: The cubes are formed in the last part of the intestines because the walls are stiffer in some regions.
+- End with a playful &quot;You probably didn&#39;t know that.&quot;
+
+Check for accuracy:
+- Wombats: Yes, they have cubic feces.
+- Study: Patricia Yang et al., 2021? Actually the study was published in 2021 in Soft Matter? Let me recall. It was indeed at Georgia Tech, published in 2021 in Soft Matter, but the discovery/analysis was around 2018-2021. The fact is well-established.
+
+This is safe.
+
+Alternative: The &quot;Wood Wide Web&quot; — trees communicate via fungal networks. This is also cool and somewhat known but not to everyone.
+
+I&#39;ll go with the wombat. It&#39;s memorable.
+
+Wait, I should also consider if the user might be expecting a philosophical answer? No, &quot;Tell me something I don&#39;t know&quot; is usually a request for a fun fact.
+
+Let&#39;s craft the response.
+
+&quot;Here is one: Wombats poop cubes.&quot;
+
+Then elaborate.
+
+Make sure not to overclaim: &quot;Wombats are the only animals known to produce cubic feces.&quot; I believe this is true, or at least they are the only ones known to do so consistently and naturally through biological mechanisms.
+
+Yes, the study says &quot;The unique shape of wombat feces... is a rare example of non-uniform shape in nature... no other animal is known to produce cubic feces.&quot;
+
+Good.
+
+I&#39;ll write it clearly and engagingly.
+
+One final check: Is there any risk of being wrong? The mechanism is that the intestinal walls have different elasticity, creating corners. It&#39;s correct.
+
+I&#39;ll present it.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Wombats produce cube-shaped poop, and scientists only confirmed exactly <em>how</em> in 2018.</p>
+<p>Most animals’ intestines have uniform wall stiffness, so their feces come out as tubes or blobs. Wombats have a unique intestinal structure: the walls are stiffer in some regions and more elastic in others. Over the last 8% of their digestive tract, this uneven pressure molds the poo into distinct cubes (usually about 2 cm across).</p>
+<p>The evolutionary reason is practical. Wombats use their droppings to mark territory on rocks, logs, and ledges. Because cubes don’t roll, they stay put—unlike round pellets, which would tumble away on slopes.</p>
+<p>So the next time you see a “cube” in nature, it’s not a Lego; it’s a wombat’s carefully engineered billboard.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1373 tokens</span>
+                    <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking &quot;Tell me something I don&#39;t know.&quot; This is a broad, open-ended request. I need to provide a fact or piece of information that is likely unknown to the average person, interesting, and accurate. It should be surprising but verifiable.
+
+Possible ideas:
+1. The fact that octopuses have three hearts and blue blood (common but maybe not known to all).
+2. The fact that wombat poop is cube-shaped (interesting and surprising).
+3. The fact that honey never spoils (well-known).
+4. The fact that there are more trees on Earth than stars in the Milky Way (maybe not true/verified).
+5. The fact that a day on Venus is longer than a year on Venus (true: 243 Earth days vs 225 Earth days).
+6. The fact that the Eiffel Tower can grow taller in summer due to thermal expansion (true, up to 15cm).
+7. The fact that jellyfish are 95% water and have no brains, hearts, or bones (common).
+8. The fact that the human body contains enough carbon to make about 900 pencils (interesting).
+9. The fact that the shortest war in history was between Britain and Zanzibar in 1896, lasting 38-45 minutes (surprising, verifiable).
+10. The fact that the inventor of the Frisbee, Walter Frederick Morrison, originally sold them as &quot;Pluto Platter&quot; in 1957 (interesting).
+11. The fact that bananas are berries, but strawberries aren&#39;t (common).
+12. The fact that the planet Neptune emits more heat than it receives from the Sun (true).
+13. The fact that a group of flamingos is called a &quot;flamboyance&quot; (fun but maybe not &quot;something I don&#39;t know&quot; in a profound way).
+14. The fact that the human eye can distinguish about 10 million colors (maybe).
+15. The fact that the first computer bug was a real moth found in a Harvard Mark II computer in 1947 (true, Grace Hopper).
+
+I think the wombat poop fact is very surprising and specific. Or the shortest war. Or the Eiffel Tower growth. Or that octopuses have decentralized nervous systems with 2/3 of neurons in their arms.
+
+Let&#39;s go with something genuinely obscure and mind-bending: The fact that if you could fold a piece of paper in half 42 times, it would reach the moon. (Actually, with standard paper thickness ~0.1mm, 42 folds = ~439,804 km, which is more than the distance to the moon (~384,400 km). This is a classic math fact but often not fully appreciated).
+
+Another very cool one: The &quot;Woodstock&quot; of 1969 was actually not the first music festival, but the fact that the moon&#39;s surface is covered in dust that smells like burnt gunpowder (astronauts reported this). That&#39;s cool and sensory.
+
+Another: The fact that every time you take a breath, you inhale about 2 atoms from Julius Caesar&#39;s last breath (or any historical figure&#39;s breath, due to diffusion). This is often cited but might be apocryphal/approximate. Actually, it&#39;s a common physics fact: due to mixing, yes, roughly.
+
+Let&#39;s pick the paper folding to the moon. It&#39;s counterintuitive and demonstrates exponential growth.
+
+Wait, is it true?
+Thickness = 0.1 mm = 0.0001 m.
+After n folds: thickness = 0.0001 * 2^n.
+For n=42: 0.0001 * 2^42 = 0.0001 * 4.4e12 = 4.4e8 m = 440,000 km.
+Distance to moon: ~384,400 km.
+Yes, true.
+
+But maybe something more &quot;knowledge&quot; oriented and less math trick.
+
+How about: The fact that honeybees can recognize human faces, and they have a &quot;waggle dance&quot; that communicates direction and distance to food sources. (Maybe too common).
+
+What about: The fact that the Great Wall of China is not visible from space with the naked eye (myth debunked, but people still think it is).
+
+What about: The fact that there are more fake flamingos than real ones in the world (because of lawn ornaments)? Not sure if true.
+
+Let&#39;s go with the paper folding one, but present it clearly. Or maybe the fact that the human nose and ears never stop growing (mostly true, cartilage continues to grow).
+
+Actually, let&#39;s provide the &quot;shortest war&quot; fact combined with a bit of context, or the &quot;wombat poop&quot; fact.
+
+Wombat poop fact:
+- Wombats have cube-shaped poop.
+- The reason is their intestines have varying stiffness in different regions, molding the feces into cubes.
+- This helps them mark territory on rocks/logs so it doesn&#39;t roll away.
+This is genuinely surprising and recent scientific discovery (2018 study).
+
+Let&#39;s provide that, with the explanation.
+
+Structure:
+- State the fact clearly.
+- Add context/details.
+- Keep it concise.
+
+Let&#39;s check accuracy: Yes, in 2018, Patricia Yang et al. at Georgia Tech published a paper in Soft Matter showing that wombat intestines have different stiffness regions that form cubes over the last 8% of the intestine. It&#39;s true.
+
+This is perfect because it&#39;s biological, unexpected, and has a cool evolutionary reason.
+
+I&#39;ll present it as: &quot;Wombats produce cube-shaped poop, and scientists only recently figured out exactly how.&quot;
+
+Then explain: Their intestines have varying stiffness; the walls are stiffer in some regions, molding the feces into cubes over the last part of the gut. The cubes stay in place on rocks/territory markers.
+
+This is likely something they don&#39;t know unless they&#39;ve seen the viral videos.
+
+Let&#39;s write it.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Most people know octopuses are smart, but here’s the part they rarely hear: <strong>an octopus’s arms are not fully controlled by its brain.</strong></p>
+<p>About two-thirds of its neurons live in its arms, not its head. Each arm has its own local “circuitry,” so they can taste, grab, and explore independently—almost like eight semi-autonomous robots attached to a central coordinator. The brain mostly sends high-level commands like “check that crevice,” and the arm decides how to do it locally.</p>
+<p>It gets weirder: if an arm is severed, it can still react to touch and taste for about an hour, and the suckers have roughly 10,000 neurons each—more processing power than some small animals have in their entire bodies.</p>
+<p>So when an octopus is “thinking,” a lot of that cognition is literally happening in its limbs. Your brain is centralized; an octopus’s is more like a networked cloud with tentacles.</p>
+<p>(Also, they have blue blood because they use copper-based hemocyanin instead of iron-based hemoglobin—so they’re literally running on different chemistry than you are.)</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1337 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking &quot;Tell me something I don&#39;t know.&quot; This is a broad, open-ended request. I need to provide an interesting, surprising, or obscure fact that is likely not common knowledge, while being accurate and avoiding anything harmful or overly controversial.
+
+Possible directions:
+- Obscure scientific fact (e.g., octopuses have three hearts, but that&#39;s somewhat common; maybe something more specific like &quot;honey never spoils&quot; is common too)
+- Historical oddity
+- Linguistic curiosity
+- Biological weirdness
+- Physics/math concept explained simply
+
+I should pick something genuinely surprising and explain it briefly. Let&#39;s go with a biological/cognitive fact: The fact that your brain has a &quot;default mode network&quot; that activates when you&#39;re bored, or perhaps something more tangible.
+
+Actually, a good one: The fact that the human eye can see a single photon of light under ideal conditions, but the brain usually ignores it because it&#39;s too weak to form an image—yet if you present it repeatedly, people can learn to detect it. That&#39;s cool but might be too technical.
+
+Another: The &quot;octopus&quot; fact is overused.
+
+How about: The fact that bananas are berries, but strawberries aren&#39;t—too common.
+
+Let&#39;s go with something about deep time and geology: The existence of &quot;zebra rocks&quot; or &quot;banded iron formations&quot;? Maybe too niche.
+
+What about: The fact that if you take a human red blood cell, it has no nucleus, but it does have a &quot;skeleton&quot; made of actin and spectrin that allows it to deform to squeeze through capillaries. Actually, that&#39;s interesting but maybe too detailed.
+
+Let&#39;s pick a linguistic/psychological fact: The &quot;Baader-Meinhof phenomenon&quot; (frequency illusion) is somewhat known.
+
+How about: The fact that the human brain is about 2% of body weight but uses 20% of energy. Too common.
+
+Let&#39;s go with a truly obscure historical/scientific fact:
+- The &quot;Great Dying&quot; (Permian extinction) was caused partly by bacteria releasing methane? Not exactly.
+- The fact that there are more trees on Earth than stars in the Milky Way? Actually, estimates vary, but it&#39;s a common claim.
+
+Wait, I want something that is definitely true and surprising.
+Fact: The human nose can detect over 1 trillion different scents. That&#39;s surprising but somewhat known.
+
+How about: The fact that jellyfish are 95% water, but they have no brains, hearts, or bones, and some are &quot;immortal&quot; (Turritopsis dohrnii can revert to polyp stage). The immortal jellyfish is a great one.
+
+Let&#39;s go with the immortal jellyfish (Turritopsis dohrnii). It&#39;s fascinating: when stressed or injured, it can revert from adult medusa back to juvenile polyp stage through transdifferentiation, essentially resetting its life cycle. In theory, it can do this indefinitely, making it biologically immortal (though it can still be eaten).
+
+I&#39;ll present this clearly and concisely, with context to make it engaging.
+
+Structure:
+1. Direct answer: The immortal jellyfish.
+2. Explanation: What it does (reverts life stages).
+3. Why it&#39;s cool: Transdifferentiation, biological immortality.
+4. Caveat: Not literally invincible (predation, disease).
+
+This is accurate, interesting, and likely unknown to many.
+
+Check for policy: No issues. It&#39;s a biological fact.
+
+Let&#39;s refine the explanation.
+- Species: Turritopsis dohrnii (and possibly others in genus).
+- Process: When mature, it can revert to cyst/polyp stage via cellular transdifferentiation.
+- Result: It can theoretically live forever.
+- Discovery: Noted by scientists in 1990s.
+
+I&#39;ll write it in a conversational tone.
+
+Alternative: The fact that octopuses have blue blood (hemocyanin) and three hearts, and they have neurons distributed throughout their arms so each arm can taste and move independently. That&#39;s also great and maybe more &quot;wow&quot;.
+
+Actually, the &quot;octopus arm autonomy&quot; is very cool: Two-thirds of an octopus&#39;s neurons are in its arms, not its brain, so each arm can process information locally. They can even taste with suction cups.
+
+This might be more accessible. Let&#39;s combine? No, stick to one to avoid overwhelming.
+
+I&#39;ll go with the octopus arm autonomy / distributed cognition fact because it&#39;s mind-bending.
+
+Wait, the user asked &quot;Tell me something I don&#39;t know.&quot; I can just present one fact. Let&#39;s do the octopus one.
+
+Fact: An octopus&#39;s arms are not fully controlled by its brain; they have their own &quot;local&quot; nervous systems.
+
+Details:
+- 2/3 of neurons are in arms.
+- Each sucker has ~10,000 neurons.
+- Arms can taste, grab, and explore independently of the brain.
+- If an arm is severed, it can still react to stimuli for an hour.
+- The brain mainly sends high-level commands (&quot;go left&quot;), but the arm decides how.
+
+This is accurate.
+
+I&#39;ll present this. It&#39;s surprising and distinct from common &quot;octopuses are smart&quot; knowledge.
+
+Final check: Is this true? Yes, research by Hochner, Shomrat, etc. confirms distributed neural processing in cephalopod arms.
+
+I&#39;ll write it out clearly.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/deepseek-deepseek-v4-flash-0731/">← DeepSeek: DeepSeek V4 Flash 0731</a>
+            <a href="/">all models</a>
+            <a href="/m/qwen-qwen3.7-flash/">Qwen: Qwen3.7 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
