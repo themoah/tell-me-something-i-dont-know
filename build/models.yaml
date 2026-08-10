@@ -832,3 +832,47 @@ models:
     license: "commercial"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "inclusionai/ling-3.0-tiny:free"
+    name: "inclusionAI: Ling 3.0 Tiny (free)"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "meta/muse-spark-1.2"
+    name: "Meta: Muse Spark 1.2"
+    provider: "Meta"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "qwen/qwen3.8-max"
+    name: "Qwen: Qwen3.8 Max"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "qwen/qwen3.7-flash"
+    name: "Qwen: Qwen3.7 Flash"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "July 2026"
+
+  - id: "deepseek/deepseek-v4-flash-0731"
+    name: "DeepSeek: DeepSeek V4 Flash 0731"
+    provider: "DeepSeek"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "thinkingmachines/inkling-small"
+    name: "Thinking Machines: Inkling Small"
+    provider: "Thinkingmachines"
+    license: "open-source"
+    released: "July 2026"
+
+  - id: "inclusionai/ling-3.0-flash"
+    name: "Ling-3.0-flash"
+    provider: "Inclusionai"
+    license: "open-source"
+    released: "July 2026"
+
