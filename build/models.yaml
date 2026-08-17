@@ -876,3 +876,83 @@ models:
     license: "open-source"
     released: "July 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "qwen/qwen3.8-27b"
+    name: "Qwen: Qwen3.8 27B"
+    provider: "Alibaba"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "deepseek/deepseek-v4-pro-0813"
+    name: "DeepSeek: DeepSeek V4 Pro 0813"
+    provider: "DeepSeek"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "meta/muse-glimmer-30b"
+    name: "Meta: Muse Glimmer 30B"
+    provider: "Meta"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "dots-studio/dots-3-note-preview:free"
+    name: "Dots Studio: Dots3-Note Preview (free)"
+    provider: "Dots Studio"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "google/gemini-3.7-flash"
+    name: "Google: Gemini 3.7 Flash"
+    provider: "Google"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "bytedance-seed/seed-2-1-turbo"
+    name: "ByteDance Seed: Seed 2.1 Turbo"
+    provider: "Bytedance Seed"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "bytedance-seed/seed-2.0-code"
+    name: "ByteDance Seed: Seed-2.0-Code"
+    provider: "Bytedance Seed"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "x-ai/grok-4.6"
+    name: "SpaceXAI: Grok 4.6"
+    provider: "xAI"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "sakana/sakana-namazu"
+    name: "Sakana: Sakana Namazu"
+    provider: "Sakana"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "upstage/solar-pro4"
+    name: "Upstage: Solar Pro 4"
+    provider: "Upstage"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "qwen/qwen3.8-2.4t-a95b"
+    name: "Qwen: Qwen3.8 2.4T A95B"
+    provider: "Alibaba"
+    license: "open-weights"
+    released: "August 2026"
+
+  - id: "liquid/lfm-2.5-2.6b:free"
+    name: "LiquidAI: LFM2.5-2.6B (free)"
+    provider: "Liquid"
+    license: "open-weights"
+    released: "August 2026"
+
+  - id: "nvidia/nemotron-3.5-lightning"
+    name: "NVIDIA: Nemotron 3.5 Lightning"
+    provider: "NVIDIA"
+    license: "open-weights"
+    released: "August 2026"
+
