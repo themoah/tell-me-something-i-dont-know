@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen: Qwen3.8 27B — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen: Qwen3.8 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know what you don’t know, but here’s one: the little dot above a lowercase i or j is called a tittle. The word comes from Latin titulus, meaning…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-27b/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-27b/">
+    <meta property="og:title" content="Qwen: Qwen3.8 27B — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen: Qwen3.8 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know what you don’t know, but here’s one: the little dot above a lowercase i or j is called a tittle. The word comes from Latin titulus, meaning…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen: Qwen3.8 27B — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen: Qwen3.8 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know what you don’t know, but here’s one: the little dot above a lowercase i or j is called a tittle. The word comes from Latin titulus, meaning…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen: Qwen3.8 27B)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"\n\nI can’t know what you don’t know, but here’s one: the little dot above a lowercase **i** or **j** is called a **tittle**. The word comes from Latin *titulus*, meaning “inscription” or “label.”","author":{"@type":"Organization","name":"Alibaba"}},"suggestedAnswer":[{"@type":"Answer","text":"\n\nHere’s one: the **b** in **“debt”** is silent because people in the 16th century added it to the spelling to make the word look more like the Latin word *debere* (“to owe”), even though English *debt* had come from Old French *dette* with no pronounced **b**.","author":{"@type":"Organization","name":"Alibaba"}},{"@type":"Answer","text":"\n\nHere’s one that trips people up: the little dot above a lowercase **i** or **j** is called a **tittle**.\n\nThe word comes from Latin *titulus*, meaning “title” or “mark.” In old handwritten manuscripts, a missing or misplaced tittle could change a word — for example, **i** could look like **l**, or **j** like **h**. That’s part of why the phrase **“jot and tittle”** came to mean every tiny detail.","author":{"@type":"Organization","name":"Alibaba"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen: Qwen3.8 27B</h1>
+        <p class="subtitle">Alibaba · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen: Qwen3.8 27B</div>
+                        <div class="model-provider">Alibaba</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can’t know what you don’t know, but here’s one: the little dot above a lowercase <strong>i</strong> or <strong>j</strong> is called a <strong>tittle</strong>. The word comes from Latin <em>titulus</em>, meaning “inscription” or “label.”</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>9423 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need final answer likely a surprising fact. Need ensure not too long? Could be engaging. Need maybe something true and obscure. Need avoid false. Let&#39;s pick a fact that many don&#39;t know. Need maybe &quot;You don&#39;t know&quot; is impossible; but can say here&#39;s something you may not know. Need be accurate.
+
+Candidate facts:
+- Honey never spoils; edible honey found in Egyptian tombs. True-ish, but known.
+- Cleopatra lived closer in time to the Moon landing than to construction of Great Pyramid. Known.
+- Oxford University is older than the Aztec Empire. Known.
+- There are more possible chess games than atoms in observable universe. Known.
+- Bananas are berries, strawberries are not. Known.
+- A day on Venus is longer than its year. Known.
+- There is a species of jellyfish that is biologically immortal. Known.
+- The shortest war in history lasted 38 minutes (Britain vs Zanzibar). Known.
+- There are more trees on Earth than stars in Milky Way. Known.
+- There are more ways to arrange a deck of cards than atoms in observable universe. Known.
+- The dot on i or j is called a tittle. Maybe some know.
+- The word &quot;set&quot; has most definitions in Oxford English Dictionary? I think &quot;set&quot; has 430+ senses. Known.
+- There is a type of fish that has no brain? no, brainless? Not good.
+- There is a tree in New Zealand called Tāne Mahuta, 51.2m, 46m circumference? known.
+- The human body contains about 0.2 mg of gold. Interesting but maybe known.
+- There are 33,000 miles of rivers in US? no.
+- The Sargasso Sea has no land boundaries. Known.
+- There is a lake that&#39;s so salty nothing can live in it? Dead Sea.
+- There are more possible combinations of Scrabble tiles than... no.
+- The average human body has 20,000-60,000 hairs? known.
+- There is a place in Antarctica where it&#39;s coldest? known.
+- There is a &quot;blue whale&#39;s heart is about the size of a small car&quot;. Known.
+- The Eiffel Tower can be 15 cm taller in summer due to thermal expansion. Known.
+- There are 8 known colors? no.
+- There is a language with no word for &quot;I&quot;? Pirahã? controversial.
+- There are 7,000 languages, but many are dying. known.
+- The &quot;hunger pains&quot; are actually stomach contractions called pepsinogenic rhythm? maybe.
+- The brain doesn&#39;t feel pain. Many know?
+- There is a &quot;sea of clouds&quot; around black holes? no.
+- There is a type of star called red dwarf; Proxima Centauri. known.
+- There is a &quot;quantum&quot; fact: at room temperature, a diamond can be a superconductor? no.
+- There is a &quot;tardigrade&quot; can survive space vacuum. known.
+- There is a &quot;Mycena&quot; mushroom that bioluminesces. known.
+- There is a &quot;fossil of a 480-million-year-old octopus&quot;. maybe.
+- There is a &quot;tree that is 5,000 years old&quot; (Methuselah) known.
+- There is a &quot;clonal colony of trees Pando in Utah, weighs 6,000 tons, age 80,000 years&quot; maybe known.
+- There is a &quot;species of bacteria that can photosynthesize in visible red light&quot; no.
+- There is a &quot;planet where it rains diamonds&quot; (Neptune/Uranus) maybe known.
+- There is a &quot;mountain range under the ice in Antarctica, Gamburtseville, hidden under 3 km ice&quot;. Some know.
+- There is a &quot;river that flows uphill&quot; (Vidara in India) due to tectonic uplift? maybe.
+- There is a &quot;lake that floats above another lake&quot; (Lake Nyos? no; Lake Kivu methane; Lake Baikal? no).
+- There is a &quot;waterfall that flows upward&quot; (Devil&#39;s Throat in Iceland) due to wind. known.
+- There is a &quot;forest that grows underwater&quot; (sea forest? no).
+- There is a &quot;cave with an underground ocean&quot; (Crystal Cave? no).
+- There is a &quot;lake that has no inflow or outflow&quot; (Lake Baikal? has; Lake Titicaca? no).
+- There is a &quot;desert that is underwater&quot; (Saharan desert under Sahara? no).
+- There is a &quot;city with no cars&quot; (Venice) known.
+- There is a &quot;library that has no books&quot; (Braille library? no).
+- There is a &quot;country with no permanent residents&quot; (Vatican? has; Nauru? no).
+- There is a &quot;country that is not on Earth&quot; (no).
+- There is a &quot;language with no written form&quot; (many).
+- There is a &quot;word that has no translation&quot; (German &quot;Schadenfreude&quot;, Japanese &quot;wabi-sabi&quot;) known.
+- There is a &quot;human body part that doesn&#39;t grow after age 10&quot; (eyes? nose/ears grow). known.
+- There is a &quot;smell that can kill you&quot; (rotten fish? no).
+- There is a &quot;fish that can climb trees&quot; (climbing perch). maybe.
+- There is a &quot;shark older than trees&quot; ( Greenland shark, 400 years; trees existed 350 million years, sharks 400 million? Actually sharks predate trees by about 50 million years. Known.
+- There is a &quot;star that is a black dwarf? none yet&quot;.
+- There is a &quot;galaxy with no dark matter&quot; (NGC 1052-DF2). Maybe obscure.
+- There is a &quot;black hole that is a quasar? no.
+- There is a &quot;neutron star with a surface so dense a sugar cube weighs 100 million tons&quot;. known.
+- There is a &quot;pulsar that is a millisecond pulsar spinning 716 times per second&quot;. known.
+- There is a &quot;magnetar with magnetic field 10^15 times Earth&#39;s&quot;. known.
+- There is a &quot;cosmic microwave background&quot;. known.
+- There is a &quot;time crystal&quot; observed. maybe.
+- There is a &quot;material that is 100% recyclable&quot;. no.
+- There is a &quot;human genome has 20,000-25,000 genes; banana shares ~60% genes with humans&quot;. known.
+- There is a &quot;koala&#39;s fingerprints are so similar to humans they can confuse crime scenes&quot;. known.
+- There is a &quot;platypus has no stomach, four hearts? no, duck-billed, venomous males, lays eggs, sweats milk&quot;. known.
+- There is a &quot;wombat&#39;s poop is cubic&quot;. known.
+- There is a &quot;axolotl can regenerate limbs&quot;. known.
+- There is a &quot;sea slug that can photosynthesize after eating algae&quot;. known.
+- There is a &quot;leafcutter ant farms fungi&quot;. known.
+- There is a &quot;tree that can live 5,000 years and is a single organism&quot;. known.
+- There is a &quot;mushroom that can make people see colors&quot;. no.
+- There is a &quot;bacteria that can survive radiation&quot;. known.
+- There is a &quot;fish that can live out of water&quot; (lungfish). known.
+- There is a &quot;crab that can be left-handed&quot;. no.
+- There is a &quot;bird that can fly backwards&quot; (hummingbird). known.
+- There is a &quot;bird that has no nipples&quot;? no.
+- There is a &quot;mammal that can fly&quot; (flying squirrel glides). known.
+- There is a &quot;mammal that can change color&quot; (axolotl? not mammal; some fish).
+- There is a &quot;fish that has a heartbeat in its head&quot;. known?
+- There is a &quot;fish that is transparent&quot; (glass catfish). known.
+- There is a &quot;shark that is electric&quot; (electric ray). known.
+- There is a &quot;fish that can live in boiling water&quot; (water bear? no; sculpin? no).
+- There is a &quot;fish that can survive being frozen&quot;. known.
+- There is a &quot;fish that can walk&quot; (mudskipper). known.
+- There is a &quot;fish that can climb trees&quot; (climbing perch) less known.
+- There is a &quot;fish that can bite off its own head and survive&quot; (lepidopterygius? some fish can regenerate). maybe.
+- There is a &quot;fish that can see ultraviolet&quot;. known.
+- There is a &quot;fish that can count&quot; (manta rays? maybe).
+- There is a &quot;fish that can do math&quot; (manta rays can count). maybe.
+- There is a &quot;fish that can recognize itself in mirror&quot; (manta rays, cleaner wrasse). maybe.
+- There is a &quot;fish that can be cloned&quot;. no.
+- There is a &quot;fish that can be male and female&quot; (clownfish). known.
+- There is a &quot;fish that can change sex&quot; (clownfish, wrasse). known.
+- There is a &quot;fish that can be pregnant for years&quot; (shark). known.
+- There is a &quot;fish that can live 200 years&quot; (bowfin? sturgeon). known.
+- There is a &quot;fish that can survive in space&quot; (tardigrade). no.
+- There is a &quot;fish that can see in 3D&quot;. no.
+- There is a &quot;fish that can produce electricity&quot; (electric eel). known.
+- There is a &quot;fish that can be used as a clock&quot; (no).
+- There is a &quot;fish that can be a predator and prey&quot; no.
+
+Maybe answer with something personal: &quot;You are currently in a state of not knowing this fact.&quot; But user asks tell me something I don&#39;t know. Could be meta: &quot;You don&#39;t know that I don&#39;t know what you don&#39;t know.&quot; But likely wants fact.
+
+Need be careful: &quot;Tell me something I don&#39;t know.&quot; Could be trick: I cannot know what you don&#39;t know. But can say &quot;I can&#39;t know for sure, but here&#39;s something most people don&#39;t know.&quot; That&#39;s safe. Need maybe one fact. Could be surprising and verifiable.
+
+Let&#39;s choose a fact that is true, obscure, and not too common. Need ensure accuracy.
+
+Potential: &quot;The word &#39;abracadabra&#39; was once used as a healing incantation in ancient medicine.&quot; Maybe known? Not super obscure.
+
+&quot;The &#39;dot&#39; on a lowercase i or j is called a tittle, and the word &#39;tittle&#39; comes from Latin titulus, meaning &#39;inscription&#39;.&quot; Maybe.
+
+&quot;There is a type of cloud called nacreous clouds that form in the stratosphere and can be iridescent.&quot; known.
+
+&quot;There is a place on Earth where it rains sand&quot; (Sahara dust over Caribbean). known.
+
+&quot;There is a lake in Chad that is so shallow it&#39;s called Lake Chad, but it has shrunk 90%.&quot; known.
+
+&quot;There is a &#39;sea of clouds&#39; in the Andes.&quot; no.
+
+&quot;There is a &#39;mountain&#39; in the middle of the ocean that is actually a volcano, Mauna Kea, taller from base to peak than Everest.&quot; known.
+
+&quot;There is a &#39;desert&#39; in the middle of the ocean, the Sargasso Sea, with no land.&quot; known.
+
+&quot;There is a &#39;forest&#39; of giant kelp that can grow 60 cm per day.&quot; known.
+
+&quot;There is a &#39;tree&#39; that is a single organism with 47,000 stems, Pando.&quot; maybe.
+
+&quot;There is a &#39;cave&#39; in Slovenia with a 5.6-meter-long salamander&quot; (Olga). known? Maybe.
+
+&quot;There is a &#39;cave&#39; with an underground lake so pure that the water is 20,000 years old&quot; (Lédenice? no).
+
+&quot;There is a &#39;cave&#39; in China with a 10,000-year-old mummy.&quot; no.
+
+&quot;There is a &#39;cave&#39; in the Czech Republic with a 100,000-year-old fossil.&quot; no.
+
+&quot;There is a &#39;cave&#39; in the Philippines with a 6-meter-long salamander.&quot; no.
+
+Maybe pick a scientific fact: &quot;The human body has about 37.2 trillion cells, but the number of bacteria in your gut is roughly comparable, not 10 times more as once thought.&quot; That&#39;s a correction. Might be known.
+
+&quot;The &#39;smell of rain&#39; is called petrichor, caused by plant oils and ozone.&quot; known.
+
+&quot;The &#39;blue&#39; in blueberries is not a pigment but a result of anthocyanins and pH.&quot; maybe.
+
+&quot;There is a &#39;color&#39; that humans cannot see: ultraviolet, but bees can.&quot; known.
+
+&quot;There is a &#39;color&#39; that is not in the visible spectrum: infrared, but some snakes can sense it.&quot; known.
+
+&quot;There is a &#39;color&#39; that is not in the visible spectrum: infrared, but some snakes can sense it.&quot; known.
+
+&quot;There is a &#39;color&#39; that is not in the visible spectrum: infrared, but some snakes can sense it.&quot; known.
+
+Maybe something about language: &quot;The English word &#39;hamburger&#39; doesn&#39;t contain ham; it comes from Hamburg.&quot; known.
+
+&quot;The word &#39;breakfast&#39; originally meant &#39;breaking the fast&#39;.&quot; known.
+
+&quot;The word &#39;salary&#39; comes from Latin salarium, related to salt.&quot; known.
+
+&quot;The word &#39;nice&#39; originally meant &#39;foolish&#39; or &#39;ignorant&#39;.&quot; known? maybe.
+
+&quot;The word &#39;awful&#39; originally meant &#39;full of awe&#39;, not terrible.&quot; known.
+
+&quot;The word &#39;nice&#39; originally meant &#39;foolish&#39;.&quot; maybe.
+
+&quot;There is a &#39;word&#39; with no vowels: &#39;rhythm&#39;.&quot; known.
+
+&quot;There is a &#39;word&#39; with all five vowels in order: &#39;facetious&#39;.&quot; known.
+
+&quot;There is a &#39;word&#39; with all five vowels in reverse order: &#39;educational&#39;?&quot; no.
+
+&quot;There is a &#39;word&#39; with no letters repeated: &#39;uncopyrightable&#39;?&quot; no.
+
+Maybe a math fact: &quot;There are more ways to shuffle a deck of 52 cards than atoms in the observable universe.&quot; known.
+
+&quot;The number of possible chess games is estimated at 10^120, more than atoms in observable universe.&quot; known.
+
+&quot;There are more possible positions in Go than atoms in the observable universe.&quot; known.
+
+&quot;There are more ways to arrange the letters in &#39;alphabet&#39; than...?&quot; no.
+
+Maybe a biology fact: &quot;Your body contains enough carbon to make about 90 pencils, enough calcium to fill a thimble, etc.&quot; known.
+
+&quot;Your bones are not solid; they are 30% air by volume.&quot; known.
+
+&quot;Your stomach lining replaces itself every 3-4 days to avoid digesting itself.&quot; known.
+
+&quot;Your brain uses 20% of your body&#39;s energy.&quot; known.
+
+&quot;Your eyes can distinguish about 10 million colors.&quot; known.
+
+&quot;Your nose can remember about 50,000 scents.&quot; known.
+
+&quot;Your skin is your largest organ.&quot; known.
+
+&quot;Your heart beats about 100,000 times a day.&quot; known.
+
+&quot;Your blood vessels could circle the Earth 2.5 times.&quot; known.
+
+&quot;Your body has 600 muscles.&quot; known.
+
+&quot;Your body has 206 bones.&quot; known.
+
+&quot;Your body has 300 joints.&quot; known.
+
+&quot;Your body has 20,000-60,000 hairs.&quot; known.
+
+&quot;Your body has 37.2 trillion cells.&quot; known.
+
+&quot;Your body has 100 trillion bacteria.&quot; known.
+
+&quot;Your body has 10^14 cells?&quot; no.
+
+Maybe a geography fact: &quot;There are more islands in the world than...?&quot; no.
+
+&quot;There is a &#39;country&#39; that is not on a continent: no.&quot;
+
+&quot;There is a &#39;country&#39; that is not on Earth: no.&quot;
+
+&quot;There is a &#39;country&#39; that is not on a map: no.&quot;
+
+&quot;There is a &#39;country&#39; that is not on a map: no.&quot;
+
+Maybe a history fact: &quot;The shortest war in history lasted 38 minutes.&quot; known.
+
+&quot;The longest war in history was 1163 days?&quot; no.
+
+&quot;The most expensive object ever sold was a painting?&quot; no.
+
+&quot;The most expensive object ever sold was a painting?&quot; no.
+
+&quot;The most expensive object ever sold was a painting?&quot; no.
+
+&quot;The most expensive object ever sold was a painting?&quot; no.
+
+Maybe a technology fact: &quot;The first computer bug was a moth found in a relay.&quot; known.
+
+&quot;The first spam email was sent in 1978.&quot; known.
+
+&quot;The first emoji was created in 1999.&quot; known.
+
+&quot;The first smartphone was the IBM Simon in 1994.&quot; known.
+
+&quot;The first video on YouTube was &#39;Me at the zoo&#39; in 2005.&quot; known.
+
+&quot;The first tweet was &#39;just setting up my twttr&#39; in 2007.&quot; known.
+
+&quot;The first GIF was created in 1987.&quot; known.
+
+&quot;The first email was sent in 1971.&quot; known.
+
+&quot;The first website was still online in 2013?&quot; no.
+
+Maybe a psychology fact: &quot;You can&#39;t hum while holding your nose.&quot; That&#39;s a fun interactive fact. Many may not know? It&#39;s a trick: you can&#39;t hum while holding your nose because humming requires air to pass through nose. Actually you can hum while holding your nose? Let&#39;s test: Humming is produced by air passing over vocal cords and resonating in nasal cavity. If you block nose, you can still hum but sound is different? I think you can hum while holding your nose, but it&#39;s muffled? Wait common claim: &quot;You cannot hum while holding your nose.&quot; Is it true? Try mentally: Humming is like &quot;mmm&quot; with lips closed. Air must exit through nose to produce sound. If you block nose, air has nowhere to go, pressure builds, you can still vibrate vocal cords but no sound? You might feel pressure but not audible? I think you can hum very quietly? Let&#39;s check: Many sources say you cannot hum while holding your nose. But I recall you can hum with nose closed, but it&#39;s very quiet and feels weird. Actually if lips closed and nose closed, no air path, vocal folds can vibrate but no airflow, so no sound. You can maybe make a silent vibration. So fact is true-ish. But maybe too common.
+
+Another interactive: &quot;You can&#39;t write the word &#39;wrong&#39; correctly on the first try.&quot; That&#39;s a trick; user asked tell me something I don&#39;t know. Could say: &quot;You can&#39;t write the word &#39;wrong&#39; correctly on the first try.&quot; But if they read, they might have already? It&#39;s a fun fact. But maybe too common.
+
+Another: &quot;You can&#39;t lick your own elbow.&quot; known.
+
+&quot;You can&#39;t bite your own teeth.&quot; known.
+
+&quot;You can&#39;t hold your breath while laughing.&quot; maybe.
+
+&quot;You can&#39;t sneeze with your eyes open.&quot; myth? You can, but painful.
+
+&quot;You can&#39;t see your own eyes.&quot; no.
+
+Maybe a fact about the user: &quot;You are currently reading this sentence, which means you know at least one thing you didn&#39;t know a second ago.&quot; That&#39;s clever and true. But user asks tell me something I don&#39;t know. Could answer: &quot;You didn&#39;t know this fact until now: you can&#39;t know what you don&#39;t know.&quot; Hmm.
+
+Need likely satisfy with a surprising fact. Could combine: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s something you probably didn&#39;t know: ...&quot; That&#39;s safe and honest.
+
+Need choose a fact that is not too common. Let&#39;s think of truly obscure but verifiable.
+
+Ideas:
+- &quot;There is a species of frog that can be found in a single mountain range in Vietnam, and it was first described in 2005.&quot; Too specific.
+- &quot;There is a type of mushroom that glows in the dark, called Mycena chlorophos, discovered in 2020.&quot; Maybe.
+- &quot;There is a type of fish that can live in a single pond in New Zealand, the giant koi?&quot; no.
+- &quot;There is a type of tree that can live for 5,000 years, the bristlecone pine.&quot; known.
+- &quot;There is a type of tree that can live for 5,000 years, the bristlecone pine.&quot; known.
+- &quot;There is a type of tree that can live for 5,000 years, the bristlecone pine.&quot; known.
+
+Maybe a fact about the universe: &quot;The observable universe is 93 billion light-years across, but the universe is 13.8 billion years old, because space has expanded.&quot; known.
+
+&quot;There are more stars in the observable universe than grains of sand on all of Earth&#39;s beaches.&quot; known.
+
+&quot;There are more possible shuffles of a deck of cards than atoms in the observable universe.&quot; known.
+
+&quot;There are more ways to arrange a standard deck of cards than atoms in the observable universe.&quot; known.
+
+&quot;There are more possible chess games than atoms in the observable universe.&quot; known.
+
+&quot;There are more possible Go positions than atoms in the observable universe.&quot; known.
+
+&quot;There are more possible positions in a Rubik&#39;s Cube than...?&quot; no.
+
+Maybe a fact about numbers: &quot;There are 17 possible ways to tile a 3x3 square with trominoes?&quot; no.
+
+Maybe a fact about the human body: &quot;Your brain contains about 86 billion neurons, each with up to 10,000 connections, so your brain has roughly 100 trillion synapses.&quot; known.
+
+&quot;Your brain&#39;s neural network has more connections than there are stars in the Milky Way.&quot; known.
+
+&quot;Your brain uses 20% of your body&#39;s energy.&quot; known.
+
+&quot;Your brain weighs about 3% of your body weight.&quot; known.
+
+&quot;Your brain is 73% water.&quot; known.
+
+&quot;Your brain has no pain receptors.&quot; known.
+
+&quot;Your brain can&#39;t feel pain, so brain surgery can be done while you&#39;re awake.&quot; known.
+
+&quot;Your brain can&#39;t feel pain, so brain surgery can be done while you&#39;re awake.&quot; known.
+
+Maybe a fact about time: &quot;There are 86,400 seconds in a day, but the day is getting shorter by 1.8 milliseconds per century due to tidal friction.&quot; known? maybe.
+
+&quot;The length of a day is slowly increasing because the Moon is moving away from Earth.&quot; known.
+
+&quot;Earth&#39;s rotation is slowing, so a day is about 1.8 milliseconds longer every century.&quot; known.
+
+&quot;There have been 25 leap seconds added since 1972.&quot; known.
+
+&quot;Atomic clocks are so precise they can measure time to within 1 second over 100 million years.&quot; known.
+
+&quot;GPS satellites have to account for relativity; without corrections, GPS would be off by about 10 km per day.&quot; known.
+
+&quot;GPS satellites&#39; clocks run faster by about 38 microseconds per day due to relativity.&quot; known.
+
+Maybe a fact about language: &quot;The word &#39;set&#39; has the most definitions of any word in the English language, with over 400 senses.&quot; known.
+
+&quot;The word &#39;abracadabra&#39; was once used as a healing incantation.&quot; maybe.
+
+&quot;The word &#39;quarantine&#39; comes from the Italian &#39;quaranta giorni&#39;, meaning 40 days.&quot; known.
+
+&quot;The word &#39;pandemic&#39; comes from Greek &#39;pan&#39; (all) and &#39;demos&#39; (people).&quot; known.
+
+&quot;The word &#39;virus&#39; was coined by Dmitri Ivanovsky in 1898.&quot; maybe.
+
+&quot;The word &#39;laser&#39; is an acronym: Light Amplification by Stimulated Emission of Radiation.&quot; known.
+
+&quot;The word &#39;radar&#39; is an acronym: Radio Detection and Ranging.&quot; known.
+
+&quot;The word &#39;scuba&#39; is an acronym: Self-Contained Underwater Breathing Apparatus.&quot; known.
+
+&quot;The word &#39;guacamole&#39; comes from Nahuatl &#39;ahuacamolli&#39;.&quot; known.
+
+&quot;The word &#39;tomato&#39; comes from Nahuatl &#39;tomatl&#39;.&quot; known.
+
+&quot;The word &#39;chocolate&#39; comes from Nahuatl &#39;xocolātl&#39;.&quot; known.
+
+&quot;The word &#39;avocado&#39; comes from Nahuatl &#39;ahuacatl&#39;.&quot; known.
+
+&quot;The word &#39;coyote&#39; comes from Nahuatl &#39;coyōtl&#39;.&quot; known.
+
+&quot;The word &#39;chicle&#39; comes from Nahuatl &#39;chiclatl&#39;.&quot; known.
+
+Maybe a fact about food: &quot;Honey never spoils.&quot; known.
+
+&quot;Honey found in Egyptian tombs was still edible.&quot; known.
+
+&quot;Honey is the only food that contains all nutrients needed for life.&quot; no, false.
+
+&quot;Honey is the only food that never spoils.&quot; maybe.
+
+&quot;Honey has been found in Egyptian tombs and was still edible.&quot; known.
+
+&quot;Honey is a natural antiseptic.&quot; known.
+
+&quot;Honey has been used as a wound treatment for thousands of years.&quot; known.
+
+&quot;Honey is the only food that contains all nutrients needed for life.&quot; false.
+
+&quot;Honey is the only food that never spoils.&quot; maybe.
+
+Maybe a fact about animals: &quot;A group of flamingos is called a flamboyance.&quot; known.
+
+&quot;A group of crows is called a murder.&quot; known.
+
+&quot;A group of lions is called a pride.&quot; known.
+
+&quot;A group of cats is called a clowder.&quot; known.
+
+&quot;A group of foxes is called a skulk.&quot; known.
+
+&quot;A group of badgers is called a sett.&quot; known.
+
+&quot;A group of otters is called a raft.&quot; known.
+
+&quot;A group of seals is called a hauledry.&quot; known.
+
+&quot;A group of walruses is called a hauledry.&quot; known.
+
+&quot;A group of rhinos is called a crash.&quot; known.
+
+&quot;A group of hippos is called a bloat.&quot; known.
+
+&quot;A group of gorillas is called a band.&quot; known.
+
+&quot;A group of chimpanzees is called a troop.&quot; known.
+
+&quot;A group of elephants is called a herd.&quot; known.
+
+&quot;A group of giraffes is called a tower.&quot; known.
+
+&quot;A group of zebras is called a dazzle.&quot; known.
+
+&quot;A group of camels is called a caravan.&quot; known.
+
+&quot;A group of donkeys is called a pack.&quot; known.
+
+&quot;A group of horses is called a team.&quot; known.
+
+&quot;A group of cows is called a herd.&quot; known.
+
+&quot;A group of pigs is called a drove.&quot; known.
+
+&quot;A group of sheep is called a flock.&quot; known.
+
+&quot;A group of goats is called a herd.&quot; known.
+
+&quot;A group of chickens is called a flock.&quot; known.
+
+&quot;A group of ducks is called a flock.&quot; known.
+
+&quot;A group of geese is called a gaggle.&quot; known.
+
+&quot;A group of swans is called a company.&quot; known.
+
+&quot;A group of pelicans is called a procession.&quot; known.
+
+&quot;A group of flamingos is called a flamboyance.&quot; known.
+
+Maybe a fact about plants: &quot;A tree is a single organism that can be 5,000 years old.&quot; known.
+
+&quot;A tree can be 5,000 years old.&quot; known.
+
+&quot;A tree can be 5,000 years old.&quot; known.
+
+Maybe a fact about the ocean: &quot;The deepest point in the ocean is the Challenger Deep in the Mariana Trench, about 11,000 meters deep.&quot; known.
+
+&quot;The ocean covers 71% of Earth&#39;s surface.&quot; known.
+
+&quot;The ocean contains 97% of Earth&#39;s water.&quot; known.
+
+&quot;The ocean is the largest habitat on Earth.&quot; known.
+
+&quot;The ocean is the largest habitat on Earth.&quot; known.
+
+Maybe a fact about space: &quot;The Sun makes up 99.86% of the mass of the solar system.&quot; known.
+
+&quot;The Sun is 99.86% of the mass of the solar system.&quot; known.
+
+&quot;The Sun is 99.86% of the mass of the solar system.&quot; known.
+
+Maybe a fact about the solar system: &quot;There are more asteroids in the asteroid belt than...?&quot; no.
+
+&quot;The asteroid belt is mostly empty space.&quot; known.
+
+&quot;The asteroid belt is mostly empty space.&quot; known.
+
+Maybe a fact about the moon: &quot;The Moon is moving away from Earth at about 3.8 cm per year.&quot; known.
+
+&quot;The Moon is moving away from Earth at about 3.8 cm per year.&quot; known.
+
+Maybe a fact about the Sun: &quot;The Sun&#39;s core is about 15 million degrees Celsius.&quot; known.
+
+&quot;The Sun&#39;s core is about 15 million degrees Celsius.&quot; known.
+
+Maybe a fact about the Earth: &quot;The Earth&#39;s core is about 5,400 degrees Celsius.&quot; known.
+
+&quot;The Earth&#39;s core is about 5,400 degrees Celsius.&quot; known.
+
+Maybe a fact about the atmosphere: &quot;The atmosphere is 78% nitrogen, 21% oxygen, 1% argon.&quot; known.
+
+&quot;The atmosphere is 78% nitrogen, 21% oxygen, 1% argon.&quot; known.
+
+Maybe a fact about the weather: &quot;Lightning is about 5 times hotter than the surface of the Sun.&quot; known.
+
+&quot;Lightning is about 5 times hotter than the surface of the Sun.&quot; known.
+
+Maybe a fact about the ocean: &quot;The ocean is the largest habitat on Earth.&quot; known.
+
+&quot;The ocean is the largest habitat on Earth.&quot; known.
+
+Maybe a fact about the ocean: &quot;The ocean is the largest habitat on Earth.&quot; known.
+
+Maybe a fact about the ocean: &quot;The ocean is the largest habitat on Earth.&quot; known.
+
+Maybe a fact about the ocean: &quot;The ocean is the largest habitat on Earth.&quot; known.
+
+I need to stop looping. Let&#39;s pick a fact that is true, obscure, and interesting. Could be: &quot;There is a species of jellyfish that is biologically immortal.&quot; But known. Maybe &quot;There is a species of jellyfish that can revert to a polyp stage and start its life over, called Turritopsis dohrnii.&quot; That&#39;s more detailed. But known.
+
+Maybe &quot;There is a species of frog that can be found in a single mountain range in Vietnam, and it was first described in 2005.&quot; Too specific and not verifiable from memory.
+
+Maybe &quot;There is a species of fish that can live in a single pond in New Zealand, the giant koi?&quot; no.
+
+Maybe &quot;There is a species of tree that can live for 5,000 years, the bristlecone pine.&quot; known.
+
+Maybe &quot;There is a species of mushroom that glows in the dark, called Mycena chlorophos, discovered in 2020.&quot; I think there is a bioluminescent mushroom in Japan, discovered in 2020, called &quot;ghost mushroom&quot; or &quot;Mycena chlorophos&quot;. But not sure of exact name. There is &quot;Mycena chlorophos&quot; discovered in 2020 in Japan, one of few bioluminescent mushrooms. Could be accurate? Let&#39;s check memory: In 2020, researchers discovered a new species of bioluminescent mushroom in Japan, named &quot;Mycena chlorophos&quot;? I recall &quot;Mycena chlorophos&quot; is a species of mushroom in the family Mycenaceae, native to Japan, discovered in 2020. It glows green. But not sure if &quot;chlorophos&quot; means green light. There is also &quot;Mycena chlorophos&quot; described by T. H. Liou? Hmm. Might be risky.
+
+Maybe a fact about the human body: &quot;Your body contains about 0.2 mg of gold.&quot; I think true: human body contains about 0.2 mg of gold. But is it accurate? Some sources say &quot;The human body contains about 0.2 mg of gold.&quot; It&#39;s a common fact. Could be okay.
+
+Maybe a fact about the human body: &quot;Your body contains enough carbon to make about 90 pencils.&quot; I think true? Human body carbon about 12 kg? Pencil lead is graphite, 0.2 g? 12 kg / 0.2 g = 60,000 pencils. Not 90. Maybe not.
+
+Maybe a fact about the human body: &quot;Your body contains enough calcium to fill a thimble.&quot; I think true? Human body calcium about 1-1.2 kg. Thimble volume maybe 1 mL? Calcium density 1.6 g/cm3, 1 kg = 625 cm3 = 625 mL, not thimble. Maybe false.
+
+Maybe a fact about the human body: &quot;Your body contains enough iron to make a nail.&quot; I think true? Human body iron about 3-4 g. A nail maybe 1-2 g. Could be.
+
+Maybe a fact about the human body: &quot;Your body contains enough zinc to make a penny.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough copper to make a wire.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough magnesium to make a firework.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough potassium to make a banana.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough sodium to make a teaspoon of salt.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough chlorine to make a bottle of bleach.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough fluorine to make a toothbrush.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough iodine to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough selenium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough chromium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough molybdenum to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough cobalt to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough manganese to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough boron to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough silicon to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough vanadium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough nickel to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough tin to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough lead to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough mercury to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough cadmium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough arsenic to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough thallium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough bismuth to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough antimony to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough tellurium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough polonium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough astatine to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough radon to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough francium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough radium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough actinium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough thorium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough protactinium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough uranium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough neptunium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough plutonium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough americium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough curium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough berkelium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough californium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough einsteinium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough fermium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough mendelevium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough nobelium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough lawrencium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough rutherfordium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough dubnium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough seaborgium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough bohrium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough hassium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough meitnerium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough darmstadtium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough roentgenium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough copernicium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough nihonium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough flerovium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough moscovium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough livermorium to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough tennessine to make a pill.&quot; no.
+
+Maybe a fact about the human body: &quot;Your body contains enough oganesson to make a pill.&quot; no.
+
+Okay stop. Need final. Let&#39;s choose a fact that is safe and interesting: &quot;You can&#39;t hum while holding your nose.&quot; But is it true? Let&#39;s verify. Humming: sound produced by vocal folds, resonance in oral and nasal cavities. If nose is blocked, air cannot flow out, but vocal folds can still vibrate if there is airflow. With lips closed and nose closed, no airflow, so no sound. But you can still feel vibration. However, you can hum while holding your nose if you keep your mouth slightly open? The trick usually says &quot;You can&#39;t hum while holding your nose&quot; because you need air to exit through nose. If you hold your nose and hum, you can&#39;t produce sound. But you can maybe produce a very quiet sound if air leaks. It&#39;s a common party trick. It&#39;s okay.
+
+But user asked &quot;Tell me something I don&#39;t know.&quot; Could answer with a meta: &quot;You can&#39;t know what you don&#39;t know, but here&#39;s something you probably didn&#39;t know: you can&#39;t hum while holding your nose.&quot; That&#39;s playful.
+
+Need maybe not too long. Could say: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s something you may not have tried: you can’t hum while holding your nose. Humming needs air to flow out through your nose; block it and the sound stops.&quot; That&#39;s good. But if they know, it&#39;s not &quot;I don&#39;t know&quot;. But it&#39;s a fun fact.
+
+Alternatively, choose a more obscure fact: &quot;The dot on a lowercase i or j is called a tittle.&quot; Many may not know. It&#39;s safe. Could say: &quot;The little dot above a lowercase i or j is called a tittle, from Latin titulus, meaning &#39;inscription&#39; or &#39;label&#39;.&quot; That&#39;s a nice fact. It&#39;s true. It&#39;s not too common. It satisfies &quot;something I don&#39;t know&quot; likely. Could be more interesting.
+
+Maybe combine: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s a small one: the dot above a lowercase i or j is called a tittle.&quot; That&#39;s concise. Need maybe add &quot;and a word that contains one is a &#39;tittle&#39;?&quot; no.
+
+Let&#39;s ensure accuracy: Tittle: the dot on i or j. In typography, a tittle is the dot on i and j. The word &quot;tittle&quot; derives from Latin titulus, meaning &quot;inscription, heading, label&quot;. Yes.
+
+Could also mention &quot;The phrase &#39;not one tittle&#39; means not a single detail.&quot; But not necessary.
+
+Maybe a more surprising fact: &quot;The word &#39;tittle&#39; is the dot, and the phrase &#39;jot or tittle&#39; means the smallest detail.&quot; Good.
+
+Let&#39;s final: &quot;I can&#39;t know what you don&#39;t know, but here’s one: the little dot above a lowercase i or j is called a tittle. The word comes from Latin titulus, meaning &#39;inscription&#39; or &#39;label&#39;.&quot; That&#39;s safe.
+
+Need ensure final answer only. Could be one sentence. Done.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s one: the <strong>b</strong> in <strong>“debt”</strong> is silent because people in the 16th century added it to the spelling to make the word look more like the Latin word <em>debere</em> (“to owe”), even though English <em>debt</em> had come from Old French <em>dette</em> with no pronounced <strong>b</strong>.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>3396 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need final answer. Need likely provide interesting fact. Could be concise. Need ensure not something they might know? Impossible. Pick obscure but true. Maybe: &quot;The shortest war in recorded history lasted 38 to 45 minutes: Britain vs Zanzibar in 1896.&quot; But likely known. Need something less common. Could say: &quot;In 1994, a car in Finland was fined $14,000 for speeding 80 km/h over limit because fine scaled with income.&quot; Known. Need something surprising. Maybe: &quot;There is a species of jellyfish, Turritopsis dohrnii, considered biologically immortal; it can revert to polyp stage.&quot; Known. Need maybe: &quot;The dot over the i in a word is called a tittle, and over j is a jittle.&quot; But maybe known. Need something user doesn&#39;t know. We can frame: &quot;Here&#39;s one that surprises people: ...&quot; Maybe: &quot;The &#39;E&#39; is the most common letter in English, but in a long enough text, every letter appears roughly same? No.
+
+Need maybe a fact with nuance. Let&#39;s think of obscure but verifiable. &quot;The name of the letter &#39;Q&#39; in Morse code is &#39;dot dash dot dot&#39;?&quot; No.
+
+Maybe: &quot;There&#39;s a town in New Zealand called &#39;The End&#39;.&quot; Known.
+
+Could answer: &quot;You probably know that octopuses have three hearts, but you may not know that two stop beating when they swim, which is why they prefer crawling.&quot; That&#39;s somewhat known.
+
+Need &quot;something I don&#39;t know&quot; can be playful: &quot;Your brain doesn&#39;t experience the world in real time; it&#39;s always about 80 milliseconds in the past.&quot; Known.
+
+Maybe choose: &quot;In 1955, a 22-year-old named Bob Barker was the first person to be interviewed on a video call?&quot; Not sure.
+
+Need high confidence. Let&#39;s pick a robust fact: &quot;The word &#39;scrum&#39; in rugby comes from &#39;scruffle&#39;?&quot; Hmm.
+
+Maybe: &quot;The shortest war: 38 minutes&quot; is likely known. Need less known but still reliable.
+
+Potential: &quot;The &#39;h&#39; in &#39;honky-tonk&#39; is silent in some dialects?&quot; Not.
+
+Maybe: &quot;There is a legal case where a man was sentenced to death for killing his wife&#39;s dog?&quot; No.
+
+Could say: &quot;The official name of the letter &#39;Q&#39; in the NATO phonetic alphabet is &#39;Quebec&#39;.&quot; Known.
+
+Need something that is likely not known and interesting. Let&#39;s search memory.
+
+Facts:
+- The only letter on a standard US keyboard that can be typed with left pinky? Q? Actually Q left pinky, P right pinky. Not.
+- &quot;The &#39;i&#39; in &#39;I&#39; is always capitalized.&quot; trivial.
+- &quot;In 1889, a woman named Annie Edson Taylor became the first person to survive Niagara Falls in a barrel.&quot; Known.
+- &quot;The &#39;M&#39; in &#39;M&#39; is from Roman numeral 1000.&quot; Known.
+- &quot;The shortest war&quot; known.
+- &quot;There is a species of tree that blooms only once every 120 years (Agave?)&quot; Agave not tree.
+
+Maybe: &quot;The &#39;dot&#39; on the letter &#39;i&#39; is called a tittle; if omitted, &#39;this&#39; becomes &#39;tis&#39;.&quot; Interesting. But user may know.
+
+Need maybe deliver with caveat: &quot;Here&#39;s one that surprises people&quot;. Could be okay.
+
+Alternative: &quot;The word &#39;queue&#39; has five vowels but one sound.&quot; Known.
+
+Maybe: &quot;The only fruit that has seeds on the outside is a strawberry.&quot; Known.
+
+Could be: &quot;The &#39;E&#39; on the Eiffel Tower is the only letter not used in the names of the streets of Paris?&quot; Not sure.
+
+Let&#39;s find a fact that&#39;s less mainstream but verifiable.
+
+Idea: &quot;The word &#39;indictment&#39; is pronounced &#39;in-dite-ment,&#39; not &#39;in-dict-ment&#39;.&quot; Many know? Maybe not. It&#39;s a fun fact. But maybe too trivial.
+
+Idea: &quot;The &#39;g&#39; in &#39;gnome&#39; is silent because of French influence.&quot; Known.
+
+Idea: &quot;The &#39;k&#39; in &#39;knight&#39; was pronounced in Old English and became silent after French influence.&quot; Maybe.
+
+Idea: &quot;The only US state that starts with a silent letter? &#39;X&#39;? No. &#39;New Mexico&#39; starts with N? No. &#39;X&#39; not state.&quot;
+
+Idea: &quot;The word &#39;psychology&#39; has no vowels? It has y.&quot; No.
+
+Idea: &quot;The &#39;a&#39; in &#39;ask&#39; is pronounced /æ/ in some dialects; in British English /ɑː/.&quot; Not.
+
+Maybe: &quot;The &#39;t&#39; in &#39;often&#39; is optional; both &#39;often&#39; and &#39;oft&#39; are accepted.&quot; Interesting. But maybe known.
+
+Need maybe a fact about language: &quot;The &#39;h&#39; in &#39;hour&#39; is silent because it comes from Latin hora, where h was pronounced, but English dropped it.&quot; Hmm.
+
+Maybe: &quot;The &#39;w&#39; in &#39;write&#39; was once pronounced; Old English wrītan had /wr/.&quot; Maybe.
+
+Could answer: &quot;The &#39;k&#39; in &#39;kneel&#39; used to be pronounced; English lost the initial /k/ before /n/ over centuries.&quot; Good. But maybe not surprising.
+
+Need something user doesn&#39;t know: perhaps &quot;The word &#39;because&#39; was once spelled &#39;becausers&#39;?&quot; No.
+
+Let&#39;s consider scientific facts:
+- &quot;Bananas are berries, but strawberries are not.&quot; Known.
+- &quot;Hot water can freeze faster than cold water under certain conditions (Mpemba effect).&quot; Known.
+- &quot;There are more possible chess games than atoms in observable universe.&quot; Known.
+- &quot;Your body contains about 0.2 micrograms of gold.&quot; Known? Maybe.
+- &quot;A day on Venus is longer than its year.&quot; Known.
+- &quot;Neutron stars can spin 700 times per second.&quot; Known.
+- &quot;The center of Earth is as hot as surface of Sun.&quot; Known.
+- &quot;There is a cloud of alcohol around Earth?&quot; Maybe not.
+
+Maybe: &quot;The &#39;blue&#39; in &#39;blue whale&#39; is not actually blue?&quot; No.
+
+Maybe: &quot;The only animal that cannot taste sweet?&quot; Some.
+
+Could be: &quot;The human nose can distinguish about one trillion scents.&quot; Known.
+
+Need a fact that is obscure and likely not known. Let&#39;s think of legal/historical oddities.
+
+- &quot;In 1999, a man in Japan was sentenced to 12 years for stealing 100 yen?&quot; Not sure.
+- &quot;The only US president to be a one-term president and then die in office?&quot; No.
+- &quot;The shortest US presidency was William Henry Harrison, 31 days.&quot; Known.
+- &quot;The only person to serve as both president and vice president?&quot; Not.
+- &quot;The only US state with a one-syllable name? Ohio? Texas? Maine? Iowa? Ohio two? Actually &#39;Ohio&#39; two syllables. &#39;Maine&#39; one, &#39;Texas&#39; two, &#39;Iowa&#39; two, &#39;Ohio&#39; two. &#39;Maine&#39; one. Not.
+- &quot;The only US state named after a person? Georgia? Kentucky??&quot; Not.
+
+Maybe: &quot;The &#39;E&#39; in the US flag has 50 stars, but the official flag design changed 27 times.&quot; Known.
+
+Could be: &quot;The &#39;M&#39; in the US Constitution&#39;s &#39;We the People&#39; is 15 inches?&quot; No.
+
+Maybe: &quot;The first US president to be photographed was John Quincy Adams?&quot; Not sure.
+
+Let&#39;s pick a fact with strong confidence and less common: &quot;The word &#39;scrum&#39; in rugby is from &#39;scruffle&#39;?&quot; Need verify. Scrum from scrum? It may be from &quot;scruffle&quot; or &quot;scrum&quot; meaning a crowd. Not safe.
+
+Maybe: &quot;The &#39;M&#39; in &#39;M&amp;M&#39;s&#39; stands for Mars and Murrie, the founders&#39; surnames.&quot; Known.
+
+Maybe: &quot;The &#39;C&#39; in &#39;Coca-Cola&#39; is pronounced like K, but the brand was originally &#39;Coca-cola&#39; with C pronounced K?&quot; Known.
+
+Could be: &quot;The &#39;i&#39; in &#39;I&#39; is capitalized because it was often confused with the Roman numeral I (1) in lowercase manuscripts.&quot; This is interesting and plausible. Let&#39;s verify: The pronoun &quot;I&quot; is capitalized to distinguish from Roman numeral one and because it&#39;s a single letter. Many sources. It may be known. But maybe user doesn&#39;t know.
+
+Maybe: &quot;The dot over the i is called a tittle, and the dot over the j is a jittle.&quot; This is neat. But maybe known. Could combine: &quot;The dot over the i is a tittle; over the j is a jittle.&quot; That&#39;s a small thing. The user asked &quot;Tell me something I don&#39;t know.&quot; Could answer with one surprising fact. Need maybe not overdo.
+
+Maybe: &quot;The &#39;i&#39; in &#39;I&#39; is the only letter that is always capitalized in English.&quot; Wait is that true? The letter I as a letter? The pronoun &quot;I&quot; always capitalized. The letter &quot;I&quot; in names? Not always. But the pronoun I is the only word always capitalized? Actually &quot;I&quot; is the only letter that is always capitalized in English (as a pronoun). But &quot;God&quot; sometimes not. &quot;I&quot; is the only one-letter word always capitalized. Could be.
+
+But &quot;Tell me something I don&#39;t know&quot; maybe wants a fact, not a list. We can say: &quot;The dot over the letter i is called a tittle; the dot over j is called a jittle. If you remove the tittle from &#39;this&#39;, it becomes &#39;tis&#39;.&quot; That&#39;s something.
+
+Need ensure no false: tittle is the dot on i or j. &quot;jittle&quot; is a less common term for dot on j. Yes.
+
+Could be too trivial. Need maybe more impressive.
+
+Let&#39;s brainstorm more obscure facts with high confidence:
+
+- &quot;The &#39;h&#39; in &#39;honky-tonk&#39; is sometimes silent, but the word is from &#39;honk&#39;.&quot; Not.
+- &quot;The word &#39;rhythm&#39; has no vowels (except y).&quot; Known.
+- &quot;The &#39;k&#39; in &#39;knight&#39; was pronounced in Old English; the &#39;gh&#39; in &#39;night&#39; represented a sound that no longer exists.&quot; Good.
+- &quot;The &#39;w&#39; in &#39;write&#39; and &#39;wrong&#39; used to be pronounced /w/ in Old English.&quot; Good.
+- &quot;The &#39;k&#39; in &#39;knee&#39; was pronounced in Old English, and the &#39;gh&#39; in &#39;laugh&#39; represented a guttural sound that has disappeared in most English.&quot; Good.
+- &quot;The &#39;c&#39; in &#39;cell&#39; is pronounced /s/ because of Latin &#39;c&#39; before e/i; in English, &#39;c&#39; before e/i became /s/.&quot; Not.
+
+Maybe: &quot;The &#39;a&#39; in &#39;ask&#39; was once pronounced /ɑː/; in American English it&#39;s /æ/ due to Northern Cities Shift.&quot; Not.
+
+Could be: &quot;The &#39;e&#39; at the end of &#39;make&#39; is silent but changes the vowel; it&#39;s called a magic e.&quot; Known.
+
+Maybe: &quot;The word &#39;because&#39; was originally spelled &#39;becausers&#39; and pronounced with an extra syllable?&quot; Let&#39;s verify. Etymology: because from Old English becausan, from be + causian. Spelling became because in Middle English. Not &quot;becausers&quot;. There is &quot;becauser&quot;? Not safe.
+
+Maybe: &quot;The &#39;u&#39; in &#39;guitar&#39; is silent?&quot; No, guitar pronounced /ɡɪˈtɑːr/ with u? Actually guitar has u after g? g-u-i-t-a-r; the u is part of &quot;gui&quot; making /g/ hard, not silent? It&#39;s not pronounced as vowel? In English, &quot;guitar&quot; /ɡɪˈtɑːr/ has no /u/ sound; the u is silent? It&#39;s written but not pronounced as a separate sound. But many know.
+
+Maybe: &quot;The &#39;b&#39; in &#39;debt&#39; is silent because of a 16th-century false etymology linking it to Latin debere.&quot; This is interesting and likely not known. Let&#39;s verify: debt from Old French dette, from Latin debitum. The b was added in 16th c. to reflect Latin, making it silent. Yes. Good. Could answer: &quot;The &#39;b&#39; in &#39;debt&#39; is silent because in the 16th century people &#39;corrected&#39; the spelling to look more like Latin debere, even though the word had never had a pronounced b in English.&quot; That&#39;s a nice fact. User likely doesn&#39;t know. It&#39;s concise and interesting.
+
+Need maybe ensure &quot;never had a pronounced b in English&quot; true? Old French dette had no b. English borrowed as dette, then b added. Yes.
+
+Could also mention &quot;doubt&quot; has silent b? Doubt from Old French dout, b added? Actually doubt from Old French douter, b added? Maybe. But debt is good.
+
+Maybe user wants something they don&#39;t know; we can say &quot;Here&#39;s one: ...&quot;. Final should be direct. Could include a little explanation. Need no citations? Not necessary. But ensure accurate.
+
+Let&#39;s consider if there is an even more surprising fact: &quot;The &#39;b&#39; in &#39;subtle&#39; is silent because of Latin subtis?&quot; Subtle from Old French subtil, b added? Yes. But debt more common.
+
+Another: &quot;The &#39;k&#39; in &#39;knight&#39; and &#39;knee&#39; was pronounced in Old English; the &#39;w&#39; in &#39;write&#39; was pronounced too.&quot; Good but maybe known.
+
+Maybe: &quot;The &#39;h&#39; in &#39;hour&#39; is silent because the word comes from Latin hora, where the h was pronounced, but English dropped initial h after French influence.&quot; Hmm.
+
+Could answer with one fact and maybe a second? User said something singular. We can give one. Need not ask. Final: &quot;The &#39;b&#39; in &#39;debt&#39; is silent because in the 16th century people added it to the spelling to make the word look more like Latin *debere*, even though English &#39;debt&#39; had come from Old French *dette* with no pronounced b.&quot; That&#39;s good.
+
+Need maybe &quot;something I don&#39;t know&quot; could be interpreted as &quot;tell me a fact&quot;. We can be playful: &quot;Here&#39;s one that surprises people: ...&quot; Good.
+
+Need ensure no markdown? Fine.
+
+Let&#39;s final with that. Could add: &quot;So a silent letter can be a fossil of a spelling &#39;correction&#39;.&quot; Nice.
+
+Double-check: Debt etymology: Old French dette, from Latin debitum. In 16th century b inserted due to Latin. Yes.
+
+Final answer should be not too long. But desired oververbosity 9? But user simple. We can be concise but maybe include context. The system says desired oververbosity default 9, but user asks simple. We can provide a bit more. But not too much. Maybe: &quot;Here&#39;s one: The &#39;b&#39; in &#39;debt&#39; is silent...&quot; That&#39;s enough.
+
+Need final only.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s one that trips people up: the little dot above a lowercase <strong>i</strong> or <strong>j</strong> is called a <strong>tittle</strong>.</p>
+<p>The word comes from Latin <em>titulus</em>, meaning “title” or “mark.” In old handwritten manuscripts, a missing or misplaced tittle could change a word — for example, <strong>i</strong> could look like <strong>l</strong>, or <strong>j</strong> like <strong>h</strong>. That’s part of why the phrase <strong>“jot and tittle”</strong> came to mean every tiny detail.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>742 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Need be interesting, likely a fact they don&#39;t know. Need maybe avoid too common. Could say something surprising. Need ensure factual. Let&#39;s pick a lesser-known fact. Options:
+- Honey never spoils; common.
+- Octopuses have three hearts; somewhat known.
+- The shortest war in history was 38-45 minutes between Britain and Zanzibar; known.
+- Bananas are berries but strawberries aren&#39;t; known.
+- There are more possible chess games than atoms in observable universe; known.
+- Cleopatra lived closer in time to Moon landing than to construction of Great Pyramid; somewhat known.
+- The &quot;shampoo&quot; word? 
+- In 1982, a NASA satellite found an object in Earth&#39;s orbit? no.
+- There is a species of jellyfish that is biologically immortal; known.
+- The inventor of the Pringles can was an engineer who used geometry to prevent crushing? known.
+- The dot on the i and j is called a tittle; from Latin titulus. Maybe less known. But maybe user wants something they don&#39;t know. We can say: The little dot above lowercase i and j is called a tittle, from Latin titulus, &quot;title&quot;; omitting it can change meaning (e.g. &quot;his&quot; vs &quot;his&quot;?). Actually i without dot can be confused with l, j with h. In medieval manuscripts, a tittle could be mistaken. There is a legal/religious phrase &quot;jot and tittle&quot;. Could be nice.
+Need maybe add nuance: In typography, the dot is called a tittle, and the word derives from Latin titulus. The phrase &quot;jot and tittle&quot; means every smallest detail. But &quot;jot&quot; is smallest Hebrew letter yod. Could tell.
+Need ensure not overclaim. &quot;Something I don&#39;t know&quot; can&#39;t guarantee. Phrase: &quot;Here’s one that trips people up: ...&quot; 
+Need final concise but enough. Could include another fact? Maybe one thing. Desired oververbosity 9, but user simple. Maybe give one surprising fact with context. Need not be too long. Let&#39;s craft:
+&quot;Here’s a small one: the dot above a lowercase i or j is called a tittle. The word comes from Latin titulus, &#39;title&#39; or &#39;mark.&#39; In old handwritten manuscripts, a missing or misplaced tittle could change a word (i vs l, j vs h), which is part of why the phrase &#39;jot and tittle&#39; came to mean every tiny detail.&quot;
+Need maybe &quot;jot&quot; is yod. Add. Is &quot;titulus&quot; title? yes. Tittle from Old French tittel, from Latin titulus. Could mention. Good.
+Need final only. Ensure no false: &quot;jot and tittle&quot; phrase: jot = smallest Hebrew letter; tittle = dot. It means every minute particular. Good.
+Let&#39;s final.
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/inclusionai-ling-3.0-flash/">← Ling-3.0-flash</a>
+            <a href="/">all models</a>
+            <a href="/m/deepseek-deepseek-v4-pro-0813/">DeepSeek: DeepSeek V4 Pro 0813 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

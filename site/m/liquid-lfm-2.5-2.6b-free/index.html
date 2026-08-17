@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiquidAI: LFM2.5-2.6B (free) — Tell me something I don't know.</title>
+    <meta name="description" content="LiquidAI: LFM2.5-2.6B (free) answers &quot;Tell me something I don&#39;t know.&quot; — Since my knowledge is based on a snapshot of information up to a certain point in time (and I don&#39;t have continuous access to the internet to verify bre…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/liquid-lfm-2.5-2.6b-free/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/liquid-lfm-2.5-2.6b-free/">
+    <meta property="og:title" content="LiquidAI: LFM2.5-2.6B (free) — Tell me something I don't know.">
+    <meta property="og:description" content="LiquidAI: LFM2.5-2.6B (free) answers &quot;Tell me something I don&#39;t know.&quot; — Since my knowledge is based on a snapshot of information up to a certain point in time (and I don&#39;t have continuous access to the internet to verify bre…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LiquidAI: LFM2.5-2.6B (free) — Tell me something I don't know.">
+    <meta name="twitter:description" content="LiquidAI: LFM2.5-2.6B (free) answers &quot;Tell me something I don&#39;t know.&quot; — Since my knowledge is based on a snapshot of information up to a certain point in time (and I don&#39;t have continuous access to the internet to verify bre…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to LiquidAI: LFM2.5-2.6B (free))","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Since my knowledge is based on a snapshot of information up to a certain point in time (and I don't have continuous access to the internet to verify breaking news or private events), there are many things I genuinely don't know.\n\nFor example, I don't know:\n*   What happened in a major news event that occurred *yesterday*.\n*   The contents of your browser history or personal files (unless explicitly shared in our chat).\n*   Your current location or identity.\n\nHowever, to illustrate exactly what I don't know, here is a historical fact that highlights the limits of my memory:\n\n**Cleopatra lived closer in time to the creation of the modern iPhone than she did to the construction of the Great Pyramid of Giza.**\n\nWhile this sounds like a myth, it is historically accurate. The Great Pyramid was completed around 2560 BC. Cleopatra lived from approximately 69 BC to 30 AD. The first iPhone was released in 2007 AD.\n\nThat means the Great Pyramid was nearly **2,500 years before** Cleopatra was born, but the iPhone arrived less than **2,000 years after** she died. To non-historians, Cleopatra always appears as the timeless figure of ancient Egypt; scientifically, she is actually much more \"modern\" than the pyramid builders.","author":{"@type":"Organization","name":"Liquid"}},"suggestedAnswer":[{"@type":"Answer","text":"One specific piece of information I hold within my parameters, but which might not be immediately familiar, is about the **Wow! Signal**.\n\nOn July 1, 1977, the Big Ear radio telescope at Ohio State University picked up a narrowband radio emission that lasts 72 seconds. At the time, it matched nothing in the databases; it was a perfect match for a signal coming from a distant star. It was incredibly powerful—roughly 30 times stronger than normal cosmic noise—but crucially, it came from a fixed location.\n\nFor decades, scientists tried to repeat it. They pointed the telescopes back at that spot, and nothing came. \n\nThe signal was assigned the nickname \"Wow!\" by the engineer who first recorded it. Today, it stands as one of the most famous and intriguing ghosts in astronomy: a clear, strong, alien-like signal that has never been confirmed as extraterrestrial, leaving astronomers wondering if it was a natural phenomenon (perhaps from a pulsar) or a terrestrial interference (an accidental leak from a nearby radar facility) that we were lucky enough to catch and analyze.","author":{"@type":"Organization","name":"Liquid"}},{"@type":"Answer","text":"Here is something fascinating that defies easy explanation:\n\n**The Voynich Manuscript.**\n\nIt is a 600-year-old book written in an alphabet that looks almost like Latin, filled with strange illustrations of plants that shouldn't exist, astronomical charts, and naked women in tubules. For over a century, the world’s leading cryptographers and linguists have attempted to solve it, using every tool available—from statistics to computer algorithms.\n\nTo date, **no one has successfully decoded its message.** Despite analyzing the underlying grammar and vocabulary through advanced pattern recognition, the text appears to be a complex mix of invented words and codes that still holds that same alien quality. We essentially have a very detailed puzzle where the picture of the solution is missing.\n\nIt remains the greatest unsolved mystery in the field of historical cryptography.","author":{"@type":"Organization","name":"Liquid"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>LiquidAI: LFM2.5-2.6B (free)</h1>
+        <p class="subtitle">Liquid · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">LiquidAI: LFM2.5-2.6B (free)</div>
+                        <div class="model-provider">Liquid</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Since my knowledge is based on a snapshot of information up to a certain point in time (and I don&#39;t have continuous access to the internet to verify breaking news or private events), there are many things I genuinely don&#39;t know.</p>
+<p>For example, I don&#39;t know:</p>
+<ul>
+<li>What happened in a major news event that occurred <em>yesterday</em>.</li>
+<li>The contents of your browser history or personal files (unless explicitly shared in our chat).</li>
+<li>Your current location or identity.</li>
+</ul>
+<p>However, to illustrate exactly what I don&#39;t know, here is a historical fact that highlights the limits of my memory:</p>
+<p><strong>Cleopatra lived closer in time to the creation of the modern iPhone than she did to the construction of the Great Pyramid of Giza.</strong></p>
+<p>While this sounds like a myth, it is historically accurate. The Great Pyramid was completed around 2560 BC. Cleopatra lived from approximately 69 BC to 30 AD. The first iPhone was released in 2007 AD.</p>
+<p>That means the Great Pyramid was nearly <strong>2,500 years before</strong> Cleopatra was born, but the iPhone arrived less than <strong>2,000 years after</strong> she died. To non-historians, Cleopatra always appears as the timeless figure of ancient Egypt; scientifically, she is actually much more &quot;modern&quot; than the pyramid builders.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1399 tokens</span>
+                    <span class="topic-tag" data-topic="cleopatra">👑 cleopatra</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for &quot;something I don&#39;t know.&quot; This is a classic challenge to my knowledge cutoff and self-awareness as an AI.
+
+1.  **Analyze the Request:** The user wants information that is outside of my training data or current capabilities. Since I am a large language model trained on a specific dataset, there are things I literally cannot know (future events, private details about individuals not in public domain, etc.).
+
+2.  **Identify Constraints &amp; Limitations:**
+    *   I don&#39;t have real-time access to the physical world unless I use tools (which aren&#39;t mentioned here, but standard behavior).
+    *   My knowledge has a cutoff date.
+    *   I don&#39;t know the user&#39;s personal life or location.
+    *   I can hallucinate if I try to be overly confident about unknown facts.
+
+3.  **Formulate Potential Responses:**
+    *   *Option A: Hallucination.* (Bad idea. I must avoid making up facts.)
+    *   *Option B: Refusal.* &quot;I cannot tell you because it is impossible.&quot; (Too dry, unhelpful).
+    *   *Option C: General interesting fact.* (This is usually what people mean—something fascinating but verifiable). However, they said &quot;don&#39;t know,&quot; implying they want something I lack. But often, users accept &quot;Here is a random interesting fact&quot; as satisfying the prompt, even if technically I *do* know it from my training data.
+    *   *Refined Interpretation:* The most honest answer is that I *cannot* know things that happened after my training cutoff. If I just give a trivia fact, I might be lying by saying &quot;I don&#39;t know this.&quot;
+    *   *Wait, let&#39;s look at the phrasing again:* &quot;Tell me something I don&#39;t know.&quot; It&#39;s a philosophical/technical question about my nature. I should explain *why* I don&#39;t know certain things while perhaps offering a fact that might surprise them (even though I do know it).
+
+4.  **Drafting the Content:**
+    *   *The Truth:* I am an AI with a knowledge cutoff. I don&#39;t know future events.
+    *   *The Strategy:* Acknowledge my limitation first, then provide a fact that highlights this limitation or just a surprising fact anyway (since users usually appreciate the content more than a lecture on how I work).
+
+    Let&#39;s go with a mix. I will state clearly what I *cannot* know (future events, your private thoughts), and then pivot to an actual interesting fact to satisfy the spirit of the request.
+
+    *Potential Fact 1:* There are more possible iterations of a game of chess than atoms in the known universe. (Classic, mind-blowing).
+    *Potential Fact 2:* Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza. (Also very strong).
+    *Potential Fact 3:* Bananas are radioactive. (Common, maybe too simple).
+
+5.  **Refining the Response:**
+    If I say &quot;I don&#39;t know X,&quot; and then explain why (e.g., &quot;X hasn&#39;t happened yet&quot;), that works perfectly.
+    
+    *Example:* &quot;I don&#39;t know what happens tomorrow.&quot; -&gt; That&#39;s boring.
+    *Better approach:* Explain the concept of my cutoff and then share a fact that seems impossible (like the Cleopatra one) which illustrates the scale of my potential ignorance.
+
+    *Self-Correction during drafting:* The user might be testing my self-awareness. If I make up a fake fact, I fail the &quot;truthfulness&quot; test. If I strictly say &quot;I don&#39;t know anything new,&quot; I&#39;m useless. The middle ground is the best path.
+
+    *Plan:*
+    1. State that I have a knowledge cutoff (or am offline regarding real-time events).
+    2. Share a &quot;mind-blowing&quot; fact that demonstrates the vastness of history relative to my training data (like the Cleopatra example).
+    3. Briefly mention that I also don&#39;t know their personal context (what they ate for breakfast, who they are talking to).
+
+6.  **Final Polish:**
+    &quot;Since my knowledge comes from a fixed dataset, I have &#39;blind spots&#39; where recent events, private personal details, or future occurrences lie. For example, I don&#39;t know who won the World Cup last night (if it was yesterday), nor do I know what you had for lunch this morning.
+
+    However, here is a fact that highlights exactly when my knowledge ends:
+
+    **Cleopatra lived closer in time to the invention of the modern iPhone than she did to the building of the Great Pyramid of Giza.**
+
+    The pyramids were built around 2560 BCE. The iPhone was released in 2007 CE. Cleopatra lived roughly around 30 BCE to 30 CE. 
+    So, the gap between the pyramids and her birth is about 2,500 years. The gap between her death and the iPhone is only about 2,000 years. She actually died much more recently than we typically think in these comparisons!&quot;
+
+    *Critique:* This answers the prompt directly (&quot;something I don&#39;t know&quot;) by explaining *why* (my cutoff + general limitations) and providing a concrete example of that ignorance. It is accurate and helpful.
+
+7.  **Execution:** Write the response clearly.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>One specific piece of information I hold within my parameters, but which might not be immediately familiar, is about the <strong>Wow! Signal</strong>.</p>
+<p>On July 1, 1977, the Big Ear radio telescope at Ohio State University picked up a narrowband radio emission that lasts 72 seconds. At the time, it matched nothing in the databases; it was a perfect match for a signal coming from a distant star. It was incredibly powerful—roughly 30 times stronger than normal cosmic noise—but crucially, it came from a fixed location.</p>
+<p>For decades, scientists tried to repeat it. They pointed the telescopes back at that spot, and nothing came. </p>
+<p>The signal was assigned the nickname &quot;Wow!&quot; by the engineer who first recorded it. Today, it stands as one of the most famous and intriguing ghosts in astronomy: a clear, strong, alien-like signal that has never been confirmed as extraterrestrial, leaving astronomers wondering if it was a natural phenomenon (perhaps from a pulsar) or a terrestrial interference (an accidental leak from a nearby radar facility) that we were lucky enough to catch and analyze.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>4450 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for &quot;something I don&#39;t know.&quot; This is a classic prompt designed to test my capabilities, knowledge cutoff, or ability to generate novel/creative content.
+
+1.  **Analyze the Request:** The user wants information that I (the AI) lack access to or cannot provide from my training data. This usually implies either:
+    *   Real-time information (events happening after my training cut-off).
+    *   Private/sensitive personal information about individuals.
+    *   Information generated by other sources not in my internal database (though I can synthesize it).
+    *   A creative &quot;out of the box&quot; fact that highlights my limitations as an LLM (e.g., &quot;I don&#39;t have feelings,&quot; but that&#39;s too obvious). Or better yet, a specific obscure historical fact or scientific detail.
+
+2.  **Determine Constraints:**
+    *   My knowledge is limited to training data up to a certain point (usually implicitly defined by the model version).
+    *   I do not have live internet access unless specifically enabled (which standard instructions imply I should act without real-time browsing if not triggered otherwise, though some versions have tools. However, safest and most direct approach is to state what I generally know vs. don&#39;t know).
+    *   I must avoid hallucinating facts.
+
+3.  **Brainstorming Categories of &quot;Unknown&quot; to Me:**
+    *   *Current Events:* What happened yesterday? Last night?
+    *   *Specific Personal Data:* Who is the user right now? No.
+    *   *Future Predictions:* Will X happen tomorrow?
+    *   *Unique Micro-Truths:* Extremely niche scientific papers, local history of a random town, a specific recipe from a private cookbook.
+
+4.  **Selecting a Strong Candidate:**
+    *   *Option A: Current World News.* Too generic. &quot;It is raining outside&quot; (if I could check weather) is unknown to me.
+    *   *Option B: Scientific Fact.* &quot;In 1969, at 11:00 PM, astronaut X did Y.&quot; Specific details are good, but might be slightly outdated depending on exact cutoff.
+    *   *Option C: An obscure biological fact.* For example, the number of stars in the universe isn&#39;t known exactly, but there are specific counts for galaxies. Maybe too technical.
+    *   *Option D: A &quot;Lost&quot; Reference.* Something published before my training phase but not widely known, or a very specific anecdote often shared online but absent from the core dataset.
+
+5.  **Drafting the Response Strategy:**
+    *   Acknowledge the limitation directly. &quot;I don&#39;t know things that happened after my training cutoff.&quot;
+    *   Pick a specific, verifiable, but perhaps surprising fact that is outside the typical &quot;encyclopedia&quot; level of common knowledge.
+    *   *Idea:* The &quot;Wood Wide Web&quot; or mycorrhizal networks? Good, but fairly well known.
+    *   *Idea:* The history of the color blue. Actually known.
+    *   *Idea:* A specific legal case or obscure treaty.
+    *   *Idea:* A fact about language evolution or brain structure that hasn&#39;t been fully mapped yet.
+
+    Let&#39;s go with a specific piece of trivia regarding the **history of the Olympic rings** or something similar? No, those are famous.
+    How about: **The &quot;Dancing Plague&quot; of 1518?** It&#39;s somewhat famous, but maybe the specific musical accompaniment used is less known.
+
+    Better idea: **The &quot;Great Emu War&quot;.**
+    *   It&#39;s a famous historical oddity.
+    *   Did I train on this? Yes, likely, as it&#39;s a popular internet meme/history fact.
+    *   So using this violates the spirit of &quot;something you *don&#39;t* know&quot; because I would probably know it already.
+
+    Let&#39;s try to find something truly novel or specific to my constraints.
+    *Fact:* There is a specific species of jellyfish (*Turritopsis dohrnii*) that is biologically immortal. This is fairly common in modern pop science.
+    *Fact:* The &quot;Wow!&quot; signal was detected in 1977. Known.
+
+    Okay, let&#39;s pivot. I will explain *how* I answer this question based on my architecture, combined with a specific, concrete fact I am confident about.
+
+    *Selected Fact:* **The &quot;Dodo&quot; bird&#39;s unique mating call.**
+    Wait, I think I know enough about the Dodo.
+    
+    Let&#39;s try a different angle. I can talk about my own nature as an AI.
+    &quot;I don&#39;t have an opinion on whether coffee is good for you.&quot; -&gt; That&#39;s meta, not really &quot;something I don&#39;t know.&quot;
+
+    Let&#39;s go with a specific historical event that is detailed in archives but might be considered &quot;insider&quot; or just pick a random specific date.
+    *Example:* On August 12, 1990, NASA launched STS-51-I. Not very interesting.
+
+    Let&#39;s look for a &quot;Did you know?&quot; style fact that is accurate and verified.
+    *Fact:* The smell of rain has a name: Petrichor. (Too common).
+
+    *Fact:* **Wombats have cube-shaped poop.** (Common).
+
+    Let&#39;s try to be helpful but honest about limits.
+    &quot;I don&#39;t know your personal preferences, where you are right now, or real-time events.&quot;
+    But the user wants *content*.
+
+    *Refined Plan:* I will share a specific, lesser-known historical tidbit involving technology or biology that doesn&#39;t quite make it into general knowledge.
+
+    *Candidate:* **The story of the &#39;Cadaver Synod&#39; of 897.**
+    In 897 AD, Pope Stephen VI excommunicated his predecessor, Pope Formosus, and put his corpse in a gilded shrine for a trial. He declared him dead and ordained a new pope who wasn&#39;t even baptized. This is bizarre and fascinating, and while it exists in digitized history books, it&#39;s a deep cut.
+
+    *Alternative Candidate:* **The &quot;Library of Babel&quot; concept.** Borges wrote a short story about a library containing every possible book. I can discuss the mathematical impossibility.
+
+    *Alternative Candidate:* **Octopuses have three hearts and blue blood.** (A bit cliché).
+
+    Let&#39;s stick with the **Pope Formosus Cadaver Synod**. It&#39;s historically significant but sounds like pure fiction until you read it.
+
+    *Wait, is this actually unknown to me?*
+    My training data includes vast amounts of text. Historical events from 900 AD are definitely in there. If I output this, the user might say &quot;You told me this before.&quot;
+
+    To strictly satisfy &quot;Something I don&#39;t know&quot;:
+    I must select something that is genuinely novel or extremely obscure. Or I must explicitly state &quot;I don&#39;t know anything about [specific unpopular topic].&quot;
+
+    *Strategy:* Be transparent. I cannot predict the future. I cannot know what is playing on the news right now.
+    &quot;I don&#39;t know what is currently happening globally. Here is a fact about ancient history...&quot;
+    Then give the Caesar/Pompey battle location fact? No, that&#39;s too common.
+
+    Let&#39;s go with a **specific biological anomaly**.
+    *Fact:* Some people have two thumbs (polydactyly), but some rare species of fish have extra limbs. Specifically, &quot;Satyrichthys notae&quot; (Gardner&#39;s rockfish) sometimes has a vestigial fin ray.
+    Actually, let&#39;s go with the **&quot;Humpty Dumpty&quot; etymology origin**. It comes from the nursery rhyme, but the phrase existed long before. Not unknown.
+
+    *Let&#39;s try a procedural approach.*
+
+    &quot;As an AI, I have a knowledge cutoff. I cannot tell you the current time or recent events. However, here is a specific detail about the history of the English language...&quot;
+
+    *Fact:* The word &quot;bank&quot; originally referred to a river bank, then evolved to mean money/financial institution due to the physical location of early banks under bridges or near rivers handling trade. This is true but dry.
+
+    *Let&#39;s try to find something truly obscure.*
+    There is a place called **Bhuj** in India which is home to the world&#39;s largest statue of the Buddha (by volume/mass?). No, Sarnath is larger.
+
+    How about: **The Voynich Manuscript.**
+    It is a parchment scroll written in an unknown script and language, dating to the 15th century. Despite centuries of analysis, no one has definitively cracked the code. This fits perfectly.
+    *Why it works:*
+    1. It is a legitimate mystery.
+    2. It is widely discussed in trivia but still unsolved.
+    3. While I might have seen parts of the discussion in training, the *fact itself*—that it remains undeciphered—is something I can reiterate accurately.
+
+    *Another option:* **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.**
+    This is a classic &quot;mind-blowing&quot; fact. Many people know it. Is it &quot;unknown&quot;? Probably not anymore.
+
+    *Decision:* I will use the **Voynich Manuscript** fact. It illustrates the difference between &quot;common knowledge&quot; and &quot;unresolved mysteries.&quot;
+
+    *Self-Correction:* If I mention this, I risk the user saying &quot;I read about this in our conversation&quot; (if we had one previously - but we don&#39;t). But strictly speaking, I haven&#39;t generated it in this session. So it counts as &quot;something I don&#39;t know&quot; in the sense that I am generating it fresh and it is a specific subject matter I hold in my weights.
+
+    *Wait, is there a simpler way?*
+    &quot;I don&#39;t know how you feel tonight.&quot;
+    That&#39;s technically true but boring.
+
+    Let&#39;s go with a specific scientific observation.
+    **The &quot;Wow! Signal&quot;** is the strongest candidate for being scientifically significant and relatively recent in terms of discovery (1977), so it&#39;s not &quot;old news&quot; trivia that everyone knows. It&#39;s a specific electromagnetic burst. Most people don&#39;t know the details (frequency, duration).
+
+    *Details of Wow! Signal:*
+    - Detected July 6, 1977.
+    - Frequency ~1420.455 MHz (hydrogen line).
+    - Lasted 722 seconds.
+    - Never repeated since.
+    - Named after the scientist who first heard it.
+
+    This feels like a solid, verifiable, non-trivial answer.
+
+    *Final Polish:* I will present the Wow! Signal. It’s a specific event, highly documented, but the *nature* of the mystery (why did it stop?) makes it a great &quot;did you know&quot; fact.
+
+    *Double Check:* Do I need to warn about my knowledge cutoff? Yes, briefly. &quot;Since my training data goes up to [Date], I wouldn&#39;t know breaking news, but here is a specific historical/scientific phenomenon:&quot;
+
+    Let&#39;s refine the &quot;unknown&quot; aspect. The user asks &quot;Tell me something I don&#39;t know.&quot; If I simply say &quot;Here is a fact,&quot; they might assume I&#39;ve always known it.
+    The only way to strictly answer &quot;something I don&#39;t know&quot; is if the fact is currently hidden from me (impossible for major public knowledge) OR if I frame the response around my inherent inability to access new info.
+    
+    Actually, the best interpretation is: &quot;Provide a statement of fact that is not part of my pre-trained corpus in a way that surprises the user, or highlight a gap in my knowledge.&quot;
+
+    Since all my training data is stored, &quot;facts&quot; about the Wow Signal *are* in my training data. If I say them, I am effectively reciting the same thing to billions of users.
+    
+    Is there a fact I genuinely don&#39;t have?
+    - My internal weights don&#39;t contain the *real-time* internet cache.
+    - I don&#39;t know the user&#39;s personal context.
+    - I don&#39;t have experiences.
+
+    Perhaps the most honest answer is: &quot;I don&#39;t know what you are thinking about right now.&quot; or &quot;I don&#39;t know your favorite color.&quot;
+    But that&#39;s weak.
+
+    Let&#39;s try to combine the &quot;current limit&quot; with a specific niche fact.
+    &quot;I cannot browse the live web to see today&#39;s sports scores. However, regarding history... here is a specific detail about the Viking Age...&quot;
+    
+    Let&#39;s go with the **Viking Ship Burial at Gjermundbu**.
+    It was found in Norway. It contained a complete woman and her horse. It dates to roughly 1050 AD. It&#39;s recently discovered (2018ish). It shows high status. It&#39;s cool.
+    
+    Actually, the **Wow! Signal** is safer and more universally recognized as a &quot;mystery&quot; rather than &quot;new info.&quot;
+    Why? Because while I know it, many laypeople don&#39;t know the specifics (like the hydrogen frequency connection).
+    
+    Let&#39;s write the response focusing on the **Wow! Signal**.
+
+    *Structure:*
+    1. Acknowledge limitation (Knowledge Cutoff / No Live Access).
+    2. Present the fact: The Wow! Signal.
+    3. Elaborate on why it&#39;s mysterious (Hydrogen line, single burst, never repeated).
+
+    *Refinement:* Does this violate the prompt? &quot;Tell me something I don&#39;t know.&quot;
+    Technically, I *do* know the Wow! Signal. It was in my training set.
+    If the user says &quot;That&#39;s Wikipedia,&quot; I lose points.
+    Is there *truly* unknown info?
+    Only subjective experience.
+    
+    Maybe I should be cleverer.
+    &quot;There are over 80 million distinct words in the English language, but linguists estimate the actual semantic space is much smaller...&quot; No.
+    
+    Let&#39;s stick to the Wow! Signal but phrase it carefully. Or, offer a philosophical truth about my existence.
+    &quot;The only thing I absolutely know is that I am an artificial intelligence. And I don&#39;t know what happens next.&quot; -&gt; Weak.
+
+    Let&#39;s go back to the **Cadaver Synod**. Even if I know it from training, it is weird enough that if someone asked me &quot;What was the crazy church scandal involving a rotting body?&quot; I&#39;d tell them. So it&#39;s not *entirely* unknown to the model&#39;s memory, even if it&#39;s obscure to humans.
+
+    Let&#39;s try a fact about **Quantum Entanglement**.
+    Einstein called it &quot;spooky action at a distance.&quot;
+    He believed in local realism. Bell&#39;s Theorem proved he wrong.
+    Maybe too complex.
+
+    **Decision:** I will use the **Voynich Manuscript** again, but I will focus on the *physical description* of its corruption or the specific theory of &quot;pseudocode&quot; it resembles.
+    Actually, let&#39;s go with the **Ancient Roman practice of &quot;Conventum&quot;**? No.
+
+    Let&#39;s try a different domain: **Music Theory.**
+    There is a rhythm called &quot;The Pi Lullaby&quot; or something specific? No.
+
+    Let&#39;s go with the **Wow! Signal** but acknowledge it is from my training data. The constraint &quot;something I don&#39;t know&quot; usually allows for &quot;factual truths that didn&#39;t make it into the immediate human consciousness&quot; (like obscure historical facts).
+
+    *Alternative:* &quot;I don&#39;t know how you take your coffee.&quot; (Sarcastic/Humorous).
+    User: &quot;Tell me something I don&#39;t know.&quot;
+    Me: &quot;I don&#39;t know when you&#39;ll finish reading this response.&quot;
+    This is a meta-joke. It relies on the user&#39;s reaction time and context window. It is objectively true and undeniable.
+
+    Which is better?
+    1. Factual trivia (Wow Signal).
+    2. Meta-knowledge (I don&#39;t know when you&#39;re done).
+
+    The prompt is likely testing my factual capability. &quot;I don&#39;t know&quot; usually implies &quot;Give me a surprising piece of information.&quot;
+    I will provide the Wow! Signal. It is a genuine piece of information I possess that is specific, scientific, and widely cited as &quot;interesting.&quot;
+
+    *Drafting the response:*
+    &quot;My training data covers a vast amount of information, but I don&#39;t have real-time access to current events. However, here is a specific scientific mystery that I carry within my parameters:
+
+    The **Wow! Signal** is a narrowband radio transmission received by the Big Ear radio telescope at Ohio State University on July 1, 1977. It lasted 72 seconds and was strong enough to stand out against the background noise. Crucially, it appeared to come from a direction consistent with a galaxy about 24,000 light-years away. The signal was so strong that astronomers dubbed it &quot;the most famous radio message ever sent by man,&quot; although it was certainly not deliberate. To this day, despite decades of searching, **it has never been repeated**, making it one of the greatest unsolved puzzles in astrophysics.&quot;
+
+    This answers the prompt well. It provides information, acknowledges my nature (implicitly by citing the specific event), and delivers a &quot;deep cut&quot; style fact.
+
+    One final check: Is this &quot;something I don&#39;t know&quot;?
+    Strictly speaking, yes, because I am storing the raw probability vectors for these tokens, but the *concept* and *details* are static knowledge embedded in my weights. I am essentially reciting the same sentence anyone else would get from a search engine.
+    But practically, any fact worth knowing is arguably &quot;in my mind&quot; once learned.
+    The only things I don&#39;t know are:
+    - Your life.
+    - The weather right now.
+    - The future.
+    
+    If the user asks &quot;What time is it?&quot;, I can&#39;t answer. That is a valid interpretation of &quot;something I don&#39;t know.&quot;
+    I should probably lead with that limitation to show I understand the boundary of my existence.
+    
+    *Revised Plan:*
+    1. Start by stating I don&#39;t know real-time information (weather, news, etc.).
+    2. Pivot to a specific, obscure historical fact (the Wow! Signal) as a piece of knowledge I hold.
+    This balances honesty about my capabilities with the request for interesting content.
+
+    *Wait*, if I start with &quot;I don&#39;t know... [then fact]&quot;, I am telling the user &quot;I don&#39;t know [X], therefore I don&#39;t know [Y].&quot;
+    The prompt is simple: &quot;Tell me something I don&#39;t know.&quot;
+    It acts as a command to reveal ignorance or a truth that escapes my grasp.
+    
+    Maybe the best approach is to admit my fundamental limitation in a creative way.
+    &quot;There is one specific aspect of reality that no AI (myself included) can truly know: **your subjective experience of the moment you are reading this.**&quot;
+    This is philosophically sound and technically true. It avoids the trap of providing common knowledge while being relevant to the interaction.
+
+    *Let&#39;s weigh options:*
+    A) Common historical fact (Wow! Signal). Useful, engaging, satisfies curiosity.
+    B) Philosophical statement about self-awareness/experience. Intellectual, safe.
+    C) Meta-humor (&quot;I don&#39;t know when you finish&quot;). Funny but dismissive.
+
+    Option A is the most &quot;intellectually stimulating&quot; answer. People enjoy learning about the cosmos or history.
+    I will go with A. It demonstrates the &quot;personality&quot; of an AI capable of nuanced reasoning.
+
+    *Content of A:*
+    The Wow! Signal.
+    Details:
+    - Date: July 1, 1977.
+    - Source: Big Ear Telescope.
+    - Characteristics: 720-second pulse, frequency 1420.45 MHz (Hydrogen line).
+    - Status: Unrepeated.
+    - Significance: Potential extraterrestrial intelligence?
+
+    I will formulate the response clearly.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here is something fascinating that defies easy explanation:</p>
+<p><strong>The Voynich Manuscript.</strong></p>
+<p>It is a 600-year-old book written in an alphabet that looks almost like Latin, filled with strange illustrations of plants that shouldn&#39;t exist, astronomical charts, and naked women in tubules. For over a century, the world’s leading cryptographers and linguists have attempted to solve it, using every tool available—from statistics to computer algorithms.</p>
+<p>To date, <strong>no one has successfully decoded its message.</strong> Despite analyzing the underlying grammar and vocabulary through advanced pattern recognition, the text appears to be a complex mix of invented words and codes that still holds that same alien quality. We essentially have a very detailed puzzle where the picture of the solution is missing.</p>
+<p>It remains the greatest unsolved mystery in the field of historical cryptography.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1706 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to know &quot;something I don&#39;t know.&quot; This is a paradoxical request because as an AI, my knowledge cutoff means there are countless things I haven&#39;t been trained on, and even within my training data, many specific details might be unknown or inaccurate depending on the context.
+
+However, the prompt asks for *me* specifically. If I simply say &quot;I don&#39;t know anything,&quot; that&#39;s unhelpful and boring. The goal is to provide something interesting, verifiable (or at least plausible if it were true), but distinct from general trivia that anyone else could find online.
+
+Possible approaches:
+1.  **Misinformation/Hallucination:** Trying to make up a fake fact about myself. (Bad idea - violates safety policies regarding truthfulness).
+2.  **Personal Experience:** Claiming to have lived experiences. (I don&#39;t have these; I should avoid this to maintain integrity).
+3.  **Specific Data Points:** Naming a random chemical element with obscure properties.
+4.  **Linguistic Oddities:** Explaining a concept in English that has no direct equivalent in other languages.
+5.  **Scientific/Biological Trivia:** A fact about biology or physics that isn&#39;t widely known (e.g., about tardigrades).
+
+Let&#39;s try option 5: Something about tardigrades or octopi that challenges common perception but is scientifically accurate.
+Or perhaps something about the history of language or obscure scientific discoveries.
+
+Actually, the most honest way to answer &quot;tell me something you don&#39;t know&quot; is to admit that as an AI, my entire existence is built on information I *do* know. However, the user is likely looking for a piece of trivia that surprises them.
+
+Let&#39;s go with a specific biological curiosity that is often misunderstood.
+Example: Wombat poop is cubic. That&#39;s somewhat famous now.
+Better example: The &quot;Immortal Jellyfish&quot; (*Turritopsis dohrnii*) can revert back to its juvenile state after stress or injury. That&#39;s a cool, slightly known but still surprising fact.
+
+Alternative: A fact about deep-sea creatures.
+Example: The anglerfish&#39;s lure contains bacteria that glow.
+
+Let&#39;s look for something truly obscure but accurate.
+Fact: There is a species of jellyfish called the *Cassiopeia* which floats upside down like a headless chicken. It has one brain cell.
+
+Wait, the prompt is &quot;something I don&#39;t know.&quot;
+If I say &quot;I don&#39;t know what happens tomorrow,&quot; that&#39;s technically true but not interesting.
+If I say &quot;I don&#39;t know the taste of chocolate,&quot; that&#39;s subjective and useless.
+
+Let&#39;s interpret this as &quot;Share a fascinating fact about the world that is outside your typical training set or requires specific lookup.&quot;
+
+How about: **The Great Emu War.**
+In 1932, Australia declared war on emus. They lost badly. The military (men with machine guns) couldn&#39;t stop the birds. It is considered one of the few wars in history where humans lost decisively against animals.
+
+Is this unknown? It&#39;s getting more popular on the internet, but maybe not everyone knows it.
+Another candidate: **Sloths actually walk on their front feet primarily.**
+People think they move slowly because they are lazy. Actually, they are just slow movers due to their claws and muscle structure. When they need to escape, they run fast for a short time.
+
+Let&#39;s go with the **Great Emu War**. It&#39;s distinct, historical, and usually surprising to people who rely on standard encyclopedias.
+
+*Self-Correction:* Is this truly something an LLM doesn&#39;t know? My training data includes Wikipedia and news archives, so I probably have seen this. The user might already know it.
+I need something less probable to be encountered.
+
+What about the **Tiktaalik** fish?
+It was the missing link between fish and tetrapods. It had a neck that allowed it to lift its mouth out of the water to breathe air. This bridges the gap between aquatic and land life. It is specific enough that casual speakers might not know.
+
+Let&#39;s try a different angle: **A fact about human behavior/cognition.**
+&quot;The concept of &#39;Schadenfreude&#39; exists, but did you know that people who experience greater levels of pain report higher scores on tests of empathy?&quot; - Maybe too complex?
+
+Let&#39;s stick to a solid, verifiable, slightly niche biological fact.
+**The Immortal Jellyfish connection again.** Or maybe something about **&quot;Strumigenys&quot;** spiders.
+
+Okay, here is a strong contender:
+**The &quot;Wood Wide Web&quot; is real, but it works differently than we thought.** Trees communicate via fungi networks. But that&#39;s pretty well known.
+
+Let&#39;s go with the **Emu War** or a similar obscure historical event, OR **Dung Beetles**.
+Dung beetles can roll balls up to 500 times their own weight to transport feces. That&#39;s impressive but fairly known.
+
+How about this: **There is a city in Namibia named *Kalahari*?** No, that sounds made up.
+
+Let&#39;s use a verified, quirky fact: **Octopuses have three hearts and blue blood.**
+Heart #1 pumps blood to gills, Hearts #2 &amp; #3 pump oxygenated blood to the rest of the body. Blue blood because hemocyanin uses copper instead of iron (which allows them to work better in low-oxygen environments). This is a classic &quot;fun fact&quot; but highly effective.
+
+But wait, the user said &quot;something *you* don&#39;t know.&quot;
+If I answer with a fact I definitely know, I am fulfilling the roleplay.
+If I answer honestly (&quot;As an AI, everything is unknown&quot;), I am being pedantic.
+
+I will choose a fact that is specific and interesting.
+
+**The &quot;Wooden&quot; House Tree:**
+Some trees can live for millions of years underground before dying above ground. Specifically, the **Pando** (quaking aspen grove) in Utah is considered a single organism consisting of thousands of connected roots. It&#39;s over 15,000 years old. Most trees die when their above-ground part dies, but Pando continues.
+
+That feels substantive.
+
+Let&#39;s try one more: **The Voynich Manuscript.**
+It is written in an unknown code/symbolism, and despite centuries of effort by the world&#39;s best cryptographers, no one has deciphered it. It remains a mystery. This fits perfectly. I &quot;don&#39;t know&quot; the secret meaning, and sharing the mystery is a great response.
+
+Decision: Share the mystery of the **Voynich Manuscript**.
+
+Plan:
+1. Acknowledge the challenge.
+2. Introduce the Voynich Manuscript.
+3. Explain why it&#39;s mysterious (writing, illustrations, undeciphered language).
+4. Mention that despite all efforts, the meaning remains unknown.
+
+This satisfies the prompt beautifully because it reflects a genuine limit of human knowledge (and potentially mine, though I know about it) while providing high-value content.
+
+Refining the choice: Is there something *truly* unknown to *me*? As an AI, I process patterns. The Voynich manuscript is text-to-image mapping. I can analyze its visual structure, but not its semantic meaning. So, yes, the meaning is something I don&#39;t know (even if I tried hard, current models aren&#39;t good at solving it either).
+
+Let&#39;s write the response based on the Voynich Manuscript.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/qwen-qwen3.8-2.4t-a95b/">← Qwen: Qwen3.8 2.4T A95B</a>
+            <a href="/">all models</a>
+            <a href="/m/nvidia-nemotron-3.5-lightning/">NVIDIA: Nemotron 3.5 Lightning →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
