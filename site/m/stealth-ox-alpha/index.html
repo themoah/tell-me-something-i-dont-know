@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ox Alpha — Tell me something I don't know.</title>
+    <meta name="description" content="Ox Alpha answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s brains: Every time you thoroughly shuffle a deck of cards, you&#39;re almost certainly creating an order that has ne…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/stealth-ox-alpha/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/stealth-ox-alpha/">
+    <meta property="og:title" content="Ox Alpha — Tell me something I don't know.">
+    <meta property="og:description" content="Ox Alpha answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s brains: Every time you thoroughly shuffle a deck of cards, you&#39;re almost certainly creating an order that has ne…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ox Alpha — Tell me something I don't know.">
+    <meta name="twitter:description" content="Ox Alpha answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s brains: Every time you thoroughly shuffle a deck of cards, you&#39;re almost certainly creating an order that has ne…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Ox Alpha)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one that tends to break people's brains:\n\n**Every time you thoroughly shuffle a deck of cards, you're almost certainly creating an order that has never existed before in human history.**\n\nThe number of ways to arrange 52 cards is 52 factorial (52!), which works out to:\n\n80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000\n\nThat's roughly 8 × 10⁶⁷ — a number so large it defies intuition. If every star in the observable universe had a billion planets, and every planet had a trillion people, and every person had shuffled a deck once per second since the Big Bang, you still wouldn't come close to exhausting all possible arrangements.\n\nSo the specific sequence sitting in your card drawer right now is, with near-certainty, unique in the entire history of the universe. Not bad for a cheap pack of playing cards.\n\nWant another one? I've got plenty — from wombats producing cube-shaped poop to the fact that Oxford University was already teaching students centuries before the Aztec Empire existed.","author":{"@type":"Organization","name":"Stealth"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one that messes with people's sense of time:\n\n**Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.**\n\nThe Great Pyramid was completed around 2560 BCE. Cleopatra died in 30 BCE — roughly 2,500 years later. The Apollo 11 Moon landing happened in 1969 CE, just under 2,000 years after her death. We tend to lump \"ancient Egypt\" into one mental bucket, but Egyptian civilization spanned so long that a modern smartphone is temporally closer to Cleopatra than she was to the people who built the pyramids.\n\nBonus mind-bender in the same vein: **sharks are older than trees**. Sharks have been around for about 450 million years; trees showed up roughly 350 million years ago. Sharks also predate Saturn's rings, the North Star being visible from Earth, and — depending on how you count — possibly even the existence of the North Star itself.\n\nWant another one? I've got plenty.","author":{"@type":"Organization","name":"Stealth"}},{"@type":"Answer","text":"Here's one that tends to break people's brains: **a day on Venus lasts longer than a year on Venus.**\n\nVenus takes about 243 Earth days to rotate once on its axis, but only about 225 Earth days to complete an orbit around the Sun. So technically, its \"day\" outlasts its \"year.\"\n\nBonus weirdness: Venus also rotates *backwards* compared to most planets, meaning if you stood on its surface, you'd see the Sun rise in the west and set in the east.\n\nWant another one? I've got plenty where that came from.","author":{"@type":"Organization","name":"Stealth"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Ox Alpha</h1>
+        <p class="subtitle">Stealth · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Ox Alpha</div>
+                        <div class="model-provider">Stealth</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one that tends to break people&#39;s brains:</p>
+<p><strong>Every time you thoroughly shuffle a deck of cards, you&#39;re almost certainly creating an order that has never existed before in human history.</strong></p>
+<p>The number of ways to arrange 52 cards is 52 factorial (52!), which works out to:</p>
+<p>80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000</p>
+<p>That&#39;s roughly 8 × 10⁶⁷ — a number so large it defies intuition. If every star in the observable universe had a billion planets, and every planet had a trillion people, and every person had shuffled a deck once per second since the Big Bang, you still wouldn&#39;t come close to exhausting all possible arrangements.</p>
+<p>So the specific sequence sitting in your card drawer right now is, with near-certainty, unique in the entire history of the universe. Not bad for a cheap pack of playing cards.</p>
+<p>Want another one? I&#39;ve got plenty — from wombats producing cube-shaped poop to the fact that Oxford University was already teaching students centuries before the Aztec Empire existed.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1372 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. I should share an interesting fact that&#39;s likely to be genuinely surprising or obscure. Let me think of something truly interesting and verifiable.
+
+Some candidates:
+1. The fact that octopuses have three hearts, two pump blood through gills, one through the body — but this is fairly well known.
+2. Honey never spoils — also fairly well known.
+3. Something more obscure: The word &quot;avocado&quot; comes from the Nahuatl word &quot;āhuacatl&quot; which also meant... testicle.
+4. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.
+5. Oxford University is older than the Aztec Empire.
+6. Sharks are older than trees (sharks ~450 million years, trees ~350 million years).
+7. There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.
+8. Bananas are berries but strawberries aren&#39;t, botanically.
+9. Wombats produce cube-shaped poop.
+10. The Eiffel Tower grows about 15 cm taller in summer due to thermal expansion.
+11. A day on Venus is longer than its year.
+12. Humans share ~50-60% DNA with bananas.
+
+Let me pick something genuinely surprising with good explanatory value. The Cleopatra/Great Pyramid/Moon landing one is a classic mind-bender. Or the sharks older than trees one. Or Venus day/year.
+
+Maybe I could give one really good fact with some context, or offer a couple. The user asked for &quot;something&quot; — singular — so I should probably lead with one strong fact, maybe explain why it&#39;s counterintuitive, and possibly offer more if they want.
+
+Let me go with something less commonly cited. How about: &quot;There are more possible permutations of a shuffled deck of cards than there are atoms in the Milky Way galaxy&quot; — 52! ≈ 8×10^67, atoms in Milky Way ~10^68 to 10^69... hmm, actually estimates for stars in the observable universe are ~10^24 atoms each... Let me be careful: 52! ≈ 8.07 × 10^67. Atoms in the Milky Way: estimated ~10^68 to 4×10^68? Actually common figure: Milky Way has roughly 100–400 billion stars, average star has ~10^57 atoms, so ~10^67–10^68 atoms. So it&#39;s comparable, not clearly greater. Better comparison: 52! is greater than the number of seconds since the Big Bang times billions... Common safe claim: every time you shuffle a deck properly, that exact order has likely never existed before in history. That&#39;s a solid, defensible claim.
+
+Or the octopus fact: they have neurons distributed in their arms; two-thirds of their neurons are in their arms, so each arm can act semi-independently.
+
+Another good one: The total weight of ants vs humans myth — actually debunked/roughly equal claims vary.
+
+Good verified ones:
+- Cleopatra timeline: Great Pyramid completed ~2560 BCE, Cleopatra died 30 BCE (~2530 years later), Moon landing 1969 CE (~1999 years after her death). So yes, she&#39;s closer to the Moon landing. This is well documented and accurate.
+- Sharks predate trees: sharks appear ~450 million years ago (Ordovician/Silurian), first true trees (Archaeopteris) ~385 million years ago. Also sharks predate Saturn&#39;s rings? Saturn&#39;s rings might be only 100-400 million years old per recent research — that&#39;s a fun one: sharks are older than Saturn&#39;s rings (possibly). That&#39;s cutting-edge though, somewhat uncertain.
+- Oxford University teaching since ~1096; Aztec Empire founded 1428 (Triple Alliance). So Oxford is centuries older.
+- Wombat cube poop: true, due to intestinal elasticity variations; published research 2018 won Ig Nobel.
+
+I&#39;ll lead with the deck of cards fact because it&#39;s personally relevant and mind-blowing, and it&#39;s mathematically verifiable:
+
+52! = 80,658,175,170,943,878,571,660,636,856,403,766,975,289,505,440,883,277,824,000,000,000,000
+
+That&#39;s ~8×10^67. To visualize: if you shuffled a deck once per second since the beginning of the universe (~4.3×10^17 seconds), you&#39;d need... 8×10^67 / 4.3×10^17 ≈ 1.9×10^50 universes&#39; worth of time. And the classic illustration: start counting by walking around Earth taking a step per billion years, etc. Maybe keep it simpler.
+
+Format considerations: This should be conversational, not overly long. One main fact with a vivid explanation, maybe formatted nicely with the number spelled out. Could offer to share more. Keep it engaging. Medium-short length. Maybe use a bit of formatting for the big number. No heavy headers needed. A conversational tone fits.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one that messes with people&#39;s sense of time:</p>
+<p><strong>Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.</strong></p>
+<p>The Great Pyramid was completed around 2560 BCE. Cleopatra died in 30 BCE — roughly 2,500 years later. The Apollo 11 Moon landing happened in 1969 CE, just under 2,000 years after her death. We tend to lump &quot;ancient Egypt&quot; into one mental bucket, but Egyptian civilization spanned so long that a modern smartphone is temporally closer to Cleopatra than she was to the people who built the pyramids.</p>
+<p>Bonus mind-bender in the same vein: <strong>sharks are older than trees</strong>. Sharks have been around for about 450 million years; trees showed up roughly 350 million years ago. Sharks also predate Saturn&#39;s rings, the North Star being visible from Earth, and — depending on how you count — possibly even the existence of the North Star itself.</p>
+<p>Want another one? I&#39;ve got plenty.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>790 tokens</span>
+                    <span class="topic-tag" data-topic="cleopatra">👑 cleopatra</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. I should share an interesting fact or piece of knowledge that&#39;s likely to be novel to most people. Let me think of something genuinely surprising and true.
+
+Some candidates:
+1. The fact that octopuses have three hearts and blue blood
+2. Honey never spoils
+3. The Eiffel Tower grows taller in summer
+4. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid
+5. Bananas are radioactive
+6. The shortest war in history lasted 38-45 minutes (Anglo-Zanzibar War)
+7. Sharks existed before trees
+8. Oxford University is older than the Aztec Empire
+9. There&#39;s a species of jellyfish that&#39;s biologically immortal
+10. Wombats produce cube-shaped poop
+
+Let me pick something genuinely interesting and verify it mentally:
+
+- Cleopatra: The Great Pyramid was built around 2560 BCE. Cleopatra died in 30 BCE. That&#39;s about 2,530 years apart. The Moon landing was 1969 CE, which is about 1,999 years after Cleopatra. So yes, Cleopatra lived closer to the Moon landing than to the building of the Great Pyramid. This is a classic mind-blowing fact.
+
+- Sharks before trees: Sharks appeared around 450 million years ago. Trees appeared around 350 million years ago (Archaeopteris, ~385 million years ago). So sharks predate trees by roughly 100+ million years. True.
+
+- Oxford older than Aztec Empire: Teaching at Oxford began around 1096. The Aztec Empire (Tenochtitlan founded 1325). So Oxford is older by over 200 years. True.
+
+I could pick one and elaborate a bit, or give one really good one with some context. I think the best format here is to pick one fascinating fact, present it clearly, maybe add a related bonus fact or two briefly. Keep it engaging but not overwhelming. A conversational tone fits since this is casual conversation.
+
+Let me go with the Cleopatra one as the headline since it&#39;s genuinely counterintuitive about time perception, and maybe add the shark/tree one as a bonus. Actually, let me think about which single fact is best... The user said &quot;tell me something&quot; — singular. I&#39;ll lead with one strong fact and can offer more if they want.
+
+Format: Short, punchy response. Maybe a couple sentences for the main fact with brief explanation of why it&#39;s true, then optionally offer more. No need for headers or lists necessarily, though a small structure could work. Keep it fairly concise — this is casual chat.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one that tends to break people&#39;s brains: <strong>a day on Venus lasts longer than a year on Venus.</strong></p>
+<p>Venus takes about 243 Earth days to rotate once on its axis, but only about 225 Earth days to complete an orbit around the Sun. So technically, its &quot;day&quot; outlasts its &quot;year.&quot;</p>
+<p>Bonus weirdness: Venus also rotates <em>backwards</em> compared to most planets, meaning if you stood on its surface, you&#39;d see the Sun rise in the west and set in the east.</p>
+<p>Want another one? I&#39;ve got plenty where that came from.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>696 tokens</span>
+                    <span class="topic-tag" data-topic="venus">🪐 venus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. I should share an interesting, surprising fact that most people likely don&#39;t know. Let me think of something genuinely fascinating and verifiable.
+
+Some candidates:
+1. Octopuses have three hearts and blue blood
+2. Honey never spoils
+3. The Eiffel Tower grows taller in summer
+4. Bananas are berries but strawberries aren&#39;t
+5. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza
+6. Sharks existed before trees
+7. There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal
+8. Your body contains more bacterial cells than human cells (actually roughly equal now per newer research)
+9. Wombats produce cube-shaped poop
+10. The total weight of ants on Earth vs humans
+
+Let me pick something really mind-bending and accurate:
+
+- Sharks are older than trees: Sharks appeared around 450 million years ago; the first true trees (Archaeopteris) around 385 million years ago. Also sharks predate Saturn&#39;s rings possibly? Actually there&#39;s a fun fact that sharks are older than the North Star... hmm.
+
+- Cleopatra fact: Great Pyramid completed ~2560 BCE, Cleopatra died 30 BCE, Moon landing 1969 CE. Time from pyramid to Cleopatra: ~2530 years. From Cleopatra to moon landing: ~1999 years. So yes, Cleopatra lived closer to the Moon landing than to the building of the Great Pyramid. That&#39;s a great one.
+
+- Oxford University is older than the Aztec Empire: Teaching at Oxford existed by 1096; Tenochtitlan founded 1325. True.
+
+- A day on Venus is longer than a year on Venus: Venus rotates once every ~243 Earth days, orbits sun every ~225 Earth days. True!
+
+I could give one really good one with a brief explanation. Maybe pick the Venus one or the Cleopatra one — both are delightful. Or offer a couple. The user asked for &quot;something&quot; so one solid fact with context is good. I&#39;ll go with something surprising and explain why it&#39;s true.
+
+Let me pick: &quot;A day on Venus is longer than its year.&quot; Explanation: Venus takes about 243 Earth days to rotate once on its axis, but only about 225 Earth days to orbit the Sun. Bonus weirdness: Venus rotates backwards (retrograde), so the Sun rises in the west.
+
+Format: Short, engaging, conversational. Maybe a header not needed. Just a couple sentences with the fact and explanation, maybe a bonus twist. Keep it concise.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/deepseek-deepseek-v4-flash-vision-exp/">← DeepSeek: DeepSeek V4 Flash Vision Exp</a>
+            <a href="/">all models</a>
+            <a href="/m/z-ai-glm-5.3/">Z.ai: GLM 5.3 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

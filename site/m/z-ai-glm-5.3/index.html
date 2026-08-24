@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.ai: GLM 5.3 — Tell me something I don't know.</title>
+    <meta name="description" content="Z.ai: GLM 5.3 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s mental timelines: woolly mammoths were still alive when the Egyptian pyramids were being built. The Great Pyrami…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3/">
+    <meta property="og:title" content="Z.ai: GLM 5.3 — Tell me something I don't know.">
+    <meta property="og:description" content="Z.ai: GLM 5.3 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s mental timelines: woolly mammoths were still alive when the Egyptian pyramids were being built. The Great Pyrami…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Z.ai: GLM 5.3 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Z.ai: GLM 5.3 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that tends to break people&#39;s mental timelines: woolly mammoths were still alive when the Egyptian pyramids were being built. The Great Pyrami…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Z.ai: GLM 5.3)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one that tends to break people's mental timelines: woolly mammoths were still alive when the Egyptian pyramids were being built.\n\nThe Great Pyramid of Giza went up around 2560 BCE, but a population of mammoths survived on Wrangel Island—a remote speck in the Arctic Ocean—until roughly 2000 BCE. They'd been cut off by rising sea levels, marooned there for thousands of years, and had shrunk into a smaller, inbred version of their mainland cousins.\n\nSo somewhere, while ancient Egyptians were hauling limestone blocks, actual mammoths were wandering around the Arctic. We tend to lump \"mammoth times\" in with dinosaurs-deep prehistory, but they missed meeting the pharaohs by only a few thousand years.\n\nWant another?","author":{"@type":"Organization","name":"Z Ai"}},"suggestedAnswer":[{"@type":"Answer","text":"You know that earthy smell when rain hits dry ground? That's a compound called geosmin — and humans are freakishly good at detecting it. We can smell it at concentrations of just a few parts per trillion. For comparison, a shark tracking blood in water is working with roughly one part per million. In this one narrow domain, you out-smell a shark by a factor of about a hundred thousand.\n\nThe leading theory for why: geosmin is produced by soil bacteria and cyanobacteria, so being able to instantly judge water quality — fresh rain versus a contaminated pond — was probably a survival skill for our ancestors. Bonus detail: it's also why beets taste \"earthy,\" and in small doses we actually find it pleasant, which is why it gets added to some perfumes.\n\nWant another?","author":{"@type":"Organization","name":"Z Ai"}},{"@type":"Answer","text":"Can't peek into your head, so here's one that gets almost everyone:\n\n**Woolly mammoths were still alive while the pyramids were being built.** The great herds died out around 10,000 years ago, but a population of dwarfed mammoths survived on Wrangel Island, a remote speck in the Arctic Ocean, until roughly 4,000 years ago. The Great Pyramid of Giza was already about 500 years old when the last one died.\n\nAnd a bonus, since you're here: **Earth has run a natural nuclear reactor.** Two billion years ago in Oklo, Gabon, uranium deposits spontaneously achieved self-sustaining fission — back then, natural uranium contained enough fissile U-235 that groundwater seeping through the ore set off chain reactions. It cycled on and off for hundreds of thousands of years, self-regulated by its own boiling groundwater, and wasn't discovered until 1972, when scientists noticed the ore's isotope ratios looked suspiciously like spent reactor fuel.\n\nWant more?","author":{"@type":"Organization","name":"Z Ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Z.ai: GLM 5.3</h1>
+        <p class="subtitle">Z Ai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Z.ai: GLM 5.3</div>
+                        <div class="model-provider">Z Ai</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one that tends to break people&#39;s mental timelines: woolly mammoths were still alive when the Egyptian pyramids were being built.</p>
+<p>The Great Pyramid of Giza went up around 2560 BCE, but a population of mammoths survived on Wrangel Island—a remote speck in the Arctic Ocean—until roughly 2000 BCE. They&#39;d been cut off by rising sea levels, marooned there for thousands of years, and had shrunk into a smaller, inbred version of their mainland cousins.</p>
+<p>So somewhere, while ancient Egyptians were hauling limestone blocks, actual mammoths were wandering around the Arctic. We tend to lump &quot;mammoth times&quot; in with dinosaurs-deep prehistory, but they missed meeting the pharaohs by only a few thousand years.</p>
+<p>Want another?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2300 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an open-ended, curiosity-driven request. The challenge here is interesting: I don&#39;t know what this specific person knows. So I need to pick something that&#39;s:
+
+1. Genuinely surprising or counterintuitive
+2. Relatively obscure (not something like &quot;did you know the Great Wall isn&#39;t visible from space&quot; which is fairly well-known as a myth debunking)
+3. Verifiable and true
+4. Interesting enough to spark delight
+
+Let me brainstorm some genuinely fascinating, lesser-known facts across different domains:
+
+**Biology:**
+- Octopuses have three hearts and blue blood (fairly well-known now)
+- Wombats poop cubes (becoming well-known)
+- Tardigrades can survive space vacuum
+- There are more bacterial cells in your body than human cells (roughly equal actually, ~38 trillion bacteria vs ~30 trillion human cells — the old &quot;10:1&quot; claim was debunked)
+- Your gut has a &quot;second brain&quot; — the enteric nervous system with ~500 million neurons
+- Trees can share nutrients through fungal networks (wood wide web) — somewhat known now
+- Immortal jellyfish (Turritopsis dohrnii) can revert to polyp stage
+- Sharks existed before trees. Sharks ~450 million years ago, trees ~350 million years ago. This is a fun one!
+- Sharks are older than Saturn&#39;s rings possibly? Saturn&#39;s rings might be only 10-100 million years old per some recent research — that&#39;s actually a great combo fact
+- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza. This is a classic but genuinely mind-bending fact. Pyramid ~2560 BCE, Cleopatra died 30 BCE, Moon landing 1969 CE. So ~2530 years vs ~1999 years. Yes, true! But it&#39;s fairly well-circulated.
+- Oxford University is older than the Aztec Empire. Oxford teaching since ~1096, Aztec Empire founded 1428 (Tenochtitlan founded 1325). True, also somewhat well-circulated.
+
+**Physics/Astronomy:**
+- Saturn&#39;s rings may be younger than dinosaurs or even younger than many trees — recent Cassini data suggests rings are 10-100 million years old, possibly as young as 10 million years. Some estimates suggest they could be as recent as when sharks... wait, sharks are 450 Mya. But the rings being possibly ~100 million years old means they&#39;re younger than many shark lineages. Actually a striking one: Saturn&#39;s rings might be younger than some living species? Hmm, hard to verify a specific living species older than 100 Mya... Some clams, horseshoe crabs (~445 Mya lineage but species?).
+- There&#39;s a planet where it rains glass sideways (HD 189733b)
+- A day on Venus is longer than a year on Venus (243 Earth days rotation vs 225 Earth days orbit). Fairly well-known among space enthusiasts but still surprising to many.
+- Neutron star density: a teaspoon would weigh ~6 billion tons
+- If you removed all empty space from atoms, humanity would fit in a sugar cube (roughly)
+- The Sun makes up 99.86% of the solar system&#39;s mass
+
+**History:**
+- The Library of Alexandria&#39;s decline was gradual, not burned in one event
+- Oxford older than Aztec Empire
+- Woolly mammoths were still alive when the pyramids were built (Wrangel Island population until ~1650 BCE, pyramids ~2560 BCE — wait, that&#39;s the reverse! Wrangel Island mammoths died out around 4,000 years ago, i.e., ~2000 BCE, and the Great Pyramid was built ~2560 BCE. So mammoths were still alive AFTER the pyramids were built. Yes! This is a great one.)
+- The last woolly mammoths died out around 1650 BCE on Wrangel Island — after the Great Pyramid of Giza was built. This is genuinely surprising and less well-known than the Cleopatra fact.
+- Nintendo was founded in 1889 (playing cards)
+- Oxford existed when the Aztec Empire was founded
+
+**Linguistics:**
+- &quot;Awesome&quot; vs &quot;awful&quot; divergent etymology
+- The word &quot;girl&quot; originally meant a child of either sex in Middle English
+- &quot;Apron&quot; and &quot;umpire&quot; came from misdivision (&quot;a napron&quot; → &quot;an apron&quot;)
+
+**Math:**
+- There are more possible chess games than atoms in the observable universe (Shannon number ~10^120 vs ~10^80 atoms)
+- If you shuffle a deck of cards properly, the order is almost certainly unique in history (52! ≈ 8×10^67)
+- 0.999... = 1 exactly
+
+**Geography:**
+- Russia and Alaska are only ~2.5 miles apart at closest (Diomede Islands — Little Diomede US, Big Diomede Russia, and they&#39;re separated by the International Date Line, so they&#39;re ~21 hours apart in time despite being 2.5 miles apart). The &quot;Tomorrow Island / Yesterday Island&quot; thing. That&#39;s fun!
+- Africa is in all four hemispheres
+- Maine is the closest US state to Africa (surprising to many)
+
+**Human body:**
+- You can&#39;t hum while holding your nose (people immediately test this — fun interactive one)
+- Stomach lining regenerates every few days
+- Your stomach acid can dissolve metal (pH 1-2)
+- Humans are bioluminescent but 1000x too dim to see
+
+**Economics/Institutions:**
+- The Guinness Book of World Records was created by the Guinness brewery to settle bar arguments
+
+Let me pick something that hits the sweet spot: genuinely obscure-ish, verifiable, and delightful. 
+
+Top candidates:
+1. Woolly mammoths still alive after the pyramids were built (Wrangel Island)
+2. Big/Little Diomede — 2.5 miles apart, 21 hours apart in time
+3. Saturn&#39;s rings may be only ~10-100 million years old, possibly younger than the dinosaurs&#39; era... wait, dinosaurs went extinct 66 Mya, so rings at 100 Mya would be older than the extinction. But if ~10 Mya, they&#39;d be younger than many things. Some 2023 research suggested possibly as young as 10 million years. Actually there was a 2019 study suggesting ~10-100 Mya. So &quot;Saturn&#39;s rings may be younger than the extinction of the dinosaurs&quot; is uncertain — if 66-100 Mya they&#39;d be older. I should be careful. Better phrasing: &quot;Saturn&#39;s rings might be far younger than the planet itself — possibly only tens of millions of years old — and may be disappearing.&quot;
+4. The &quot;a napron&quot; → &quot;an apron&quot; linguistic fact — genuinely delightful and less known
+5. Card shuffle uniqueness — somewhat known
+6. You can&#39;t hum with your nose plugged — fun and interactive
+
+I think the mammoth/pyramid one is excellent: concrete, verifiable, mind-bending, and less circulated than the Cleopatra version. Let me verify the dates:
+- Great Pyramid of Giza: completed around 2560 BCE (construction ~2580-2560 BCE)
+- Wrangel Island mammoths: survived until roughly 4,000 years ago, so ~2000 BCE (estimates range 1700-2100 BCE; a 2017 study dated extinction to ~4,300 years ago? Let me think. Commonly cited: around 1650 BCE or 2000 BCE. Studies suggest they survived until about 4,000 years ago. Either way, well after 2560 BCE.)
+
+Yes, this holds. The isolation on Wrangel Island (small population, inbreeding) — they were actually a dwarfed population.
+
+Alternatively, I could give a couple of facts since &quot;tell me something I don&#39;t know&quot; is singular but people often enjoy a small bonus. But the request is for &quot;something&quot; — one thing. I could give one main fact with a bit of texture, maybe a brief follow-up offer to share more. Keeping it focused is probably better than a listicle. A single well-told fact is more memorable.
+
+Format considerations: This is casual conversation. Should be conversational, not a bulleted list. A short paragraph or two. Maybe 50-120 words. Could end with a light offer for more, or just leave it clean. I&#39;ll tell the mammoth fact with enough context to make it land: the mental image of mammoths on a remote Arctic island while Egyptians were building pyramids.
+
+Actually, let me make sure the fact is framed correctly: The Great Pyramid was built around 2560 BCE. Wrangel Island mammoths died out around 2000 BCE (some say as late as 1650 BCE). So mammoths outlived the pyramid&#39;s construction by roughly 500-900 years. Correct framing: &quot;When the Great Pyramid was being built, there were still woolly mammoths alive on Earth.&quot; That&#39;s accurate.
+
+I&#39;ll add the detail that they were a small, isolated, inbred dwarf population on Wrangel Island in the Arctic — which makes it richer and explains why it&#39;s not more widely appreciated.
+
+Should I offer more facts at the end? A brief &quot;want another?&quot; could be nice but might feel formulaic. I think a short, punchy delivery with maybe one line inviting more is fine. Or just end on the fact itself. I&#39;ll keep it tight and maybe add a tiny hook about how they were dwarfs the size of... actually Wrangel Island mammoths were about the size of a large horse? They were roughly 1.8m at shoulder? Some estimates say they were around 70% the size of mainland mammoths. I&#39;ll just say &quot;smaller than their mainland cousins&quot; to be safe rather than giving a specific size claim I&#39;m less sure of.
+
+Length: short. Conversational. No headers, no bullets.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>You know that earthy smell when rain hits dry ground? That&#39;s a compound called geosmin — and humans are freakishly good at detecting it. We can smell it at concentrations of just a few parts per trillion. For comparison, a shark tracking blood in water is working with roughly one part per million. In this one narrow domain, you out-smell a shark by a factor of about a hundred thousand.</p>
+<p>The leading theory for why: geosmin is produced by soil bacteria and cyanobacteria, so being able to instantly judge water quality — fresh rain versus a contaminated pond — was probably a survival skill for our ancestors. Bonus detail: it&#39;s also why beets taste &quot;earthy,&quot; and in small doses we actually find it pleasant, which is why it gets added to some perfumes.</p>
+<p>Want another?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>3754 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an open-ended, curious request. Since I don&#39;t know what they know, I should pick something genuinely surprising, interesting, and relatively obscure — not a common factoid that most people have heard (like &quot;honey never spoils&quot; or &quot;octopuses have three hearts&quot; — these are pretty well-known at this point).
+
+Let me brainstorm some genuinely lesser-known facts:
+
+1. **Bananas are radioactive** — somewhat known
+2. **Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid** — fairly well-known internet fact
+3. **Wombats poop cubes** — fairly well-known now
+4. **The inventor of the Pringles can is buried in one** — moderately known
+5. **Trees can share nutrients through fungal networks** — the &quot;wood wide web&quot; — increasingly known but still fascinating
+6. **There are more possible chess games than atoms in the observable universe** — known-ish
+7. **Honey doesn&#39;t spoil** — very well known
+8. **Oxford University is older than the Aztec Empire** — somewhat known
+9. **Sharks are older than trees** — this one is genuinely surprising and less commonly known! Sharks existed ~450 million years ago, trees ~350-390 million years ago. Sharks predate trees, Saturn&#39;s rings possibly, the North Star, etc.
+10. **You can&#39;t hum while holding your nose closed** — fun interactive one
+11. **The Eiffel Tower grows in summer** — moderately known
+12. **Scotland&#39;s national animal is the unicorn** — moderately known
+13. **Venus has days longer than its years** — moderately known among space fans
+14. **A day on Venus is longer than a year on Venus** — same
+15. **Octopus blood is blue because of hemocyanin (copper-based)** — moderately known
+16. **The shortest war in history (Anglo-Zanzibar, ~38 minutes)** — moderately known
+17. **Bubble wrap was originally invented as wallpaper** — moderately known
+18. **There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal** — moderately known
+19. **Your body replaces itself — atoms turn over** — moderately known
+20. **The smell of rain (petrichor) comes from a compound called geosmin, and humans can detect it at extremely low concentrations — we&#39;re better at smelling it than sharks are at detecting blood** — this is genuinely surprising and less known! Humans can detect geosmin at about 5 parts per trillion. Sharks detect blood at roughly 1 part per million in some tellings. So humans are vastly more sensitive to geosmin than sharks are to blood. That&#39;s a great fact.
+
+21. **Hot water can freeze faster than cold water (Mpemba effect)** — contested science, maybe avoid
+22. **The Sahara used to be green** — moderately known
+23. **More people are killed by hippos than sharks** — moderately known
+24. **The dot over lowercase i and j is called a &quot;tittle&quot;** — fun, moderately known
+25. **The Guinness World Record for the longest recorded flight of a chicken is 13 seconds** — fun trivia
+26. **Sloths can hold their breath longer than dolphins (up to 40 minutes)** — less known, fun
+27. **Every two weeks, a language dies** — sobering
+28. **There&#39;s enough water vapor in one thunderstorm cloud...** — meh
+29. **The human brain uses ~20% of the body&#39;s energy while being 2% of its mass** — moderately known
+30. **Venus flytraps count** — they require multiple trigger-hair touches before snapping shut, to avoid false alarms from raindrops. They can literally count to two (and more for digestion). Less known and delightful.
+31. **Trees didn&#39;t decompose for millions of years** — when trees first evolved, fungi hadn&#39;t evolved the ability to break down lignin, so dead trees just piled up. This is where much coal comes from. This is genuinely surprising and less commonly known! The Carboniferous period. This also led to huge oxygen levels and giant insects.
+32. **Your stomach lining replaces itself every few days because stomach acid would otherwise digest it**
+33. **The Great Oxygenation Event — oxygen was originally a poison**
+34. **Mitochondria were once free-living bacteria** — moderately known
+35. **There&#39;s a good chance you have eyelash mites** — fun/gross
+36. **The word &quot;knight&quot; was once pronounced with the k sound**
+37. **Crayola&#39;s &quot;flesh&quot; color renamed to &quot;peach&quot; in 1962**
+38. **A group of flamingos is called a &quot;flamboyance&quot;** — moderately known
+39. **The average cloud weighs about a million pounds** — moderately known
+40. **Neutron stars are so dense a teaspoon would weigh billions of tons** — moderately known
+41. **The Moon has moonquakes** — less known
+42. **Bananas are berries but strawberries aren&#39;t** — moderately known
+43. **Humans are one of the few animals that can&#39;t synthesize vitamin C** — moderately known
+44. **Cold water isn&#39;t what makes your laundry shrink...** — meh
+45. **The first computer bug was an actual moth (1947, Grace Hopper&#39;s team)** — moderately known
+46. **&quot;OK&quot; is possibly the most universally understood word**
+47. **The King of Hearts is the only king without a mustache** — fun trivia
+48. **Peanuts aren&#39;t nuts**
+49. **The Canary Islands are named after dogs, not birds** (Canariae Insulae — &quot;Islands of the Dogs&quot;) — this is genuinely surprising and etymologically fun! The bird is named after the islands, not vice versa.
+50. **The Carolina in &quot;Carolina reaper&quot;**... meh
+
+The best candidates for &quot;something you don&#39;t know&quot;:
+- **The Carboniferous tree-decomposition gap** (trees piled up because nothing could rot them)
+- **Humans detecting geosmin better than sharks detect blood**
+- **Sharks are older than trees** (though this has circulated)
+- **Canary Islands named after dogs**
+- **Venus flytraps can count**
+
+I think the geosmin fact is excellent because it&#39;s counterintuitive (humans have a famously poor sense of smell compared to dogs/sharks — yet we outperform sharks in this one domain by a huge margin), it&#39;s verifiable science, and it&#39;s not an internet cliché. Let me get the numbers right.
+
+Geosmin: Humans can detect geosmin at concentrations as low as ~5 parts per trillion (some sources say 0.4 parts per trillion, others ~5 ppt). Sharks detect blood — the famous &quot;shark can smell a drop of blood in a million drops of water&quot; claim corresponds to roughly 1 part per million (ppm). So humans detect geosmin roughly 100,000–200,000x more sensitively than sharks detect blood. The comparison is a bit apples-to-oranges (different compounds, different animals), but it&#39;s a legitimately cited comparison made by scientists. There&#39;s a well-known quote about this. I should present it accurately: humans can smell geosmin at ~5 parts per trillion; sharks detect blood at ~1 part per million. That&#39;s a factor of about 200,000. Some sources say humans detect geosmin at 0.4 ppt which would be even more extreme. I&#39;ll go with &quot;around 5 parts per trillion&quot; to be safe, and note the comparison carefully.
+
+Why would evolution give us that sensitivity? One hypothesis: our ancestors needed to evaluate water quality — geosmin is produced by soil bacteria (Streptomyces) and cyanobacteria in water, and it signals either &quot;fresh rain/soil&quot; or &quot;contaminated water.&quot; Avoiding bad water was survival-critical. Also, geosmin signals harmful cyanobacteria blooms, so avoiding it made sense. But humans also find low concentrations pleasant (petrichor). Interesting tension.
+
+Alternatively, the Carboniferous fact is great too: for roughly 60 million years (Carboniferous, ~359–299 million years ago), trees died and didn&#39;t fully decompose because the fungi and bacteria capable of breaking down lignin hadn&#39;t evolved yet. So forests became giant accumulations of dead wood, which is why we have so much coal from that period. Also, oxygen reached ~35% (vs 21% today), enabling dragonflies with 2-foot wingspans and millipedes over 8 feet long. This is a fantastic &quot;wait, what?&quot; fact. One caveat: the &quot;nothing could rot wood&quot; story is somewhat simplified — there&#39;s debate about whether the coal formation was due to lignin indigestibility or to swamp conditions preventing decomposition (anoxic, waterlogged). Recent research suggests lignin decay ability evolved earlier than thought, and the coal was more about wetland ecology. So I should hedge slightly or pick the version that&#39;s defensible. The classic story: white rot fungi evolving lignin-degrading enzymes (peroxidases) around the end of the Carboniferous. There&#39;s genuine scientific debate here (Nelsen et al. 2016 challenged the &quot;evolutionary lag&quot; hypothesis). I could present it with a light hedge.
+
+The Venus flytrap counting fact is solid: the trap requires two touches of trigger hairs within ~20-30 seconds to close, and additional touches (about 5) trigger digestion. It&#39;s an energy-saving mechanism to avoid closing for raindrops or debris. This is well-established (Hedrich lab research). &quot;A plant that can count&quot; is a great hook.
+
+Which to pick? The user asked for &quot;something I don&#39;t know&quot; — singular-ish, but I could give one main fact with a bit of depth. I think depth on one great fact is better than a list. Though a short list of a few could also be fun. Let me consider format.
+
+Format considerations: The request is casual and open-ended. A conversational response with one or two genuinely surprising facts, explained well, would be ideal. Not a bulleted list necessarily — flowing prose feels right for &quot;tell me something.&quot; Maybe one main fact explained in 2-4 sentences, possibly with a follow-up offer. Or I could do a couple of facts. I&#39;ll go with one primary fact told well, maybe with a bonus. Keep it fairly short — this is chitchat-adjacent. No headers needed. Maybe 3-6 sentences.
+
+Let me draft with the geosmin fact:
+
+&quot;Here&#39;s one: humans can smell geosmin — the compound that gives rain its distinctive earthy scent — at concentrations as low as about 5 parts per trillion. That makes us better at detecting it than sharks are at detecting blood, which they pick up at around 1 part per million. We out-smell sharks by a factor of roughly 100,000 in this one narrow domain. The leading theory is that it helped our ancestors evaluate water sources: geosmin is produced by soil bacteria, and a strong whiff could signal either fresh rain or water contaminated with harmful cyanobacteria.&quot;
+
+That&#39;s good. Let me double check numbers: geosmin detection threshold in humans — commonly cited as ~5 ppt (5 ng/L in water) or even lower, 0.4 ppt in some studies. Blood detection by sharks: the popular claim is 1 part per million. So 1 ppm / 5 ppt = 1,000,000 ppt / 5 ppt = 200,000x. If using 0.4 ppt, it&#39;s 2.5 million times. I&#39;ll say &quot;tens or hundreds of thousands of times more sensitive&quot; or &quot;roughly 100,000 times&quot; to be safe. Actually, let me phrase it as: sharks detect blood at roughly one part per million; humans detect geosmin at a few parts per trillion — about a hundred thousand times more sensitive. That&#39;s defensible.
+
+The evolutionary explanation: geosmin in water is produced by cyanobacteria and actinobacteria; humans and many animals avoid geosmin-tainted water (fish avoid it too — it&#39;s why some fish taste muddy). The hypothesis about water quality assessment is reasonable and commonly cited. Also, humans are weirdly sensitive compared to other compounds — our threshold for geosmin is one of the lowest known for any human odorant.
+
+Alternatively the Carboniferous story:
+
+&quot;For tens of millions of years after trees first evolved, nothing could decompose them. The fungi that break down lignin — the tough polymer in wood — hadn&#39;t evolved yet, so when trees died, they just... piled up. Entire forests became layered deposits of dead wood that eventually turned into much of Earth&#39;s coal. It&#39;s also partly why oxygen levels spiked to around 35% during the Carboniferous, letting dragonflies grow wingspans of two feet.&quot;
+
+With hedge: &quot;The classic story is...&quot; — recent research has complicated this, attributing coal formation more to persistent swamp conditions. I could add &quot;(the full story is debated — swamp chemistry mattered too)&quot;. Hmm, hedging makes it less punchy but more honest.
+
+I think the geosmin fact is cleaner, less contested, and more viscerally surprising (&quot;you out-smell a shark&quot;). Let me go with that as the main fact.
+
+Should I add a second mini-fact? Maybe one bonus. Or offer to keep going. A light closing like &quot;Want another?&quot; could be nice and conversational but isn&#39;t necessary. I&#39;ll maybe end with a brief invitation or just let it stand. Given the open-ended playful nature, a short &quot;I&#39;ve got more where that came from&quot; style close could work but might feel formulaic. I&#39;ll keep it minimal — maybe end on the evolutionary explanation, which is a satisfying note. Or add one short kicker.
+
+Actually, one more consideration: I could make it interactive/personal — &quot;you&#39;ve probably noticed this smell&quot; — grounding it in their experience. Petrichor is the smell of rain on dry earth. Everyone knows that smell. So: &quot;You know that earthy smell when rain hits dry ground? That&#39;s geosmin...&quot;
+
+Draft:
+
+&quot;You know that earthy smell after rain hits dry ground? That&#39;s a compound called geosmin — and humans are freakishly good at detecting it. We can smell it at concentrations as low as a few parts per trillion. For comparison, a shark detecting blood in water is working at around one part per million. In this one narrow domain, you out-smell a shark by a factor of roughly a hundred thousand.
+
+The leading theory for why: geosmin is produced by soil bacteria and cyanobacteria, and being able to instantly evaluate water quality — fresh rain versus contaminated pond — was likely a matter of survival for our ancestors. Interestingly, in tiny doses we find it pleasant (it&#39;s deliberately added to some perfumes and to beet-flavored things), but in high concentrations it reads as &#39;muddy&#39; or &#39;off.&#39;&quot;
+
+Hmm, is geosmin added to perfumes? Yes, geosmin is used in perfumery. And it&#39;s why beets taste earthy. And why catfish/carp taste muddy. And it&#39;s why wine can be &quot;corked&quot;... no, that&#39;s TCA. Geosmin is a fault in wine/fish. The beet fact is a nice relatable touch.
+
+Length check: this is about 130 words. Good length for a casual fact. Maybe trim slightly. Should I offer more facts at the end? A brief &quot;Want more?&quot; could be friendly. I think a very short closing offer is fine and matches the playful register. Or I can skip it. I&#39;ll include a tiny one — it invites continued conversation naturally without being pushy. Actually the guidance says don&#39;t end with questions unless natural... a &quot;want another?&quot; here feels natural for this kind of exchange. I&#39;ll include something light.
+
+Let me also double-check the shark blood claim: &quot;sharks can detect blood at one part per million&quot; — this is the widely cited figure (a drop of blood in an Olympic pool is roughly the order). Yes, commonly cited. The comparison between human geosmin sensitivity and shark blood sensitivity has been made in popular science writing. It&#39;s apples-to-oranges but framed as such (&quot;in this one domain&quot;). Good.
+
+One more check on geosmin threshold: Studies (e.g., published thresholds) put geosmin detection in water at ~4-10 ng/L, i.e., 4-10 ppt. Some report lower. &quot;A few parts per trillion&quot; is accurate. 
+
+Format: conversational prose, no headers, no bullets. Maybe 2 short paragraphs. Possibly a one-line closer. Total ~120-150 words. That feels right — not overlong for a casual ask, but substantive enough to actually deliver a satisfying &quot;whoa&quot; moment.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Can&#39;t peek into your head, so here&#39;s one that gets almost everyone:</p>
+<p><strong>Woolly mammoths were still alive while the pyramids were being built.</strong> The great herds died out around 10,000 years ago, but a population of dwarfed mammoths survived on Wrangel Island, a remote speck in the Arctic Ocean, until roughly 4,000 years ago. The Great Pyramid of Giza was already about 500 years old when the last one died.</p>
+<p>And a bonus, since you&#39;re here: <strong>Earth has run a natural nuclear reactor.</strong> Two billion years ago in Oklo, Gabon, uranium deposits spontaneously achieved self-sustaining fission — back then, natural uranium contained enough fissile U-235 that groundwater seeping through the ore set off chain reactions. It cycled on and off for hundreds of thousands of years, self-regulated by its own boiling groundwater, and wasn&#39;t discovered until 1972, when scientists noticed the ore&#39;s isotope ratios looked suspiciously like spent reactor fuel.</p>
+<p>Want more?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>6194 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an interesting challenge because I don&#39;t know what they know. I should pick something genuinely surprising, obscure, or counterintuitive that most people don&#39;t know — something with a &quot;wow&quot; factor that&#39;s also verifiably true.
+
+Let me brainstorm some candidates:
+
+1. **Octopuses have three hearts and blue blood** — This is fairly well-known now, probably too common.
+
+2. **Wombats poop cubes** — Also fairly well-known at this point.
+
+3. **The shortest war in history** — The Anglo-Zanzibar War of 1896 lasted approximately 38-45 minutes. This is moderately well-known but still surprises many people.
+
+4. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — This is a classic &quot;mind-blowing&quot; fact. The Great Pyramid was built around 2560 BCE, Cleopatra died 30 BCE, Moon landing 1969 CE. So the pyramid is ~2530 years before Cleopatra, and the Moon landing is ~1999 years after her. Yes, this is true. But it&#39;s also become somewhat popular on the internet.
+
+5. **Honey never spoils** — Edible honey found in Egyptian tombs. Well-known.
+
+6. **Bananas are radioactive** — Moderately known.
+
+7. **There are more possible chess games than atoms in the observable universe** — The Shannon number is ~10^120 vs ~10^80 atoms. True and mind-blowing, but somewhat known.
+
+8. **Trees can share nutrients through fungal networks (&quot;wood wide web&quot;)** — Popularized, somewhat known, and actually more contested in recent research.
+
+9. **Your body replaces itself... cells** — The &quot;you&#39;re a new person every 7 years&quot; thing is largely a myth (neurons mostly don&#39;t regenerate, heart cells slowly).
+
+10. **Venus&#39;s day is longer than its year** — Venus rotates once every ~243 Earth days, orbits the sun in ~225 Earth days. This is true and genuinely surprising! A day on Venus (one full rotation) is longer than its year. Also Venus rotates retrograde (backwards compared to most planets), so the sun rises in the west there.
+
+11. **Oxford University is older than the Aztec Empire** — Teaching at Oxford began ~1096, Aztec Empire founded 1428 (Tenochtitlan founded 1325). True and surprising.
+
+12. **Sharks are older than trees** — Sharks ~450 million years ago, trees ~350-390 million years ago (Archaeopteris ~385 mya). So sharks predate trees by tens of millions of years. Also sharks are older than Saturn&#39;s rings possibly (rings estimated 10-100 million years old in some studies, though this is debated). Sharks predate the North Star? Hmm, Polaris&#39;s age... Actually a fun chain: sharks are older than trees, older than Saturn&#39;s rings (per some estimates), older than Mount Everest (Himalayas formed ~50 million years ago).
+
+13. **The Eiffel Tower grows in summer** — About 6 inches taller due to thermal expansion. Moderately known.
+
+14. **Scotland&#39;s national animal is the unicorn** — Fun and true, but widely circulated.
+
+15. **There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal** — It can revert to its polyp stage. Known but still surprising to many.
+
+16. **The word &quot;nightmare&quot; originally referred to a demon (&quot;mare&quot;) that sat on sleepers&#39; chests** — Etymology fun.
+
+17. **Every atom heavier than iron in your body was forged in a supernova or neutron star merger** — &quot;You are stardust&quot; is well-known, but the specifics about iron cutoff are less known.
+
+18. **A day on Mercury (solar day) lasts 176 Earth days — two Mercury years** — Mercury&#39;s rotation and orbit create this weird effect.
+
+19. **The Sahara Desert used to be green** — The &quot;Green Sahara&quot; or African Humid Period, ~5000-11000 years ago. Rock art shows hippos and giraffes. It cycles between desert and grassland roughly every 20,000 years due to Earth&#39;s orbital precession. This is genuinely fascinating and less well-known.
+
+20. **The dot over lowercase &quot;i&quot; and &quot;j&quot; is called a &quot;tittle&quot;** — Fun word fact.
+
+21. **Humans are one of the few animals that can&#39;t synthesize vitamin C** — We lost the gene (GULO pseudogene). Guinea pigs too.
+
+22. **The Moon is drifting away from Earth ~3.8 cm/year** — Moderately known.
+
+23. **There&#39;s enough gold in Earth&#39;s core to coat the planet in 1.5 feet of gold** — Interesting but hard to verify precisely.
+
+24. **Sloths can hold their breath longer than dolphins** — Up to 40 minutes by slowing their heart rate. Fun!
+
+25. **The Great Wall of China is NOT visible from space with the naked eye** — Debunking a myth, but the myth is well-known.
+
+26. **Bacteria in your body outnumber your own cells... actually roughly 1:1** — The old 10:1 ratio was debunked in 2016 (Sender, Fuchs, Milo). Interesting correction of a popular fact!
+
+27. **Tardigrades survived exposure to outer space** — Known.
+
+28. **The &quot;smell of rain&quot; (petrichor) has a name and was coined in 1964** — Moderately known.
+
+29. **Ice is less dense than water, which is rare among substances** — Water is one of the few substances whose solid form floats on its liquid form. This is actually crucial for life! If ice sank, lakes would freeze from the bottom up and aquatic life couldn&#39;t survive. This is genuinely profound and many people never think about it.
+
+30. **The North Star changes over time due to axial precession** — In ~12,000 years, Vega will be the pole star. Earth&#39;s axis wobbles on a ~26,000 year cycle.
+
+31. **You can&#39;t hum while holding your nose** — Fun interactive one! Try it. Actually this is true — humming requires exhaling through your nose.
+
+32. **Wombat poop cubes** — mentioned.
+
+33. **The inventors of the Pringles can is buried in one** — Fred Baur, the man who invented the Pringles can, had his ashes buried in a Pringles can. True and delightful!
+
+34. **Vatican City has the highest crime rate per capita** — Because of tiny population and lots of pickpocketing tourists. Fun statistical quirk.
+
+35. **A &quot;jiffy&quot; is an actual unit of time** — In physics, it&#39;s the time light takes to travel one centimeter (~33.4 picoseconds).
+
+36. **Oxford is older than the Aztec Empire** — mentioned.
+
+37. **Nintendo was founded in 1889** — As a playing card company (hanafuda). Before that, they reportedly ran a taxi service and love hotels (those later ventures were in the 20th century, after 1889). Nintendo being 130+ years old surprises people.
+
+38. **The last execution by guillotine in France was in 1977** — Same year Star Wars came out. Hamida Djandoubi, September 1977. Star Wars premiered May 1977. So yes, same year! This is a great one.
+
+39. **Woolly mammoths still existed when the pyramids were built** — Wrangel Island mammoths survived until ~2000-1650 BCE (estimates around 4,000 years ago), and the Great Pyramid was built ~2560 BCE. So there was overlap! Mammoths on Wrangel Island were alive while Egyptians built pyramids. This is a fantastic fact.
+
+40. **The Ottoman Empire still existed when...** — Various.
+
+41. **Harvard University was founded before calculus was invented/published** — Harvard founded 1636, Newton/Leibniz calculus 1660s-1680s. True!
+
+42. **Every planet in the solar system could fit between Earth and the Moon** — The average Earth-Moon distance (~384,400 km) exceeds the sum of planetary diameters (~380,016 km roughly). It&#39;s close but true (with average distance). Fun but requires precision.
+
+43. **The human brain uses ~20% of your energy despite being 2% of body mass** — Known.
+
+44. **Mitochondria were once free-living bacteria** — Endosymbiosis. Moderately known.
+
+45. **Bananas are berries, but strawberries aren&#39;t** — Botanically, bananas are berries; strawberries are &quot;accessory fruits.&quot; Known among trivia fans.
+
+46. **The Sahara pumps dust that fertilizes the Amazon** — ~27 million tons of Saharan dust crosses the Atlantic annually and deposits phosphorus in the Amazon. This is genuinely amazing and less known! The Amazon&#39;s nutrients are replenished by dust from another continent, and a specific ancient lakebed (Bodélé Depression in Chad) is the biggest source.
+
+47. **Your stomach lining replaces itself every few days** because stomach acid would digest it.
+
+48. **The &quot;100th meridian&quot; / aridity line** — too niche.
+
+49. **Birds are dinosaurs** — Known.
+
+50. **There&#39;s a nuclear reactor that formed naturally in Gabon 2 billion years ago** — The Oklo natural nuclear reactor! Uranium deposits underwent self-sustaining fission reactions ~1.7-2 billion years ago when uranium-235 concentration was higher. This is genuinely mind-blowing and not widely known. Discovered in 1972 by French scientists noticing isotope anomalies.
+
+Let me pick the best candidates for a response. The user asked for &quot;something I don&#39;t know&quot; — singular, but offering a couple could be nice. However, the request is for one thing. I could give one great fact with a bit of context, maybe with a bonus. Format-wise, this is a casual conversational request, so it should be conversational, not a bulleted list of 20 facts. One or two facts, well-explained, with the &quot;wow&quot; drawn out.
+
+Best candidates ranked by surprise + verifiability + obscurity:
+
+1. **Woolly mammoths alive while pyramids were built** — Excellent. Wrangel Island mammoths survived until roughly 4,000 years ago (~2000 BCE or slightly earlier; recent estimates ~5,600 years ago? Let me think. The commonly cited date is 4,000 years ago, ~1650-2000 BCE. Some studies say 5,600 years ago for isolation... Actually, the widely accepted extinction date for Wrangel Island mammoths is ~4,000 years ago, around 2000 BCE. The Great Pyramid of Giza was built ~2560 BCE. So the overlap is real — mammoths were still around when the pyramid was built, and even when the Sphinx was carved. Some more recent research suggests mammoths may have persisted even later or that the population had genetic issues. I&#39;ll say &quot;around 4,000 years ago&quot; to be safe, and note pyramids were ~4,500 years ago.)
+
+2. **Oklo natural nuclear reactor** — Excellent, very obscure, verifiably true. Gabon, ~2 billion years ago, natural fission reactions ran for possibly hundreds of thousands of years. Discovered 1972 via isotope ratios in uranium ore. The conditions: back then U-235 made up about 3% of natural uranium (today 0.7%), enough for fission with water acting as moderator. Groundwater would moderate neutrons; when it boiled off, reaction slowed — a natural feedback loop.
+
+3. **Sahara dust fertilizes the Amazon** — Great, connects two continents.
+
+4. **Venus&#39;s day longer than its year** — Solid.
+
+5. **Guillotine in 1977, same year as Star Wars** — Great juxtaposition.
+
+6. **Last guillotine execution same year as Star Wars** — same as above.
+
+7. **Sharks older than trees** — Great framing.
+
+I think I&#39;ll lead with one strong fact and develop it with a couple of layers, then maybe offer to share more. Which one? The mammoth/pyramid one is probably the most universally delightful and accessible. The Oklo reactor is the most &quot;I guarantee you didn&#39;t know this&quot; for most people. The Sahara-Amazon one is beautiful.
+
+Actually, let me verify the mammoth fact carefully:
+- Wrangel Island (Arctic Ocean, north of Siberia) mammoths: survived until approximately 4,000 years ago. Radiocarbon dating puts the youngest remains around 4,300-3,700 years ago, so roughly 2000 BCE ± a few centuries.
+- Great Pyramid of Giza: completed around 2560 BCE (construction ~2580-2560 BCE).
+- So when the Great Pyramid was completed (~2560 BCE), mammoths on Wrangel Island had roughly 500+ years left before extinction. Yes, overlap confirmed. Also, the woolly mammoths on Wrangel were a dwarfed population.
+- Even better: mammoths were still alive when the Egyptian civilization was building pyramids, and when Stonehenge&#39;s main stones were erected (~2500 BCE).
+
+The Oklo fact verification:
+- Oklo, Gabon. In 1972, French physicist Francis Perrin noticed uranium ore from Oklo had unusually low U-235 (0.717% instead of 0.720%). This isotope anomaly indicated fission had occurred.
+- ~1.7-2 billion years ago, natural U-235 abundance was ~3% (it decays faster than U-238; half-life 704 million years vs 4.5 billion). At 3%, with groundwater as a moderator, natural fission chain reactions could occur.
+- The reactors operated on and off for maybe hundreds of thousands of years, consuming several tons of uranium, at relatively low power (estimates ~100 kW or less, like a natural slow cooker).
+- Fission products were largely contained in place, which has informed nuclear waste storage research.
+- This is well-documented science. Good.
+
+Sahara-Amazon verification:
+- NASA CALIPSO satellite data (published 2014, Yu et al.): ~182 million tons of dust leaves Africa annually, ~27 million tons reaches the Amazon, depositing ~22,000 tons of phosphorus — roughly the amount the Amazon loses through rain and flooding. The Bodélé Depression in Chad is the single largest source. True.
+
+Venus verification:
+- Venus sidereal rotation: 243 Earth days (retrograde). Orbital period: ~224.7 Earth days. So rotation period &gt; orbital period. A solar day on Venus (sunrise to sunrise) is ~117 Earth days due to the combination, but the &quot;day&quot; as in rotation period is longer than the year. Also sun rises in west, sets in east. True.
+
+Guillotine verification:
+- Hamida Djandoubi executed September 10, 1977, in Marseille. Star Wars released May 25, 1977 (US). France abolished the death penalty in 1981. True.
+
+Sharks older than trees:
+- Sharks: ~450 million years (Ordovician-era scales; definitive shark fossils ~420 mya). Trees: Archaeopteris ~385 mya; earlier &quot;prototrees&quot; like Wattieza ~386 mya. So sharks predate trees by ~50-65 million years. Also sharks predate Saturn&#39;s rings (some estimates say rings are only 10-100 million years old, though this is actively debated — a 2025 study suggested they might be older, so I should be careful). Sharks predate the Himalayas (~50 mya) for sure. And the North Star — Polaris age is uncertain but it&#39;s a Cepheid variable ~ tens of millions of years old... I&#39;d skip that.
+
+Now, format. The user said &quot;Tell me something I don&#39;t know.&quot; Casual, playful request. Best response: pick one genuinely great fact, deliver it with punch, add just enough context to make it land, keep it conversational and short-ish. Maybe end with an offer for more, or just leave it. A follow-up offer like &quot;want another?&quot; is natural and fits the spirit.
+
+I could also do a tiny bit of self-aware humor about the challenge (&quot;I can&#39;t know what you know, but here&#39;s one that gets most people&quot;). That&#39;s charming and honest.
+
+Let me draft:
+
+---
+
+Fair warning: I can&#39;t actually know what you know — but here&#39;s one that surprises almost everyone.
+
+**Woolly mammoths were still alive when the pyramids were being built.**
+
+A population of dwarfed mammoths survived on Wrangel Island, a remote speck in the Arctic Ocean off Siberia, until around 4,000 years ago — roughly 1650 BCE. The Great Pyramid of Giza was already ~1,000 years old by then. So while Egyptian engineers were stacking 2-million-ton... (no wait, 2.3 million blocks) ...some mammoths were still trundling around the Arctic.
+
+The main herds went extinct ~10,000 years ago at the end of the ice age, but this isolated group hung on for millennia longer, cut off by rising seas.
+
+---
+
+Hmm, that&#39;s good. Alternatively the Oklo reactor:
+
+**Earth once had a naturally occurring nuclear reactor — without any humans involved.**
+
+Two billion years ago, in what&#39;s now Oklo, Gabon, uranium deposits spontaneously achieved self-sustaining nuclear fission. Back then, natural uranium contained enough of the fissile isotope U-235 (about 3%, vs. 0.7% today) that groundwater seeping through the ore acted as a moderator and kicked off chain reactions. It ran intermittently for hundreds of thousands of years at low power, and groundwater boiling off regulated it — a natural feedback loop. Scientists only discovered it in 1972, when they noticed the ore&#39;s isotope ratios were slightly &quot;off,&quot; like spent reactor fuel.
+
+---
+
+Both are great. Which to choose? The mammoth one is more accessible and has broader appeal. The Oklo one is more &quot;nobody knows this.&quot; 
+
+Actually, maybe I give one main fact and a quick bonus? The user asked for &quot;something&quot; — one thing. Giving one thing well is better than a list. But a short bonus could be fun... I think one, done well, with an offer for more, is cleanest. Or I could give the mammoth one and mention &quot;and if you already knew that, I have others.&quot;
+
+Actually, let me reconsider: a single fact with a brief &quot;want another?&quot; feels natural and conversational. Length should be short — maybe 80-140 words. No need for headers. Maybe bold the key claim for punch, or just write it plainly. In a casual chat, light formatting like one bolded sentence is fine, or none at all. I&#39;ll keep it minimal — maybe bold the headline fact since it&#39;s the &quot;reveal.&quot;
+
+Let me also double-check the mammoth dates once more:
+- Wrangel Island mammoth extinction: most cited as ~4,000 years BP (before present), i.e., ~2000 BCE. Some sources say 4,300 years ago, some say as recently as 3,700 years ago. A 2017 study (Nyström et al.) and earlier work support ~4,000 years. There was also a 2021 study suggesting they may have gone extinct slightly earlier... I&#39;ll say &quot;until roughly 4,000 years ago&quot; — safe.
+- Great Pyramid: ~2560 BCE, so about 4,560 years ago. Mammoths outlasted the pyramid&#39;s construction by ~500 years. Correct: &quot;The Great Pyramid was already around 500 years old when the last mammoth died.&quot; That&#39;s a punchy, accurate line.
+
+Also fun: Stonehenge&#39;s sarsen stones were raised ~2500 BCE — also overlapping. And the mammoths on Wrangel were small (dwarfed), about the size of... they were significantly smaller than mainland mammoths. Fine detail to include briefly.
+
+Draft final:
+
+---
+
+Since I can&#39;t peek at your knowledge, here&#39;s one that catches almost everyone:
+
+**Woolly mammoths were still alive while the pyramids were being built.**
+
+The main herds died out ~10,000 years ago, but a population of dwarfed mammoths survived on Wrangel Island — a remote Arctic island off Siberia — until roughly 4,000 years ago. That means the Great Pyramid of Giza was already about 500 years old when the last mammoth died. Ancient Egyptians could, in principle, have written about mammoths at the same time mammoths existed... (they couldn&#39;t have known about them, though — too far away. Skip that.)
+
+Want another? I&#39;ve got a good one about Earth running its own natural nuclear reactor.
+
+---
+
+Hmm, the teaser at the end is nice — it invites continuation. Or I could just include both facts. Two facts might be better value. But the request was &quot;something.&quot; One fact plus a teaser is playful and keeps it tight. Actually, including the second one briefly might be even better — the user gets a bonus. Let me think about length. Two facts, each ~3 sentences, plus intro and outro — maybe 150-180 words. That&#39;s still short and conversational. That feels like good value without being a listicle.
+
+Actually, I&#39;ll do one main fact, then offer. No — let me just give both. The user&#39;s request is open-ended and playful; delivering a delightful double is generous. But there&#39;s something elegant about one perfect fact... 
+
+Compromise: lead with the mammoth fact (fully developed), then a one-line &quot;bonus&quot; teaser or the Oklo fact in compressed form. Hmm. If I compress Oklo too much it loses its punch. Let me write both at moderate length and see.
+
+Version with both:
+
+---
+
+I can&#39;t see what&#39;s in your head, so here&#39;s one that gets nearly everyone:
+
+**Woolly mammoths were alive while the pyramids were being built.** The great herds vanished ~10,000 years ago, but a population of dwarfed mammoths held on, on Wrangel Island in the Arctic Ocean, until about 4,000 years ago. The Great Pyramid of Giza was already roughly 500 years old when the last one died.
+
+Bonus, since you&#39;re here: **Earth has had a natural nuclear reactor.** Two billion years ago in Oklo, Gabon, uranium deposits spontaneously began sustained fission — back then natural uranium contained enough fissile U-235 for groundwater to trigger chain reactions. It cycled on and off for hundreds of thousands of years, self-regulated by boiling groundwater, and was only discovered in 1972 when scientists noticed the ore&#39;s isotope ratios looked suspiciously like spent reactor fuel.
+
+---
+
+That&#39;s about 150 words. Good. Maybe trim. The ending could add &quot;Want more?&quot; or just end. A tiny closer like &quot;Happy to keep going — I have a whole arsenal of these&quot; adds warmth. Or leave it clean. I&#39;ll add a very short offer.
+
+Check accuracy of &quot;Great Pyramid already ~500 years old when the last mammoth died&quot;: Pyramid ~2560 BCE; last mammoth ~2000 BCE (±300 years). 2560 - 2000 = 560. So &quot;roughly 500 years&quot; is right, could say &quot;over 500 years&quot; or &quot;about 500 years.&quot; Fine.
+
+Check &quot;dwarfed mammoths&quot;: yes, Wrangel mammoths were notably smaller — often described as about a third the size... actually they were maybe 1.8m at shoulder vs 3+ m for mainland ones. &quot;Dwarfed&quot; or &quot;smaller&quot; is accurate.
+
+Check Oklo details: 
+- Discovered 1972 by French scientists analyzing uranium from Oklo mine (for the nuclear program) — isotope ratio anomaly. Francis Perrin is credited. Good.
+- Age: ~1.7-2 billion years ago (commonly stated 1.8 or 2 billion). &quot;Two billion years ago&quot; is fine.
+- U-235 fraction then: ~3% (natural today 0.7%). Correct — at 2 Ga, U-235 abundance was about 3%, similar to enriched reactor fuel... well, light water reactors use ~3-5% enriched. So &quot;comparable to enriched fuel&quot; is fair, but I&#39;ll just say &quot;enough fissile U-235.&quot;
+- Duration: estimates suggest the reactors operated intermittently for ~100,000-500,000+ years (often cited as several hundred thousand years). &quot;Hundreds of thousands of years&quot; is fine, or &quot;on and off for perhaps a few hundred thousand years.&quot;
+- Power: estimated at less than 100 kW thermal — could mention &quot;low power&quot; but not needed.
+- Groundwater as moderator and self-regulation: yes — water moderated neutrons; heat boiled water off, slowing reaction; water returned, reaction resumed. Natural feedback. Good.
+- Fission products largely stayed put — informed nuclear waste containment research. Could add as a kicker: &quot;The fission products barely moved in two billion years, which is why nuclear waste researchers studied the site.&quot; That&#39;s a nice extra but adds length. Maybe include briefly — it&#39;s a genuinely cool implication. Hmm, keep it optional. I&#39;ll include a short clause.
+
+Formatting: bold the two headline claims. Conversational tone. No headers. Keep under ~180 words.
+
+One more consideration: the opening. &quot;I can&#39;t see what&#39;s in your head&quot; — playful acknowledgment of the inherent challenge. Good. Or &quot;Can&#39;t guarantee you don&#39;t know it, but here&#39;s one that gets almost everyone.&quot; Either works. Keep it snappy.
+
+Final polish:
+
+---
+
+Can&#39;t peek into your head, so here&#39;s one that gets almost everyone:
+
+**Woolly mammoths were still alive while the pyramids were being built.** The great herds died out around 10,000 years ago, but a population of smaller mammoths survived on Wrangel Island, a remote speck in the Arctic Ocean, until roughly 4,000 years ago. The Great Pyramid of Giza was already about 500 years old when the last one died.
+
+And a bonus: **Earth has run a natural nuclear reactor.** Two billion years ago in Oklo, Gabon, uranium deposits spontaneously achieved self-sustaining fission — natural uranium back then contained enough fissile U-235 that groundwater seeping through the ore set off chain reactions. It cycled on and off for hundreds of thousands of years, self-regulated by its own boiling groundwater, and wasn&#39;t discovered until 1972, when scientists noticed the ore&#39;s isotope ratios looked suspiciously like spent reactor fuel.
+
+Want more?
+
+---
+
+That&#39;s tight, accurate, delightful. ~160 words. The &quot;Want more?&quot; ending is friendly and invites continuation, fitting the playful request.
+
+Actually, should I double check &quot;smaller mammoths&quot; — Wrangel mammoths are described as dwarfed, roughly 1.8-2 m tall at the shoulder? Some sources say they were about the size of... they were substantially smaller. &quot;Smaller&quot; is safe. Could say &quot;dwarf mammoths.&quot;
+
+One nitpick: &quot;spontaneously achieved self-sustaining fission&quot; — the mechanism: U-235 concentration was high enough that, with water as moderator, a chain reaction could sustain. A spontaneous fission of U-238/U-235 provides the neutrons to start it. Accurate enough.
+
+&quot;isotope ratios looked suspiciously like spent reactor fuel&quot; — the U-235 depletion and presence of fission product nuclides matched what you&#39;d see in spent fuel. Accurate.
+
+I&#39;m confident in this response. Length is appropriate for a casual ask — not a wall of text, not a one-liner. Two facts is generous but not overwhelming.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/stealth-ox-alpha/">← Ox Alpha</a>
+            <a href="/">all models</a>
+            <a href="/m/tencent-hy-mt2-1.8b/">Tencent: Hy-MT2-1.8B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
