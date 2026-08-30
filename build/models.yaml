@@ -956,3 +956,65 @@ models:
     license: "open-weights"
     released: "August 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "tencent/hy4-preview"
+    name: "Tencent: Hy4 preview"
+    provider: "Tencent"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "inclusionai/ling-3.0-flash-fin:free"
+    name: "Ling 3.0 Flash Fin (free)"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "qwen/qwen3.8-flash"
+    name: "Qwen: Qwen3.8 Flash"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "meta/muse-spark-1.2-contributor"
+    name: "Meta: Muse Spark 1.2 Contributor"
+    provider: "Meta"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "deepseek/deepseek-v4-flash-vision-exp"
+    name: "DeepSeek: DeepSeek V4 Flash Vision Exp"
+    provider: "DeepSeek"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "z-ai/glm-5.3-flash"
+    name: "Z.ai: GLM 5.3 Flash"
+    provider: "Z Ai"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "tencent/hy-mt2-1.8b"
+    name: "Tencent: Hy-MT2-1.8B"
+    provider: "Tencent"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "tencent/hy-mt2-30b-a3b"
+    name: "Tencent: Hy-MT2-30B-A3B"
+    provider: "Tencent"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "tencent/hy-mt2-7b"
+    name: "Tencent: Hy-MT2-7B"
+    provider: "Tencent"
+    license: "open-source"
+    released: "August 2026"
+
+  - id: "z-ai/glm-5.3"
+    name: "Z.ai: GLM 5.3"
+    provider: "Z Ai"
+    license: "open-weights"
+    released: "August 2026"
+
