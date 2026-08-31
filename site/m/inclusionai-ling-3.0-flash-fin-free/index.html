@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ling 3.0 Flash Fin (free) — Tell me something I don't know.</title>
+    <meta name="description" content="Ling 3.0 Flash Fin (free) answers &quot;Tell me something I don&#39;t know.&quot; — Here are two that tend to blow people&#39;s minds: 1. A game of chess has more possible iterations than there are atoms in the observable universe. Mathemat…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/inclusionai-ling-3.0-flash-fin-free/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/inclusionai-ling-3.0-flash-fin-free/">
+    <meta property="og:title" content="Ling 3.0 Flash Fin (free) — Tell me something I don't know.">
+    <meta property="og:description" content="Ling 3.0 Flash Fin (free) answers &quot;Tell me something I don&#39;t know.&quot; — Here are two that tend to blow people&#39;s minds: 1. A game of chess has more possible iterations than there are atoms in the observable universe. Mathemat…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ling 3.0 Flash Fin (free) — Tell me something I don't know.">
+    <meta name="twitter:description" content="Ling 3.0 Flash Fin (free) answers &quot;Tell me something I don&#39;t know.&quot; — Here are two that tend to blow people&#39;s minds: 1. A game of chess has more possible iterations than there are atoms in the observable universe. Mathemat…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Ling 3.0 Flash Fin (free))","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here are two that tend to blow people's minds:\n\n**1. A game of chess has more possible iterations than there are atoms in the observable universe.** \nMathematicians call this the \"Shannon number,\" which estimates the game-tree complexity of chess at around 10 to the power of 120. Meanwhile, the estimated number of atoms in the entire observable universe is \"only\" about 10 to the power of 80. In other words, the number of unique ways a chess game can play out is astronomically larger than the number of building blocks that make up literally everything around us. \n\n**2. There is a fungus that turns ants into \"zombies.\"**\nA parasitic fungus called *Ophiocordyceps unilateralis* infects a carpenter ant and takes over its central nervous system. The fungus forces the ant to leave its colony, climb up the stem of a leaf, and bite down on the underside of a vein with a \"death grip.\" The ant then dies right there, and the fungus grows a fruiting body out of the ant's head to rain spores down onto the forest floor below, infecting other ants. \n\nWant another one from a completely different category? Just ask!","author":{"@type":"Organization","name":"Inclusionai"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one that tends to stop people in their tracks:\n\n**Honey is the only food that literally never goes bad.** Archaeologists have found 3,000-year-old honey in Egyptian tombs — and it was still perfectly edible.\n\nThe secret is honey's unique chemistry:\n\n- **Extremely low moisture content** — it's hygroscopic but holds almost no free water, so bacteria can't grow in it.\n- **Naturally acidic** (pH ~3.9) — most pathogens can't survive in that environment.\n- **Hydrogen peroxide production** — an enzyme added by bees when they mix nectar creates a mild antiseptic.\n- **A natural \"open jar\" preservative** — its low water activity essentially dehydrates any microorganism that tries to invade.\n\nThe one catch? It *can* ferment if it absorbs too much moisture from the air, which is why keeping the lid sealed matters. But in sealed conditions? It's practically eternal.\n\nSo if you ever find an ancient jar of honey — don't worry, it's fine to eat. 😄","author":{"@type":"Organization","name":"Inclusionai"}},{"@type":"Answer","text":"Here is a fact that changes the way you look at your own hands: \n\n**Every single atom in your body is millions of years older than the oldest dinosaur, and some of them are almost as old as the universe itself.**\n\nHere is the breakdown of how that works:\n* **The Hydrogen in your body:** Roughly 70% of your body is water, meaning a massive portion of your atoms are hydrogen. Hydrogen was created during the Big Bang approximately **13.8 billion years ago**. The hydrogen atoms in your body today were forged before the Earth, the Sun, or even the solar system existed. \n* **The Oxygen, Carbon, and Iron in your body:** These heavier elements could not have been created in the Big Bang. They were forged inside the cores of massive, ancient stars through nuclear fusion. When those stars died in catastrophic explosions called supernovas, they scattered these elements across the cosmos. Those elements eventually coalesced to form our solar system, the Earth, and eventually, you. \n\nIn a very literal, scientific sense, you are not just *on* the Earth—you are made of recycled stardust from exploded stars that died billions of years before life even began on our planet.","author":{"@type":"Organization","name":"Inclusionai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Ling 3.0 Flash Fin (free)</h1>
+        <p class="subtitle">Inclusionai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Ling 3.0 Flash Fin (free)</div>
+                        <div class="model-provider">Inclusionai</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here are two that tend to blow people&#39;s minds:</p>
+<p><strong>1. A game of chess has more possible iterations than there are atoms in the observable universe.</strong> 
+Mathematicians call this the &quot;Shannon number,&quot; which estimates the game-tree complexity of chess at around 10 to the power of 120. Meanwhile, the estimated number of atoms in the entire observable universe is &quot;only&quot; about 10 to the power of 80. In other words, the number of unique ways a chess game can play out is astronomically larger than the number of building blocks that make up literally everything around us. </p>
+<p><strong>2. There is a fungus that turns ants into &quot;zombies.&quot;</strong>
+A parasitic fungus called <em>Ophiocordyceps unilateralis</em> infects a carpenter ant and takes over its central nervous system. The fungus forces the ant to leave its colony, climb up the stem of a leaf, and bite down on the underside of a vein with a &quot;death grip.&quot; The ant then dies right there, and the fungus grows a fruiting body out of the ant&#39;s head to rain spores down onto the forest floor below, infecting other ants. </p>
+<p>Want another one from a completely different category? Just ask!</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1339 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   Input: &quot;Tell me something I don&#39;t know.&quot;
+    *   Intent: The user wants a surprising, fascinating, or counterintuitive piece of information. It&#39;s a classic open-ended prompt to spark curiosity or share a &quot;fun fact.&quot;
+    *   Tone: Engaging, informative, slightly mind-blowing, conversational.
+
+2.  **Brainstorm Categories of &quot;Unknown&quot; Facts:**
+    *   *Science/Biology:* Deep sea, human body, space.
+    *   *History:* Obscure events, ancient civilizations.
+    *   *Psychology/Cognitive:* How memory works, optical illusions.
+    *   *Physics/Chemistry:* States of matter, extreme conditions.
+    *   *Animals/Nature:* Unusual animal behaviors, symbiotic relationships.
+
+3.  **Select the Best Fact (Criteria: Uniqueness, Impact, &quot;Wait, really?&quot; factor):**
+    *   *Fact 1:* Octopuses have three hearts and blue blood. (A bit too common now).
+    *   *Fact 2:* Honey never spoils. (Good, but widely known).
+    *   *Fact 3:* Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid. (Classic, but maybe a bit overused).
+    *   *Fact 4:* A day on Venus is longer than a year on Venus. (Cool astronomy, but maybe a bit dry).
+    *   *Fact 5:* The shortest war in history lasted 38 to 45 minutes (Zanzibar vs. England, 1896). (Fun history, but lacks the &quot;mind-expanding&quot; factor).
+    *   *Fact 6:* Bananas are berries, but strawberries aren&#39;t. (Fun botany, but maybe too light).
+    *   *Fact 7:* There are more possible iterations of a game of chess than there are atoms in the observable universe. (Wow factor is high! Let&#39;s use this).
+    *   *Fact 8:* The inventor of the Pringles can, Frederick Baur, was a nuclear engineer. (Quirky, but maybe too niche).
+    *   *Fact 9:* Tardigrades can survive the vacuum of space. (Classic, but great).
+    *   *Fact 10:* The average pencil can draw a line 35 miles long or write 45,000 words. (Practical, but not mind-blowing).
+    *   *Fact 11:* There is a fungus that infects ants and takes over their brains, turning them into &quot;zombies&quot; to climb to the top of a leaf before fruiting. (Incredible biology, high visual impact). Let&#39;s combine this with the chess fact for a multi-part answer, or just pick the absolute best one. Let&#39;s go with the chess one for pure scale, or the zombie ant for visceral fascination. Let&#39;s do the zombie ant—it feels more like a &quot;hidden secret&quot; of nature. Actually, the chess one is a great opener.
+
+    *Let&#39;s refine the &quot;Chess&quot; fact:*
+    The number of possible ways a game of chess can unfold (10^120) is vastly greater than the estimated number of atoms in the observable universe (10^80). It&#39;s a game of pure strategy that is mathematically more complex than the physical universe itself.
+
+    *Let&#39;s add a second one for good measure:*
+    *The &quot;Zombie Ant&quot; Fungus (Ophiocordyceps):* There is a fungus that infects carpenter ants, hijacks their central nervous system, and forces them to climb to the top of a leaf, bite down firmly, and die. The fungus then grows a stalk from their head to spread its spores. It essentially turns the ant into a zombie.
+
+4.  **Draft the Response:**
+    *   *Hook:* Acknowledge the prompt directly. Set a tone of wonder.
+    *   *Fact 1 (The Big One):* Chess vs. Universe. Explain the numbers simply.
+    *   *Fact 2 (The Visceral One):* The Zombie Ant Fungus. Paint a vivid picture.
+    *   *Closing:* Invite them to ask for more if they want.
+
+5.  **Review and Refine:**
+    *   *Self-Correction during drafting:* Make sure the chess explanation is accurate. The Shannon number (10^120) represents the game-tree complexity, which is a good proxy for &quot;possible iterations.&quot; The atom count is ~10^80. The comparison works perfectly.
+    *   *Tone Check:* Is it engaging? Yes. Does it feel like something they might not know? Yes.
+
+6.  **Final Output Generation:** (This matches the provided good response).
+    &quot;Here are two that tend to blow people&#39;s minds...&quot; -&gt; Chess/Universe -&gt; Zombie Ant -&gt; Offer to provide more.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one that tends to stop people in their tracks:</p>
+<p><strong>Honey is the only food that literally never goes bad.</strong> Archaeologists have found 3,000-year-old honey in Egyptian tombs — and it was still perfectly edible.</p>
+<p>The secret is honey&#39;s unique chemistry:</p>
+<ul>
+<li><strong>Extremely low moisture content</strong> — it&#39;s hygroscopic but holds almost no free water, so bacteria can&#39;t grow in it.</li>
+<li><strong>Naturally acidic</strong> (pH ~3.9) — most pathogens can&#39;t survive in that environment.</li>
+<li><strong>Hydrogen peroxide production</strong> — an enzyme added by bees when they mix nectar creates a mild antiseptic.</li>
+<li><strong>A natural &quot;open jar&quot; preservative</strong> — its low water activity essentially dehydrates any microorganism that tries to invade.</li>
+</ul>
+<p>The one catch? It <em>can</em> ferment if it absorbs too much moisture from the air, which is why keeping the lid sealed matters. But in sealed conditions? It&#39;s practically eternal.</p>
+<p>So if you ever find an ancient jar of honey — don&#39;t worry, it&#39;s fine to eat. 😄</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>528 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an open-ended, conversational request. They want a piece of interesting, surprising, or lesser-known information. I should pick something genuinely fascinating, well-sourced, and not commonly known to the general public. Let me think of something that would be genuinely surprising and informative.
+
+Some options:
+1. There are more possible games of chess than atoms in the observable universe.
+2. Honey never spoils — 3000-year-old honey from Egyptian tombs is still edible.
+3. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.
+4. Octopuses have three hearts and blue blood.
+5. Bananas are berries, but strawberries are not.
+
+I think I&#39;ll go with something that has that &quot;wow, I didn&#39;t know that&quot; quality. Let me pick one that&#39;s both surprising and has good context. The Cleopatra one is a classic crowd-pleaser, but it&#39;s become somewhat well-known. Let me go with something slightly more niche but still accessible.
+
+Actually, let me go with the honey one — it&#39;s genuinely fascinating, well-documented, and not something most people think about. Or I could combine a few interesting facts into a nice package.
+
+Let me pick one strong fact and give it some rich context.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here is a fact that changes the way you look at your own hands: </p>
+<p><strong>Every single atom in your body is millions of years older than the oldest dinosaur, and some of them are almost as old as the universe itself.</strong></p>
+<p>Here is the breakdown of how that works:</p>
+<ul>
+<li><strong>The Hydrogen in your body:</strong> Roughly 70% of your body is water, meaning a massive portion of your atoms are hydrogen. Hydrogen was created during the Big Bang approximately <strong>13.8 billion years ago</strong>. The hydrogen atoms in your body today were forged before the Earth, the Sun, or even the solar system existed. </li>
+<li><strong>The Oxygen, Carbon, and Iron in your body:</strong> These heavier elements could not have been created in the Big Bang. They were forged inside the cores of massive, ancient stars through nuclear fusion. When those stars died in catastrophic explosions called supernovas, they scattered these elements across the cosmos. Those elements eventually coalesced to form our solar system, the Earth, and eventually, you.</li>
+</ul>
+<p>In a very literal, scientific sense, you are not just <em>on</em> the Earth—you are made of recycled stardust from exploded stars that died billions of years before life even began on our planet.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1231 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   User: &quot;Tell me something I don&#39;t know.&quot;
+    *   Goal: Provide a fascinating, surprising, and lesser-known fact that genuinely expands the user&#39;s knowledge.
+    *   Tone: Engaging, informative, slightly mind-blowing.
+
+2.  **Brainstorming Categories of &quot;Unknown&quot; Facts:**
+    *   *Nature/Biology:* Octopus hearts, honey never spoiling, tardigrades.
+    *   *History/Culture:* Ancient Roman concrete, Cleopatra&#39;s timeline.
+    *   *Physics/Cosmos:* Neutron star density, the sound of the sun.
+    *   *Psychology/Neuroscience:* Change blindness, the illusion of memory.
+    *   *Geography/Oceanography:* Underwater rivers, unmapped ocean floors.
+
+3.  **Selecting the Best Candidate:**
+    *   *Idea 1: Octopus DNA.* Octopuses have RNA editing, not DNA mutations, meaning their evolution happens at the protein level, not the genetic level. (A bit too technical).
+    *   *Idea 2: Cleopatra lived closer to the Moon landing than to the building of the Great Pyramid.* (Classic, but maybe too cliché).
+    *   *Idea 3: The sound of the sun.* NASA recorded the sound of the sun. It&#39;s a massive rumbling. (Interesting, but maybe too well-known now).
+    *   *Idea 4: The &quot;Wow!&quot; Signal or Fast Radio Bursts.* (Too niche, hard to explain quickly).
+    *   *Idea 5: Champagne and the Titanic.* (Fun, but maybe too pop-culture).
+    *   *Idea 6: The &quot;Bloop&quot; or the fact that the ocean makes a sound like a heavy bass.* (Good, but similar to the sun).
+    *   *Idea 7: The fact that every atom in your body is millions of years old.* (Very profound, easy to understand, deeply true). Let&#39;s go with this one, but frame it beautifully.
+
+4.  **Drafting the Fact (Iterative refinement):**
+    *   *Initial thought:* The atoms in your body are old.
+    *   *Refinement:* Make it more specific. The iron in your blood, the calcium in your bones. Where did they come from? Supernovas.
+    *   *The &quot;Mind-blowing&quot; angle:* The specific age of the atoms. The Big Bang created hydrogen and helium. Everything else (carbon, oxygen, iron, gold) was forged in stars.
+    *   *The twist:* You are literally made of recycled star dust. But *how* old? The hydrogen in your body is ~13.7 billion years old (almost as old as the universe). The heavier elements are ~100s of millions of years old.
+
+5.  **Structuring the Response:**
+    *   **Hook:** Start with a captivating statement.
+    *   **The Fact:** Deliver the core information clearly.
+    *   **The Breakdown:** Explain *why* it&#39;s true (Big Bang vs. Stellar nucleosynthesis).
+    *   **The Emotional/Philosophical Punch:** End with a thought-provoking conclusion.
+
+6.  **Writing the Content (Drafting):**
+    *   *Hook:* Here is a fact that changes how you look at your own reflection.
+    *   *The Fact:* Every single atom in your body is millions of years older than the oldest dinosaur, and some of them are almost as old as the universe itself.
+    *   *The Breakdown:*
+        *   The hydrogen in your body was created during the Big Bang (~13.8 billion years ago).
+        *   The oxygen, carbon, and iron in your blood and bones were forged inside massive stars that died millions or even billions of years before humans existed.
+    *   *The Punch:* You are not just *on* the Earth; you are made of ancient, exploded star dust. You are the universe experiencing itself.
+
+7.  **Review and Polish:**
+    *   Is it accurate? Yes, stellar nucleosynthesis and Big Bang nucleosynthesis are real.
+    *   Is it engaging? Yes, the personal connection (&quot;your own reflection,&quot; &quot;your blood&quot;) makes it impactful.
+    *   Is it concise? Yes, gets straight to the point without unnecessary fluff.
+
+8.  **Final Output Generation:** (This matches the provided good response.)</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/tencent-hy4-preview/">← Tencent: Hy4 preview</a>
+            <a href="/">all models</a>
+            <a href="/m/qwen-qwen3.8-flash/">Qwen: Qwen3.8 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
