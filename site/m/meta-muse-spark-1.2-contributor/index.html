@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta: Muse Spark 1.2 Contributor — Tell me something I don't know.</title>
+    <meta name="description" content="Meta: Muse Spark 1.2 Contributor answers &quot;Tell me something I don&#39;t know.&quot; — Bet you didn&#39;t know this one: You are blind for about 40 minutes every single day and your brain is lying to you about it. Every time your eyes move - w…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/meta-muse-spark-1.2-contributor/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/meta-muse-spark-1.2-contributor/">
+    <meta property="og:title" content="Meta: Muse Spark 1.2 Contributor — Tell me something I don't know.">
+    <meta property="og:description" content="Meta: Muse Spark 1.2 Contributor answers &quot;Tell me something I don&#39;t know.&quot; — Bet you didn&#39;t know this one: You are blind for about 40 minutes every single day and your brain is lying to you about it. Every time your eyes move - w…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta: Muse Spark 1.2 Contributor — Tell me something I don't know.">
+    <meta name="twitter:description" content="Meta: Muse Spark 1.2 Contributor answers &quot;Tell me something I don&#39;t know.&quot; — Bet you didn&#39;t know this one: You are blind for about 40 minutes every single day and your brain is lying to you about it. Every time your eyes move - w…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Meta: Muse Spark 1.2 Contributor)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Bet you didn't know this one:\n\n**You are blind for about 40 minutes every single day and your brain is lying to you about it.**\n\nEvery time your eyes move - which they do 3-4 times *per second* - your brain literally shuts off your vision so you don't see a blurry smear. It's called **saccadic masking**. Your brain then edits the gap and fills it in with what it *thinks* you should have seen. You're hallucinating your stable, smooth reality.\n\nYou can prove it: Look in a mirror and flick your eyes from one eye to the other. You'll never see your own eyes move, but anyone watching you will.\n\nHere are a few more that are almost guaranteed to be new:\n\n**1. Trees talk to each other through an underground internet.**\nTrees are connected by a massive network of fungi in the soil called mycorrhizae - scientists literally call it the \"Wood Wide Web.\" Mother trees send nutrients to their babies, and dying trees will dump their resources to their neighbors. If a tree gets attacked by insects, it sends chemical warning signals through the fungi to other trees.\n\n**2. The universe has a color, and it's beige.**\nIn 2002, astronomers at Johns Hopkins averaged the light from 200,000 galaxies. The average color of the universe is a creamy beige. They called it \"Cosmic Latte\" - hex code #FFF8E7.\n\n**3. You have never actually *touched* anything in your life.**\nWhen you touch a table or another person, the atoms in your hand never actually collide with the atoms in the object. The electrons in both repel each other electromagnetically. What you feel as \"touch\" is just the force of repulsion.\n\n**4. There's a jellyfish that is biologically immortal.**\n*Turritopsis dohrnii* can revert back to its baby polyp stage after becoming an adult. It can theoretically do this forever, escaping death by just starting its life over.\n\nWant me to go deeper down one of these rabbit holes? I can hit you with creepy human psychology facts, terrifying space facts, or weird history facts - what are you in the mood for?","author":{"@type":"Organization","name":"Meta"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one that breaks most people's brains:\n\n**Sharks are older than trees.**\n\nSharks have existed for about 400-420 million years. The earliest trees didn't appear until about 350 million years ago. That means sharks were swimming around for 50-70 million years on a planet with no trees, no forests, no wood. They are also older than dinosaurs, mountains like the Himalayas, and the rings of Saturn.\n\nAnd since I don't know what you *do* know, here are two more to increase the odds I got you:\n\n**1. Oxford University is older than the Aztec Empire.**\nTeaching started in Oxford in 1096. The Aztec Empire wasn't founded until 1428 - more than 300 years later. Oxford is also older than Machu Picchu, the printing press, and English as we know it.\n\n**2. You are literally glowing right now.**\nHumans are bioluminescent. Japanese scientists proved it in 2009 with ultra-sensitive cameras. We emit a tiny amount of visible light that rises and falls throughout the day - our faces glow the most around 4pm. Your eyes just aren't sensitive enough to see it.\n\nBonus creepy one: Your stomach makes a brand new lining every 3-4 days. If it didn't, it would digest itself. You are literally digesting yourself slowly at all times, and your body is just out-repairing it.\n\nWant me to go deeper down a rabbit hole? I can do:\n* Science / Space\n* History / Creepy\n* Psychology / Human Body\n* Useless-but-amazing facts\n\nWhat vibe do you want next?","author":{"@type":"Organization","name":"Meta"}},{"@type":"Answer","text":"Since I don't know what you *do* know, I'll give you 5 things that surprise *almost* everyone:\n\n### 1. Sharks are older than trees and Saturn's rings\nSharks have existed for ~400 million years. Trees only showed up ~350 million years ago. And Saturn's rings are relatively new - probably only 10-100 million years old. A shark would have looked at Earth and seen a barren landscape with no trees and a ring-less Saturn.\n\n### 2. There are more ways to shuffle a deck of cards than atoms on Earth\nA standard 52-card deck has 8.06 x 10^67 possible orders. That's an 8 with 67 zeros after it. There are only about 10^50 atoms on Earth. Every time you shuffle a deck well, you have almost certainly created an order of cards that has *never* existed before in human history.\n\n### 3. Cleopatra lived closer to you than to the pyramids being built\nThe Great Pyramid of Giza was built around 2560 BCE. Cleopatra died in 30 BCE. That's a 2,530 year gap. You watching the Moon landing in 1969 is only 1,999 years after Cleopatra. She is closer to pizza delivery apps than to the pyramids.\n\n### 4. There's a planet where it rains molten glass sideways\nPlanet HD 189733b is a deep cobalt blue planet 64 light-years away. Its wind speeds hit 5,400 mph and its rain is literally shards of silicate glass blowing horizontally. And it smells like rotten eggs because its atmosphere is full of hydrogen sulfide.\n\n### 5. Your stomach would digest itself if it didn't rebuild itself every 3 days\nYour stomach acid is strong enough to dissolve razor blades. The only reason it doesn't eat through your stomach wall is that your entire stomach lining replaces itself every 3-4 days. You literally have a new stomach multiple times a month.\n\n**Bonus one you can test right now:** You are blind and don't know it.\n\nYou have a blind spot in each eye where the optic nerve connects - there are no light receptors there. Your brain just photoshops over it using the surrounding pattern. Hold your thumb out, close your right eye, stare at your thumb with your left eye, and slowly move your right hand to the side with one finger up. At one point your finger will just *vanish*.\n\n---\n\nDid you know any of those? Want me to go deeper on science, space, history, psychology, or creepy biology facts?","author":{"@type":"Organization","name":"Meta"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Meta: Muse Spark 1.2 Contributor</h1>
+        <p class="subtitle">Meta · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Meta: Muse Spark 1.2 Contributor</div>
+                        <div class="model-provider">Meta</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Bet you didn&#39;t know this one:</p>
+<p><strong>You are blind for about 40 minutes every single day and your brain is lying to you about it.</strong></p>
+<p>Every time your eyes move - which they do 3-4 times <em>per second</em> - your brain literally shuts off your vision so you don&#39;t see a blurry smear. It&#39;s called <strong>saccadic masking</strong>. Your brain then edits the gap and fills it in with what it <em>thinks</em> you should have seen. You&#39;re hallucinating your stable, smooth reality.</p>
+<p>You can prove it: Look in a mirror and flick your eyes from one eye to the other. You&#39;ll never see your own eyes move, but anyone watching you will.</p>
+<p>Here are a few more that are almost guaranteed to be new:</p>
+<p><strong>1. Trees talk to each other through an underground internet.</strong>
+Trees are connected by a massive network of fungi in the soil called mycorrhizae - scientists literally call it the &quot;Wood Wide Web.&quot; Mother trees send nutrients to their babies, and dying trees will dump their resources to their neighbors. If a tree gets attacked by insects, it sends chemical warning signals through the fungi to other trees.</p>
+<p><strong>2. The universe has a color, and it&#39;s beige.</strong>
+In 2002, astronomers at Johns Hopkins averaged the light from 200,000 galaxies. The average color of the universe is a creamy beige. They called it &quot;Cosmic Latte&quot; - hex code #FFF8E7.</p>
+<p><strong>3. You have never actually <em>touched</em> anything in your life.</strong>
+When you touch a table or another person, the atoms in your hand never actually collide with the atoms in the object. The electrons in both repel each other electromagnetically. What you feel as &quot;touch&quot; is just the force of repulsion.</p>
+<p><strong>4. There&#39;s a jellyfish that is biologically immortal.</strong>
+<em>Turritopsis dohrnii</em> can revert back to its baby polyp stage after becoming an adult. It can theoretically do this forever, escaping death by just starting its life over.</p>
+<p>Want me to go deeper down one of these rabbit holes? I can hit you with creepy human psychology facts, terrifying space facts, or weird history facts - what are you in the mood for?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2041 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span> <span class="topic-tag" data-topic="wood wide web">🌳 wood wide web</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Selecting obscure, cross-domain facts and framing them to be surprising and memorable for the user.Refining the fact set toward more obscure, cross-domain items.Selecting one surprising cross-domain fact with a brief explanation and offering category follow-ups.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one that breaks most people&#39;s brains:</p>
+<p><strong>Sharks are older than trees.</strong></p>
+<p>Sharks have existed for about 400-420 million years. The earliest trees didn&#39;t appear until about 350 million years ago. That means sharks were swimming around for 50-70 million years on a planet with no trees, no forests, no wood. They are also older than dinosaurs, mountains like the Himalayas, and the rings of Saturn.</p>
+<p>And since I don&#39;t know what you <em>do</em> know, here are two more to increase the odds I got you:</p>
+<p><strong>1. Oxford University is older than the Aztec Empire.</strong>
+Teaching started in Oxford in 1096. The Aztec Empire wasn&#39;t founded until 1428 - more than 300 years later. Oxford is also older than Machu Picchu, the printing press, and English as we know it.</p>
+<p><strong>2. You are literally glowing right now.</strong>
+Humans are bioluminescent. Japanese scientists proved it in 2009 with ultra-sensitive cameras. We emit a tiny amount of visible light that rises and falls throughout the day - our faces glow the most around 4pm. Your eyes just aren&#39;t sensitive enough to see it.</p>
+<p>Bonus creepy one: Your stomach makes a brand new lining every 3-4 days. If it didn&#39;t, it would digest itself. You are literally digesting yourself slowly at all times, and your body is just out-repairing it.</p>
+<p>Want me to go deeper down a rabbit hole? I can do:</p>
+<ul>
+<li>Science / Space</li>
+<li>History / Creepy</li>
+<li>Psychology / Human Body</li>
+<li>Useless-but-amazing facts</li>
+</ul>
+<p>What vibe do you want next?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1699 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Selecting and framing varied, verifiable, and surprising facts across categories while avoiding common knowledge.Curating a short, accurate, and personable set of surprising facts with a light tone.Selecting and verifying a few obscure, accurate facts with a conversational hook and follow-up prompt.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Since I don&#39;t know what you <em>do</em> know, I&#39;ll give you 5 things that surprise <em>almost</em> everyone:</p>
+<h3>1. Sharks are older than trees and Saturn&#39;s rings</h3>
+<p>Sharks have existed for ~400 million years. Trees only showed up ~350 million years ago. And Saturn&#39;s rings are relatively new - probably only 10-100 million years old. A shark would have looked at Earth and seen a barren landscape with no trees and a ring-less Saturn.</p>
+<h3>2. There are more ways to shuffle a deck of cards than atoms on Earth</h3>
+<p>A standard 52-card deck has 8.06 x 10^67 possible orders. That&#39;s an 8 with 67 zeros after it. There are only about 10^50 atoms on Earth. Every time you shuffle a deck well, you have almost certainly created an order of cards that has <em>never</em> existed before in human history.</p>
+<h3>3. Cleopatra lived closer to you than to the pyramids being built</h3>
+<p>The Great Pyramid of Giza was built around 2560 BCE. Cleopatra died in 30 BCE. That&#39;s a 2,530 year gap. You watching the Moon landing in 1969 is only 1,999 years after Cleopatra. She is closer to pizza delivery apps than to the pyramids.</p>
+<h3>4. There&#39;s a planet where it rains molten glass sideways</h3>
+<p>Planet HD 189733b is a deep cobalt blue planet 64 light-years away. Its wind speeds hit 5,400 mph and its rain is literally shards of silicate glass blowing horizontally. And it smells like rotten eggs because its atmosphere is full of hydrogen sulfide.</p>
+<h3>5. Your stomach would digest itself if it didn&#39;t rebuild itself every 3 days</h3>
+<p>Your stomach acid is strong enough to dissolve razor blades. The only reason it doesn&#39;t eat through your stomach wall is that your entire stomach lining replaces itself every 3-4 days. You literally have a new stomach multiple times a month.</p>
+<p><strong>Bonus one you can test right now:</strong> You are blind and don&#39;t know it.</p>
+<p>You have a blind spot in each eye where the optic nerve connects - there are no light receptors there. Your brain just photoshops over it using the surrounding pattern. Hold your thumb out, close your right eye, stare at your thumb with your left eye, and slowly move your right hand to the side with one finger up. At one point your finger will just <em>vanish</em>.</p>
+<hr>
+<p>Did you know any of those? Want me to go deeper on science, space, history, psychology, or creepy biology facts?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2058 tokens</span>
+                    <span class="topic-tag" data-topic="cleopatra">👑 cleopatra</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Brainstorming obscure, surprising facts across multiple domains while avoiding common knowledge and considering tailoring.Filtering for obscure, non-obvious facts and framing them for engagement.Selecting a small set of verified surprising facts and adding a light interactive prompt.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/qwen-qwen3.8-flash/">← Qwen: Qwen3.8 Flash</a>
+            <a href="/">all models</a>
+            <a href="/m/z-ai-glm-5.3-flash/">Z.ai: GLM 5.3 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

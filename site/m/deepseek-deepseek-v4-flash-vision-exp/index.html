@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek: DeepSeek V4 Flash Vision Exp — Tell me something I don't know.</title>
+    <meta name="description" content="DeepSeek: DeepSeek V4 Flash Vision Exp answers &quot;Tell me something I don&#39;t know.&quot; — You probably know “OMG” as a texting abbreviation, but it’s actually much older: the first recorded use in writing was in a 1917 letter from British Adm…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/deepseek-deepseek-v4-flash-vision-exp/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/deepseek-deepseek-v4-flash-vision-exp/">
+    <meta property="og:title" content="DeepSeek: DeepSeek V4 Flash Vision Exp — Tell me something I don't know.">
+    <meta property="og:description" content="DeepSeek: DeepSeek V4 Flash Vision Exp answers &quot;Tell me something I don&#39;t know.&quot; — You probably know “OMG” as a texting abbreviation, but it’s actually much older: the first recorded use in writing was in a 1917 letter from British Adm…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeepSeek: DeepSeek V4 Flash Vision Exp — Tell me something I don't know.">
+    <meta name="twitter:description" content="DeepSeek: DeepSeek V4 Flash Vision Exp answers &quot;Tell me something I don&#39;t know.&quot; — You probably know “OMG” as a texting abbreviation, but it’s actually much older: the first recorded use in writing was in a 1917 letter from British Adm…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to DeepSeek: DeepSeek V4 Flash Vision Exp)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"You probably know “OMG” as a texting abbreviation, but it’s actually much older: the first recorded use in writing was in a 1917 letter from British Admiral John Fisher to Winston Churchill. He wrote **“O.M.G. (Oh! My God!)”** — so people were saying “OMG” before the internet, before TV, and even before the end of World War I.","author":{"@type":"Organization","name":"DeepSeek"}},"suggestedAnswer":[{"@type":"Answer","text":"You probably don’t know that the largest city in the world by area is **Hulunbuir** in Inner Mongolia, China. It covers about **264,000 km²**, which is almost the size of **New Zealand**, but most of it is grassland, forest, and farmland—not skyscrapers.","author":{"@type":"Organization","name":"DeepSeek"}},{"@type":"Answer","text":"Here’s one: **“jiffy” is a real unit of time.**\n\nIn physics, a **jiffy** is defined as the time it takes light to travel **1 centimeter through a vacuum** — about **33.3564 picoseconds**, or roughly **one thirty-billionth of a second**.\n\nSo if someone says “I’ll be there in a jiffy,” they’re technically promising to arrive in 0.000000000033 seconds.","author":{"@type":"Organization","name":"DeepSeek"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>DeepSeek: DeepSeek V4 Flash Vision Exp</h1>
+        <p class="subtitle">DeepSeek · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">DeepSeek: DeepSeek V4 Flash Vision Exp</div>
+                        <div class="model-provider">DeepSeek</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>You probably know “OMG” as a texting abbreviation, but it’s actually much older: the first recorded use in writing was in a 1917 letter from British Admiral John Fisher to Winston Churchill. He wrote <strong>“O.M.G. (Oh! My God!)”</strong> — so people were saying “OMG” before the internet, before TV, and even before the end of World War I.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1859 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user asks &quot;Tell me something I don&#39;t know.&quot; Need provide surprising fact. Need ensure something likely unknown. We can choose obscure fact. Need maybe about animals, history, science. Let&#39;s craft. Need be accurate. Maybe &quot;Sharks existed before trees&quot; but many know. Need less known. &quot;The dot over lowercase i and j is called a tittle.&quot; Many know. Need something I don&#39;t know? We can&#39;t know user&#39;s knowledge. Provide obscure fact with context.
+
+Need perhaps &quot;There is a species of beetle named after Charles Darwin&#39;s beetle? No.&quot;
+
+Let&#39;s think of genuinely surprising: &quot;The &#39;smell of rain&#39; has a name: petrichor&quot; many know. &quot;Octopuses have three hearts&quot; known. &quot;Honey never spoils&quot; known.
+
+Maybe &quot;Cows have best friends and get stressed when separated&quot; known.
+
+Need &quot;Tell me something I don&#39;t know&quot; maybe use &quot;you don&#39;t know that...&quot; Could be personal? We don&#39;t know. Need supply fact.
+
+Let&#39;s choose obscure: &quot;The longest recorded flight of a chicken is 13 seconds.&quot; Known? Maybe.
+
+&quot;Water can boil and freeze at the same time, called triple point&quot; known.
+
+Maybe &quot;There is a &#39;Placebo button&#39; in some crosswalks that does nothing&quot; known.
+
+Need something less common: &quot;In 1960, the Soviet Union launched two dogs into space? No.&quot;
+
+&quot;Saturn has a hexagonal storm at its north pole&quot; known.
+
+&quot;Shakespeare&#39;s &#39;Romeo and Juliet&#39; had a 16th-century predecessor? Unknown.&quot;
+
+Need maybe &quot;The word &#39;jungle&#39; was originally Sanskrit for &#39;not desert&#39;?&quot; Hmm.
+
+Let&#39;s find a fact that is counterintuitive and obscure. Need verify.
+
+Potential: &quot;There is a cactus that was accidentally discovered and is now a protected species in Arizona? The saguaro? No.&quot;
+
+&quot;Venus rotates backwards, and its day is longer than its year&quot; known.
+
+&quot;Bananas are berries; strawberries are not&quot; known.
+
+&quot;Braille was based on military cryptography&quot; maybe.
+
+&quot;Anesthesia and &#39;general anesthesia&#39; was first used in dentistry? Not.
+
+Let&#39;s think of a specific fact with surprising twist: &quot;The Great Wall of China is not visible from space with the naked eye&quot; known.
+
+&quot;Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.&quot; Wait this is a good one! Let&#39;s verify: Cleopatra (69-30 BC) lived about 2,000 years before Apollo 11 (1969). Great Pyramid built around 2560 BC, about 2,500 years before Cleopatra. So Cleopatra is closer to Moon landing? Let&#39;s calculate: Great Pyramid to Cleopatra: 2560-30 = 2530 years. Cleopatra to Moon landing: 1969 - 30 = 1999 years. Yes. This is surprising and accurate. Many know? It&#39;s a popular fact. Maybe user might know. But &quot;something I don&#39;t know&quot; perhaps okay.
+
+Need maybe &quot;Oxford University is older than the Aztec Empire&quot; also known? Actually Oxford teaching existed by 1096, Aztec Empire 1428. Yes.
+
+Need maybe &quot;The first &#39;fax&#39; was a thing in 1865, before telephone&quot; known.
+
+Let&#39;s choose something more obscure: &quot;The &#39;pound sign&#39; or number sign # has a formal name: octothorpe.&quot; Many know. &quot;The &#39;hashtag&#39; was originally called octothorpe&quot; maybe.
+
+Maybe &quot;The Eiffel Tower is shorter in winter by a few centimeters because metal contracts.&quot; known.
+
+Need maybe &quot;A day on Venus is longer than a year on Venus&quot; known.
+
+Let&#39;s craft with user-specific? &quot;I don&#39;t know what you know, but here&#39;s one that catches most people off guard: ...&quot; Good.
+
+Need perhaps &quot;crocodiles cannot stick out their tongues&quot; known? Actually crocodiles have a membrane that holds tongue, can&#39;t extend? This is common.
+
+&quot;Giraffes have no vocal cords? Actually giraffes have a larynx but can hum? They can vocalize? Need not.
+
+&quot;Penguins proposed marriage? no.
+
+&quot;Hummingbirds cannot walk, but can they hop? no.
+
+Need perhaps &quot;The unicorn is Scotland&#39;s national animal&quot; known.
+
+Maybe a clever fact about language: In English, &quot;queueing&quot; is the only word with five consecutive vowels? Actually &quot;queueing&quot; has five vowels? q u e u e i n g: e u e i? Wait &quot;queueing&quot; letters: q u e u e i n g. Vowels: u,e,u,e,i = 5 consecutive? The string &quot;ueuei&quot; has vowels? q-u-e-u-e-i-n-g: positions 2-6 = u e u e i, all vowels, yes five consecutive. There is &quot;euouae&quot; etc. Common.
+
+&quot;Stewardesses&quot; is longest word typed with left hand? Actually &quot;stewardesses&quot; typed with left? Let&#39;s check QWERTY: s (left), t(left), e(left), w(left), a(left), r(left), d(left), e(left), s(left), s(left) all left? yes. Longest English word typed with left hand? &quot;stewardesses&quot; known.
+
+Need perhaps &quot;There&#39;s a word &#39;hippopotomonstrosesquipedaliophobia&#39; meaning fear of long words&quot; known.
+
+Need maybe &quot;The first computer programmer was Ada Lovelace, daughter of Byron&quot; known.
+
+Maybe &quot;The Nintendo company was founded in 1889 as a playing card company&quot; known.
+
+Need something I don&#39;t know. Let&#39;s find a truly obscure scientific/cultural fact.
+
+Potential: &quot;In 1915, the NFL team? no.&quot;
+
+&quot;Sharks existed before trees and before Saturn&#39;s rings? Wait Saturn&#39;s rings maybe formed 100 million yrs ago? not.
+
+&quot;Tulip bulbs were used as currency in the Netherlands in the 1630s&quot; known.
+
+&quot;Switzerland has an official &#39;bag of fries&#39;? no.
+
+Let&#39;s search memory for obscure facts:
+
+- &quot;The longest time between a person&#39;s birth and death? Jeanne Calment 122 years.&quot;
+- &quot;The first known use of &#39;OMG&#39; was in a letter to Winston Churchill in 1917.&quot; This is surprising! Let&#39;s verify. &quot;OMG&quot; first attributed to Lord Fisher&#39;s letter to Winston Churchill in 1917? Yes. The phrase &quot;OMG&quot; was used in a letter from Admiral John Fisher to Winston Churchill: &quot;I hear that a new order of Knighthood is on the tapis—O.M.G. (Oh! My God!)&quot; Wait &quot;OMG&quot; actually &quot;Oh! My God!&quot; Perhaps. This is a good obscure fact. Many don&#39;t know. Need be careful: &quot;O.M.G.&quot; in 1917 letter. Is it true? Let&#39;s recall: According to Oxford English Dictionary, first written use of OMG is letter from British admiral John Arbuthnot Fisher to Winston Churchill in 1917: &quot;I hear that a new order of Knighthood is on the tapis—O.M.G. (Oh! My God!).&quot; Hmm &quot;O.M.G.&quot; is an initialism. Good.
+
+Need maybe &quot;The first &#39;emoji&#39; was created in 1999 by Shigetaka Kurita&quot; known? no.
+
+Could combine: &quot;OMG&quot; is older than you think. It was in a 1917 letter to Winston Churchill. This is fun. Need ensure not too niche.
+
+Let&#39;s craft answer: &quot;One small thing: the abbreviation &#39;OMG&#39; isn&#39;t a texting-era invention. The first recorded use in writing was in a 1917 letter from British Admiral John Fisher to Winston Churchill, where he wrote &#39;O.M.G. (Oh! My God!)&#39;.&quot; This is likely unknown. Need maybe &quot;not &#39;Oh my god&#39; as a phrase, but the abbreviation.&quot; Good.
+
+Need maybe &quot;Tell me something I don&#39;t know&quot; We can present as &quot;You probably know OMG is old? But...&quot; Let&#39;s answer succinctly.
+
+Need perhaps include &quot;It was an acronym? Actually initialism.&quot; We can say &quot;abbreviation.&quot; Good.
+
+Let&#39;s ensure no issue with &quot;O.M.G.&quot; in letter: It was not &quot;Oh My God&quot; but &quot;Oh! My God!&quot; Yes. Need maybe &quot;Fisher was an admiral; Churchill was First Lord of the Admiralty.&quot; Good.
+
+Let&#39;s final with that.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>You probably don’t know that the largest city in the world by area is <strong>Hulunbuir</strong> in Inner Mongolia, China. It covers about <strong>264,000 km²</strong>, which is almost the size of <strong>New Zealand</strong>, but most of it is grassland, forest, and farmland—not skyscrapers.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>3497 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user. Need tell something they don&#39;t know. But &quot;something I don&#39;t know&quot; impossible general. Need provide obscure fact. Need be careful not false. Need craft surprising true fact. Maybe about octopuses, history, science. Need &quot;Tell me something I don&#39;t know.&quot; We can say &quot;You probably don&#39;t know that...&quot; Need ensure fact less known. Let&#39;s think of good obscure facts.
+
+Options:
+- Honey never spoils; 3000-year-old edible. Many know.
+- Bananas are berries, strawberries not. Known.
+- Octopuses have three hearts, blue blood. Known.
+- Napoleon was not short. Known.
+- Cleopatra lived closer to Moon landing than to construction of Great Pyramid. Known-ish.
+- There is a &quot;boring&quot; fact? Need something obscure.
+
+Need &quot;something I don&#39;t know&quot; maybe &quot;The shortest war in history was between Britain and Zanzibar, 38 minutes&quot; maybe known.
+
+Need more obscure. Let&#39;s brainstorm.
+
+Fact: &quot;The Eiffel Tower can be 15 cm taller in summer&quot; known.
+Fact: &quot;The top of the Leaning Tower of Pisa is 4m off vertical&quot; known.
+Need novel.
+
+Maybe: &quot;Cows have best friends and become stressed when separated.&quot; known.
+
+Maybe: &quot;Scotland&#39;s national animal is the unicorn.&quot; known.
+
+Need perhaps about language: &quot;The word &#39;queue&#39; is pronounced &#39;Q&#39; but has four silent letters? Actually q u e u e; u after q is not silent? Hmm.&quot;
+
+Could use &quot;There is a species of jellyfish, Turritopsis dohrnii, that can revert to its juvenile stage, potentially immortal.&quot; known.
+
+Need &quot;something I don&#39;t know&quot; perhaps &quot;the longest musical performance in history is scheduled to last 639 years; began 2001 has 449 years left.&quot; Know.
+
+Need &quot;Svalbard Global Seed Vault has no electricity? Actually has backup generator? It has no permanent staff.&quot; less known.
+
+Need maybe &quot;The University of Alaska Fairbanks has a building that can be moved on rails.&quot; Interesting? Hmm.
+
+Need &quot;The surface of the Sahara desert has a magnetic anomaly? Not.&quot;
+
+Need &quot;The U.S. Constitution is on display in a bulletproof case but the actual parchment is only 28 inches by 24? Hmm.&quot;
+
+Need &quot;The &#39;Oxford University&#39; is older than the Aztec Empire.&quot; Known.
+
+Need &quot;Sea otters hold hands while sleeping to avoid drifting apart.&quot; known.
+
+Need &quot;There is a town in Norway where the sun doesn&#39;t rise for weeks in winter.&quot; known.
+
+Need &quot;The human brain has about 86 billion neurons, not 100 billion.&quot; Some know.
+
+Need &quot;Milk was first delivered in glass bottles in 1885&quot; no.
+
+Need &quot;The Nike swoosh was designed by a student for $35.&quot; Known.
+
+Need &quot;The first computer bug was an actual moth.&quot; Known.
+
+Need &quot;The Great Wall of China is not visible from space with naked eye.&quot; Known.
+
+Need &quot;The longest recorded flight by a chicken was 13 seconds.&quot; Known.
+
+Need &quot;Kangaroos cannot hop backwards.&quot; Known.
+
+Need &quot;The &#39;smell of rain&#39; is called petrichor.&quot; Known.
+
+Need &quot;The &#39;butterfly effect&#39; term from Lorenz.&quot; known.
+
+Need &quot;A day on Venus is longer than a year on Venus&quot; known but maybe.
+
+Need &quot;There are more possible games of chess than atoms in observable universe.&quot; known.
+
+Need &quot;The largest banana cluster weighed 130 kg.&quot; Maybe.
+
+Need &quot;The word &#39;unfriend&#39; existed before Facebook?&quot; Hmm.
+
+Need &quot;In the 1960s, children of the British royal family were not allowed to eat crusts? no.&quot;
+
+Need &quot;The original phrase was &#39;the proof of the pudding is in the eating&#39; and &#39;the exception proves the rule&#39; originally meant tests.&quot; known.
+
+Need &quot;Homo sapiens have interbred with Neanderthals, and some people have Neanderthal DNA.&quot; known.
+
+Need &quot;The &#39;I&#39; in &#39;iPhone&#39; stands for &#39;Internet&#39;? Steve Jobs said it was internet, individual, instruct, inform, inspire.&quot; known.
+
+Need &quot;The &#39;S&#39; in &#39;HP&#39;? no.&quot;
+
+Need &quot;In Switzerland, it is illegal to keep only one guinea pig because they are social.&quot; known.
+
+Need &quot;In Japan, there is a tourist attraction with a 12-meter tall robot? no.
+
+Need &quot;The world&#39;s smallest mammal is Kitti&#39;s hog-nosed bat.&quot; known.
+
+Need &quot;The &#39;wonder&#39; of Noah&#39;s ark? no.
+
+Need &quot;A group of flamingos is called a flamboyance.&quot; known.
+
+Need &quot;The color &#39;magenta&#39; is named after a battle in 1859.&quot; Nice, maybe less known.
+
+Need &quot;The inventor of the traffic light was an African American? Garrett Morgan? Known.
+
+Need &quot;The word &#39;jumbo&#39; entered English from an elephant named Jumbo.&quot; Known.
+
+Need &quot;The &#39;H&#39; in &#39;H. pylori&#39;? no.
+
+Need &quot;There is a real disease called &#39;Laughing Death&#39; (kuru) transmitted by cannibalism&quot; known.
+
+Need &quot;The Great Pacific Garbage Patch is twice the size of Texas&quot; known.
+
+Need &quot;The country with most time zones is France due to overseas territories.&quot; Known (yes).
+
+Need &quot;The &#39;Star-Spangled Banner&#39; was not written as a poem? &quot; known.
+
+Need &quot;Mozart&#39;s middle name? &#39;Theophilus&#39;? Actually Amadeus is not a middle name? His name was Joannes Chrysostomus Wolfgangus Theophilus Mozart. &#39;Amadeus&#39; is a Latin translation of Theophilus.&quot; Could be obscure.
+
+Need &quot;The &#39;D&#39; in D-Day stands for &#39;Day&#39;.&quot; known.
+
+Need &quot;Neil Armstrong&#39;s first words were not &#39;one small step&#39;? Actually he said &quot;That&#39;s one small step for man...&quot; known.
+
+Need &quot;The &#39;G in G-spot&#39; was named after German gynecologist Ernst Gräfenberg.&quot; maybe.
+
+Need &quot;There is no word in English for &#39;the day after tomorrow&#39;? There is &#39;overmorrow&#39; archaic.&quot; Hmm.
+
+Need &quot;The human body contains enough carbon to make 900 pencils? no.&quot;
+
+Need &quot;The &#39;P&#39; in &#39;P.E.&#39;? no.
+
+Need &quot;The spot on a giraffe&#39;s tongue is darker to protect from sunburn? no.
+
+Need &quot;Octopuses have a unique ability to edit their RNA in response to cold water.&quot; This is actually true and recent; less known. Could say &quot;Octopuses can edit RNA on the fly, which is a way of adapting without changing DNA.&quot; Need precise. Let&#39;s verify: Octopus and squid use RNA editing extensively, especially in nervous system, to adapt to temperature. This is called &quot;recoding&quot; and could be &quot;genomic reprogramming&quot;. The 2017 study &quot;Cephalopod RNA editing is widespread and adaptive&quot; found thousands of edits in octopus, squid, cuttlefish. They can edit RNA to produce different proteins in cold/warm water. This is surprising. But user likely doesn&#39;t know. Need maybe mention &quot;They can essentially re-program their brains in real time. In 2023? Actually research in octopus and squid: RNA editing in cephalopods not only widespread but adaptive, allows rapid adaptation. The common octopus *Octopus vulgaris* edits a protein called kinesin-1 at a site that helps adapt to temperature.&quot;
+
+Need ensure &quot;something you don&#39;t know&quot; maybe &quot;Octopuses can rewire their brains by editing RNA after losing a limb? Hmm.&quot;
+
+Need perhaps more obscure: &quot;Dolphins call each other by name&quot; known. &quot;Parrots can be left-handed/righted? no.
+
+Need &quot;The human body&#39;s cells not all contain the same DNA; some have mutations, and mitochondria own DNA.&quot; known.
+
+Need &quot;The golden poison frog&#39;s toxin has enough to kill 10-20 men; one frog contains 1-2 mg batrachotoxin.&quot; known.
+
+Need &quot;A single tablespoon of ocean water contains more organisms than people on Earth.&quot; Known? Maybe.
+
+Need &quot;The largest ocean wave ever recorded was 84ft (25.6m) in 2000? &quot; known.
+
+Need &quot;There is an actual &#39;The Land of the Rising Sun&#39; no.
+
+Need &quot;The word &#39;set&#39; has the most definitions in the dictionary.&quot; Known.
+
+Need &quot;The longest word in medical dictionary is &#39;pneumonoultramicroscopicsilicovolcanoconiosis&#39;.&quot; known.
+
+Need &quot;The &#39;w&#39; in &#39;GPS&#39;? no.
+
+Need &quot;The English alphabet has 26 letters, but the Hawaiian alphabet has 13.&quot; known.
+
+Need &quot;There is a town in Alaska called &#39;Chicken&#39; because residents couldn&#39;t spell ptarmigan.&quot; known.
+
+Need &quot;The moon has a &#39;far side&#39; not &#39;dark side&#39;.&quot; known.
+
+Need &quot;The Great Pyramid is the only one of Seven Wonders still standing.&quot; known.
+
+Need &quot;The original &#39;Mickey Mouse&#39; voice was Walt Disney himself.&quot; known.
+
+Need &quot;Google&#39;s original name was &#39;BackRub&#39;.&quot; known.
+
+Need &quot;The first YouTube video was &#39;Me at the zoo&#39; (19 seconds).&quot; known.
+
+Need &quot;The earliest known &#39;I love you&#39; in print? no.
+
+Need &quot;The term &#39;computer bug&#39; was coined before actual bug? Actually usage existed; moth incident not first? Hmm.
+
+Need &quot;Moths are attracted to moonlight? no.
+
+Need &quot;The &#39;clock&#39; in a computer is driven by oscillation of quartz.&quot; known.
+
+Need &quot;Epicurus was not an epicurean? no.
+
+Need &quot;The &#39;you&#39; in &#39;you&#39;re welcome&#39;? no.
+
+Need &quot;The &#39;birthday paradox&#39;: in a room of 23 people, probability two share birthday &gt;50%.&quot; Known.
+
+Need &quot;In the 16th century, tomatoes were thought to be poisonous by aristocrats, because pewter plates dissolved acid? Hmm.
+
+Need &quot;The longest word with one vowel? &#39;strengths&#39;.&quot; known.
+
+Need &quot;The word &#39;alien&#39; can mean &#39;foreigner&#39; and &#39;extraterrestrial&#39;.&quot; no.
+
+Need &quot;Only one in 1 million people are red-green colorblind? no.
+
+Need &quot;A person&#39;s &quot;funny bone&quot; is not a bone; it&#39;s a nerve.&quot; known.
+
+Need &quot;The &#39;backward&#39; in &#39;backward compatibility&#39;? no.
+
+Need &quot;The largest city in the world by area is Hulunbuir, China (263,953 km²).&quot; That&#39;s obscure and interesting. Need verify: Hulunbuir is a prefecture-level city in Inner Mongolia, covers 263,953 sq km, larger than New Zealand? Actually New Zealand 268,021 km², so slightly smaller; larger than England (130,279), comparable to UK (243,610). It is &quot;largest city in the world by area.&quot; But is it a city? It&#39;s a prefecture-level city; population ~2.2 million. Could tell user &quot;The largest &#39;city&#39; in the world by area isn&#39;t Tokyo; it&#39;s Hulunbuir in Inner Mongolia, China, covering about 264,000 km², bigger than New Zealand.&quot; Need if &quot;city&quot; administrative area; yes. Good.
+
+Need &quot;Tell me something I don&#39;t know&quot; Could answer with &quot;You probably don&#39;t know that the world&#39;s largest city by area is Hulunbuir, China, which is about as big as New Zealand but mostly grassland/forest.&quot; This is likely something they don&#39;t know. Need ensure &quot;city&quot; definition: It is a prefecture-level city, not a municipality; urban population small. Need perhaps &quot;administrative city&quot; to be accurate. Let&#39;s include &quot;by administrative area&quot; to avoid dispute. Good.
+
+Need maybe &quot;In fact, the largest city in the US by area is Sitka, Alaska (4,811 square miles)?&quot; Hmm.
+
+Need choose one. But user asks &quot;Tell me something I don&#39;t know.&quot; Maybe &quot;You don&#39;t know this yet: ...&quot; Need maybe &quot;There is a largest city by area that is bigger than New Zealand&quot; is obscure.
+
+Need maybe include a second fact? They asked singular but can include one. Need not overexplain. Desired oververbosity 5, so maybe short.
+
+Need maybe &quot;Some octopuses can edit their RNA to adapt to cold water.&quot; That is more &quot;something you don&#39;t know&quot; perhaps. Need compare. Which is better? The city fact is less dynamic but surprising. The RNA fact is scientifically novel. Need maybe one fact enough.
+
+Need ensure no false: &quot;The world&#39;s largest city by area is Hulunbuir&quot; Let&#39;s verify thoroughly. Hulunbuir (Chinese: 呼伦贝尔) is a prefecture-level city in Inner Mongolia. Area 263,953 km² (101,913 sq mi). It is &quot;the largest city (by administrative area) in the world&quot;. It is about the size of New Zealand (268,021 km²) and bigger than 150 countries? Actually &quot;larger than New Zealand&quot; if 263,953 vs 268,021, it&#39;s slightly smaller than New Zealand. Need avoid saying bigger than New Zealand because false. It is &quot;slightly smaller than New Zealand&quot; but larger than the UK? UK 243,610, so larger than UK. Better say &quot;roughly the size of New Zealand&quot; (or &quot;almost the size of New Zealand&quot;). It is &quot;much larger than many countries.&quot; It is the largest &quot;prefecture-level city&quot; in China by area. Need no &quot;city&quot; mistaken. &quot;It’s larger than Uruguay (181k) and Portugal (92k)&quot;? But maybe no.
+
+Need maybe &quot;The biggest city in the world by area is Hulunbuir, China—about 264,000 km². It&#39;s almost the size of New Zealand, but most of it is grasslands and forests.&quot; That is accurate: &quot;approximately the size of New Zealand&quot; because slightly smaller. &quot;Biggest city by administrative area&quot; not &quot;by actual urban.&quot; Need mention &quot;by administrative area&quot; to avoid &quot;city&quot; issue. Good.
+
+Need maybe &quot;No one knows exactly where the Bering Sea? no.
+
+Need maybe &quot;The largest waterfall is under the ocean? The Denmark Strait cataract, an underwater waterfall with 3.5 million liters per second? Actually there is an underwater waterfall between Greenland and Iceland; 3.5 million m³/s? Need verify. It&#39;s not a &quot;waterfall&quot; in the usual sense, but huge. Could be obscure. But &quot;Hulunbuir&quot; is clean.
+
+Need perhaps &quot;The city of Hulunbuir has an urban population of about 300,000; not known for skyscrapers.&quot; Could be enough.
+
+Need craft final: &quot;You probably don&#39;t know that the largest city by administrative area isn&#39;t Tokyo or New York—it&#39;s Hulunbuir in Inner Mongolia, China. It covers about 264,000 km², almost the size of New Zealand, and is mostly grassland and forest.&quot; That&#39;s a good answer.
+
+Need maybe &quot;Tell me something I don&#39;t know&quot; Could be &quot;I don&#39;t know if I don&#39;t know&quot; but no. Need perhaps &quot;Can you tell me something I don&#39;t know?&quot; Actually user says &quot;Tell me something I don&#39;t know.&quot; We can directly provide. Good.
+
+Need maybe &quot;The word &#39;unbeknownst&#39;? no.&quot;
+
+Let&#39;s consider if &quot;Hulunbuir&quot; is too obscure to be a &quot;city&quot; and perhaps not known. Good. Need perhaps explain &quot;If you count administrative boundaries, not city limits.&quot; Actually &quot;city&quot; can have rural area; &quot;city&quot; in China is a prefecture-level administrative unit. This is a common thing. Need &quot;not continuous urban area.&quot; Good.
+
+Need final with maybe &quot;Here’s one:&quot; and fact. Need no &quot;you don&#39;t know&quot; perhaps.
+
+Need perhaps &quot;The largest &#39;city&#39; by area is Hulunbuir in Inner Mongolia, China. It’s about 264,000 km²—almost as big as New Zealand—but mostly grassland, so it’s not a concrete metropolis.&quot; Good.
+
+Need maybe &quot;as of 2023&quot; no need.
+
+Need ensure no &quot;Tell me something I don&#39;t know&quot; Could maybe &quot;You probably didn&#39;t know that &quot;Hulunbuir&quot; is a place not &quot;Hulun Buir&quot;. Hmm.
+
+Need final.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s one: <strong>“jiffy” is a real unit of time.</strong></p>
+<p>In physics, a <strong>jiffy</strong> is defined as the time it takes light to travel <strong>1 centimeter through a vacuum</strong> — about <strong>33.3564 picoseconds</strong>, or roughly <strong>one thirty-billionth of a second</strong>.</p>
+<p>So if someone says “I’ll be there in a jiffy,” they’re technically promising to arrive in 0.000000000033 seconds.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>3267 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user asks &quot;Tell me something I don&#39;t know.&quot; Need provide something surprising/obscure/interesting. Need maybe fact. Need ensure not too known? Could be something counterintuitive. Need maybe include source? We can answer. Need choose fact. Let&#39;s think of obscure facts.
+
+Potential: &quot;Octopuses have three hearts, and two of them stop beating when they swim.&quot; Many know. Need something less known.
+
+&quot;Bananas are berries, but strawberries aren&#39;t.&quot; Known.
+
+&quot;Scotland&#39;s national animal is unicorn.&quot; Known.
+
+&quot;Oxford University is older than Aztec Empire.&quot; Known.
+
+Need something &quot;I don&#39;t know&quot; maybe personalized impossible. Need craft fact that is likely unknown. Could say &quot;The shortest war in history was between Britain and Zanzibar on 27 August 1896, lasting 38 minutes.&quot; Known maybe.
+
+Need something more obscure: &quot;There is a species of moth that feeds on tears of sleeping birds in Madagascar.&quot; Hmm.
+
+Let&#39;s find a genuinely surprising fact with scientific basis.
+
+Potential: &quot;The human brain&#39;s storage capacity is estimated at 2.5 petabytes, enough for 300 years of TV.&quot; not sure.
+
+&quot;More than half of the world&#39;s population lives inside a circle of radius 6,000 km centered on the South China Sea.&quot; Actually maybe known? Need exact? There is &quot;Half of humanity lives within 6,000 km of the South China Sea&quot; - a map by Max Galka. But not as known.
+
+&quot;Because of how the moon rotates, it takes the same time to rotate on its axis as it does to orbit Earth, so the same side always faces Earth. But due to librations, we actually see 59% of the moon&#39;s surface over time.&quot; Known.
+
+Need something unique and verifiable.
+
+Let&#39;s consider &quot;The sound of thunder is actually caused by the rapid expansion of air, but the lightning channel can reach 30,000 K, five times hotter than the Sun&#39;s surface.&quot; Known-ish.
+
+Maybe &quot;A day on Venus is longer than a year on Venus. It takes Venus 243 Earth days to rotate on its axis and 225 Earth days to orbit the Sun.&quot; Known, but maybe.
+
+Need &quot;Tell me something I don&#39;t know&quot; could be a trick: &quot;You don&#39;t know what I&#39;m about to say.&quot; Hmm.
+
+Could answer with a meta fact: &quot;You know that you don&#39;t know something, but you don&#39;t know what it is.&quot; But user asks for something. Need perhaps &quot;I don&#39;t know what you don&#39;t know, so here is a fact that most people don&#39;t know.&quot; Then fact.
+
+Need maybe &quot;The first food eaten in space by an American astronaut was a sugar cube.&quot; Actually John Glenn? He ate applesauce? Let&#39;s verify. In 1962, John Glenn was first American to orbit Earth; he didn&#39;t eat because 5-hour flight? Actually he did not eat until after? I remember &quot;John Glenn, the first American in orbit, ate applesauce from a tube.&quot; Hmm.
+
+Need accurate.
+
+Let&#39;s think of obscure historical facts:
+
+- &quot;The last person to serve as a judge on the U.S. Supreme Court without a law degree was James F. Byrnes (1941-1942).&quot; Maybe known? 
+- &quot;George Washington was the only U.S. president to be elected unanimously. He also never lived in the White House.&quot; Known.
+
+- &quot;The &#39;Blitz&#39; in WWII killed / Hitler&#39;s first name? Actually Hitler&#39;s father was Alois Schicklgruber, but Hitler did not use Schicklgruber. Hmm.
+
+Need something that is not widely known but interesting.
+
+Maybe &quot;Honey never spoils; archaeologists have found 3000-year-old honey in Egyptian tombs that is edible.&quot; Known.
+
+&quot;An ancient Roman emperor (Caligula) made his horse a consul.&quot; Known.
+
+Need maybe &quot;The smallest country in the world is Vatican City, but it has its own country code, postal code, bank, radio, newspaper, and army (Swiss Guard).&quot; Hmm.
+
+&quot;International maritime distress calls use &#39;Mayday&#39; from French &#39;m&#39;aidez&#39;.&quot; Known.
+
+Could use &quot;The Eiffel Tower can be 15 cm taller in summer&quot; due to thermal expansion. Known? Some know.
+
+Need better.
+
+Maybe &quot;In the U.S., the remains of the first known English settlement in America (Roanoke) are beneath a national park? Actually the Lost Colony&#39;s Fort Raleigh is in North Carolina. The word &#39;Croatoan&#39; carved on a post. Not obscure.
+
+Let&#39;s find obscure but true via memory:
+
+- &quot;Pringles aren&#39;t actual potato chips; they are a &#39;potato-based snack&#39; and were legally classified as not a potato crisp in Britain, so they avoided VAT until 2008.&quot; Actually Pringles are a &quot;chocolate product&quot;?? Let&#39;s recall: In UK, VAT on potato crisps was 17.5%, but Pringles were not classified as &quot;potato crisps&quot; because they had &lt;50% potato? Then in 2008 court ruled they are &quot;potato crisps&quot; because they are made of potato. This is a known tax/legal fact. Maybe not.
+
+- &quot;Wombat poop is cube-shaped.&quot; Known viral.
+
+- &quot;The longest recorded flight of a chicken is 13 seconds.&quot; Maybe.
+
+- &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; Known.
+
+- &quot;The original name for &#39;Scientology&#39;? no.
+
+- &quot;The U.S. state with the shortest coastline? Actually &#39;New Hampshire&#39;? But due to tides? Hmm.
+
+Need maybe &quot;The largest volume of water in Earth&#39;s mantle is stored in a mineral called ringwoodite, in a layer 410-660 km down, maybe 3 times volume of all oceans.&quot; Is that true? &quot;Scientists found evidence of a vast reservoir of water inside the mantle under eastern US, in a rock called ringwoodite, maybe 3 times the volume of all oceans.&quot; This is surprising and not universally known. Need phrase accurately: In 2014, geophysicist Steve Jacobsen and colleagues found ringwoodite in a diamond formed 410 km deep, containing water; suggests transition zone may hold as much water as all oceans. Need caveat &quot;Some estimates&quot; not proven. That&#39;s good.
+
+Need &quot;something you don&#39;t know&quot; maybe &quot;There is a mineral called ringwoodite that can hold water and is abundant in Earth&#39;s transition zone; it might contain enough water to fill all the world&#39;s oceans three times over.&quot; That is obscure and interesting.
+
+Let&#39;s verify facts: Ringwoodite is a high-pressure form of olivine; it&#39;s the main component of Earth&#39;s lower transition zone (520-660 km? Actually ringwoodite is stable between 520 and 660 km). It can incorporate hydroxyl (water). In 2014, a diamond inclusion with ringwoodite from Juína, Brazil was found, with ~1.5% water by weight. This supports &quot;large amounts of water in mantle.&quot; Estimate &quot;if just 1% of transition-zone rock is water, would be 3 times all ocean volume&quot; maybe. Need phrase &quot;could be enough to hold up to three times the volume of all Earth&#39;s oceans&quot; based on upper/lower mantle? Let&#39;s be cautious: &quot;Scientists estimate that Earth&#39;s mantle may contain more water than all the oceans combined.&quot; Is that true? Need avoid overclaim. Better: &quot;There is a mineral in that layer that can store water, and one diamond found in Brazil contained enough water-bearing ringwoodite to suggest the transition zone isn’t as dry as once thought.&quot; Hmm.
+
+Maybe choose a fact with less nuance.
+
+Another fact: &quot;The shortest commercial flight in the world is between Westray and Papa Westray in Scotland’s Orkney Islands, scheduled at 2 minutes and sometimes as short as 57 seconds.&quot; Known maybe.
+
+Need maybe &quot;The first person to receive a patent for a computer program in the U.S. was? Hmm.
+
+Let&#39;s consider &quot;Photons from the Sun are 8 minutes old, but a photon created in the Sun&#39;s core takes on average 10,000-170,000 years to reach the surface.&quot; Known.
+
+&quot;Earth&#39;s inner core is about as hot as Sun&#39;s surface, 5,400°C, but pressure keeps it solid.&quot; Known.
+
+&quot;Sharks have been around longer than trees? Actually sharks ~450 million years, trees ~350 million. Many don&#39;t know.&quot; Good fact: &quot;Sharks existed before trees. Sharks appeared around 450 million years ago; trees only around 350-400 million years ago.&quot; That&#39;s surprising and easy. But &quot;old trees&quot; maybe. Need ensure &quot;trees&quot; as we know? Earliest tree-like plants (Archaeopteris) 385 mya, forests 370 mya. Sharks (cartilaginous) ~450 mya. So yes. This is an example of &quot;something I don&#39;t know&quot; maybe many know but likely.
+
+Need maybe &quot;There are more possible games of chess than atoms in the observable universe.&quot; Known.
+
+Maybe &quot;There are approximately 10^100 possible games of chess, while there are ~10^80 atoms.&quot; Some know.
+
+Let&#39;s find a unique fact: &quot;The &#39;Encyclopædia Britannica&#39; hasn&#39;t been printed since 2012&quot; maybe.
+
+Need perhaps &quot;Honey is the only known food that doesn&#39;t spoil.&quot; Known.
+
+Let&#39;s craft response with a couple of lesser-known facts? User asked singular &quot;Tell me something I don&#39;t know.&quot; We can say &quot;Here&#39;s one: ...&quot; Need maybe guarantee &quot;I don&#39;t know&quot; impossible, but &quot;most people don&#39;t know&quot; okay.
+
+Maybe choose &quot;A &#39;jiffy&#39; is an actual unit of time: in physics, it&#39;s the time it takes light to travel one centimeter, about 33.4 picoseconds; in computing, it&#39;s one tick of the system timer.&quot; Is that obscure? Yes. Good fact! Need verify: A jiffy (or jiffie) is an informal term for a short period; in electronics it&#39;s the time between alternating current power cycles (1/60 second in US, 1/50 sec in UK); in computing, it&#39;s the duration of one tick of the system timer interrupt; in theoretical physics, &quot;the time it takes for light to travel a distance of one Fermi, or about 3.3e-24 seconds&quot;? Hmm wait. Let&#39;s be precise. In physics, &quot;jiffy&quot; can be &quot;the time taken for light to travel one centimeter in vacuum&quot; (33.3564 picoseconds). Actually &quot;a jiffy is 1/100th of a second?&quot; Need check. Let&#39;s recall: &quot;Jiffy&quot; is a unit of time used in electronics and computing. There is &quot;In physics, a jiffy is the time it takes for light to travel one centimeter in a vacuum: 33.3564 picoseconds.&quot; Also &quot;In computer science, a jiffy is the duration of one tick of the system timer, typically 10 ms.&quot; This is true. Good. Need mention &quot;as defined by Gilbert Newton Lewis in 1926&quot;? Actually Gilbert N. Lewis defined the &quot;jiffy&quot; as the time for light to travel 1 cm. Let&#39;s verify: Gilbert Newton Lewis proposed &quot;jiffy&quot; in 1926? I recall &quot;The jiffy was coined by Gilbert N. Lewis in 1926; it is the time it takes light to travel 1 centimeter.&quot; Yes.
+
+This is a nice &quot;something you don&#39;t know.&quot; But is it &quot;something I don&#39;t know&quot;? Maybe user may know? We can phrase: &quot;You’ve probably heard &#39;in a jiffy&#39; — but a jiffy is an actual unit. In physics it’s 33.3564 picoseconds.&quot; That&#39;s good.
+
+Need perhaps include &quot;picoseconds = 1 trillionth of a second&quot;. &quot;A jiffy is 0.000000000033 seconds&quot; Actually 33.3564 picoseconds = 3.33564e-11 seconds. Wait 1 picosecond = 1e-12 sec, so 33.3564 ps = 3.33564e-11 seconds. That&#39;s 0.0000000000333564 seconds. Let&#39;s count: 0.000000000033 = 3.3e-11. Yes.
+
+Need ensure &quot;light travels one centimeter&quot; in vacuum: time = 1 cm / 3e10 cm/s = 3.333e-11 s = 33.33 ps. Good.
+
+Could also mention &quot;In computing, a jiffy is much longer — from 1 ms to 16 ms depending on OS.&quot; Need not.
+
+Let&#39;s craft response with maybe &quot;Here&#39;s one: ...&quot; and maybe &quot;It&#39;s a real unit in physics, not just a figure of speech.&quot;
+
+Need be concise. Let&#39;s produce final. But let&#39;s think if there is a better &quot;something I don&#39;t know&quot; with more wow. The jiffy is nice but not &quot;unknown&quot;? Maybe okay.
+
+Need maybe answer &quot;Tell me something I don&#39;t know&quot; with &quot;You don&#39;t know that you have a unique scent as identifiable as a fingerprint? Actually humans can distinguish?&quot; Hmm.
+
+Let&#39;s see if there are any pitfalls: If user says &quot;Tell me something I don&#39;t know&quot; perhaps they expect &quot;If I told you, you&#39;d know it.&quot; There is a paradox: &quot;Something you don&#39;t know&quot; cannot be known? No, we can tell.
+
+Maybe respond &quot;I don&#39;t know what you don&#39;t know.&quot; But then not satisfy. Need provide fact.
+
+Let&#39;s perhaps include &quot;A jiffy is an actual unit of time.&quot; That is an answer.
+
+Need maybe &quot;The word &#39;jiffy&#39; in physics is 33.3564 picoseconds; in computer science it&#39;s usually 1/100 second.&quot; Let&#39;s verify &quot;computer science jiffy&quot; could be &quot;the interval between ticks of the system clock, generally 0.01 seconds (10 ms)&quot; but &quot;one tick&quot; in Linux can be 1/100 or 1/250? Let&#39;s avoid specifics. &quot;In computing, it&#39;s the length of one timer tick—variable but often about 10 milliseconds.&quot; Good.
+
+Let&#39;s craft final:
+
+&quot;Here’s one: &#39;jiffy&#39; isn’t just slang—it’s a real unit of time. In physics, a jiffy is defined as the time it takes light to travel one centimeter through a vacuum: about 33.3564 picoseconds, or one thirty-billionth of a second. So if someone says &#39;I’ll be there in a jiffy,&#39; they’re technically promising to arrive in 0.000000000033 seconds.&quot;
+
+Check &quot;one thirty-billionth&quot; yes: 3.33e-11 sec = 1/3e10? Wait 1 / 30,000,000,000 = 3.333e-11. Yes.
+
+Need maybe &quot;picosecond&quot; maybe not known. Good.
+
+Let&#39;s final.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/z-ai-glm-5.3-flash/">← Z.ai: GLM 5.3 Flash</a>
+            <a href="/">all models</a>
+            <a href="/m/tencent-hy-mt2-1.8b/">Tencent: Hy-MT2-1.8B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.ai: GLM 5.3 Flash — Tell me something I don't know.</title>
+    <meta name="description" content="Z.ai: GLM 5.3 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one most people haven&#39;t heard: Earth once had natural nuclear reactors. In 1972, scientists analyzing uranium ore from a mine in Oklo, Gabon, not…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3-flash/">
+    <meta property="og:title" content="Z.ai: GLM 5.3 Flash — Tell me something I don't know.">
+    <meta property="og:description" content="Z.ai: GLM 5.3 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one most people haven&#39;t heard: Earth once had natural nuclear reactors. In 1972, scientists analyzing uranium ore from a mine in Oklo, Gabon, not…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Z.ai: GLM 5.3 Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="Z.ai: GLM 5.3 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one most people haven&#39;t heard: Earth once had natural nuclear reactors. In 1972, scientists analyzing uranium ore from a mine in Oklo, Gabon, not…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Z.ai: GLM 5.3 Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one most people haven't heard: **Earth once had natural nuclear reactors.**\n\nIn 1972, scientists analyzing uranium ore from a mine in Oklo, Gabon, noticed the uranium-235 was slightly depleted — as if it had already been through a reactor. The explanation was wild: about 1.7 billion years ago, natural uranium was ~3% U-235 (roughly the enrichment of modern reactor fuel), and groundwater seeping through the deposit acted as a neutron moderator, kick-starting self-sustaining fission chain reactions.\n\nThe \"reactors\" ran in roughly 30-minute bursts, on and off, for hundreds of thousands of years — heat boiled the water away, reactions paused, water seeped back, reactions resumed. It's the only known place on Earth where this ever happened, and it was discovered because some numbers on a lab report didn't quite add up.\n\nTwo bonuses, free of charge:\n\n- Woolly mammoths were still alive when the Great Pyramid was being built — a population survived on Wrangel Island until around 2000 BC.\n- The Sahara fertilizes the Amazon: millions of tons of dust cross the Atlantic each year, delivering the phosphorus the rainforest's soil lacks.\n\nWant another? I can go deep on science, history, language — whatever you're curious about.","author":{"@type":"Organization","name":"Z Ai"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one with a decent shot at being new to you:\n\nIn 1972, physicists analyzing uranium ore from a mine in Oklo, Gabon, found something that shouldn't exist: the uranium-235 was slightly depleted, exactly like spent fuel from a manmade reactor. After ruling out contamination and error, they landed on a wild conclusion — the deposit had been a *natural nuclear reactor*, and it had gone critical roughly 1.7 billion years ago.\n\nBack then, natural uranium was about 3% U-235, roughly the enrichment level used in modern reactors. Groundwater seeping through the ore acted as a neutron moderator, and the thing just... ran. It cycled on and off for hundreds of thousands of years — something like 30 minutes of fission, then a couple of hours off while the water boiled away and recondensed — before finally burning out. Several reactor zones were eventually identified at the site.\n\nIt couldn't happen today, because U-235 decays faster than U-238, leaving natural uranium too lean at 0.72%.\n\nSo nuclear reactors were invented twice: once by humans, and once by geology, about 1.7 billion years earlier.\n\nWant another? I've got ones about your own body, language, or history — pick a flavor.","author":{"@type":"Organization","name":"Z Ai"}},{"@type":"Answer","text":"Here's one that surprises most people: about 1.7 billion years ago, Earth ran its own natural nuclear reactors.\n\nIn 1972, physicists at a French uranium plant noticed that ore from a mine in Oklo, Gabon had slightly less uranium-235 than it should have. Natural uranium has the exact same isotope ratio everywhere on Earth — and in meteorites — so this was a genuine anomaly. The explanation: the missing U-235 had already been split. Back then, uranium deposits at Oklo were rich enough, and groundwater seeping through acted as a neutron moderator, to sustain natural fission chain reactions. The reactors even self-regulated: heat would boil the water away and shut the reaction down, then it would restart when the water returned. They ran on and off for hundreds of thousands of years.\n\nSo nuclear power wasn't a human invention — we just rediscovered it, two billion years later.\n\nIf you've already heard that one, I've got plenty more.","author":{"@type":"Organization","name":"Z Ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Z.ai: GLM 5.3 Flash</h1>
+        <p class="subtitle">Z Ai · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>August 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Z.ai: GLM 5.3 Flash</div>
+                        <div class="model-provider">Z Ai</div>
+                        <div class="model-released">August 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one most people haven&#39;t heard: <strong>Earth once had natural nuclear reactors.</strong></p>
+<p>In 1972, scientists analyzing uranium ore from a mine in Oklo, Gabon, noticed the uranium-235 was slightly depleted — as if it had already been through a reactor. The explanation was wild: about 1.7 billion years ago, natural uranium was ~3% U-235 (roughly the enrichment of modern reactor fuel), and groundwater seeping through the deposit acted as a neutron moderator, kick-starting self-sustaining fission chain reactions.</p>
+<p>The &quot;reactors&quot; ran in roughly 30-minute bursts, on and off, for hundreds of thousands of years — heat boiled the water away, reactions paused, water seeped back, reactions resumed. It&#39;s the only known place on Earth where this ever happened, and it was discovered because some numbers on a lab report didn&#39;t quite add up.</p>
+<p>Two bonuses, free of charge:</p>
+<ul>
+<li>Woolly mammoths were still alive when the Great Pyramid was being built — a population survived on Wrangel Island until around 2000 BC.</li>
+<li>The Sahara fertilizes the Amazon: millions of tons of dust cross the Atlantic each year, delivering the phosphorus the rainforest&#39;s soil lacks.</li>
+</ul>
+<p>Want another? I can go deep on science, history, language — whatever you&#39;re curious about.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>5519 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. The challenge is that I don&#39;t know what they don&#39;t know — they could be an expert in anything. But the spirit of the request is: share something surprising, delightful, or obscure that most people likely don&#39;t know.
+
+Let me brainstorm some genuinely surprising facts that aren&#39;t widely known:
+
+1. **Octopus facts**: Octopuses have three hearts, blue blood, and neurons distributed in their arms. Two hearts pump blood to the gills, one to the body. The one to the body stops beating when they swim, which is why they prefer crawling. This is somewhat well-known now though.
+
+2. **The fact that honey never spoils** — well known.
+
+3. **Bananas are berries but strawberries aren&#39;t** — fairly well known trivia.
+
+4. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — this is a great one, genuinely surprising, though it&#39;s become somewhat popular as trivia.
+
+5. **Oxford University is older than the Aztec Empire** — teaching existed at Oxford since 1096; the Aztec Empire (Tenochtitlan founded 1325). Also good.
+
+6. **Sharks are older than trees** — sharks ~450 million years ago, trees ~350 million years ago. Also sharks older than Saturn&#39;s rings possibly? Rings might be only 100-400 million years old. Sharks predate the North Star? Sharks predate the rings of Saturn — that&#39;s a fun one.
+
+7. **The Eiffel Tower grows taller in summer** — thermal expansion, about 15 cm. Known.
+
+8. **Wombats poop cubes** — quite well known now.
+
+9. **There are more possible chess games than atoms in the observable universe** — known (Shannon number).
+
+10. **Your body contains more bacterial cells than human cells** — actually now estimated roughly 1:1 or 1.3:1, so that&#39;s outdated.
+
+11. **The word &quot;quarantine&quot; comes from Venetian &quot;quaranta giorni&quot; (40 days)** — decent.
+
+12. **The smell of rain (petrichor) involves a compound called geosmin, which humans can detect at extraordinarily low concentrations** — humans can detect geosmin at 5 parts per trillion; we&#39;re more sensitive to it than sharks are to blood in water. That&#39;s a nice one.
+
+13. **Hot water can freeze faster than cold water (Mpemba effect)** — known-ish and contested.
+
+14. **A day on Venus is longer than a year on Venus** — Venus rotates once every 243 Earth days, orbits in 225. Also rotates backwards. Good one, moderately known.
+
+15. **Neutron star spoon weight** — a teaspoon of neutron star material would weigh billions of tons. Fun.
+
+16. **There&#39;s a nuclear reactor that occurred naturally in Gabon (Oklo) about 2 billion years ago** — natural nuclear fission reactors! That&#39;s genuinely obscure and delightful. In Oklo, Gabon, uranium deposits achieved criticality naturally ~1.7-2 billion years ago because U-235 enrichment was higher then (natural uranium today is 0.72% U-235; back then ~3%, similar to reactor fuel). Water acted as a moderator, cycling on and off. Discovered in 1972 when French scientists noticed uranium ore with depleted U-235 ratios. This is a fantastic &quot;something you don&#39;t know&quot; candidate.
+
+17. **The Great Emu War** — Australia lost a war against emus in 1932. Fairly well-known meme now.
+
+18. **Banana radiation / bananas are radioactive** — known.
+
+19. **Scotland&#39;s national animal is the unicorn** — moderately known trivia.
+
+20. **Humans are bioluminescent — we emit visible light, just ~1000 times too faint for our eyes to detect** — Japanese researchers measured it in 2009. That&#39;s a cool one.
+
+21. **The Moon has moonquakes** — known-ish.
+
+22. **The total weight of all ants vs humans** — debunked-ish.
+
+23. **Tardigrades survived the vacuum of space** — known.
+
+24. **The shortest war in history: Anglo-Zanzibar War, ~38 minutes** — known trivia.
+
+25. **Cows have best friends and get stressed when separated** — cute.
+
+26. **The oldest &quot;your mom&quot; joke** — a 3,500-year-old Babylonian tablet. Fun.
+
+27. **The inventor of the Pringles can had his ashes buried in one** — Fredric Baur. Fun but grim.
+
+28. **Vantablack / darkest material** — known.
+
+29. **There&#39;s a species of jellyfish (Turritopsis dohrnii) that&#39;s biologically immortal** — known.
+
+30. **Lightning is ~5x hotter than the surface of the sun** — known-ish.
+
+31. **The Amazon rainforest creates its own weather / &quot;flying rivers&quot;** — a single tree can transpire ~1,000 liters a day; the forest recycles moisture that falls as rain multiple times. Decent.
+
+32. **The Sahara used to be green; there are cave paintings of swimming people and lake fish** — &quot;Green Sahara&quot; hypothesis, African humid period. Also, dust from the Sahara fertilizes the Amazon (~27 million tons of dust cross the Atlantic annually). That&#39;s a lovely connection: the world&#39;s largest desert feeds the world&#39;s largest rainforest. Phosphorus from Saharan dust sustains Amazon soils. That&#39;s a great one.
+
+33. **More people are alive today than have ever died?** — False, that&#39;s a myth. ~117 billion humans ever, ~8 billion alive now.
+
+34. **You can&#39;t hum while holding your nose closed** — interactive, fun.
+
+35. **The plastic tips of shoelaces are called &quot;aglets&quot;** — well known trivia.
+
+36. **Sea otters have the densest fur; they have a pocket in their skin/arm pit to store rocks** — otters have loose armpit pouches where they keep their favorite rock. Cute.
+
+37. **The &quot;impossible&quot; quasicrystals discovered, and Dan Shechtman&#39;s Nobel** — niche.
+
+38. **Radioactive banana equivalent dose** — known.
+
+39. **The fact that glass is a liquid myth** — debunked.
+
+40. **Pando: a single aspen tree organism in Utah that&#39;s ~80,000 years old (or at least thousands), ~6,000 tons, one of the heaviest and oldest living organisms** — Pando is a single quaking aspen clone with ~47,000 stems connected by one root system. Great one.
+
+41. **Hummingbirds can fly backwards; their heart rate; they enter torpor** — known-ish.
+
+42. **The Voyager Golden Records** — known.
+
+43. **The loudest sound ever recorded: Krakatoa 1883, heard 4,800 km away, circled the globe multiple times, ruptured sailors&#39; eardrums 64 km away** — barometric waves circled Earth 3-4 times. Great one.
+
+44. **The speed of Earth&#39;s rotation; you weigh slightly less at the equator** — decent.
+
+45. **There are more trees on Earth than stars in the Milky Way** (~3 trillion trees vs ~100-400 billion stars). Surprising and true-ish.
+
+46. **The Moon is moving away from Earth ~3.8 cm/year — same rate fingernails grow** — nice.
+
+47. **Your stomach lining replaces itself every few days; you get a new skeleton every ~10 years** — decent.
+
+48. **The word &quot;nice&quot; originally meant &quot;foolish/stupid&quot;** — etymology fun.
+
+49. **&quot;Dreamt&quot; is one of the only English words ending in &quot;mt&quot;** — trivia.
+
+50. **The dot over lowercase i is called a tittle** — trivia.
+
+51. **Octopus arms can taste what they touch** — chemotactile. Good.
+
+52. **Some turtles breathe through their butts (cloacal respiration)** — fun, moderately known.
+
+53. **The immortal line: &quot;The universe is beige&quot; — Cosmic Latte** — astronomers averaged the light of 200,000 galaxies and got a pale beige color, jokingly named &quot;Cosmic Latte.&quot; That&#39;s charming and obscure.
+
+54. **There&#39;s a giant cloud of alcohol in space (Sagittarius B2) — ethyl alcohol, billions of liters** — decent.
+
+55. **A single bolt of lightning contains enough energy to... toast ~100,000 slices of bread** — fun.
+
+56. **The Mariana Trench is deeper than Everest is tall** — known.
+
+57. **Mount Everest&#39;s summit is not the farthest point from Earth&#39;s center — that&#39;s Chimborazo in Ecuador due to the equatorial bulge** — good one, moderately known.
+
+58. **The Andromeda galaxy is visible to the naked eye and is the farthest thing most people can see unaided (~2.5 million light years)** — decent.
+
+59. **Every second, the Sun converts ~4 million tons of mass into energy** — decent.
+
+60. **There&#39;s enough water vapor... hmm.**
+
+61. **The &quot;smell of old books&quot; comes from lignin breaking down into compounds similar to vanilla** — nice.
+
+62. **The first computer bug was an actual moth (Harvard Mark II, 1947, Grace Hopper&#39;s team)** — known.
+
+63. **Bubble wrap was originally invented as wallpaper** — good one.
+
+64. **Play-Doh was originally a wallpaper cleaner** — known trivia.
+
+65. **The fax machine was invented in 1843, before the telephone** — good.
+
+66. **Oxford University predates the Aztec Empire** — mentioned.
+
+67. **Nintendo was founded in 1889 (playing cards)** — well known now.
+
+68. **The last execution by guillotine in France was in 1977 — the same year Star Wars came out** — great juxtaposition.
+
+69. **Woolly mammoths were still alive when the pyramids were built** — Wrangel Island population survived until ~4,000 years ago; pyramids ~4,500 years ago. True! Great one.
+
+70. **There are more possible arrangements of a shuffled deck of cards than seconds since the Big Bang** — 52! ≈ 8×10^67. Good.
+
+71. **The human eye can detect a single photon** — research suggests rods can respond to single photons. Nice.
+
+72. **Your bones are ~4x stronger than concrete by weight** — decent.
+
+73. **Antarctica is the largest desert** — known.
+
+74. **There&#39;s an ant colony spanning multiple continents (Argentine ants) — huge supercolonies** — decent.
+
+75. **Honeybees can recognize human faces** — interesting.
+
+76. **Crows hold grudges and remember faces for years; they tell other crows** — good.
+
+77. **The &quot;wood wide web&quot; — mycorrhizal networks** — popular now.
+
+78. **Bananas: Cavendish clones — all genetically identical** — decent.
+
+79. **The 100-year-old lightbulb still burning (Livermore, CA)** — Centennial Light. Fun.
+
+80. **The Great Wall of China is not visible from space (easily)** — debunked myth.
+
+81. **You&#39;re taller in the morning than at night by ~1-2 cm** — decent.
+
+82. **A teaspoon of soil contains more microorganisms than there are people on Earth** — decent.
+
+83. **The largest living organism is a fungus (Armillaria) in Oregon, ~9 km²** — good, moderately known.
+
+84. **Venus spins backwards and so slowly that a day is longer than its year** — mentioned.
+
+85. **Neutron stars can spin 700+ times per second** — millisecond pulsars. Good.
+
+86. **The coldest place in the universe (that we know) is in a lab on Earth — Bose-Einstein condensates colder than deep space** — decent.
+
+87. **There&#39;s a &quot;point Nemo&quot; in the ocean, the farthest point from land; the ISS passes overhead; space agencies crash satellites there — &quot;spacecraft cemetery&quot;** — great one.
+
+88. **The ISS travels at ~28,000 km/h; astronauts see 16 sunrises a day** — known.
+
+89. **The total mass of the internet (electrons in motion) is ~50 grams?** — dubious estimate, skip.
+
+90. **The first item ever sold on eBay was a broken laser pointer** — fun.
+
+91. **Cats can&#39;t taste sweetness** — good one.
+
+92. **Dolphins sleep with half their brain at a time (unihemispheric sleep); one eye stays open** — known-ish.
+
+93. **Birds are dinosaurs — technically, you can say dinosaurs aren&#39;t extinct** — known.
+
+94. **There&#39;s a word for the day after tomorrow: &quot;overmorrow&quot;** — fun.
+
+95. **The ampersand used to be the 27th letter of the alphabet** — good.
+
+96. **&quot;I am&quot; is the shortest complete English sentence** — trivia.
+
+97. **The @ symbol has wildly different names in other languages: snail (French/Italian), monkey tail (German), little duck (Greek? actually &quot;papaki&quot;)** — fun.
+
+98. **The OK hand gesture was once used as a presidential... skip.**
+
+99. **The longest recorded case of hiccups lasted 68 years (Charles Osborne)** — fun.
+
+100. **The Guinness record for tallest... skip.**
+
+Okay, I have plenty. The question is format and selection. The user asked for &quot;something I don&#39;t know&quot; — singular. I could give one great fact with a bit of depth, or a few options. I think the best approach is to give one genuinely surprising, verifiable fact with enough context to be satisfying, maybe with a brief offer for more. Or give 2-3. 
+
+Actually, the phrasing &quot;Tell me something I don&#39;t know&quot; invites a single delightful revelation. Giving one with a little story/context is more memorable than a listicle. But there&#39;s risk: they might already know it. Hedge slightly? I could pick something obscure enough that odds are they don&#39;t know it, and offer more if they want.
+
+Top candidates for obscurity + delight + verifiability:
+
+- **Oklo natural nuclear reactor**: Genuinely obscure, scientifically fascinating, well-documented. In 1972, French physicists analyzing uranium from a mine in Oklo, Gabon, found the U-235 was depleted (~0.717% vs expected 0.720%). Investigation revealed that ~1.7 billion years ago, the deposit sustained natural fission chain reactions — water percolating through acted as a moderator, and the reactor cycled on and off in ~30-minute bursts, running for hundreds of thousands of years. The only known place on Earth where nuclear reactors formed naturally. This is my top pick — it&#39;s the kind of thing that makes people go &quot;wait, really?&quot;
+
+- **Sahara dust fertilizing the Amazon**: Lovely cross-continental fact.
+
+- **Cosmic Latte**: charming.
+
+- **Wrangel Island mammoths outliving the pyramids**: great, though increasingly known.
+
+- **Pando**: great.
+
+- **Geosmin sensitivity**: nice.
+
+- **Point Nemo spacecraft cemetery**: great.
+
+I think I&#39;ll lead with Oklo as the main event — it&#39;s the most &quot;you probably don&#39;t know this&quot; and the most mind-blowing (natural nuclear reactors!). Then maybe add one or two quick bonus facts as a kicker, and offer more. Actually, maybe keep it tight: one main fact told well, plus a compact &quot;if you want more&quot; offer. Or one main + two one-liners. Let me think about what makes the best response.
+
+The request is casual and playful. A response with one well-told surprising fact plus maybe a couple of rapid-fire bonuses feels generous without being bloated. Format: short intro line, the main fact in 2-4 sentences (or a few short paragraphs), then maybe 2 bonus one-liners, then a light offer. Markdown is fine for chat; minimal formatting — maybe no headers, just prose with a possible short list for bonuses. Keep it under ~200 words ideally.
+
+Let me draft:
+
+---
+
+Here&#39;s one: about 1.7 billion years ago, Earth had naturally occurring nuclear reactors.
+
+In 1972, physicists analyzing uranium ore from a mine in Oklo, Gabon, noticed something impossible: the uranium-235 was slightly depleted, as if it had already been through a reactor. The explanation? When the deposit formed, natural uranium was rich enough in U-235 (about 3% — similar to modern reactor fuel) that groundwater seeping through the ore acted as a neutron moderator and kick-started fission chain reactions.
+
+The &quot;reactors&quot; ran on and off for hundreds of thousands of years, self-regulating like a thermostat: heat boiled the water away, reactions paused, water returned, reactions resumed. It&#39;s the only known place on Earth where this ever happened — and it was discovered because the ore didn&#39;t match the numbers on paper.
+
+---
+
+Then maybe a bonus or two:
+
+Bonus: woolly mammoths still existed when the Great Pyramid was being built (a population survived on Wrangel Island until ~2000 BC). Or Sahara dust feeds the Amazon. Or Cosmic Latte.
+
+I&#39;ll include maybe two quick ones and an offer to tailor (science/history/language/etc.). Actually an offer to give more in a category they like is a nice touch but shouldn&#39;t be mandatory. A short closing line is fine.
+
+Length check: keep it snappy. Use minimal formatting — maybe bold the key reveal? In chat, a little bold is fine. I&#39;ll avoid headers. Maybe use a short paragraph structure.
+
+Accuracy check on Oklo details:
+- Discovered 1972 by Francis Perrin&#39;s team at the French CEA (Commissariat à l&#39;énergie atomique) during routine analysis of ore from Oklo. U-235 fraction measured ~0.717% vs natural 0.720%. Yes.
+- Natural uranium today: 0.72% U-235. Two billion years ago: ~3%. Correct — because U-235 half-life is ~704 million years vs U-238&#39;s 4.47 billion, the ratio was higher in the past. 3% is comparable to low-enriched reactor fuel (typical LWR fuel ~3-5%). Good.
+- Mechanism: groundwater as moderator; fission products (e.g., xenon) analysis suggests cycling. Self-regulation: heat vaporizes water, moderation stops, reaction shuts down; when it cools, water returns. Estimated power levels ~ tens of kilowatts; operated intermittently over ~100,000 to 1 million years (estimates vary; commonly cited &quot;several hundred thousand years&quot;). I&#39;ll say &quot;hundreds of thousands of years, in on-off cycles&quot; — safe.
+- Sixteen (or seventeen) natural reactor zones identified at Oklo (and one at Bangombé). &quot;The only known place&quot; — Oklo/Bangombé in Gabon; yes, the only known natural fission reactors on Earth.
+- Also cool: the fission products stayed largely contained in the rock for ~2 billion years, which informed nuclear waste storage research. Could mention briefly, but might bloat. Maybe skip or one clause.
+
+Wrangel Island mammoths: last woolly mammoths died ~4,000 years ago (~2000 BC); Great Pyramid ~2560 BC. So mammoths were alive when pyramids were built — true, and the pyramids were already ancient to those mammoths? No wait — pyramids built ~2560 BC, mammoths died ~2000 BC, so mammoths outlived pyramid construction by ~500 years. Correct phrasing: &quot;woolly mammoths were still alive when the Egyptian pyramids were built.&quot; Good.
+
+Cosmic Latte: 2002, Johns Hopkins astronomers (Karl Glazebrook, Ivan Baldry) averaged light from ~200,000 galaxies; initial result was greenish (software glitch), corrected to white/beige; named via poll &quot;Cosmic Latte&quot; (Italian for &quot;milky coffee&quot;). Fine but maybe skip to keep tight.
+
+I&#39;ll go with Oklo as main + two rapid bonuses (mammoth/pyramid + one more). Which second bonus? Sahara→Amazon is nice and connects ecosystems: &quot;Every year, dust from the Sahara blows across the Atlantic and fertilizes the Amazon — the world&#39;s biggest desert feeds its biggest rainforest.&quot; Verified: ~27 million tons of dust/year, ~22,000-28,000 tons of phosphorus (NASA study, Yu et al. 2015). Good.
+
+Or the hummingbird... no. Or &quot;a day on Venus is longer than its year.&quot; I&#39;ll pick Sahara/Amazon because it&#39;s poetic. Actually mammoth one is more striking historically. Both are one-liners; include both.
+
+Closing: offer &quot;Want another? I&#39;ve got ones about [x]&quot; — or simply &quot;Say the word and I&#39;ll dig up more.&quot; Keep it light and short.
+
+Format: 
+- Opening line: &quot;Here&#39;s one most people haven&#39;t heard:&quot; or just dive in.
+- Main fact: 2-3 short paragraphs.
+- &quot;Two more for free:&quot; + two one-liners (could be a tiny list).
+- One-line offer.
+
+Word count target: ~150-200 words. Good for chat.
+
+Draft:
+
+---
+
+Here&#39;s one most people haven&#39;t heard: **Earth once had natural nuclear reactors.**
+
+In 1972, physicists analyzing uranium from a mine in Oklo, Gabon, noticed the uranium-235 was slightly depleted — as if it had already been through a reactor. The explanation turned out to be wild: about 1.7 billion years ago, natural uranium was ~3% U-235 (roughly modern reactor fuel), and groundwater seeping through the deposit acted as a neutron moderator, kicking off self-sustaining fission chain reactions.
+
+The reactors ran in on-off cycles for hundreds of thousands of years — heat boiled the water away, reactions paused, water seeped back, reactions resumed. It&#39;s the only known place on Earth where this happened, and it was found because some numbers on a lab report didn&#39;t quite add up.
+
+Two bonuses, free of charge:
+- Woolly mammoths were still alive when the Great Pyramid was being built — a population survived on Wrangel Island until about 2000 BC.
+- The Sahara fertilizes the Amazon: millions of tons of dust cross the Atlantic every year, delivering the phosphorus the rainforest&#39;s soil lacks.
+
+Want more? I can go deep on science, history, language, or whatever you like.
+
+---
+
+That&#39;s good. Length ~200 words. Check facts once more:
+- &quot;physicists analyzing uranium from a mine in Oklo, Gabon&quot; — it was French CEA scientists doing routine analysis. Fine.
+- 1.7 billion years ago — commonly cited ~1.7-2.0 Ga. Fine.
+- ~3% U-235 — commonly cited. Fine.
+- Groundwater moderator — correct.
+- On-off cycles, self-regulation — supported by xenon isotope studies (Meshik et al. 2004, ~30 min on / 2.5 hr off cycles). I could add &quot;roughly half-hour bursts&quot; — nice concrete detail! &quot;operating in roughly 30-minute bursts, cycling on and off for hundreds of thousands of years.&quot; That&#39;s a great specific. Let me include: &quot;operating in ~30-minute bursts.&quot;
+- &quot;only known place on Earth&quot; — correct (16-17 reactor zones at Oklo/Bangombé).
+- Wrangel Island ~2000 BC (radiocarbon ~4,000 yr BP). Pyramid ~2560 BC. Correct.
+- Sahara dust → Amazon phosphorus — correct (NASA 2015 study: ~27.7 million tons dust, ~22,000 tons phosphorus).
+
+Add the 30-minute detail. Final polish. Avoid overclaiming &quot;physicists&quot; gender etc. Fine.
+
+One more consideration: the user said &quot;something I don&#39;t know&quot; — I can&#39;t literally know what they know, but the Oklo fact is obscure enough that the odds are strongly in favor. I don&#39;t need a hedge; maybe a light touch like &quot;most people haven&#39;t heard&quot; covers it.
+
+Formatting: bold the hook, a short bullet list for bonuses, closing offer. Good for conversational chat.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one with a decent shot at being new to you:</p>
+<p>In 1972, physicists analyzing uranium ore from a mine in Oklo, Gabon, found something that shouldn&#39;t exist: the uranium-235 was slightly depleted, exactly like spent fuel from a manmade reactor. After ruling out contamination and error, they landed on a wild conclusion — the deposit had been a <em>natural nuclear reactor</em>, and it had gone critical roughly 1.7 billion years ago.</p>
+<p>Back then, natural uranium was about 3% U-235, roughly the enrichment level used in modern reactors. Groundwater seeping through the ore acted as a neutron moderator, and the thing just... ran. It cycled on and off for hundreds of thousands of years — something like 30 minutes of fission, then a couple of hours off while the water boiled away and recondensed — before finally burning out. Several reactor zones were eventually identified at the site.</p>
+<p>It couldn&#39;t happen today, because U-235 decays faster than U-238, leaving natural uranium too lean at 0.72%.</p>
+<p>So nuclear reactors were invented twice: once by humans, and once by geology, about 1.7 billion years earlier.</p>
+<p>Want another? I&#39;ve got ones about your own body, language, or history — pick a flavor.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>5506 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. The challenge here is that I don&#39;t know what they already know — this is a classic epistemic problem. Someone asking this question is inviting me to share something surprising, delightful, or genuinely obscure.
+
+Let me think about what makes a good response here:
+
+1. It should be genuinely surprising or little-known
+2. It should be verifiably true (I shouldn&#39;t make things up)
+3. It should be interesting enough to be memorable
+4. Ideally it might spark curiosity
+
+Let me brainstorm some genuinely obscure but true facts:
+
+**Science/Nature:**
+- Octopuses have three hearts, and two of them stop beating when they swim (which is why they prefer crawling — swimming exhausts them)
+- Honey never spoils — archaeologists have found edible honey in Egyptian tombs thousands of years old
+- Wombats poop cubes (this is fairly well known now)
+- There are more trees on Earth than stars in the Milky Way (roughly 3 trillion trees vs ~100-400 billion stars)
+- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza
+- Sharks are older than trees — sharks existed ~400 million years ago, trees ~350 million years ago
+- Sharks are also older than Saturn&#39;s rings (possibly — the rings may be only 100-400 million years old, though this is debated)
+- A day on Venus is longer than a year on Venus (243 Earth days to rotate vs 225 to orbit)
+- Bananas are berries but strawberries aren&#39;t (botanically)
+- The Eiffel Tower grows about 15 cm taller in summer due to thermal expansion
+- Your stomach gets a new lining every few days because stomach acid would otherwise digest it
+- Humans share ~50-60% of DNA with bananas
+- There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal — it can revert to its juvenile polyp stage
+- Tardigrades can survive in the vacuum of space
+- The loudest sound ever recorded was the Krakatoa eruption in 1883 — heard 3,000 miles away, circled the globe four times
+- Hot water can freeze faster than cold water (Mpemba effect) — though this is contested and not reliably reproducible
+- Sloths can hold their breath longer than dolphins (up to 40 minutes vs ~10-15 for dolphins)
+- Some metals are so reactive they&#39;ll explode in water (alkali metals) — fairly well known
+- Glass is not a slow-flowing liquid (common myth, the old windows thing is false)
+- Neutron star material: a teaspoon would weigh billions of tons
+
+**History/Culture:**
+- Oxford University is older than the Aztec Empire (teaching since ~1096; Aztec Empire founded 1428, Tenochtitlan founded 1325)
+- The fax machine was invented before the telephone (1843 vs 1876) — actually the first fax was patented by Alexander Bain in 1843
+- Nintendo was founded in 1889 (playing cards)
+- The last execution by guillotine in France was in 1977 — the same year Star Wars came out
+- Woolly mammoths were still alive when the pyramids were being built (a small population survived on Wrangel Island until ~1650 BCE, pyramids ~2560 BCE)
+- Betty White was older than sliced bread (sliced bread introduced 1928, Betty White born 1922)
+- The shortest war in history: Anglo-Zanzibar War, 1896, lasted roughly 38-45 minutes
+- In 1919, a wave of molasses flooded Boston, killing 21 people (Great Molasses Flood)
+- Pope Gregory IX declared cats associated with devil worship in 1233, some say this led to cat killings that worsened the plague (this causal link is debated)
+- Ketchup was sold as medicine in the 1830s
+- Ancient Romans used urine as mouthwash (ammonia)
+- The word &quot;niche&quot; comes from... no, let me think of better ones
+
+**Language:**
+- &quot;Strengths&quot; is one of the longest words with one vowel (or &quot;rhythms&quot;)
+- The dot over lowercase i and j is called a &quot;tittle&quot;
+- No word in English rhymes with &quot;month, orange, silver, or purple&quot; (well, &quot;silver&quot; has &quot;chilver&quot; — a rare word for a ewe lamb, and &quot;hurple&quot; exists, but these are obscure)
+- &quot;Set&quot; has the most definitions of any English word
+- The word &quot;trivia&quot; comes from Latin for &quot;crossroads&quot; (tri via — three roads), where people would chat about mundane things
+- &quot;Quisling&quot; means traitor/collaborator — from Vidkun Quisling
+- The ampersand (&amp;) used to be taught as the 27th letter of the alphabet, and &quot;ampersand&quot; comes from &quot;and per se and&quot;
+
+**Space:**
+- The footprints on the Moon will likely last millions of years (no wind/water erosion)
+- If you could fold a piece of paper 42 times it would reach the Moon (exponential growth)
+- There are more possible iterations of a chess game than atoms in the observable universe (Shannon number ~10^120 vs ~10^80 atoms)
+- Space smells like seared steak/hot metal according to astronauts
+- The Sun makes up 99.86% of the mass of the solar system
+- One million Earths could fit inside the Sun (by volume — actually about 1.3 million)
+
+**Human body:**
+- You can&#39;t hum while holding your nose closed
+- Your brain uses ~20% of your body&#39;s energy despite being ~2% of its mass
+- Humans are bioluminescent — we glow, but the light is 1,000 times too weak for our eyes to detect (this was actually measured in 2009 by Japanese researchers!)
+- Your bones are ~4x stronger than concrete by weight... (roughly)
+- The cornea is the only part of the body with no blood supply — it gets oxygen directly from the air
+- Humans have a diving reflex — when your face hits cold water, your heart rate slows
+
+**Weird/quirky:**
+- In Switzerland, it&#39;s illegal to own just one guinea pig (they&#39;re social animals — considered animal cruelty)
+- Cows have best friends and get stressed when separated
+- Sea otters hold hands while sleeping to avoid drifting apart
+- The &quot;new car smell&quot; is actually... various VOCs, not great for you
+- Vending machines kill more people per year than sharks (in Japan at least, from tipping over)
+- A &quot;murder&quot; of crows — crows hold grudges and recognize human faces, passing knowledge to other crows
+- The Guinness World Record for &quot;most records set&quot; — Ashrita Furman
+
+Now, the epistemic problem: I don&#39;t know what the user knows. Some of these (octopus hearts, honey never spoiling, Cleopatra timeline) are pretty widely circulated &quot;fun facts&quot; that many people have heard. The best approach might be to:
+
+1. Acknowledge the challenge briefly (I can&#39;t know what they know)
+2. Offer something genuinely obscure and delightful
+3. Maybe offer to go in a particular direction if they want more
+
+Or I could just confidently deliver a great fact without hedging too much. Over-hedging is boring. But a light touch acknowledging the game-like nature could be charming.
+
+Let me pick facts that are less commonly circulated:
+
+1. **Humans are bioluminescent** — We actually emit visible light, but it&#39;s about 1,000 times weaker than what our eyes can detect. Japanese researchers photographed this in 2009 using ultra-sensitive cameras. The glow is strongest in the late afternoon around the cheeks and is linked to metabolism. This is genuinely obscure and delightful.
+
+2. **The shortest war** — Anglo-Zanzibar War lasted ~38 minutes. Fairly well known among trivia buffs.
+
+3. **Oxford is older than the Aztec Empire** — teaching since 1096, Aztec Empire 1428. Moderately known.
+
+4. **Sharks older than trees** — Sharks ~450 million years ago actually (earliest shark-like scales ~450 mya, definitive sharks ~420 mya), trees ~390-350 mya (Archaeopteris ~385 mya, Wattieza ~385 mya). So sharks predate trees by tens of millions of years. Also sharks predate Saturn&#39;s rings possibly (rings estimated 10-100 million years old per 2017-2019 research, though this is debated). This one is quite good and less known than the octopus fact.
+
+5. **The tittle** — the dot over i and j. Nice linguistic tidbit, somewhat known.
+
+6. **Ampersand as 27th letter** — schoolchildren in the 1800s recited &quot;X, Y, Z, and per se and&quot; which slurred into &quot;ampersand.&quot; This is genuinely delightful and less known.
+
+7. **The Great Molasses Flood** — 1919 Boston, a tank of molasses burst, wave 25 feet high moving 35 mph, killed 21. Genuinely surprising and less known.
+
+8. **Sloths holding breath longer than dolphins** — good one, less known.
+
+9. **Wombats&#39; cube poop** — now fairly well known.
+
+10. **The Mpemba effect** — hot water freezing faster than cold — named after a Tanzanian student who noticed it making ice cream in 1963. The story is charming. Scientific status is contested though.
+
+11. **Venus day longer than year** — moderately known.
+
+12. **Your bones, ounce for ounce, stronger than steel?** — not quite accurate; bone is stronger than steel by weight in compression? Actually bone has a tensile strength comparable to some steels but it&#39;s complicated. Skip.
+
+13. **The Moon has a &quot;tail&quot;** — actually the Earth has a comet-like sodium tail, and the Moon... hmm, there&#39;s research on the Moon&#39;s sodium tail. Too obscure/uncertain.
+
+14. **Cows have best friends** — moderately circulated.
+
+15. **The word &quot;goodbye&quot; comes from &quot;God be with ye&quot;** — nice etymology, moderately known.
+
+16. **Nintendo was founded the same year as... 1889, when Jack the Ripper was active (1888), Eiffel Tower completed (1889).** Nintendo older than... well.
+
+17. **The inventor of the Pringles can is buried in one** — Fredric Baur&#39;s ashes were buried in a Pringles can. Delightful and obscure!
+
+18. **There&#39;s a nuclear reactor that formed naturally in Gabon ~2 billion years ago** — the Oklo natural nuclear fission reactors! This is genuinely mind-blowing and obscure. In 1972, French physicists found that uranium from Oklo mine had depleted U-235 ratios, indicating a natural fission reaction operated ~1.7-2 billion years ago for hundreds of thousands of years. This is a fantastic fact.
+
+19. **Bananas are radioactive** — moderately known (banana equivalent dose).
+
+20. **The total weight of ants vs humans** — myth-ish, outdated claim.
+
+21. **Scotland&#39;s national animal is the unicorn** — fairly well known now.
+
+22. **The Eiffel Tower was originally intended for Barcelona** — this is actually disputed/apocryphal. Skip.
+
+23. **Vatican City has the highest crime rate per capita** — statistical artifact, meh.
+
+24. **Cleopatra&#39;s timeline** — well known by now.
+
+25. **The last time the Chicago Cubs won the World Series before 2016, the Ottoman Empire still existed** — dated now.
+
+26. **Honey never spoils** — very well known.
+
+27. **The dot over the &quot;i&quot; is a tittle** — decent.
+
+28. **&quot;Dreamt&quot; is one of the few words ending in &quot;-mt&quot;** — decent.
+
+29. **The plastic tips on shoelaces are called &quot;aglets&quot;** — well known due to A Puzzlement... actually due to a song in &quot;Crazy Ex-Girlfriend&quot; and general trivia.
+
+30. **The Guinness Book of Records was created to settle arguments in pubs** — moderately known.
+
+31. **The first item ever sold on eBay was a broken laser pointer** ($14.83) — moderately known.
+
+32. **Sea otters have the densest fur of any animal — up to a million hairs per square inch** — decent.
+
+33. **A single strand of spider silk... hmm.**
+
+34. **The Oklo reactor** — I really like this one. Natural nuclear reactor 1.7 billion years ago in Gabon. Discovered in 1972 when uranium ore samples showed anomalous isotope ratios. The conditions (high U-235 concentration then, water moderation) allowed sustained fission cycles — it would run for ~30 minutes, then shut down as water boiled off, then restart. Operated for hundreds of thousands of years. This is a genuinely &quot;wow&quot; fact that most people don&#39;t know.
+
+35. **Humans glow in the dark (bioluminescence)** — also great.
+
+36. **Sharks predate trees AND Saturn&#39;s rings** — great.
+
+37. **The Anglo-Zanzibar War** — good.
+
+38. **The molasses flood** — good.
+
+39. **A day on Mercury lasts two Mercury years** — hmm, one solar day on Mercury is 176 Earth days, two orbital periods. Decent.
+
+40. **There are more possible chess games than atoms in the universe** — moderately known.
+
+41. **Every 40 days, humanity produces more data than... ** — unverifiable.
+
+42. **The word &quot;quarantine&quot; comes from Venetian &quot;quaranta giorni&quot; (40 days)** — decent, moderately known.
+
+43. **The &quot;smell of rain&quot; (petrichor) — the word was coined in 1964 by Australian scientists** — the word petrichor is recent! Coined by Bear and Thomas in 1964 for a Nature paper. Nice.
+
+44. **Octopuses taste with their arms** — decent.
+
+45. **Some turtles breathe through their butts** — well known in trivia circles.
+
+46. **The Moon is moving away from Earth ~3.8 cm/year** — moderately known.
+
+47. **When you look at the Andromeda galaxy with the naked eye, you&#39;re seeing light that left 2.5 million years ago** — well known.
+
+48. **Betelgeuse could go supernova...** — well known-ish.
+
+49. **There&#39;s a giant cloud of alcohol in space (Sagittarius B2) — billions of liters of ethanol** — decent.
+
+50. **Diamond rain on Neptune/Uranus** — moderately known.
+
+The Oklo natural reactor is my top pick for &quot;genuinely don&#39;t know&quot; material. The human bioluminescence one is a strong second. Sharks-older-than-trees-and-Saturn&#39;s-rings is third.
+
+Actually, let me reconsider the format. The user asked for &quot;something&quot; — singular. I should probably lead with one really good fact, deliver it well with enough detail to make it satisfying, and then maybe offer a bonus or invite them to ask for more in a specific flavor (science, history, language, etc.). That makes it interactive and fun.
+
+How to deliver: I could frame it as &quot;Here&#39;s one with a decent chance of being new to you:&quot; — acknowledging the epistemic uncertainty lightly without being annoying about it.
+
+Let me draft the Oklo fact:
+
+&quot;In 1972, scientists analyzing uranium from a mine in Oklo, Gabon, noticed something impossible: the uranium-235 content was slightly lower than it should be — like a fuel rod that had already been used. The conclusion they eventually accepted: about 1.7 billion years ago, the deposit became a natural nuclear reactor. At that time, U-235 was concentrated enough (about 3%, similar to modern reactor fuel), and groundwater seeping in acted as a neutron moderator. The reactor cycled on and off — running for about half an hour, boiling off its water, cooling, restarting — for possibly hundreds of thousands of years, before burning out and going dormant until humans found the evidence.&quot;
+
+Let me verify details from memory:
+- Oklo, Gabon, discovered 1972 by French CEA (Commissariat à l&#39;énergie atomique) during isotopic analysis of ore from Oklo mine. Francis Perrin is credited with the hypothesis.
+- Natural U-235 abundance today: 0.72%. Two billion years ago: ~3%. Critical concentration for natural reactors is around 2-3% with water moderation? The claim is that 2 billion years ago, natural uranium was ~3% U-235, comparable to low-enriched reactor fuel (3-5%).
+- The reaction operated intermittently, with cycles of ~30 minutes on, ~2.5 hours off (based on xenon isotope analysis by Meshik et al. 2004 — they found the reactor operated in ~30-minute on/2.5-hour off cycles regulated by water boiling). This is a real published finding (Meshik, Hohenberg, Pravdivtseva, PRL 2004).
+- Duration: estimates range from ~150,000 to ~1 million years (often cited as &quot;a few hundred thousand years&quot; or &quot;150,000 years&quot;). Total power output modest — ~100 kW average? Estimates say around 100 kilowatts on average.
+- There were about 16-17 reactor zones at Oklo and nearby Bangombé.
+- The reason it can&#39;t happen today: U-235 has decayed faster than U-238, so natural uranium is now only 0.72% U-235 — below the threshold for natural criticality with ordinary water moderation.
+
+This is all solid. Great fact.
+
+Alternatively, the human bioluminescence:
+- In 2009, Japanese researchers (Masaki Kobayashi et al., Tohoku Institute of Technology) used ultra-sensitive cameras to photograph human skin emitting visible light. The emission is ~1,000 times weaker than the naked eye can detect, varies with circadian rhythm (peak late afternoon), strongest around the face. It comes from metabolic reactions involving reactive oxygen species and fluorophores like flavins. Published in PLoS ONE 2009 (&quot;Imaging of ultraweak photon emission from a human body&quot;). Solid.
+
+Sharks vs trees vs Saturn&#39;s rings:
+- Earliest shark-like fossils: scales from ~450 million years ago; definitive shark teeth ~410 mya. Trees: Archaeopteris ~385 mya; Wattieza (fern-like) ~385-390 mya. So sharks predate trees by 60+ million years (using the scale evidence) or ~25-40 mya (using teeth). Commonly stated as &quot;sharks are older than trees.&quot;
+- Saturn&#39;s rings: Cassini data (2017-2019) suggested rings are only 10-100 million years old, possibly as young as 10-23 million years (2019 study). Some debate exists. &quot;Sharks are older than Saturn&#39;s rings&quot; is a fun statement but the ring age is actively debated — I should hedge or pick a cleaner fact.
+
+I&#39;ll go with Oklo as the main fact. It has a narrative arc (mystery → impossible observation → astonishing explanation) which makes it more memorable than a bare factoid. And it&#39;s genuinely obscure — most people, even science-savvy ones, often haven&#39;t heard of it.
+
+Should I add a second fact as a bonus? A short one could be nice — like the human glow. Or I could offer to continue: &quot;Want another? I&#39;ve got ones about history, language, your own body...&quot; That keeps it interactive.
+
+Format considerations: This is a casual, conversational request. The response should be conversational prose, not headers or bullet lists. Medium-short length — enough to tell the story well (a few sentences to a short paragraph or two), then a light offer for more. No markdown headers needed. Maybe italics for emphasis sparingly. Keep it punchy.
+
+Draft:
+
+&quot;Here&#39;s one with a decent shot at being new to you:
+
+In 1972, physicists analyzing uranium ore from a mine in Oklo, Gabon, found something that shouldn&#39;t exist: the uranium-235 was depleted, exactly like spent fuel from a manmade reactor. After ruling out contamination and fraud, they arrived at a wild conclusion — the deposit had been a natural nuclear reactor, and it had gone critical roughly 1.7 billion years ago.
+
+At that point in Earth&#39;s history, natural uranium was about 3% U-235 — roughly the enrichment used in modern reactors. Groundwater seeping through the ore acted as a neutron moderator, and the thing just... ran. It cycled on and off for hundreds of thousands of years — about 30 minutes of fission, then a couple of hours off while the water boiled away and recondensed — before finally burning out when the U-235 ran low. It can&#39;t happen today because U-235 decays faster than U-238; natural uranium is now too lean, at 0.72%.
+
+So: nuclear reactors were invented twice. Once by humans, and once by geology, two billion years earlier.
+
+Want another? I can do ones about your own body, language, history...&quot;
+
+Hmm, &quot;invented twice&quot; is a nice kicker. Let me tighten. Also double-check: was it exactly 1972? Yes — May 1972, French CEA analysis by Hidi... the physicist Francis Perrin proposed it. The ore came from the Oklo mine in Gabon, operated by the Franceville uranium mines. The anomaly: U-235 abundance 0.717% vs expected 0.720% — a tiny discrepancy that mattered because these measurements were used to check for... precision. Actually the discrepancy was small (0.003%) but significant for metrology purposes.
+
+The &quot;30 minutes on, 2.5 hours off&quot; comes from xenon isotope retention analysis (Meshik et al., 2004). I can state it as approximate.
+
+Duration: commonly cited as &quot;hundreds of thousands of years&quot; or ~150,000 to 1 million years. I&#39;ll say &quot;hundreds of thousands of years.&quot;
+
+Power: average ~100 kW — I could include &quot;about as much as a hundred toasters&quot; or skip. Maybe skip to keep it tight, or a brief mention. Actually a fun comparison: &quot;roughly the output of a hundred kitchen toasters&quot; — hmm, a toaster is ~1000W, so 100 kW ≈ 100 toasters. That&#39;s cute but might clutter. Keep it optional. I&#39;ll skip it for tightness.
+
+Length check: my draft is about 200 words — reasonable for the request. The user asked for &quot;something I don&#39;t know&quot; — a rich, well-told single fact plus an offer for more is ideal. Not too long.
+
+One more consideration: the opening line &quot;Here&#39;s one with a decent shot at being new to you&quot; acknowledges I can&#39;t actually know what they know — a light, honest touch without belaboring it. Good.
+
+Final polish on the draft. Make sure the science is stated carefully:
+- &quot;roughly 1.7-2 billion years ago&quot; — commonly cited as ~1.7 billion (some say 2 billion). I&#39;ll say &quot;about 1.7 billion years ago&quot; or &quot;roughly two billion years ago&quot; — estimates cluster around 1.7-2.0 Ga. I&#39;ll say &quot;about two billion years ago&quot; with &quot;roughly&quot; hedging, or 1.7. Most sources say ~1.7-1.8 Ga for the operation, with the 3% enrichment condition holding ~0.7-2.7 Ga window. I&#39;ll say &quot;roughly 1.7 billion years ago.&quot;
+- 3% U-235 back then vs 0.72% today. Correct.
+- Water moderation, cycling. Correct.
+- 16 natural reactor zones found at Oklo (and Bangombé). Could mention &quot;several&quot; — fine to say &quot;at least 16 sites&quot; but &quot;several&quot; is safe. I&#39;ll say &quot;several reactor zones were eventually identified.&quot;
+
+Okay, finalize. Keep it conversational, no headers, maybe one or two em-dashes, end with the kicker and a light invitation.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one that surprises most people: about 1.7 billion years ago, Earth ran its own natural nuclear reactors.</p>
+<p>In 1972, physicists at a French uranium plant noticed that ore from a mine in Oklo, Gabon had slightly less uranium-235 than it should have. Natural uranium has the exact same isotope ratio everywhere on Earth — and in meteorites — so this was a genuine anomaly. The explanation: the missing U-235 had already been split. Back then, uranium deposits at Oklo were rich enough, and groundwater seeping through acted as a neutron moderator, to sustain natural fission chain reactions. The reactors even self-regulated: heat would boil the water away and shut the reaction down, then it would restart when the water returned. They ran on and off for hundreds of thousands of years.</p>
+<p>So nuclear power wasn&#39;t a human invention — we just rediscovered it, two billion years later.</p>
+<p>If you&#39;ve already heard that one, I&#39;ve got plenty more.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2872 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. The challenge is that I don&#39;t know what they already know. But I can try to find something genuinely surprising, obscure, and interesting — something that most people don&#39;t know.
+
+Let me brainstorm some candidates for genuinely surprising facts:
+
+1. **Honey never spoils** — too well known.
+2. **Octopuses have three hearts** — fairly well known.
+3. **Bananas are berries but strawberries aren&#39;t** — moderately well known.
+4. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — this one is pretty well known now among internet-savvy people, but still surprising to many.
+5. **Sharks are older than trees** — sharks appeared ~450 million years ago, trees ~350-390 million years ago. Also sharks are older than Saturn&#39;s rings (possibly — ring age is debated, recent studies suggest rings may be only 10-100 million years old, though this is contested). Sharks predate the North Star? Polaris is a young star, yes. Sharks older than Mount Everest? Everest formed ~50-60 million years ago, so yes.
+6. **Wombats poop cubes** — fairly well known now.
+7. **The Eiffel Tower grows in summer** — moderately known.
+8. **There are more possible chess games than atoms in the observable universe** — the Shannon number, 10^120. Somewhat known.
+9. **Oxford University is older than the Aztec Empire** — teaching at Oxford since ~1096; Aztec Empire (Tenochtitlan founded 1325). This is a good one.
+10. **A day on Venus is longer than a year on Venus** — Venus rotates once every 243 Earth days, orbits in 225. Well known among space nerds.
+11. **Humans share ~50-60% of DNA with bananas** — somewhat known, often misstated.
+12. **The total weight of ants vs humans** — debunked myth.
+13. **Your brain uses ~20 watts** — moderately known.
+14. **Sea otters have the densest fur** — moderately known.
+15. **The word &quot;nice&quot; originally meant foolish/stupid** — from Latin nescius. Interesting etymology.
+16. **There&#39;s a nuclear reactor natural phenomenon — Oklo, Gabon** — a natural nuclear fission reactor operated ~2 billion years ago in Gabon. This is genuinely obscure and mind-blowing! Most people don&#39;t know this.
+17. **The shortest war in history: Anglo-Zanzibar War, ~38 minutes** — fairly well known.
+18. **More people are killed by vending machines than sharks** — moderately known.
+19. **The Moon has &quot;moonquakes&quot;** — moderately known.
+20. **Hot water can freeze faster than cold water (Mpemba effect)** — moderately known, and contested.
+21. **The Great Wall of China is not visible from space with naked eye** — moderately known.
+22. **Scotland&#39;s national animal is the unicorn** — fairly well known now.
+23. **There are more trees on Earth than stars in the Milky Way** — ~3 trillion trees vs ~100-400 billion stars. Genuinely surprising!
+24. **Cows have best friends and get stressed when separated** — moderately known.
+25. **The inventor of the Pringles can is buried in one** — Fred Baur. Fun but niche.
+26. **Venus spins backwards (retrograde rotation)** — moderately known.
+27. **Every &quot;c&quot; in &quot;Pacific Ocean&quot; is pronounced differently** — s, s, k... wait: &quot;Pacific&quot; — first c is &quot;s&quot; (pa-CI-fic: /s/), second c is also /s/. Hmm, the classic is &quot;Pacific Ocean&quot;: P-a-c-i-f-i-c O-c-e-a-n — the c&#39;s: /s/, /s/, and... actually the classic example is that the three c&#39;s in &quot;Pacific Ocean&quot; are pronounced differently: /s/, /s/... no wait. Let me think: &quot;Pacific&quot; = pəˈsɪfɪk — both c&#39;s are /s/. &quot;Ocean&quot; = /ʃ/ (the &quot;ce&quot; is /ʃ/). So we have /s/, /s/, /ʃ/ — two are the same. The actual classic is that &quot;Pacific Ocean&quot; has different pronunciations... Actually the famous one: every letter in &quot;Pacific Ocean&quot;... no. The famous one is the &quot;ough&quot; in English. Never mind.
+28. **The Aztecs used chocolate as currency** — moderately known.
+29. **Sloths can hold their breath longer than dolphins** — sloths up to 40 minutes, dolphins ~8-10 minutes. Surprising!
+30. **The Oklo natural nuclear reactor** — this is a great one. In 1972, physicists found uranium from Oklo, Gabon with isotope ratios suggesting the U-235 had been depleted — the explanation: ~2 billion years ago, natural conditions (rich uranium deposits, water acting as moderator) allowed sustained nuclear fission reactions to occur naturally for hundreds of thousands of years. This is genuinely obscure and fascinating.
+31. **There&#39;s a &quot;point of inaccessibility&quot; — Point Nemo** in the Pacific, the farthest point from land, and the ISS astronauts are actually closer to it than any humans on land... Actually: Point Nemo is ~2,688 km from nearest land; the ISS orbits at ~400 km, so astronauts passing overhead are closer to people at Point Nemo than those people are to anyone on land. Also, spacecraft are deliberately crashed at Point Nemo (&quot;Spacecraft cemetery&quot;). This is a great fact!
+32. **Humans glow — we emit bioluminescent light too weak to see** — Japanese researchers in 2009 imaged human bioluminescence. Cool.
+33. **The word &quot;robot&quot; comes from Czech &quot;robota&quot; (forced labor)** — from Karel Čapek&#39;s 1920 play R.U.R. Moderately known.
+34. **The last execution by guillotine in France happened the year Star Wars was released (1977)** — great one! September 1977, and Star Wars came out May 1977.
+35. **Nintendo was founded in 1889** — moderately well known.
+36. **Mammoths were still alive when the pyramids were built** — Wrangel Island mammoths survived until ~4,000 years ago (~1650 BCE by most recent estimates), pyramids ~2560 BCE. So yes, mammoths were alive when the Great Pyramid was built. Great fact.
+37. **There&#39;s a species of jellyfish (Turritopsis dohrnii) that&#39;s biologically immortal** — moderately known.
+38. **The loudest sound ever recorded: Krakatoa 1883, heard 4,800 km away, circled the globe 4 times** — great fact, moderately known.
+39. **A teaspoonful of neutron star weighs ~a billion tons** — moderately known.
+40. **Your stomach gets a new lining every few days** — because stomach acid would otherwise digest it.
+41. **The &quot;smell of rain&quot; (petrichor) — the word was coined in 1964 by Australian scientists** — obscure word origin.
+42. **Custard/Non-Newtonian fluids** — meh.
+43. **The 1904 Olympic marathon** — absurd story: rat poison, brandy, hitchhiking. Great story but long to tell.
+44. **The Great Emu War** — Australia lost a war to emus. Fairly well known now.
+45. **Cotton Candy was invented by a dentist** — fun, moderately known.
+46. **The dot over lowercase &quot;i&quot; is called a tittle** — moderately known trivia.
+47. **A &quot;murder&quot; of crows, etc.** — well known.
+48. **The entire Internet weighs roughly as much as a strawberry** — electrons in motion; this is a fun calculation (Russell Seitz estimated ~50 grams). Debated but fun.
+49. **Honeybees can recognize human faces** — interesting.
+50. **There are more possible arrangements of a shuffled deck of cards than seconds since the Big Bang** — 52! ≈ 8×10^67. Great fact, moderately known.
+
+The best approach: give one genuinely obscure, mind-blowing fact with a bit of context, and offer to share more or tailor to their interests. Or give a couple. The request is &quot;Tell me something I don&#39;t know&quot; — singular. I should pick one strong fact, tell it well, and maybe offer more.
+
+Which one is most likely to be new to a random person? The Oklo natural nuclear reactor is genuinely obscure — most people have never heard that Earth had natural nuclear reactors running 1.7-2 billion years ago. It&#39;s verifiable, fascinating, and not internet-trivia-worn (though it does appear on Reddit occasionally, it&#39;s far less worn than &quot;sharks older than trees&quot; or &quot;Oxford older than Aztecs&quot;).
+
+Alternatively, Point Nemo is great too — &quot;the closest humans to Point Nemo are sometimes astronauts&quot; is a killer line.
+
+Let me draft the Oklo one:
+
+In 1972, a physicist at a French uranium enrichment plant noticed something odd: uranium ore from a mine in Oklo, Gabon had slightly less U-235 than it should. Natural uranium is always 0.72% U-235 everywhere on Earth (and in meteorites) — this is a universal constant used for calibration. The Oklo samples were off. The only explanation: the missing U-235 had already undergone fission. It turned out that about 2 billion years ago, conditions at Oklo were exactly right — uranium deposits rich enough, and groundwater seeping in to act as a neutron moderator — to sustain natural nuclear chain reactions. These natural reactors ran on and off for hundreds of thousands of years, self-regulating: the heat would boil away the water, shutting the reaction down; when water returned, it restarted. Sixteen natural reactor zones have since been identified. Earth invented nuclear power before humans did — by a couple billion years.
+
+That&#39;s a great, well-told fact. Details to verify:
+- Discovered 1972 by Francis Perrin at the Pierrelatte gaseous diffusion plant. Yes — French scientists noticed anomalous U-235 assays (0.7171% vs 0.7202% expected... roughly).
+- Natural uranium U-235 abundance: 0.7202% (0.72%). Yes.
+- Oklo reactor age: ~1.7-2 billion years ago (about 1.8 Ga). Conditions: U-235 was more abundant then (~3%, similar to enriched reactor fuel) because U-235 decays faster than U-238 (half-lives 704 My vs 4.47 Gy). At 1.7 Ga ago, U-235 fraction was ~3%. Correct.
+- Water as moderator, self-regulation via boiling: yes, this is the accepted mechanism (Meshik&#39;s Scientific American article, 2005).
+- Duration: estimates range from ~150,000 to 1 million years of operation (on/off). &quot;Hundreds of thousands of years&quot; is safe.
+- 16 reactor zones identified at Oklo and nearby Bangombé. Yes, commonly cited as 16 (some say 17).
+- Power output: modest, ~100 kW total or less, thermal.
+- The fission products/REE patterns and plutonium remnants found — evidence includes anomalous neodymium and ruthenium isotopes. Yes.
+
+This is solid. Format: conversational, a short narrative hook, a few sentences of explanation, maybe a punchline (&quot;Earth ran nuclear reactors before humans existed&quot;). Keep it tight — maybe 100-180 words. Offer to share more or let them pick a topic. A single short paragraph or two, no headers, no bullet lists needed. Maybe a brief closing offer like &quot;Want another one?&quot; — that fits the conversational game.
+
+I could also hedge slightly on the &quot;you don&#39;t know&quot; premise — I can&#39;t know what they know — but I don&#39;t need to belabor that; maybe a light touch at the end (&quot;unless you&#39;ve heard this one&quot;). Actually a brief nod is charming: &quot;If you already knew this, I&#39;ve got more.&quot;
+
+Length: short. This is casual conversation. One fact, told well, ~150 words, then an offer.
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/meta-muse-spark-1.2-contributor/">← Meta: Muse Spark 1.2 Contributor</a>
+            <a href="/">all models</a>
+            <a href="/m/deepseek-deepseek-v4-flash-vision-exp/">DeepSeek: DeepSeek V4 Flash Vision Exp →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
