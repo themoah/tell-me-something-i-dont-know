@@ -1018,3 +1018,53 @@ models:
     license: "open-weights"
     released: "August 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "inclusionai/ling-3.0-flash-sante:free"
+    name: "inclusionAI: Ling 3.0 Flash Sante (free)"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "qwen/qwen3.8-max-0902"
+    name: "Qwen: Qwen3.8 Max (0902)"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "meta/muse-spark-1.3-contributor"
+    name: "Meta: Muse Spark 1.3 Contributor"
+    provider: "Meta"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "meta/muse-spark-1.3"
+    name: "Meta: Muse Spark 1.3"
+    provider: "Meta"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "google/gemini-3.8-flash"
+    name: "Google: Gemini 3.8 Flash"
+    provider: "Google"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "inception/mercury-2.5-preview"
+    name: "Inception: Mercury 2.5 Preview"
+    provider: "Inception"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "inclusionai/ling-3.0-flash-fin"
+    name: "inclusionAI: Ling 3.0 Flash Fin"
+    provider: "Inclusionai"
+    license: "commercial"
+    released: "August 2026"
+
+  - id: "ibm-granite/granite-4.2-8b"
+    name: "IBM: Granite 4.2 8B"
+    provider: "Ibm Granite"
+    license: "open-source"
+    released: "August 2026"
+
