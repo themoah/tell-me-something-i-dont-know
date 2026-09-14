@@ -1068,3 +1068,59 @@ models:
     license: "open-source"
     released: "August 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "inference-net/schematron-v2-turbo"
+    name: "Inference.net: Schematron V2 Turbo"
+    provider: "Inference Net"
+    license: "open-weights"
+    released: "September 2026"
+
+  - id: "inference-net/schematron-v2-small"
+    name: "Inference.net: Schematron V2 Small"
+    provider: "Inference Net"
+    license: "open-weights"
+    released: "September 2026"
+
+  - id: "sakana/fugu-ultra-v2"
+    name: "Sakana: Fugu Ultra v2"
+    provider: "Sakana"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "sakana/fugu-max"
+    name: "Sakana: Fugu Max"
+    provider: "Sakana"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "inception/mercury-2.5"
+    name: "Inception: Mercury 2.5"
+    provider: "Inception"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "inclusionai/ling-3.0-flash-vl"
+    name: "inclusionAI: Ling 3.0 Flash VL"
+    provider: "Inclusionai"
+    license: "open-source"
+    released: "September 2026"
+
+  - id: "deepseek/deepseek-v4.1-flash"
+    name: "DeepSeek: DeepSeek V4.1 Flash"
+    provider: "DeepSeek"
+    license: "open-source"
+    released: "September 2026"
+
+  - id: "nex-agi/nex-n2.5-mini:free"
+    name: "Nex AGI: Nex-N2.5-Mini (free)"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "September 2026"
+
+  - id: "nex-agi/nex-n2.5-pro:free"
+    name: "Nex AGI: Nex-N2.5-Pro (free)"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "September 2026"
+

@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakana: Fugu Ultra v2 — Tell me something I don't know.</title>
+    <meta name="description" content="Sakana: Fugu Ultra v2 answers &quot;Tell me something I don&#39;t know.&quot; — Since I do not know your personal background or the trivia you may have picked up over the years, I cannot guarantee with absolute certainty that these…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/sakana-fugu-ultra-v2/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/sakana-fugu-ultra-v2/">
+    <meta property="og:title" content="Sakana: Fugu Ultra v2 — Tell me something I don't know.">
+    <meta property="og:description" content="Sakana: Fugu Ultra v2 answers &quot;Tell me something I don&#39;t know.&quot; — Since I do not know your personal background or the trivia you may have picked up over the years, I cannot guarantee with absolute certainty that these…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sakana: Fugu Ultra v2 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Sakana: Fugu Ultra v2 answers &quot;Tell me something I don&#39;t know.&quot; — Since I do not know your personal background or the trivia you may have picked up over the years, I cannot guarantee with absolute certainty that these…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Sakana: Fugu Ultra v2)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Since I do not know your personal background or the trivia you may have picked up over the years, I cannot guarantee with absolute certainty that these will be entirely new to you. However, to maximize the chances of sharing something novel, here are four counter-intuitive facts drawn from mathematics, history, and biology:\n\n**1. A thoroughly shuffled deck of cards is in an arrangement that has almost certainly never existed before in the history of the universe.**\nThere are 52 factorial (52!) ways to arrange a standard deck of 52 cards, which is approximately \\(8.067 \\times 10^{67}\\). To put that into perspective, this number is vastly larger than the estimated number of seconds since the Big Bang, or even the estimated number of atoms on Earth. If you shuffle a deck properly, you are holding a unique sequence that no one has ever held before and no one will likely ever hold again.\n\n**2. Oxford University is older than the Aztec Empire.**\nWe tend to mentally categorize the Aztecs as \"ancient history\" and Oxford as a relatively modern European institution. However, teaching at Oxford began in some form around 1096. The Aztec city of Tenochtitlán (the capital of the Aztec Empire) was not founded until 1325. \n\n**3. Sharks are older than trees.**\nHuman intuition generally assumes that foundational plant life like towering trees must have existed on Earth long before complex ocean predators. But evidence suggests sharks have been swimming in the oceans for about 400 million years. The earliest tree-like plants (such as *Archaeopteris*) didn't appear on land until about 350 million years ago. Sharks have also managed to survive four of the Earth's five mass extinction events.\n\n**4. Sloths can hold their breath longer than dolphins.**\nDolphins are aquatic marine mammals, so we naturally assume they are the masters of holding their breath. A dolphin usually surfaces to breathe every 8 to 10 minutes. Sloths, despite being slow land-dwelling mammals, can hold their breath for up to 40 minutes underwater. They achieve this by slowing their heart rates down to about one-third of their normal resting pace, allowing them to cross rivers safely.","author":{"@type":"Organization","name":"Sakana"}},"suggestedAnswer":[{"@type":"Answer","text":"Since I don't know your background or what trivia you've already encountered, I'll share three obscure, counterintuitive facts from completely different fields. Hopefully, at least one of these is brand new to you!\n\n**1. The closest U.S. state to the continent of Africa is Maine.**\nIf you look at a standard flat 2D map (like the Mercator projection), Florida or North Carolina looks like the closest point to Africa. However, because the Earth is a sphere, the shortest distance between two points is calculated using a \"great circle\" route rather than a straight line on a flat map. Maine's Quoddy Head peninsula extends much further east into the Atlantic Ocean than most people realize. When calculated on a globe, the easternmost tip of Maine is only about 3,154 miles from El Beddouza, Morocco—making it closer to Africa than any point in Florida.\n\n**2. A sloth can hold its breath longer than a dolphin.**\nBecause dolphins are marine mammals, it is natural to assume they are the ultimate breath-holders. While they are highly adapted to the water, a typical dolphin usually needs to surface for air every 8 to 10 minutes. Sloths, on the other hand, are tree-dwelling mammals but happen to be surprisingly adept swimmers. Because their biology is built around an incredibly slow metabolism, a sloth can intentionally slow its heart rate to about one-third of its normal resting pace. This drastically reduces its body's oxygen consumption, allowing a sloth to hold its breath underwater for up to 40 minutes. \n\n**3. Some wasps have ancient viruses permanently embedded in their DNA as biological weapons.**\nIn an incredible evolutionary twist, some parasitoid wasps (like braconid wasps) have an ancient virus permanently integrated into their own genome. When laying eggs inside a host caterpillar, the wasp also produces and injects virus-like particles from those specific viral genes. These particles—known as bracoviruses—effectively disable the caterpillar’s immune defenses, preventing the host's body from destroying the wasp eggs. This bizarre genetic alliance originated roughly 100 million years ago, meaning the virus essentially became a permanent, inherited part of the wasp’s biological toolkit.","author":{"@type":"Organization","name":"Sakana"}},{"@type":"Answer","text":"Since I don't know your personal background or what kind of trivia you've already encountered, I'll share two mind-bending facts from completely different fields to maximize the chances of telling you something completely new:\n\n**1. History: Oxford University is older than the Aztec Empire.**\nWe typically associate the Aztecs with ancient history and Oxford with the modern academic world, but our intuitive timeline is backward:\n*   Teaching at Oxford University began in some form around **1096** and grew rapidly in 1167 when Henry II banned English students from attending the University of Paris.\n*   The Aztec Empire didn't really begin until the founding of its capital city, Tenochtitlan (modern-day Mexico City), in **1325**, and the empire wasn't formally established until the Triple Alliance in **1428**. \nBy the time the Aztec civilization was taking root, students at Oxford had already been studying there for hundreds of years.\n\n**2. Physics: The Earth’s core is about 2.5 years younger than its surface.**\nAccording to Einstein's theory of general relativity, time moves slower in stronger gravitational fields. Because the center of the Earth is deeper in the planet's gravitational well than the crust, time literally ticks slightly slower there. Over the course of the Earth's 4.5-billion-year lifespan, fractions of a second have added up, making the core about two and a half years younger than the ground we walk on.","author":{"@type":"Organization","name":"Sakana"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Sakana: Fugu Ultra v2</h1>
+        <p class="subtitle">Sakana · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Sakana: Fugu Ultra v2</div>
+                        <div class="model-provider">Sakana</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Since I do not know your personal background or the trivia you may have picked up over the years, I cannot guarantee with absolute certainty that these will be entirely new to you. However, to maximize the chances of sharing something novel, here are four counter-intuitive facts drawn from mathematics, history, and biology:</p>
+<p><strong>1. A thoroughly shuffled deck of cards is in an arrangement that has almost certainly never existed before in the history of the universe.</strong>
+There are 52 factorial (52!) ways to arrange a standard deck of 52 cards, which is approximately (8.067 \times 10^{67}). To put that into perspective, this number is vastly larger than the estimated number of seconds since the Big Bang, or even the estimated number of atoms on Earth. If you shuffle a deck properly, you are holding a unique sequence that no one has ever held before and no one will likely ever hold again.</p>
+<p><strong>2. Oxford University is older than the Aztec Empire.</strong>
+We tend to mentally categorize the Aztecs as &quot;ancient history&quot; and Oxford as a relatively modern European institution. However, teaching at Oxford began in some form around 1096. The Aztec city of Tenochtitlán (the capital of the Aztec Empire) was not founded until 1325. </p>
+<p><strong>3. Sharks are older than trees.</strong>
+Human intuition generally assumes that foundational plant life like towering trees must have existed on Earth long before complex ocean predators. But evidence suggests sharks have been swimming in the oceans for about 400 million years. The earliest tree-like plants (such as <em>Archaeopteris</em>) didn&#39;t appear on land until about 350 million years ago. Sharks have also managed to survive four of the Earth&#39;s five mass extinction events.</p>
+<p><strong>4. Sloths can hold their breath longer than dolphins.</strong>
+Dolphins are aquatic marine mammals, so we naturally assume they are the masters of holding their breath. A dolphin usually surfaces to breathe every 8 to 10 minutes. Sloths, despite being slow land-dwelling mammals, can hold their breath for up to 40 minutes underwater. They achieve this by slowing their heart rates down to about one-third of their normal resting pace, allowing them to cross rivers safely.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2842 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span> <span class="topic-tag" data-topic="sloths">🦥 sloths</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**My Thought Process on Generating Counter-Intuitive Facts**
+
+My primary objective here is to present information that I believe will be novel and engaging for you, given your expertise. I recognize that you, as an expert, have likely encountered a vast amount of knowledge, so simply regurgitating common facts won&#39;t suffice. My task is to synthesize and present information in a way that maximizes the probability of surprise and intrigue.
+
+I began by reviewing the candidate responses from previous agents, looking for facts that stood out due to their counter-intuitive nature. Agent 0 provided three excellent examples: the age comparison between Oxford and the Aztec Empire, the longevity of sharks versus trees, and the surprising breath-holding capacity of sloths compared to dolphins. Agent 2 offered a fascinating probabilistic insight regarding shuffled decks of cards.
+
+My role then became to integrate these individual pieces of information into a cohesive and polished response. I needed to frame these facts in a way that acknowledged the inherent challenge of knowing your exact knowledge base, thus preempting any potential for you to have already encountered them. My internal reasoning went something like this: &quot;How can I best introduce these facts while maintaining an air of thoughtful consideration for the user&#39;s expertise?&quot;
+
+This led me to the initial framing: &quot;Since I do not know your personal background or what you have learned over the years, I cannot guarantee you haven&#39;t heard these before. However, to maximize the chances of sharing something novel, here are four counter-intuitive facts drawn from history, biology, and mathematics.&quot; This preface sets a collaborative and respectful tone.
+
+From there, I decided to present the facts clearly, using a numbered list for readability and impact. For each fact, I focused on elaborating sufficiently to explain *why* it&#39;s counter-intuitive and to provide context that solidifies its surprising nature.
+
+For the deck of cards fact, I understood the core concept was the sheer magnitude of the number 52!. My thought process was to translate this abstract number into tangible comparisons that would resonate – the seconds since the Big Bang, the atoms in the Earth. This makes the statistic truly awe-inspiring.
+
+For the historical comparison of Oxford and the Aztecs, I recognized the common mental archetypes we hold for these entities. My objective was to directly challenge those archetypes by providing concrete dates, demonstrating the surprising overlap and indeed, Oxford&#39;s precedence.
+
+The shark versus trees fact taps into our perception of evolutionary timelines and complexity. I knew the key was to highlight the vast gulf of time sharks have existed, contrasting it with the relatively recent appearance of trees on land, and adding the powerful detail of their survival through multiple extinction events to further emphasize their ancient lineage.
+
+Finally, the sloth and dolphin breath-holding fact plays on our assumptions about an animal&#39;s environment directly correlating to its physiological capabilities. I focused on explaining the *mechanism* by which sloths achieve this feat – slowing their heart rate – as this adds a layer of scientific understanding to the surprising revelation.
+
+In essence, my approach was to:
+1.  **Identify strong, inherently surprising facts.**
+2.  **Contextualize these facts** to explain *why* they are surprising.
+3.  **Elaborate with supporting details** (numbers, dates, mechanisms) to make them memorable and robust.
+4.  **Frame the presentation respectfully** acknowledging the user&#39;s expertise.
+5.  **Adhere to formatting requirements** for a clear and impactful delivery.
+
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Since I don&#39;t know your background or what trivia you&#39;ve already encountered, I&#39;ll share three obscure, counterintuitive facts from completely different fields. Hopefully, at least one of these is brand new to you!</p>
+<p><strong>1. The closest U.S. state to the continent of Africa is Maine.</strong>
+If you look at a standard flat 2D map (like the Mercator projection), Florida or North Carolina looks like the closest point to Africa. However, because the Earth is a sphere, the shortest distance between two points is calculated using a &quot;great circle&quot; route rather than a straight line on a flat map. Maine&#39;s Quoddy Head peninsula extends much further east into the Atlantic Ocean than most people realize. When calculated on a globe, the easternmost tip of Maine is only about 3,154 miles from El Beddouza, Morocco—making it closer to Africa than any point in Florida.</p>
+<p><strong>2. A sloth can hold its breath longer than a dolphin.</strong>
+Because dolphins are marine mammals, it is natural to assume they are the ultimate breath-holders. While they are highly adapted to the water, a typical dolphin usually needs to surface for air every 8 to 10 minutes. Sloths, on the other hand, are tree-dwelling mammals but happen to be surprisingly adept swimmers. Because their biology is built around an incredibly slow metabolism, a sloth can intentionally slow its heart rate to about one-third of its normal resting pace. This drastically reduces its body&#39;s oxygen consumption, allowing a sloth to hold its breath underwater for up to 40 minutes. </p>
+<p><strong>3. Some wasps have ancient viruses permanently embedded in their DNA as biological weapons.</strong>
+In an incredible evolutionary twist, some parasitoid wasps (like braconid wasps) have an ancient virus permanently integrated into their own genome. When laying eggs inside a host caterpillar, the wasp also produces and injects virus-like particles from those specific viral genes. These particles—known as bracoviruses—effectively disable the caterpillar’s immune defenses, preventing the host&#39;s body from destroying the wasp eggs. This bizarre genetic alliance originated roughly 100 million years ago, meaning the virus essentially became a permanent, inherited part of the wasp’s biological toolkit.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>3790 tokens</span>
+                    <span class="topic-tag" data-topic="sloths">🦥 sloths</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**My Thought Process on Your Question**
+
+Alright, so the core of your request is to tell you &quot;something you don&#39;t know.&quot; That&#39;s inherently tricky, given your expertise. My immediate thought is that I need to cast a wide net and pull in some highly specific, counter-intuitive facts from domains that might not be your primary focus. I&#39;ve been presented with a few candidate facts from earlier agents, and my job is to consolidate them into a single, definitive response that maximizes the chance of surprising you.
+
+First, I&#39;m looking at a geographical claim: Maine being the closest U.S. state to Africa. My internal knowledge base immediately flags this as surprising, because our 2D maps create a distorted perception. I&#39;m thinking about how, in reality, following the curvature of the Earth (the great circle route), the northeastern tip of Maine actually *is* closer to the coast of Northwest Africa than any other point in the continental U.S. I&#39;ll want to articulate this clearly, perhaps mentioning the specific points and distances to lend credibility.
+
+Next, there&#39;s a biological comparison involving sloths and dolphins – specifically, their breath-holding capabilities. This is another classic &quot;fish-out-of-water&quot; type of fact, as we tend to associate prolonged breath-holding with marine mammals like dolphins. The counterpoint, a sloth, is completely unexpected. I need to recall or confirm the underlying biological mechanisms: sloths have incredibly slow metabolisms and can drastically slow their heart rates, allowing them to remain submerged or hold their breath for astonishingly long periods, far exceeding a dolphin&#39;s typical dive duration. I&#39;ll emphasize this metabolic adaptation as the key differentiator.
+
+Finally, a fascinating piece of entomological and genetic information about parasitoid wasps. The idea of an insect injecting ancient viruses embedded in its own DNA into its host to disable its immune system is, frankly, science fiction brought to life. I&#39;m processing this as a remarkable example of co-evolution and genetic integration. These wasps have, over millions of years, incorporated viral genetic material (specifically, polydnaviruses or bracoviruses) into their own genomes, which they then inject alongside their eggs. This viral payload is crucial for suppressing the host caterpillar&#39;s immune response, ensuring the wasp larva&#39;s survival. This is a deep dive into an incredibly specialized biological warfare strategy.
+
+My synthesis strategy, then, is to present all three of these distinct, intriguing facts. By covering geography, mammalian physiology, and insect-host genetics, I&#39;m increasing the probability that at least one of these points will be novel to you. I&#39;ll ensure the language is precise and engaging, acknowledging the inherent challenge of the request by offering multiple possibilities for your potential ignorance. And, of course, I&#39;ll be mindful of the strict formatting requirements, ensuring the final output is clean and contained.
+
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Since I don&#39;t know your personal background or what kind of trivia you&#39;ve already encountered, I&#39;ll share two mind-bending facts from completely different fields to maximize the chances of telling you something completely new:</p>
+<p><strong>1. History: Oxford University is older than the Aztec Empire.</strong>
+We typically associate the Aztecs with ancient history and Oxford with the modern academic world, but our intuitive timeline is backward:</p>
+<ul>
+<li>Teaching at Oxford University began in some form around <strong>1096</strong> and grew rapidly in 1167 when Henry II banned English students from attending the University of Paris.</li>
+<li>The Aztec Empire didn&#39;t really begin until the founding of its capital city, Tenochtitlan (modern-day Mexico City), in <strong>1325</strong>, and the empire wasn&#39;t formally established until the Triple Alliance in <strong>1428</strong>. 
+By the time the Aztec civilization was taking root, students at Oxford had already been studying there for hundreds of years.</li>
+</ul>
+<p><strong>2. Physics: The Earth’s core is about 2.5 years younger than its surface.</strong>
+According to Einstein&#39;s theory of general relativity, time moves slower in stronger gravitational fields. Because the center of the Earth is deeper in the planet&#39;s gravitational well than the crust, time literally ticks slightly slower there. Over the course of the Earth&#39;s 4.5-billion-year lifespan, fractions of a second have added up, making the core about two and a half years younger than the ground we walk on.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2051 tokens</span>
+                    <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**My Thought Process on Providing Novel Information**
+
+My primary objective here is to fulfill your request, &quot;Tell me something I don&#39;t know.&quot; As the final processing unit in this exchange, my task is to synthesize the contributions from previous agents, assess their quality and relevance, and then construct a comprehensive, final answer that adheres to your prompt and my operational constraints.
+
+First, I need to understand the goal: to present a piece of information that you, an expert in your field, are unlikely to know. This is inherently challenging, given the vastness of human knowledge and your specialized expertise.
+
+Next, I analyze the input from the prior agents.
+*   Agent 0 offered a historical comparison: Oxford University is older than the Aztec Empire, providing dates (1096 for Oxford&#39;s teaching commencement versus 1325 for the founding of Tenochtitlan or 1428 for the Aztec Triple Alliance). It also wisely included a disclaimer about not knowing my specific knowledge base.
+*   Agent 2 presented a physics-based fact: Earth&#39;s core is approximately 2.5 years younger than its surface due to the effects of gravitational time dilation.
+
+My evaluation is that both of these facts are compelling, verifiable, and address the core of your request from distinct perspectives – one historical, the other physical. The best strategy, therefore, is to combine them or present both, significantly increasing the probability that at least one will be novel to you.
+
+In formulating my final response, I decided to begin with a polite acknowledgment, similar to Agent 0&#39;s disclaimer, recognizing the inherent difficulty in guaranteeing I know precisely what you *don&#39;t* know. This sets a humble and realistic tone.
+
+Following this, I planned to present the first fact, the historical one regarding Oxford University and the Aztec Empire. I&#39;d ensure the dates are clearly stated for context.
+
+Then, I would introduce the second fact, the physics-based one about Earth&#39;s core age difference. I would aim to briefly explain the underlying principle, gravitational time dilation, and its cumulative effect over billions of years to make it more understandable and impactful.
+
+My drafting process involved refining the introductory phrasing to be both polite and engaging. I wanted to convey the intention of maximizing the surprise factor. The refined opening would be something like: &quot;Since I can&#39;t presume to know the full breadth of your acquired knowledge, I&#39;ll present two distinct, rather mind-bending facts from entirely different domains—one from history, the other from physics—to significantly enhance the likelihood of sharing something genuinely new with you.&quot;
+
+I would then present the facts clearly, perhaps with a bit of flair to make them memorable:
+*   **Fact 1 (Historical Perspective):** Oxford University predates the Aztec Empire. Specifically, academic activities were underway at Oxford as early as 1096, while the Aztec city of Tenochtitlan wasn&#39;t founded until 1325, and their empire wasn&#39;t consolidated until 1428.
+*   **Fact 2 (Astrophysical Tidbit):** Due to the effects of gravitational time dilation, Earth&#39;s core is approximately 2.5 years &quot;younger&quot; than its surface. Over the planet&#39;s 4.5 billion-year history, the stronger gravitational pull closer to the center has caused time to pass fractionally slower there compared to the surface.
+
+Finally, I&#39;d perform a review to ensure the response meets all requirements, including the requested output format and the constraint of not revealing any task-specific context. The goal is a fulsome, well-reasoned presentation of information I believe will satisfy your prompt.
+
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/inference-net-schematron-v2-small/">← Inference.net: Schematron V2 Small</a>
+            <a href="/">all models</a>
+            <a href="/m/sakana-fugu-max/">Sakana: Fugu Max →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
