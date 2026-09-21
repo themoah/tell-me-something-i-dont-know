@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismML: Ternary Bonsai 2 27B — Tell me something I don't know.</title>
+    <meta name="description" content="PrismML: Ternary Bonsai 2 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you don’t know, but here’s something many people miss: One of the shortest wars in recorded history was the Anglo-Zanzibar War…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/prism-ml-ternary-bonsai-2-27b/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/prism-ml-ternary-bonsai-2-27b/">
+    <meta property="og:title" content="PrismML: Ternary Bonsai 2 27B — Tell me something I don't know.">
+    <meta property="og:description" content="PrismML: Ternary Bonsai 2 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you don’t know, but here’s something many people miss: One of the shortest wars in recorded history was the Anglo-Zanzibar War…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PrismML: Ternary Bonsai 2 27B — Tell me something I don't know.">
+    <meta name="twitter:description" content="PrismML: Ternary Bonsai 2 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you don’t know, but here’s something many people miss: One of the shortest wars in recorded history was the Anglo-Zanzibar War…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to PrismML: Ternary Bonsai 2 27B)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"\n\nI can’t know exactly what you don’t know, but here’s something many people miss:\n\n**One of the shortest wars in recorded history was the Anglo-Zanzibar War of 1896.**  \nIt began in the morning and ended in about **38 to 45 minutes**, depending on the source. British forces bombarded the Sultan’s palace, and the Sultan fled. It’s often cited as a war that lasted less than an hour.","author":{"@type":"Organization","name":"Prism Ml"}},"suggestedAnswer":[{"@type":"Answer","text":"\n\nI can’t guarantee it’s something you don’t know, but here’s a fact many people don’t:\n\nThe earthy smell of rain hitting dry ground—called **petrichor**—is partly caused by a molecule called **geosmin**, which humans can detect at incredibly low levels, around **five parts per trillion**.\n\nThat’s why rain after a dry spell can smell so vividly “fresh”: the soil and plants have been quietly building up aromatic compounds, and the rain releases them all at once.","author":{"@type":"Organization","name":"Prism Ml"}},{"@type":"Answer","text":"\n\nI can’t know what you don’t know, but here’s something that might be new to you:\n\nThe word **“internet”** was originally a technical contraction of **“internetwork”**—a *network of networks*—used by researchers in the 1970s, long before it became the everyday name for the global web.","author":{"@type":"Organization","name":"Prism Ml"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>PrismML: Ternary Bonsai 2 27B</h1>
+        <p class="subtitle">Prism Ml · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">PrismML: Ternary Bonsai 2 27B</div>
+                        <div class="model-provider">Prism Ml</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can’t know exactly what you don’t know, but here’s something many people miss:</p>
+<p><strong>One of the shortest wars in recorded history was the Anglo-Zanzibar War of 1896.</strong><br>It began in the morning and ended in about <strong>38 to 45 minutes</strong>, depending on the source. British forces bombarded the Sultan’s palace, and the Sultan fled. It’s often cited as a war that lasted less than an hour.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1244 tokens</span>
+                    <span class="topic-tag" data-topic="anglo-zanzibar war">⚔️ anglo-zanzibar war</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need final answer. Need be truthful? We can&#39;t know what user doesn&#39;t know. We can say something likely obscure/factual. Need maybe avoid claiming universal. Could say: &quot;Here&#39;s something you probably don&#39;t know: ...&quot;. Need ensure accuracy. Let&#39;s think of interesting fact. Maybe &quot;The shortest war in history lasted 38–45 minutes: Britain vs Zanzibar in 1896.&quot; User likely knows? Maybe not. But &quot;something I don&#39;t know&quot; impossible. We can frame as &quot;I can&#39;t guarantee, but here&#39;s a lesser-known fact&quot;. Need maybe surprising. Could mention &quot;There are more possible chess games than atoms in the observable universe.&quot; Known. Maybe &quot;The heart of a star like the Sun is not hot enough to sustain fusion? no.
+
+Need answer likely concise. Maybe choose fact with nuance: &quot;Octopuses have three hearts and blue copper-based blood; two stop when swimming.&quot; Common.
+
+Need &quot;something I don&#39;t know&quot; maybe meta: &quot;I don&#39;t know what you don&#39;t know, but here&#39;s a fact most people don&#39;t know: ...&quot; Let&#39;s pick robust obscure fact: &quot;The common name &#39;marmalade&#39; originally referred to a type of citrus fruit? no.
+
+Maybe &quot;The &#39;eye of the storm&#39; in a hurricane is calm because air descends and warms, not because of a physical eye.&quot; Hmm.
+
+Need something not known. Could be: &quot;The only fruit with seeds on the outside is a strawberry.&quot; Common.
+
+Maybe &quot;The number 3 is the smallest number that can be written as a sum of three positive cubes in a nontrivial way?&quot; Not.
+
+Let&#39;s pick a verified interesting fact: &quot;A day on Venus is longer than its year: Venus rotates so slowly that it takes about 243 Earth days to spin once, but only about 225 Earth days to orbit the Sun.&quot; Known but maybe user doesn&#39;t. It&#39;s common but okay. Need maybe say &quot;if you don&#39;t already know&quot;. But user asked direct. Could answer: &quot;I can&#39;t know your knowledge, but here&#39;s something less widely known: ...&quot;
+
+Need maybe not too long. But desired oververbosity 9? User simple. Could give one fact plus context. Need satisfy. Maybe final: &quot;I can’t guarantee it, but here’s a fact many people miss: ...&quot; Choose fact that is less common: &quot;The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted about 38 minutes (some sources say 45), after which the Sultan&#39;s palace was bombarded and the sultan fled.&quot; That&#39;s factual. But many know? Maybe.
+
+Alternative: &quot;The &#39;smell of rain&#39; (petrichor) comes from plants releasing a terpene and soil bacteria releasing 2-methylisoborneol; it&#39;s not just wet dust.&quot; Good.
+
+Maybe &quot;A teaspoon of neutron star material would weigh about a billion tons on Earth.&quot; Common.
+
+Need something &quot;I don&#39;t know&quot; maybe respond with: &quot;One thing you may not know: the human brain&#39;s default mode network is active when you&#39;re not focused on the external world, and it&#39;s linked to self-referential thought, memory, and imagination.&quot; Not surprising.
+
+Could be: &quot;The first artificial satellite, Sputnik 1, was not a perfect sphere; it had antennas and its shape helped radio tracking.&quot; Hmm.
+
+Need avoid overclaiming. Could say &quot;Here’s a lesser-known fact: ...&quot; That&#39;s safe.
+
+Let&#39;s choose a fact that is accurate and interesting: &quot;The shortest war in history was the Anglo-Zanzibar War of 1896, which lasted about 38 minutes (or 45 minutes depending on source).&quot; Need maybe mention uncertainty. Could be too known? But okay.
+
+Maybe more obscure: &quot;The &#39;lost wax&#39; casting process used in ancient bronze sculpture involves creating a wax model, encasing in clay, burning it out, and pouring molten metal; the mold is destroyed in the process, so each cast is unique.&quot; Not surprising.
+
+Could answer: &quot;I can’t know what you don’t know, but here’s something many people don’t: when you see a rainbow, the water droplets are acting like tiny prisms, but the reason you see a specific color at a specific angle is total internal reflection inside the droplet, not just refraction.&quot; Nice.
+
+Need final maybe: &quot;I can’t guarantee it, but here’s something you may not know: ...&quot;. Ensure not false.
+
+Let&#39;s craft with a bit of explanation.
+
+Final: &quot;I can’t know your exact knowledge, but here’s a fact many people miss: The shortest war in recorded history was the Anglo-Zanzibar War of 1896. It began around 9:00 a.m. local time and ended by about 9:40 a.m. (some sources say 45 minutes), after British forces bombarded the Sultan’s palace and Sultan Hamad bin Thuwaini fled. It’s often cited as lasting 38–45 minutes.&quot; This is good. Need maybe &quot;recorded&quot; not absolute? It&#39;s commonly. Could be &quot;one of the shortest&quot;. Let&#39;s phrase: &quot;One of the shortest wars in recorded history...&quot; Safer.
+
+Need answer in English. Done.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>I can’t guarantee it’s something you don’t know, but here’s a fact many people don’t:</p>
+<p>The earthy smell of rain hitting dry ground—called <strong>petrichor</strong>—is partly caused by a molecule called <strong>geosmin</strong>, which humans can detect at incredibly low levels, around <strong>five parts per trillion</strong>.</p>
+<p>That’s why rain after a dry spell can smell so vividly “fresh”: the soil and plants have been quietly building up aromatic compounds, and the rain releases them all at once.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>933 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need final answer. Need be creative, maybe a surprising fact. Ensure not too overclaim? &quot;Something you don&#39;t know&quot; impossible. Could say &quot;Here&#39;s something you may not know...&quot; Need likely concise. Could choose obscure fact. Need be accurate.
+
+Need think of a fact. Maybe: &quot;Octopuses have three hearts, blue blood, and can taste with their suckers.&quot; Common. Need something less common. Could say: &quot;There is a species of ant that builds cities with &#39;granary&#39; granaries?&quot; Hmm.
+
+Need something truly interesting and verifiable. Maybe &quot;The shortest war in history lasted 38-45 minutes between Britain and Zanzibar in 1896.&quot; Common.
+
+Maybe &quot;Some clouds are made of salt?&quot; no.
+
+&quot;Your body contains about 37,000 miles of blood vessels&quot; common.
+
+&quot;Bananas are berries but strawberries aren&#39;t&quot; common.
+
+Need something obscure. Could pick: &quot;The Eiffel Tower grows taller in summer by about 15 cm due to thermal expansion.&quot; Common but maybe.
+
+&quot;Woodpeckers have a spongy skull and a tongue that loops around the skull to protect the brain.&quot; Interesting.
+
+Could say &quot;There is a tree in South Africa, the General Sherman tree, whose trunk contains so much wood that it could be sawn into...&quot; not sure.
+
+&quot;Sea otters hold hands while sleeping to avoid drifting apart&quot; common.
+
+&quot;Human eyes have blind spots, but brain fills them in&quot; common.
+
+Maybe something about &quot;time&quot;: &quot;A day on Venus is longer than its year: it rotates once every 243 Earth days but orbits the Sun in 225 Earth days.&quot; Interesting, not too common.
+
+Could also say &quot;The smell of petrichor is caused by geosmin produced by soil bacteria and plant oils; humans can detect it at parts per trillion.&quot; That&#39;s neat.
+
+Need answer: &quot;Here&#39;s something you probably don&#39;t know: ...&quot; Need maybe no citations. Could include &quot;If you know it, tell me and I&#39;ll find another.&quot; Friendly.
+
+Need ensure &quot;don&#39;t know&quot; maybe impossible. Could say &quot;I can&#39;t guarantee, but here&#39;s a fact most people don&#39;t know.&quot; Good.
+
+Let&#39;s craft final with one or two facts? User asked something singular. Could provide one surprising thing. Need maybe &quot;geosmin&quot; is good. Explain: When rain hits dry soil, oils from plants and bacteria produce geosmin; human nose can detect at ~5 parts per trillion, making it one of most sensitive smells. That&#39;s accurate? Geosmin threshold ~5 ppt (parts per trillion) in water? Humans detect at 5 ppt. Petrichor includes geosmin, plant oils. Good.
+
+Need maybe &quot;something I don&#39;t know&quot; could be a personal unknown? Could answer: &quot;You don&#39;t know what you don&#39;t know, but here&#39;s...&quot; Avoid cliché.
+
+Final: &quot;I can’t guarantee it’s unknown to you, but here’s a fact many people don’t know: the earthy smell of rain on dry pavement—petrichor—is largely due to a molecule called geosmin, which humans can smell at concentrations as low as about five parts per trillion. Your nose is so tuned to it that it can detect it in air and water at levels almost below the threshold for most other odors.&quot; Maybe &quot;almost below threshold&quot; not exact. Need maybe &quot;so low that a single drop in a swimming pool?&quot; Let&#39;s avoid overclaim.
+
+Could add: &quot;That&#39;s why rain can smell so intense after a dry spell: the soil and plants have been storing it.&quot; Good.
+
+Need final only. Ensure no unsupported. Maybe &quot;soil bacteria and plants&quot; produce geosmin. Some plants produce plant sesquiterpenes. Good.
+
+Let&#39;s final.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>I can’t know what you don’t know, but here’s something that might be new to you:</p>
+<p>The word <strong>“internet”</strong> was originally a technical contraction of <strong>“internetwork”</strong>—a <em>network of networks</em>—used by researchers in the 1970s, long before it became the everyday name for the global web.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>4649 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to answer user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Need be careful: impossible to know what user doesn&#39;t know. Could say I can&#39;t guarantee, but here&#39;s something obscure. Need maybe provide a surprising fact. Must ensure accurate. Let&#39;s think of something likely not known. Could be: &quot;The oldest known written recipe is a Sumerian beer recipe?&quot; But many may know. Need something verifiable and interesting. Maybe &quot;The word &#39;orange&#39; was not a color name until fruit arrived in Europe&quot;? But common. Need something less known.
+
+Need maybe: &quot;In 1972, a British court ruled that a tree was a &#39;person&#39;?&quot; Hmm.
+
+Maybe &quot;The shortest war in history was 38-45 minutes between Britain and Zanzibar in 1896&quot; known.
+
+Could say: &quot;A 2020 study found that some people can taste a specific amino acid?&quot; Hmm.
+
+Need something I don&#39;t know? User asks tell me something I don&#39;t know. Could answer with caveat: &quot;I can&#39;t know your mind, but here&#39;s a fact most people haven&#39;t heard: ...&quot; Need maybe avoid overclaim.
+
+Let&#39;s pick a fascinating, accurate fact. Options:
+- &quot;The city of Timbuktu gets its name from a Tuareg phrase meaning &#39;gate of the well&#39; or &#39;place of the well&#39;?&quot; Known maybe.
+- &quot;The first computer bug was an actual moth taped in a relay in 1947&quot; known.
+- &quot;In 1998, the Guinness Book of World Records listed a &#39;living&#39; person?&quot; no.
+- &quot;The oldest known photograph of a human face?&quot; maybe.
+- &quot;There is a species of jellyfish (Turritopsis dohrnii) that can revert to juvenile polyp, &#39;biologically immortal&#39; but not literally.&quot; Known.
+- &quot;The Eiffel Tower grows about 15 cm in summer due to thermal expansion.&quot; Known.
+- &quot;Honey never spoils; archaeologists found edible honey in Egyptian tombs.&quot; Known.
+- &quot;The shortest war&quot; known.
+- &quot;The &#39;Great Molasses Flood&#39; 1919 Boston&quot; somewhat known.
+- &quot;The first computer &#39;crash&#39; was not a crash but a moth?&quot; known.
+- &quot;The word &#39;spaghetti&#39; in English?&quot; no.
+- &quot;The first known use of the word &#39;selfie&#39;?&quot; not sure.
+- &quot;There are more possible chess games than atoms in the observable universe.&quot; known.
+- &quot;The human brain uses about 20 watts&quot; known.
+- &quot;A day on Venus is longer than a year on Venus&quot; known.
+- &quot;Bananas are berries, strawberries are not&quot; known.
+- &quot;The smallest country is Vatican City&quot; known.
+
+Need something less common. Could be: &quot;The oldest known intact human genome?&quot; no.
+
+Maybe: &quot;The first known use of the word &#39;internet&#39; was in 1974?&quot; Let&#39;s verify: The term &quot;inter-network&quot; or &quot;internetwork&quot; coined 1974 by Leonard Kleinrock? &quot;Internet&quot; used in 1970s. Could be: &quot;The word &#39;internet&#39; appeared in a 1974 paper by Leonard Kleinrock?&quot; Actually Kleinrock coined &quot;internetwork&quot; in 1974; &quot;internet&quot; as a contraction was used in 1970s? Could be less known but need accuracy.
+
+Maybe: &quot;The first known computer-generated image?&quot; no.
+
+Could be: &quot;The &#39;World&#39;s oldest rock&#39;?&quot; no.
+
+Need something user likely doesn&#39;t know. Since user arbitrary, impossible. We can be playful: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s a fact that might surprise: In 1998, a US federal court ruled that a corporation can have a &#39;mental state&#39; for criminal liability?&quot; Hmm.
+
+Maybe: &quot;The only US state where the governor cannot be a U.S. senator?&quot; no.
+
+Could answer: &quot;I can&#39;t guarantee it, but here&#39;s something obscure: The first known photograph of a human face was taken in 1839, but the first known photograph of a human being was a silhouette?&quot; Need verify.
+
+Let&#39;s search memory: First photograph of a person? The earliest surviving portrait is a daguerreotype of a man in 1838? Actually first photograph of a person? In 1839, a daguerreotype of a man by Joseph Nicéphore Niépce? The earliest surviving portrait is a daguerreotype of a man, maybe &quot;The First Portrait&quot; by Louis Daguerre? Hmm.
+
+Maybe: &quot;The oldest known photograph is of a building, not a person; the first known photograph of a person was a silhouette in 1839?&quot; Not sure.
+
+Could use: &quot;The first known written recipe for ice cream is from 1774?&quot; Hmm.
+
+Could pick a fact from unusual domain: &quot;The word &#39;emoji&#39; was coined in 1998 by Japanese word processor inventor?&quot; Actually &quot;emoji&quot; from Japanese: e (picture) + ji (character). The term was coined in 1998? Maybe.
+
+Need something not known. Maybe &quot;The &#39;World&#39;s smallest published book&#39; is a single-page book?&quot; no.
+
+Let&#39;s consider obscure but verifiable: &quot;The first known use of the word &#39;blog&#39; was in 1997?&quot; Actually blog coined 1997 by Peter Oehlmann? &quot;weblog&quot; 1997, &quot;blog&quot; 1999? Hmm.
+
+Could say: &quot;The first known use of the word &#39;selfie&#39; was in 2002 by Australian photographer Ian Schomberg?&quot; Wait selfie first used 2002? Let&#39;s check memory: The word &quot;selfie&quot; was first used in 2002 by Australian photographer Ian Schomberg on an image-sharing website? Wikipedia: selfie coined 2002 by Australian photographer Ian Schomberg? It was used in 2002 in an online photo-sharing site? Actually the word selfie was first used in 2002 by Australian photographer Ian Schomberg? It was first used in 2002? Hmm.
+
+Maybe: &quot;The oldest known video game?&quot; no.
+
+Could answer with a meta: &quot;I don&#39;t know what you don&#39;t know, but here&#39;s a fact I&#39;m confident you haven&#39;t heard: The first known use of the word &#39;glitch&#39; in English was in 1965?&quot; Need verify.
+
+Let&#39;s think of facts with high confidence:
+- &quot;The first known computer-generated image?&quot; There is a 1963 image by? no.
+- &quot;The first known use of the word &#39;internet&#39; was in a 1974 paper by Leonard Kleinrock?&quot; Let&#39;s verify: According to sources: The term &quot;internet&quot; was first used in 1974 by Leonard Kleinrock in a paper? He coined &quot;internetwork&quot; in 1974; the term &quot;internet&quot; was used in 1970s by researchers. In 1981, &quot;internet&quot; was used by researchers at MIT? Hmm. If I say &quot;the word &#39;internet&#39; was first used in 1974 in a technical paper&quot; might be inaccurate.
+- &quot;The first known use of the word &#39;blog&#39; was in 1997 by Peter Oehlmann?&quot; Let&#39;s verify: &quot;blog&quot; coined in 1997 by Peter Oehlmann? Actually &quot;weblog&quot; coined in 1997 by Peter Oehlmann; &quot;blog&quot; coined in 1999 by Peter Oehlmann? Hmm.
+
+Maybe: &quot;The first known use of the word &#39;emoji&#39; was in 1998 by Japanese word processor developer?&quot; Let&#39;s verify: Emoji term coined in 1998 by Japanese word processor developer? Wikipedia: The word &quot;emoji&quot; was coined in 1998 by Japanese word processor developer? Actually: &quot;The term &#39;emoji&#39; was coined in 1998 by Japanese word processor developer?&quot; Let&#39;s recall: The word &quot;emoji&quot; was first used in 1998 by a Japanese word processor developer? It appears in a 1998 issue of a Japanese magazine? It may be from e (picture) + ji (character). The first emoji were in 1999? Hmm.
+
+Maybe: &quot;The first known use of the word &#39;screenshot&#39; was in 1983?&quot; no.
+
+Could be: &quot;The first known use of the word &#39;internet&#39; as a noun was in 1974?&quot; Let&#39;s avoid if uncertain.
+
+Could give a fact from science: &quot;The first known evidence of human migration out of Africa was found in the Levant?&quot; Known.
+
+Maybe: &quot;The first known use of the word &#39;computer&#39; was in 1641?&quot; Actually &quot;computer&quot; first used in 1641? It was used for a person who calculates. But user may not know. Need accuracy.
+
+Let&#39;s search memory: Word &quot;computer&quot; first known use: 1641, in a book by John Wallis? &quot;the computer of the...&quot;. It was used to describe a person who computes. Later 1890s for calculating machine. Could say: &quot;The word &#39;computer&#39; originally meant a person who did calculations by hand, not a machine. Its first known use in English dates to 1641.&quot; Is that true? Let&#39;s verify: Oxford: computer: 1641 &quot;a person employed to compute&quot;. The word &quot;computer&quot; first used in 1641 by John Wallis? I think yes. But is it something user doesn&#39;t know? Many might know.
+
+Maybe: &quot;The first known use of the word &#39;internet&#39; was as a technical term for &#39;internetwork&#39; in 1974.&quot; Less known.
+
+Could be: &quot;The first known use of the word &#39;selfie&#39; was in 2002, not 2012.&quot; Hmm.
+
+Maybe: &quot;The first known use of the word &#39;emoji&#39; was in 1998, not 2005.&quot; Hmm.
+
+Need high confidence. Let&#39;s think of obscure facts with clear source:
+- &quot;The first known use of the word &#39;glitch&#39; in English was in 1965 in a NASA context?&quot; Actually glitch: 1965 &quot;a malfunction or defect in a computer or electronic device&quot; from &quot;glitch&quot; maybe. Could be.
+- &quot;The first known use of the word &#39;spam&#39; as a verb was in 1994?&quot; no.
+- &quot;The first known use of the word &#39;blog&#39; was in 1997 by Peter Oehlmann?&quot; Let&#39;s verify: Wikipedia: &quot;The word blog was coined in 1999 by Peter Oehlmann, a German journalist, as a portmanteau of &#39;web log&#39; and &#39;blog&#39;?&quot; Wait &quot;weblog&quot; coined 1997, &quot;blog&quot; 1999? Actually &quot;blog&quot; coined in 1997 by Peter Oehlmann? Let&#39;s not.
+
+Maybe: &quot;The first known use of the word &#39;internet&#39; was in a 1974 paper by Leonard Kleinrock, who also coined &#39;internetwork&#39;.&quot; This is plausible. But if user asks &quot;something I don&#39;t know&quot;, we can say &quot;I can&#39;t guarantee, but here&#39;s an obscure etymology: the word &#39;internet&#39; was first used in 1974 as a technical term for a network of networks, long before it became everyday language.&quot; Need ensure not false. Let&#39;s verify from memory: The term &quot;internet&quot; was coined in 1974 by Leonard Kleinrock? According to some: &quot;The term internet was first used in 1974 by Leonard Kleinrock, a computer scientist, in a paper describing a network of networks.&quot; But I recall &quot;internetwork&quot; coined by Kleinrock in 1974; &quot;internet&quot; as a contraction was used in 1970s by researchers, e.g., &quot;Internet: A research network&quot; maybe. The exact first use may be 1974. Could be acceptable if phrased &quot;one of the earliest known uses&quot; or &quot;entered technical usage in the mid-1970s&quot;. But &quot;first known&quot; might be risky.
+
+Maybe use: &quot;The word &#39;internet&#39; was originally a technical abbreviation for &#39;internetwork&#39;, not a proper name for the global web.&quot; That&#39;s safe and likely unknown to some. But user wants something they don&#39;t know. Could say: &quot;I can&#39;t know your mind, but here&#39;s a fact many people don&#39;t realize: the word &#39;internet&#39; was originally a technical abbreviation for &#39;internetwork&#39;.&quot; That&#39;s accurate, not too obscure.
+
+Could be better: &quot;The first known use of the word &#39;internet&#39; in English was in 1974, in a paper by Leonard Kleinrock, who was describing a network of networks.&quot; If false, bad. Let&#39;s verify via memory: There is a 1974 paper by Leonard Kleinrock &quot;On the Origins of the Internet&quot; maybe? He coined &quot;internetwork&quot; in 1974. The term &quot;internet&quot; was used in 1974 by Kleinrock? I can phrase: &quot;In the mid-1970s, researchers began using &#39;internet&#39; as a contraction of &#39;internetwork&#39;—the first known uses date to 1974.&quot; That&#39;s safer.
+
+But maybe user expects a surprising fact, not etymology. Could be: &quot;The first known use of the word &#39;emoji&#39; was in 1998, and the first emoji were on a Japanese mobile phone in 1999?&quot; Let&#39;s verify: The first emoji were introduced in 1999 on a Japanese mobile phone by NTT DoCoMo? Actually first emoji were in 1999? The first mobile phone emoji were introduced in 1999 in Japan? The first emoji were in 1998? Hmm.
+
+Maybe: &quot;The first known use of the word &#39;blog&#39; was in 1997, but the term &#39;weblog&#39; was coined by Peter Oehlmann in 1997.&quot; Hmm.
+
+Maybe: &quot;The first known use of the word &#39;selfie&#39; was in 2002, in an online photo-sharing site, long before it became a global meme in 2012.&quot; This is plausible and interesting. Let&#39;s verify: Wikipedia: &quot;The word selfie was coined in 2002 by Australian photographer Ian Schomberg, who used it in a photo on a photo-sharing website? It was first used in 2002 in an online photo-sharing site? In 2013 it was Oxford&#39;s Word of the Year.&quot; I think yes. But exact: The word &quot;selfie&quot; was first used in 2002 by Australian photographer Ian Schomberg? He used it in a photo caption? It may be &quot;selfie&quot; coined in 2002 by Australian photographer Ian Schomberg, who used it in a photo caption on a photo-sharing website? The first known use was in 2002? Let&#39;s not overstate.
+
+Maybe: &quot;The first known use of the word &#39;selfie&#39; was in 2002, long before it became a global phenomenon.&quot; This is safe-ish.
+
+But maybe user wants something not known, not just word origin. Could be: &quot;The first known photograph of a human face was taken in 1839, but it was a daguerreotype of a man whose identity is unknown.&quot; Not sure.
+
+Let&#39;s think of a fact that is definitely true and likely unknown: &quot;The oldest known complete human genome?&quot; no.
+
+Maybe: &quot;The first known use of the word &#39;internet&#39; was in 1974, and it originally meant &#39;internetwork&#39;.&quot; This is good, but maybe user knows. Could combine: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s something that might be new: the word &#39;internet&#39; was originally a technical contraction of &#39;internetwork&#39;, used in the 1970s to describe a network of networks, before it became the name for the global web.&quot; This is accurate and not too obscure.
+
+Need maybe add: &quot;If you tell me your interests, I can find something more likely unknown to you.&quot; But user asked just tell me something. Could answer with one fact. Need maybe not too long. But desired oververbosity 9, but user simple. Could be concise. However final can be a bit detailed.
+
+Need ensure no false claims. Let&#39;s verify internet etymology:
+- &quot;Internet&quot; from &quot;internetwork&quot;, coined in 1974? The term &quot;internetwork&quot; was coined by Leonard Kleinrock in 1974. The word &quot;internet&quot; as a noun was used in 1974? Let&#39;s check memory: In 1974, Kleinrock wrote &quot;The concept of the internet was born in 1974 when Leonard Kleinrock coined the term &#39;internetwork&#39;.&quot; The term &quot;internet&quot; was used in 1974? Some sources: &quot;The word &#39;internet&#39; was first used in 1974 by Leonard Kleinrock in a paper describing a network of networks.&quot; I can say &quot;entered technical usage in the 1970s&quot; to avoid first known. But user asked something I don&#39;t know, not necessarily first known. Could say &quot;the word &#39;internet&#39; was originally a technical contraction of &#39;internetwork&#39;.&quot; That&#39;s safe.
+
+Could there be a more surprising fact: &quot;The first known use of the word &#39;internet&#39; was not for the global web but for a small academic network.&quot; That&#39;s interesting.
+
+Maybe: &quot;The first known use of the word &#39;internet&#39; was in a 1974 technical paper, not a marketing term.&quot; If I include &quot;1974&quot; and it&#39;s wrong, bad. Could say &quot;in the 1970s&quot;. But &quot;something I don&#39;t know&quot; could be &quot;the word internet was originally a technical term for a network of networks, not a proper name for the global web.&quot; That&#39;s enough.
+
+But maybe user wants a fact, not word origin. Could pick a fact about &quot;The first known use of the word &#39;blog&#39; was in 1997&quot;? Not as strong.
+
+Let&#39;s think of a fact that is definitely true and surprising: &quot;The first known use of the word &#39;internet&#39; was in a 1974 paper by Leonard Kleinrock&quot;? Need confidence. Let&#39;s see if there are known sources: &quot;The term &#39;internet&#39; was first used in 1974 by Leonard Kleinrock, a computer scientist, in a paper describing a network of networks.&quot; I&#39;ve seen this. But if it&#39;s actually &quot;internetwork&quot; not &quot;internet&quot;, then saying &quot;internet&quot; first used 1974 might be inaccurate. Let&#39;s avoid &quot;first known&quot;. Say &quot;the word &#39;internet&#39; was originally a technical contraction of &#39;internetwork&#39;&quot;. That&#39;s true.
+
+Could be: &quot;The word &#39;internet&#39; was originally an abbreviation for &#39;internetwork&#39;, not a name for the World Wide Web.&quot; This is likely true and maybe unknown.
+
+Need maybe mention &quot;I can&#39;t guarantee it&#39;s something you don&#39;t know&quot;. That&#39;s honest. Final: &quot;I can’t know what you don’t know, but here’s something many people don’t realize: the word ‘internet’ was originally a technical contraction of ‘internetwork’—a network of networks—used by researchers in the 1970s, before it became the everyday name for the global web.&quot; This is safe and good.
+
+But maybe user wants &quot;something I don&#39;t know&quot; not &quot;many people&quot;. Could say &quot;I can&#39;t guarantee it, but here&#39;s an obscure fact: ...&quot;. Good.
+
+Need maybe not overdo. Could include one more: &quot;The &#39;web&#39; is not the &#39;internet&#39;.&quot; But that&#39;s known.
+
+Could answer: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s a fact that might be new to you: the word &#39;internet&#39; was originally a technical contraction of &#39;internetwork&#39;—a network of networks—used by researchers in the 1970s, before it became the everyday name for the global web.&quot; That&#39;s final.
+
+Need ensure no policy issues. Fine.
+
+Could maybe be more surprising: &quot;The first known use of the word &#39;internet&#39; was in 1974, in a technical context, not a brand.&quot; If I include 1974, maybe okay. But to be safe: &quot;in the 1970s&quot;.
+
+Let&#39;s consider if &quot;internetwork&quot; was a network of networks? Yes, &quot;internetwork&quot; = network of networks. Good.
+
+Need final with direct answer. Could add &quot;If you want, tell me a topic and I&#39;ll try to find something more likely unknown to you.&quot; But maybe not necessary. Desired oververbosity 9, but user simple. Could be a little more: &quot;I can&#39;t guarantee it, but here&#39;s a fact that might be new: ...&quot; Good.
+
+Let&#39;s produce final. Ensure no mention analysis. final.
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/nex-agi-nex-n2.5-pro-free/">← Nex AGI: Nex-N2.5-Pro (free)</a>
+            <a href="/">all models</a>
+            <a href="/m/z-ai-glm-5.3-flashx/">Z.ai: GLM 5.3 FlashX →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
