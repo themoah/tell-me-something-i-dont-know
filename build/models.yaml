@@ -1124,3 +1124,23 @@ models:
     license: "open-source"
     released: "September 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "prism-ml/ternary-bonsai-2-27b"
+    name: "PrismML: Ternary Bonsai 2 27B"
+    provider: "Prism Ml"
+    license: "open-source"
+    released: "September 2026"
+
+  - id: "z-ai/glm-5.3-flashx"
+    name: "Z.ai: GLM 5.3 FlashX"
+    provider: "Z Ai"
+    license: "commercial"
+    released: "September 2026"
+
+  - id: "unbiased/pareto"
+    name: "Pareto"
+    provider: "Unbiased"
+    license: "commercial"
+    released: "September 2026"
+
