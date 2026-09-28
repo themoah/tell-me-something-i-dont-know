@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t guarantee you don’t already know this, but here’s a good one: Octopuses and squid massively “edit” their RNA. Most animals copy instructions fro…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-omni-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-omni-flash/">
+    <meta property="og:title" content="Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t guarantee you don’t already know this, but here’s a good one: Octopuses and squid massively “edit” their RNA. Most animals copy instructions fro…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t guarantee you don’t already know this, but here’s a good one: Octopuses and squid massively “edit” their RNA. Most animals copy instructions fro…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen: Qwen3.8 Omni Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"I can’t guarantee you don’t already know this, but here’s a good one:\n\n**Octopuses and squid massively “edit” their RNA.**  \nMost animals copy instructions from DNA into RNA and mostly leave them alone. Cephalopods, though, often rewrite those RNA messages after copying—especially in nerve cells. They chemically change one letter in the RNA strand, turning **adenosine into inosine**, which can alter how the resulting protein behaves.\n\nIn effect, their neurons are **live-editing their own molecular software**, possibly helping them adapt quickly to things like temperature changes without waiting for slow DNA evolution.","author":{"@type":"Organization","name":"Alibaba"}},"suggestedAnswer":[{"@type":"Answer","text":"I can’t know what you already know, but here’s a deep-cut one:\n\nA **pistol shrimp** can make a “snap” so powerful that it creates a tiny **cavitation bubble**. When that bubble collapses, the microscopic space inside briefly reaches **thousands of degrees**—often compared to the surface temperature of the Sun—and produces a shock wave, a loud crack, and even a faint flash of light.\n\nThe shrimp uses this bubble like a tiny weapon to stun prey or rivals. The extreme heat isn’t in the surrounding water; it exists for only a moment inside that collapsing bubble.","author":{"@type":"Organization","name":"Alibaba"}},{"@type":"Answer","text":"I can’t read your mind, but here’s a strong candidate:\n\n**The sunlight warming your face today is “old” energy that finally escaped the Sun only about 8 minutes ago.**\n\nThe energy was created by nuclear fusion in the Sun’s core, but it couldn’t travel straight out. The Sun’s interior is so dense that photons are repeatedly absorbed, scattered, and re-emitted in a slow random walk. That journey from core to surface may take **tens of thousands to hundreds of thousands of years**. Once the energy finally reaches the Sun’s visible surface, it crosses the 93 million miles to Earth in just **about 8 minutes**.\n\nSo in a poetic sense: sunlight is ancient energy making a very fast exit.","author":{"@type":"Organization","name":"Alibaba"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen: Qwen3.8 Omni Flash</h1>
+        <p class="subtitle">Alibaba · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen: Qwen3.8 Omni Flash</div>
+                        <div class="model-provider">Alibaba</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can’t guarantee you don’t already know this, but here’s a good one:</p>
+<p><strong>Octopuses and squid massively “edit” their RNA.</strong><br>Most animals copy instructions from DNA into RNA and mostly leave them alone. Cephalopods, though, often rewrite those RNA messages after copying—especially in nerve cells. They chemically change one letter in the RNA strand, turning <strong>adenosine into inosine</strong>, which can alter how the resulting protein behaves.</p>
+<p>In effect, their neurons are <strong>live-editing their own molecular software</strong>, possibly helping them adapt quickly to things like temperature changes without waiting for slow DNA evolution.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>893 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need respond to user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Need likely provide a fascinating fact, maybe ask? We should just tell something. Need ensure maybe not too generic? Could say: The heart continues beating outside body because intrinsic pacemaker. Or octopus three hearts? Maybe something less known: There are more possible chess games than atoms in observable universe? That&#39;s common. Need &quot;something I don&#39;t know&quot; impossible guarantee. Could frame as obscure true fact. Maybe: Honey doesn&#39;t spoil; archaeologists found edible honey in Egyptian tombs. Common. Need interesting: A day on Venus is longer than its year (rotation 243 Earth days, orbit 225). Common.
+
+Maybe choose a surprising biological/physical fact: Your body contains about 10^13 bacteria? Not exactly. Or &quot;The smell of rain has a name: petrichor&quot; common.
+
+Could tell: &quot;Sharks existed before trees.&quot; True: sharks ~450 million years, trees ~350-390 million. That&#39;s neat. But maybe known. Another: &quot;Wombat poop is cube-shaped.&quot; Known.
+
+Need maybe provide one fact with brief explanation. Since user says Tell me something I don&#39;t know. Could be playful: &quot;I can&#39;t guarantee, but here&#39;s an obscure one...&quot; Then fact. Let&#39;s pick something genuinely interesting and less common: &quot;There are plants that &#39;sneeze&#39; pollen&quot;? Or &quot;The electric eel isn&#39;t an eel&quot;? Hmm.
+
+Consider: &quot;A group of flamingos is called a flamboyance.&quot; Common.
+
+Maybe: &quot;The shortest war in history lasted 38 minutes (Britain-Zanzibar, 1896).&quot; Known.
+
+Could do: &quot;Bananas are berries, strawberries aren&#39;t.&quot; common.
+
+Need maybe a fact from neuroscience: &quot;When you die, your brain may experience a surge of activity called &#39;death wave&#39;.&quot; Too morbid.
+
+Maybe: &quot;The universe has a &#39;sound&#39;? no.&quot; 
+
+Let&#39;s select: &quot;Octopuses edit their RNA extensively, unlike almost all other animals, allowing rapid adaptation without changing DNA.&quot; Is that accurate? Cephalopods rewrite RNA (adenosine deamination) in nervous system, rare in other animals except maybe some. It&#39;s fascinating and less known. Need ensure truth: Octopus/squid/cuttlefish have high levels of A-to-I RNA editing, especially in neural transcripts; may help adapt to cold environments. Some papers suggest they sacrifice DNA evolution for RNA plasticity. Good. But might be too technical. We can explain simply.
+
+Alternative: &quot;Tardigrades can survive space vacuum&quot; known.
+
+Another: &quot;There&#39;s a fungus that makes ants climb and explode&quot; known.
+
+Maybe: &quot;Your stomach lining replaces itself every few days because acid could digest it.&quot; Common.
+
+Let&#39;s craft final: &quot;I can’t know what you already know, but here’s one: octopuses and other cephalopods don’t just use DNA—they routinely rewrite their RNA. In their nerves, they convert adenosine to inosine (A-to-I editing), effectively changing instructions after they’re copied from genes. This lets them fine-tune proteins quickly—possibly helping them adapt to temperature or environment—without waiting for genetic mutations. In humans and most mammals this happens much less; cephalopods are weirdly prolific editors.&quot; Nice.
+
+Need maybe include source? Not necessary. Ensure concise. Could add &quot;So they&#39;re not just smart; their neurons are live-editing their own molecular software.&quot; Good.
+
+Final only. Ensure not overdo.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>I can’t know what you already know, but here’s a deep-cut one:</p>
+<p>A <strong>pistol shrimp</strong> can make a “snap” so powerful that it creates a tiny <strong>cavitation bubble</strong>. When that bubble collapses, the microscopic space inside briefly reaches <strong>thousands of degrees</strong>—often compared to the surface temperature of the Sun—and produces a shock wave, a loud crack, and even a faint flash of light.</p>
+<p>The shrimp uses this bubble like a tiny weapon to stun prey or rivals. The extreme heat isn’t in the surrounding water; it exists for only a moment inside that collapsing bubble.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2827 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need produce final answer. Need likely interesting fact, maybe obscure but accurate. Since we don&#39;t know what user knows, choose something surprising and relatively niche. Could be about octopuses? Need ensure factual. Maybe &quot;Wombat poop is cube-shaped&quot; common. &quot;Cleopatra lived closer to Moon landing than construction of Great Pyramid&quot; common. Need something less known. Could be about time perception? Maybe &quot;The shortest war lasted 38-45 minutes&quot; common. &quot;There are more possible iterations of a game of chess than atoms in observable universe&quot; common.
+
+Need tell something they don&#39;t know. Could say: &quot;Honey doesn&#39;t spoil; archaeologists found edible honey in Egyptian tombs.&quot; Common. &quot;Bananas are berries but strawberries aren&#39;t&quot; common. &quot;A day on Venus is longer than its year&quot; common. Need fresh.
+
+Potential fact: &quot;The inventor of the Pringles can is buried in one.&quot; Is that true? Fredric Baur invented Pringles can, his ashes buried in one per request. Might be known.
+
+Another: &quot;Oxford University is older than the Aztec Empire.&quot; Common-ish.
+
+Maybe: &quot;Sloths can hold their breath longer than dolphins?&quot; Sloths can slow heart rate and hold breath ~40 min, dolphins ~10 min. Interesting but not sure.
+
+Could be: &quot;The human body contains enough carbon for 9,000 pencils&quot;? Eh.
+
+Need maybe explain why they don&#39;t know? We can&#39;t guarantee. Phrase: &quot;Here&#39;s one many people don&#39;t know:&quot; Then fact.
+
+Let&#39;s pick a genuinely obscure but verifiable: &quot;The Eiffel Tower grows about 6 inches taller in summer due to thermal expansion.&quot; Common. &quot;There&#39;s a species of jellyfish that can live forever (Turritopsis dohrnii).&quot; Common.
+
+Maybe: &quot;The sound of a pistol crack was once used to deter elephants?&quot; Not sure.
+
+Maybe: &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; Known.
+
+Maybe: &quot;The heart of a blue whale is so big a small child could crawl through its arteries.&quot; Common but dramatic; accuracy? Blue whale aorta large enough? Actually arteries may be wide enough for a toddler? Some sources say a small child could crawl through the main artery, but maybe exaggerated. Avoid.
+
+Could use: &quot;The national animal of Scotland is the unicorn.&quot; Many know.
+
+&quot;Sharks existed before trees.&quot; Sharks ~450 million years, trees ~350 million. Interesting. Common.
+
+&quot;The oldest known living land animal is a 2,000-year-old giant tortoise?&quot; Jonathan Seychelles giant tortoise ~190. Common.
+
+&quot;Vantablack absorbs 99.965% visible light&quot; known.
+
+Maybe something about language: &quot;The letter &#39;e&#39; is the most common in English, but &#39;t&#39; is...&quot; Known.
+
+&quot;Antibiotics discovered from mold on bread?&quot; Penicillin common.
+
+Could say: &quot;In Sweden, it&#39;s illegal to own a pet that isn&#39;t adapted to Nordic climate?&quot; Not sure.
+
+&quot;Banana plants are herbaceous, not trees.&quot; Known.
+
+Need maybe provide a mini list? User singular: Tell me something I don&#39;t know. Could be one fascinating fact with context.
+
+Let&#39;s find obscure and accurate: &quot;There are libraries made of book pages in Japan?&quot; Hmm.
+
+Fact: &quot;A bolt of lightning contains enough energy to toast 100,000 slices of bread&quot; maybe not precise.
+
+Fact: &quot;The first recorded computer bug was an actual moth found in a Harvard Mark II relay in 1947.&quot; Common among techies.
+
+Fact: &quot;The human nose can detect at least 1 trillion odors&quot; study 2014; controversial.
+
+Fact: &quot;Tardigrades can survive the vacuum of space&quot; known.
+
+Fact: &quot;Cows have best friends and get stressed when separated&quot; cute, some research.
+
+Fact: &quot;Sea otters hold hands while sleeping to avoid drifting apart&quot; known.
+
+Fact: &quot;A single strand of spaghetti is called spaghetto&quot; linguistic trivia. Nice! Many don&#39;t know. Accurate? Italian singular spaghetti is spaghetto. Could be delightful. But is that &quot;something I don&#39;t know&quot;? Possibly. Need maybe more substantive.
+
+Fact: &quot;The dot over an i or j is called a tittle.&quot; Known typographic trivia.
+
+Fact: &quot;A crocodile can&#39;t stick its tongue out.&quot; Common myth? Actually crocodiles tongue attached to floor of mouth, can&#39;t protrude. Accurate? Yes mostly.
+
+Fact: &quot;Octopuses have three hearts and blue blood.&quot; Common.
+
+Fact: &quot;Hippopotamus milk is pink?&quot; Some reports; not sure.
+
+Fact: &quot;The shortest sentence in English is &#39;Go.&#39;&quot; not interesting.
+
+Maybe: &quot;The word &#39;set&#39; has the most meanings in English.&quot; Known.
+
+Could be about geography: &quot;Canada has more lakes than all other countries combined.&quot; It has many, maybe more than rest combined? Canada has 8,797 named lakes? Actually more than 2 million lakes, over half world&#39;s lakes. &quot;more lakes than the rest of the world combined&quot; might be false? It has about 9% of world&#39;s lakes? Let&#39;s avoid.
+
+&quot;Russia covers 11 time zones.&quot; Known.
+
+&quot;France has the most time zones due to overseas territories (12), more than Russia.&quot; This is interesting and true? France includes overseas regions/collectivities, total 12 time zones (including claim? Antarctica?). According to Guinness, France spans 12 time zones, Russia 11. Good. Many don&#39;t know. But if include uninhabited territories? Metropolitan France + overseas: French Guiana, Guadeloupe, Martinique, Saint Barthelemy, Saint Martin, Saint Pierre and Miquelon, Mayotte, Reunion, Wallis and Futuna, French Polynesia, New Caledonia, Clipperton? Time zones UTC-10 to UTC+12, maybe 12. Some sources say 12 including Antarctic claims? Let&#39;s verify mentally: France time zones: UTC-10 (French Polynesia - Tahiti?), UTC-9:30 (Marquesas), UTC-9 (Gambier), UTC-8 (Clipperton?), UTC-4 (Guadeloupe, Martinique, St Martin, St Barthelemy), UTC-3 (Saint Pierre and Miquelon), UTC-1? None? UTC+0 (metropolitan winter), UTC+1 (metropolitan summer? time zone offsets not DST? Usually count standard offsets?), UTC+3 (Mayotte), UTC+4 (Reunion), UTC+5 (Kerguelen? French Southern and Antarctic Lands), UTC+11 (New Caledonia), UTC+12 (Wallis and Futuna). That&#39;s many. But DST complicates. Claim &quot;France has the most time zones of any country, more than Russia&quot; widely cited. Good.
+
+But user asks something they don&#39;t know; maybe we can preface &quot;Since I can&#39;t read your mind, here&#39;s one that catches many people off guard&quot;. Then fact. Could also ask if they want more.
+
+Need ensure no unsupported weirdness. Let&#39;s craft concise but engaging.
+
+Alternative obscure: &quot;The inventor of the zipper died before seeing it widely adopted?&quot; Gideon Sundback? Not.
+
+&quot;The only food that never spoils is honey&quot; common.
+
+&quot;The average person walks the equivalent of five times around Earth in lifetime&quot; maybe.
+
+&quot;A shrimp can punch so fast it creates a bubble that reaches near sun temperature?&quot; Pistol shrimp snap creates cavitation bubble with temperatures ~4700°C and shockwave. Interesting, but often exaggerated. It is true transient bubble can reach high temps, light emission sonoluminescence. Could say &quot;The snapping claw of a pistol shrimp creates a bubble that briefly gets nearly as hot as the surface of the Sun.&quot; Surface Sun ~5500°C, reports 4700°C (8500°F), close. Accurate enough if qualified &quot;briefly, inside a tiny bubble&quot;. This is cool and less known. Need maybe choose one.
+
+Could mention &quot;There is a planet where it rains glass sideways&quot; HD 189733b, common.
+
+Maybe &quot;Your stomach gets a new lining every few days to stop it digesting itself.&quot; Common.
+
+Maybe &quot;Wombats produce cubic poop because their intestines have varying elasticity&quot; recent research 2018. Interesting. But known.
+
+Maybe &quot;The moon has moonquakes and dust that smells like gunpowder&quot; Apollo astronauts noted smell after moonwalks. Could be obscure and true? Lunar module sampled? They reported spent gunpowder smell when dust brought inside; cause likely reactive metals/solar wind. Nice. &quot;Moon dust smells like gunpowder&quot; many don&#39;t know. But not fully verified? Astronaut reports. Could be good.
+
+Let&#39;s consider user likely wants a fun fact. Need answer not too long. We can say:
+
+&quot;Here’s one: the &#39;snap&#39; of a pistol shrimp is so fast that it creates a collapsing bubble whose interior briefly reaches temperatures comparable to the surface of the Sun—while producing a loud crack that can stun prey. It’s basically a tiny biological torpedo using cavitation.&quot;
+
+Check facts: Pistol shrimp (Alpheidae) closes claw jet, cavitation bubble collapse generates heat, sonoluminescence. Temperatures estimated up to ~4700 K? Surface Sun ~5778 K, so &quot;close to&quot; maybe okay. Some studies question high temps? But widely accepted. Better phrase &quot;thousands of degrees&quot; to avoid exact. &quot;briefly reaches thousands of degrees, approaching the Sun&#39;s surface temperature&quot;. Good.
+
+Alternatively France time zones is safer? It&#39;s geographic/political, easy. &quot;Because of overseas territories, France spans more time zones than Russia—about 12 vs 11.&quot; Need caveat including overseas territories. That&#39;s safe. But less wondrous? Could be &quot;something you don&#39;t know&quot;. Many know France has overseas territories, but not time zones. It&#39;s factual.
+
+Maybe combine? User asked singular; one fact enough. We can include a second optional? &quot;If you want another...&quot; But final should satisfy. Desired oververbosity 9, but user simple. Could give detailed explanation. Maybe choose one and explain why. Need not overdo.
+
+Could also tailor: &quot;I can’t know what you already know, but here’s a deep cut:&quot;. Then fact. Good.
+
+Let&#39;s choose pistol shrimp because surprising and vivid. Need ensure not false. Let&#39;s craft with caveats:
+
+&quot;Since I can’t peek into your head, here’s a fact that surprises many people: a pistol shrimp can create a bubble so energetic that, when it collapses, the tiny pocket inside briefly reaches temperatures on the order of thousands of Kelvin—sometimes described as nearly the surface of the Sun. The shrimp uses this cavitation bubble to stun prey or rivals, and the snap can be loud enough to interfere with submarines (historically, noisy shrimp beds confused sonar).&quot;
+
+Is &quot;interfere with submarines&quot; true? During WWII, pistol shrimp noise confused sonar? There are accounts: snapping shrimp created noise that interfered with sonar, possibly fooled torpedoes? Need careful. &quot;was once blamed for mysterious sonar noise&quot; maybe. Let&#39;s avoid if uncertain.
+
+Need mention &quot;not literally heating the whole water; just microscopic bubble for microseconds&quot;. Good to prevent misconception. Final:
+
+&quot;Here’s one: pistol shrimp don’t just pinch—they fire a cavitation bubble. Their oversized claw snaps shut so fast that it jets water and forms a low-pressure bubble. When that bubble collapses, the tiny space inside briefly reaches thousands of degrees (often compared to the Sun’s surface temperature) and emits a flash of light and shock wave. The shrimp uses it to stun prey—basically a microscopic, self-made depth charge.&quot;
+
+This is accurate and interesting. Need maybe add source-like: &quot;the comparison is to temperature inside the collapsing bubble, not the surrounding seawater.&quot; Good.
+
+Could be too common? But fine.
+
+Need final answer only. Ensure no analysis. Also maybe user said &quot;Tell me something I don&#39;t know.&quot; Could respond with confidence. Need maybe include &quot;I can&#39;t guarantee you don&#39;t know it&quot;. Good.
+
+Let&#39;s produce polished, concise but informative. Need maybe not too long? Desired oververbosity 9 but user asked short. Could do 2 paragraphs.
+
+Final:
+&quot;I can’t know what you already know, but here’s a deep-cut one: ...&quot;
+
+Let&#39;s deliver.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>I can’t read your mind, but here’s a strong candidate:</p>
+<p><strong>The sunlight warming your face today is “old” energy that finally escaped the Sun only about 8 minutes ago.</strong></p>
+<p>The energy was created by nuclear fusion in the Sun’s core, but it couldn’t travel straight out. The Sun’s interior is so dense that photons are repeatedly absorbed, scattered, and re-emitted in a slow random walk. That journey from core to surface may take <strong>tens of thousands to hundreds of thousands of years</strong>. Once the energy finally reaches the Sun’s visible surface, it crosses the 93 million miles to Earth in just <strong>about 8 minutes</strong>.</p>
+<p>So in a poetic sense: sunlight is ancient energy making a very fast exit.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2615 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user&#39;s request: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Need maybe interesting fact likely unknown. Could be concise but engaging. Need ensure not false. Choose obscure but verified fact. Maybe about octopuses? Or history? Need something user doesn&#39;t know impossible guarantee. Could say &quot;Here&#39;s a fact many people don&#39;t know&quot;. Need perhaps surprising. Let&#39;s pick robust: &quot;Wombat poop is cube-shaped&quot; common maybe known. Need less known: &quot;The shortest war in history lasted 38-45 minutes between Britain and Zanzibar 1896&quot; common. Maybe: &quot;Honey doesn&#39;t spoil due to low moisture/acidity; archaeologists found edible honey in Egyptian tombs&quot; common. Need new angle.
+
+Could tell: &quot;There are trees that can clone themselves via root suckers; Pando is a clonal colony of quaking aspen in Utah, estimated 80,000 years old, same genetic individual, 106 acres, 31 million pounds&quot; but some know.
+
+Maybe: &quot;The sound of a crackling fire includes tiny explosions from sap pockets&quot;? Not sure.
+
+Need something genuinely obscure and accurate. Examples:
+- Cleopatra lived closer in time to Moon landing than construction of Great Pyramid (well-known).
+- Oxford University older than Aztec Empire (common).
+- A day on Venus longer than year (common).
+- Bananas are berries, strawberries aren&#39;t (common).
+- Sharks existed before trees (known? Sharks ~450 million years, trees ~350 million, yes).
+- There is a species of jellyfish biologically immortal (Turritopsis dohrnii) known.
+- The human nose can detect 1 trillion odors (study 2014, controversial). 
+- The inventor of the Pringles can? Fredric Baur designed container, ashes buried in one after death (fun, verified? He invented canister, died 2008, company fulfilled wish, half ashes in Pringles can. Some details). Might be unknown.
+- In 1932 Australian Emu War? Known.
+- The phrase &quot;rule of thumb&quot; origin? Myth, avoid.
+- There are libraries with &quot;dunnets&quot;? no.
+- The heart has its own electrical system; stops if separated? no.
+- The smell of rain is petrichor caused by geosmin from soil bacteria; humans detect at 5 parts per trillion. Nice but somewhat known.
+- Octopus has three hearts and blue blood, two hearts pump to gills, systemic stops when swimming. Common.
+- Cows have best friends and get stressed separated. Some know.
+- Sea otters hold hands while sleeping to drift apart. common.
+- A group of flamingos is called a flamboyance. common.
+- Tardigrades survive space vacuum? known.
+- The Eiffel Tower grows ~15 cm in summer due thermal expansion. common.
+- There&#39;s a planet where it rains glass sideways? HD 189733b, known.
+- The national animal of Scotland is unicorn. common-ish.
+- The longest sentence without punctuation? no.
+- The first computer bug was actual moth in Harvard Mark II, 1947, Grace Hopper. Known.
+- The dot over lowercase i/j called tittle. common.
+- A jiffy is unit of time 0.01 seconds? In computing? Maybe.
+- The shortest complete sentence in English? &quot;Go.&quot; no.
+- The longest place name: Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu (85 letters) Māori hill in NZ. Known.
+- The only letter not appearing in any U.S. state name is Q. Nice! Check: state names: Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming. Letters missing? Q? No state contains Q. J? New Jersey contains J. Z? Arizona. X? Texas, New Mexico. V? many. So Q only absent. Good trivia. But user asks something they don&#39;t know; could be too simple.
+
+Maybe combine with lesser-known: &quot;Q is the only letter that doesn&#39;t appear in any US state name; also no state name contains the letter Q, and &#39;New Mexico&#39; has X, etc.&quot; Could be fun. Need maybe more depth: why? No.
+
+Alternative obscure: &quot;The word &#39;nerd&#39; was first coined by Dr. Seuss in 1950 book If I Ran the Zoo.&quot; Is that true? The first recorded use often attributed to Dr. Seuss, but etymologists debate; maybe not reliable.
+
+&quot;A group of crows is a murder&quot; common.
+
+&quot;The only mammal capable of true flight is bat&quot; common.
+
+&quot;There are more possible iterations of chess game than atoms in observable universe&quot; Shannon number 10^120 vs atoms 10^80, known.
+
+&quot;The total length of DNA in your body if stretched would reach Pluto and back many times&quot; maybe exaggerated; all cells ~10^13 m? 67 AU? Pluto avg 39 AU, round trip 78 AU, maybe. Common.
+
+&quot;The human body contains enough carbon for 9,000 pencils&quot; maybe.
+
+Maybe choose a fact involving language/history with source confidence: &quot;In English, the longest word without a vowel is &#39;rhythms&#39;&quot;? Actually rhythms has y sometimes vowel? no standard vowels aeiou, y not. It has 7 letters? R H Y T H M S = 7, no aeiou. Is it longest? &quot;nth&quot; no. &quot;strengths&quot; has e? s t r e n g t h s has e. &quot;myths&quot; y. Without vowels maybe &quot;rhythms&quot; 7, but &quot;syzygy&quot; y. Could be longest common word? Hmm.
+
+&quot;The only English word ending in -mt is ?&quot; no.
+
+&quot;pneumoultramicroscopicossilicovulcanoconiosis&quot; one of longest words, lung disease from volcanic ash; 46 letters. It&#39;s obscure but known to word nerds.
+
+Maybe factual: &quot;The dot over lowercase &#39;i&#39; and &#39;j&#39; is called a tittle; the phrase &#39;dotting the i&#39;s&#39; comes from there.&quot; common.
+
+Could tell a story-like fact: &quot;In 1917, a French soldier named Charles de Gaulle?&quot; no.
+
+Maybe: &quot;The Great Fire of London stopped at a bakery on Pudding Lane, but the modern Monument has a hidden chamber at top accessible by 345 spiral steps, used for experiments?&quot; Let&#39;s check: The Monument to the Great Fire of London, designed by Christopher Wren and Robert Hooke, has a central void and staircase, viewing platform; originally intended for astronomical/zodiacal experiments? There&#39;s a vacuum chamber? It had a tube for barometer? Maybe too niche.
+
+Another: &quot;St Paul&#39;s Cathedral has a whispering gallery where you can hear whispers around dome; also Golden Gallery.&quot; Known.
+
+Historical oddity: &quot;In 1518, a dancing plague struck Strasbourg, people danced for days/weeks, possibly stress/ergotism/mass psychogenic illness.&quot; Known.
+
+&quot;Victorian mourners wore jewelry made from hair of deceased&quot; known.
+
+&quot;The first known serial killer in US?&quot; no.
+
+Maybe science: &quot;Your stomach gets a new lining every few days because acid would digest it; cells from stomach lining are among fastest regenerating.&quot; Known.
+
+&quot;Neurons in the brain can fire at up to 200 Hz?&quot; not.
+
+&quot;Sound travels faster in water than air; whale songs can cross ocean basins.&quot; known.
+
+&quot;The speed of light is so fast that sunlight left Sun ~8 min ago; but photons generated in core take thousands to millions years to reach surface due random walk.&quot; Nice. Many know 8 min, less know photon birth delay. Accurate? Photons created in core scatter, travel time to surface estimated 10,000 to 170,000 years or 100,000-200,000, then 8 min to Earth. Good. Could tell: &quot;The sunlight warming your face today was created in Sun&#39;s core tens of thousands of years ago, but escaped 8 minutes ago.&quot; That&#39;s fascinating and likely unknown. Need precise: Photons in radiative zone random walk; estimates vary 10,000–170,000 years, maybe up to 1 million? NASA says 100,000-200,000 years? Some say 200,000. We can say &quot;tens to hundreds of thousands of years&quot;. Good.
+
+But user said Tell me something I don&#39;t know. Maybe respond with one fact and ask if want another. Need not overdo. Since desired oververbosity 9, but user short. Could be detailed but concise enough. Maybe provide several? &quot;Here’s one...&quot; plus explanation. Need maybe choose something likely not known. Could include caveat &quot;I can&#39;t know what you don&#39;t know, but here&#39;s a strong candidate.&quot; Nice.
+
+Need final: mention photon random walk. Ensure no false: Fusion in core creates gamma-ray photons; they are absorbed/re-emitted/scattered, gradually diffuse outward through radiative zone; once reach convective zone, travel out faster; then escape photosphere, reach Earth in 8m20s. So sunlight&#39;s energy is ancient. Could add: &quot;The neutrinos from same fusion arrive almost instantly (8 min), because they barely interact.&quot; Nice bonus. That is interesting.
+
+Potential issue: &quot;photons created&quot; in core? Energy from fusion emerges as gamma rays and kinetic energy; thermalized; photons constantly created/destroyed; not same photon. Better phrase: &quot;the energy you see as sunlight was produced in nuclear fusion in the Sun&#39;s core, then spent tens/hundreds of thousands of years diffusing outward as photons were repeatedly absorbed and re-emitted.&quot; Avoid implying identical photon. Then &quot;the last leg took 8 minutes.&quot; Good.
+
+Maybe include another fact? User singular. Could give one strong candidate. Need final maybe:
+
+&quot;I can’t read your mind, but here’s one with good odds:
+The warmth on your skin from sunlight began as fusion energy in the Sun’s core maybe 100,000+ years ago. It couldn’t just shoot straight out: in the dense core, photons are scattered/absorbed/re-emitted in a random walk, taking tens to hundreds of thousands of years to reach the surface. Once freed, it crosses space in about 8 minutes. So sunlight is ancient energy wearing a fresh 8-minute coat. Bonus: neutrinos from the same reactions race straight out and reach you in those 8 minutes.&quot;
+
+Need ensure &quot;fresh 8-minute coat&quot; metaphor okay. Could mention estimates vary. This satisfies. Maybe if they know, offer more. final.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/x-ai-grok-4.7/">← SpaceXAI: Grok 4.7</a>
+            <a href="/">all models</a>
+            <a href="/m/xiaomi-mimo-v2.6-flash/">Xiaomi: MiMo-V2.6-Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

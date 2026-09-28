@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireworks: Ember-1 — Tell me something I don't know.</title>
+    <meta name="description" content="Fireworks: Ember-1 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: roughly 8% of your DNA isn&#39;t human in origin—it&#39;s viral. Over tens of millions of years, retroviruses infected our ancestors&#39; reproductive c…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/fireworks-ember-1/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/fireworks-ember-1/">
+    <meta property="og:title" content="Fireworks: Ember-1 — Tell me something I don't know.">
+    <meta property="og:description" content="Fireworks: Ember-1 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: roughly 8% of your DNA isn&#39;t human in origin—it&#39;s viral. Over tens of millions of years, retroviruses infected our ancestors&#39; reproductive c…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fireworks: Ember-1 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Fireworks: Ember-1 answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: roughly 8% of your DNA isn&#39;t human in origin—it&#39;s viral. Over tens of millions of years, retroviruses infected our ancestors&#39; reproductive c…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Fireworks: Ember-1)","answerCount":1,"acceptedAnswer":{"@type":"Answer","text":"Here's one: roughly 8% of your DNA isn't human in origin—it's viral. Over tens of millions of years, retroviruses infected our ancestors' reproductive cells and left their genetic code permanently stitched into our genome. Most of those viral fossils sit there doing nothing, but evolution repurposed at least one of them: a gene called syncytin, which came from an ancient virus, is essential for forming the placenta. Different mammal lineages independently co-opted viral genes for the same job, meaning live birth in mammals may owe its existence to ancient viral infections.\n\nBonus: France's last execution by guillotine happened in 1977—the same year *Star Wars* premiered.\n\nWant more from a particular corner—history, biology, space, weird true crime?","author":{"@type":"Organization","name":"Fireworks"}}}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Fireworks: Ember-1</h1>
+        <p class="subtitle">Fireworks · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Fireworks: Ember-1</div>
+                        <div class="model-provider">Fireworks</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one: roughly 8% of your DNA isn&#39;t human in origin—it&#39;s viral. Over tens of millions of years, retroviruses infected our ancestors&#39; reproductive cells and left their genetic code permanently stitched into our genome. Most of those viral fossils sit there doing nothing, but evolution repurposed at least one of them: a gene called syncytin, which came from an ancient virus, is essential for forming the placenta. Different mammal lineages independently co-opted viral genes for the same job, meaning live birth in mammals may owe its existence to ancient viral infections.</p>
+<p>Bonus: France&#39;s last execution by guillotine happened in 1977—the same year <em>Star Wars</em> premiered.</p>
+<p>Want more from a particular corner—history, biology, space, weird true crime?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>5348 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an interesting challenge because I don&#39;t actually know what this person knows. They could be an expert in many fields, or a curious generalist. The best I can do is pick something genuinely obscure or surprising that&#39;s unlikely to be common knowledge, and present it in an engaging way.
+
+Let me think about what would be a good candidate. I want something that is:
+1. Genuinely true and verifiable
+2. Obscure enough that most people wouldn&#39;t know it
+3. Interesting enough to be worth telling
+4. Not just a random factoid but something with some depth or surprise
+
+Some candidates:
+
+1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** - This is fairly well-known now, often shared on social media. Probably too common.
+
+2. **Oxford University is older than the Aztec Empire** - Also fairly well-known at this point.
+
+3. **Woolly mammoths were alive when the pyramids were built** - Also becoming common knowledge.
+
+4. **Honey never spoils** - Too well known.
+
+5. **The Turritopsis dohrnii &quot;immortal jellyfish&quot;** - Fairly well known now.
+
+6. **There&#39;s a species of fungus that can grow in nuclear reactor radiation (Chernobyl fungi that use melanin to convert radiation into chemical energy - radiotrophic fungi)** - This is interesting and less commonly known.
+
+7. **The &quot;Wow! signal&quot;** - Fairly well known among space enthusiasts.
+
+8. **The longest time between two twins being born is 87 days** - Obscure but maybe not that interesting.
+
+9. **Nintendo was founded in 1889 as a playing card company** - Fairly well known now.
+
+10. **The Sahara Desert was green/verdant relatively recently (African Humid Period, ending ~5,500 years ago) and cycles between green and desert on roughly 20,000-year cycles due to axial precession** - This is genuinely interesting and not super well known.
+
+11. **Sharks are older than trees** - Sharks ~450 million years, trees ~350-390 million years. Sharks are also older than Saturn&#39;s rings possibly, and older than the North Star. This is a good one but getting more well-known.
+
+12. **The concept of &quot;0&quot; as a number had to be invented and was controversial** - Interesting but abstract.
+
+13. **There are more possible chess games than atoms in the observable universe (Shannon number)** - Well known among certain circles.
+
+14. **Cleopatra was ethnically Greek (Macedonian), not Egyptian** - Fairly well known.
+
+15. **The Eiffel Tower grows ~15 cm taller in summer due to thermal expansion** - Moderately known.
+
+16. **A day on Venus is longer than a year on Venus** - Venus rotates so slowly (243 Earth days) that its sidereal day is longer than its orbital period (225 Earth days). Also Venus rotates backwards. This is a good one.
+
+17. **The Great Wall of China is not visible from space with the naked eye** - Well known debunk.
+
+18. **Humans share ~60% DNA with bananas** - Misleading stat, commonly shared.
+
+19. **The &quot;mantis shrimp can see 16 colors&quot; thing is actually misleading** - they have 12-16 photoreceptors but are actually worse at color discrimination than humans. This is a good &quot;something you think you know is wrong&quot; fact.
+
+20. **Betelgeuse and the Orion constellation: the star Bellatrix is sometimes called the &quot;Amazon Star&quot;** - obscure.
+
+21. **The first person to survive going over Niagara Falls in a barrel was a 63-year-old schoolteacher, Annie Edson Taylor, in 1901** - moderately known.
+
+22. **There&#39;s a town in Norway (Rjukan) that uses giant mirrors to reflect sunlight into the town square because it&#39;s in a valley that gets no direct sun in winter** - Interesting.
+
+23. **The blobfish only looks blobby out of water; at depth it looks like a normal fish** - Good &quot;correction&quot; fact.
+
+24. **Wright Brothers&#39; first flight (1903) to Moon landing (1969) was only 66 years** - Well known.
+
+25. **The last execution by guillotine in France was in 1977, the same year Star Wars premiered** - This is a great one. Hamida Djandoubi, September 10, 1977. Star Wars premiered in the US in May 1977 (though it came to France in October 1977). Still, the juxtaposition is striking.
+
+26. **Harvard was founded before calculus was invented** - Harvard 1636, Newton/Leibniz calculus ~1680s. Good one.
+
+27. **The Spanish Inquisition was expected - they actually gave 30 days notice** - funny Monty Python reference but the reality is interesting.
+
+28. **Tardigrades can survive in space** - fairly well known now.
+
+29. **There&#39;s a jellyfish-like organism (actually a siphonophore) longer than a blue whale - the Praya dubia or the Apolemia siphonophore found in 2020 was possibly 45+ meters** - interesting.
+
+30. **The &quot;Sailing stones&quot; of Death Valley mystery was solved - thin ice sheets and wind** - moderately known.
+
+31. **Humans and giraffes have the same number of neck vertebrae (7)** - well known.
+
+32. **The inventor of the Pringles can, Fred Baur, was buried in one** - fun fact, moderately known.
+
+33. **The QWERTY keyboard wasn&#39;t designed to slow typists down** - the actual history is more nuanced.
+
+34. **There are more trees on Earth (~3 trillion) than stars in the Milky Way (~100-400 billion)** - Good one, moderately known.
+
+35. **The first computer programmer was Ada Lovelace in the 1840s** - well known.
+
+36. **The Sahara is only ~10,000 years old as a desert and was green with lakes and hippos as recently as 6,000 years ago** - related to #10.
+
+37. **The &quot;Great Molasses Flood&quot; of Boston 1919 - a wave of molasses killed 21 people** - moderately known, very interesting.
+
+38. **Octopuses have three hearts and blue blood, and can edit their own RNA** - the RNA editing part is less known and fascinating.
+
+39. **The &quot;Dunning-Kruger effect&quot; original study was inspired by a bank robber who rubbed lemon juice on his face thinking it would make him invisible to cameras** - This is a great one! McArthur Wheeler, 1995. Less commonly known backstory.
+
+40. **The shortest war in history was the Anglo-Zanzibar War of 1896, lasting 38-45 minutes** - moderately known.
+
+41. **Napoleon was actually average height for his time (5&#39;6&quot;-5&#39;7&quot; in French inches)** - well known debunk.
+
+42. **The first 1GB hard drive (IBM 3380, 1980) weighed over 500 pounds and cost $40,000+** - moderately known.
+
+43. **A single teaspoon of neutron star would weigh ~6 billion tons** - well known.
+
+44. **The &quot;Bloop&quot; sound detected in the Pacific in 1997 was eventually attributed to icequakes, not a sea monster** - moderately known.
+
+45. **The Eiffel Tower was originally intended for Barcelona but was rejected** - actually this is disputed/possibly false.
+
+46. **Honeybees can recognize human faces** - interesting.
+
+47. **Crows can hold grudges and pass them to their offspring** - interesting, moderately known.
+
+48. **The &quot;overview effect&quot; experienced by astronauts** - interesting concept.
+
+49. **There&#39;s a giant underground &quot;ocean&quot; - ringwoodite in the mantle holds water equivalent to multiple oceans** - interesting, moderately known.
+
+50. **The 1918 flu pandemic infected ~1/3 of the world&#39;s population** - well known post-COVID.
+
+51. **Bananas are berries but strawberries aren&#39;t** - well known.
+
+52. **The &quot;Sagan standard&quot; / &quot;Eiffel Tower sold twice by Victor Lustig&quot;** - Victor Lustig &quot;sold&quot; the Eiffel Tower twice to scrap metal dealers. Great story, moderately known.
+
+53. **In 1977, we received the &quot;Wow!&quot; signal; in 2012, humanity replied** - moderately known.
+
+54. **The &quot;Paris syndrome&quot; - Japanese tourists experiencing shock when Paris doesn&#39;t meet expectations** - interesting, moderately known.
+
+55. **The &quot;Tunguska event&quot; 1908 - flattened 800 sq miles of forest, likely a meteor air burst** - moderately known.
+
+56. **The &quot;demon core&quot; - a plutonium core that killed two scientists in separate criticality accidents at Los Alamos (Harry Daghlian and Louis Slotin)** - fascinating and dark, moderately known among history buffs.
+
+57. **The &quot;dancing plague&quot; of 1518 - hundreds of people danced uncontrollably for days in Strasbourg, some reportedly to death** - fascinating and obscure-ish.
+
+58. **The &quot;London Beer Flood&quot; of 1814** - obscure.
+
+59. **The &quot;Kentucky meat shower&quot; of 1876 - meat fell from the sky** - very obscure.
+
+60. **The &quot;Great Emu War&quot; of Australia 1932 - the military lost to emus** - well known on the internet.
+
+61. **The &quot;Tuskegee&quot; - no, too dark and known.**
+
+62. **The &quot;Solway Firth Spaceman&quot; photo** - obscure.
+
+63. **The &quot;Lead Masks Case&quot; in Brazil 1966** - very obscure.
+
+64. **The &quot;Max Headroom broadcast intrusion&quot; of 1987 - unsolved TV hijacking** - moderately known.
+
+65. **The &quot;Salish Sea feet&quot; - detached feet washing ashore in sneakers** - moderately known.
+
+66. **The &quot;Bloop,&quot; &quot;Julia,&quot; &quot;Slow Down&quot; ocean sounds** - moderately known.
+
+67. **The &quot;Green children of Woolpit&quot;** - obscure medieval legend.
+
+68. **The &quot;Year Without a Summer&quot; 1816 - caused by Mount Tambora eruption; led to Mary Shelley writing Frankenstein** - moderately known, great connections.
+
+69. **The &quot;Carrington Event&quot; 1859 - solar storm that set telegraph offices on fire; if it happened today it would devastate our grid** - moderately known, very relevant.
+
+70. **The &quot;Toba catastrophe theory&quot; - ~74,000 years ago, supervolcano may have reduced human population to a few thousand** - interesting, moderately known.
+
+71. **The &quot;Antikythera mechanism&quot; - ancient Greek analog computer, ~2000 years old, predicted eclipses** - moderately known, fascinating.
+
+72. **The &quot;Baghdad Battery&quot;** - disputed, probably not a battery.
+
+73. **The &quot;Voynich manuscript&quot;** - well known among mystery fans.
+
+74. **The &quot;Piri Reis map&quot;** - moderately known.
+
+75. **The &quot;Göbekli Tepe&quot; - temple complex ~11,500 years old, built by hunter-gatherers, predating agriculture, rewriting theories of civilization** - fascinating, becoming better known.
+
+76. **The &quot;Denisovans&quot; - known almost entirely from DNA; a finger bone and a jawbone** - fascinating.
+
+77. **The &quot;Hobbit&quot; Homo floresiensis** - moderately known.
+
+78. **The &quot;Red Deer Cave people&quot;** - obscure.
+
+79. **The &quot;Saccorhytus&quot; - our earliest ancestor looked like a wrinkly sac** - obscure.
+
+80. **The &quot;LUCA&quot; - last universal common ancestor** - abstract.
+
+81. **The &quot;endosymbiotic theory&quot; - mitochondria were once free-living bacteria; the evidence: they have their own DNA, reproduce independently** - moderately known.
+
+82. **The &quot;horizontal gene transfer&quot; - ~8% of human DNA is viral in origin (endogenous retroviruses)** - fascinating! HERVs. And the syncytin gene, essential for placenta formation, comes from a virus. This is a great one - &quot;you are part virus, and mammals might not have placentas without an ancient viral infection.&quot;
+
+83. **The &quot;toxoplasma&quot; - parasite that makes rats unafraid of cats, may affect human behavior** - moderately known.
+
+84. **The &quot;Ophiocordyceps&quot; - zombie ant fungus** - well known (Last of Us).
+
+85. **The &quot;wood wide web&quot; - mycorrhizal networks connecting trees** - becoming well known.
+
+86. **The &quot;oldest living organisms&quot; - Pando aspen grove ~80,000 years (disputed), Great Basin bristlecone pines ~5,000 years, &quot;Methuselah&quot;** - moderately known.
+
+87. **The &quot;immortal jellyfish&quot;** - known.
+
+88. **The &quot;naked mole rat&quot; - doesn&#39;t get cancer, barely ages, feels no pain from acid/capsaicin, can survive 18 min without oxygen** - fascinating, moderately known.
+
+89. **The &quot;axolotl&quot; regeneration** - known.
+
+90. **The &quot;tardigrade&quot;** - known.
+
+91. **The &quot;Greenland shark&quot; - can live 400+ years, doesn&#39;t reach sexual maturity until ~150** - becoming known, still amazing.
+
+92. **The &quot;ocean quahog&quot; Ming - 507 years old, killed by researchers opening it** - moderately known, darkly funny.
+
+93. **The &quot;Turritopsis&quot;** - known.
+
+94. **The &quot;hydra&quot; biological immortality** - obscure.
+
+95. **The &quot;lobster telomerase&quot;** - known-ish.
+
+96. **The &quot;bowhead whale&quot; 200+ years, found with 19th century harpoon tips embedded** - fascinating! In 2007, a bowhead was caught with a harpoon fragment dated to ~1880s.
+
+97. **The &quot;kakapo&quot;** - known-ish.
+
+98. **The &quot;axolotl&quot;** - known.
+
+99. **The &quot;mantis shrimp punch&quot; - cavitation bubbles, shockwaves, light emission** - well known.
+
+100. **The &quot;pistol shrimp&quot; - claw snap reaches ~4,700°C briefly, louder than a gunshot** - moderately known.
+
+OK, I have lots of candidates. Now, which to choose? The user asked for &quot;something I don&#39;t know&quot; - singular. I should probably give one good fact with some depth, or maybe a few options. Given the format guidance, a conversational response works best. I could give one standout fact with interesting details, or offer a couple.
+
+I think the best approach: pick one genuinely surprising, verifiable, and not-too-common fact, tell it well with the interesting details, and maybe offer to share more in a domain they care about. Alternatively, give a small handful across domains to increase the odds one is new to them.
+
+Actually, since I can&#39;t know what they know, offering a few across different domains increases the hit rate. But a single well-told fact is more satisfying than a list of trivia. Let me think about which single fact has the best combination of &quot;likely unknown&quot; + &quot;genuinely interesting.&quot;
+
+Strong candidates for a single feature:
+- The guillotine/Star Wars juxtaposition (1977) - great but increasingly known
+- The lemon juice bank robber inspiring Dunning-Kruger - excellent backstory to something people know
+- Sharks older than trees - increasingly known
+- Venus day longer than year - good
+- 8% of human DNA is viral, and the placenta gene (syncytin) came from a virus - this is genuinely profound and less commonly known
+- Greenland shark living 400+ years - becoming known
+- Bowhead whale with 19th-century harpoon - great
+- Göbekli Tepe rewriting civilization - becoming known
+- The Sahara was green 6,000 years ago with hippos - good
+- The demon core - dark but fascinating
+- Dancing plague 1518 - obscure and bizarre
+- Harvard older than calculus - good
+- Oxford older than Aztec Empire - known
+- Cleopatra/pyramids/moon - known
+
+I like the viral DNA one because it&#39;s profound (it changes how you think about what &quot;human&quot; DNA is), verifiable, and not as commonly shared as the &quot;60% banana DNA&quot; stat. The syncytin detail is the kicker: a gene from an ancient retrovirus is essential for the placenta to form, meaning mammals&#39; ability to bear live young may trace to a viral infection ~100+ million years ago. That&#39;s a &quot;whoa&quot; fact.
+
+Alternatively, the lemon juice robber is a great story with narrative structure. McArthur Wheeler robbed two banks in Pittsburgh in 1995 in broad daylight with no disguise except lemon juice on his face, believing lemon juice&#39;s use as invisible ink meant it would make his face invisible to cameras. He was caught within hours. David Dunning read about it and it inspired the Dunning-Kruger effect research (&quot;If Wheeler was too stupid to be a bank robber, perhaps he was also too stupid to know he was too stupid to be a bank robber&quot;). This is a great story because most people know the Dunning-Kruger effect but not its origin.
+
+Hmm, let me double check the lemon juice story details: McArthur Wheeler, April 1995, Pittsburgh, robbed two banks, no mask, lemon juice on face. He was 5&#39;6&quot;, ~270 lbs. Police showed surveillance photos on the news; he was identified and arrested within about an hour of the broadcast. He reportedly said &quot;But I wore the juice.&quot; Dunning read about it in a 1996 almanac of bizarre news and it inspired the 1999 paper &quot;Unskilled and Unaware of It.&quot; Yes, this checks out. One caveat: some retellings embellish; the core facts are solid.
+
+The viral DNA: ~8% of the human genome is endogenous retroviral sequences (HERVs). Syncytin-1 derives from the env gene of an endogenous retrovirus (ERVW-1), crucial for syncytiotrophoblast formation in the placenta. Multiple independent co-options of retroviral env genes occurred in different mammal lineages. Solid science.
+
+The guillotine fact: Hamida Djandoubi, executed September 10, 1977, Marseille, last person guillotined in France (and Western Europe). Star Wars premiered May 25, 1977 in the US. Capital punishment abolished in France 1981. Solid.
+
+Greenland shark: 2016 Science paper, radiocarbon dating of eye lens proteins, oldest specimen estimated 392 ± 120 years (range ~272-512). Sexual maturity ~150 years. Solid.
+
+Bowhead whale: 2007, a bowhead caught off Alaska had a harpoon head fragment (bomb lance) embedded, dated to ~1879-1885 manufacture in New Bedford. Estimated age at death ~130+. Other bowheads estimated over 200 via amino acid racemization. Solid.
+
+Venus: sidereal rotation period 243.025 Earth days (retrograde), orbital period 224.7 Earth days. Solar day on Venus is ~116.75 Earth days. So &quot;a day on Venus is longer than a year on Venus&quot; is true for sidereal day. Solid.
+
+Sahara green: African Humid Period, ~14,800-5,500 years ago (varies), savanna/lakes, hippos, rock art in Tassili n&#39;Ajjer depicting swimmers. Driven by orbital precession; cycles roughly every ~20,000-23,000 years. Solid.
+
+Dancing plague: July 1518, Strasbourg, Frau Troffea began dancing; within a month ~400 people; some died of strokes/heart attacks/exhaustion (death toll disputed). Theories: ergot poisoning (now doubted), mass psychogenic illness, stress. Solid enough with hedging on deaths.
+
+Göbekli Tepe: ~11,500 years old (Pre-Pottery Neolithic A/B), southeastern Turkey, monumental stone circles with T-shaped pillars, built by hunter-gatherers before agriculture. Solid.
+
+Harvard 1636; Newton&#39;s Principia 1687; Leibniz published calculus 1684. Solid.
+
+Decision: I&#39;ll lead with one strong fact and maybe add one or two shorter ones, then invite them to specify a domain. Actually, the instruction says conversational, not listy. Let me consider format: A short response with one featured fact told well (2-4 sentences), possibly followed by a quick bonus or an offer for more. Keep it tight. No headers, no bullets needed. Maybe 80-150 words.
+
+Which one to feature? I&#39;ll go with the lemon juice / Dunning-Kruger origin story — it&#39;s a narrative, connects to something they likely know (Dunning-Kruger), and the detail &quot;But I wore the juice&quot; is memorable. Alternatively the viral DNA one is more profound. Hmm.
+
+Actually, let me reconsider: the user might be testing me or just bored. A story-format fact is more entertaining. The lemon juice robber is delightful. But is it too well known? It&#39;s circulated on Reddit/TIL a fair amount. The viral DNA one is less circulated. The guillotine/Star Wars one is very circulated.
+
+Maybe I give one main fact plus a one-liner bonus, increasing hit chance. E.g., main: syncytin/viral DNA. Bonus: guillotine 1977. Or main: lemon juice; bonus: Venus.
+
+Let me draft:
+
+&quot;Here&#39;s one: about 8% of your DNA isn&#39;t human in origin — it&#39;s viral. Over hundreds of millions of years, retroviruses infected our ancestors&#39; germ cells and left their genetic code permanently embedded in ours. Most of these viral fossils are inert, but evolution repurposed at least one: the gene syncytin, which came from an ancient virus, is essential for forming the placenta. In other words, mammals&#39; ability to carry live young may owe its existence to a viral infection roughly 100 million years ago.&quot;
+
+That&#39;s good. Add a bonus? &quot;Bonus: France&#39;s last guillotine execution happened in 1977 — the year Star Wars came out.&quot; That&#39;s a punchy one-liner.
+
+Then maybe: &quot;Want more from a particular corner — history, biology, space?&quot;
+
+Format check: conversational, short paragraphs, no markdown headers needed. Length ~120-150 words. That seems right for &quot;tell me something I don&#39;t know&quot; — not a lecture.
+
+One consideration: accuracy hedging. The syncytin story: syncytin-1 in humans derives from ERVW-1 env gene, entered primate lineage ~25-40 million years ago (some estimates ~40 mya). Other syncytins (syncytin-2 ~60 mya; rodents independently co-opted their own syncytins). The &quot;mammals&#39; placenta&quot; claim: different mammal lineages independently captured retroviral env genes for placenta function, so the broad claim &quot;mammalian placentation owes to viral genes&quot; is reasonable but I should phrase carefully — &quot;a viral gene was co-opted multiple times independently in different mammal lineages.&quot; The 100 million year figure: the placenta itself is ~100+ myo; syncytin captures range ~25-80 mya depending on lineage. To be safe: &quot;tens of millions of years ago&quot; or &quot;an ancient viral infection.&quot; I&#39;ll say &quot;at least 25-40 million years ago in our primate lineage&quot; or keep it vaguer: &quot;tens of millions of years ago.&quot; Good.
+
+Also 8% figure: HERVs ~8% of human genome. Solid.
+
+The guillotine: Hamida Djandoubi, Sept 10, 1977. Star Wars US release May 25, 1977. Solid. I&#39;ll say &quot;the same year Star Wars premiered.&quot;
+
+Alright, final response: feature viral DNA/syncytin, bonus guillotine, offer more. Keep it engaging.</div>
+                </details><div class="response-text hidden" data-run="1"><span class="error-text">Error: HTTP 402: {&quot;error&quot;:{&quot;message&quot;:&quot;This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.&quot;,&quot;code&quot;:402,&quot;metadata&quot;:{&quot;reason&quot;:&quot;in</span></div><div class="response-text hidden" data-run="2"><span class="error-text">Error: HTTP 402: {&quot;error&quot;:{&quot;message&quot;:&quot;This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.&quot;,&quot;code&quot;:402,&quot;metadata&quot;:{&quot;reason&quot;:&quot;in</span></div>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/perceptron-perceptron-mk1.5/">← Perceptron: Perceptron Mk1.5</a>
+            <a href="/">all models</a>
+            <a href="/m/z-ai-glm-5.3-prime/">Z.ai: GLM 5.3 Prime →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

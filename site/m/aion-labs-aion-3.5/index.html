@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AionLabs: Aion 3.5 — Tell me something I don't know.</title>
+    <meta name="description" content="AionLabs: Aion 3.5 answers &quot;Tell me something I don&#39;t know.&quot; — In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. An…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/aion-labs-aion-3.5/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/aion-labs-aion-3.5/">
+    <meta property="og:title" content="AionLabs: Aion 3.5 — Tell me something I don't know.">
+    <meta property="og:description" content="AionLabs: Aion 3.5 answers &quot;Tell me something I don&#39;t know.&quot; — In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. An…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AionLabs: Aion 3.5 — Tell me something I don't know.">
+    <meta name="twitter:description" content="AionLabs: Aion 3.5 answers &quot;Tell me something I don&#39;t know.&quot; — In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. An…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to AionLabs: Aion 3.5)","answerCount":2,"acceptedAnswer":{"@type":"Answer","text":"In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. And she didn't stop.\n\nWithin a week, more than thirty others had joined her. Within a month, the number had swelled to around four hundred people — men, women, children — dancing uncontrollably in the streets of Strasbourg. They danced through exhaustion. They danced until their shoes filled with blood. Some reportedly danced themselves to death — dying of stroke, heart attack, or sheer exhaustion.\n\nThis was the \"Dancing Plague\" of 1518, and it remains one of the most bizarre mass psychogenic illnesses in recorded history.\n\nHere's the part that makes it even stranger: local authorities, at first, believed the cure was more dancing. They hired musicians and even constructed a stage, thinking the afflicted needed to \"dance it out.\" This only made things worse.\n\nTheories about the cause range from ergot poisoning (a fungus that grows on rye and can cause convulsions and hallucinations — the same fungus associated with LSD) to mass hysteria brought on by extreme stress, famine, and disease in the region.\n\nWhat makes it truly unsettling is that this wasn't an isolated incident. There were recorded outbreaks of \"dancing mania\" across Europe between the 14th and 17th centuries. We still don't know exactly what caused them.\n","author":{"@type":"Organization","name":"Aion Labs"}},"suggestedAnswer":[{"@type":"Answer","text":"The 1904 Olympic marathon in St. Louis was arguably the most absurd sporting event in history.\n\nIt took place in over 90°F heat on dusty roads, with officials driving cars ahead of the runners and kicking dust into their faces. Among the highlights:\n\n- **Fred Lorz** (USA) appeared to win but was disqualified when it was revealed he had ridden in a car for 11 miles of the race and then rejoined near the finish.\n- **Thomas Hicks**, the eventual \"winner,\" was given doses of strychnine sulfate (essentially rat poison) and brandy by his handlers to keep him moving. He was hallucinating and nearly dead when he crossed the line.\n- **Andarín Carvajal**, a Cuban postman, hitchhiked to the race after losing his money in New Orleans. He ran in long trousers, heavy shoes, and a beret — stopping mid-race to chat with spectators and nap in an orchard after eating rotten apples.\n- **Len Taunyane and Jan Mashiani**, two Tswana tribesmen who were part of the World's Fair's Boer War exhibit, became the first Black Africans to compete in the Olympics — running barefoot. One was chased nearly a mile off course by wild dogs.\n\nThe event was so chaotic that the International Olympic Committee nearly abolished the marathon entirely afterward.","author":{"@type":"Organization","name":"Aion Labs"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>AionLabs: Aion 3.5</h1>
+        <p class="subtitle">Aion Labs · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">AionLabs: Aion 3.5</div>
+                        <div class="model-provider">Aion Labs</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. And she didn&#39;t stop.</p>
+<p>Within a week, more than thirty others had joined her. Within a month, the number had swelled to around four hundred people — men, women, children — dancing uncontrollably in the streets of Strasbourg. They danced through exhaustion. They danced until their shoes filled with blood. Some reportedly danced themselves to death — dying of stroke, heart attack, or sheer exhaustion.</p>
+<p>This was the &quot;Dancing Plague&quot; of 1518, and it remains one of the most bizarre mass psychogenic illnesses in recorded history.</p>
+<p>Here&#39;s the part that makes it even stranger: local authorities, at first, believed the cure was more dancing. They hired musicians and even constructed a stage, thinking the afflicted needed to &quot;dance it out.&quot; This only made things worse.</p>
+<p>Theories about the cause range from ergot poisoning (a fungus that grows on rye and can cause convulsions and hallucinations — the same fungus associated with LSD) to mass hysteria brought on by extreme stress, famine, and disease in the region.</p>
+<p>What makes it truly unsettling is that this wasn&#39;t an isolated incident. There were recorded outbreaks of &quot;dancing mania&quot; across Europe between the 14th and 17th centuries. We still don&#39;t know exactly what caused them.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>591 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for something they don&#39;t know. Let me think about what to say. Something obscure and interesting. I could go with a historical fact, a scientific oddity, or some obscure trivia. Something like:
+
+- The immortal jellyfish (Turritopsis dohrnii) can revert to its polyp stage after reaching sexual maturity, effectively making it biologically immortal under ideal conditions.
+
+- In 1518, in Strasbourg, France, there was a &quot;dancing plague&quot; where hundreds of people danced uncontrollably for days, some until they died of exhaustion or heart attack.
+
+- The shortest war in recorded history was between Britain and Zanzibar on August 27, 1896. It lasted approximately 38 minutes.
+
+- Wombats produce cube-shaped feces due to the varying elasticity of their intestinal walls.
+
+- Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.
+
+- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.
+
+- A day on Venus is longer than a year on Venus.
+
+- Octopuses have three hearts, and two of them stop beating when the octopus swims.
+
+Let me go with the dancing plague of 1518 - it&#39;s obscure and fascinating.
+
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>The 1904 Olympic marathon in St. Louis was arguably the most absurd sporting event in history.</p>
+<p>It took place in over 90°F heat on dusty roads, with officials driving cars ahead of the runners and kicking dust into their faces. Among the highlights:</p>
+<ul>
+<li><strong>Fred Lorz</strong> (USA) appeared to win but was disqualified when it was revealed he had ridden in a car for 11 miles of the race and then rejoined near the finish.</li>
+<li><strong>Thomas Hicks</strong>, the eventual &quot;winner,&quot; was given doses of strychnine sulfate (essentially rat poison) and brandy by his handlers to keep him moving. He was hallucinating and nearly dead when he crossed the line.</li>
+<li><strong>Andarín Carvajal</strong>, a Cuban postman, hitchhiked to the race after losing his money in New Orleans. He ran in long trousers, heavy shoes, and a beret — stopping mid-race to chat with spectators and nap in an orchard after eating rotten apples.</li>
+<li><strong>Len Taunyane and Jan Mashiani</strong>, two Tswana tribesmen who were part of the World&#39;s Fair&#39;s Boer War exhibit, became the first Black Africans to compete in the Olympics — running barefoot. One was chased nearly a mile off course by wild dogs.</li>
+</ul>
+<p>The event was so chaotic that the International Olympic Committee nearly abolished the marathon entirely afterward.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>4957 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for something they don&#39;t know. Let me think about something truly obscure and interesting. Perhaps something from the natural world or history that&#39;s lesser known.
+
+1. The immortal jellyfish, Turritopsis dohrnii, can revert to its polyp state after reaching sexual maturity, effectively aging backwards. It can repeat this process indefinitely, making it biologically immortal. But many people know this now.
+
+2. The Great Emu War of 1932 in Australia, where the military was deployed against emus and essentially lost. This is fairly well-known on the internet.
+
+3. Octopuses have three hearts and blue blood. Their blood is blue because it contains hemocyanin, a copper-based molecule, rather than iron-based hemoglobin. Two hearts pump blood to the gills, and one pumps to the rest of the body. Interestingly, the main heart stops beating when they swim, which is why they prefer crawling.
+
+4. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza. The pyramid was built around 2560 BCE, Cleopatra died in 30 BCE, and the Moon landing was in 1969 CE. So she lived about 2,530 years after the pyramid but only about 1,999 years before the Moon landing.
+
+5. Wombats produce cube-shaped poop. This is due to the varying elasticity in their intestinal walls during digestion, which shapes the feces into cubes. This prevents the poop from rolling away and helps them mark their territory.
+
+6. Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey&#39;s low moisture content and acidic pH make it inhospitable to bacteria.
+
+7. A &quot;jiffy&quot; is an actual unit of time. In physics, it&#39;s the time it takes light to travel one centimeter in a vacuum, roughly 33.3564 picoseconds.
+
+8. The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after just 38 minutes.
+
+9. Bananas are radioactive. They contain potassium-40, a naturally occurring isotope. You would need to eat about 10 million bananas in one sitting to die of radiation poisoning. This has led to the informal unit of radiation exposure called the &quot;banana equivalent dose&quot; (BED).
+
+10. Oxford University is older than the Aztec Empire. Teaching started at Oxford around 1096, while Tenochtitlan was founded in 1325.
+
+I think I&#39;ll go with something really obscure. Let me think about something more unusual.
+
+What about: The word &quot;kangaroo&quot; doesn&#39;t actually mean &quot;I don&#39;t understand&quot; in an Aboriginal language, as the popular myth suggests. This is a widespread urban legend claiming that when Captain Cook asked the Aboriginal people what the animal was called, they replied &quot;kangaroo,&quot; meaning &quot;I don&#39;t understand you.&quot; In reality, &quot;kangaroo&quot; (or &quot;gangurru&quot;) is the actual name for a specific species of large black kangaroo in the Guugu Yimithirr language.
+
+Or maybe something about the fact that there&#39;s a species of fungus that can zombify ants. Ophiocordyceps unilateralis, also known as the &quot;zombie ant fungus,&quot; infects ants and takes control of their behavior. The fungus forces the ant to climb to the underside of a leaf, clamp down with its mandibles, and stay there until it dies. The fungus then grows a stalk out of the ant&#39;s head to release spores. This is the inspiration for the video game and TV show &quot;The Last of Us.&quot;
+
+Or: In 1518, in Strasbourg, France, there was a &quot;Dancing Plague&quot; where hundreds of people danced uncontrollably for days, some even dancing themselves to death. The cause is still debated, with theories ranging from mass psychogenic illness to ergot poisoning (though ergot typically restricts blood flow, making dancing difficult).
+
+Let me go with something truly obscure and interesting. How about this:
+
+The 3.5-inch floppy disk was invented before the compact disc (CD). The floppy disk was introduced in 1981 (though the 3.5-inch format was introduced by Sony in 1982), and the CD was introduced in 1982. Wait, that&#39;s close. Let me check: Sony introduced the 3.5-inch floppy disk in 1982, and the CD was jointly introduced by Sony and Philips in 1982. So they&#39;re roughly the same time.
+
+Let me think of something else.
+
+How about: In the 18th century, a man named Tiphaigne de la Roche wrote a novel called &quot;Giphantie&quot; (1760) which predicted photography. He described a process where images could be captured on a canvas coated with a sticky substance and then fixed, essentially describing photography decades before it was invented.
+
+Or: The first recorded use of the word &quot;awesome&quot; was in the late 16th century, but it originally meant &quot;inspiring awe or fear&quot; - it was often used to describe God or terrifying events. The modern positive slang usage didn&#39;t become popular until the late 20th century.
+
+Or: The Nobel Prize in Economics is not actually a Nobel Prize. It&#39;s officially called &quot;The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel&quot; and was established in 1968 by Sweden&#39;s central bank, not by Alfred Nobel&#39;s will.
+
+I think I&#39;ll go with the zombie ant fungus or something similarly fascinating. Or maybe I&#39;ll share something about the immortal jellyfish.
+
+Actually, let me share something truly obscure: In 1958, a doctor named Clement Hammond performed a self-appendectomy. Wait, that&#39;s been done multiple times. Let me think of something else.
+
+How about: The dot over a lowercase &quot;i&quot; or &quot;j&quot; is called a &quot;tittle.&quot; This word comes from the Latin &quot;titulus,&quot; meaning &quot;small mark.&quot; It&#39;s also related to the phrase &quot;to a T&quot; (meaning precisely), which some etymologists believe originally referred to writing something perfectly, down to the smallest detail like a tittle.
+
+Or: The Great Wall of China is NOT visible from space with the naked eye. This is a persistent myth. Astronauts have confirmed that it&#39;s not visible from low Earth orbit without aid, as it&#39;s too narrow and blends with its surroundings.
+
+Or: There&#39;s a phenomenon called &quot;sonic boom clouds&quot; or &quot;Prandtl-Glauert singularity&quot; where an aircraft approaching the speed of sound creates a visible cone of condensation around it. This isn&#39;t actually the sonic boom itself, but rather a cloud caused by the sudden pressure drop.
+
+Let me go with something really interesting and less known:
+
+In 16th century France, there was a court case where a town&#39;s inhabitants brought legal proceedings against the rats in their area (specifically, they wanted the rats exterminated). A lawyer named Barthélemy de Chasseneuz was appointed to defend the rats. He argued that his clients couldn&#39;t appear in court because they were spread across many villages and couldn&#39;t be notified of the proceedings. When the court said the rats should have been summoned, he argued that the summons would need to be announced in every house in the region. When the court agreed and did this, he then argued that the rats couldn&#39;t come to court because they were in danger from cats along the way. The case was eventually dropped. This is a real historical event known as the &quot;Trial of the Rats&quot; or &quot;Barthélemy de Chasseneuz&#39;s defense of the rats.&quot;
+
+Actually, I think I&#39;ll share something about the &quot;Ball&#39;s Pyramid&quot; - the world&#39;s tallest volcanic stack, which is also home to a rare insect thought to be extinct:
+
+Ball&#39;s Pyramid is an erosional remnant of a shield volcano and caldera that lies about 20 km southeast of Lord Howe Island in the Pacific Ocean. It&#39;s 562 meters (1,844 ft) high, making it the tallest volcanic stack in the world. In 2001, scientists discovered a small population of Lord Howe Island stick insects (Dryococelus australis) living on Ball&#39;s Pyramid. These insects, also known as &quot;tree lobsters,&quot; were thought to be extinct after rats were introduced to Lord Howe Island in 1918. The population on Ball&#39;s Pyramid consisted of fewer than 30 individuals living under a single melaleuca shrub. This is considered one of the rarest insects in the world.
+
+I think I&#39;ll share something really interesting and somewhat obscure. Let me go with the &quot;Trial of the Rats&quot; or the Lord Howe Island stick insect story.
+
+Actually, let me share something more unusual:
+
+The &quot;Year Without a Summer&quot; (1816) - After the eruption of Mount Tambora in Indonesia in April 1815, the largest volcanic eruption in recorded history, global temperatures dropped significantly. In 1816, parts of the world experienced bizarre weather: snow fell in June in New England, frost occurred in July and August, and crops failed across the Northern Hemisphere. This led to food shortages and famine. Interestingly, this event indirectly led to the creation of Mary Shelley&#39;s &quot;Frankenstein,&quot; as she and her companions were trapped indoors during their Swiss vacation due to the constant rain and gloom, leading to a ghost story writing contest.
+
+Or how about this: The &quot;Wow! Signal&quot; - In 1977, a radio telescope detected a strong narrowband radio signal from the direction of the constellation Sagittarius. The signal lasted 72 seconds and appeared to be of non-natural origin (matching the expected signature of an interstellar signal). Astronomer Jerry R. Ehman discovered the signal while reviewing data and wrote &quot;Wow!&quot; on the printout. Despite decades of searching, the signal has never been detected again, and its origin remains a mystery.
+
+I think I&#39;ll go with something truly fascinating. Let me share the story of &quot;The Great Molasses Flood&quot; of 1919:
+
+On January 15, 1919, a large storage tank holding about 2.3 million gallons of molasses burst in the North End of Boston, Massachusetts. The wave of molasses was estimated to be 25 feet high and moved at speeds of up to 35 mph. It killed 21 people and injured 150 more. The molasses caused extensive damage to buildings, including crushing a fire station. Witnesses reported that the air was filled with molasses for days afterward, and the cleanup took weeks. The exact cause of the failure is still debated, with theories ranging from structural defects to a possible fermentation-related pressure buildup due to warm weather. The event led to new regulations for construction and building inspections.
+
+Or let me share something about the &quot;Dancing Plague&quot; of 1518:
+
+In July 1518, in Strasbourg, France (then part of the Holy Roman Empire), a woman named Frau Troffea began dancing in the street without music or apparent reason. Within a month, about 400 people had joined her, dancing uncontrollably. Many danced until they collapsed from exhaustion, and some reportedly died from heart attack, stroke, or exhaustion. Historical documents suggest that authorities initially encouraged the dancing, believing it would cure the affliction, even providing musicians and dance halls. Modern theories about the cause include stress-induced mass psychogenic illness (as the region was experiencing famine and disease) or ergot poisoning from contaminated bread (though this typically causes restricted blood flow, making vigorous dancing unlikely).
+
+I think I&#39;ll go with something really fascinating. Let me share the story of the &quot;immortal jellyfish&quot; or perhaps something about the &quot;Antikythera mechanism&quot;:
+
+The Antikythera mechanism is an ancient Greek hand-powered orrery (a mechanical model of the solar system) that was discovered in 1901 in a shipwreck off the coast of the Greek island Antikythera. It&#39;s dated to approximately 100 BC (during the Hellenistic period). The mechanism is considered the world&#39;s first known analog computer. It was used to predict astronomical positions and eclipses decades in advance. It could also track the four-year cycle of Pan-Hellenic games (similar to the Olympics). The complexity of the device wasn&#39;t seen again until the astronomical clocks of the 14th century in Europe - a gap of about 1,400 years. The mechanism contained at least 37 bronze gears, and modern X-ray imaging has revealed inscriptions that suggest it was used to calculate the positions of the Sun, Moon, and possibly the five known planets.
+
+I think I&#39;ll share something about the Antikythera mechanism or perhaps something more obscure. Let me think...
+
+How about: The word &quot;quarantine&quot; comes from the Italian &quot;quaranta giorni,&quot; meaning &quot;forty days.&quot; This refers to the practice in Venice during the 14th century of isolating ships arriving from plague-affected areas for 40 days before allowing passengers and crew to come ashore. The Black Death was devastating Europe at the time, and this was one of the first public health measures to control the spread of disease.
+
+Or: In the 1920s, a man named J.R.R. Tolkien was grading exam papers as an Oxford professor when he found a blank page. On a whim, he wrote &quot;In a hole in the ground there lived a hobbit.&quot; This became the opening line of &quot;The Hobbit&quot; and launched the entire legendarium of Middle-earth.
+
+I think I&#39;ll share something about a lesser-known historical event or scientific fact. Let me go with the story of the &quot;Carrington Event&quot;:
+
+The Carrington Event of 1859 was the most intense geomagnetic storm in recorded history. It occurred from September 1-2, 1859, during solar cycle 10. A solar coronal mass ejection (CME) hit Earth&#39;s magnetosphere and induced the largest geomagnetic storm ever recorded. The event is named after British astronomer Richard Carrington, who observed the solar flare that caused it. The aurora borealis was so bright that people in the Caribbean could read newspapers by its light. Telegraph systems across Europe and North America failed, with some operators reporting electric shocks and telegraph pylons sparking. If a similar event occurred today, it could cause widespread electrical grid failures and damage to satellites and electronics, with estimated costs in the trillions of dollars.
+
+I think I&#39;ll go with something really obscure. Let me share this:
+
+In 1932, Australia declared &quot;war&quot; on emus. The Great Emu War, as it came to be known, was a nuisance wildlife management operation in Western Australia. The military was deployed with machine guns to cull the emu population that was destroying crops. However, the emus proved surprisingly difficult to kill - they scattered into small groups and were hard to target. The military withdrew after about a month, having killed only a small fraction of the emus. The operation was considered a failure, and the media at the time had a field day mocking the military&#39;s inability to defeat flightless birds.
+
+Actually, I think I&#39;ll share something about the &quot;Tulip Mania&quot; of 1637 or perhaps something else entirely.
+
+Let me go with something truly obscure and fascinating:
+
+The &quot;Phantom Time Hypothesis&quot; is a conspiracy theory proposed by Heribert Illig in 1991, which claims that the years 614-911 CE never actually happened. According to this theory, the early Middle Ages were fabricated, and the calendar was artificially shifted forward. Illig based this on what he saw as a lack of archaeological evidence from this period and perceived inconsistencies in historical records. He suggested that Holy Roman Emperor Otto III, Pope Sylvester II, and Byzantine Emperor Constantine VII conspired to fabricate this period to place their reigns at the turn of the millennium (1000 CE). Mainstream historians and scientists have thoroughly debunked this hypothesis, citing extensive evidence including dendrochronology (tree ring dating), radiocarbon dating, astronomical records from other cultures (like Chinese and Islamic records of Halley&#39;s Comet), and consistent dating of artifacts and events across independent civilizations.
+
+I think I&#39;ll share something interesting about the &quot;Tunguska Event&quot;:
+
+The Tunguska Event was a massive explosion that occurred on June 30, 1908, near the Podkamennaya Tunguska River in Siberia, Russia. The explosion flattened an estimated 80 million trees over an area of 2,150 square kilometers (830 square miles). It&#39;s believed to have been caused by the air burst of a meteoroid or comet fragment about 50-60 meters in diameter. The explosion was estimated to be 1,000 times more powerful than the atomic bomb dropped on Hiroshima. Despite the massive destruction, no impact crater was ever found, leading scientists to conclude that the object exploded in the atmosphere before hitting the ground. The explosion was heard and felt hundreds of kilometers away, and people reported seeing a bright blue light in the sky across Europe and Asia. The event wasn&#39;t scientifically investigated until 1927, nearly 20 years later, due to the remote location and political turmoil in Russia.
+
+I think I&#39;ll share something about a truly obscure fact. Let me go with:
+
+The 1904 Olympic marathon in St. Louis was one of the most bizarre sporting events in history. It took place in extremely hot conditions (over 90°F) on dusty roads with cars driving ahead of the runners (kicking up dust). Here are some of the bizarre events:
+- Fred Lorz (USA) initially appeared to win but was disqualified when it was discovered he had ridden in a car for 11 miles of the race.
+- Thomas Hicks (USA), who was declared the winner, was given strychnine (rat poison in small doses) and brandy by his handlers to keep him going. He was essentially hallucinating and near death when he crossed the finish line.
+- Andarín Carvajal, a Cuban postman, lost all his money in New Orleans and hitchhiked to the race. He ran in long trousers and heavy shoes (he had cut off the legs of his trousers at the knee). During the race, he stopped to chat with spectators and ate some apples from an orchard (which turned out to be rotten), causing him to take a nap.
+- Len Taunyane and Jan Mashiani, two Tswana tribesmen who were in St. Louis as part of the Boer War exhibit at the World&#39;s Fair, became the first African participants in the Olympics. They ran barefoot and finished 9th and 12th respectively. One of them was chased a mile off course by wild dogs.
+
+I think I&#39;ll go with this one or something similar. Let me share it.
+
+Actually, let me share something more concise and interesting:
+
+In 1919, the Boston Red Sox sold Babe Ruth to the New York Yankees, beginning the &quot;Curse of the Bambino.&quot; But here&#39;s something more obscure:
+
+The 1904 St. Louis Olympic Marathon might be my favorite obscure historical event. Let me share that one.
+
+Or maybe I&#39;ll share something about the &quot;Lead Masks Case&quot; in Brazil:
+
+In 1966, two Brazilian electronic technicians, Manoel Pereira da Cruz and Miguel José Viana, were found dead on a hill in Niterói, Brazil. They were wearing formal suits and lead eye masks (typically used to protect against radiation). A notebook was found near their bodies containing cryptic instructions: &quot;Meet at the specified location. Swallow capsules. After the effect, protect metals with lead masks. Await the mask signal.&quot; No cause of death was ever determined, and no capsules were found in their systems (though the autopsy was delayed, so any chemicals might have been broken down). Theories range from UFO encounters to time travel experiments to poisoning. The case remains unsolved.
+
+I think I&#39;ll share the 1904 Olympic Marathon story - it&#39;s fascinating and obscure enough that most people don&#39;t know about it.
+
+Wait, let me think of something else. How about:
+
+Violet Jessop was an ocean liner stewardess who survived the sinking of both the Titanic (1912) and its sister ship, the Britannic (1916). She was also aboard the Olympic when it collided with the HMS Hawke in 1911. She&#39;s sometimes called &quot;Miss Unsinkable.&quot; She continued working on ships after these incidents and died of congestive heart failure in 1971 at age 83.
+
+Or: The &quot;Dyatlov Pass Incident&quot; - In February 1959, nine Russian hikers died mysteriously in the northern Ural Mountains. Their tent was cut open from the inside, and they were found partially dressed (some without shoes) in sub-zero temperatures. Some had severe internal injuries (including major skull fractures and chest trauma) but no external wounds. One was missing her tongue and eyes. Soviet investigators closed the case stating that a &quot;compelling unknown force&quot; caused the deaths. The exact cause remains debated, with theories ranging from avalanches and infrasound to military testing and paradoxical undressing due to hypothermia.
+
+I think I&#39;ll go with the 1904 Olympic Marathon story. It&#39;s fascinating, obscure, and has enough bizarre elements to be truly memorable.
+
+Actually, let me reconsider. The user asked for &quot;something I don&#39;t know.&quot; I should pick something that&#39;s genuinely surprising and obscure. The 1904 Olympic Marathon is a good choice. Let me also consider:
+
+The &quot;Tromelin Island slaves&quot; - In 1761, a French ship called the Utile was shipwrecked on a small, isolated island (now known as Tromelin Island) in the Indian Ocean. The crew built a raft and escaped to Madagascar, leaving behind 60 Malagasy slaves who had been illegally trafficked. They promised to return for them but never did. The slaves survived on the island for 15 years, maintaining a signal fire and developing a sophisticated system for collecting water and food. In 1776, a rescue ship finally arrived and found seven survivors - a woman and six children (some born on the island). Archaeological excavations in recent years have revealed evidence of their sophisticated survival strategies, including a kitchen with different compartments for different types of food.
+
+I think I&#39;ll go with the 1904 Olympic Marathon story. It&#39;s the most entertaining and obscure.
+
+Let me compose my response about the 1904 St. Louis Olympic Marathon.
+
+</div>
+                </details><div class="response-text hidden" data-run="2"><span class="error-text">Error: HTTP 402: {&quot;error&quot;:{&quot;message&quot;:&quot;This request requires more credits, or fewer max_tokens. You requested up to 10000 tokens, but can only afford 5882. To increase, visit https://openrouter.ai/workspaces/default/ke</span></div>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/aion-labs-aion-3.5-mini/">← AionLabs: Aion 3.5 Mini</a>
+            <a href="/">all models</a>
+            <a href="/m/upstage-solar-mini4/">Upstage: Solar Mini 4 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

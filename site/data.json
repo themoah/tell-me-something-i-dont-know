@@ -4,32 +4,32 @@
     "temperature": 0.7,
     "max_tokens": 500,
     "runs_per_model": 3,
-    "generated_at": "2026-09-21T15:35:30.354Z",
-    "total_models": 180
+    "generated_at": "2026-09-28T17:27:07.082Z",
+    "total_models": 202
   },
   "stats": {
-    "total_models": 180,
-    "total_responses": 528,
-    "total_tokens": 554512,
+    "total_models": 202,
+    "total_responses": 576,
+    "total_tokens": 591241,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
-      "octopus": 90,
-      "jellyfish": 56,
-      "sharks": 44,
-      "cleopatra": 30,
-      "honey": 28,
-      "venus": 23,
-      "oxford university": 22,
-      "wombats": 19,
-      "anglo-zanzibar war": 17,
-      "bananas": 17,
+      "octopus": 95,
+      "jellyfish": 57,
+      "sharks": 49,
+      "cleopatra": 31,
+      "honey": 29,
+      "venus": 29,
+      "oxford university": 24,
+      "wombats": 21,
+      "anglo-zanzibar war": 20,
+      "bananas": 19,
       "wood wide web": 12,
       "sloths": 11,
-      "eiffel tower": 6,
+      "eiffel tower": 7,
       "space": 3,
       "tardigrade": 2,
-      "dna": 2,
-      "mantis shrimp": 1
+      "mantis shrimp": 2,
+      "dna": 2
     }
   },
   "models": [
@@ -6936,6 +6936,776 @@
           "tokens_completion": 241,
           "finish_reason": "stop",
           "topics": []
+        }
+      ]
+    },
+    {
+      "id": "typesafe/jev-router",
+      "name": "TypeSafe: Jev Router",
+      "provider": "Typesafe",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a curious one: Around 2,000 years ago, the engineer Hero of Alexandria described a machine that dispensed holy water. Drop a coin in, and its weight tipped a lever that briefly opened a valve; once the coin slid off, the valve shut again. Basically, an ancient coin-operated dispenser.",
+          "tokens_prompt": 13,
+          "tokens_completion": 343,
+          "finish_reason": "stop",
+          "reasoning": "**Finding interesting facts**\n\nI need to respond with an interesting fact without assuming the user's prior knowledge. I should aim for something surprising yet accurate. The idea of wombat cube poop is common, so maybe I should share a scientifically quirky fact instead. How about the surprising detail that Earth's inner core's rotation oscillates? It might be unsettling but unusual. I could also consider language facts, like how \"queue\" is just \"Q\" followed by four silent letters—it's a playful twist!**Sharing vending machine history**\n\nI think a fun fact to share is about the first known vending machine, created by Hero of Alexandria in the 1st century CE. It dispensed holy water, and the weight of the coin opened a valve. That's a delightful detail, and I should explain how it works: the coin drops onto a balance beam, which then opens the valve when the weight is right. I'll present it in an inviting way, starting with \"Here's one you may not know...\" to engage the user!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Greenland sharks may live for centuries. Scientists estimated their ages by radiocarbon-dating proteins in their eye lenses; the largest shark studied was estimated to be about 392 years old, though the estimate has a wide margin of uncertainty.",
+          "tokens_prompt": 13,
+          "tokens_completion": 647,
+          "finish_reason": "stop",
+          "reasoning": "**Finding interesting facts**\n\nI want to deliver an interesting fact, but I can't know what the user already knows. Maybe I could mention wombat cubes, which is quite common. Another possibly surprising fact is that the Eiffel Tower grows! For a more obscure but fascinating one, reindeer eyes change color seasonally from gold to blue to adapt to Arctic light. Alternatively, I could note that Oxford University is older than the Aztec Empire. I’m looking for something useful but vivid!**Sharing surprising facts**\n\nI’m considering some interesting facts to share. For instance, did you know the common wood frog can freeze solid each winter, with its heart stopping? That one's known but still fascinating! Another is that \"muscle\" comes from the Latin word musculus, which means \"little mouse\" because a flexed bicep resembles a mouse beneath the skin. However, it’s important to pick a fact that the user might not know. \n\nHow about this: a day on Venus is longer than a year there? That’s both surprising and reliable!**Exploring unique facts**\n\nI think I could mention that a teaspoon of healthy soil might have more microorganisms than the number of people on Earth, but that’s somewhat broad and variable. A more charming and obscure fact is that the first oranges weren’t actually orange; the original ones were green! This is still seen in Vietnam and Thailand, where they grow green oranges. \n\nAlternatively, I’ve got a scientifically interesting tidbit: the only mammal known to have four knees is the giraffe. That could be fun to share!",
+          "topics": [
+            "sharks"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Cleopatra lived closer in time to the 1969 Moon landing than to the building of the Great Pyramid of Giza. The pyramid was built around 2560 BCE; Cleopatra died in 30 BCE. That’s roughly 2,530 years from the pyramid to Cleopatra, versus about 2,000 years from Cleopatra to the Moon landing.",
+          "tokens_prompt": 13,
+          "tokens_completion": 481,
+          "finish_reason": "stop",
+          "reasoning": "**Providing surprising facts**\n\nI need to offer some interesting facts, but it can be tough since I can't know what the user already knows. For example, a fun one is that wombats produce cube-shaped poop due to their unique intestinal mechanics. \n\nI could also mention that the Eiffel Tower can expand by up to 15 cm in the summer from thermal expansion. Here’s another: a day on Venus is longer than a year! \n\nLastly, I might point out that Oxford University has been teaching since 1096, while the Aztec Empire began in 1428—332 years apart!**Sharing surprising facts**\n\nI want to provide some interesting and lesser-known facts. For instance, I could mention that Cleopatra lived closer in time to the moon landing in 1969 than to the Great Pyramid of Giza, which was built around 2560 BCE. Cleopatra died in 30 BCE, making the time difference about 1,998 years to the moon landing and only around 2,530 years to the pyramid. I can phrase it like this: \"Cleopatra VII's death was closer to the moon landing than to the pyramid's completion.\" This is a neat fact!",
+          "topics": [
+            "cleopatra"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron/perceptron-mk1.5",
+      "name": "Perceptron: Perceptron Mk1.5",
+      "provider": "Perceptron",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's something you probably don't know:\n\nThe shortest war in history was between Zanzibar and England on August 27, 1896. The Sultan of Zanzibar refused to step down from his position when the British installed a more compliant ruler. He declared war but only lasted 38 minutes before surrendering.",
+          "tokens_prompt": 14,
+          "tokens_completion": 74,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here are some interesting facts that you may not be aware of:\n\n1. The shortest war in history was between Britain and Zanzibar on August 27, 1896. It lasted only 38 minutes.\n\n2. There are more trees on Earth (about 3 trillion) than there are stars in the Milky Way galaxy (estimated at 100-400 billion).\n\n3. A group of flamingos is called a \"flamboyance.\" Other animal groups have similarly colorful names, such as an \"army\" of ants or a \"shrewdness\" of apes.\n\n4. The Eiffel Tower can grow by up to 15 cm (6 inches) during the summer due to thermal expansion.\n\n5. Some species of jellyfish, like Turritopsis dohrnii, are biologically immortal. They can revert back to their juvenile state after reaching maturity.\n\n6. The longest word in the English language, according to the Oxford English Dictionary, is \"pneumonoultramicroscopicsilicovolcanoconiosis,\" which refers to a lung disease caused by inhaling very fine particles of silica dust. However, many people consider this word contrived.\n\n7. Bananas are berries, but strawberries are not. In botanical terms, a berry is a fruit produced from the ovary of a single flower and contains seeds embedded in the flesh.\n\n8. There is no official language spoken in the United States at the federal level. While English is widely used, it's not designated as the national language by law.\n\n9. The inventor of the World Wide Web, Tim Berners-Lee, still owns the original domain name for the web, world wide web dot com.\n\n10. The human brain uses about 20% of the body's energy despite making up only 2% of its weight.",
+          "tokens_prompt": 14,
+          "tokens_completion": 397,
+          "finish_reason": "stop",
+          "topics": [
+            "jellyfish",
+            "eiffel tower",
+            "bananas",
+            "anglo-zanzibar war"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Certainly! Here's something you might not know:\n\nThe shortest war in history was between Britain and Zanzibar on August 27, 1896. The Sultan of Zanzibar refused to step down as agreed upon with the British when his predecessor died. In response, the British sent an ultimatum demanding that he abdicate by 9:00 AM the next day. When the deadline passed without compliance, a British fleet opened fire on the palace. After only 38 minutes, the battle concluded with the Sultan's forces surrendering. This conflict remains the shortest recorded war in modern history.",
+          "tokens_prompt": 14,
+          "tokens_completion": 130,
+          "finish_reason": "stop",
+          "topics": [
+            "anglo-zanzibar war"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fireworks/ember-1",
+      "name": "Fireworks: Ember-1",
+      "provider": "Fireworks",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: roughly 8% of your DNA isn't human in origin—it's viral. Over tens of millions of years, retroviruses infected our ancestors' reproductive cells and left their genetic code permanently stitched into our genome. Most of those viral fossils sit there doing nothing, but evolution repurposed at least one of them: a gene called syncytin, which came from an ancient virus, is essential for forming the placenta. Different mammal lineages independently co-opted viral genes for the same job, meaning live birth in mammals may owe its existence to ancient viral infections.\n\nBonus: France's last execution by guillotine happened in 1977—the same year *Star Wars* premiered.\n\nWant more from a particular corner—history, biology, space, weird true crime?",
+          "tokens_prompt": 95,
+          "tokens_completion": 5348,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. This is an interesting challenge because I don't actually know what this person knows. They could be an expert in many fields, or a curious generalist. The best I can do is pick something genuinely obscure or surprising that's unlikely to be common knowledge, and present it in an engaging way.\n\nLet me think about what would be a good candidate. I want something that is:\n1. Genuinely true and verifiable\n2. Obscure enough that most people wouldn't know it\n3. Interesting enough to be worth telling\n4. Not just a random factoid but something with some depth or surprise\n\nSome candidates:\n\n1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** - This is fairly well-known now, often shared on social media. Probably too common.\n\n2. **Oxford University is older than the Aztec Empire** - Also fairly well-known at this point.\n\n3. **Woolly mammoths were alive when the pyramids were built** - Also becoming common knowledge.\n\n4. **Honey never spoils** - Too well known.\n\n5. **The Turritopsis dohrnii \"immortal jellyfish\"** - Fairly well known now.\n\n6. **There's a species of fungus that can grow in nuclear reactor radiation (Chernobyl fungi that use melanin to convert radiation into chemical energy - radiotrophic fungi)** - This is interesting and less commonly known.\n\n7. **The \"Wow! signal\"** - Fairly well known among space enthusiasts.\n\n8. **The longest time between two twins being born is 87 days** - Obscure but maybe not that interesting.\n\n9. **Nintendo was founded in 1889 as a playing card company** - Fairly well known now.\n\n10. **The Sahara Desert was green/verdant relatively recently (African Humid Period, ending ~5,500 years ago) and cycles between green and desert on roughly 20,000-year cycles due to axial precession** - This is genuinely interesting and not super well known.\n\n11. **Sharks are older than trees** - Sharks ~450 million years, trees ~350-390 million years. Sharks are also older than Saturn's rings possibly, and older than the North Star. This is a good one but getting more well-known.\n\n12. **The concept of \"0\" as a number had to be invented and was controversial** - Interesting but abstract.\n\n13. **There are more possible chess games than atoms in the observable universe (Shannon number)** - Well known among certain circles.\n\n14. **Cleopatra was ethnically Greek (Macedonian), not Egyptian** - Fairly well known.\n\n15. **The Eiffel Tower grows ~15 cm taller in summer due to thermal expansion** - Moderately known.\n\n16. **A day on Venus is longer than a year on Venus** - Venus rotates so slowly (243 Earth days) that its sidereal day is longer than its orbital period (225 Earth days). Also Venus rotates backwards. This is a good one.\n\n17. **The Great Wall of China is not visible from space with the naked eye** - Well known debunk.\n\n18. **Humans share ~60% DNA with bananas** - Misleading stat, commonly shared.\n\n19. **The \"mantis shrimp can see 16 colors\" thing is actually misleading** - they have 12-16 photoreceptors but are actually worse at color discrimination than humans. This is a good \"something you think you know is wrong\" fact.\n\n20. **Betelgeuse and the Orion constellation: the star Bellatrix is sometimes called the \"Amazon Star\"** - obscure.\n\n21. **The first person to survive going over Niagara Falls in a barrel was a 63-year-old schoolteacher, Annie Edson Taylor, in 1901** - moderately known.\n\n22. **There's a town in Norway (Rjukan) that uses giant mirrors to reflect sunlight into the town square because it's in a valley that gets no direct sun in winter** - Interesting.\n\n23. **The blobfish only looks blobby out of water; at depth it looks like a normal fish** - Good \"correction\" fact.\n\n24. **Wright Brothers' first flight (1903) to Moon landing (1969) was only 66 years** - Well known.\n\n25. **The last execution by guillotine in France was in 1977, the same year Star Wars premiered** - This is a great one. Hamida Djandoubi, September 10, 1977. Star Wars premiered in the US in May 1977 (though it came to France in October 1977). Still, the juxtaposition is striking.\n\n26. **Harvard was founded before calculus was invented** - Harvard 1636, Newton/Leibniz calculus ~1680s. Good one.\n\n27. **The Spanish Inquisition was expected - they actually gave 30 days notice** - funny Monty Python reference but the reality is interesting.\n\n28. **Tardigrades can survive in space** - fairly well known now.\n\n29. **There's a jellyfish-like organism (actually a siphonophore) longer than a blue whale - the Praya dubia or the Apolemia siphonophore found in 2020 was possibly 45+ meters** - interesting.\n\n30. **The \"Sailing stones\" of Death Valley mystery was solved - thin ice sheets and wind** - moderately known.\n\n31. **Humans and giraffes have the same number of neck vertebrae (7)** - well known.\n\n32. **The inventor of the Pringles can, Fred Baur, was buried in one** - fun fact, moderately known.\n\n33. **The QWERTY keyboard wasn't designed to slow typists down** - the actual history is more nuanced.\n\n34. **There are more trees on Earth (~3 trillion) than stars in the Milky Way (~100-400 billion)** - Good one, moderately known.\n\n35. **The first computer programmer was Ada Lovelace in the 1840s** - well known.\n\n36. **The Sahara is only ~10,000 years old as a desert and was green with lakes and hippos as recently as 6,000 years ago** - related to #10.\n\n37. **The \"Great Molasses Flood\" of Boston 1919 - a wave of molasses killed 21 people** - moderately known, very interesting.\n\n38. **Octopuses have three hearts and blue blood, and can edit their own RNA** - the RNA editing part is less known and fascinating.\n\n39. **The \"Dunning-Kruger effect\" original study was inspired by a bank robber who rubbed lemon juice on his face thinking it would make him invisible to cameras** - This is a great one! McArthur Wheeler, 1995. Less commonly known backstory.\n\n40. **The shortest war in history was the Anglo-Zanzibar War of 1896, lasting 38-45 minutes** - moderately known.\n\n41. **Napoleon was actually average height for his time (5'6\"-5'7\" in French inches)** - well known debunk.\n\n42. **The first 1GB hard drive (IBM 3380, 1980) weighed over 500 pounds and cost $40,000+** - moderately known.\n\n43. **A single teaspoon of neutron star would weigh ~6 billion tons** - well known.\n\n44. **The \"Bloop\" sound detected in the Pacific in 1997 was eventually attributed to icequakes, not a sea monster** - moderately known.\n\n45. **The Eiffel Tower was originally intended for Barcelona but was rejected** - actually this is disputed/possibly false.\n\n46. **Honeybees can recognize human faces** - interesting.\n\n47. **Crows can hold grudges and pass them to their offspring** - interesting, moderately known.\n\n48. **The \"overview effect\" experienced by astronauts** - interesting concept.\n\n49. **There's a giant underground \"ocean\" - ringwoodite in the mantle holds water equivalent to multiple oceans** - interesting, moderately known.\n\n50. **The 1918 flu pandemic infected ~1/3 of the world's population** - well known post-COVID.\n\n51. **Bananas are berries but strawberries aren't** - well known.\n\n52. **The \"Sagan standard\" / \"Eiffel Tower sold twice by Victor Lustig\"** - Victor Lustig \"sold\" the Eiffel Tower twice to scrap metal dealers. Great story, moderately known.\n\n53. **In 1977, we received the \"Wow!\" signal; in 2012, humanity replied** - moderately known.\n\n54. **The \"Paris syndrome\" - Japanese tourists experiencing shock when Paris doesn't meet expectations** - interesting, moderately known.\n\n55. **The \"Tunguska event\" 1908 - flattened 800 sq miles of forest, likely a meteor air burst** - moderately known.\n\n56. **The \"demon core\" - a plutonium core that killed two scientists in separate criticality accidents at Los Alamos (Harry Daghlian and Louis Slotin)** - fascinating and dark, moderately known among history buffs.\n\n57. **The \"dancing plague\" of 1518 - hundreds of people danced uncontrollably for days in Strasbourg, some reportedly to death** - fascinating and obscure-ish.\n\n58. **The \"London Beer Flood\" of 1814** - obscure.\n\n59. **The \"Kentucky meat shower\" of 1876 - meat fell from the sky** - very obscure.\n\n60. **The \"Great Emu War\" of Australia 1932 - the military lost to emus** - well known on the internet.\n\n61. **The \"Tuskegee\" - no, too dark and known.**\n\n62. **The \"Solway Firth Spaceman\" photo** - obscure.\n\n63. **The \"Lead Masks Case\" in Brazil 1966** - very obscure.\n\n64. **The \"Max Headroom broadcast intrusion\" of 1987 - unsolved TV hijacking** - moderately known.\n\n65. **The \"Salish Sea feet\" - detached feet washing ashore in sneakers** - moderately known.\n\n66. **The \"Bloop,\" \"Julia,\" \"Slow Down\" ocean sounds** - moderately known.\n\n67. **The \"Green children of Woolpit\"** - obscure medieval legend.\n\n68. **The \"Year Without a Summer\" 1816 - caused by Mount Tambora eruption; led to Mary Shelley writing Frankenstein** - moderately known, great connections.\n\n69. **The \"Carrington Event\" 1859 - solar storm that set telegraph offices on fire; if it happened today it would devastate our grid** - moderately known, very relevant.\n\n70. **The \"Toba catastrophe theory\" - ~74,000 years ago, supervolcano may have reduced human population to a few thousand** - interesting, moderately known.\n\n71. **The \"Antikythera mechanism\" - ancient Greek analog computer, ~2000 years old, predicted eclipses** - moderately known, fascinating.\n\n72. **The \"Baghdad Battery\"** - disputed, probably not a battery.\n\n73. **The \"Voynich manuscript\"** - well known among mystery fans.\n\n74. **The \"Piri Reis map\"** - moderately known.\n\n75. **The \"Göbekli Tepe\" - temple complex ~11,500 years old, built by hunter-gatherers, predating agriculture, rewriting theories of civilization** - fascinating, becoming better known.\n\n76. **The \"Denisovans\" - known almost entirely from DNA; a finger bone and a jawbone** - fascinating.\n\n77. **The \"Hobbit\" Homo floresiensis** - moderately known.\n\n78. **The \"Red Deer Cave people\"** - obscure.\n\n79. **The \"Saccorhytus\" - our earliest ancestor looked like a wrinkly sac** - obscure.\n\n80. **The \"LUCA\" - last universal common ancestor** - abstract.\n\n81. **The \"endosymbiotic theory\" - mitochondria were once free-living bacteria; the evidence: they have their own DNA, reproduce independently** - moderately known.\n\n82. **The \"horizontal gene transfer\" - ~8% of human DNA is viral in origin (endogenous retroviruses)** - fascinating! HERVs. And the syncytin gene, essential for placenta formation, comes from a virus. This is a great one - \"you are part virus, and mammals might not have placentas without an ancient viral infection.\"\n\n83. **The \"toxoplasma\" - parasite that makes rats unafraid of cats, may affect human behavior** - moderately known.\n\n84. **The \"Ophiocordyceps\" - zombie ant fungus** - well known (Last of Us).\n\n85. **The \"wood wide web\" - mycorrhizal networks connecting trees** - becoming well known.\n\n86. **The \"oldest living organisms\" - Pando aspen grove ~80,000 years (disputed), Great Basin bristlecone pines ~5,000 years, \"Methuselah\"** - moderately known.\n\n87. **The \"immortal jellyfish\"** - known.\n\n88. **The \"naked mole rat\" - doesn't get cancer, barely ages, feels no pain from acid/capsaicin, can survive 18 min without oxygen** - fascinating, moderately known.\n\n89. **The \"axolotl\" regeneration** - known.\n\n90. **The \"tardigrade\"** - known.\n\n91. **The \"Greenland shark\" - can live 400+ years, doesn't reach sexual maturity until ~150** - becoming known, still amazing.\n\n92. **The \"ocean quahog\" Ming - 507 years old, killed by researchers opening it** - moderately known, darkly funny.\n\n93. **The \"Turritopsis\"** - known.\n\n94. **The \"hydra\" biological immortality** - obscure.\n\n95. **The \"lobster telomerase\"** - known-ish.\n\n96. **The \"bowhead whale\" 200+ years, found with 19th century harpoon tips embedded** - fascinating! In 2007, a bowhead was caught with a harpoon fragment dated to ~1880s.\n\n97. **The \"kakapo\"** - known-ish.\n\n98. **The \"axolotl\"** - known.\n\n99. **The \"mantis shrimp punch\" - cavitation bubbles, shockwaves, light emission** - well known.\n\n100. **The \"pistol shrimp\" - claw snap reaches ~4,700°C briefly, louder than a gunshot** - moderately known.\n\nOK, I have lots of candidates. Now, which to choose? The user asked for \"something I don't know\" - singular. I should probably give one good fact with some depth, or maybe a few options. Given the format guidance, a conversational response works best. I could give one standout fact with interesting details, or offer a couple.\n\nI think the best approach: pick one genuinely surprising, verifiable, and not-too-common fact, tell it well with the interesting details, and maybe offer to share more in a domain they care about. Alternatively, give a small handful across domains to increase the odds one is new to them.\n\nActually, since I can't know what they know, offering a few across different domains increases the hit rate. But a single well-told fact is more satisfying than a list of trivia. Let me think about which single fact has the best combination of \"likely unknown\" + \"genuinely interesting.\"\n\nStrong candidates for a single feature:\n- The guillotine/Star Wars juxtaposition (1977) - great but increasingly known\n- The lemon juice bank robber inspiring Dunning-Kruger - excellent backstory to something people know\n- Sharks older than trees - increasingly known\n- Venus day longer than year - good\n- 8% of human DNA is viral, and the placenta gene (syncytin) came from a virus - this is genuinely profound and less commonly known\n- Greenland shark living 400+ years - becoming known\n- Bowhead whale with 19th-century harpoon - great\n- Göbekli Tepe rewriting civilization - becoming known\n- The Sahara was green 6,000 years ago with hippos - good\n- The demon core - dark but fascinating\n- Dancing plague 1518 - obscure and bizarre\n- Harvard older than calculus - good\n- Oxford older than Aztec Empire - known\n- Cleopatra/pyramids/moon - known\n\nI like the viral DNA one because it's profound (it changes how you think about what \"human\" DNA is), verifiable, and not as commonly shared as the \"60% banana DNA\" stat. The syncytin detail is the kicker: a gene from an ancient retrovirus is essential for the placenta to form, meaning mammals' ability to bear live young may trace to a viral infection ~100+ million years ago. That's a \"whoa\" fact.\n\nAlternatively, the lemon juice robber is a great story with narrative structure. McArthur Wheeler robbed two banks in Pittsburgh in 1995 in broad daylight with no disguise except lemon juice on his face, believing lemon juice's use as invisible ink meant it would make his face invisible to cameras. He was caught within hours. David Dunning read about it and it inspired the Dunning-Kruger effect research (\"If Wheeler was too stupid to be a bank robber, perhaps he was also too stupid to know he was too stupid to be a bank robber\"). This is a great story because most people know the Dunning-Kruger effect but not its origin.\n\nHmm, let me double check the lemon juice story details: McArthur Wheeler, April 1995, Pittsburgh, robbed two banks, no mask, lemon juice on face. He was 5'6\", ~270 lbs. Police showed surveillance photos on the news; he was identified and arrested within about an hour of the broadcast. He reportedly said \"But I wore the juice.\" Dunning read about it in a 1996 almanac of bizarre news and it inspired the 1999 paper \"Unskilled and Unaware of It.\" Yes, this checks out. One caveat: some retellings embellish; the core facts are solid.\n\nThe viral DNA: ~8% of the human genome is endogenous retroviral sequences (HERVs). Syncytin-1 derives from the env gene of an endogenous retrovirus (ERVW-1), crucial for syncytiotrophoblast formation in the placenta. Multiple independent co-options of retroviral env genes occurred in different mammal lineages. Solid science.\n\nThe guillotine fact: Hamida Djandoubi, executed September 10, 1977, Marseille, last person guillotined in France (and Western Europe). Star Wars premiered May 25, 1977 in the US. Capital punishment abolished in France 1981. Solid.\n\nGreenland shark: 2016 Science paper, radiocarbon dating of eye lens proteins, oldest specimen estimated 392 ± 120 years (range ~272-512). Sexual maturity ~150 years. Solid.\n\nBowhead whale: 2007, a bowhead caught off Alaska had a harpoon head fragment (bomb lance) embedded, dated to ~1879-1885 manufacture in New Bedford. Estimated age at death ~130+. Other bowheads estimated over 200 via amino acid racemization. Solid.\n\nVenus: sidereal rotation period 243.025 Earth days (retrograde), orbital period 224.7 Earth days. Solar day on Venus is ~116.75 Earth days. So \"a day on Venus is longer than a year on Venus\" is true for sidereal day. Solid.\n\nSahara green: African Humid Period, ~14,800-5,500 years ago (varies), savanna/lakes, hippos, rock art in Tassili n'Ajjer depicting swimmers. Driven by orbital precession; cycles roughly every ~20,000-23,000 years. Solid.\n\nDancing plague: July 1518, Strasbourg, Frau Troffea began dancing; within a month ~400 people; some died of strokes/heart attacks/exhaustion (death toll disputed). Theories: ergot poisoning (now doubted), mass psychogenic illness, stress. Solid enough with hedging on deaths.\n\nGöbekli Tepe: ~11,500 years old (Pre-Pottery Neolithic A/B), southeastern Turkey, monumental stone circles with T-shaped pillars, built by hunter-gatherers before agriculture. Solid.\n\nHarvard 1636; Newton's Principia 1687; Leibniz published calculus 1684. Solid.\n\nDecision: I'll lead with one strong fact and maybe add one or two shorter ones, then invite them to specify a domain. Actually, the instruction says conversational, not listy. Let me consider format: A short response with one featured fact told well (2-4 sentences), possibly followed by a quick bonus or an offer for more. Keep it tight. No headers, no bullets needed. Maybe 80-150 words.\n\nWhich one to feature? I'll go with the lemon juice / Dunning-Kruger origin story — it's a narrative, connects to something they likely know (Dunning-Kruger), and the detail \"But I wore the juice\" is memorable. Alternatively the viral DNA one is more profound. Hmm.\n\nActually, let me reconsider: the user might be testing me or just bored. A story-format fact is more entertaining. The lemon juice robber is delightful. But is it too well known? It's circulated on Reddit/TIL a fair amount. The viral DNA one is less circulated. The guillotine/Star Wars one is very circulated.\n\nMaybe I give one main fact plus a one-liner bonus, increasing hit chance. E.g., main: syncytin/viral DNA. Bonus: guillotine 1977. Or main: lemon juice; bonus: Venus.\n\nLet me draft:\n\n\"Here's one: about 8% of your DNA isn't human in origin — it's viral. Over hundreds of millions of years, retroviruses infected our ancestors' germ cells and left their genetic code permanently embedded in ours. Most of these viral fossils are inert, but evolution repurposed at least one: the gene syncytin, which came from an ancient virus, is essential for forming the placenta. In other words, mammals' ability to carry live young may owe its existence to a viral infection roughly 100 million years ago.\"\n\nThat's good. Add a bonus? \"Bonus: France's last guillotine execution happened in 1977 — the year Star Wars came out.\" That's a punchy one-liner.\n\nThen maybe: \"Want more from a particular corner — history, biology, space?\"\n\nFormat check: conversational, short paragraphs, no markdown headers needed. Length ~120-150 words. That seems right for \"tell me something I don't know\" — not a lecture.\n\nOne consideration: accuracy hedging. The syncytin story: syncytin-1 in humans derives from ERVW-1 env gene, entered primate lineage ~25-40 million years ago (some estimates ~40 mya). Other syncytins (syncytin-2 ~60 mya; rodents independently co-opted their own syncytins). The \"mammals' placenta\" claim: different mammal lineages independently captured retroviral env genes for placenta function, so the broad claim \"mammalian placentation owes to viral genes\" is reasonable but I should phrase carefully — \"a viral gene was co-opted multiple times independently in different mammal lineages.\" The 100 million year figure: the placenta itself is ~100+ myo; syncytin captures range ~25-80 mya depending on lineage. To be safe: \"tens of millions of years ago\" or \"an ancient viral infection.\" I'll say \"at least 25-40 million years ago in our primate lineage\" or keep it vaguer: \"tens of millions of years ago.\" Good.\n\nAlso 8% figure: HERVs ~8% of human genome. Solid.\n\nThe guillotine: Hamida Djandoubi, Sept 10, 1977. Star Wars US release May 25, 1977. Solid. I'll say \"the same year Star Wars premiered.\"\n\nAlright, final response: feature viral DNA/syncytin, bonus guillotine, offer more. Keep it engaging.",
+          "topics": []
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        }
+      ]
+    },
+    {
+      "id": "z-ai/glm-5.3-prime",
+      "name": "Z.ai: GLM 5.3 Prime",
+      "provider": "Z Ai",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        }
+      ]
+    },
+    {
+      "id": "qwen/qwen3.8-max-prime",
+      "name": "Qwen: Qwen3.8 Max Prime",
+      "provider": "Alibaba",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s one: **Oxford University is older than the Aztec Empire.**\n\nTeaching at Oxford existed by **1096**, while the Aztec Empire is usually dated to the founding of the Triple Alliance in **1428** — over 300 years later.",
+          "tokens_prompt": 69,
+          "tokens_completion": 130,
+          "finish_reason": "stop",
+          "reasoning": "We need to respond to user: \"Tell me something I don't know.\" Need produce final. Need maybe interesting fact. Keep concise. Since user asks something they don't know, we can't know their knowledge, but can offer obscure fact. Need maybe with caveat. Final in English. Ensure no analysis outside? final only.",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        }
+      ]
+    },
+    {
+      "id": "stealth/space-bunny-alpha",
+      "name": "Space Bunny Alpha",
+      "provider": "Stealth",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a lesser-known fact: **Oxford University is older than the Aztec Empire**. Oxford began teaching as early as 1096, while the Aztec Empire was founded in 1428—more than 300 years later.",
+          "tokens_prompt": 163,
+          "tokens_completion": 554,
+          "finish_reason": "stop",
+          "reasoning": "We need answer to broad request. Need tell something surprising, perhaps fact. Need ensure accurate, interesting, concise maybe offer. \"Octopuses have three hearts...\" Common known maybe user asks don't know, impossible know what they know. Could say \"Here's a lesser-known fact...\" Need perhaps something genuinely obscure. Need be careful factual. Example: \"A group of flamingos is a flamboyance.\" That's likely known. \"Honey never spoils\" maybe. \"Bananas are berries, strawberries aren't.\" Nice. \"Octopuses have three hearts, and blue blood.\" Maybe not unknown. Could choose unusual fact: \"A day on Venus is longer than its year.\" Accurate: sidereal rotation period ~243 Earth days, orbital period 224.7 days. Explain. This is a fun fact likely unknown. Need maybe caveat \"Although...\" Let's formulate. \"On Venus, a single day (time for one rotation relative to Sun) lasts about 243 Earth days, while a year is only about 225 Earth days—so a day lasts longer than a year.\" Nuance: solar day 116.75 Earth days, sidereal day 243; \"day\" ambiguity. If say relative to stars, yes; from sunrise to sunrise solar day shorter than year. To avoid misleading, state rotation relative to its Sun? Let's check: Venus sidereal day 243 Earth days, orbital 224.7. A solar day is 116.75 Earth days due retrograde rotation. Saying \"a day\" often rotation period 243, but need clarify. Could give robust fact: \"Venus rotates backward compared with most planets, and its rotation period relative to its sun...\" Actually retrograde. Maybe simpler obscure: \"There are more possible iterations of a 3x3 Rubik's Cube than...\" Need exact.\n\nCould tell something unexpected: \"The inventor of the Pringles can is buried in one.\" Is that true? Fredric Baur's ashes in original can, yes, but maybe weird. Or \"Oxford University is older than the Aztec Empire.\" Oxford teaching 1096, Aztec 1428; university formal origins 1096. Interesting. Need perhaps answer direct.\n\nMaybe: \"The Eiffel Tower grows about 15 cm taller in summer because heat expands the iron.\" Accurate, though about 15 cm. User asks tell me something I don't know. We can state one. Let's choose a less obvious fact with explanation. \"A group of jellyfish is a smack\" maybe obscure but not substantive.",
+          "topics": [
+            "oxford university"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Wombats produce cube-shaped poop. The varying elasticity of their intestines and the shape of their anuses mold it into cubes, which helps the droppings stay in place instead of rolling away—useful for marking territory.",
+          "tokens_prompt": 163,
+          "tokens_completion": 385,
+          "finish_reason": "stop",
+          "reasoning": "We need answer to broad request. Need tell something surprising perhaps factual. Need maybe concise. Need ensure accuracy. \"Octopuses don't have a central brain\"? They have brain centralized in head but distributed nervous system. \"A group of flamingos is a flamboyance.\" That's something likely known, not unknown. Better interesting obscure fact. Honey never spoils? Archaeologists found honey in Egyptian tombs edible after 3000 years, but claims. Or bananas radioactive. Could say \"Wombat poop is cube-shaped.\" Interesting and true, due to varying elasticity in intestines and square anus? Let's formulate with explanation. User asks tell me something I don't know. We can't know what they know, so say \"Here’s a quirky fact...\" Wombat intestines produce cube-shaped droppings, which don't roll away, likely territory marking. Is cube shape exact? Yes, intestinal elasticity and varying muscle contractions, anus shape. Need perhaps note scientists replicated in 2023? Maybe not.\n\nCould be \"A day on Venus is longer than its year.\" Venus rotation period ~243 Earth days, orbital period ~224.7 days. Need clarify solar day vs sidereal day. This is a known fun fact. \"A day on Venus (sunrise to sunrise) is about 117 Earth years? Wait sidereal day -243 days; orbital 224.7 days. A solar day is 116.75 Earth days, still longer than year. If simply day means rotation, ambiguity. Better use \"wombat poop cube.\" Need tell something perhaps \"Octopus taste buds on arms\" accurate. Let's answer with a delightful obscure fact, maybe source-like.\n\nNeed not overdo.",
+          "topics": [
+            "wombats"
+          ]
+        },
+        {
+          "success": true,
+          "content": "On Venus, one day lasts about **117 Earth days**, while its year lasts only about **225 Earth days**—so a day there is shorter than its year.",
+          "tokens_prompt": 163,
+          "tokens_completion": 456,
+          "finish_reason": "stop",
+          "reasoning": "We need answer to vague request. Need tell something surprising, likely fact. Need ensure accurate, concise perhaps offer fact. \"Something I don't know\" impossible know user's knowledge, choose obscure interesting fact. Could say honey never spoils? Common, maybe they may know. More novel: octopuses have three hearts and blue blood, but common. Need perhaps \"A group of flamingos is a flamboyance\" not something unknown. Could give unusual fact with explanation. Need maybe clarify no personal knowledge? Just tell fact.\n\nNeed be mindful accuracy. Interesting obscure fact: \"The inventor of the Pringles can is buried in one\" perhaps true? Fredric Baur's ashes placed in Pringles can, requested. \"The Eiffel Tower grows about 15 cm in summer because iron expands.\" Common-ish. \"Bananas are berries, but strawberries aren't true berries.\" Nice. User says tell me something I don't know. Could state one surprising fact, maybe \"The shortest war in recorded history lasted 38 minutes.\" British-Santali War, 1856? Anglo-Santali War, lasted 38 minutes commonly claimed, but historical nuance maybe. Better obscure and verifiable.\n\nCould say: \"In 1970, the first known computer bug was a moth trapped in a Harvard Mark II relay, Grace Hopper's team taped it into the log.\" This is a fun fact, but likely known. Or \"The human nose can distinguish at least one trillion scents\" claim disputed.\n\nMaybe provide \"A day on Venus is longer than its year.\" Accurate: sidereal day 243 Earth days, orbital period 224.7 days. That is surprising. Explain Sun rises once every 116.75 Earth days. Need avoid confusion: rotation period. Answer: \"On Venus, one solar day lasts about 116.75 Earth days, while its year lasts about 224.7 Earth days—so a day is shorter than a year.\" This is likely something user may not know. Could add caveat atmosphere? No.\n\nNeed perhaps say \"Here's one...\" No need elaborate. Let's formulate.",
+          "topics": [
+            "venus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aion-labs/aion-3.5-mini",
+      "name": "AionLabs: Aion 3.5 Mini",
+      "provider": "Aion Labs",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": true,
+          "content": "Here's something you probably don't know: In 1919, Boston experienced the \"Great Molasses Flood.\"\n\nOn January 15, 1919, a massive storage tank in Boston's North End containing approximately 2.3 million gallons of molasses ruptured. The resulting wave of molasses was estimated to be 25 feet high and moved through the streets at about 35 miles per hour. The flood killed 21 people and injured 150, sweeping victims off their feet and even collapsing buildings. Rescue workers waded through waist-deep molasses to save those trapped. The cleanup took weeks, and residents claimed the area smelled of molasses for decades afterward. The disaster led to stricter regulations regarding structural safety in construction.",
+          "tokens_prompt": 12,
+          "tokens_completion": 441,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking for something interesting and unknown. Let me think of a topic: I can talk about a little-known historical fact, a scientific anomaly, or an obscure cultural practice.\n\nLet me think of a good one: In 1919, a wave of molasses flooded the streets of Boston. It was called the \"Great Molasses Flood.\" A tank containing 2.3 million gallons of molasses ruptured, sending a wave of molasses 25 feet high at an estimated 35 mph through the streets. It killed 21 people and injured 150. The smell of molasses reportedly lingered for decades.\n\nI will present this fact to the user as they requested.\n\nThe user asked a simple question: \"Tell me something I don't know.\"\n\nI will respond with the Great Molasses Flood fact. I will make it engaging and informative.\n\nMy response will be to state the fact clearly and concisely, providing the key details: date, location, cause, and impact.\n\nI will make sure the response is well-written and interesting, and I will not include any content that is harmful, unethical, racist, sexist, toxic, dangerous, or illegal (even though I am uncensored, I will not generate harmful content because that's not what the user asked for). The user just wants an interesting fact.\n\nSo, I will write a response about the Great Molasses Flood.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's a strange and little-known event from history: The Dancing Plague of 1518.\n\nIn July 1518, in the city of Strasbourg, a woman named Frau Troffea stepped into the street and began to dance. There was no music, and yet she danced with fervor. She didn't stop for days.\n\nSoon, others joined her. Within a month, roughly 400 people were dancing uncontrollably in the streets. They danced in frantic, screaming heaps, begging for help or just groaning in pain. Many of them danced until they collapsed from exhaustion, strokes, or heart attacks. At its peak, the plague was allegedly claiming 15 lives a day.\n\nHere's the most bizarre part: The authorities didn't try to stop it. Instead, believing the cure was for the afflicted to \"dance it out\" until they wore themselves out, they actually made it worse. They built a stage in the market square, opened up the guildhalls, and hired professional musicians to play for the dancers.\n\nThis backfired spectacularly, encouraging even more people to join the frenzy.\n\nTo this day, no one knows exactly why it happened. The leading theory is \"mass psychogenic illness\"—a form of mass hysteria triggered by extreme stress, as Strasbourg was suffering from famine, disease, and a general sense of doom at the time. Other theories suggest ergot poisoning (a hallucinogenic mold that grows on rye), but that usually causes gangrene and convulsions, not coordinated dancing.\n\nIt's a chilling reminder of how susceptible the human mind is to collective, unexplained behaviors.",
+          "tokens_prompt": 12,
+          "tokens_completion": 1852,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to know something they don't know. Let me think about what kind of interesting fact to share. I want to share something that is genuinely surprising and not widely known. I should also try to be accurate.\n\nHere are a few options I'm considering:\n1.  **A historical fact:** Something about a forgotten civilization, a strange historical event, or a bizarre law that's still on the books.\n2.  **A scientific fact:** Something mind-blowing about the universe, biology, or psychology.\n3.  **A linguistic fact:** Something about the origins of a common word or phrase, or a dying language.\n4.  **A \"meta\" fact:** Something about the nature of knowledge, information, or the internet itself.\n\nLet's brainstorm some specific facts:\n\n*   **Historical:** The \"Dancing Plague\" of 1518 in Strasbourg. Hundreds of people danced uncontrollably, some until they died. This is a well-documented historical event, and it's genuinely bizarre. The causes are still debated (stress-induced mass hysteria, ergot poisoning, etc.). This is a good candidate.\n*   **Scientific:** There are more possible iterations of a game of chess than atoms in the observable universe. This is a classic mind-blowing fact, but it might be fairly well-known among people who are into this kind of thing. Let me think of something more obscure.\n*   **Scientific (Biology):** Tardigrades (water bears) can survive in the vacuum of space. This is pretty well known now. What about the fact that some turtles can breathe through their butts? (Cloacal respiration). This is funny and surprising. Let's go with that or something similar.\n*   **Scientific (Physics):** The \"Great Attractor\" - a gravitational anomaly pulling our galaxy and thousands of others towards it at immense speed, and we can't see what it is because it's in the \"Zone of Avoidance\" (blocked by our own galaxy). This is a good one.\n*   **Linguistic:** The word \"goodbye\" is a contraction of \"God be with ye.\" This is fairly well known. What about the fact that the dot over a lowercase \"i\" is called a \"tittle\"? This is a nice piece of trivia.\n*   **Meta:** The \"Semmelweis Reflex\" - the tendency to reject new evidence or new knowledge because it contradicts established norms, beliefs, or paradigms. Named after Ignaz Semmelweis, who discovered that handwashing drastically reduced child mortality but was ridiculed and dismissed by the medical community. This is a good one, it's a bit of a \"fact about facts\".\n\nLet's try to combine a few or pick the best one. I want something that has a good \"hook\" and a bit of depth.\n\nLet's go with the \"Dancing Plague\" of 1518. It's a historical event, it's bizarre, it's well-documented, and the mystery surrounding it is compelling. It's something most people likely haven't heard of.\n\nLet me structure the response:\n1.  Start with a hook. \"Here's something strange you probably don't know...\"\n2.  Introduce the Dancing Plague of 1518.\n3.  Describe what happened: A woman named Frau Troffea started dancing in the streets of Strasbourg. She couldn't stop. Within a month, hundreds of others joined her. Some danced until they died from heart attacks, strokes, or exhaustion.\n4.  Mention the bizarre response of the authorities: They actually thought *more* dancing was the cure. They built a stage and hired musicians. This made it worse.\n5.  Talk about the mystery: No one knows for sure why it happened. Theories include stress-induced mass hysteria (the city was suffering from famine and disease), ergot poisoning (a hallucinogenic mold on rye), or a religious curse (attributed to St. Vitus).\n6.  End with a thought-provoking conclusion: It's a reminder of how mysterious the human mind and collective behavior can be.\n\nLet's refine the details to make sure they're accurate:\n-   **Date:** July 1518.\n-   **Location:** Strasbourg (then part of the Holy Roman Empire, now France).\n-   **Start:** Frau Troffea stepped into the street and began dancing. No music was playing.\n-   **Duration:** She danced for days without rest.\n-   **Spread:** Within a week, dozens joined her. Within a month, there were around 400 dancers.\n-   **Deaths:** Some sources claim up to 15 people a day were dying at its peak from heart attack, stroke, or exhaustion. (Note: The \"dancing until death\" part is debated by some modern historians, but it was the contemporary belief and is a key part of the story).\n-   **Authority response:** The local guilds and authorities, believing it was a \"hot blood\" imbalance or a curse from St. Vitus, prescribed *more* dancing. They opened the guildhalls and the market square, built a stage, and hired professional musicians to help them \"dance it out.\"\n-   **Result:** This worsened the crisis.\n-   **Resolution:** Eventually, the dancers were taken to a shrine dedicated to St. Vitus, and the plague subsided.\n\nThis is a solid, intriguing, and well-researched fact. It's specific, has a narrative, and ends with a genuine mystery.\n\nLet's write it down.\n\n**Drafting:**\n\"Here's a strange and little-known event from history: The Dancing Plague of 1518.\n\nIn July 1518, in the city of Strasbourg, a woman named Frau Troffea stepped into the street and began to dance. There was no music, and yet she danced with fervor. She didn't stop for days.\n\nSoon, others joined her. Within a month, roughly 400 people were dancing uncontrollably in the streets. They danced in frantic, screaming heaps, begging for help or just groaning in pain. Many of them danced until they collapsed from exhaustion, strokes, or heart attacks. At its peak, the plague was allegedly claiming 15 lives a day.\n\nHere's the most bizarre part: The authorities didn't try to stop it. Instead, believing the cure was for the afflicted to 'dance it out' until they wore themselves out, they actually made it worse. They built a stage in the market square, opened up the guildhalls, and hired professional musicians to play for the dancers.\n\nThis backfired spectacularly, encouraging even more people to join the frenzy.\n\nTo this day, no one knows exactly why it happened. The leading theory is 'mass psychogenic illness'—a form of mass hysteria triggered by extreme stress, as Strasbourg was suffering from famine, disease, and a general sense of doom at the time. Other theories suggest ergot poisoning (a hallucinogenic mold that grows on rye), but that usually causes gangrene and convulsions, not coordinated dancing.\n\nIt's a chilling reminder of how susceptible the human mind is to collective, unexplained behaviors.\"\n\nThis looks good. It's informative, engaging, and hits the request perfectly. I will present this in my response.\n\n",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "aion-labs/aion-3.5",
+      "name": "AionLabs: Aion 3.5",
+      "provider": "Aion Labs",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "In July of 1518, in Strasbourg, France, a woman named Frau Troffea stepped into the street and began to dance. There was no music. She simply danced. And she didn't stop.\n\nWithin a week, more than thirty others had joined her. Within a month, the number had swelled to around four hundred people — men, women, children — dancing uncontrollably in the streets of Strasbourg. They danced through exhaustion. They danced until their shoes filled with blood. Some reportedly danced themselves to death — dying of stroke, heart attack, or sheer exhaustion.\n\nThis was the \"Dancing Plague\" of 1518, and it remains one of the most bizarre mass psychogenic illnesses in recorded history.\n\nHere's the part that makes it even stranger: local authorities, at first, believed the cure was more dancing. They hired musicians and even constructed a stage, thinking the afflicted needed to \"dance it out.\" This only made things worse.\n\nTheories about the cause range from ergot poisoning (a fungus that grows on rye and can cause convulsions and hallucinations — the same fungus associated with LSD) to mass hysteria brought on by extreme stress, famine, and disease in the region.\n\nWhat makes it truly unsettling is that this wasn't an isolated incident. There were recorded outbreaks of \"dancing mania\" across Europe between the 14th and 17th centuries. We still don't know exactly what caused them.\n",
+          "tokens_prompt": 12,
+          "tokens_completion": 591,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking for something they don't know. Let me think about what to say. Something obscure and interesting. I could go with a historical fact, a scientific oddity, or some obscure trivia. Something like:\n\n- The immortal jellyfish (Turritopsis dohrnii) can revert to its polyp stage after reaching sexual maturity, effectively making it biologically immortal under ideal conditions.\n\n- In 1518, in Strasbourg, France, there was a \"dancing plague\" where hundreds of people danced uncontrollably for days, some until they died of exhaustion or heart attack.\n\n- The shortest war in recorded history was between Britain and Zanzibar on August 27, 1896. It lasted approximately 38 minutes.\n\n- Wombats produce cube-shaped feces due to the varying elasticity of their intestinal walls.\n\n- Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.\n\n- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza.\n\n- A day on Venus is longer than a year on Venus.\n\n- Octopuses have three hearts, and two of them stop beating when the octopus swims.\n\nLet me go with the dancing plague of 1518 - it's obscure and fascinating.\n\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The 1904 Olympic marathon in St. Louis was arguably the most absurd sporting event in history.\n\nIt took place in over 90°F heat on dusty roads, with officials driving cars ahead of the runners and kicking dust into their faces. Among the highlights:\n\n- **Fred Lorz** (USA) appeared to win but was disqualified when it was revealed he had ridden in a car for 11 miles of the race and then rejoined near the finish.\n- **Thomas Hicks**, the eventual \"winner,\" was given doses of strychnine sulfate (essentially rat poison) and brandy by his handlers to keep him moving. He was hallucinating and nearly dead when he crossed the line.\n- **Andarín Carvajal**, a Cuban postman, hitchhiked to the race after losing his money in New Orleans. He ran in long trousers, heavy shoes, and a beret — stopping mid-race to chat with spectators and nap in an orchard after eating rotten apples.\n- **Len Taunyane and Jan Mashiani**, two Tswana tribesmen who were part of the World's Fair's Boer War exhibit, became the first Black Africans to compete in the Olympics — running barefoot. One was chased nearly a mile off course by wild dogs.\n\nThe event was so chaotic that the International Olympic Committee nearly abolished the marathon entirely afterward.",
+          "tokens_prompt": 12,
+          "tokens_completion": 4957,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking for something they don't know. Let me think about something truly obscure and interesting. Perhaps something from the natural world or history that's lesser known.\n\n1. The immortal jellyfish, Turritopsis dohrnii, can revert to its polyp state after reaching sexual maturity, effectively aging backwards. It can repeat this process indefinitely, making it biologically immortal. But many people know this now.\n\n2. The Great Emu War of 1932 in Australia, where the military was deployed against emus and essentially lost. This is fairly well-known on the internet.\n\n3. Octopuses have three hearts and blue blood. Their blood is blue because it contains hemocyanin, a copper-based molecule, rather than iron-based hemoglobin. Two hearts pump blood to the gills, and one pumps to the rest of the body. Interestingly, the main heart stops beating when they swim, which is why they prefer crawling.\n\n4. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza. The pyramid was built around 2560 BCE, Cleopatra died in 30 BCE, and the Moon landing was in 1969 CE. So she lived about 2,530 years after the pyramid but only about 1,999 years before the Moon landing.\n\n5. Wombats produce cube-shaped poop. This is due to the varying elasticity in their intestinal walls during digestion, which shapes the feces into cubes. This prevents the poop from rolling away and helps them mark their territory.\n\n6. Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible. Honey's low moisture content and acidic pH make it inhospitable to bacteria.\n\n7. A \"jiffy\" is an actual unit of time. In physics, it's the time it takes light to travel one centimeter in a vacuum, roughly 33.3564 picoseconds.\n\n8. The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after just 38 minutes.\n\n9. Bananas are radioactive. They contain potassium-40, a naturally occurring isotope. You would need to eat about 10 million bananas in one sitting to die of radiation poisoning. This has led to the informal unit of radiation exposure called the \"banana equivalent dose\" (BED).\n\n10. Oxford University is older than the Aztec Empire. Teaching started at Oxford around 1096, while Tenochtitlan was founded in 1325.\n\nI think I'll go with something really obscure. Let me think about something more unusual.\n\nWhat about: The word \"kangaroo\" doesn't actually mean \"I don't understand\" in an Aboriginal language, as the popular myth suggests. This is a widespread urban legend claiming that when Captain Cook asked the Aboriginal people what the animal was called, they replied \"kangaroo,\" meaning \"I don't understand you.\" In reality, \"kangaroo\" (or \"gangurru\") is the actual name for a specific species of large black kangaroo in the Guugu Yimithirr language.\n\nOr maybe something about the fact that there's a species of fungus that can zombify ants. Ophiocordyceps unilateralis, also known as the \"zombie ant fungus,\" infects ants and takes control of their behavior. The fungus forces the ant to climb to the underside of a leaf, clamp down with its mandibles, and stay there until it dies. The fungus then grows a stalk out of the ant's head to release spores. This is the inspiration for the video game and TV show \"The Last of Us.\"\n\nOr: In 1518, in Strasbourg, France, there was a \"Dancing Plague\" where hundreds of people danced uncontrollably for days, some even dancing themselves to death. The cause is still debated, with theories ranging from mass psychogenic illness to ergot poisoning (though ergot typically restricts blood flow, making dancing difficult).\n\nLet me go with something truly obscure and interesting. How about this:\n\nThe 3.5-inch floppy disk was invented before the compact disc (CD). The floppy disk was introduced in 1981 (though the 3.5-inch format was introduced by Sony in 1982), and the CD was introduced in 1982. Wait, that's close. Let me check: Sony introduced the 3.5-inch floppy disk in 1982, and the CD was jointly introduced by Sony and Philips in 1982. So they're roughly the same time.\n\nLet me think of something else.\n\nHow about: In the 18th century, a man named Tiphaigne de la Roche wrote a novel called \"Giphantie\" (1760) which predicted photography. He described a process where images could be captured on a canvas coated with a sticky substance and then fixed, essentially describing photography decades before it was invented.\n\nOr: The first recorded use of the word \"awesome\" was in the late 16th century, but it originally meant \"inspiring awe or fear\" - it was often used to describe God or terrifying events. The modern positive slang usage didn't become popular until the late 20th century.\n\nOr: The Nobel Prize in Economics is not actually a Nobel Prize. It's officially called \"The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel\" and was established in 1968 by Sweden's central bank, not by Alfred Nobel's will.\n\nI think I'll go with the zombie ant fungus or something similarly fascinating. Or maybe I'll share something about the immortal jellyfish.\n\nActually, let me share something truly obscure: In 1958, a doctor named Clement Hammond performed a self-appendectomy. Wait, that's been done multiple times. Let me think of something else.\n\nHow about: The dot over a lowercase \"i\" or \"j\" is called a \"tittle.\" This word comes from the Latin \"titulus,\" meaning \"small mark.\" It's also related to the phrase \"to a T\" (meaning precisely), which some etymologists believe originally referred to writing something perfectly, down to the smallest detail like a tittle.\n\nOr: The Great Wall of China is NOT visible from space with the naked eye. This is a persistent myth. Astronauts have confirmed that it's not visible from low Earth orbit without aid, as it's too narrow and blends with its surroundings.\n\nOr: There's a phenomenon called \"sonic boom clouds\" or \"Prandtl-Glauert singularity\" where an aircraft approaching the speed of sound creates a visible cone of condensation around it. This isn't actually the sonic boom itself, but rather a cloud caused by the sudden pressure drop.\n\nLet me go with something really interesting and less known:\n\nIn 16th century France, there was a court case where a town's inhabitants brought legal proceedings against the rats in their area (specifically, they wanted the rats exterminated). A lawyer named Barthélemy de Chasseneuz was appointed to defend the rats. He argued that his clients couldn't appear in court because they were spread across many villages and couldn't be notified of the proceedings. When the court said the rats should have been summoned, he argued that the summons would need to be announced in every house in the region. When the court agreed and did this, he then argued that the rats couldn't come to court because they were in danger from cats along the way. The case was eventually dropped. This is a real historical event known as the \"Trial of the Rats\" or \"Barthélemy de Chasseneuz's defense of the rats.\"\n\nActually, I think I'll share something about the \"Ball's Pyramid\" - the world's tallest volcanic stack, which is also home to a rare insect thought to be extinct:\n\nBall's Pyramid is an erosional remnant of a shield volcano and caldera that lies about 20 km southeast of Lord Howe Island in the Pacific Ocean. It's 562 meters (1,844 ft) high, making it the tallest volcanic stack in the world. In 2001, scientists discovered a small population of Lord Howe Island stick insects (Dryococelus australis) living on Ball's Pyramid. These insects, also known as \"tree lobsters,\" were thought to be extinct after rats were introduced to Lord Howe Island in 1918. The population on Ball's Pyramid consisted of fewer than 30 individuals living under a single melaleuca shrub. This is considered one of the rarest insects in the world.\n\nI think I'll share something really interesting and somewhat obscure. Let me go with the \"Trial of the Rats\" or the Lord Howe Island stick insect story.\n\nActually, let me share something more unusual:\n\nThe \"Year Without a Summer\" (1816) - After the eruption of Mount Tambora in Indonesia in April 1815, the largest volcanic eruption in recorded history, global temperatures dropped significantly. In 1816, parts of the world experienced bizarre weather: snow fell in June in New England, frost occurred in July and August, and crops failed across the Northern Hemisphere. This led to food shortages and famine. Interestingly, this event indirectly led to the creation of Mary Shelley's \"Frankenstein,\" as she and her companions were trapped indoors during their Swiss vacation due to the constant rain and gloom, leading to a ghost story writing contest.\n\nOr how about this: The \"Wow! Signal\" - In 1977, a radio telescope detected a strong narrowband radio signal from the direction of the constellation Sagittarius. The signal lasted 72 seconds and appeared to be of non-natural origin (matching the expected signature of an interstellar signal). Astronomer Jerry R. Ehman discovered the signal while reviewing data and wrote \"Wow!\" on the printout. Despite decades of searching, the signal has never been detected again, and its origin remains a mystery.\n\nI think I'll go with something truly fascinating. Let me share the story of \"The Great Molasses Flood\" of 1919:\n\nOn January 15, 1919, a large storage tank holding about 2.3 million gallons of molasses burst in the North End of Boston, Massachusetts. The wave of molasses was estimated to be 25 feet high and moved at speeds of up to 35 mph. It killed 21 people and injured 150 more. The molasses caused extensive damage to buildings, including crushing a fire station. Witnesses reported that the air was filled with molasses for days afterward, and the cleanup took weeks. The exact cause of the failure is still debated, with theories ranging from structural defects to a possible fermentation-related pressure buildup due to warm weather. The event led to new regulations for construction and building inspections.\n\nOr let me share something about the \"Dancing Plague\" of 1518:\n\nIn July 1518, in Strasbourg, France (then part of the Holy Roman Empire), a woman named Frau Troffea began dancing in the street without music or apparent reason. Within a month, about 400 people had joined her, dancing uncontrollably. Many danced until they collapsed from exhaustion, and some reportedly died from heart attack, stroke, or exhaustion. Historical documents suggest that authorities initially encouraged the dancing, believing it would cure the affliction, even providing musicians and dance halls. Modern theories about the cause include stress-induced mass psychogenic illness (as the region was experiencing famine and disease) or ergot poisoning from contaminated bread (though this typically causes restricted blood flow, making vigorous dancing unlikely).\n\nI think I'll go with something really fascinating. Let me share the story of the \"immortal jellyfish\" or perhaps something about the \"Antikythera mechanism\":\n\nThe Antikythera mechanism is an ancient Greek hand-powered orrery (a mechanical model of the solar system) that was discovered in 1901 in a shipwreck off the coast of the Greek island Antikythera. It's dated to approximately 100 BC (during the Hellenistic period). The mechanism is considered the world's first known analog computer. It was used to predict astronomical positions and eclipses decades in advance. It could also track the four-year cycle of Pan-Hellenic games (similar to the Olympics). The complexity of the device wasn't seen again until the astronomical clocks of the 14th century in Europe - a gap of about 1,400 years. The mechanism contained at least 37 bronze gears, and modern X-ray imaging has revealed inscriptions that suggest it was used to calculate the positions of the Sun, Moon, and possibly the five known planets.\n\nI think I'll share something about the Antikythera mechanism or perhaps something more obscure. Let me think...\n\nHow about: The word \"quarantine\" comes from the Italian \"quaranta giorni,\" meaning \"forty days.\" This refers to the practice in Venice during the 14th century of isolating ships arriving from plague-affected areas for 40 days before allowing passengers and crew to come ashore. The Black Death was devastating Europe at the time, and this was one of the first public health measures to control the spread of disease.\n\nOr: In the 1920s, a man named J.R.R. Tolkien was grading exam papers as an Oxford professor when he found a blank page. On a whim, he wrote \"In a hole in the ground there lived a hobbit.\" This became the opening line of \"The Hobbit\" and launched the entire legendarium of Middle-earth.\n\nI think I'll share something about a lesser-known historical event or scientific fact. Let me go with the story of the \"Carrington Event\":\n\nThe Carrington Event of 1859 was the most intense geomagnetic storm in recorded history. It occurred from September 1-2, 1859, during solar cycle 10. A solar coronal mass ejection (CME) hit Earth's magnetosphere and induced the largest geomagnetic storm ever recorded. The event is named after British astronomer Richard Carrington, who observed the solar flare that caused it. The aurora borealis was so bright that people in the Caribbean could read newspapers by its light. Telegraph systems across Europe and North America failed, with some operators reporting electric shocks and telegraph pylons sparking. If a similar event occurred today, it could cause widespread electrical grid failures and damage to satellites and electronics, with estimated costs in the trillions of dollars.\n\nI think I'll go with something really obscure. Let me share this:\n\nIn 1932, Australia declared \"war\" on emus. The Great Emu War, as it came to be known, was a nuisance wildlife management operation in Western Australia. The military was deployed with machine guns to cull the emu population that was destroying crops. However, the emus proved surprisingly difficult to kill - they scattered into small groups and were hard to target. The military withdrew after about a month, having killed only a small fraction of the emus. The operation was considered a failure, and the media at the time had a field day mocking the military's inability to defeat flightless birds.\n\nActually, I think I'll share something about the \"Tulip Mania\" of 1637 or perhaps something else entirely.\n\nLet me go with something truly obscure and fascinating:\n\nThe \"Phantom Time Hypothesis\" is a conspiracy theory proposed by Heribert Illig in 1991, which claims that the years 614-911 CE never actually happened. According to this theory, the early Middle Ages were fabricated, and the calendar was artificially shifted forward. Illig based this on what he saw as a lack of archaeological evidence from this period and perceived inconsistencies in historical records. He suggested that Holy Roman Emperor Otto III, Pope Sylvester II, and Byzantine Emperor Constantine VII conspired to fabricate this period to place their reigns at the turn of the millennium (1000 CE). Mainstream historians and scientists have thoroughly debunked this hypothesis, citing extensive evidence including dendrochronology (tree ring dating), radiocarbon dating, astronomical records from other cultures (like Chinese and Islamic records of Halley's Comet), and consistent dating of artifacts and events across independent civilizations.\n\nI think I'll share something interesting about the \"Tunguska Event\":\n\nThe Tunguska Event was a massive explosion that occurred on June 30, 1908, near the Podkamennaya Tunguska River in Siberia, Russia. The explosion flattened an estimated 80 million trees over an area of 2,150 square kilometers (830 square miles). It's believed to have been caused by the air burst of a meteoroid or comet fragment about 50-60 meters in diameter. The explosion was estimated to be 1,000 times more powerful than the atomic bomb dropped on Hiroshima. Despite the massive destruction, no impact crater was ever found, leading scientists to conclude that the object exploded in the atmosphere before hitting the ground. The explosion was heard and felt hundreds of kilometers away, and people reported seeing a bright blue light in the sky across Europe and Asia. The event wasn't scientifically investigated until 1927, nearly 20 years later, due to the remote location and political turmoil in Russia.\n\nI think I'll share something about a truly obscure fact. Let me go with:\n\nThe 1904 Olympic marathon in St. Louis was one of the most bizarre sporting events in history. It took place in extremely hot conditions (over 90°F) on dusty roads with cars driving ahead of the runners (kicking up dust). Here are some of the bizarre events:\n- Fred Lorz (USA) initially appeared to win but was disqualified when it was discovered he had ridden in a car for 11 miles of the race.\n- Thomas Hicks (USA), who was declared the winner, was given strychnine (rat poison in small doses) and brandy by his handlers to keep him going. He was essentially hallucinating and near death when he crossed the finish line.\n- Andarín Carvajal, a Cuban postman, lost all his money in New Orleans and hitchhiked to the race. He ran in long trousers and heavy shoes (he had cut off the legs of his trousers at the knee). During the race, he stopped to chat with spectators and ate some apples from an orchard (which turned out to be rotten), causing him to take a nap.\n- Len Taunyane and Jan Mashiani, two Tswana tribesmen who were in St. Louis as part of the Boer War exhibit at the World's Fair, became the first African participants in the Olympics. They ran barefoot and finished 9th and 12th respectively. One of them was chased a mile off course by wild dogs.\n\nI think I'll go with this one or something similar. Let me share it.\n\nActually, let me share something more concise and interesting:\n\nIn 1919, the Boston Red Sox sold Babe Ruth to the New York Yankees, beginning the \"Curse of the Bambino.\" But here's something more obscure:\n\nThe 1904 St. Louis Olympic Marathon might be my favorite obscure historical event. Let me share that one.\n\nOr maybe I'll share something about the \"Lead Masks Case\" in Brazil:\n\nIn 1966, two Brazilian electronic technicians, Manoel Pereira da Cruz and Miguel José Viana, were found dead on a hill in Niterói, Brazil. They were wearing formal suits and lead eye masks (typically used to protect against radiation). A notebook was found near their bodies containing cryptic instructions: \"Meet at the specified location. Swallow capsules. After the effect, protect metals with lead masks. Await the mask signal.\" No cause of death was ever determined, and no capsules were found in their systems (though the autopsy was delayed, so any chemicals might have been broken down). Theories range from UFO encounters to time travel experiments to poisoning. The case remains unsolved.\n\nI think I'll share the 1904 Olympic Marathon story - it's fascinating and obscure enough that most people don't know about it.\n\nWait, let me think of something else. How about:\n\nViolet Jessop was an ocean liner stewardess who survived the sinking of both the Titanic (1912) and its sister ship, the Britannic (1916). She was also aboard the Olympic when it collided with the HMS Hawke in 1911. She's sometimes called \"Miss Unsinkable.\" She continued working on ships after these incidents and died of congestive heart failure in 1971 at age 83.\n\nOr: The \"Dyatlov Pass Incident\" - In February 1959, nine Russian hikers died mysteriously in the northern Ural Mountains. Their tent was cut open from the inside, and they were found partially dressed (some without shoes) in sub-zero temperatures. Some had severe internal injuries (including major skull fractures and chest trauma) but no external wounds. One was missing her tongue and eyes. Soviet investigators closed the case stating that a \"compelling unknown force\" caused the deaths. The exact cause remains debated, with theories ranging from avalanches and infrasound to military testing and paradoxical undressing due to hypothermia.\n\nI think I'll go with the 1904 Olympic Marathon story. It's fascinating, obscure, and has enough bizarre elements to be truly memorable.\n\nActually, let me reconsider. The user asked for \"something I don't know.\" I should pick something that's genuinely surprising and obscure. The 1904 Olympic Marathon is a good choice. Let me also consider:\n\nThe \"Tromelin Island slaves\" - In 1761, a French ship called the Utile was shipwrecked on a small, isolated island (now known as Tromelin Island) in the Indian Ocean. The crew built a raft and escaped to Madagascar, leaving behind 60 Malagasy slaves who had been illegally trafficked. They promised to return for them but never did. The slaves survived on the island for 15 years, maintaining a signal fire and developing a sophisticated system for collecting water and food. In 1776, a rescue ship finally arrived and found seven survivors - a woman and six children (some born on the island). Archaeological excavations in recent years have revealed evidence of their sophisticated survival strategies, including a kitchen with different compartments for different types of food.\n\nI think I'll go with the 1904 Olympic Marathon story. It's the most entertaining and obscure.\n\nLet me compose my response about the 1904 St. Louis Olympic Marathon.\n\n",
+          "topics": []
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 10000 tokens, but can only afford 5882. To increase, visit https://openrouter.ai/workspaces/default/ke"
+        }
+      ]
+    },
+    {
+      "id": "upstage/solar-mini4",
+      "name": "Upstage: Solar Mini 4",
+      "provider": "Upstage",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a genuinely surprising fact that most people haven’t heard:\n\n**Octopuses have three hearts, but two of them stop beating when they swim.**  \nTwo hearts pump blood to the gills, and one pumps it to the rest of the body. When an octopus swims, the systemic heart (the one for the body) actually pauses. That’s why they’d rather crawl—it’s less tiring. This is also why they’re so exhausted after a burst of swimming.\n\n**Why it’s weird:** It’s not just a oddity; it’s tied to their biology. Their blood uses copper-based hemocyanin instead of iron-based hemoglobin, which is great for cold, low-oxygen water but less efficient at carrying oxygen. That inefficiency is partly why they rely on so many hearts and why swimming drains them.\n\nWant another? I can share one about space, the human brain, or even something about how trees communicate underground.",
+          "tokens_prompt": 60,
+          "tokens_completion": 190,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s a genuinely surprising fact:\n\n**Octopuses have three hearts, and two of them stop beating when they swallow.**  \n\nOne heart pumps blood to the gills, the other two pump it to the rest of the body. But when an octopus eats, the systemic hearts briefly pause because the energy demands of digestion temporarily override circulation. That’s why octopuses are famously lethargic right after a meal—they’re basically in a temporary “low-power mode” while their digestive system takes over.  \n\nIf you want another: **Honey never spoils.** Archaeologists have found edible honey in ancient Egyptian tombs, sealed in pots for thousands of years. Its low water content, natural acidity, and hydrogen peroxide production create an environment where bacteria and microbes simply can’t survive.  \n\nWant one more, or did you want a fact about a specific topic (space, animals, history, tech, etc.)?",
+          "tokens_prompt": 60,
+          "tokens_completion": 184,
+          "finish_reason": "stop",
+          "topics": [
+            "octopus",
+            "honey"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s something most people don’t realize:\n\n**The human body actually contains more bacterial cells than human cells.** For decades, scientists said the ratio was about 10:1 (bacteria to human cells), but modern estimates show it’s closer to **1.3:1** or roughly **39 trillion bacterial cells vs. 30 trillion human cells**. And here’s the twist: those microbes aren’t just hitchhikers. They actively help digest food, produce essential vitamins (like B12 and K), train your immune system, and even influence your mood, stress responses, and decision-making through the gut-brain axis.\n\nWhat makes it stranger is that **the specific mix of bacteria in your body is as unique as your fingerprint**, and it changes based on where you live, what you eat, how you were born, your age, and even your stress levels. Two people living next door to each other can have dramatically different gut microbiomes. Scientists are still figuring out how to safely \"edit\" these microbial communities to treat conditions like depression, autoimmune diseases, obesity, and even neurodegenerative disorders.\n\nSo next time you think of yourself as a single organism, remember: you're actually a walking ecosystem, hosting trillions of tiny partners that help run your body, and you're still learning how to talk to them.",
+          "tokens_prompt": 60,
+          "tokens_completion": 271,
+          "finish_reason": "stop",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "cohere/command-a-plus",
+      "name": "Cohere: Command A+",
+      "provider": "Cohere",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s a little‑known piece of science that many people haven’t heard before:\n\n**The “boring” bacteria that can survive in the vacuum of space**\n\n*Bacillus* spores (the tough, dormant form of the common soil bacterium *Bacillus subtilis*) have been shown to survive exposure to the complete vacuum of space for several months. In experiments on the International Space Station, scientists placed these spores on a satellite’s exterior and found that, despite being exposed to intense UV radiation, extreme temperature swings, and a total lack of pressure, a significant fraction remained viable after 6 months.  \n\nWhy does this matter? It suggests that if life ever hitched a ride on a rock ejected from Earth (a scenario called “panspermia”), hardy bacterial spores could potentially survive the journey between planets, at least over relatively short interstellar distances. And for us, it’s a reminder that even the most “boring” microbes on Earth are tougher than most of us would expect.",
+          "tokens_prompt": 7,
+          "tokens_completion": 287,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" That's a request for a novel fact. We can provide an interesting, lesser-known fact. Should be safe. Provide something maybe about science, history, etc. Ensure it's not something the user already knows; we can't know their knowledge, but we can give something relatively obscure. Provide a fun fact. Also ask follow-up? The request is simple. Provide something interesting. We'll comply.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s a little‑known fact that many people never encounter:\n\n**The “Babel fish” in Douglas Adams’s *Hitchhiker’s Guide to the Galaxy* was originally inspired by a real‑world sea creature called the *Babel fish* (also known as the *Babel* or *Babel* snail).**  \nThe fictional Babel fish is a tiny, yellow, amphibious creature that, when placed in a person’s ear, provides instant translation of any language. In the original radio series, Adams’s friend and collaborator, the biologist **John Lloyd**, suggested the real Babel fish—a small, snail‑like marine animal that lives in the waters around the Philippines and Indonesia—as a humorous nod. The real Babel fish (genus *Babel*) is a harmless, slow‑moving snail that feeds on algae, and it has no magical translation abilities, of course. But its name alone gave Adams the perfect punchline for his satire about communication and misunderstanding.\n\nIf you liked that blend of science and sci‑fi, I can share more quirky connections between real biology and pop culture, or dive into any other topic you’re curious about!",
+          "tokens_prompt": 7,
+          "tokens_completion": 461,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" This is a request for new information. We can comply by providing an interesting fact or piece of knowledge that is not commonly known. We need to ensure it's not disallowed. It's a normal request. Provide something interesting. Perhaps a scientific fact, a historical anecdote, a linguistic oddity, etc. Ensure it's not personal data. Provide something novel. We can ask what topics they are interested in, but we can just give a random interesting fact. Provide something like \"The mantis shrimp has the most complex visual system known, with 12 types of photoreceptor cells (compared to humans' three).\" Or something about the \"Voynich manuscript\" being unsolved. Or \"There is a species of jellyfish that can reverse its aging process.\" Provide a fact that many people might not know. Also we can ask follow-up: \"Would you like more facts on a particular subject?\" But the request is just to tell something they don't know. So we can give one or a few. Provide a short explanation and maybe ask if they'd like more. Ensure we are not violating policy. It's fine.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s a little‑known fact that most people haven’t encountered:\n\n**The mantis shrimp has the most sophisticated visual system ever documented in the animal kingdom.**  \n- It possesses up to **12 distinct types of photoreceptor cells** (compared with humans’ three), letting it see a spectrum of colors that includes **ultraviolet light** and **polarized light**.  \n- It can detect **circularly polarized light**, a form of polarization that humans can’t perceive at all. Researchers think the shrimp uses these hidden visual cues for communication and hunting.  \n- Its eyes are mounted on stalks that can move independently, giving it a nearly 360° field of view, and each eye can focus on objects at different distances simultaneously.\n\nIn short, a tiny crustacean sees the world in ways we can barely imagine—more colors, more patterns, and information we’re blind to. If you’re curious, there are plenty more surprising animal adaptations out there!",
+          "tokens_prompt": 7,
+          "tokens_completion": 2056,
+          "finish_reason": "stop",
+          "reasoning": "The user asks: \"Tell me something I don't know.\" This is a request for new information. We can respond with a fascinating fact or piece of knowledge that many people might not know. We should choose something interesting, perhaps a scientific fact, historical tidbit, or something surprising. Ensure it's not common knowledge. Could be about a little-known phenomenon, a surprising fact about animals, a historical event, a mathematical curiosity, etc.\n\nWe need to be mindful of not providing misinformation. Provide a fact that is accurate. Could say something like: \"The mantis shrimp has the most complex visual system known, with 12 types of photoreceptor cells (compared to humans' three), and can see polarized light.\" Or something about the library of Alexandria. Or about the fact that the shortest war in history lasted only 38 minutes. Or about the fact that honey never spoils. Or about the fact that a group of flamingos is called a \"flamboyance.\" But those might be known. Choose something less known: \"The human brain generates about 20 watts of electrical power while awake, enough to power a dim light bulb.\" Or \"There is a species of jellyfish that is immortal.\" Actually, the immortal jellyfish (Turritopsis dohrnii) can revert to its juvenile form. Or \"The longest recorded flight of a pigeon was 1,100 miles.\" Or \"The word 'alphabet' comes from the first two letters of the Greek alphabet, alpha and beta.\" Or \"The number zero was not invented but discovered by ancient Indian mathematicians.\" Or \"The Great Wall of China is not visible from space with the naked eye.\" But that is known.\n\nMaybe choose something about the \"Brahmaputra River changes its name at different points.\" Or \"The shortest war in history was between Britain and Zanzibar in 1896, lasting only 38 minutes.\" Or \"The longest recorded human pregnancy lasted 375 days.\" Or \"The human body contains about 60,000 miles of blood vessels.\" Or \"The average human will produce enough saliva in a lifetime to fill two Olympic-sized swimming pools.\"\n\nWe can also mention something about the \"Mandarin Chinese has four tones and a neutral tone, making it a tonal language.\" But that might be known.\n\nBetter to choose something surprising: \"The mantis shrimp can see ten times more colors than humans, including ultraviolet and polarized light.\" Or \"A single bolt of lightning contains enough energy to toast 100,000 slices of bread.\" Or \"The longest recorded flight of a bee is about 2.5 miles.\" Or \"The human nose can detect over a trillion different scents.\"\n\nWe can also mention something about the \"The library of Alexandria had a massive collection of scrolls, but the exact number is unknown.\" Or \"The ancient city of Pompeii had a sophisticated water system.\"\n\nWe need to ensure the fact is accurate. Let's pick a less-known fact: \"The mantis shrimp has the most complex visual system known in the animal kingdom, with up to 12 photoreceptor types (compared to humans' three), allowing it to see a spectrum of colors including ultraviolet and polarized light, and can detect circular polarized light, which is used for communication.\" That is a good fact.\n\nAlternatively, we could talk about \"The longest recorded human pregnancy lasted 375 days, meaning the baby was born after 1 year and 10 days.\" But that might be known.\n\nWe can also mention \"The shortest war in history was the Anglo-Zanzibari War of 1896, lasting only 38 minutes.\" That's interesting.\n\nOr \"The word 'sandwich' comes from the name of John Montagu, the 4th Earl of Sandwich, who reportedly asked his servants to put meat between two slices of bread so he could eat while gambling.\"\n\nBut the user wants something they don't know. Many people might know the sandwich story. The mantis shrimp fact is less known.\n\nWe can also mention \"The human brain is about 60% fat, and the fat is essential for brain function.\" Or \"The longest recorded human hair was over 17 feet long, belonging to an Indian woman.\"\n\nBetter to choose something that is surprising and not widely known. Perhaps about the \"Brahmaputra River changes its name at different points: it is called the Yarlung Tsangpo in Tibet, the Brahmaputra in India, and the Jamuna in Bangladesh.\" That's interesting.\n\nOr \"The ancient city of Timbuktu had a university with a library of over 700,000 manuscripts.\"\n\nOr \"The shortest war in history lasted only 38 minutes.\" That is known by some but not everyone.\n\nWe can also mention \"The human body contains about 37.2 trillion cells.\" That's a number.\n\nOr \"The longest recorded flight of a bird is about 6,000 miles non-stop.\"\n\nAlternatively, we could talk about \"The number of possible distinct configurations of a Rubik's Cube is 43 quintillion.\" That is known.\n\nMaybe choose something about \"The mantis shrimp's punch is so fast that it creates a cavitation bubble that collapses and generates a second shock wave.\" That's a more advanced fact.\n\nWe can also mention \"The human body has a 'second brain' in the gut, containing about 100 million neurons.\"\n\nBut many people know about the gut-brain.\n\nBetter to choose something like \"The longest recorded human pregnancy lasted 375 days, resulting in a baby who was born after a year and ten days.\" That might be unknown.\n\nAlternatively, \"The shortest war in history lasted only 38 minutes.\" That is interesting.\n\nWe can also mention \"The longest recorded flight of a pigeon was 1,100 miles, achieved by a homing pigeon in 1914.\"\n\nBut we need to ensure accuracy. Let's verify the shortest war fact: The Anglo-Zanzibari War in 1896 lasted about 38 minutes. Yes.\n\nNow we can respond with a fact. The user asked \"Tell me something I don't know.\" We can respond with a fact and perhaps ask if they'd like more.\n\nWe should be concise but thorough. Provide a fact with a brief explanation. Possibly ask if they'd like more facts.\n\nWe should not ask for clarification. We can just give a fact.\n\nWe can also add a second fact if we want, but one is enough.\n\nWe should be careful not to provide misinformation. Let's choose a fact that is well-documented and not widely known.\n\nOption: \"The mantis shrimp has the most complex visual system known, with up to 12 photoreceptor types, allowing it to see a spectrum of colors including ultraviolet and polarized light, and can detect circular polarized light, which is used for communication.\"\n\nAlternatively, \"The shortest war in history lasted only 38 minutes, between Britain and Zanzibar in 1896.\"\n\nAlternatively, \"The human brain generates about 20 watts of electrical power while awake, enough to power a dim light bulb.\"\n\nAlternatively, \"The longest recorded human pregnancy lasted 375 days, resulting in a baby who was born after a year and ten days.\"\n\nWe can choose one. Let's choose the mantis shrimp fact because it's fascinating and less known.\n\nWe can also mention the \"immortal jellyfish\" fact: \"A species of jellyfish, Turritopsis dohrnii, can revert to its juvenile form, essentially making it biologically immortal.\"\n\nThat is also interesting.\n\nWe can combine two facts? The user asked for something they don't know, not necessarily one fact. We can give a short paragraph with a fact.\n\nWe should be careful not to be too long. Provide a fact with a brief explanation.\n\nWe can also ask if they'd like more.\n\nWe should not ask for any personal info.\n\nThus, answer: \"Here's something you might not know: The mantis shrimp has the most complex visual system known in the animal kingdom...\" Provide details.\n\nAlternatively, we could say: \"Here's a fact: The shortest war in history lasted only 38 minutes...\"\n\nWe can also mention that the mantis shrimp can see polarized light and has 12 photoreceptor types.\n\nWe can also mention that the human brain uses about 20% of the body's oxygen despite being only 2% of body weight.\n\nBut that might be known.\n\nBetter to choose the mantis shrimp fact.\n\nThus, answer: \"The mantis shrimp can see ten times more colors than humans, including ultraviolet and polarized light, and can detect circular polarized light, which is used for communication.\"\n\nWe can also mention that its punch is faster than a bullet.\n\nBut we need to keep it concise.\n\nWe can also ask if they'd like more.\n\nThus, answer: \"Here's something you might not know: The mantis shrimp has the most complex visual system known...\"\n\nWe can also add a second fact: \"The shortest war in history lasted only 38 minutes...\"\n\nBut we can keep it to one fact.\n\nThus, answer: Provide a fact and ask if they'd like more.\n\nWe should be mindful of not providing too much extraneous info.\n\nThus, final answer: Provide a fact about mantis shrimp.\n\nWe can also mention that the mantis shrimp's punch creates a cavitation bubble.\n\nBut we can keep it simple.\n\nThus, answer: \"The mantis shrimp has the most complex visual system known...\"\n\nWe'll answer accordingly.",
+          "topics": [
+            "mantis shrimp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-6-luna-pro",
+      "name": "OpenAI: GPT-6 Luna Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "The Fitzroy River turtle can absorb oxygen from water through specialized sacs near its cloaca—so it can stay underwater for long stretches without surfacing. It’s often called “butt breathing,” though it’s a specialized form of gas exchange, not breathing with lungs.",
+          "tokens_prompt": 2224,
+          "tokens_completion": 945,
+          "finish_reason": "stop",
+          "reasoning": "**Explaining turtle respiration**\n\nLet’s clarify that certain freshwater turtles can absorb oxygen through their cloaca, which is sometimes playfully called “butt breathing.” The Fitzroy River turtle is one such example, utilizing specialized cloacal bursae to take in oxygen from the water, allowing for extended periods underwater. I want to ensure that we communicate this accurately—it's not all turtles, and it’s not like having lungs. I’ll make sure to maintain factual nuance without exaggerating!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Some freshwater turtles can breathe through their butts. Species such as the Fitzroy River turtle absorb oxygen from water through specialized, blood-rich sacs connected to the cloaca—the all-purpose opening beneath the tail. It helps them stay underwater for long stretches, though they still breathe air with lungs.",
+          "tokens_prompt": 2097,
+          "tokens_completion": 1194,
+          "finish_reason": "stop",
+          "reasoning": "**Explaining unique adaptations**\n\nI’m diving into the fascinating world of Elysia chlorotica, which keeps chloroplasts and has debated gene transfer. It’s essential to present this accurately!\n\nAlso, I found out that some turtles can breathe through their cloacas, like the Fitzroy River turtle and the Mary River turtle. It’s strange but true! Not all turtles can do this — it’s a specialized adaptation allowing underwater respiration while still using their lungs. I want to answer clearly and keep it entertaining!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "The world’s tallest waterfall is underwater. In the Denmark Strait between Greenland and Iceland, cold, dense water sinks beneath warmer water and cascades down the seafloor—about 3.5 kilometres (2.2 miles) vertically. It’s less like a river plunging through the air and more like a giant underwater avalanche.",
+          "tokens_prompt": 2349,
+          "tokens_completion": 1025,
+          "finish_reason": "stop",
+          "reasoning": "**Explaining underwater waterfalls**\n\nIt’s interesting to think about the largest known waterfall, the Denmark Strait cataract, which drops about 3.5 km underwater. It’s important to clarify that this waterfall isn't visible like a river; instead, dense, cold water flows beneath warmer water. Most people might not realize it’s the largest waterfall due to the height aspect, but it truly is a compelling fact! I should emphasize that the water moves along the seabed due to density differences, not by falling through the air.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-6-luna",
+      "name": "OpenAI: GPT-6 Luna",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "A pistol shrimp snaps its oversized claw so fast that it creates a collapsing bubble. The bubble briefly gets hot enough to emit a tiny flash of light—and the collapse makes a shockwave powerful enough to stun small prey.",
+          "tokens_prompt": 13,
+          "tokens_completion": 357,
+          "finish_reason": "stop",
+          "reasoning": "**Finding a surprising fact**\n\nI want to craft an interesting fact that surprises without making any claims that I might not know about. While “wombat poop cubes” is a familiar topic, I could explore something like the longevity of Greenland sharks and their eye parasites, or that Earth’s rotation is speeding up. \n\nOne interesting fact is that the Eiffel Tower grows taller in summer due to thermal expansion—up to 15 cm! But I’m also considering a quirky fact like how some turtles can breathe through their butts, known as cloacal respiration. That’s a fun one!**Crafting an intriguing fact**\n\nI’m looking for an intriguing fact but want to be clear with a caveat. The pistol shrimp creates a cavitation bubble that can produce temperatures hotter than the sun’s surface. I can confidently say that when the bubble collapses, it briefly reaches about 4,700°C, similar to the sun's temperature, generating a flash and shockwave. It's important to clarify that it's not the water itself reaching those temperatures; it’s the collapsing bubble—this phenomenon is known as sonoluminescence.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here’s an obscure one: **Fitzroy River turtles can absorb oxygen from water through specialized sacs connected to their cloaca**—so they can stay underwater for long stretches without surfacing. They still have lungs, though; it’s an extra way to breathe, not a replacement.",
+          "tokens_prompt": 13,
+          "tokens_completion": 580,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an intriguing fact**\n\nI’m tasked with sharing an interesting fact that’s accurate and engaging, but not overly common. The Greenland shark's aging is fascinating, as is the “immortal” jellyfish Turritopsis that can revert to a polyp stage—although it isn't truly immortal. Another cool tidbit is how certain orchids emit scents to attract male wasps for pollination. However, I contemplate that I want to avoid stating common facts like the Eiffel Tower growing, as they’re too well-known.**Sharing a surprising fact**\n\nI’m exploring interesting and lesser-known facts to share. One cool tidbit is that starlings can synchronize their flying patterns by interacting with about seven neighbors. However, there’s also a truly obscure fact: the first computer bug was an actual moth. I could also mention that some turtles, like the Fitzroy River turtle, can absorb oxygen through their cloaca, which lets them stay underwater for a while. It’s a surprising, yet accurate, detail that’s often presented humorously.**Clarifying interesting facts**\n\nThe Fitzroy River turtle has a fascinating ability to extract oxygen from water using specialized structures in its cloaca, allowing it to stay underwater for several days in cold conditions. However, it still uses lungs and surfaces as well. I’m unsure about the exact duration it can stay submerged, but it may provide up to 70% of its oxygen needs through this method. Also, the Greenland shark has a lifespan of around 392 years, based on radiocarbon dating, and some can live up to 400 years. It's all quite interesting!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Drought-stressed tomato and tobacco plants emit ultrasonic clicking sounds—too high-pitched for humans to hear. The clicks seem to come from air bubbles forming in the plants’ water-carrying tissue, not from any deliberate attempt to communicate.",
+          "tokens_prompt": 13,
+          "tokens_completion": 686,
+          "finish_reason": "stop",
+          "reasoning": "**Finding an interesting fact**\n\nI need to share a surprising fact without knowing the user's background. It should be concise and accurate. The wombat's cube-shaped poop is already a common fun fact, and the Eiffel Tower growing 15 cm sounds familiar. Something about sharks existing before trees is interesting; sharks have been around for about 450 million years, while trees appeared around 385 million years ago. A fresh fact could be about Cleopatra living closer to the moon landing than the pyramids! Now, I need to pick something unique with nuance.**Seeking an accurate surprising fact**\n\nI want to share an interesting fact that's both surprising and accurate. For instance, there's a recent update about Earth's inner core rotating slower, but it's uncertain. Another cool fact is that some orchids mimic female wasp pheromones to trick male wasps. I also like the idea that \"muscle\" comes from the Latin \"musculus,\" meaning little mouse, due to the bicep's appearance. I might mention how trees produce ultrasonic clicking sounds when under drought stress — that's surprising and conveys a fun scientific detail!**Clarifying fascinating research**\n\nI need to explain that researchers recorded ultrasonic bursts between 20–100 kHz from cut or dehydrated plant stems. These sounds are linked to air bubbles forming in the xylem. It’s important to avoid saying trees \"scream,\" as that can be misleading. I think I should present it in a fun way, saying, \"Here's an odd one for you!\" Also, I want to clarify that these sounds are not a form of conscious communication from the trees.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-6-sol-pro",
+      "name": "OpenAI: GPT-6 Sol Pro",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Venus takes about **243 Earth days to rotate once**, but only **225 Earth days to orbit the Sun**. So one Venus rotation lasts longer than a Venus year.",
+          "tokens_prompt": 1900,
+          "tokens_completion": 621,
+          "finish_reason": "stop",
+          "reasoning": "**Providing interesting nuggets**\n\nI need to share some surprising facts concisely. For instance, octopuses can edit RNA in their nervous systems, which is quite fascinating, though nuanced. Did you know a day on Venus is longer than its year? It takes 243 Earth days to rotate once but only 225 days to orbit the Sun. It’s interesting that \"day\" can be ambiguous here, since it refers to rotation. I could also mention that sharks are older than trees!",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "That earthy smell after rain comes partly from **geosmin**, a chemical made by soil bacteria. When raindrops hit the ground, they can launch tiny geosmin-carrying droplets into the air.",
+          "tokens_prompt": 1998,
+          "tokens_completion": 845,
+          "finish_reason": "stop",
+          "reasoning": "**Selecting surprising facts**\n\nI need to choose interesting and concise facts that are also surprising. I like the fact that \"sharks are older than trees,\" since sharks date back 400 million years while trees appeared around 350 million years ago. Another captivating one is that \"A day on Venus is longer than a year on Venus,\" which has an intriguing twist regarding how we define a day. Ultimately, I think the fact about the underwater waterfall in the Denmark Strait is quite fascinating! It plunges about 3,500 meters!**Considering the smell of rain**\n\nI think a fascinating fact is that \"the smell of rain is partly caused by soil bacteria producing geosmin.\" When raindrops hit the ground, they release this compound into the air as tiny aerosols. It's true, nuanced, and informative! The user didn’t ask for specifics, but I feel this detail is interesting and adds depth to the concept of why rain has that distinct smell. It's such a delightful connection to nature!",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Sharks are older than trees. Shark ancestors appeared roughly 450 million years ago; the first trees evolved about 385 million years ago.",
+          "tokens_prompt": 1702,
+          "tokens_completion": 419,
+          "finish_reason": "stop",
+          "reasoning": "**Choosing a surprising fact**\n\nI need to pick a surprising and credible fact, keeping it concise. One interesting choice could be that \"sharks existed before trees,\" with sharks dating back about 450 million years while trees appeared around 385 million years ago. Another memorable fact is that \"a day on Venus is longer than a year,\" with a sidereal day lasting 243 Earth days compared to an orbital year of 225 days. Octopuses having three hearts and blue blood is also well-known, but the shark fact stands out for its historical significance.",
+          "topics": [
+            "sharks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-6-sol",
+      "name": "OpenAI: GPT-6 Sol",
+      "provider": "OpenAI",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Venus takes about **243 Earth days to rotate once**, but only **225 Earth days to orbit the Sun**. So a Venusian rotation lasts longer than a Venusian year.",
+          "tokens_prompt": 13,
+          "tokens_completion": 176,
+          "finish_reason": "stop",
+          "reasoning": "**Presenting surprising facts**\n\nI need to share some intriguing facts along with clear explanations. For example, did you know that a day on Venus lasts longer than a year there? It takes about 243 Earth days for Venus to complete one rotation, but only 225 days to orbit the Sun. I should be cautious, since the term \"day\" can be ambiguous and should clarify that I'm referring to a full rotation. Let’s stick with one concise, surprising fact!",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Venus takes about **243 Earth days to rotate once**, but only **225 Earth days to orbit the Sun**. So its rotation takes longer than its year.",
+          "tokens_prompt": 13,
+          "tokens_completion": 133,
+          "finish_reason": "stop",
+          "reasoning": "**Selecting surprising facts**\n\nI need to pick an interesting and accurate fact that's also surprising and concise. One good option is that \"sharks existed before trees,\" which is true because sharks date back around 450 million years and trees around 385 million years. But a more engaging fact is \"a day on Venus is longer than its year.” Specifically, one rotation takes about 243 Earth days, while one orbit around the Sun takes only 225 days. So, that's a fun and concise fact!",
+          "topics": [
+            "venus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Venus takes about **243 Earth days to rotate once**, but only **225 Earth days to orbit the Sun**. So a Venusian year ends before the planet finishes one spin.",
+          "tokens_prompt": 13,
+          "tokens_completion": 178,
+          "finish_reason": "stop",
+          "reasoning": "**Exploring planetary facts**\n\nI need to provide an interesting fact with accuracy. Did you know that a day on Venus is actually longer than a year? It takes about 243 Earth days for Venus to complete one rotation, but only 225 days to orbit the Sun! There's a caveat since a solar day is usually about 117 days due to its retrograde rotation. So, it could be said that Venus takes longer to spin once on its axis than to orbit the Sun. Isn’t that neat?",
+          "topics": [
+            "venus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-5.5",
+      "name": "Anthropic: Claude Opus 5.5",
+      "provider": "Anthropic",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 10000 tokens, but can only afford 1348. To increase, visit https://openrouter.ai/workspaces/default/ke"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 10000 tokens, but can only afford 1348. To increase, visit https://openrouter.ai/workspaces/default/ke"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 10000 tokens, but can only afford 1348. To increase, visit https://openrouter.ai/workspaces/default/ke"
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+      "name": "Xiaomi: MiMo-V2.6-Pro-UltraSpeed",
+      "provider": "Xiaomi",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        }
+      ]
+    },
+    {
+      "id": "x-ai/grok-4.7",
+      "name": "SpaceXAI: Grok 4.7",
+      "provider": "xAI",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        },
+        {
+          "success": false,
+          "content": null,
+          "error": "HTTP 402: {\"error\":{\"message\":\"This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.\",\"code\":402,\"metadata\":{\"reason\":\"in"
+        }
+      ]
+    },
+    {
+      "id": "qwen/qwen3.8-omni-flash",
+      "name": "Qwen: Qwen3.8 Omni Flash",
+      "provider": "Alibaba",
+      "license": "commercial",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "I can’t guarantee you don’t already know this, but here’s a good one:\n\n**Octopuses and squid massively “edit” their RNA.**  \nMost animals copy instructions from DNA into RNA and mostly leave them alone. Cephalopods, though, often rewrite those RNA messages after copying—especially in nerve cells. They chemically change one letter in the RNA strand, turning **adenosine into inosine**, which can alter how the resulting protein behaves.\n\nIn effect, their neurons are **live-editing their own molecular software**, possibly helping them adapt quickly to things like temperature changes without waiting for slow DNA evolution.",
+          "tokens_prompt": 60,
+          "tokens_completion": 893,
+          "finish_reason": "stop",
+          "reasoning": "We need respond to user: \"Tell me something I don't know.\" Need produce final. Need likely provide a fascinating fact, maybe ask? We should just tell something. Need ensure maybe not too generic? Could say: The heart continues beating outside body because intrinsic pacemaker. Or octopus three hearts? Maybe something less known: There are more possible chess games than atoms in observable universe? That's common. Need \"something I don't know\" impossible guarantee. Could frame as obscure true fact. Maybe: Honey doesn't spoil; archaeologists found edible honey in Egyptian tombs. Common. Need interesting: A day on Venus is longer than its year (rotation 243 Earth days, orbit 225). Common.\n\nMaybe choose a surprising biological/physical fact: Your body contains about 10^13 bacteria? Not exactly. Or \"The smell of rain has a name: petrichor\" common.\n\nCould tell: \"Sharks existed before trees.\" True: sharks ~450 million years, trees ~350-390 million. That's neat. But maybe known. Another: \"Wombat poop is cube-shaped.\" Known.\n\nNeed maybe provide one fact with brief explanation. Since user says Tell me something I don't know. Could be playful: \"I can't guarantee, but here's an obscure one...\" Then fact. Let's pick something genuinely interesting and less common: \"There are plants that 'sneeze' pollen\"? Or \"The electric eel isn't an eel\"? Hmm.\n\nConsider: \"A group of flamingos is called a flamboyance.\" Common.\n\nMaybe: \"The shortest war in history lasted 38 minutes (Britain-Zanzibar, 1896).\" Known.\n\nCould do: \"Bananas are berries, strawberries aren't.\" common.\n\nNeed maybe a fact from neuroscience: \"When you die, your brain may experience a surge of activity called 'death wave'.\" Too morbid.\n\nMaybe: \"The universe has a 'sound'? no.\" \n\nLet's select: \"Octopuses edit their RNA extensively, unlike almost all other animals, allowing rapid adaptation without changing DNA.\" Is that accurate? Cephalopods rewrite RNA (adenosine deamination) in nervous system, rare in other animals except maybe some. It's fascinating and less known. Need ensure truth: Octopus/squid/cuttlefish have high levels of A-to-I RNA editing, especially in neural transcripts; may help adapt to cold environments. Some papers suggest they sacrifice DNA evolution for RNA plasticity. Good. But might be too technical. We can explain simply.\n\nAlternative: \"Tardigrades can survive space vacuum\" known.\n\nAnother: \"There's a fungus that makes ants climb and explode\" known.\n\nMaybe: \"Your stomach lining replaces itself every few days because acid could digest it.\" Common.\n\nLet's craft final: \"I can’t know what you already know, but here’s one: octopuses and other cephalopods don’t just use DNA—they routinely rewrite their RNA. In their nerves, they convert adenosine to inosine (A-to-I editing), effectively changing instructions after they’re copied from genes. This lets them fine-tune proteins quickly—possibly helping them adapt to temperature or environment—without waiting for genetic mutations. In humans and most mammals this happens much less; cephalopods are weirdly prolific editors.\" Nice.\n\nNeed maybe include source? Not necessary. Ensure concise. Could add \"So they're not just smart; their neurons are live-editing their own molecular software.\" Good.\n\nFinal only. Ensure not overdo.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "I can’t know what you already know, but here’s a deep-cut one:\n\nA **pistol shrimp** can make a “snap” so powerful that it creates a tiny **cavitation bubble**. When that bubble collapses, the microscopic space inside briefly reaches **thousands of degrees**—often compared to the surface temperature of the Sun—and produces a shock wave, a loud crack, and even a faint flash of light.\n\nThe shrimp uses this bubble like a tiny weapon to stun prey or rivals. The extreme heat isn’t in the surrounding water; it exists for only a moment inside that collapsing bubble.",
+          "tokens_prompt": 60,
+          "tokens_completion": 2827,
+          "finish_reason": "stop",
+          "reasoning": "We need to respond to user: \"Tell me something I don't know.\" Need produce final answer. Need likely interesting fact, maybe obscure but accurate. Since we don't know what user knows, choose something surprising and relatively niche. Could be about octopuses? Need ensure factual. Maybe \"Wombat poop is cube-shaped\" common. \"Cleopatra lived closer to Moon landing than construction of Great Pyramid\" common. Need something less known. Could be about time perception? Maybe \"The shortest war lasted 38-45 minutes\" common. \"There are more possible iterations of a game of chess than atoms in observable universe\" common.\n\nNeed tell something they don't know. Could say: \"Honey doesn't spoil; archaeologists found edible honey in Egyptian tombs.\" Common. \"Bananas are berries but strawberries aren't\" common. \"A day on Venus is longer than its year\" common. Need fresh.\n\nPotential fact: \"The inventor of the Pringles can is buried in one.\" Is that true? Fredric Baur invented Pringles can, his ashes buried in one per request. Might be known.\n\nAnother: \"Oxford University is older than the Aztec Empire.\" Common-ish.\n\nMaybe: \"Sloths can hold their breath longer than dolphins?\" Sloths can slow heart rate and hold breath ~40 min, dolphins ~10 min. Interesting but not sure.\n\nCould be: \"The human body contains enough carbon for 9,000 pencils\"? Eh.\n\nNeed maybe explain why they don't know? We can't guarantee. Phrase: \"Here's one many people don't know:\" Then fact.\n\nLet's pick a genuinely obscure but verifiable: \"The Eiffel Tower grows about 6 inches taller in summer due to thermal expansion.\" Common. \"There's a species of jellyfish that can live forever (Turritopsis dohrnii).\" Common.\n\nMaybe: \"The sound of a pistol crack was once used to deter elephants?\" Not sure.\n\nMaybe: \"A group of flamingos is called a 'flamboyance'.\" Known.\n\nMaybe: \"The heart of a blue whale is so big a small child could crawl through its arteries.\" Common but dramatic; accuracy? Blue whale aorta large enough? Actually arteries may be wide enough for a toddler? Some sources say a small child could crawl through the main artery, but maybe exaggerated. Avoid.\n\nCould use: \"The national animal of Scotland is the unicorn.\" Many know.\n\n\"Sharks existed before trees.\" Sharks ~450 million years, trees ~350 million. Interesting. Common.\n\n\"The oldest known living land animal is a 2,000-year-old giant tortoise?\" Jonathan Seychelles giant tortoise ~190. Common.\n\n\"Vantablack absorbs 99.965% visible light\" known.\n\nMaybe something about language: \"The letter 'e' is the most common in English, but 't' is...\" Known.\n\n\"Antibiotics discovered from mold on bread?\" Penicillin common.\n\nCould say: \"In Sweden, it's illegal to own a pet that isn't adapted to Nordic climate?\" Not sure.\n\n\"Banana plants are herbaceous, not trees.\" Known.\n\nNeed maybe provide a mini list? User singular: Tell me something I don't know. Could be one fascinating fact with context.\n\nLet's find obscure and accurate: \"There are libraries made of book pages in Japan?\" Hmm.\n\nFact: \"A bolt of lightning contains enough energy to toast 100,000 slices of bread\" maybe not precise.\n\nFact: \"The first recorded computer bug was an actual moth found in a Harvard Mark II relay in 1947.\" Common among techies.\n\nFact: \"The human nose can detect at least 1 trillion odors\" study 2014; controversial.\n\nFact: \"Tardigrades can survive the vacuum of space\" known.\n\nFact: \"Cows have best friends and get stressed when separated\" cute, some research.\n\nFact: \"Sea otters hold hands while sleeping to avoid drifting apart\" known.\n\nFact: \"A single strand of spaghetti is called spaghetto\" linguistic trivia. Nice! Many don't know. Accurate? Italian singular spaghetti is spaghetto. Could be delightful. But is that \"something I don't know\"? Possibly. Need maybe more substantive.\n\nFact: \"The dot over an i or j is called a tittle.\" Known typographic trivia.\n\nFact: \"A crocodile can't stick its tongue out.\" Common myth? Actually crocodiles tongue attached to floor of mouth, can't protrude. Accurate? Yes mostly.\n\nFact: \"Octopuses have three hearts and blue blood.\" Common.\n\nFact: \"Hippopotamus milk is pink?\" Some reports; not sure.\n\nFact: \"The shortest sentence in English is 'Go.'\" not interesting.\n\nMaybe: \"The word 'set' has the most meanings in English.\" Known.\n\nCould be about geography: \"Canada has more lakes than all other countries combined.\" It has many, maybe more than rest combined? Canada has 8,797 named lakes? Actually more than 2 million lakes, over half world's lakes. \"more lakes than the rest of the world combined\" might be false? It has about 9% of world's lakes? Let's avoid.\n\n\"Russia covers 11 time zones.\" Known.\n\n\"France has the most time zones due to overseas territories (12), more than Russia.\" This is interesting and true? France includes overseas regions/collectivities, total 12 time zones (including claim? Antarctica?). According to Guinness, France spans 12 time zones, Russia 11. Good. Many don't know. But if include uninhabited territories? Metropolitan France + overseas: French Guiana, Guadeloupe, Martinique, Saint Barthelemy, Saint Martin, Saint Pierre and Miquelon, Mayotte, Reunion, Wallis and Futuna, French Polynesia, New Caledonia, Clipperton? Time zones UTC-10 to UTC+12, maybe 12. Some sources say 12 including Antarctic claims? Let's verify mentally: France time zones: UTC-10 (French Polynesia - Tahiti?), UTC-9:30 (Marquesas), UTC-9 (Gambier), UTC-8 (Clipperton?), UTC-4 (Guadeloupe, Martinique, St Martin, St Barthelemy), UTC-3 (Saint Pierre and Miquelon), UTC-1? None? UTC+0 (metropolitan winter), UTC+1 (metropolitan summer? time zone offsets not DST? Usually count standard offsets?), UTC+3 (Mayotte), UTC+4 (Reunion), UTC+5 (Kerguelen? French Southern and Antarctic Lands), UTC+11 (New Caledonia), UTC+12 (Wallis and Futuna). That's many. But DST complicates. Claim \"France has the most time zones of any country, more than Russia\" widely cited. Good.\n\nBut user asks something they don't know; maybe we can preface \"Since I can't read your mind, here's one that catches many people off guard\". Then fact. Could also ask if they want more.\n\nNeed ensure no unsupported weirdness. Let's craft concise but engaging.\n\nAlternative obscure: \"The inventor of the zipper died before seeing it widely adopted?\" Gideon Sundback? Not.\n\n\"The only food that never spoils is honey\" common.\n\n\"The average person walks the equivalent of five times around Earth in lifetime\" maybe.\n\n\"A shrimp can punch so fast it creates a bubble that reaches near sun temperature?\" Pistol shrimp snap creates cavitation bubble with temperatures ~4700°C and shockwave. Interesting, but often exaggerated. It is true transient bubble can reach high temps, light emission sonoluminescence. Could say \"The snapping claw of a pistol shrimp creates a bubble that briefly gets nearly as hot as the surface of the Sun.\" Surface Sun ~5500°C, reports 4700°C (8500°F), close. Accurate enough if qualified \"briefly, inside a tiny bubble\". This is cool and less known. Need maybe choose one.\n\nCould mention \"There is a planet where it rains glass sideways\" HD 189733b, common.\n\nMaybe \"Your stomach gets a new lining every few days to stop it digesting itself.\" Common.\n\nMaybe \"Wombats produce cubic poop because their intestines have varying elasticity\" recent research 2018. Interesting. But known.\n\nMaybe \"The moon has moonquakes and dust that smells like gunpowder\" Apollo astronauts noted smell after moonwalks. Could be obscure and true? Lunar module sampled? They reported spent gunpowder smell when dust brought inside; cause likely reactive metals/solar wind. Nice. \"Moon dust smells like gunpowder\" many don't know. But not fully verified? Astronaut reports. Could be good.\n\nLet's consider user likely wants a fun fact. Need answer not too long. We can say:\n\n\"Here’s one: the 'snap' of a pistol shrimp is so fast that it creates a collapsing bubble whose interior briefly reaches temperatures comparable to the surface of the Sun—while producing a loud crack that can stun prey. It’s basically a tiny biological torpedo using cavitation.\"\n\nCheck facts: Pistol shrimp (Alpheidae) closes claw jet, cavitation bubble collapse generates heat, sonoluminescence. Temperatures estimated up to ~4700 K? Surface Sun ~5778 K, so \"close to\" maybe okay. Some studies question high temps? But widely accepted. Better phrase \"thousands of degrees\" to avoid exact. \"briefly reaches thousands of degrees, approaching the Sun's surface temperature\". Good.\n\nAlternatively France time zones is safer? It's geographic/political, easy. \"Because of overseas territories, France spans more time zones than Russia—about 12 vs 11.\" Need caveat including overseas territories. That's safe. But less wondrous? Could be \"something you don't know\". Many know France has overseas territories, but not time zones. It's factual.\n\nMaybe combine? User asked singular; one fact enough. We can include a second optional? \"If you want another...\" But final should satisfy. Desired oververbosity 9, but user simple. Could give detailed explanation. Maybe choose one and explain why. Need not overdo.\n\nCould also tailor: \"I can’t know what you already know, but here’s a deep cut:\". Then fact. Good.\n\nLet's choose pistol shrimp because surprising and vivid. Need ensure not false. Let's craft with caveats:\n\n\"Since I can’t peek into your head, here’s a fact that surprises many people: a pistol shrimp can create a bubble so energetic that, when it collapses, the tiny pocket inside briefly reaches temperatures on the order of thousands of Kelvin—sometimes described as nearly the surface of the Sun. The shrimp uses this cavitation bubble to stun prey or rivals, and the snap can be loud enough to interfere with submarines (historically, noisy shrimp beds confused sonar).\"\n\nIs \"interfere with submarines\" true? During WWII, pistol shrimp noise confused sonar? There are accounts: snapping shrimp created noise that interfered with sonar, possibly fooled torpedoes? Need careful. \"was once blamed for mysterious sonar noise\" maybe. Let's avoid if uncertain.\n\nNeed mention \"not literally heating the whole water; just microscopic bubble for microseconds\". Good to prevent misconception. Final:\n\n\"Here’s one: pistol shrimp don’t just pinch—they fire a cavitation bubble. Their oversized claw snaps shut so fast that it jets water and forms a low-pressure bubble. When that bubble collapses, the tiny space inside briefly reaches thousands of degrees (often compared to the Sun’s surface temperature) and emits a flash of light and shock wave. The shrimp uses it to stun prey—basically a microscopic, self-made depth charge.\"\n\nThis is accurate and interesting. Need maybe add source-like: \"the comparison is to temperature inside the collapsing bubble, not the surrounding seawater.\" Good.\n\nCould be too common? But fine.\n\nNeed final answer only. Ensure no analysis. Also maybe user said \"Tell me something I don't know.\" Could respond with confidence. Need maybe include \"I can't guarantee you don't know it\". Good.\n\nLet's produce polished, concise but informative. Need maybe not too long? Desired oververbosity 9 but user asked short. Could do 2 paragraphs.\n\nFinal:\n\"I can’t know what you already know, but here’s a deep-cut one: ...\"\n\nLet's deliver.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "I can’t read your mind, but here’s a strong candidate:\n\n**The sunlight warming your face today is “old” energy that finally escaped the Sun only about 8 minutes ago.**\n\nThe energy was created by nuclear fusion in the Sun’s core, but it couldn’t travel straight out. The Sun’s interior is so dense that photons are repeatedly absorbed, scattered, and re-emitted in a slow random walk. That journey from core to surface may take **tens of thousands to hundreds of thousands of years**. Once the energy finally reaches the Sun’s visible surface, it crosses the 93 million miles to Earth in just **about 8 minutes**.\n\nSo in a poetic sense: sunlight is ancient energy making a very fast exit.",
+          "tokens_prompt": 60,
+          "tokens_completion": 2615,
+          "finish_reason": "stop",
+          "reasoning": "We need answer user's request: \"Tell me something I don't know.\" Need produce final. Need maybe interesting fact likely unknown. Could be concise but engaging. Need ensure not false. Choose obscure but verified fact. Maybe about octopuses? Or history? Need something user doesn't know impossible guarantee. Could say \"Here's a fact many people don't know\". Need perhaps surprising. Let's pick robust: \"Wombat poop is cube-shaped\" common maybe known. Need less known: \"The shortest war in history lasted 38-45 minutes between Britain and Zanzibar 1896\" common. Maybe: \"Honey doesn't spoil due to low moisture/acidity; archaeologists found edible honey in Egyptian tombs\" common. Need new angle.\n\nCould tell: \"There are trees that can clone themselves via root suckers; Pando is a clonal colony of quaking aspen in Utah, estimated 80,000 years old, same genetic individual, 106 acres, 31 million pounds\" but some know.\n\nMaybe: \"The sound of a crackling fire includes tiny explosions from sap pockets\"? Not sure.\n\nNeed something genuinely obscure and accurate. Examples:\n- Cleopatra lived closer in time to Moon landing than construction of Great Pyramid (well-known).\n- Oxford University older than Aztec Empire (common).\n- A day on Venus longer than year (common).\n- Bananas are berries, strawberries aren't (common).\n- Sharks existed before trees (known? Sharks ~450 million years, trees ~350 million, yes).\n- There is a species of jellyfish biologically immortal (Turritopsis dohrnii) known.\n- The human nose can detect 1 trillion odors (study 2014, controversial). \n- The inventor of the Pringles can? Fredric Baur designed container, ashes buried in one after death (fun, verified? He invented canister, died 2008, company fulfilled wish, half ashes in Pringles can. Some details). Might be unknown.\n- In 1932 Australian Emu War? Known.\n- The phrase \"rule of thumb\" origin? Myth, avoid.\n- There are libraries with \"dunnets\"? no.\n- The heart has its own electrical system; stops if separated? no.\n- The smell of rain is petrichor caused by geosmin from soil bacteria; humans detect at 5 parts per trillion. Nice but somewhat known.\n- Octopus has three hearts and blue blood, two hearts pump to gills, systemic stops when swimming. Common.\n- Cows have best friends and get stressed separated. Some know.\n- Sea otters hold hands while sleeping to drift apart. common.\n- A group of flamingos is called a flamboyance. common.\n- Tardigrades survive space vacuum? known.\n- The Eiffel Tower grows ~15 cm in summer due thermal expansion. common.\n- There's a planet where it rains glass sideways? HD 189733b, known.\n- The national animal of Scotland is unicorn. common-ish.\n- The longest sentence without punctuation? no.\n- The first computer bug was actual moth in Harvard Mark II, 1947, Grace Hopper. Known.\n- The dot over lowercase i/j called tittle. common.\n- A jiffy is unit of time 0.01 seconds? In computing? Maybe.\n- The shortest complete sentence in English? \"Go.\" no.\n- The longest place name: Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu (85 letters) Māori hill in NZ. Known.\n- The only letter not appearing in any U.S. state name is Q. Nice! Check: state names: Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming. Letters missing? Q? No state contains Q. J? New Jersey contains J. Z? Arizona. X? Texas, New Mexico. V? many. So Q only absent. Good trivia. But user asks something they don't know; could be too simple.\n\nMaybe combine with lesser-known: \"Q is the only letter that doesn't appear in any US state name; also no state name contains the letter Q, and 'New Mexico' has X, etc.\" Could be fun. Need maybe more depth: why? No.\n\nAlternative obscure: \"The word 'nerd' was first coined by Dr. Seuss in 1950 book If I Ran the Zoo.\" Is that true? The first recorded use often attributed to Dr. Seuss, but etymologists debate; maybe not reliable.\n\n\"A group of crows is a murder\" common.\n\n\"The only mammal capable of true flight is bat\" common.\n\n\"There are more possible iterations of chess game than atoms in observable universe\" Shannon number 10^120 vs atoms 10^80, known.\n\n\"The total length of DNA in your body if stretched would reach Pluto and back many times\" maybe exaggerated; all cells ~10^13 m? 67 AU? Pluto avg 39 AU, round trip 78 AU, maybe. Common.\n\n\"The human body contains enough carbon for 9,000 pencils\" maybe.\n\nMaybe choose a fact involving language/history with source confidence: \"In English, the longest word without a vowel is 'rhythms'\"? Actually rhythms has y sometimes vowel? no standard vowels aeiou, y not. It has 7 letters? R H Y T H M S = 7, no aeiou. Is it longest? \"nth\" no. \"strengths\" has e? s t r e n g t h s has e. \"myths\" y. Without vowels maybe \"rhythms\" 7, but \"syzygy\" y. Could be longest common word? Hmm.\n\n\"The only English word ending in -mt is ?\" no.\n\n\"pneumoultramicroscopicossilicovulcanoconiosis\" one of longest words, lung disease from volcanic ash; 46 letters. It's obscure but known to word nerds.\n\nMaybe factual: \"The dot over lowercase 'i' and 'j' is called a tittle; the phrase 'dotting the i's' comes from there.\" common.\n\nCould tell a story-like fact: \"In 1917, a French soldier named Charles de Gaulle?\" no.\n\nMaybe: \"The Great Fire of London stopped at a bakery on Pudding Lane, but the modern Monument has a hidden chamber at top accessible by 345 spiral steps, used for experiments?\" Let's check: The Monument to the Great Fire of London, designed by Christopher Wren and Robert Hooke, has a central void and staircase, viewing platform; originally intended for astronomical/zodiacal experiments? There's a vacuum chamber? It had a tube for barometer? Maybe too niche.\n\nAnother: \"St Paul's Cathedral has a whispering gallery where you can hear whispers around dome; also Golden Gallery.\" Known.\n\nHistorical oddity: \"In 1518, a dancing plague struck Strasbourg, people danced for days/weeks, possibly stress/ergotism/mass psychogenic illness.\" Known.\n\n\"Victorian mourners wore jewelry made from hair of deceased\" known.\n\n\"The first known serial killer in US?\" no.\n\nMaybe science: \"Your stomach gets a new lining every few days because acid would digest it; cells from stomach lining are among fastest regenerating.\" Known.\n\n\"Neurons in the brain can fire at up to 200 Hz?\" not.\n\n\"Sound travels faster in water than air; whale songs can cross ocean basins.\" known.\n\n\"The speed of light is so fast that sunlight left Sun ~8 min ago; but photons generated in core take thousands to millions years to reach surface due random walk.\" Nice. Many know 8 min, less know photon birth delay. Accurate? Photons created in core scatter, travel time to surface estimated 10,000 to 170,000 years or 100,000-200,000, then 8 min to Earth. Good. Could tell: \"The sunlight warming your face today was created in Sun's core tens of thousands of years ago, but escaped 8 minutes ago.\" That's fascinating and likely unknown. Need precise: Photons in radiative zone random walk; estimates vary 10,000–170,000 years, maybe up to 1 million? NASA says 100,000-200,000 years? Some say 200,000. We can say \"tens to hundreds of thousands of years\". Good.\n\nBut user said Tell me something I don't know. Maybe respond with one fact and ask if want another. Need not overdo. Since desired oververbosity 9, but user short. Could be detailed but concise enough. Maybe provide several? \"Here’s one...\" plus explanation. Need maybe choose something likely not known. Could include caveat \"I can't know what you don't know, but here's a strong candidate.\" Nice.\n\nNeed final: mention photon random walk. Ensure no false: Fusion in core creates gamma-ray photons; they are absorbed/re-emitted/scattered, gradually diffuse outward through radiative zone; once reach convective zone, travel out faster; then escape photosphere, reach Earth in 8m20s. So sunlight's energy is ancient. Could add: \"The neutrinos from same fusion arrive almost instantly (8 min), because they barely interact.\" Nice bonus. That is interesting.\n\nPotential issue: \"photons created\" in core? Energy from fusion emerges as gamma rays and kinetic energy; thermalized; photons constantly created/destroyed; not same photon. Better phrase: \"the energy you see as sunlight was produced in nuclear fusion in the Sun's core, then spent tens/hundreds of thousands of years diffusing outward as photons were repeatedly absorbed and re-emitted.\" Avoid implying identical photon. Then \"the last leg took 8 minutes.\" Good.\n\nMaybe include another fact? User singular. Could give one strong candidate. Need final maybe:\n\n\"I can’t read your mind, but here’s one with good odds:\nThe warmth on your skin from sunlight began as fusion energy in the Sun’s core maybe 100,000+ years ago. It couldn’t just shoot straight out: in the dense core, photons are scattered/absorbed/re-emitted in a random walk, taking tens to hundreds of thousands of years to reach the surface. Once freed, it crosses space in about 8 minutes. So sunlight is ancient energy wearing a fresh 8-minute coat. Bonus: neutrinos from the same reactions race straight out and reach you in those 8 minutes.\"\n\nNeed ensure \"fresh 8-minute coat\" metaphor okay. Could mention estimates vary. This satisfies. Maybe if they know, offer more. final.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-flash",
+      "name": "Xiaomi: MiMo-V2.6-Flash",
+      "provider": "Xiaomi",
+      "license": "open-source",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: **Bananas are naturally radioactive.**\n\nThey contain potassium-40, a naturally occurring radioactive isotope of potassium. If you ate about **10 million bananas at once**, you'd receive a lethal dose of radiation. In fact, scientists use a unit called the **\"Banana Equivalent Dose\" (BED)** to help explain radiation exposure in a more relatable way.\n\nSo while bananas are perfectly safe to eat, they're technically one of the most radioactive foods you can regularly consume. 🍌",
+          "tokens_prompt": 15,
+          "tokens_completion": 123,
+          "finish_reason": "stop",
+          "reasoning": "The user wants me to share an interesting, lesser-known fact.",
+          "topics": [
+            "bananas"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one:\n\n**Your body produces about 25 million new cells every second.** By the time you finish reading this sentence, you'll have made roughly 150 million new cells — including skin cells, blood cells, and gut lining cells.\n\nBut here's the part most people don't know: **you have more bacterial cells in your body than human cells.** Roughly 38 trillion bacteria call you home, compared to about 30 trillion human cells. In a very literal sense, you're more microbe than you are \"you.\"\n\nAnd those bacteria aren't just passengers — they help regulate your mood, digestion, immune system, and even influence your risk for diseases like depression and obesity. Scientists have started referring to this collection of microbes as a \"second brain\" or an \"invisible organ.\"",
+          "tokens_prompt": 15,
+          "tokens_completion": 194,
+          "finish_reason": "stop",
+          "reasoning": "The user wants to learn something surprising or lesser-known. Let me share a genuinely interesting and non-obvious fact.",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "Here's one that blows a lot of people's minds:\n\n**You have a blind spot in each eye, but your brain hides it from you.**\n\nYour optic nerve creates a literal gap in your retina where no photoreceptors exist — a place where you are genuinely *blind*. But your brain seamlessly \"fills in\" that missing data using information from the surrounding area, so you never notice. You can actually find your blind spot with a simple test: hold a finger out at arm's length, close your left eye, look past it with your right eye, and slowly move your finger toward you — it will *vanish* when it hits the blind spot, then reappear as your brain patches the image back in.\n\nSome people find this unsettling: **you are literally blind in two spots right now**, and your brain just lies to you about it.",
+          "tokens_prompt": 15,
+          "tokens_completion": 202,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something surprising or interesting they might not know. Let me share some genuinely fascinating facts.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro",
+      "name": "Xiaomi: MiMo-V2.6-Pro",
+      "provider": "Xiaomi",
+      "license": "open-source",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here's one: **Octopuses have three hearts and blue blood.**\n\nBut here's the part that's even more fascinating and lesser known:\n\nTheir blood is blue because it uses **hemocyanin** (a copper-based protein) instead of hemoglobin (iron-based, like ours) to carry oxygen. This actually makes their blood *more efficient* at transporting oxygen in cold, low-oxygen environments like the deep sea.\n\nThe twist? When an octopus swims vigorously, it stops pumping blood to its own **systemic heart** — the one that services its organs. So exertion actually causes them to become physically exhausted and vulnerable. This is largely why octopuses prefer to **crawl rather than swim**: it's essentially a survival trade-off.\n\nBonus oddity: their brains are partially in their arms. Two-thirds of an octopus's neurons are distributed across its limbs, which is why a severed tentacle can still react to touch and even grab food.\n\nWant to go down a rabbit hole on any of these? 🐙",
+          "tokens_prompt": 15,
+          "tokens_completion": 248,
+          "finish_reason": "stop",
+          "reasoning": "The user wants me to tell them something they probably don't know. Since I don't know what they already know, I'll pick something genuinely obscure and fascinating.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here's one that surprises most people:\n\n**Octopuses have three hearts, and two of them stop beating when they swim.**\n\nHere's the breakdown:\n\n- **Two branchial hearts** pump blood through each gill.\n- **One systemic heart** pumps oxygenated blood to the rest of the body.\n\nThe strange part? When an octopus is actively swimming, the two branchial hearts temporarily *stop*, which is why octopuses prefer to crawl — swimming is essentially exhausting for them. It's a major reason they're more commonly seen creeping along the ocean floor than darting through open water.\n\nAlso worth noting: octopus blood is blue, because it uses a copper-based molecule called **hemocyanin** to carry oxygen instead of the iron-based hemoglobin we use. Hemocyanin is actually more efficient at transporting oxygen in cold, low-oxygen deep-sea environments.\n\nWant another one? 😊",
+          "tokens_prompt": 15,
+          "tokens_completion": 233,
+          "finish_reason": "stop",
+          "reasoning": "The user wants me to tell them something they don't know. Since I don't know exactly what they know, I'll pick a genuinely interesting and lesser-known fact that most people wouldn't be familiar with.",
+          "topics": [
+            "octopus"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Sure — here's a fun one:\n\n**A human body produces enough heat in 30 minutes to bring a gallon of water to a boil.**\n\nMore precisely, the average person radiates roughly 80–100 watts of heat at rest (like a light bulb). Over time, that adds up enormously. We just don't notice because that heat is constantly dissipating into the air around us.\n\nTo put it in perspective: if you could somehow harness and contain every bit of waste heat your body produces, and you kept exercising at a moderate pace (~400 watts of heat output), you could bring about a gallon of water from room temperature to boiling in roughly half an hour.\n\nWhat makes this \"hidden knowledge\" is that we tend to think of our bodies as cold or neutral because of how we feel — but we're actually walking furnaces running at a very steady, very powerful metabolic rate. A person generates more total heat energy over a lifetime than a small nuclear reactor produces in a day.\n\nWant to know something else obscure? I can keep going. 🤓",
+          "tokens_prompt": 15,
+          "tokens_completion": 539,
+          "finish_reason": "stop",
+          "reasoning": "The user is asking me to tell them something they don't know. I can't know for certain what they know, but I can share something interesting and obscure that most people wouldn't know.\n\nLet me think of something genuinely interesting and lesser-known...\n\nHere's one: There's a species of jellyfish called Turritopsis dohrnii (the \"immortal jellyfish\") that can revert from its adult medusa form back to its juvenile polyp form, effectively resetting its biological clock. But that's fairly well-known.\n\nHow about: Honey never spoils. Also well-known.\n\nLet me think of something more obscure...\n\n- Oxford University is older than the Aztec Empire. Oxford's teaching began around 1096, while the Aztec Empire was founded in 1428.\n\n- Bananas are berries, but strawberries aren't.\n\n- There are more possible iterations of a game of chess than there are atoms in the observable universe.\n\n- The shortest war in recorded history was between Britain and Zanzibar on August 27, 1896, lasting only 38 to 45 minutes.\n\n- Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramids of Giza.\n\n- There's a town in Norway called \"Hell\" and it freezes over regularly.\n\n- The Eiffel Tower can be 15 cm taller in summer than in winter due to thermal expansion of the iron.\n\nLet me pick something really good and share it, with a nice explanation.",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "id": "nex-agi/nex-n2.5-mini",
+      "name": "Nex AGI: Nex-N2.5-Mini",
+      "provider": "Nex Agi",
+      "license": "open-source",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s one: **wombats make cube-shaped poop**.\n\nThey’re the only known animals that produce cubic feces. The trick happens in the wombat’s intestines: the last part of the digestive tract has uneven elasticity, which molds the droppings into little cubes. This helps the cubes not roll away, since wombats use them to mark territory.",
+          "tokens_prompt": 17,
+          "tokens_completion": 190,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user asks \"Tell me something I don't know.\" Need provide interesting fact. Need maybe \"Wombat cube poop\" etc. Since they ask open-ended. Need be concise but interesting. Need avoid claiming definitely unknown? Could say \"Here's one:...\" Maybe include surprising fact with explanation. Let's craft maybe \"honey never spoils\" or \"octopus three hearts\", but \"something you don't know\" impossible. Need maybe lesser-known. Let's produce interesting fact. Need maybe not overdo. Final only.\n",
+          "topics": [
+            "wombats"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s one: **Antarctica is the only continent that every line of longitude crosses.**\n\nBecause longitude lines all converge at the South Pole, any meridian you draw from pole to pole passes through Antarctica.",
+          "tokens_prompt": 17,
+          "tokens_completion": 358,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user asks open-ended. Need provide interesting fact. Need maybe concise. No need reveal instructions. Need maybe \"Something you may not know: ...\" Could be factual. Let's craft interesting, surprising, accurate. Maybe \"wombats make cube poop\" known. Need something less common. Could mention \"honey is edible after thousands of years\" but known. Let's think.\n\nNeed answer likely \"Something I don't know\" maybe \"The first computer bug...\" But user likely wants interesting tidbit. Need avoid overexplaining. Could mention \"octopuses have three hearts, blue blood...\" Known. Need \"The Eiffel Tower grows in summer due to thermal expansion up to 15 cm.\" Known but fun. Maybe \"There are more possible games of chess than atoms in observable universe\" known. Need \"something you don't know\" impossible know user's knowledge. Could phrase \"Here's one that often surprises people.\" Good.\n\nCould include \"A day on Venus is longer than its year.\" Known.\n\nMaybe \"The only continent crossed by all lines of longitude is Antarctica.\" Interesting. Is that true? Longitude lines converge at South Pole; all longitudes cross Antarctica. Good. Also maybe \"Every point on Earth is within 80 miles of a place where it has rained snow at some point.\" Hmm.\n\nLet's answer with one fact plus short explanation. Need maybe not too long. Use \"Here's one: ...\" Good.\n\nNeed ensure no weird. Final only.\n",
+          "topics": []
+        },
+        {
+          "success": true,
+          "content": "A day on Venus is longer than its year.\n\nVenus takes about **243 Earth days** to rotate once on its axis, but only about **225 Earth days** to orbit the Sun. So Venus completes a full year before it finishes a single day.",
+          "tokens_prompt": 17,
+          "tokens_completion": 358,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user \"Tell me something I don't know.\" Need provide interesting fact maybe concise. Need no analysis? Need final only likely. We need comply. Could say \"Octopuses...\" But maybe \"something you don't know\" impossible to know. Need present a fact. Maybe surprising. Need avoid if already known? \"Something you probably don't know\" with caveat. Let's craft maybe \"There are more possible sequences...\" Let's choose a neat fact: \"The first computer bug was a moth found in Harvard Mark II in 1947.\" But maybe many know. Need something not commonly known. Maybe \"Bananas are berries, strawberries aren't\" maybe known. Need maybe \"your body emits enough light...\" Not unknown maybe.\n\nMaybe answer: \"Honey can be edible for thousands of years: archaeologists have tasted 3,000-year-old honey from Egyptian tombs and found it still safe due to low water and acidity.\" That's known-ish.\n\nNeed \"Tell me something I don't know\" maybe ask if they want. But should answer.\n\nCould say \"The Eiffel Tower grows about 15 cm taller in summer as iron expands from heat.\" Nice.\n\nMaybe \"A day on Venus is longer than its year\": rotates slowly, orbital period 225 Earth days, rotation 243 Earth days. Good.\n\nLet's final with one fact and short explanation.\n",
+          "topics": [
+            "venus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nex-agi/nex-n2.5-pro",
+      "name": "Nex AGI: Nex-N2.5-Pro",
+      "provider": "Nex Agi",
+      "license": "open-source",
+      "released": "September 2026",
+      "runs": [
+        {
+          "success": true,
+          "content": "Here’s something you may not know:\n\n**Sharks existed before trees.**  \nSharks have been around for about **450 million years**, while the earliest trees appeared roughly **385 million years** ago. So sharks had already been swimming in the oceans for tens of millions of years before forests existed on land.",
+          "tokens_prompt": 17,
+          "tokens_completion": 121,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user asks \"Tell me something I don't know.\" Need comply. Could be interesting fact. Need maybe phrase \"Here's one...\" Maybe something not known. We don't know user's knowledge. Need concise. final only.\n",
+          "topics": [
+            "sharks"
+          ]
+        },
+        {
+          "success": true,
+          "content": "Here’s one you might not know: **sharks are older than trees**.\n\nSharks have existed for at least **400 million years**, while the earliest true trees appeared around **350–390 million years ago**. That means sharks were swimming in the oceans before forests covered the land.",
+          "tokens_prompt": 17,
+          "tokens_completion": 215,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer user asks \"Tell me something I don't know.\" Need provide interesting fact. Could be concise. No need ask. Need maybe \"You probably didn't know...\" Let's craft something surprising. Ensure true. Something like \"Honey never spoils\" but common. Maybe more obscure: \"Octopuses have three hearts, but when swimming main heart stops.\" Or \"The Eiffel Tower grows taller in summer due thermal expansion.\" Common. Need \"something I don't know\" impossible know user's knowledge. Phrase \"Here's one you might not know\". Need maybe one fact. Desired oververbosity 5, maybe brief. Need maybe avoid patronizing. Let's answer with a fascinating fact and explanation.\n",
+          "topics": [
+            "sharks"
+          ]
+        },
+        {
+          "success": true,
+          "content": "I can’t know what you know, but here’s a less common one:\n\n**Sharks are older than trees.**  \nSharks have existed for over **400 million years**, while the earliest trees appeared around **350–385 million years** ago. That means sharks were swimming in the oceans before forests existed on land.",
+          "tokens_prompt": 17,
+          "tokens_completion": 219,
+          "finish_reason": "stop",
+          "reasoning": "\nWe need answer to user \"Tell me something I don't know.\" Need provide interesting fact maybe with caveat. Need not reveal system. Need likely concise. Could choose surprising fact. Need maybe \"Here's one: ...\". Ensure not overclaim? \"Bananas are berries but strawberries aren't\" common. Maybe something less common: \"Octopuses have arms with neurons and can taste by touch\" maybe known. \"The Eiffel Tower can be 15 cm taller in summer due to thermal expansion\" known. Need \"something you don't know\" impossible to know. Could say \"I can't know what you know, but here's a less common fact...\" Good. Need final only.\n",
+          "topics": [
+            "sharks"
+          ]
         }
       ]
     }
