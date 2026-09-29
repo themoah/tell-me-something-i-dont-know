@@ -164,6 +164,18 @@ export function serializeForScriptTag(value: unknown): string {
         .replace(/\u2029/g, '\\u2029');
 }
 
+/** A run we can show: the call succeeded and returned answer text. */
+function isPublishableRun(run: { success: boolean; content?: string | null }): boolean {
+    return run.success && !!run.content?.trim();
+}
+
+/** Models with at least one real answer. Failed and empty runs are removed. */
+export function modelsWithAnswers(models: Model[]): Model[] {
+    return dedupeBySlug(models)
+        .map((m) => ({ ...m, runs: m.runs.filter((r) => isPublishableRun(r)) }))
+        .filter((m) => m.runs.length > 0);
+}
+
 /** Keep first occurrence per slug — data.json can contain duplicate model ids. */
 export function dedupeBySlug(models: Model[]): Model[] {
     const seen = new Set<string>();
@@ -280,18 +292,15 @@ function renderHero(candidates: HeroCandidate[]): string {
 
 /** Tabs + response bodies for a model's runs (shared by index cards and model pages). */
 function renderRunBlocks(runs: Run[]) {
-    const tabsHTML = runs.map((_, i) =>
+    const visible = runs.filter((r) => isPublishableRun(r));
+    const tabsHTML = visible.map((_, i) =>
         `<button class="response-tab ${i === 0 ? 'active' : ''}" data-run="${i}">Run ${i + 1}</button>`
     ).join('');
 
     let responsesHTML = '';
-    for (let i = 0; i < runs.length; i++) {
-        const run = runs[i];
+    for (let i = 0; i < visible.length; i++) {
+        const run = visible[i];
         const hidden = i > 0 ? ' hidden' : '';
-        if (!run.success) {
-            responsesHTML += `<div class="response-text${hidden}" data-run="${i}"><span class="error-text">Error: ${escapeHtml(run.error || 'Unknown error')}</span></div>`;
-            continue;
-        }
         const topicTags = (run.topics || []).map(t => {
             const emoji = TOPIC_EMOJIS[t] || '';
             return `<span class="topic-tag" data-topic="${escapeHtml(t)}">${emoji} ${escapeHtml(t)}</span>`;
@@ -312,8 +321,8 @@ function renderRunBlocks(runs: Run[]) {
                 ${reasoningBlock}`;
     }
 
-    const totalTokens = runs.reduce((sum, r) => sum + (r.tokens_completion || 0), 0);
-    const allTopics = [...new Set(runs.flatMap(r => r.topics || []))].join(',');
+    const totalTokens = visible.reduce((sum, r) => sum + (r.tokens_completion || 0), 0);
+    const allTopics = [...new Set(visible.flatMap(r => r.topics || []))].join(',');
     return { tabsHTML, responsesHTML, totalTokens, allTopics };
 }
 
@@ -325,6 +334,7 @@ function renderModelCards(models: Model[], topTopics: string[]): string {
         const originality = calcOriginality(model, topTopics);
         const released = parseReleasedToTimestamp(model.released);
         const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
+        if (!model.runs.some((r) => isPublishableRun(r))) continue;
         const { tabsHTML, responsesHTML, totalTokens, allTopics } = renderRunBlocks(model.runs);
         const slug = slugify(model.id);
 
@@ -529,7 +539,11 @@ async function main() {
     const data: Data = JSON.parse(raw);
     const template = await fs.readFile(TEMPLATE_FILE, 'utf-8');
 
-    const modelCount = String(data.meta.total_models);
+    const visibleModels = modelsWithAnswers(data.models);
+    data.models = visibleModels;
+    data.meta = { ...data.meta, total_models: visibleModels.length };
+
+    const modelCount = String(visibleModels.length);
     const dateStr = new Date(data.meta.generated_at).toLocaleDateString('en-US', {
         year: 'numeric', month: 'long', day: 'numeric',
     });
