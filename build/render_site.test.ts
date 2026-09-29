@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
 
 test('slugify replaces all slashes', () => {
     assert.equal(slugify('anthropic/claude-sonnet-4.6'), 'anthropic-claude-sonnet-4.6');
@@ -75,4 +75,37 @@ test('renderTopicBars omits topics below the threshold', () => {
     assert.ok(html.includes('octopus'));
     assert.ok(html.includes('jellyfish'));
     assert.ok(!html.includes('sloths'));
+});
+
+test('modelsWithAnswers omits a model whose runs all failed', () => {
+    const models = [
+        {
+            id: 'a/bad', name: 'Bad', provider: 'P', license: 'commercial',
+            runs: [
+                { success: false, content: null, error: 'HTTP 429' },
+                { success: false, content: null, error: 'HTTP 429' },
+            ],
+        },
+        {
+            id: 'b/ok', name: 'Ok', provider: 'P', license: 'commercial',
+            runs: [{ success: true, content: 'A fact' }],
+        },
+    ] as any;
+    const visible = modelsWithAnswers(models);
+    assert.deepEqual(visible.map((m) => m.id), ['b/ok']);
+});
+
+test('modelsWithAnswers keeps only successful runs', () => {
+    const models = [{
+        id: 'a/mix', name: 'Mix', provider: 'P', license: 'commercial',
+        runs: [
+            { success: true, content: 'First' },
+            { success: false, content: null, error: 'timeout' },
+            { success: true, content: '   ' },
+            { success: true, content: 'Third' },
+        ],
+    }] as any;
+    const visible = modelsWithAnswers(models);
+    assert.equal(visible.length, 1);
+    assert.deepEqual(visible[0].runs.map((r) => r.content), ['First', 'Third']);
 });

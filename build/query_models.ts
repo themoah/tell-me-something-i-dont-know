@@ -13,7 +13,7 @@ import 'dotenv/config';
  *   # Dry run (show what would be queried without calling the API)
  *   npm run query -- --dry-run
  *
- *   # Append to existing data.json (skip already-queried models)
+ *   # Append to existing data.json (skip models that already have a full set of answers)
  *   npm run query -- --append
  */
 
@@ -120,6 +120,20 @@ export function shouldRetryRunResult(result: Pick<RunResult, 'success' | 'conten
   return !result.content?.trim() || result.finish_reason === 'length';
 }
 
+/** A run we can show: the call succeeded and returned answer text. */
+export function isPublishableRun(run: { success: boolean; content?: string | null }): boolean {
+  return run.success && !!run.content?.trim();
+}
+
+/** How many more successful answers a model still needs. Failed runs do not count. */
+export function runsStillNeeded(
+  runs: Array<{ success: boolean; content?: string | null }> | undefined,
+  runsPerModel: number,
+): number {
+  const have = (runs ?? []).filter(isPublishableRun).length;
+  return Math.max(0, runsPerModel - have);
+}
+
 export function retryTokenBudgets(maxTokens: number): number[] {
   return [10000, 20000, 40000].filter((tokens) => tokens > maxTokens);
 }
@@ -137,8 +151,8 @@ function incompleteRunResult(result: RunResult): RunResult {
   };
 }
 
-// Upstream rate limits are transient; a failed run drops the model from the site
-// for a whole cycle, so retry provider 429/5xx here with backoff.
+// Upstream rate limits are transient. Retry provider 429/5xx here with backoff
+// before giving up on this run. A run that still fails is not saved.
 export async function queryModel(
   modelId: string,
   prompt: string,
@@ -393,15 +407,18 @@ async function main() {
     models = kept;
   }
 
-  // Load existing data if appending
-  const existingIds = new Set<string>();
+  // Load existing data if appending. Failed runs are not answers: drop them so
+  // the next invocation fills the gap instead of treating the model as done.
   let existingData: ModelEntry[] = [];
   if (append) {
     try {
       const raw = await fs.readFile(DATA_FILE, 'utf-8');
       const old = JSON.parse(raw) as { models?: ModelEntry[] };
-      existingData = old.models ?? [];
-      for (const m of existingData) existingIds.add(m.id);
+      for (const model of old.models ?? []) {
+        const runs = model.runs.filter(isPublishableRun);
+        if (runs.length === 0) continue;
+        existingData.push({ ...model, runs });
+      }
     } catch {
       // no existing file, start fresh
     }
@@ -414,7 +431,9 @@ async function main() {
 
   if (dryRun) {
     for (const m of models) {
-      const status = existingIds.has(m.id) ? '(SKIP - already queried)' : '';
+      const prior = existingData.find((e) => e.id === m.id);
+      const needed = append ? runsStillNeeded(prior?.runs, runsPerModel) : runsPerModel;
+      const status = needed === 0 ? '(SKIP - already queried)' : '';
       console.log(`  ${m.name.padEnd(30)} [${m.license.padEnd(12)}] ${m.id} ${status}`);
     }
     return;
@@ -424,17 +443,19 @@ async function main() {
 
   for (let i = 0; i < models.length; i++) {
     const model = models[i];
+    const existingIdx = results.findIndex((m) => m.id === model.id);
+    const priorRuns = existingIdx >= 0 ? results[existingIdx].runs : [];
+    const needed = runsStillNeeded(priorRuns, runsPerModel);
 
-    if (existingIds.has(model.id)) {
+    if (needed === 0) {
       console.log(`[${i + 1}/${models.length}] SKIP ${model.name} (already queried)`);
       continue;
     }
 
     process.stdout.write(`[${i + 1}/${models.length}] Querying ${model.name}...`);
 
-    const runs: RunResult[] = [];
-    let timedOut = false;
-    for (let runIdx = 0; runIdx < runsPerModel; runIdx++) {
+    const runs: RunResult[] = [...priorRuns];
+    for (let n = 0; n < needed; n++) {
       let result = await queryModel(model.id, prompt, temperature, maxTokens, apiKey!);
 
       // Retry if the model returned no answer text or hit the output-token cap.
@@ -450,44 +471,39 @@ async function main() {
         result = incompleteRunResult(result);
       }
 
-      if (!result.success && result.timed_out) {
-        if (!append) {
-          throw new Error(
-            `Timeout querying ${model.name} (${model.id}) on run ${runIdx + 1}/${runsPerModel}. Failing entire run.`,
-          );
-        }
-        process.stdout.write(' ✗(timeout, skipping model)');
-        timedOut = true;
+      if (!result.success && result.timed_out && !append) {
+        throw new Error(
+          `Timeout querying ${model.name} (${model.id}) on run ${runs.length + 1}/${runsPerModel}. Failing entire run.`,
+        );
+      }
+
+      if (!isPublishableRun(result)) {
+        const why = result.timed_out ? 'timeout, will retry next run' : (result.error ?? 'invalid').slice(0, 40);
+        process.stdout.write(` ✗(${why})`);
         break;
       }
 
-      if (result.success) {
-        result.topics = detectTopics(result.content!);
-        process.stdout.write(' ✓');
-      } else {
-        process.stdout.write(` ✗(${(result.error ?? '').slice(0, 30)})`);
-      }
-
+      result.topics = detectTopics(result.content!);
       runs.push(result);
+      process.stdout.write(' ✓');
 
-      if (runIdx < runsPerModel - 1) await sleep(1000);
+      if (n < needed - 1) await sleep(1000);
     }
 
     console.log();
 
-    if (timedOut) {
-      await sleep(500);
-      continue;
+    if (runs.length > 0) {
+      const entry: ModelEntry = {
+        id: model.id,
+        name: model.name,
+        provider: model.provider,
+        license: model.license,
+        ...(model.released ? { released: model.released } : {}),
+        runs,
+      };
+      if (existingIdx >= 0) results[existingIdx] = entry;
+      else results.push(entry);
     }
-
-    results.push({
-      id: model.id,
-      name: model.name,
-      provider: model.provider,
-      license: model.license,
-      ...(model.released ? { released: model.released } : {}),
-      runs,
-    });
 
     await sleep(500);
   }

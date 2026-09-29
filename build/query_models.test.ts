@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import {
   priceFilter,
   MAX_OUTPUT_PRICE_PER_TOKEN,
+  isPublishableRun,
   queryModel,
   retryTokenBudgets,
+  runsStillNeeded,
   shouldRetryRunResult,
   detectTopics,
   retagData,
@@ -123,6 +125,35 @@ test('retries successful content truncated by token limit', () => {
     }),
     true,
   );
+});
+
+test('three failed runs still need a full set of answers', () => {
+  assert.equal(runsStillNeeded([
+    { success: false, content: null },
+    { success: false, content: null },
+    { success: false, content: null },
+  ], 3), 3);
+});
+
+test('three successful runs need nothing more', () => {
+  assert.equal(runsStillNeeded([
+    { success: true, content: 'a' },
+    { success: true, content: 'b' },
+    { success: true, content: 'c' },
+  ], 3), 0);
+});
+
+test('two successes and one error need one more run', () => {
+  assert.equal(runsStillNeeded([
+    { success: true, content: 'a' },
+    { success: true, content: 'b' },
+    { success: false, content: null },
+  ], 3), 1);
+});
+
+test('whitespace-only content is not publishable', () => {
+  assert.equal(isPublishableRun({ success: true, content: '   \n\t' }), false);
+  assert.equal(runsStillNeeded([{ success: true, content: '   \n\t' }], 3), 3);
 });
 
 test('does not retry unsuccessful results', () => {
