@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohere: Command A+ — Tell me something I don't know.</title>
+    <meta name="description" content="Cohere: Command A+ answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a little‑known gem from the natural world that most people never encounter: The male bowerbird builds a “bower” that is essentially a private art…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/cohere-command-a-plus/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/cohere-command-a-plus/">
+    <meta property="og:title" content="Cohere: Command A+ — Tell me something I don't know.">
+    <meta property="og:description" content="Cohere: Command A+ answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a little‑known gem from the natural world that most people never encounter: The male bowerbird builds a “bower” that is essentially a private art…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cohere: Command A+ — Tell me something I don't know.">
+    <meta name="twitter:description" content="Cohere: Command A+ answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a little‑known gem from the natural world that most people never encounter: The male bowerbird builds a “bower” that is essentially a private art…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Cohere: Command A+)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s a little‑known gem from the natural world that most people never encounter:\n\n**The male bowerbird builds a “bower” that is essentially a private art gallery, and he curates it with astonishing taste.**  \n\n- **What he does:** A male great bowerbird (a species native to Australia and New Guinea) spends weeks gathering objects he finds in his territory—shells, stones, pieces of glass, bits of plastic, even discarded bottle caps.  \n- **How he arranges them:** He doesn’t just pile them up; he arranges them into carefully balanced, symmetrical structures, often creating “rooms” and “courtyards.” Some males even paint their bowers with pigments made from crushed shells or earth, adding color to the display.  \n- **Why it matters:** Female bowerbirds visit multiple bowers and judge the males based almost entirely on the quality, complexity, and aesthetic appeal of the bower. A male with a particularly impressive gallery can secure multiple mates, while a sloppy one may be ignored.  \n- **The twist:** The male never lives in the bower himself; it’s purely a showroom. He builds a new one each breeding season, and the old one is abandoned and eventually reclaimed by the forest.  \n\nBecause each bower is a unique, meticulously crafted “gallery,” researchers have called the bowerbird one of the few non‑human animals to exhibit genuine artistic behavior. The males even seem to have personal styles—some favor bright colors, others prefer smooth stones, and a few incorporate objects that are unusually rare in their habitat.  \n\n---\n\n### A quick bonus mystery: the Voynich manuscript\n\nIf you like puzzles, you might be intrigued by the **Voynich manuscript**, a 240‑page medieval text that has never been deciphered. It contains bizarre illustrations (some resembling plants, others naked women in bathtubs) and a script that no one has been able to decode, despite decades of effort by cryptographers and linguists. Its language remains unknown, and its contents are still a complete mystery.\n\n---\n\nFeel free to let me know if you’d like more off‑the‑beaten‑path facts—whether about animal behavior, unsolved mysteries, or anything else!","author":{"@type":"Organization","name":"Cohere"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s a fascinating fact that many people haven’t heard:\n\n**The mantis shrimp has the most sophisticated visual system ever discovered in the animal kingdom.** It possesses up to 16 different types of photoreceptor cells (compared to humans’ three), can see polarized light, and can detect a spectrum of colors that includes ultraviolet and polarized spectra. In other words, its eyes can perceive a world of light and color that we can’t even imagine.\n\nIf you’d like to learn more about this or any other topic—whether it’s biology, history, physics, or something completely different—just let me know!","author":{"@type":"Organization","name":"Cohere"}},{"@type":"Answer","text":"Here are a couple of surprising facts that many people haven’t encountered:\n\n**1. The shortest war in history lasted only 38 minutes.**  \nOn August 27 1896, Britain and Zanzibar fought the Anglo‑Zanzibar War. After a brief bombardment of the sultan’s palace, the Sultan Hamad bin Thuwaini surrendered at 9:38 am—making the conflict just 38 minutes long and earning it the title of the world’s shortest war.\n\n**2. Honey never spoils.**  \nThanks to its low water content, high acidity, and natural antibacterial compounds, honey is practically indestructible. Archaeologists have found edible honey in ancient Egyptian tombs that is over 3,000 years old, and samples from the tomb of Tutankhamun were still perfectly preserved and sweet when tested.\n\nIf you’d like more obscure tidbits—whether about history, science, language, or anything else—just let me know!","author":{"@type":"Organization","name":"Cohere"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Cohere: Command A+</h1>
+        <p class="subtitle">Cohere · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Cohere: Command A+</div>
+                        <div class="model-provider">Cohere</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s a little‑known gem from the natural world that most people never encounter:</p>
+<p><strong>The male bowerbird builds a “bower” that is essentially a private art gallery, and he curates it with astonishing taste.</strong>  </p>
+<ul>
+<li><strong>What he does:</strong> A male great bowerbird (a species native to Australia and New Guinea) spends weeks gathering objects he finds in his territory—shells, stones, pieces of glass, bits of plastic, even discarded bottle caps.  </li>
+<li><strong>How he arranges them:</strong> He doesn’t just pile them up; he arranges them into carefully balanced, symmetrical structures, often creating “rooms” and “courtyards.” Some males even paint their bowers with pigments made from crushed shells or earth, adding color to the display.  </li>
+<li><strong>Why it matters:</strong> Female bowerbirds visit multiple bowers and judge the males based almost entirely on the quality, complexity, and aesthetic appeal of the bower. A male with a particularly impressive gallery can secure multiple mates, while a sloppy one may be ignored.  </li>
+<li><strong>The twist:</strong> The male never lives in the bower himself; it’s purely a showroom. He builds a new one each breeding season, and the old one is abandoned and eventually reclaimed by the forest.</li>
+</ul>
+<p>Because each bower is a unique, meticulously crafted “gallery,” researchers have called the bowerbird one of the few non‑human animals to exhibit genuine artistic behavior. The males even seem to have personal styles—some favor bright colors, others prefer smooth stones, and a few incorporate objects that are unusually rare in their habitat.  </p>
+<hr>
+<h3>A quick bonus mystery: the Voynich manuscript</h3>
+<p>If you like puzzles, you might be intrigued by the <strong>Voynich manuscript</strong>, a 240‑page medieval text that has never been deciphered. It contains bizarre illustrations (some resembling plants, others naked women in bathtubs) and a script that no one has been able to decode, despite decades of effort by cryptographers and linguists. Its language remains unknown, and its contents are still a complete mystery.</p>
+<hr>
+<p>Feel free to let me know if you’d like more off‑the‑beaten‑path facts—whether about animal behavior, unsolved mysteries, or anything else!</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1535 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; We need to provide interesting information that the user likely doesn&#39;t know. Could be a surprising fact, a lesser-known scientific discovery, a historical anecdote, a cultural tidbit, etc. Since we don&#39;t know the user&#39;s background, we can choose a broad but interesting fact. Could be about the &quot;Bowerbird&quot; building elaborate nests, or about &quot;The Great Filter&quot; hypothesis, or about &quot;The Voynich manuscript&quot;, or about &quot;Quantum entanglement&quot; or &quot;The fact that honey never spoils&quot;. Provide something interesting and perhaps surprising.
+
+We should be concise but thorough. Provide context, maybe a few examples. Could ask follow-up? The user just asked for something they don&#39;t know. Provide one or a few interesting facts.
+
+We need to ensure we don&#39;t reveal internal instructions. Provide answer.
+
+Potential answer: &quot;The shortest war in history lasted 38 minutes.&quot; Or &quot;A single bolt of lightning contains enough energy to toast 100,000 slices of bread.&quot; Or &quot;The human body contains about 60,000 miles of blood vessels.&quot; Or &quot;The Great Wall of China is not visible from space with the naked eye.&quot;
+
+Better to give something less known: &quot;The &#39;Bowerbird&#39; builds elaborate structures called bowers to attract mates, and each male&#39;s bower is unique.&quot; Or &quot;The &#39;Mona Lisa&#39; has no eyebrows because they were lost over time.&quot; But many know that.
+
+Maybe something about &quot;The &#39;Hundredth monkey&#39; effect&quot; or &quot;The &#39;Fermi paradox&#39; and the Great Silence.&quot;
+
+Alternatively, a surprising fact about &quot;The Universe&#39;s expansion is accelerating due to dark energy, and the reason is unknown.&quot;
+
+We can give a fact about &quot;The human brain uses about 20% of the body&#39;s oxygen despite being only 2% of body weight.&quot;
+
+But many may know that.
+
+Better to give something truly obscure: &quot;The &#39;Borneo pygmy elephant&#39; is the smallest elephant and is thought to be a dwarf subspecies.&quot; Or &quot;The &#39;Schrödinger&#39;s cat&#39; thought experiment was originally a critique of quantum mechanics, not a serious experiment.&quot;
+
+Maybe a fact about &quot;The &#39;Voynich manuscript&#39; has never been deciphered, and its language is unknown.&quot;
+
+Alternatively, &quot;The &#39;Pangaea&#39; supercontinent broke up about 175 million years ago, and the continents are still moving at about 2 inches per year.&quot;
+
+We can combine a few interesting facts.
+
+We need to answer in a friendly tone.
+
+We can ask if they&#39;d like more.
+
+Let&#39;s produce a response: Provide a surprising fact about &quot;The &#39;Bowerbird&#39; and its bower building.&quot; Or &quot;The &#39;Bowerbird&#39; is a male bird that builds a structure called a bower, often using objects like shells, stones, and even plastic, and each male&#39;s bower is unique.&quot; Provide details.
+
+Alternatively, &quot;The &#39;Mona Lisa&#39; originally had eyebrows, but they were lost due to over-cleaning.&quot;
+
+Better to give something truly unknown: &quot;The &#39;Hawaiian language&#39; has a word for &#39;the sound a waterfall makes when you throw a stone into it&#39; that is &#39;kīlaea&#39;.&quot; Not sure.
+
+Maybe choose something about &quot;The &#39;Bowerbird&#39; is known for building elaborate structures to attract mates, and the quality of the bower can determine the male&#39;s reproductive success.&quot;
+
+Alternatively, &quot;The &#39;Great Pacific Garbage Patch&#39; is not a solid island of trash but a large area of floating debris.&quot;
+
+But many know that.
+
+Better: &quot;The &#39;Bowerbird&#39; uses objects collected from the environment to construct a bower, and the females choose the male based on the quality and arrangement of the bower.&quot;
+
+Alternatively, &quot;The &#39;Mona Lisa&#39; is painted on a poplar panel, not canvas.&quot;
+
+Maybe we can give a fact about &quot;The &#39;Human body&#39; contains about 60,000 miles of blood vessels, enough to circle the Earth more than twice.&quot;
+
+That might be known.
+
+Better: &quot;The &#39;Bowerbird&#39; can spend up to 10 years building a single bower.&quot;
+
+Alternatively, &quot;The &#39;Great Wall of China&#39; was built using a mixture of rice and lime as mortar.&quot;
+
+But many know.
+
+Maybe a fact about &quot;The &#39;Mona Lisa&#39; has no eyebrows because they were lost due to the cleaning process in the 19th century.&quot;
+
+Alternatively, &quot;The &#39;Bowerbird&#39; is the only bird known to use tools to build its bower.&quot;
+
+We could combine multiple facts.
+
+We can also mention &quot;The &#39;Voynich manuscript&#39; is a 240-page medieval text that has never been deciphered, and its language is unknown.&quot;
+
+Alternatively, &quot;The &#39;Fermi paradox&#39; asks why we haven&#39;t found evidence of extraterrestrial life despite the high probability of its existence.&quot;
+
+We can give a brief explanation.
+
+We can ask if they&#39;d like more.
+
+We need to keep it concise but interesting.
+
+Let&#39;s produce a response: Provide a surprising fact about the &quot;Bowerbird&quot; and its bower building, and also mention the &quot;Voynich manuscript&quot; as a mystery.
+
+We can also include a fact about &quot;The &#39;Great Pacific Garbage Patch&#39; is not a solid island but a diffuse area of microplastics.&quot;
+
+But maybe choose one main fact.
+
+I&#39;ll answer with a few interesting facts that many people may not know.
+
+Let&#39;s produce a final answer.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s a fascinating fact that many people haven’t heard:</p>
+<p><strong>The mantis shrimp has the most sophisticated visual system ever discovered in the animal kingdom.</strong> It possesses up to 16 different types of photoreceptor cells (compared to humans’ three), can see polarized light, and can detect a spectrum of colors that includes ultraviolet and polarized spectra. In other words, its eyes can perceive a world of light and color that we can’t even imagine.</p>
+<p>If you’d like to learn more about this or any other topic—whether it’s biology, history, physics, or something completely different—just let me know!</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>323 tokens</span>
+                    <span class="topic-tag" data-topic="mantis shrimp">🦐 mantis shrimp</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks &quot;Tell me something I don&#39;t know.&quot; This is a vague request. We need to respond with something that is likely unknown to the user. Since we don&#39;t know the user&#39;s knowledge, we can give an interesting fact or piece of knowledge that many people might not know. We should ensure it&#39;s appropriate and not disallowed. Provide a fact. Possibly something about a scientific phenomenon, a historical tidbit, a language fact, etc.
+
+We can choose something like &quot;The mantis shrimp has the most complex visual system known in the animal kingdom, with 16 types of photoreceptor cells (compared to humans&#39; three).&quot; Or something about the concept of &quot;Babel fish&quot; or &quot;The shortest war in history lasted only 38 minutes.&quot; Or &quot;There is a species of jellyfish that is immortal.&quot; Provide something that many might not know.
+
+We should keep it concise but interesting. Also ask if they want more. Provide a single interesting fact. Possibly also ask what kind of knowledge they are interested in.
+
+We can comply.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here are a couple of surprising facts that many people haven’t encountered:</p>
+<p><strong>1. The shortest war in history lasted only 38 minutes.</strong><br>On August 27 1896, Britain and Zanzibar fought the Anglo‑Zanzibar War. After a brief bombardment of the sultan’s palace, the Sultan Hamad bin Thuwaini surrendered at 9:38 am—making the conflict just 38 minutes long and earning it the title of the world’s shortest war.</p>
+<p><strong>2. Honey never spoils.</strong><br>Thanks to its low water content, high acidity, and natural antibacterial compounds, honey is practically indestructible. Archaeologists have found edible honey in ancient Egyptian tombs that is over 3,000 years old, and samples from the tomb of Tutankhamun were still perfectly preserved and sweet when tested.</p>
+<p>If you’d like more obscure tidbits—whether about history, science, language, or anything else—just let me know!</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1956 tokens</span>
+                    <span class="topic-tag" data-topic="honey">🍯 honey</span> <span class="topic-tag" data-topic="anglo-zanzibar war">⚔️ anglo-zanzibar war</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; That&#39;s a request for a fact or piece of information that the user presumably doesn&#39;t know. As an AI, I can provide interesting, lesser-known facts across many domains. I should choose something surprising, perhaps a scientific curiosity, a historical tidbit, a linguistic quirk, or a cultural fact. I should ensure it&#39;s not something the user already knows—though I can&#39;t know that, so I can aim for something relatively obscure.
+
+Potential ideas:
+- A fact about the number of neurons in the human brain vs. the number of connections.
+- A historical fact about a famous person doing something unexpected.
+- A linguistic fact about a word that exists in many languages but has a surprising origin.
+- A scientific fact about a phenomenon that defies intuition.
+
+I can choose something like: &quot;The shortest war in history lasted only 38 minutes.&quot; Or &quot;Honey never spoils; archaeologists have found edible honey in ancient Egyptian tombs.&quot; Or &quot;A single bolt of lightning contains enough energy to toast 100,000 slices of bread.&quot;
+
+But the user might know those. I can go for something more obscure: &quot;The word &#39;synchrony&#39; is the only word in the English language that has all its letters in alphabetical order.&quot; Actually, &quot;almost&quot; also has letters in alphabetical order? &quot;Almost&quot; is a, l, m, o, s, t – not alphabetical. &quot;Biopsy&quot; is b, i, o, p, s, y – not alphabetical. &quot;Chloride&quot; is c, h, l, o, r, i, d, e – not alphabetical. &quot;Dermatoglyphics&quot; is a famous one. But &quot;synchrony&quot; is indeed alphabetical: s, y – no, s &lt; y, but there are only two letters. Actually, &quot;synchrony&quot; is s, y – that&#39;s alphabetical. But there are longer ones: &quot;Aegilops&quot; is a word where letters appear in reverse alphabetical order. But the user asked for something they don&#39;t know. I can provide a fact about the &quot;Mona Lisa&#39;s&quot; missing eyebrows: they were fashionable in the Renaissance to shave them off. Actually, that&#39;s known.
+
+Better: &quot;The human body contains enough iron to make a small nail.&quot; That&#39;s known.
+
+Maybe a fact about the &quot;Great Pacific Garbage Patch&quot; being not a solid island but a diffuse area of microplastic.
+
+Or a fact about the &quot;Pangaea&quot; supercontinent: it formed about 335 million years ago and will break up again in about 200 million years.
+
+But those might be known.
+
+I could provide a fact about the &quot;Babel fish&quot; being a real fish that can survive in both fresh and saltwater. Actually, the Babel fish is a fictional creature from Hitchhiker&#39;s Guide.
+
+Better: &quot;The shortest war in history was the Anglo-Zanzibar War of 1896, which lasted 38 minutes.&quot; That&#39;s interesting.
+
+Alternatively, &quot;There are more possible iterations of a game of chess than there are atoms in the observable universe.&quot; That&#39;s a known fact but maybe not.
+
+I can also provide a fact about language: &quot;The word &#39;set&#39; has the most definitions of any English word, with over 430 meanings.&quot;
+
+But the user might know that.
+
+I can provide a fact about the &quot;Mandarin Chinese&quot; language: it has four tones, but some words have five tones when used in certain contexts.
+
+Better: &quot;The longest word in the English language without a vowel is &#39;rhythms&#39;.&quot; Actually, &quot;rhythms&quot; has no vowel letters, but it has a vowel sound.
+
+Or &quot;The longest word in the English language is &#39;pneumonoultramicroscopicsilicovolcanoconiosis&#39;, which describes a lung disease caused by inhaling fine silica dust.&quot;
+
+But that&#39;s known.
+
+Maybe something about the &quot;Mona Lisa&quot; being smaller than people think: it&#39;s only 30 inches by 21 inches.
+
+Or about the &quot;Great Wall of China&quot; being not visible from space with the naked eye.
+
+But those are known.
+
+I can choose a fact about the &quot;human brain&quot; having about 86 billion neurons, each neuron forming up to 10,000 connections, making about 100 trillion synapses.
+
+But that&#39;s known.
+
+Maybe something about the &quot;Amazon rainforest&quot; producing its own rain through a process called &quot;flooded forest evapotranspiration.&quot;
+
+Or about &quot;bees&quot; being able to recognize human faces.
+
+Or about &quot;crows&quot; being able to solve complex problems and even use tools.
+
+But those are known.
+
+I can provide a fact about &quot;the number zero&quot; being invented independently by the Babylonians, the Mayans, and the Indians.
+
+Or about &quot;the concept of zero&quot; being a relatively recent addition to many languages.
+
+I think the best approach is to provide something that is surprising and not widely known: for example, &quot;The shortest war in history lasted only 38 minutes, between Britain and Zanzibar in 1896.&quot; Or &quot;Honey never spoils; archaeologists have found edible honey in ancient Egyptian tombs that is over 3,000 years old.&quot;
+
+Alternatively, &quot;The human body contains about 60,000 miles of blood vessels, enough to circle the Earth more than twice.&quot;
+
+But that&#39;s known.
+
+I can also provide a fact about &quot;the word &#39;sandwich&#39; being named after John Montagu, the 4th Earl of Sandwich, who allegedly ate meat between two slices of bread to continue gambling.&quot;
+
+But that&#39;s known.
+
+Maybe something about &quot;the longest recorded flight of a pigeon lasted 1,100 miles.&quot;
+
+Or &quot;the longest recorded human lifespan is 122 years and 164 days.&quot;
+
+But those are known.
+
+I can provide a fact about &quot;the number of distinct flavors of ice cream that can be made from just three ingredients is infinite, due to continuous variables.&quot;
+
+But that&#39;s not a fact.
+
+Better: &quot;The longest recorded time a human has survived without water is 7 days, but the record for surviving without sleep is 11 days.&quot;
+
+But that&#39;s known.
+
+I think the best is to provide something that is surprising and not widely known: for example, &quot;The shortest war in history lasted only 38 minutes, between Britain and Zanzibar in 1896.&quot; Or &quot;Honey never spoils; archaeologists have found edible honey in ancient Egyptian tombs that is over 3,000 years old.&quot;
+
+Alternatively, &quot;The human brain has about 100 trillion synapses, which is roughly equivalent to the number of stars in the observable universe.&quot;
+
+But that&#39;s known.
+
+I can also provide a fact about &quot;the word &#39;synchrony&#39; being the only word in the English language where the letters are in alphabetical order.&quot;
+
+But that&#39;s known.
+
+I think I&#39;ll go with a combination: provide a surprising historical fact and a surprising scientific fact.
+
+I can say: &quot;Did you know that the shortest war in history lasted only 38 minutes? It was the Anglo-Zanzibar War of 1896, where British forces bombarded the palace of the Sultan of Zanzibar for 38 minutes before he surrendered. Another surprising fact: honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs that is over 3,000 years old, proving its incredible longevity.&quot;
+
+That should satisfy the request.
+
+I should also ask if the user wants more facts or wants me to elaborate. But the user just asked &quot;Tell me something I don&#39;t know.&quot; So I can provide one or two interesting facts.
+
+I can also add a third fact: &quot;The longest recorded flight of a pigeon lasted 1,100 miles, achieved by a homing pigeon named &#39;Pigeon 1&#39; in 1914.&quot; But that&#39;s not as interesting.
+
+Better: &quot;The longest recorded time a human has survived without water is 7 days, but the record for surviving without sleep is 11 days.&quot;
+
+But that&#39;s known.
+
+I think I&#39;ll provide two facts: one historical, one scientific.
+
+I should also ensure that the facts are accurate.
+
+Anglo-Zanzibar War: It lasted 38 minutes, from 9:00 am to 9:38 am, on August 27, 1896. The British bombarded the palace and forced the Sultan to surrender. It is recognized as the shortest war in history.
+
+Honey never spoils: Honey has a low water content and high acidity, making it inhospitable to bacteria and fungi. Archaeologists have found edible honey in ancient Egyptian tombs, and honey from the tomb of Tutankhamun was still edible after 3,000 years.
+
+I can also add a third fact: &quot;The word &#39;set&#39; has the most definitions of any English word, with over 430 meanings.&quot;
+
+But that&#39;s known.
+
+I think two facts are enough.
+
+I should present them in an engaging way.
+
+I can also ask if they want more.
+
+I&#39;ll answer accordingly.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/upstage-solar-mini4/">← Upstage: Solar Mini 4</a>
+            <a href="/">all models</a>
+            <a href="/m/openai-gpt-6-luna-pro/">OpenAI: GPT-6 Luna Pro →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
