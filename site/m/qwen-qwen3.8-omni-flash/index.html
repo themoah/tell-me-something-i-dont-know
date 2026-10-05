@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you already know, but here’s one that surprises a lot of people: The “crack” of a whip isn’t just the leather snapping—it happ…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-omni-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen3.8-omni-flash/">
+    <meta property="og:title" content="Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you already know, but here’s one that surprises a lot of people: The “crack” of a whip isn’t just the leather snapping—it happ…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen: Qwen3.8 Omni Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen: Qwen3.8 Omni Flash answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know exactly what you already know, but here’s one that surprises a lot of people: The “crack” of a whip isn’t just the leather snapping—it happ…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen: Qwen3.8 Omni Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"I can’t know exactly what you already know, but here’s one that surprises a lot of people:\n\nThe “crack” of a whip isn’t just the leather snapping—it happens because the tip of the whip can move faster than the speed of sound, creating a tiny sonic boom.","author":{"@type":"Organization","name":"Alibaba"}},"suggestedAnswer":[{"@type":"Answer","text":"I don’t know what you already know, so here’s a candidate:\n\nIn 1923, an international crisis between Greece and Bulgaria began over a stray dog. A Greek soldier’s dog crossed the border, troops went after it, shots were fired, and Greece soon invaded Bulgaria. The League of Nations stepped in, forced Greece to withdraw, and made Bulgaria pay compensation. It’s often nicknamed the “War of the Stray Dog.”\n\nIf you already knew that one, say so and I’ll find something even more obscure.","author":{"@type":"Organization","name":"Alibaba"}},{"@type":"Answer","text":"I can’t guarantee you haven’t heard this, but here’s one that surprises a lot of people: **some cancers are contagious**.\n\nNot through a virus or bacterium—but through **living tumor cells passing directly from one animal to another**.\n\nThe classic example is **canine transmissible venereal tumor** in dogs, first described in 1876. Every tumor in this lineage appears to descend from a single ancestral canid that lived thousands of years ago. The cancer spreads mainly during mating; the tumor cells are genetically distinct from the host and behave almost like an infectious parasite. Many adult dogs eventually clear it because their immune systems recognize the foreign cells, but it can persist in young or immunocompromised dogs.\n\nTasmanian devils have a similar case: **devil facial tumor disease** spreads when devils bite each other, and a second independent transmissible tumor strain has also appeared.\n\nSo the weird part: in rare cases, the “infectious agent” isn’t a microbe at all—it’s a **cancer cell line**.","author":{"@type":"Organization","name":"Alibaba"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen: Qwen3.8 Omni Flash</h1>
+        <p class="subtitle">Alibaba · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen: Qwen3.8 Omni Flash</div>
+                        <div class="model-provider">Alibaba</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can’t know exactly what you already know, but here’s one that surprises a lot of people:</p>
+<p>The “crack” of a whip isn’t just the leather snapping—it happens because the tip of the whip can move faster than the speed of sound, creating a tiny sonic boom.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>891 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need final answer likely concise but interesting. Need ensure not claim knowledge of user&#39;s unknowns. Could offer a fact and maybe ask if they knew it? Need be engaging. Since user asks something they don&#39;t know, impossible guarantee. We can say &quot;Here’s one many people don’t know...&quot; Provide surprising fact. Need maybe avoid too common? Let&#39;s pick obscure but verifiable: &quot;The shortest war in history lasted 38–45 minutes between Britain and Zanzibar in 1896.&quot; Common? Maybe. Another: &quot;Octopuses have three hearts and blue blood&quot; common. &quot;Honey never spoils&quot; common. Need something less known: &quot;There are more possible iterations of a game of chess than atoms in the observable universe&quot; common-ish. &quot;Bananas are berries, strawberries aren&#39;t&quot; common. &quot;A day on Venus is longer than its year&quot; common. &quot;The inventor of the Pringles can is buried in one&quot; somewhat known. &quot;Wombat poop is cube-shaped&quot; common. Need fresh: &quot;The heart of a shrimp is located in its head&quot; common? &quot;Sharks are older than trees&quot; maybe surprising: sharks ~450 million years, trees ~350-390? True? Sharks predate trees, also Saturn&#39;s rings? &quot;Sharks are older than Saturn&#39;s rings&quot; recent? Saturn rings maybe 10-100 million years, sharks 450m. But could be uncertain. &quot;Oxford University is older than the Aztec Empire&quot; common. &quot;Cleopatra lived closer to Moon landing than Great Pyramid&quot; common.
+
+Maybe provide a multi-fact? User singular. Need something I don&#39;t know: can&#39;t know. Could be playful: &quot;I can&#39;t know what you don&#39;t know, but here&#39;s a fact that surprises most people: ...&quot; Good.
+
+Choose a genuinely interesting lesser-known fact: &quot;The human nose can detect at least one trillion different odors&quot; (2014 Science) but contested? Many don&#39;t know. &quot;Your stomach gets a new lining every few days to keep from digesting itself&quot; common. &quot;The world&#39;s oldest known living tree is over 5,000 years, and some clonal colonies are much older (Pando ~80,000 years)&quot; maybe. &quot;There is a species of jellyfish that is biologically immortal (Turritopsis dohrnii)&quot; common. &quot;Sloths can hold their breath longer than dolphins&quot; (~40 min vs dolphins 10-15) surprising but maybe true? Sloths slow metabolism, can hold breath 40 min; dolphins 8-10 min, some seals. Could use.
+
+Need accurate: &quot;The heart is not the strongest muscle&quot;? The masseter? Hmm.
+
+Maybe: &quot;The sound of a cracking whip can exceed the speed of sound, creating a tiny sonic boom; the tip travels &gt;343 m/s.&quot; Interesting. But some debate? It&#39;s accepted. &quot;A snap of a whip creates a miniature sonic boom.&quot; Good.
+
+Or: &quot;Neutron stars are so dense that a teaspoon would weigh about a billion tons&quot; common.
+
+Could do: &quot;There are more trees on Earth than stars in the Milky Way: ~3 trillion trees vs 100-400 billion stars.&quot; This is fairly known but surprising. Need not too long.
+
+Let&#39;s craft final: &quot;I can’t read your mind, but here’s one that trips up a lot of people: the tip of a common whip can break the sound barrier, producing the crack as a tiny sonic boom. So the &#39;crack&#39; isn’t just leather snapping—it’s a miniature shock wave.&quot; Need maybe mention not all whips? Good.
+
+Need satisfy? final only. Ensure no overclaim. Could add &quot;If you already knew that, tell me and I’ll go deeper.&quot; Nice.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>I don’t know what you already know, so here’s a candidate:</p>
+<p>In 1923, an international crisis between Greece and Bulgaria began over a stray dog. A Greek soldier’s dog crossed the border, troops went after it, shots were fired, and Greece soon invaded Bulgaria. The League of Nations stepped in, forced Greece to withdraw, and made Bulgaria pay compensation. It’s often nicknamed the “War of the Stray Dog.”</p>
+<p>If you already knew that one, say so and I’ll find something even more obscure.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2636 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Need be helpful, maybe surprising fact. Since we don&#39;t know user&#39;s knowledge, can frame as obscure fact. Need perhaps mention uncertainty. Could give a genuinely little-known fact. Need ensure accuracy. Let&#39;s pick something interesting and likely unknown: &quot;The shortest war in history lasted 38-45 minutes between Britain and Zanzibar in 1896&quot; common. Maybe too known. Need something less known: &quot;Wombat poop is cube-shaped&quot; known. &quot;There are more trees on Earth than stars in Milky Way&quot; known-ish. &quot;Oxford University is older than Aztec Empire&quot; known. &quot;Cleopatra lived closer to Moon landing than building of Great Pyramid&quot; known. Need novel: &quot;The human body contains enough carbon to make thousands of diamonds?&quot; Hmm.
+
+Maybe share a multi-fact with caveat: Since I don&#39;t know what you know, here&#39;s an obscure one: &quot;In 1932 Australia fought the Emu War&quot; known. &quot;Bananas are berries but strawberries aren&#39;t&quot; known.
+
+Could use: &quot;The &#39;smell of rain&#39; has a name: petrichor, caused partly by geosmin from soil bacteria; humans can detect it at 5 parts per trillion.&quot; This is interesting but somewhat known.
+
+Maybe: &quot;A group of flamingos is called a flamboyance&quot; known.
+
+Need tell something they don&#39;t know. Could ask? But likely provide. Maybe combine with meta: &quot;I can&#39;t guarantee, but...&quot; Provide one fact and invite them to say if known.
+
+Let&#39;s verify facts:
+- There is a species of jellyfish Turritopsis dohrnii biologically immortal. Known.
+- The heart of a blue whale can be small enough for a human child to crawl through? Its arteries maybe. Known.
+- Honey doesn&#39;t spoil. Known.
+- The inventor of the Pringles can? Fredric Baur didn&#39;t get to see it, requested ashes in one, family refused. Interesting. Might be semi-known.
+- &quot;The word &#39;nerd&#39; was coined by Dr. Seuss&quot;? Actually in If I Ran the Zoo, 1950. Known to some.
+- &quot;In Japan, there&#39;s an island where rabbits outnumber people&quot; Okunoshima. Known.
+- &quot;The longest musical performance is John Cage&#39;s ORGAN2/ASLAF, started 2001, intended 639 years.&quot; Interesting. But known? Could tell.
+- &quot;The Eiffel Tower grows about 15 cm taller in summer due to thermal expansion.&quot; Common.
+- &quot;Sharks existed before trees.&quot; Yes sharks ~450 million years, trees ~350-390? Actually earliest vascular trees Archaeopteris ~385 Ma, sharks ~450 Ma. Interesting. Known.
+- &quot;Saturn&#39;s density low enough to float in water&quot; common.
+- &quot;There are more possible iterations of a game of chess than atoms in observable universe&quot; common.
+- &quot;The national animal of Scotland is the unicorn&quot; common.
+- &quot;A day on Venus is longer than its year&quot; common.
+- &quot;Octopuses have three hearts and blue blood&quot; common.
+
+Need maybe obscure and accurate: &quot;The &#39;Bloop&#39; sound was not a giant sea creature, but an icequake (iceberg cracking/calving)&quot; known from NOAA. Could be interesting.
+
+Maybe: &quot;The world&#39;s oldest known living land animal is a 190-year-old Aldabra giant tortoise named Jonathan&quot; known.
+
+Could pick: &quot;The &#39;Dancing Plague&#39; of 1518, people in Strasbourg danced uncontrollably for days, some died; likely mass psychogenic illness or ergotism?&quot; Interesting.
+
+Need avoid false: deaths from dancing? Some sources say few died from heart attack/stroke/exhaustion. Could say &quot;some reportedly died&quot;.
+
+Another: &quot;The &#39;Great Moon Hoax&#39; of 1835: newspapers reported life on the Moon, including bat-men, after telescopic observations were fabricated.&quot; Interesting.
+
+Or: &quot;The &#39;Year Without a Summer&#39; 1816 caused global crop failures due to Mount Tambora eruption; inspired Frankenstein because gloomy weather.&quot; Nice, multi-fact. Known to some.
+
+Could tell: &quot;Mary Shelley wrote Frankenstein during a competition about ghost stories caused by bad weather from a volcano.&quot; That&#39;s cool.
+
+Maybe: &quot;The first computer bug was an actual moth found in Harvard Mark II relay in 1947; term &#39;bug&#39; predated it.&quot; Known.
+
+Need answer concise but engaging. Since user says &quot;Tell me something I don&#39;t know.&quot; We can say &quot;Since I don’t know your knowledge, here’s one that’s often missed:&quot; then fact. Maybe include a few rapid-fire options? User singular. Better one fact, but could offer more. Need satisfy. Let&#39;s choose a truly interesting, accurate, less mainstream: &quot;The &#39;smell of rain&#39; petrichor detection threshold extremely low&quot; maybe good. Or &quot;There are bacteria that produce geosmin, humans evolved to detect it because it signaled water/food?&quot; Let&#39;s craft.
+
+Potential issue: &quot;humans can detect geosmin at 5 parts per trillion&quot; is accurate? Studies: humans detect geosmin at ~5 ppt (5 ng/L?) yes. Petrichor includes plant oils and geosmin. Good.
+
+But user may know. Could add &quot;If you already knew this, tell me and I’ll go deeper.&quot; That addresses unknown.
+
+Alternative fact: &quot;The &#39;longest word in English&#39; with no vowels?&quot; Hmm.
+
+Let&#39;s consider obscure: &quot;In 1904, St. Louis Olympic marathon was chaos: winner drove in car, others ate rat poison, dog chased, etc.&quot; Interesting. Known among trivia.
+
+Need maybe &quot;something I don&#39;t know&quot; can be personalized impossible. We can acknowledge and provide. Final: &quot;I can’t read your mind, but here’s a fact that surprises many people: ...&quot; Then detail.
+
+Maybe better: &quot;The Eiffel Tower gets taller in summer due to thermal expansion by up to 15 cm, and its shadow defines noon?&quot; Not enough.
+
+Let&#39;s use &quot;There are more trees on Earth than stars in the Milky Way&quot;: 3 trillion trees vs 100-400 billion stars. Many think stars more. It&#39;s accurate? Recent estimate 3.04 trillion trees. Milky Way stars 100-400 billion, maybe up to 1 trillion? Some estimates 200-400 billion. So yes generally more trees than stars in our galaxy. But if include all stars in observable universe, no. Phrase &quot;in the Milky Way&quot;. This is a great surprising fact. Could be known though.
+
+Maybe combine two: &quot;Here’s one: there are more trees in the Milky Way? Wait.&quot; Need not overdo.
+
+Let&#39;s search memory for highly obscure: &quot;The &#39;smallest country&#39; Vatican has no natural freshwater lake/river?&quot; Not sure.
+
+&quot;The only continent without reptiles? Antarctica&quot; (has no native reptiles). Known.
+
+&quot;A single day on Mercury is 176 Earth days?&quot; Solar day 176, rotation 58.6. Known.
+
+&quot;Banana plants are herbs, not trees&quot; known.
+
+&quot;Peanuts are legumes&quot; known.
+
+&quot;Wombat feces are cubic&quot; known.
+
+&quot;Tardigrades can survive space vacuum&quot; known.
+
+&quot;Sound travels faster in water than air&quot; known.
+
+&quot;Lightning is hotter than surface of sun&quot; known.
+
+Maybe historical obscure: &quot;In 1914, Christmas truce had football matches, but not official and not all fronts.&quot; Known.
+
+&quot;In 1923, Greece and Bulgaria almost went to war over a dog: Incident at Petrich.&quot; That&#39;s obscure! Let&#39;s verify: 1923 Incident at Petrich / War of the Stray Dog. Greek soldier chased runaway dog across border, shot by Bulgarian sentry; Greece invaded Bulgaria; League of Nations intervened, ceasefire, Greece withdrew after Bulgaria paid compensation? Actually League condemned Greece, awarded 45 million lei? Need accurate. Interesting fact: A stray dog caused international crisis. Could tell: &quot;In 1923, a Greek private&#39;s dog ran across the Greco-Bulgarian border; soldiers followed, gunfire broke out, Greece invaded Bulgaria, nearly starting a war. The League of Nations settled it by making Bulgaria pay compensation and Greece withdraw.&quot; Need check details: It was a Greek sheepdog? Soldier chased it; Bulgarian guards killed him? Greek troops crossed border near Petrich. Bulgaria appealed to League. League Council ordered Bulgaria to pay 50,000 pounds sterling? Let&#39;s recall: The incident occurred Aug 22, 1923. Greek soldier was killed by Bulgarian sentries while retrieving his dog. Greece invaded. League of Nations intervened, Bulgaria agreed to pay compensation (45 million leva? £45,000?) and Greece withdrew. Need not exact numbers if uncertain. Say &quot;a diplomatic crisis known as the &#39;War of the Stray Dog&#39;&quot;. This is likely unknown. Good.
+
+Could also tell: &quot;The shortest war lasted 38-45 min&quot; too known. Stray dog is fun.
+
+Need maybe mention &quot;If that&#39;s not new, ask again and I&#39;ll dig deeper.&quot; Final can be concise but detailed enough. Ensure no hallucination. Let&#39;s formulate with caveat: &quot;I don’t know what you already know, but here’s one that catches many people off guard:&quot;. Then fact.
+
+Let&#39;s ensure historical accuracy:
+Incident at Petrich: On 22 August 1923, a Greek soldier&#39;s dog ran across border into Bulgaria. Greek soldiers pursued, exchanged fire with Bulgarian sentries, one Greek soldier killed? Greece accused Bulgaria, demanded apology/compensation; when not immediate, Greek troops invaded near Petrich. Bulgaria asked League of Nations. The League demanded Bulgaria pay compensation to Greece (50 million gold francs? hmm) and Greece withdraw within 60 hours; Bulgaria complied, Greece withdrew. British? The League imposed sanctions threat on Greece? Let&#39;s not specify amount unless confident. Use &quot;forced Greece to withdraw and made Bulgaria pay compensation&quot;. Was it made Bulgaria pay? Yes.
+
+Need maybe &quot;nearly triggered war between Greece and Bulgaria&quot;. Good.
+
+Could include broader note: &quot;It&#39;s sometimes called the War of the Stray Dog.&quot; Nice.
+
+Final answer: one paragraph plus invitation. Ensure satisfies. No need analysis in final.
+
+But perhaps user expects something more directly &quot;Tell me something I don&#39;t know.&quot; Could be playful. We can say: &quot;I can’t guarantee, but...&quot;.
+
+Need maybe not too long. Desired oververbosity 9, but user simple. Could be moderately detailed. Let&#39;s craft with context and why interesting.
+
+Potential alternative: &quot;The &#39;stray dog war&#39;&quot; is obscure and accurate. Let&#39;s final.
+
+Double-check if there is any risk: The dog wasn&#39;t necessarily cause entirely; border tensions after WWI. Phrase &quot;began over&quot; or &quot;triggered by&quot;. Good.
+
+Final:
+&quot;I don’t know what you already know, so here’s a candidate: In 1923, an international crisis between Greece and Bulgaria started because of a stray dog. A Greek soldier’s dog crossed the border; troops went after it, shots were fired, one soldier died, and Greece invaded Bulgaria. The League of Nations stepped in, required Greece to withdraw, and made Bulgaria pay compensation. It’s nicknamed the &#39;War of the Stray Dog.&#39; If you’ve heard that one, tell me and I’ll pull another from a stranger corner of history/science.&quot; Nice.
+
+Need maybe &quot;one soldier died&quot; not necessarily dog? yes.
+
+Let&#39;s final. Ensure no markdown heavy? Fine.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>I can’t guarantee you haven’t heard this, but here’s one that surprises a lot of people: <strong>some cancers are contagious</strong>.</p>
+<p>Not through a virus or bacterium—but through <strong>living tumor cells passing directly from one animal to another</strong>.</p>
+<p>The classic example is <strong>canine transmissible venereal tumor</strong> in dogs, first described in 1876. Every tumor in this lineage appears to descend from a single ancestral canid that lived thousands of years ago. The cancer spreads mainly during mating; the tumor cells are genetically distinct from the host and behave almost like an infectious parasite. Many adult dogs eventually clear it because their immune systems recognize the foreign cells, but it can persist in young or immunocompromised dogs.</p>
+<p>Tasmanian devils have a similar case: <strong>devil facial tumor disease</strong> spreads when devils bite each other, and a second independent transmissible tumor strain has also appeared.</p>
+<p>So the weird part: in rare cases, the “infectious agent” isn’t a microbe at all—it’s a <strong>cancer cell line</strong>.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>12063 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need likely provide a surprising fact. Need final concise but maybe engaging. Need ensure not claim unknown to user? Could say &quot;Here’s one many people don’t know...&quot; Maybe choose obscure but verifiable fact. Need avoid too common? Let&#39;s think of interesting facts: The shortest war in history lasted 38 minutes (Anglo-Zanzibar War). Many know. Octopuses have three hearts etc. Common. Some weird: Honey doesn&#39;t spoil. Common. A day on Venus is longer than its year. Common. There are more possible chess games than atoms in observable universe? Common-ish. The human nose can detect around 1 trillion odors? Study in Science 2014, but controversial. &quot;Bananas are berries, strawberries aren&#39;t&quot; common.
+
+Need something they don&#39;t know; can&#39;t guarantee. Maybe offer a fact with caveat: &quot;I can&#39;t know what you already know, but here&#39;s an oddly specific one...&quot; Good. Need maybe multiple? User asks singular. Could say: &quot;The &#39;smell of rain&#39; has a name: petrichor, caused partly by geosmin from soil bacteria; humans can detect it at 5 parts per trillion.&quot; That&#39;s somewhat known but interesting. Or &quot;Cleopatra lived closer in time to the Moon landing than to construction of Great Pyramid.&quot; Common. &quot;Oxford University is older than Aztec Empire&quot; common. &quot;Sharks predate trees&quot; common. &quot;Wombat poop is cube-shaped&quot; common. &quot;There are more fake flamingos than real ones&quot;? Hmm.
+
+Maybe choose less mainstream: &quot;The inventor of the Pringles can?&quot; Not sure. &quot;The sound of a cracking whip exceeds speed of sound&quot; common. &quot;A group of crows is called a murder&quot; common.
+
+Need factual. Let&#39;s brainstorm unusual reliable facts:
+- The heart of a blue whale is so big a human could crawl through its arteries? Actually aorta large enough for a toddler? Might be exaggerated. Blue whale heart ~400 lbs, arteries large enough for a small child to crawl? Some sources say a human child could crawl through, but maybe myth. Avoid.
+- The total length of DNA in your body if uncoiled could stretch to Pluto and back many times. Common and estimates vary.
+- There are about as many bacteria in your body as human cells (1.3:1) revised from 10:1. Common.
+- The Eiffel Tower grows about 15 cm taller in summer due to thermal expansion. Common.
+- In Switzerland, it used to be illegal to own only one guinea pig because they get lonely. Is that true? It&#39;s a law? It might be urban legend? Actually Swiss animal welfare guidelines require social animals like guinea pigs not be kept alone, but not necessarily illegal to own one? Avoid.
+- The national animal of Scotland is unicorn. Common.
+- High heels originally for men (Persian cavalry). Common.
+- Ketchup was sold as medicine in 1830s. Common-ish.
+- The longest hiccuping spree lasted 68 years (Charles Osborne). Guinness record. Interesting. Verify: Charles Osborne hiccuped from 1922 to 1990, 68 years, won Guinness. Could be good. But user may know? Still obscure.
+- There&#39;s a species of jellyfish that is biologically immortal (Turritopsis dohrnii). Common.
+- The smell of old books is due to chemical breakdown compounds; not super.
+- The dot on the &#39;i&#39; is called a tittle. Common typography.
+- A jiffy is an actual unit of time: 1/100 second in computing? Or physics: time for light to travel 1 cm in vacuum (~33 ps). Interesting: In physics, a &quot;jiffy&quot; can mean the time it takes light to travel one centimeter in a vacuum, about 33.3564 picoseconds. In electronics, JFET? Also Gilbert Lewis proposed. Could be fun.
+- &quot;A day on Mercury is two-thirds of a year?&quot; No.
+- &quot;There are more trees on Earth than stars in Milky Way&quot; ~3 trillion trees vs 100-400 billion stars. Common.
+- &quot;The inventor of the chainsaw was for childbirth&quot; Symphysiotomy? Early chainsaw-like device for cutting bone during pelvic surgery, not exactly for childbirth? Two Scottish doctors invented a chain-driven surgical saw in 1780s for symphysiotomy/orthopedic procedures. Often cited as childbirth. Could mention carefully.
+- &quot;The shortest commercial flight in world takes 53 seconds&quot; Westray to Papa Westray, often 47 sec? Loganair, scheduled 2 min, actual 53 sec? Good.
+- &quot;The human body contains enough carbon for 9,000 pencils&quot; common.
+- &quot;Octopus blood is blue due to hemocyanin&quot; common.
+- &quot;Venus rotates backwards and a Venusian day longer than year&quot; common.
+- &quot;There are no clocks in McDonald&#39;s?&quot; no.
+- &quot;The first video game?&quot; 
+- &quot;A cloud can weigh over a million pounds&quot; common.
+- &quot;Honeybees can recognize human faces&quot; maybe true? They can learn to distinguish human faces using configural processing. Interesting.
+- &quot;Polar bear fur is transparent, skin black&quot; common.
+- &quot;The world&#39;s quietest room anechoic chamber makes you hear your own organs; people last &lt;45 min&quot; common-ish.
+- &quot;You can&#39;t hum while holding your nose&quot; common trick.
+- &quot;The heart generates enough pressure to squirt blood 30 feet&quot; maybe.
+- &quot;Neutron star material teaspoon weighs billion tons&quot; common.
+- &quot;The inventor of the potato chip was a chef trying to annoy a customer&quot; George Crum 1853, possibly myth.
+- &quot;The longest sentence without a verb?&quot; no.
+- &quot;In Finland, every year there&#39;s a wife-carrying world championship&quot; common.
+- &quot;The legal drinking age in Denmark allows 16 for beer/wine?&quot; not.
+- &quot;There&#39;s a lake in Australia that is pink due to algae&quot; common.
+- &quot;The shortest war lasted 38-45 minutes&quot; common.
+- &quot;The first alarm clock rang at 4:45 am?&quot; no.
+- &quot;The total weight of all ants equals all humans&quot; maybe roughly true? Recent estimate ants 12 megatonnes vs humans 600 million? Actually ants biomass 12 Mt carbon? Humans 60 Mt? Not equal. Avoid.
+- &quot;All mammals have same number of neck vertebrae (7), except sloths/manatees&quot; interesting. Giraffes have 7 neck vertebrae. Some sloths have 6 or 9; manatees 6. Common? Could be good.
+- &quot;Your stomach gets a new lining every few days to avoid digesting itself&quot; common.
+- &quot;A group of owls is a parliament&quot; common.
+- &quot;The dot over lowercase i/j called tittle&quot; common.
+- &quot;The word &#39;goodbye&#39; derives from &#39;God be with ye&#39;&quot; common etymology.
+- &quot;The letter &#39;q&#39; almost always followed by u, but some languages...&quot; no.
+- &quot;The longest English word without vowel?&quot; &quot;rhythm&quot;? no.
+- &quot;There is a town called Dull in Scotland, and Boring, Nevada?&quot; 
+- &quot;The most common surname globally is Zhang or Li?&quot; Chinese Wang? Could be interesting. But maybe uncertain. &quot;Smith&quot; common in English-speaking, but globally Chinese surnames dominate; Wang, Li, Zhang each ~100M. Good but not mind-blowing.
+- &quot;The most translated word after &#39;and&#39; is &#39;Russia&#39;? no.&quot;
+- &quot;The universal emergency word &#39;mayday&#39; comes from m&#39;aidez, not May Day.&quot; Common among radio enthusiasts.
+- &quot;The symbol @ had name &#39;at&#39; and used in commerce; once called &#39;monkey tail&#39; in Dutch.&quot; Interesting.
+- &quot;The first text message sent was &#39;Merry Christmas&#39; in 1992.&quot; Common.
+- &quot;The first YouTube video is &#39;Me at the zoo&#39;.&quot; Common.
+- &quot;The shortest Nobel acceptance speech was 3 sentences?&quot; no.
+- &quot;The national anthem of Japan is oldest lyrics, but melody added 19th century.&quot; Kimigayo lyrics Heian period, melody 1880. Good.
+- &quot;The country with most time zones is France (12) due territories, not Russia.&quot; Common trivia.
+- &quot;The largest desert in world is Antarctic Desert.&quot; Common.
+- &quot;The tallest mountain from base is Mauna Kea, from center Earth Chimborazo.&quot; Common.
+- &quot;The Pacific Ocean is wider than Moon diameter?&quot; Pacific ~19,800 km across, Moon diameter 3,474 km; no, much wider. Common.
+- &quot;Lightning strikes Earth 100 times per second&quot; common.
+- &quot;There are more possible iterations of a game of chess than atoms in observable universe&quot; common.
+- &quot;A day on Venus is longer than year&quot; common.
+- &quot;Bananas are radioactive due potassium-40&quot; common.
+- &quot;Wombat cube poop&quot; common.
+- &quot;Sea otters hold hands while sleeping&quot; common.
+- &quot;Cows have best friends&quot; common-ish.
+- &quot;Octopuses have nine brains&quot; common.
+- &quot;Hippopotamus milk is pink/white?&quot; Interesting: hippo sweat/milk reddish-purple, sometimes called blood sweat, not actual blood. Could be unknown.
+- &quot;A shrimp&#39;s heart is in its head&quot; common.
+- &quot;A snail can sleep for three years&quot; common?
+- &quot;Tardigrades survive space&quot; common.
+- &quot;The human eye can see only a narrow visible spectrum; but can detect single photons?&quot; Rods can respond to single photons, perception requires several. Interesting.
+- &quot;You produce about 25,000 quarts of saliva in lifetime&quot; common.
+- &quot;Your bones are stronger than concrete by weight&quot; common.
+- &quot;The strongest muscle relative to weight is masseter&quot; common.
+- &quot;The brain uses 20% energy&quot; common.
+- &quot;Nose hairs filter?&quot; no.
+- &quot;Earwax types wet/dry determined by gene ABCC11; East Asians mostly dry&quot; interesting. Could be unknown. Also dry earwax reduces body odor? ABCC11 gene affects earwax, underarm odor. Fact: Most East Asians have dry earwax due to mutation; wet earwax dominant? Actually dry is recessive? In Koreans ~95% dry. Good. Could mention.
+- &quot;Humans have a vestigial tailbone, but embryos have tails that regress&quot; common.
+- &quot;The appendix may help gut bacteria repopulate&quot; common-ish.
+- &quot;Your left lung is smaller to make room for heart&quot; common.
+- &quot;The smallest bone in body is stapes&quot; common.
+- &quot;The femur is stronger than steel&quot; common.
+- &quot;Sperm and egg?&quot; no.
+- &quot;Blood type O most common but type A?&quot; no.
+- &quot;Type O negative universal donor, AB positive universal plasma?&quot; no.
+- &quot;People with red hair feel less pain / need more anesthesia&quot; interesting: MC1R gene variants; redheads may require 20% more anesthetic and are more sensitive to some pain? Could be useful. But may be medical nuance.
+- &quot;People with blue eyes all descend from one person?&quot; Genetic mutation 6,000-10,000 years ago near Black Sea. Common.
+- &quot;Fingerprints form in womb and remain unchanged except scars&quot; common.
+- &quot;Right-handed people live shorter?&quot; no.
+- &quot;Left-handed brains differ&quot; no.
+- &quot;Sleepwalking people can&#39;t be easily awakened&quot; common.
+- &quot;Dreams cannot be read?&quot; no.
+- &quot;You forget most dreams due norepinephrine&quot; common.
+- &quot;Hiccups evolved from tadpole breathing?&quot; hypothesis. Interesting: Shannon Willsky? Hiccups may be evolutionary leftover from amphibian ancestors, because spasm pattern resembles gulp breathing in tadpoles. Could say &quot;one leading hypothesis&quot;.
+- &quot;Crying emotional tears contain stress hormones&quot; common.
+- &quot;Laughter reduces pain?&quot; no.
+- &quot;Yawning contagious may relate empathy&quot; common.
+- &quot;The voice you hear is not how others hear you&quot; common.
+- &quot;Smell linked to memory via olfactory bulb to hippocampus/amygdala&quot; common.
+- &quot;Petrichor from geosmin; humans very sensitive&quot; good.
+- &quot;The Earth has a faint ring of iron/nickel?&quot; no.
+- &quot;The moon has moonquakes&quot; common.
+- &quot;A year on Earth is getting longer due tidal friction; days were 21.9 hours 620 million years ago&quot; interesting. Fossil corals/ tidal rhythmites show ancient days shorter. Could be good: &quot;During the Devonian, a day was ~21.9 hours and year ~413 days.&quot; Need verify: 400 million years ago, day ~21.9 hours, 413 days/year. From fossil corals. Nice.
+- &quot;The Sun loses 4 million tons mass per second via fusion&quot; common.
+- &quot;The Sun is 99.86% of solar system mass&quot; common.
+- &quot;Jupiter&#39;s Great Red Spot is shrinking&quot; common.
+- &quot;Saturn density less than water&quot; common.
+- &quot;Uranus/Neptune rain diamonds&quot; hypothesis, common.
+- &quot;Venus day longer than year&quot; common.
+- &quot;Mercury has ice in craters despite close to sun&quot; common.
+- &quot;Mars has Olympus Mons tallest volcano&quot; common.
+- &quot;There are seasons on Mars due eccentricity?&quot; no.
+- &quot;Pluto has nitrogen glaciers&quot; common.
+- &quot;There are more moons around Jupiter than planets?&quot; no.
+- &quot;The Kuiper Belt/Oort Cloud&quot; no.
+- &quot;The heliosphere shape?&quot; no.
+- &quot;Voyager golden record contains sounds&quot; common.
+- &quot;The first artificial satellite beeping sounded like a ping&quot; common.
+- &quot;ISS orbits at 7.66 km/s, sunrise/sunset every 90 min&quot; common.
+- &quot;Astronauts grow taller in space&quot; common.
+- &quot;Space smells like seared steak/gunpowder&quot; astronauts report after EVA, due atomic oxygen compounds on suit. Interesting.
+- &quot;There is a giant salt crystal in space?&quot; no.
+- &quot;Water boils at lower temp in space/vacuum, freezes&quot; no.
+- &quot;Hot water can freeze faster (Mpemba effect) but contested&quot; no.
+- &quot;Glass is not liquid&quot; common myth correction.
+- &quot;Diamonds are not indestructible; can shatter&quot; common.
+- &quot;Gold is extracted from seawater?&quot; not economical.
+- &quot;The element H is most abundant, helium second&quot; common.
+- &quot;All elements heavier than iron made in supernovae/neutron star mergers&quot; common.
+- &quot;The iron in your blood came from stars&quot; common.
+- &quot;The calcium in bones from stellar nucleosynthesis&quot; common.
+- &quot;Every atom in body (except hydrogen?) made in stars&quot; common.
+- &quot;Carbon in you forged in dying stars&quot; common.
+- &quot;There are more atoms in a glass of water than glasses of water in Atlantic?&quot; classic. Maybe too common.
+- &quot;The number of possible passwords etc&quot; no.
+- &quot;Quantum particles identical, no individuality&quot; interesting but abstract.
+- &quot;Bose-Einstein condensate atoms behave as one&quot; common.
+- &quot;Superfluid helium climbs walls&quot; interesting. Could be unknown: Helium II can creep up container walls due Rollin film, then drip. But need careful.
+- &quot;Liquid oxygen is pale blue and magnetic&quot; interesting. Could be unknown.
+- &quot;Gallium melts in hand, expands when freezing&quot; common.
+- &quot;Water has maximum density at 4°C&quot; common.
+- &quot;Ice floats because open lattice&quot; common.
+- &quot;Hot ice sodium acetate&quot; common.
+- &quot;Elephant toothpaste&quot; common.
+- &quot;Mentos Coke geyser not nuclear&quot; common.
+- &quot;Banana electrical potential?&quot; no.
+- &quot;Potato battery&quot; common.
+- &quot;Lemon battery&quot; common.
+- &quot;Human body conducts electricity&quot; common.
+- &quot;Static shock from carpet can be thousands volts but low current&quot; common.
+- &quot;Lightning is five times hotter than Sun surface&quot; common.
+- &quot;Ball lightning unsolved&quot; interesting: rare luminous spheres during thunderstorms, mechanism debated. Could tell: &quot;One of meteorology&#39;s oldest unsolved problems is ball lightning; reports describe glowing spheres passing through windows, and lab reproductions include vaporized silicon.&quot; Maybe unknown.
+- &quot;Thunderstorm on another planet&quot; no.
+- &quot;Red sprites/elves/blue jets above storms&quot; common now.
+- &quot;The sky would be violet but eyes less sensitive&quot; common.
+- &quot;Sunset green flash&quot; common.
+- &quot;Mirages can be real images of ships&quot; common.
+- &quot;Rain is not teardrop shaped&quot; common.
+- &quot;Snowflakes rarely six arms due hexagonal ice&quot; common.
+- &quot;Sound travels faster in warm air? actually warmer faster&quot; common.
+- &quot;Silence can be loud in anechoic chamber&quot; common.
+- &quot;The loudest animal is pistol shrimp/sperm whale?&quot; Sperm whale clicks 230 dB, loudest; pistol shrimp cavitation. Could be interesting: &quot;The loudest sound made by an animal is a sperm whale&#39;s click, up to 230 decibels—enough to vibrate a human body and potentially fatal at close range.&quot; Need verify: Sperm whale clicks can reach 230 dB re 1 µPa at 1 m, louder than blue whale song? Yes. Could be unknown.
+- &quot;Elephants communicate infrasound through ground&quot; common.
+- &quot;Mantis shrimp punch creates cavitation bubbles and light&quot; common.
+- &quot;Pistol shrimp sound creates sonoluminescence&quot; interesting: snapping claw produces bubble collapse with brief light and temperatures maybe thousands K. But claims of sun-hot? Avoid exaggeration. Could say &quot;can emit tiny flashes of light (sonoluminescence)&quot;.
+- &quot;Electric eels can be shocked by their own?&quot; no.
+- &quot;Cuttlefish change color via chromatic neurons lacking color vision?&quot; interesting: cuttlefish are colorblind but can match colors using skin photoreceptors? Recent research suggests skin may sense light independently. Could be obscure.
+- &quot;Chameleons change color not primarily camouflage but social signaling/stress&quot; common correction.
+- &quot;Octopus arms have local neural control, can taste by touch&quot; common.
+- &quot;Starfish regenerate brains from arm tissue&quot; common-ish.
+- &quot;Planarian flatworms can remember after brain removed?&quot; interesting: They can retain learned information in body? Studies show planarians regrown from pieces retain memory, suggesting memory stored in gut neurons? Could be too niche.
+- &quot;Tardigrades can enter cryptobiosis and survive extreme, but not invincible&quot; common.
+- &quot;Immortal jellyfish transforms back to polyp&quot; common.
+- &quot;Hydra may be biologically immortal&quot; common.
+- &quot;Lobsters don&#39;t age normally but can die from molt exhaustion&quot; common.
+- &quot;Some frogs freeze solid and thaw&quot; interesting: Wood frogs produce glucose antifreeze, heart stops, breathe no, thaw in spring. Common but cool.
+- &quot;Arctic woolly bear caterpillar survives -80°C with glycerol&quot; interesting.
+- &quot; emperor penguins walk in huddles rotating&quot; common.
+- &quot;sloths hold breath longer than dolphins&quot; true? Sloths can slow heart rate and hold breath 40 min, dolphins ~10-15. Could be unknown. Three-toed sloths can hold breath up to 40 minutes by reducing metabolic rate; bottlenose dolphin ~8-10 min? Good fact but need be careful: some seals longer. &quot;Sloths can hold their breath longer than dolphins&quot; is a surprising fact. Verify: BBC? Sloths can hold breath 40 min, dolphins 10 min. Because low metabolism and can reduce heart rate. Could use.
+- &quot;Cheetahs purr but don&#39;t roar; lions roar but don&#39;t purr&quot; common.
+- &quot;Tigers have striped skin, not just fur&quot; common.
+- &quot;Pandas have pseudo-thumb&quot; common.
+- &quot;Koalas have fingerprints similar to humans&quot; interesting: koala fingerprints can resemble human, indistinguishable under microscope? Could confuse crime scenes? Fact: koalas have fingerprints very similar to humans, possibly evolved for gripping eucalyptus. Good.
+- &quot;Wombats&quot; common.
+- &quot;Dunnocks share parenting&quot; no.
+- &quot;Seahorse males pregnant&quot; common.
+- &quot;Platypus lays eggs, sweats milk, has venom, electroreception&quot; common combo. Could choose one: male platypus has venomous spurs causing intense pain not lethal but can kill dogs? Good.
+- &quot;Echidna has no stomach&quot; interesting: monotremes (echidnas/platypus?) lack a stomach; food goes straight to intestine. Echidnas have no stomach, yes. Platypus also? I think echidna lacks stomach, platypus has reduced? Could say echidnas have no stomach.
+- &quot;Birds have hollow bones but not lightweight?&quot; common.
+- &quot;Ostrich eye bigger than brain&quot; common.
+- &quot;Kiwi bird has nostrils at tip of beak&quot; interesting: one of few birds with smell; kiwi has nostrils at bill tip. Could be unknown.
+- &quot;Lyrebird mimics chainsaws/cameras&quot; common.
+- &quot;Corvids solve puzzles, recognize faces&quot; common.
+- &quot;Magpies can pass mirror test&quot; maybe.
+- &quot;Parrots talk due vocal learning&quot; common.
+- &quot;Crows drop walnuts at traffic lights&quot; common.
+- &quot;Rooks use tools?&quot; no.
+- &quot;New Caledonian crows manufacture hooks&quot; common.
+- &quot;Chickadees cache seeds and remember locations; hippocampus changes seasonally&quot; interesting.
+- &quot;Clark&#39;s nutcracker remembers thousands of seed caches for months&quot; interesting.
+- &quot;Food caching birds have larger hippocampi&quot; common.
+- &quot;Honeybee waggle dance communicates distance/direction&quot; common.
+- &quot;Bees can count/zero?&quot; maybe.
+- &quot;Ants farm aphids&quot; common.
+- &quot;Termite mounds ventilate like lungs&quot; common.
+- &quot;Leafcutter ants farm fungus&quot; common.
+- &quot;Army ants make living bridges&quot; common.
+- &quot;Weaver birds build nests&quot; no.
+- &quot;Bowerbirds paint with berry juice/sap&quot; interesting: satin bowerbirds collect blue objects and make balls from chewed bark/berries to decorate. Could be unknown.
+- &quot;Bird migration uses Earth&#39;s magnetic field via cryptochrome in eyes&quot; interesting: quantum biology. Could say evidence suggests European robins may sense magnetic fields through light-sensitive cryptochrome proteins, possibly involving quantum entanglement. This is cutting-edge and obscure. Need careful: not settled. Good.
+- &quot;Sea turtles navigate by magnetic map&quot; common.
+- &quot;Salmon smell home streams via imprinting&quot; common.
+- &quot;Eels migrate to Sargasso Sea, unknown spawning details&quot; interesting: European eels breed in Sargasso Sea but no one has observed adult spawning in wild. Could be unknown.
+- &quot;Tuna are warm-blooded partially&quot; common.
+- &quot;Sharks can detect electric fields with ampullae of Lorenzini&quot; common.
+- &quot;Sturgeons have no stomach&quot; maybe.
+- &quot;Lungfish can breathe air and estivate&quot; common.
+- &quot;Coelacanth thought extinct until 1938&quot; common.
+- &quot;Tadpole shrimp can resurrect from cysts after 20,000 years?&quot; Some claims. Avoid exact.
+- &quot;Brine shrimp cysts survive space?&quot; no.
+- &quot;Axolotls regenerate limbs, spinal cord, heart, brain&quot; common.
+- &quot;Some salamanders are paedomorphic&quot; no.
+- &quot;Caecilians are legless amphibians with tentacles&quot; interesting.
+- &quot;Poison dart frog toxicity from diet&quot; common.
+- &quot;Slow lizards give birth to live young&quot; no.
+- &quot;Snakes have forked tongues to sample stereo smells&quot; common.
+- &quot;Komodo dragons have venom glands&quot; correction: they do have venom, not just bacteria. Common.
+- &quot;Crocodilians can&#39;t stick tongue out&quot; common.
+- &quot;Alligators can&#39;t roar like lions?&quot; no.
+- &quot;Turtles can breathe through cloaca&quot; common.
+- &quot;Some turtles hibernate underwater&quot; common.
+- &quot;Birds sleep unihemispherically&quot; common.
+- &quot;Ducks can recognize mother&#39;s quack before hatching&quot; interesting.
+- &quot;Chicks communicate in egg&quot; common.
+- &quot;Ostriches can run 43 mph&quot; no.
+- &quot;Emus can&#39;t jump&quot; no.
+- &quot;Kiwi lay huge eggs relative body&quot; common.
+- &quot;Penguins propose with pebble&quot; myth? Some do collect stones, but romantic proposal myth. Avoid.
+- &quot;Flamingos are pink from diet&quot; common.
+- &quot;Ibis eat from feces?&quot; no.
+- &quot;Vultures urinate on legs to cool&quot; common.
+- &quot;Condors have urinal crypsis&quot; no.
+- &quot;Hummingbirds can fly backwards and hover due figure-eight wing motion&quot; common.
+- &quot;Swifts spend almost entire life flying, even sleep in air&quot; interesting: common swifts can fly for 10 months without landing, sleep while gliding. Good.
+- &quot;Frigatebirds can glide for months, sleep at sea&quot; similar.
+- &quot;Albatrosses can fly for years without flapping&quot; common.
+- &quot;Bar-tailed godwit flies nonstop 11,000 km Alaska to NZ&quot; common.
+- &quot;Swiftlets nest in edible saliva&quot; common.
+- &quot;Hoatzin digests leaves like cow, crops fermentation, smells bad&quot; interesting.
+- &quot;Lyrebird mimic includes saw, camera shutter&quot; common.
+- &quot;Mockingbird sings at night due light pollution&quot; common.
+- &quot;Nightingales&quot; no.
+- &quot;Blackbirds have dawn chorus&quot; no.
+- &quot;Birds migrate at night to avoid predators and thermal&quot; common.
+- &quot;Birds have strong bones with struts&quot; no.
+- &quot;Feather keratin&quot; no.
+- &quot;Down feathers insulate&quot; no.
+- &quot;Owls asymmetrical ears&quot; interesting: barn owls have one ear higher, use time/level differences to pinpoint prey in darkness. Common.
+- &quot;Owl facial disc funnels sound&quot; common.
+- &quot;Pigeons can navigate using sun, stars, magnetic, landmarks&quot; common.
+- &quot;Pigeon homing unsolved&quot; no.
+- &quot;Crows hold grudges and recognize faces&quot; common.
+- &quot;Magpies mirror test&quot; maybe.
+- &quot;Jackdaws use tools?&quot; no.
+- &quot;Kea parrots curious, dismantle cars&quot; common.
+- &quot;Corvids play with snow&quot; common.
+- &quot;Ravens mimic wolves&quot; interesting.
+- &quot;Cockatoos dance to beat&quot; common.
+- &quot;Parrots have complex vocal learning&quot; common.
+- &quot;Bowerbirds use perspective art&quot; interesting: some bowers create forced perspective arrangements; spotted bowerbirds? Satin bowerbirds arrange objects by size to enhance depth illusion. Could be unknown.
+- &quot;Birds can see UV and polarized light&quot; common.
+- &quot;Eagles not 4x human?&quot; myth.
+- &quot;Kestrels hover&quot; no.
+- &quot;Osprey reverses outer toe&quot; common.
+- &quot;Woodpecker tongue wraps around skull&quot; common.
+- &quot;Hummingbird heart beats 1200 bpm&quot; common.
+- &quot;Mouse lemmings suicide myth&quot; common correction.
+- &quot;Squirrels fake nuts?&quot; no.
+- &quot;Chipmunks cheek pouches&quot; common.
+- &quot;Beavers have transparent third eyelid&quot; common.
+- &quot;Platypus bill electroreceptors&quot; common.
+- &quot;Echidna tongue sticky&quot; no.
+- &quot;Tasmanian devil jaws&quot; common.
+- &quot;Quokka smiles&quot; common.
+- &quot;Koala fingerprints&quot; good.
+- &quot;Wombat cubic feces&quot; common.
+- &quot;Numbats eat termites&quot; no.
+- &quot;Echidna no stomach&quot; good.
+- &quot;Dunnock&quot; no.
+- &quot;Tasmanian devils transmit cancer as contagious tumor&quot; interesting: Devil facial tumour disease is clonal cancer spreading by biting, one of few contagious cancers. Could be unknown. Also second DFTD. Good.
+- &quot;Canine transmissible venereal tumor&quot; also contagious cancer, originated from wolf/coyote? Interesting. Could mention &quot;dogs can catch a contagious cancer via mating, first described in 1876, likely spread with sled dogs&quot;. But may be weird.
+- &quot;Some ants clone themselves&quot; no.
+- &quot;Bdelloid rotifers asexual for 40 million years&quot; interesting: ancient asexuals survived despite Muller&#39;s ratchet, acquire DNA from environment. Good but niche.
+- &quot;Tardigrade horizontal gene transfer&quot; controversial.
+- &quot;Artemia cysts viable after salt lakes dry&quot; common.
+- &quot;Brine shrimp&quot; no.
+- &quot;Water bears&quot; common.
+- &quot;Deinococcus radiodurans&quot; common.
+- &quot;Extremophiles&quot; no.
+- &quot;Thermophiles in hydrothermal vents&quot; no.
+- &quot;Acid mine drainage bacteria&quot; no.
+- &quot;Bacteria can eat electricity&quot; interesting: Geobacter conducts electrons via nanowires; microbial fuel cells. Could be unknown.
+- &quot;Electric bacteria in sediments&quot; no.
+- &quot;Magnetotactic bacteria align with Earth&#39;s magnetic field using magnetosomes&quot; interesting: they have compass-like crystals, discovered in 1970s. Good.
+- &quot;Giant sulfur bacteria can be visible&quot; no.
+- &quot;Thiomargarita namibiensis largest bacterium visible to naked eye&quot; interesting: 0.75 mm, seen as white specks. Good.
+- &quot;Epulopiscium fishelsoni largest bacterium&quot; no.
+- &quot;Titanomachya? giant bacteria in mangrove sediment&quot; recent 2022: visible, large. Could mention but less known.
+- &quot;Viruses not alive?&quot; philosophical.
+- &quot;Virophages&quot; no.
+- &quot;CRISPR from bacterial immune system&quot; common.
+- &quot;Bacteriophage therapy in Georgia&quot; interesting: Phage Institute Eliava, phages used against infections, especially in Eastern Europe; FDA compassionate use. Could be unknown.
+- &quot;Endolymphatic hydrops?&quot; no.
+- &quot;Prions misfolded proteins cause disease and can be inherited&quot; interesting: mad cow, scrapie, CJD; prion protein PrP^Sc template. Could be unknown but common.
+- &quot;Amyloid beta prion-like?&quot; no.
+- &quot;Organoids&quot; no.
+- &quot;Microbiome affects mood via vagus nerve&quot; common.
+- &quot;Gut-brain axis, serotonin production&quot; common.
+- &quot;90% serotonin in gut&quot; common.
+- &quot;Enteric nervous system called second brain&quot; common.
+- &quot;Appendix houses beneficial bacteria&quot; common.
+- &quot;Spleen filters blood, recycles iron&quot; no.
+- &quot;Liver regenerates&quot; common.
+- &quot;Kidneys nephrons&quot; no.
+- &quot;Heart cells regenerate little&quot; common.
+- &quot;Neurons in hippocampus can generate adult neurogenesis in humans? debated&quot; no.
+- &quot;Olfactory neurons regenerate&quot; interesting: one of few neurons that regenerate throughout life. Good.
+- &quot;Blind people&#39;s visual cortex repurposed for touch/hearing&quot; common.
+- &quot;Phantom limb&quot; common.
+- &quot;Mirror neurons&quot; controversial.
+- &quot;Synesthesia&quot; interesting: grapheme-color synesthesia letters have colors; heritable. Could be unknown.
+- &quot;Aphantasia cannot visualize mental images&quot; interesting: some people lack mind&#39;s eye; prevalence ~1-4%. Could be unknown.
+- &quot;Prosopagnosia face blindness&quot; common.
+- &quot;Capgras delusion&quot; common.
+- &quot;Cotard&#39;s delusion walking dead&quot; interesting.
+- &quot;Alice in Wonderland syndrome&quot; common.
+- &quot;Stendhal syndrome&quot; common.
+- &quot;Paris syndrome&quot; common.
+- &quot;Jerusalem syndrome&quot; common.
+- &quot;Kuru from cannibalism prion&quot; common.
+- &quot;Fatal familial insomnia&quot; interesting: rare prion disease causes inability to sleep, death within months/years. Could be unknown. But grim.
+- &quot;REM sleep behavior disorder precedes Parkinson&#39;s&quot; interesting: acting out dreams can be early sign of synucleinopathy. Good.
+- &quot;Narcolepsy cataplexy caused by hypocretin loss&quot; common.
+- &quot;Sleep paralysis&quot; common.
+- &quot;Lucid dreaming&quot; common.
+- &quot;Hypnagogic hallucinations&quot; no.
+- &quot;Bisexual lighting?&quot; no.
+- &quot;ASMR&quot; common.
+- &quot;Frisson music chills&quot; interesting: related to personality openness/dopamine. Could be unknown.
+- &quot;Earworms&quot; common.
+- &quot;Absolute pitch rare and linked to early training&quot; common.
+- &quot;Mozart effect myth&quot; common correction.
+- &quot;Musical anhedonia&quot; interesting: some people don&#39;t experience pleasure from music despite normal reward; prevalence ~3-5%. Could be unknown.
+- &quot;Amusia tone deafness&quot; common.
+- &quot;Speech centers&quot; no.
+- &quot;Wernicke/Geschwind&quot; no.
+- &quot;Split-brain patients confabulate&quot; interesting: corpus callosotomy leads to separate intentions; right hemisphere can&#39;t speak but can act. Could be unknown.
+- &quot;Phineas Gage&quot; common.
+- &quot;Patient HM memory&quot; common.
+- &quot;Blindsight&quot; interesting: cortically blind people can respond to visual stimuli without conscious awareness. Good.
+- &quot;Riddoch syndrome&quot; no.
+- &quot;Anton syndrome&quot; interesting: blind people deny blindness due visual cortex damage. Could be unknown.
+- &quot;Charles Bonnet syndrome&quot; interesting: visually impaired people see vivid hallucinations, not mental illness. Good.
+- &quot;Musical hallucinations&quot; no.
+- &quot;Tinnitus&quot; common.
+- &quot;Hyperacusis&quot; no.
+- &quot;Misophonia&quot; common.
+- &quot;Phosphenes&quot; common.
+- &quot;Pareidolia&quot; common.
+- &quot;Baader-Meinhof phenomenon/frequency illusion&quot; common.
+- &quot;Dunning-Kruger&quot; common.
+- &quot;Spotlight effect&quot; common.
+- &quot;Illusion of truth&quot; common.
+- &quot;Mandela effect&quot; common.
+- &quot;Cryptomnesia&quot; interesting: thinking original idea is actually forgotten memory; can lead to plagiarism. Good.
+- &quot;Jamais vu/experiencing familiarity as strange&quot; common.
+- &quot;Déjà vu&quot; common.
+- &quot;Presque vu tip of tongue&quot; common.
+- &quot;Lethologica&quot; no.
+- &quot;Semantic satiation&quot; common.
+- &quot;Tetris effect&quot; common.
+- &quot;Zeigarnik effect&quot; common.
+- &quot;Peak-end rule&quot; common.
+- &quot;Planning fallacy&quot; common.
+- &quot;Fundamental attribution error&quot; common.
+- &quot;Halo effect&quot; common.
+- &quot;Horn effect&quot; no.
+- &quot;Pygmalion effect&quot; common.
+- &quot;Golem effect&quot; no.
+- &quot;Observer expectancy&quot; common.
+- &quot;Hawthorne effect&quot; common.
+- &quot;Placebo/nocebo&quot; common.
+- &quot;Open-label placebos work&quot; interesting: placebos can help even when patients know they&#39;re inert, via conditioning/expectation. Good.
+- &quot;Sham acupuncture&quot; no.
+- &quot;TENS&quot; no.
+- &quot;Hypnosis&quot; common.
+- &quot;Meditation changes brain&quot; common.
+- &quot;Flow state&quot; common.
+- &quot;Default mode network&quot; common.
+- &quot;DMN active when mind-wandering&quot; common.
+- &quot;Salience network&quot; no.
+- &quot;Connectome&quot; no.
+- &quot;Human brain energy&quot; common.
+- &quot;Brain lipid content&quot; interesting: brain is ~60% fat, DHA crucial. Common.
+- &quot;Myelin insulation speeds signals&quot; common.
+- &quot;Neurons fire action potentials all-or-none&quot; common.
+- &quot;Synaptic pruning in adolescence&quot; common.
+- &quot;Critical periods&quot; common.
+- &quot;Language acquisition&quot; common.
+- &quot;Bilingual advantages&quot; nuanced.
+- &quot;Sapir-Whorf&quot; weak version: language influences thought (color terms, spatial frames). Could be unknown: Guugu Yimithirr speakers use cardinal directions instead of left/right, giving them constant orientation. Good fact! Known in linguistics but maybe user doesn&#39;t. Could tell: &quot;An Aboriginal Australian language, Guugu Yimithirr, lacks words for left/right; speakers navigate using north/south/east/west, and can point to north indoors with remarkable accuracy.&quot; Need careful: Pormpuraaw? Several languages use absolute frames. Guugu Yimithirr studied by Levinson. Good.
+- &quot;Hopi time myth&quot; false, avoid.
+- &quot;Pirahã numeracy&quot; interesting: Amazonian language may lack exact number words beyond approximate; speakers struggle with exact quantities &gt;3. Controversial but known. Could avoid due debate.
+- &quot;Aymara future behind, past ahead&quot; interesting: gesture studies show Aymara conceptualize past in front (known) and future behind (unknown). Could be unknown. Need careful: not universal but documented.
+- &quot;English speakers think of events moving horizontally; Mandarin vertical metaphors&quot; interesting: &quot;shàng xià&quot; for earlier/later months. Could be unknown.
+- &quot;Color terms: Russian blue goluboy/siniy, speakers faster discriminating shades&quot; good.
+- &quot;Hebrew/Arabic root systems&quot; no.
+- &quot;Basque isolate&quot; common.
+- &quot;Pirahã tone&quot; no.
+- &quot;Silbo Gomero whistled language&quot; interesting: Canary Islands whistled Spanish can carry messages kilometers; teaches children. Good.
+- &quot;Shipibo eyebrow language&quot; no.
+- &quot;Aka pygmy whistling language&quot; no.
+- &quot;Ubykh had 84 consonants&quot; interesting: extinct Northwest Caucasian language with huge consonant inventory, few vowels. Good.
+- &quot;Rotokas has smallest alphabet 11-12 letters&quot; common.
+- &quot;Pirahã has 10-11 phonemes&quot; common.
+- &quot;Taa has clicks&quot; common.
+- &quot;Georgian verbs polysynthetic&quot; no.
+- &quot;Nahuatl&quot; no.
+- &quot;Esperanto&quot; common.
+- &quot;Lojban&quot; interesting: constructed logical language avoids ambiguity; can be spoken without cultural connotations. Could be unknown.
+- &quot;Ithkuil&quot; extremely complex natural language? Constructed.
+- &quot;Toki Pona&quot; minimalist language 120 words. Common-ish.
+- &quot;Kēlen lacks verbs&quot; interesting: constructed language with no verb, uses relationals. Could be unknown but niche.
+- &quot;Láadan&quot; designed for women? no.
+- &quot;Lingua Franca&quot; no.
+- &quot;Shorthand&quot; no.
+- &quot;Pitman&quot; no.
+- &quot;Speed writing&quot; no.
+- &quot;Stenography court reporters 225 wpm&quot; common.
+- &quot;Subtitling reading speed&quot; no.
+- &quot;Braille is not just raised dots but 6-dot cell; includes music/math&quot; interesting. Could be unknown: Braille originally for military night communication by Charles Barbier, adapted by Louis Braille; not invented by him? Good.
+- &quot;Moon cuneiform?&quot; no.
+- &quot;Rosetta Stone&quot; common.
+- &quot;Voynich manuscript undeciphered&quot; common.
+- &quot;Rongorongo Easter Island script undeciphered&quot; interesting.
+- &quot;Linear A undeciphered&quot; common.
+- &quot;Indus script undeciphered&quot; common.
+- &quot;Etruscan partially understood&quot; no.
+- &quot;Minoan&quot; no.
+- &quot;Elamite&quot; no.
+- &quot;Proto-Sinaitic origin of alphabet&quot; interesting: modern alphabet likely descends from Canaanite script inspired by Egyptian hieroglyphs; ox head became aleph/A. Could be unknown.
+- &quot;Letter G invented by adding stroke to C&quot; common.
+- &quot;Lowercase letters Carolingian minuscule&quot; common.
+- &quot;Q without U words&quot; no.
+- &quot;English spelling Great Vowel Shift&quot; common.
+- &quot;Nightmare from &#39;nigh&#39; mare&quot; common.
+- &quot;Muscle from mouse&quot; interesting: etymology: muscle from Latin musculus &#39;little mouse&#39; because moving under skin looked like mouse. Good.
+- &quot;Insomnia&quot; no.
+- &quot;Salary from salt&quot; common.
+- &quot;Clock from bell&quot; no.
+- &quot;Panic from god Pan&quot; common.
+- &quot;Phobia&quot; no.
+- &quot;Cynic from dog&quot; interesting: Diogenes, Greek kynikos dog-like. Common.
+- &quot;Narcissus&quot; common.
+- &quot;Attila?&quot; no.
+- &quot;Assassin from hashshashin myth&quot; common-ish.
+- &quot;Alcohol from Arabic al-kuhl&quot; common.
+- &quot;Alchemy to chemistry&quot; common.
+- &quot;Zero from Indian shunya&quot; common.
+- &quot;Cipher from zero&quot; common.
+- &quot;Algorithm from al-Khwarizmi&quot; common.
+- &quot;Numerals Hindu-Arabic&quot; common.
+- &quot;Roman numerals no zero&quot; common.
+- &quot;Mayan zero&quot; common.
+- &quot;Babylonian placeholder&quot; common.
+- &quot;Binary Leibniz&quot; common.
+- &quot;Boolean algebra&quot; common.
+- &quot;Turing machine&quot; common.
+- &quot;ENIAC&quot; common.
+- &quot;First programmer Ada Lovelace&quot; common.
+- &quot;Grace Hopper bug moth&quot; common.
+- &quot;COBOL&quot; no.
+- &quot;Fortran&quot; no.
+- &quot;Lisp garbage collection&quot; no.
+- &quot;Prolog&quot; no.
+- &quot;Smalltalk GUI&quot; no.
+- &quot;Unix&quot; no.
+- &quot;Linux Torvalds&quot; common.
+- &quot;GNU&quot; common.
+- &quot;MIT license&quot; no.
+- &quot;Creative Commons&quot; no.
+- &quot;Bitcoin Satoshi&quot; common.
+- &quot;Blockchain&quot; common.
+- &quot;IPFS&quot; no.
+- &quot;QR code&quot; common.
+- &quot;Barcode&quot; common.
+- &quot;UPC&quot; no.
+- &quot;Morse code&quot; common.
+- &quot;Semaphore&quot; no.
+- &quot;Flag signals&quot; no.
+- &quot;Drum language&quot; interesting: talking drums replicate tonal patterns of Yoruba, can send messages across villages. Common in Africa trivia.
+- &quot;Whistle languages&quot; Silbo Gomero good.
+- &quot;Corn whistle?&quot; no.
+- &quot;Bulgarian whispering?&quot; no.
+- &quot;Sign languages are full languages with grammar&quot; common correction.
+- &quot;Nicaraguan Sign Language emerged spontaneously&quot; interesting: deaf children created grammar in 1980s, studied for language creation. Good.
+- &quot;Home sign&quot; no.
+- &quot;Al-Sayyid Bedouin Sign Language&quot; interesting: village with high deafness, sign language arose locally, no formal education. Good.
+- &quot;Tactile signing&quot; no.
+- &quot;Protactiles&quot; no.
+- &quot;Braille sign&quot; no.
+- &quot;Moon type&quot; no.
+- &quot;New York Times?&quot; no.
+
+Need answer maybe one fact with explanation. Since user says &quot;Tell me something I don&#39;t know.&quot; We can acknowledge uncertainty: &quot;I can&#39;t know your knowledge, but here&#39;s an oddly specific one...&quot; Then deliver. Need likely no long list? Could be one. Desired oververbosity 9 but user request simple; maybe detailed but not too long. Need maybe choose fact that is surprising and accurate. Let&#39;s pick something robust and interesting: &quot;The loudest animal sound is sperm whale clicks, up to 230 dB, enough to vibrate a human and potentially dangerous.&quot; Is that true? Let&#39;s verify details: Sperm whales produce clicks for echolocation, peak source levels up to 230 dB re 1 μPa at 1 m, among loudest biological sounds. Blue whale songs ~188 dB. Loudest sound by animal? Sperm whale click 230 dB, yes. Could be unknown. But decibel underwater reference confusing. At close range, can cause tissue damage? Some sources: loud enough to vibrate a human body, possibly fatal? Need careful: 230 dB underwater can cause injury? Sound pressure 230 dB re 1 μPa = 23 Pa? Wait conversion: dB re 1 μPa: SPL = 20 log10(p/1μPa). 230 dB -&gt; p=10^(230/20)=10^11.5 μPa=3.16e11 μPa=316,000 Pa? Actually 1 μPa = 1e-6 Pa, so 3.16e11 μPa = 3.16e5 Pa ~3 atm. At 1 m. That&#39;s huge. 188 dB -&gt; 2.5e4 Pa? So sperm whale click at 1m ~3 atm, can damage. But source level vs received level; at distance attenuates. Could say &quot;close enough, it can be physically dangerous.&quot; Need not overstate fatal. Good.
+
+Alternative fact: &quot;Sloths can hold their breath longer than dolphins&quot; accurate? Let&#39;s check: Three-toed sloth can hold breath for 40 minutes by slowing heart rate to one-third normal. Bottlenose dolphin average dive 2-3 min, max 10-15? Some whales longer. If comparing to dolphins, yes. But &quot;longer than dolphins&quot; surprising. Need mention sloths are semi-aquatic? They swim. Could be safe. But if user knows? hmm.
+
+Another: &quot;Koalas have fingerprints nearly identical to humans&quot; good, but maybe known.
+
+&quot;Devil facial tumour disease is a contagious cancer&quot; interesting but grim. Could be unknown. Need explain: cancer cells are genetically distinct individuals, transmitted by bites; one lineage has persisted ~25 years; another emerged. It&#39;s one of only three known naturally occurring contagious cancers (with canine TVT and Tasmanian devil). Could be fascinating. But maybe too morbid.
+
+&quot;Canine transmissible venereal tumor is the oldest known cancer lineage, traced to a wolf or dog ~11,000 years ago?&quot; Recent 2015 Nature: CTVT originated from a wolf-like canid in Siberia/Alaska ~11,000 years ago, spread with dog domestication. It&#39;s a clonal cancer transmitted as graft. Interesting. Could be unknown. But user asked something they don&#39;t know; this is obscure and mind-blowing: &quot;There is a cancer that spreads between dogs as an infectious cell line, not a virus; every tumor cell in a dog today is descended from a single dog that lived thousands of years ago.&quot; This is amazing. Need verify: CTVT is contagious cancer, first described by Novinski in 1876 in St Petersburg; genome shows origin from an ancient wolf-like canid ~10,800 years ago in Siberia/Tibet? It spreads via mating, mostly in stray dogs; can regress due immune response. It is one of only a few transmissible cancers. This could be a great answer. But may be too weird/medical. Still factual.
+
+&quot;Prions&quot; similarly: misfolded proteins can be infectious without nucleic acid. Could be unknown: &quot;A disease can be caused by a protein alone; prions are misfolded proteins that induce normal proteins to misfold, transmitting mad cow/CJD without DNA/RNA.&quot; This is profound. But maybe known.
+
+&quot;Contagious cancer&quot; even more unknown. Let&#39;s choose one of these. Need perhaps not too dark. Could say: &quot;Here’s one: some cancers are contagious—not caused by a virus, but by cancer cells themselves.&quot; Then explain CTVT and DFTD. This is surprising. Need ensure accuracy: Cancer transmission between individuals is rare; CTVT in dogs, DFTD in Tasmanian devils, and possibly bell pepper? There are transmissible cancer cell lines in soft-shell clams? Recently identified transmissible leukemia in bivalves? In 2023? There are clonal transmissible cancers in mollusks? Maybe not necessary. Say &quot;At least two known naturally occurring contagious cancers in the wild: dogs and Tasmanian devils.&quot; Actually canine TVT plus devil facial tumor disease; also a second DFTD. And recently in soft-shell clams? But &quot;two well-known&quot;. Need avoid &quot;only&quot; if uncertain. Could say &quot;the best-known examples.&quot; Good.
+
+Could also mention &quot;the tumor cells act like parasites, moving from host to host; in dogs it usually causes venereal tumors and often regresses as immune system recognizes foreign MHC; in devils it&#39;s facial and often fatal, threatening species.&quot; Need be concise but informative.
+
+Let&#39;s craft final: start with caveat: &quot;I can’t know what you already know, but here’s an oddly specific one:&quot; Then fact. Use clear explanation. Maybe add source-ish? Not required. Could mention &quot;Canine transmissible venereal tumor (CTVT), first described in 1876, is a single cancer lineage passed from dog to dog, likely originating in an ancient wolf-like canid thousands of years ago. It&#39;s not a virus; the infectious agent is the cancer cells themselves.&quot; Add &quot;Tasmanian devils have a similar facial tumor disease; a second strain emerged.&quot; End with &quot;So, in rare cases, cancer can behave like an infection.&quot; Good.
+
+Need ensure no medical advice. Fine.
+
+But user asked &quot;Tell me something I don&#39;t know.&quot; Maybe they expect one fact, not essay. Desired oververbose 9, but simple. Could deliver one paragraph. Need maybe not too long. However could be interesting with context. Final around 150-250 words? Oververbosity 9 maybe 3 paragraphs. But user short; don&#39;t overwhelm. Maybe 120-180 words. Need no citations? Could include &quot;If you want another, ask.&quot; But maybe final only.
+
+Let&#39;s ensure fact: CTVT origin date: molecular analysis estimated 7,800-11,300 years ago? 2015 Nature: originated 10,800 years ago in Siberia or Tibet? Actually Murchison et al. 2015: CTVT originated from a wolf-like canid in Siberia/Tibetan Plateau? Let&#39;s recall: The oldest known invasive cancer lineage, CTVT, arose from a single canid ~11,000 years ago, possibly in Siberia or Tibet, coincident with dog domestication? Another study: 2015 Nature Communications? &quot;The genomic ancestry of the canid transmissible venereal tumor&quot; found origin ~10,200 years ago in Siberia? Let&#39;s not specify location/date too precise: &quot;roughly 10,000 years ago.&quot; Good.
+
+Need mention it often regresses: In adult dogs, immune response can reject after months; in puppies/immunosuppressed persists. Transmission mainly coitus, also licking/biting? Good.
+
+DFTD: devil facial tumour disease emerged ~1996, clonal, transmitted by biting during social feeding/aggression; immunologically evades MHC? Second DFTD discovered 2014, independent origin. Could mention.
+
+Potential issue: &quot;cancer cells themselves are infectious&quot; may sound impossible; clarify they are allografts: genetically foreign cells transferred, evade immune. Good.
+
+Alternative fact could be less grim: &quot;The loudest animal is sperm whale.&quot; But contagious cancer is more unique. Which is better? User didn&#39;t specify. Something they don&#39;t know: contagious cancer likely unknown. Let&#39;s use it.
+
+Need maybe not say &quot;I can&#39;t know&quot; too hedging. Could phrase: &quot;I can’t guarantee you haven’t heard this, but here’s one that surprises a lot of people:&quot; Then fact. Good.
+
+Final:
+&quot;I can’t guarantee you haven’t heard this, but here’s one that surprises a lot of people: some cancers are contagious. Not via a virus or bacterium, but via living tumor cells passing directly from one animal to another.
+
+The classic example is canine transmissible venereal tumor (CTVT), first described in 1876. Every CTVT tumor in dogs today appears to descend from a single ancestral canid that lived thousands of years ago. The cancer spreads mainly during mating; the tumor cells are genetically distinct from the host and behave like an infectious parasite. Many adult dogs eventually clear it because their immune systems notice the foreign cells, but it can persist in young or immunocompromised dogs.
+
+Tasmanian devils have a similar horror-story biology: devil facial tumor disease spreads when devils bite each other, and a second independent transmissible tumor strain has also appeared.
+
+So the weird part: in rare cases, the &#39;infectious agent&#39; isn’t a microbe at all—it’s a cancer cell line.&quot; 
+
+This is good. Need maybe avoid &quot;horror-story&quot;? fine. Ensure no overstatement &quot;every CTVT tumor in dogs today appears&quot; yes supported. &quot;single ancestral canid&quot; yes. &quot;thousands of years ago&quot; yes. &quot;mainly during mating&quot; yes. &quot;many adult dogs clear&quot; yes. &quot;second independent strain&quot; yes. Good.
+
+Need final only. Done.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/x-ai-grok-4.7/">← SpaceXAI: Grok 4.7</a>
+            <a href="/">all models</a>
+            <a href="/m/xiaomi-mimo-v2.6-flash/">Xiaomi: MiMo-V2.6-Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
