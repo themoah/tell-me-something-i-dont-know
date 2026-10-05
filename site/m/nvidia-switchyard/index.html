@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA: Switchyard — Tell me something I don't know.</title>
+    <meta name="description" content="NVIDIA: Switchyard answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: France was still executing people by guillotine when Star Wars premiered. The last guillotine execution in France took place on September 10…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/nvidia-switchyard/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/nvidia-switchyard/">
+    <meta property="og:title" content="NVIDIA: Switchyard — Tell me something I don't know.">
+    <meta property="og:description" content="NVIDIA: Switchyard answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: France was still executing people by guillotine when Star Wars premiered. The last guillotine execution in France took place on September 10…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NVIDIA: Switchyard — Tell me something I don't know.">
+    <meta name="twitter:description" content="NVIDIA: Switchyard answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: France was still executing people by guillotine when Star Wars premiered. The last guillotine execution in France took place on September 10…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to NVIDIA: Switchyard)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one: **France was still executing people by guillotine when Star Wars premiered.** The last guillotine execution in France took place on September 10, 1977 — about four months after Star Wars hit theaters. The guillotine remained France's official method of execution until capital punishment was abolished there in 1981, the same year MTV launched.\n\nA bonus one, since time perception is fun to break: **Sharks are older than trees.** Sharks have been around for roughly 450 million years, while the first true trees appeared around 350–390 million years ago. Sharks also predate the North Star — Polaris is only about 70 million years old.\n\nWant another? I've got a good one about wombats.","author":{"@type":"Organization","name":"NVIDIA"}},"suggestedAnswer":[{"@type":"Answer","text":"Greenland sharks can live for 300 to 500 years—possibly longer. Scientists used radiocarbon dating on the tissue in their eyes and estimated that one particularly large female was around 400 years old, meaning she may have been swimming the Arctic when Shakespeare was alive.\n\nEven stranger: they don't reach sexual maturity until about age 150. They grow roughly a centimeter per year, drift through near-freezing water at a glacial pace, and essentially live their entire lives in slow motion. So there are sharks cruising the deep ocean right now that were born before the United States existed.\n\nWant another one? I've got plenty.","author":{"@type":"Organization","name":"NVIDIA"}},{"@type":"Answer","text":"Here's one: **France was still executing people by guillotine when Star Wars premiered.** The last guillotine execution in France took place on September 10, 1977 — about four months after Star Wars hit U.S. theaters, and the same year the Apple II computer went on sale. Beheading by machine coexisted with disco, personal computing, and the space age.\n\nAnd a bonus: **sharks are older than trees.** Sharks have existed for roughly 450 million years, while the first true trees only appeared around 350–390 million years ago. Sharks also predate grass, the North Star, and quite possibly Saturn's rings.\n\nWant more? I can dig into a specific topic — history, space, biology, weird psychology — whatever you're curious about.","author":{"@type":"Organization","name":"NVIDIA"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>NVIDIA: Switchyard</h1>
+        <p class="subtitle">NVIDIA · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">NVIDIA: Switchyard</div>
+                        <div class="model-provider">NVIDIA</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one: <strong>France was still executing people by guillotine when Star Wars premiered.</strong> The last guillotine execution in France took place on September 10, 1977 — about four months after Star Wars hit theaters. The guillotine remained France&#39;s official method of execution until capital punishment was abolished there in 1981, the same year MTV launched.</p>
+<p>A bonus one, since time perception is fun to break: <strong>Sharks are older than trees.</strong> Sharks have been around for roughly 450 million years, while the first true trees appeared around 350–390 million years ago. Sharks also predate the North Star — Polaris is only about 70 million years old.</p>
+<p>Want another? I&#39;ve got a good one about wombats.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>4052 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. Of course, I can&#39;t actually know what they know or don&#39;t know, so I should pick something genuinely interesting and relatively obscure that most people wouldn&#39;t know. I could acknowledge the playful impossibility of the request briefly, or just dive in with something fascinating.
+
+Let me brainstorm some genuinely surprising facts that most people don&#39;t know:
+
+1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** - This is somewhat well-known now, but still surprising to many.
+
+2. **Oxford University is older than the Aztec Empire** - Teaching began at Oxford around 1096, while Tenochtitlan was founded in 1325. This is a good one.
+
+3. **Wooly mammoths were still alive when the pyramids were built** - The last mammoths on Wrangel Island died around 1650 BCE, while the Great Pyramid was completed around 2560 BCE.
+
+4. **There&#39;s a species of jellyfish that is biologically immortal** - Turritopsis dohrnii can revert to its polyp stage.
+
+5. **Honey never spoils** - Archaeologists have found edible honey in Egyptian tombs.
+
+6. **The dot over the letter &quot;i&quot; is called a &quot;tittle&quot;** - Fun linguistic fact.
+
+7. **Bananas are berries but strawberries aren&#39;t** - Botanical classification fun.
+
+8. **There are more possible chess games than atoms in the observable universe** - Shannon number.
+
+9. **The time between when the last mammoth died and now is less than the time between when the first pyramids were built and the last mammoth died** - Wait, let me check this. Pyramids ~2560 BCE, last mammoths ~1650 BCE. That&#39;s about 900 years. From 1650 BCE to now is ~3675 years. So no, that doesn&#39;t work.
+
+10. **Sharks are older than trees** - Sharks evolved around 450 million years ago, trees around 350-390 million years ago. Sharks are also older than Saturn&#39;s rings possibly, and older than the North Star.
+
+11. **The Great Wall of China is held together partly by sticky rice mortar** - The mortar used in some sections contains sticky rice soup mixed with slaked lime, which made it incredibly durable.
+
+12. **Your body produces 25 million new cells every second** - Interesting biology fact.
+
+13. **There&#39;s a giant water reservoir in space containing 140 trillion times Earth&#39;s ocean water** - Around a quasar called APM 08279+5255.
+
+14. **Wright Brothers&#39; flight was shorter than the wingspan of a Boeing 747** - The first flight was 120 feet; a 747&#39;s wingspan is about 196 feet.
+
+15. **Nintendo was founded when Jack the Ripper was still active** - Nintendo was founded in 1889 (as a playing card company), Jack the Ripper murders were in 1888.
+
+16. **The Eiffel Tower grows taller in summer** - Thermal expansion, about 15 cm.
+
+17. **Mantis shrimp can see more colors... actually this is somewhat debunked** - They have 12-16 photoreceptors but their color discrimination is actually worse than humans in some ways.
+
+18. **A day on Venus is longer than a year on Venus** - Venus rotates so slowly (243 Earth days) that its day is longer than its orbit around the sun (225 Earth days). And it rotates backwards.
+
+19. **The inventor of the Pringles can is buried in one** - Fred Baur&#39;s ashes were partially buried in a Pringles can per his request.
+
+20. **Humans share 50-60% DNA with bananas** - Fun genetics fact.
+
+21. **There are more trees on Earth than stars in the Milky Way** - About 3 trillion trees vs 100-400 billion stars.
+
+22. **The shortest war in history lasted 38-45 minutes** - Anglo-Zanzibar War of 1896.
+
+23. **Otters hold hands while sleeping** - To avoid drifting apart. Cute fact.
+
+24. **A jiffy is an actual unit of time** - In physics, it&#39;s the time light takes to travel one fermi; in computing/electronics, various definitions.
+
+25. **The first person to survive going over Niagara Falls in a barrel was a 63-year-old teacher** - Annie Edson Taylor, 1901, with her cat.
+
+26. **Betelgeuse is so large that if placed at the center of our solar system, it would engulf Jupiter&#39;s orbit** - Astronomy scale fact.
+
+27. **The Hawaiian alphabet has only 12 letters** - Linguistic fact.
+
+28. **Cows have best friends and get stressed when separated** - Animal behavior fact.
+
+29. **The placebo effect works even when you know it&#39;s a placebo** - Open-label placebo studies show this.
+
+30. **There&#39;s an immortal jellyfish** - Already mentioned.
+
+31. **The total weight of all ants on Earth roughly equals/exceeds the weight of all humans** - Recent studies suggest ant biomass exceeds wild birds and mammals combined.
+
+32. **Glass is not a slow-flowing liquid** - Common misconception, so I should avoid repeating myths.
+
+33. **The &quot;new car smell&quot; is actually dozens of volatile organic compounds off-gassing** - Fun but maybe less surprising.
+
+34. **Wright brothers flew 66 years before the moon landing** - Within one human lifetime.
+
+35. **The Sahara was green just 6,000-10,000 years ago** - And it cycles between green and desert roughly every 20,000 years due to orbital precession. It will be green again in about 15,000 years.
+
+36. **Humans and giraffes have the same number of neck vertebrae** - Seven.
+
+37. **A single teaspoon of neutron star would weigh about 6 billion tons** - Classic astronomy fact.
+
+38. **The longest time between two twins being born is 87 days** - Medical record.
+
+39. **There&#39;s a town in Norway where it&#39;s illegal to die** - Longyearbyen, Svalbard, because bodies don&#39;t decompose in permafrost. Actually it&#39;s more nuanced - there&#39;s no burial since ~1950, and terminally ill people are often flown to the mainland. &quot;Illegal to die&quot; is a bit of an oversimplification.
+
+40. **The blob of toothpaste on a toothbrush is called a &quot;nurdle&quot;** - Fun word fact.
+
+41. **Sea otters have a favorite rock they keep in a pouch** - They use rocks as tools and store them.
+
+42. **The first computer programmer was a woman in the 1840s** - Ada Lovelace.
+
+43. **Honeybees can recognize human faces** - They use configural processing.
+
+44. **The universe&#39;s average color is &quot;cosmic latte&quot;** - A beige-ish color determined by astronomers.
+
+45. **Wombat poop is cube-shaped** - Due to varying elasticity in their intestines. This is a great one - genuinely weird, verified science (even won an Ig Nobel Prize).
+
+46. **There&#39;s a giant underground ocean beneath Earth&#39;s surface** - Water trapped in ringwoodite in the mantle, possibly more water than all surface oceans.
+
+47. **The human nose can detect over 1 trillion scents** - Research from 2014.
+
+48. **Octopuses have three hearts and blue blood** - Two hearts stop when they swim.
+
+49. **The Great Fire of London in 1666 only killed 6 verified people** - Though this is debated.
+
+50. **A bolt of lightning is 5 times hotter than the sun&#39;s surface** - ~30,000 K vs ~5,500 K.
+
+51. **The sound of a blue whale is the loudest animal sound but is below human hearing range partly** - Blue whale calls can reach 188 dB.
+
+52. **Humans glow in the dark (bioluminescence) but it&#39;s too faint to see** - Japanese researchers found this in 2009.
+
+53. **There&#39;s more time between Stegosaurus and T-Rex than between T-Rex and humans** - Stegosaurus ~150 million years ago, T-Rex ~66 million years ago. That&#39;s 84 million years vs 66 million years. Great fact!
+
+54. **The Eiffel Tower was originally intended for Barcelona** - Rejected as too ugly.
+
+55. **France was still executing people by guillotine when Star Wars premiered** - Last guillotine execution: September 10, 1977. Star Wars premiered May 25, 1977. Great fact!
+
+56. **Harvard was founded before calculus was invented** - Harvard 1636, calculus developed by Newton/Leibniz in the 1680s.
+
+57. **The Ottoman Empire still existed the last time the Chicago Cubs won... ** - outdated now.
+
+58. **Every atom in your body is billions of years old** - Hydrogen from the Big Bang, heavier elements from stars.
+
+59. **The probability of you existing is astronomically small** - More philosophical.
+
+60. **A &quot;buttload&quot; is an actual unit of measurement** - A butt is a cask of about 126 gallons.
+
+61. **The QWERTY keyboard wasn&#39;t designed to slow typists** - Common myth; it was designed to prevent typebar jams by separating common letter pairs.
+
+62. **Sharks existed before Saturn&#39;s rings** - Sharks ~450 mya, Saturn&#39;s rings possibly 10-100 million years old (debated).
+
+63. **There are more ways to arrange a deck of cards than atoms on Earth** - 52! is ~8×10^67.
+
+64. **If you shuffle a deck properly, that exact order has likely never existed before in history** - Related to above.
+
+65. **The world&#39;s oldest known living tree is over 4,800 years old** - Methuselah, a bristlecone pine. It was already 500+ years old when the pyramids were built.
+
+66. **Cleopatra was ethnically Greek, not Egyptian** - Descended from Ptolemy.
+
+67. **The first oranges weren&#39;t orange** - They were green, from Southeast Asia. Actually the fruit was named before the color - the color orange is named after the fruit, not vice versa.
+
+68. **The color orange is named after the fruit** - Before that, the color was called &quot;geoluread&quot; (yellow-red) in English.
+
+69. **The human brain&#39;s memory capacity is estimated at 2.5 petabytes** - Roughly.
+
+70. **You can&#39;t hum while holding your nose closed** - Try it! Fun interactive fact.
+
+71. **Your tongue print is unique, like fingerprints** - True.
+
+72. **There&#39;s a fungus that turns ants into zombies** - Ophiocordyceps unilateralis.
+
+73. **The Moon is slowly drifting away from Earth** - About 3.8 cm per year. Eventually total solar eclipses will be impossible.
+
+74. **We live in a rare time when total solar eclipses are possible** - The Moon is 400x smaller than the Sun but 400x closer, making perfect eclipses possible. This is a cosmic coincidence.
+
+75. **The Sahara is the largest hot desert, but Antarctica is the largest desert** - Definition fun.
+
+76. **Bananas are slightly radioactive** - Due to potassium-40. There&#39;s even a &quot;banana equivalent dose.&quot;
+
+77. **The deepest part of the ocean could fit Mount Everest with room to spare** - Challenger Deep ~10,935m, Everest ~8,849m.
+
+78. **More people have been to the Moon than to the bottom of the Mariana Trench** - 12 moonwalkers vs. fewer Challenger Deep visitors (though this number has grown - around 20+ now, so this fact may be outdated).
+
+79. **A day on Mercury lasts about 176 Earth days** - Solar day.
+
+80. **The inventor of the telephone never called his wife or mother** - They were both deaf. Alexander Graham Bell.
+
+81. **Pigeons can do math and recognize themselves in mirrors** - Animal cognition.
+
+82. **The first 1GB hard drive weighed over 500 pounds** - IBM 3380 in 1980 weighed 550 lbs and cost $40,000+.
+
+83. **The entire internet weighs about as much as a strawberry** - Based on electron mass estimates. This is a fun but hand-wavy calculation.
+
+84. **Humans are the only animals that blush** - Mark Twain noted this. Actually, this is somewhat debated.
+
+85. **The oldest known &quot;your mom&quot; joke is 3,500 years old** - From a Babylonian tablet, though it&#39;s partially lost.
+
+86. **The world&#39;s oldest known joke is a fart joke from Sumer, ~1900 BCE** - &quot;Something which has never occurred since time immemorial; a young woman did not fart in her husband&#39;s lap.&quot;
+
+87. **Oxford University is older than the Aztec Empire** - Already mentioned.
+
+88. **There were only 66 years between the first flight and the Moon landing** - 1903 to 1969.
+
+89. **A single strand of spider silk thinner than a human hair can stop a bee flying at full speed** - Material strength.
+
+90. **If the Sun were the size of a white blood cell, the Milky Way would be the size of the continental United States** - Scale fact.
+
+91. **The blobfish looks normal at depth** - It only looks blobby because of decompression damage when brought to the surface. This is a great &quot;something you don&#39;t know&quot; because it corrects a popular misconception.
+
+92. **Humans have stripes (Blaschko&#39;s lines) invisible under normal light** - Visible under UV light in some conditions.
+
+93. **Your skeleton is wet** - Fun fact that bothers people.
+
+94. **There&#39;s a species of tardigrade that survived in open space** - Tardigrades survived exposure to vacuum and radiation in 2007.
+
+95. **The first person to be killed by a robot was in 1979** - Robert Williams at a Ford plant.
+
+96. **The longest word you can type with one hand on QWERTY is &quot;stewardesses&quot; (left hand)** - Fun trivia.
+
+97. **&quot;Almost&quot; is the longest word with all letters in alphabetical order** - Fun word fact.
+
+98. **The dot over &quot;i&quot; is a tittle** - Already mentioned.
+
+99. **A group of flamingos is called a &quot;flamboyance&quot;** - Collective noun fun.
+
+100. **The inventor of Vaseline ate a spoonful every day** - Robert Chesebrough claimed this.
+
+Good options. Now, which ones to pick? I want facts that are:
+1. Genuinely true and verifiable
+2. Surprising/counterintuitive
+3. Not so overused that they&#39;ve likely heard it
+
+The Stegosaurus/T-Rex one is great. The France guillotine/Star Wars one is excellent. The blobfish one corrects a misconception. Wombat cube poop is delightful. The green Sahara cycling is profound. Sharks older than trees is great.
+
+Format considerations: This is a casual, playful request. I should probably give one really good fact or a small handful. A conversational tone works. Maybe I could offer one main fact with a bit of explanation, or a few quick ones. I shouldn&#39;t make it too long. A short, punchy response with maybe 1-3 facts would be ideal. I could also invite them to ask for more.
+
+Let me pick something genuinely surprising and less commonly repeated. The guillotine/Star Wars fact is a good one. The Stegosaurus/T-Rex one too. Let me combine a couple of the best &quot;time perception&quot; ones since those reliably blow minds:
+
+- Oxford University is older than the Aztec Empire
+- The last guillotine execution in France happened the same year Star Wars premiered
+- Sharks are older than trees (and Saturn&#39;s rings)
+
+Actually, I think I&#39;ll lead with one strong fact and maybe add a bonus. Let me draft:
+
+---
+
+Here&#39;s one: France executed someone by guillotine the same year Star Wars premiered. The last guillotine execution in France took place on September 10, 1977 — four months after Star Wars hit theaters. Hamida Djandoubi was the last person executed by guillotine, and capital punishment wasn&#39;t abolished in France until 1981.
+
+Bonus: Sharks are older than trees. Sharks have existed for about 450 million years, while the first true trees appeared around 350-390 million years ago. Sharks also predate Saturn&#39;s rings and the North Star.
+
+---
+
+That&#39;s a nice format - one main fact with context, plus a bonus. Short, conversational, surprising. I could also offer more if they want.
+
+Actually the North Star claim: Polaris is estimated to be around 70 million years old (some estimates vary). Sharks at 450 million years definitely predate Polaris. Saturn&#39;s rings age is debated (could be 10 million to 4.5 billion years), so I should hedge or skip that one. Polaris is safer.
+
+Let me verify the guillotine fact: Hamida Djandoubi, executed September 10, 1977, in Marseille. Star Wars US premiere: May 25, 1977. Yes, correct. Star Wars actually released in France in October 1977, so technically in France, the guillotine execution happened before Star Wars premiered there. But the general fact holds for the US premiere. I&#39;ll phrase it carefully: &quot;the same year Star Wars premiered&quot; is accurate.
+
+The Stegosaurus/T-Rex fact: Stegosaurus lived ~155-150 mya, T-Rex ~68-66 mya. Gap of ~80+ million years between them, vs. 66 million years from T-Rex to us. Correct and mind-blowing.
+
+I think I&#39;ll go with the guillotine/Star Wars as the lead, then offer the dinosaur time gap as a bonus. Keep it tight and fun. Maybe end with an offer for more or a question about what domains interest them. Actually, ending with a question isn&#39;t necessary - could just note I&#39;ve got plenty more. A light offer is fine.
+
+Format: Short paragraphs, maybe two facts. No need for headers or bullets for something this short, though a small structure could help. I&#39;ll keep it conversational prose,fairly brief.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Greenland sharks can live for 300 to 500 years—possibly longer. Scientists used radiocarbon dating on the tissue in their eyes and estimated that one particularly large female was around 400 years old, meaning she may have been swimming the Arctic when Shakespeare was alive.</p>
+<p>Even stranger: they don&#39;t reach sexual maturity until about age 150. They grow roughly a centimeter per year, drift through near-freezing water at a glacial pace, and essentially live their entire lives in slow motion. So there are sharks cruising the deep ocean right now that were born before the United States existed.</p>
+<p>Want another one? I&#39;ve got plenty.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>4323 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. The challenge is I don&#39;t know what they know! So I should pick something genuinely interesting, surprising, and relatively obscure — something most people wouldn&#39;t know.
+
+Let me brainstorm some candidates:
+
+1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — This is fairly well-known at this point, often shared on social media. Maybe too common.
+
+2. **Oxford University is older than the Aztec Empire** — Also fairly well-known trivia.
+
+3. **Honey never spoils** — Common knowledge.
+
+4. **Octopuses have three hearts and blue blood** — Pretty well-known.
+
+5. **There&#39;s a giant water reservoir in space** — A cloud containing 140 trillion times the water in Earth&#39;s oceans, surrounding a quasar. That&#39;s cool but somewhat known among space enthusiasts.
+
+6. **Mantis shrimp can see more colors** — Actually, this is partially a myth. They have 12-16 photoreceptors but research suggests they may actually be worse at distinguishing colors than humans. Interesting nuance!
+
+7. **Bananas are berries but strawberries aren&#39;t** — Botanically true and fun, but pretty well-known.
+
+8. **The Eiffel Tower grows taller in summer** — Thermal expansion, about 15 cm. Moderately known.
+
+9. **Wright Brothers&#39; first flight was shorter than a Boeing 747&#39;s wingspan** — Fun.
+
+10. **Sharks are older than trees** — Sharks ~450 million years, trees ~350-390 million years. Also older than Saturn&#39;s rings possibly, and older than the North Star. This is a good one!
+
+11. **There&#39;s a species of jellyfish that is biologically immortal** — Turritopsis dohrnii can revert to its polyp stage. Fairly well-known now.
+
+12. **Nintendo was founded in 1889** — as a playing card company. Moderately known.
+
+13. **The time between when the last mammoth died and the pyramids were built** — Mammoths were still alive on Wrangel Island when the Great Pyramid was being built (~1650 BC for mammoths, pyramid ~2560 BC... actually the pyramid was finished before mammoths went extinct on Wrangel Island). This is a good one and less commonly known.
+
+14. **Your body produces 25 million new cells every second** — Numbers vary.
+
+15. **There are more possible chess games than atoms in the observable universe** — Shannon number, 10^120 vs ~10^80 atoms. Well-known among chess/math people.
+
+16. **Woolly mammoths were alive when the pyramids were built** — Same as 13.
+
+17. **A day on Venus is longer than a year on Venus** — Venus rotates in 243 Earth days, orbits in 225 Earth days. Good one, moderately known.
+
+18. **Humans share 50-60% DNA with bananas** — Somewhat misleading stat but popular.
+
+19. **The Sahara was green ~6,000-10,000 years ago** — African Humid Period, with lakes, rivers, hippos. And it cycles due to orbital precession — it will be green again in ~15,000 years (or sooner debated). This is genuinely fascinating and less commonly known!
+
+20. **Cleopatra was Greek (Macedonian), not Egyptian** — Ptolemaic dynasty. Moderately known.
+
+21. **There&#39;s a town in Pennsylvania that&#39;s been on fire since 1962** — Centralia, underground coal fire. Moderately known.
+
+22. **Honeybees can recognize human faces** — Interesting.
+
+23. **The inventor of the Pringles can is buried in one** — Fredric Baur, his ashes were partially buried in a Pringles can. Fun!
+
+24. **Scotland&#39;s national animal is the unicorn** — Fun and true!
+
+25. **There&#39;s more time separating Stegosaurus and T. rex than T. rex and humans** — Stegosaurus ~150 mya, T. rex ~66 mya. So ~84 million years between them, vs 66 million years between T. rex and us. Great one, moderately known among dino fans.
+
+26. **The Great Wall of China is not visible from space with the naked eye** — debunking a myth.
+
+27. **Humans glow in the dark** — bioluminescence too faint to see. Interesting!
+
+28. **The first computer programmer was Ada Lovelace in the 1840s** — Well-known.
+
+29. **A single teaspoon of neutron star would weigh ~6 billion tons** — Well-known space fact.
+
+30. **The placebo effect works even when you know it&#39;s a placebo** — open-label placebo studies. This is genuinely surprising and less known!
+
+31. **Crows can hold grudges and pass them to their offspring** — John Marzluff&#39;s research at University of Washington. Crows remember faces of people who wronged them and scold them, and their offspring learn to scold too. Fascinating!
+
+32. **The Eiffel Tower was almost demolished** — it was meant to be temporary, 20 years.
+
+33. **There are more trees on Earth than stars in the Milky Way** — ~3 trillion trees vs ~100-400 billion stars. Good one!
+
+34. **Betelgeuse and light we see** — eh.
+
+35. **Sound travels faster in warm air** — meh.
+
+36. **The &quot;doorway effect&quot;** — walking through doorways makes you forget. Fun psychology.
+
+37. **Russia and America are only ~2.4 miles apart** — Diomede Islands (Big Diomede is Russian, Little Diomede is American), and they&#39;re also separated by the International Date Line, so you can literally see &quot;tomorrow&quot; from one island. &quot;Tomorrow Island and Yesterday Island.&quot; This is a great one!
+
+38. **The 10th president of the USA, John Tyler, born in 1790, had a grandson alive until 2020** — Harrison Ruffin Tyler died in 2025 actually. John Tyler was born in 1790 and his grandson lived into the 2020s. That&#39;s wild — two generations spanning 230+ years. Actually Harrison Ruffin Tyler died May 2025. Hmm, need to be careful with recency. He was alive as of my knowledge. Let me be careful: he died in May 2025, which may be after my knowledge cutoff. I could say &quot;had a grandson who lived into the 2020s.&quot;
+
+39. **Oxford University existed before the Aztec Empire** — mentioned.
+
+40. **Wright brothers and moon landing only 66 years apart** — well-known.
+
+41. **A jiffy is an actual unit of time** — 1/100th of a second in computing, or in physics the time light takes to travel one fermi. Fun.
+
+42. **The dot over the letter &quot;i&quot; is called a &quot;tittle&quot;** — Fun word fact.
+
+43. **There&#39;s a word for the smell of rain: petrichor** — becoming well-known.
+
+44. **Velociraptors were the size of turkeys and had feathers** — moderately known.
+
+45. **The human brain generates ~20 watts of electricity** — meh.
+
+46. **You can&#39;t hum while holding your nose closed** — try it! Fun interactive one.
+
+47. **Sea otters hold hands while sleeping** — cute and popular.
+
+48. **Wombat poop is cube-shaped** — Fun and became well-known after 2018 Ig Nobel.
+
+49. **The blobfish only looks blobby out of water** — at depth it looks like a normal fish. Nice corrective fact, less known!
+
+50. **Dolphins have names for each other** — signature whistles. Moderately known.
+
+51. **The last execution by guillotine in France was in 1977** — same year Star Wars premiered. Great juxtaposition! Hamida Djandouli, September 10, 1977. Star Wars premiered May 1977 in the US (France: October 1977). So the guillotine execution happened after Star Wars premiered. This is a fantastic &quot;timeline collapse&quot; fact.
+
+52. **Harvard was founded before calculus was invented** — Harvard 1636, Newton/Leibniz calculus ~1680s. Good one!
+
+53. **Nintendo existed while the Ottoman Empire still existed** — Nintendo 1889, Ottoman Empire ended 1922. Fun overlap!
+
+54. **The first person to survive going over Niagara Falls in a barrel was a 63-year-old teacher, Annie Edson Taylor** — with her cat! Fun.
+
+55. **There&#39;s a patent for a stick** — an Australian man patented the &quot;animal toy&quot; which is just a stick, as a joke/protest. Hmm, this is true (2001, Eugene Gussak? No — it was an Australian patent office test). Actually the story: a lawyer patented a stick (&quot;circular transportation facilitation device&quot;?) to show flaws in the patent system. I think the stick patent is real but details fuzzy. Skip.
+
+56. **The Sahara is the largest hot desert but Antarctica is the largest desert** — meh.
+
+57. **Humans and giraffes have the same number of neck vertebrae** — seven. Moderately known.
+
+58. **A group of flamingos is called a flamboyance** — fun.
+
+59. **The inventor of the telephone, Alexander Graham Bell, never called his mother or wife** — because they were deaf. Interesting and touching.
+
+60. **Honey was found in Egyptian tombs, still edible** — meh.
+
+61. **The &quot;overview effect&quot;** — astronauts&#39; cognitive shift seeing Earth. Interesting concept.
+
+62. **Tardigrades can survive in space** — well-known.
+
+63. **The world&#39;s oldest known living tree is ~4,800 years old (Methuselah)** — it was already ancient when the pyramids were built. Actually Methuselah germinated around 2833 BC, before the Great Pyramid. Fun.
+
+64. **There&#39;s a jellyfish... already covered.**
+
+65. **The Eiffel Tower has a secret apartment at the top** — Gustave Eiffel&#39;s private apartment. Moderately known.
+
+66. **In Switzerland it&#39;s illegal to own just one guinea pig** — because they&#39;re social animals; animal welfare law. Fun and true! (You need at least two; there are &quot;rent-a-guinea-pig&quot; services.) This is a delightful one.
+
+67. **The first oranges weren&#39;t orange** — they were green (Southeast Asian origin); the fruit named the color, not vice versa. Actually the color orange is named after the fruit. Before that, the color was called &quot;geoluread&quot; (yellow-red) in Old English. Great linguistic fact!
+
+68. **&quot;Robot&quot; comes from the Czech word &quot;robota&quot; meaning forced labor/serf work** — coined by Karel Čapek in 1920 play R.U.R. Moderately known.
+
+69. **The Great Chicago Fire and Peshtigo Fire** — the deadliest wildfire in US history happened the same night (Oct 8, 1871) but is forgotten. Interesting.
+
+70. **There was a war over a pig** — the Pig War of 1859 between US and Britain over the San Juan Islands, triggered by a pig shot in a potato patch. Only casualty: the pig. Fun!
+
+71. **Liechtenstein once sent 80 soldiers to war and 81 returned** — they made a friend (an Italian liaison officer). Delightful, though details vary/legendary.
+
+72. **The shortest war in history lasted 38-45 minutes** — Anglo-Zanzibar War, 1896. Fun.
+
+73. **Australia lost a war to emus** — the Great Emu War of 1932. Well-known meme now.
+
+74. **There&#39;s a basketball court on the top floor of the US Supreme Court building** — &quot;the highest court in the land.&quot; Fun pun fact!
+
+75. **The founder of match.com lost his girlfriend to a man she met on match.com** — Gary Kremen. Ironic and fun.
+
+76. **Al Capone&#39;s older brother was a Prohibition agent** — James Vincenzo Capone, aka &quot;Two Gun Hart.&quot; Wow, that&#39;s a good one! He changed his name and became a lawman.
+
+77. **Einstein was offered the presidency of Israel in 1952** — declined. Moderately known.
+
+78. **The moon has moonquakes** — meh.
+
+79. **There&#39;s a fungus that turns ants into zombies** — cordyceps, well-known after The Last of Us.
+
+80. **The average cloud weighs ~1.1 million pounds** — fun visual.
+
+81. **Humans are the only animals that blush** — Darwin called it &quot;the most peculiar and most human of all expressions.&quot; Interesting.
+
+82. **Your memories change every time you recall them** — memory reconsolidation. Genuinely mind-bending and useful to know.
+
+83. **The placebo effect is getting stronger over time in the US** — interesting research finding.
+
+84. **Some turtles can breathe through their butts** — cloacal respiration. Fun juvenile fact.
+
+85. **The world&#39;s largest living organism is a fungus** — Armillaria in Oregon, ~2,385 acres, possibly 8,000+ years old. Or Pando the aspen grove (heavier). Great one!
+
+86. **Pando is a single organism** — 106 acres of aspen, one root system, ~80,000 years old possibly (though recent estimates vary wildly). And it may be the heaviest organism.
+
+87. **Sharks existed before Saturn&#39;s rings possibly** — speculative, skip.
+
+88. **There&#39;s a species of shark that can live 400+ years** — Greenland shark, possibly 500. They don&#39;t reach sexual maturity until ~150. The one swimming today might have been alive during Shakespeare&#39;s time. Fantastic fact!
+
+89. **The Roman Empire fell less than 40 years before... hmm.**
+
+90. **Anne Frank, Martin Luther King Jr., and Barbara Walters were all born in the same year (1929)** — perception of time fact. Well-circulated.
+
+91. **The last Civil War widow died in 2020** — Helen Viola Jackson, married an elderly veteran in 1936 when she was 17. Wild timeline fact! Actually there were two — Irene Triplett died in 2020 too, she was the last person receiving a Civil War pension (her father was a veteran). Mose Triplett! She was born in 1930, her father fought in the Civil War (both sides actually). So a person whose father fought in the Civil War was alive in 2020. That&#39;s a mind-blowing timeline fact.
+
+92. **The guillotine was used in France until 1977** — covered in 51.
+
+93. **Oxford is older than the Aztecs** — covered.
+
+94. **There&#39;s an island within a lake on an island within a lake on an island** — Vulcan Point, Philippines (Taal). Fun recursive geography. Though Vulcan Point&#39;s status changed after the 2020 eruption.
+
+95. **Canada has more lakes than the rest of the world combined** — fun.
+
+96. **The shortest commercial flight is ~90 seconds** — Westray to Papa Westray, Scotland. Fun.
+
+97. **A &quot;buttload&quot; is a real unit of measurement** — a butt is a cask, ~126 gallons. So a buttload is real! Fun.
+
+98. **The inventor of Vaseline ate a spoonful every day** — Robert Chesebrough. Fun.
+
+99. **There&#39;s a man who saved the world: Stanislav Petrov, 1983** — Soviet officer who correctly judged a nuclear launch warning was a false alarm. Important history, moderately known now.
+
+100. **Vasili Arkhipov, 1962** — single vote prevented nuclear torpedo launch during Cuban Missile Crisis. Also great.
+
+Okay, I have lots of options. The user asked for &quot;something&quot; — singular. So I should probably give one strong fact, maybe with a brief follow-up offer or a couple of related bonus facts. Format: conversational, not a giant list. Maybe one main fact with a little context, and possibly offer more.
+
+Best candidates for &quot;genuinely surprising, not too well-known, verifiable&quot;:
+
+- Greenland shark longevity (may be alive from Shakespeare&#39;s era)
+- Last guillotine execution happened after Star Wars premiered
+- John Tyler&#39;s grandson
+- Civil War pensioner died in 2020 (Irene Triplett)
+- Sharks older than trees
+- Diomede Islands / tomorrow-yesterday
+- Swiss guinea pig law
+- Greenland sharks
+
+I think the Greenland shark one is excellent: Greenland sharks can live 300-500 years, don&#39;t reach sexual maturity until ~150, meaning some alive today were born before the American Revolution / during Shakespeare&#39;s... wait, Shakespeare died 1616, that&#39;s 400+ years ago, so a 400-year-old shark could have been alive then. The oldest estimated was ~392 ± 120 years. So &quot;possibly older than the United States&quot; is safe.
+
+Alternatively the guillotine/Star Wars one is a great &quot;timeline collapse&quot; fact that shocks people.
+
+Let me pick one primary and maybe offer a bonus. Actually, the request is casual and fun — I&#39;ll give one strong fact with vivid context, then maybe offer to share more or give a second one briefly. Keep it conversational, short-to-medium length. No headers needed. Maybe a light touch of humor.
+
+Let me draft:
+
+&quot;Greenland sharks can live for 300 to 500 years — and they don&#39;t even reach sexual maturity until around age 150. Scientists have found individuals alive today that were swimming the oceans before the United States existed. One specimen caught in recent years was estimated to have been born around the time Shakespeare was writing his plays. They grow about a centimeter a year and mostly wander the deep Arctic in near-freezing water, essentially living in slow motion.&quot;
+
+Then maybe add the guillotine one as a bonus, or offer more. Actually, giving two unrelated facts might dilute it. But the user might enjoy a couple. Hmm. &quot;Tell me something I don&#39;t know&quot; — one thing, well-told, is probably ideal. I could end with &quot;Want another?&quot; to invite engagement.
+
+Actually, I think a nice structure: lead with the fact, give the vivid context that makes it land, then a one-line kicker. Keep it under ~150 words. Conversational tone.
+
+Let me verify Greenland shark facts:
+- 2016 study (Nielsen et al., Science) used radiocarbon dating of eye lens proteins. Estimated lifespan at least 272 years, with the largest female estimated at 392 ± 120 years (range 272-512). So &quot;up to ~400 years, possibly 500&quot; is accurate.
+- Sexual maturity at ~150 years (females reach maturity around 150 cm... no, around 4 meters length, corresponding to ~150 years). Yes, ~150 years is commonly cited.
+- Growth rate ~1 cm/year. Yes.
+- So a shark alive today could have been born in the 1600s. Shakespeare died 1616. The oldest estimate&#39;s upper range (512 years) would put birth around 1504. The central estimate 392 years → born ~1624 (from 2016). So &quot;around the time of Shakespeare&quot; is defensible with hedging (&quot;possibly,&quot; &quot;estimated&quot;).
+
+Good. I&#39;ll hedge appropriately: &quot;estimated,&quot; &quot;possibly.&quot;
+
+Format: Short conversational paragraph(s), no lists, no headers. Maybe end with an offer for more. Length: ~100-150 words.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one: <strong>France was still executing people by guillotine when Star Wars premiered.</strong> The last guillotine execution in France took place on September 10, 1977 — about four months after Star Wars hit U.S. theaters, and the same year the Apple II computer went on sale. Beheading by machine coexisted with disco, personal computing, and the space age.</p>
+<p>And a bonus: <strong>sharks are older than trees.</strong> Sharks have existed for roughly 450 million years, while the first true trees only appeared around 350–390 million years ago. Sharks also predate grass, the North Star, and quite possibly Saturn&#39;s rings.</p>
+<p>Want more? I can dig into a specific topic — history, space, biology, weird psychology — whatever you&#39;re curious about.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>3575 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. The challenge is that I don&#39;t know what they know! So I should pick something genuinely obscure, surprising, and interesting—something that most people wouldn&#39;t know but would find fascinating.
+
+Let me brainstorm some genuinely surprising facts that most people don&#39;t know:
+
+1. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid of Giza** - This is a popular &quot;mind-blowing&quot; fact, but it&#39;s fairly well-known now.
+
+2. **Oxford University is older than the Aztec Empire** - Also fairly well-known in trivia circles.
+
+3. **There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal** - Somewhat known.
+
+4. **Honey never spoils** - Well-known.
+
+5. **The time between when the last mammoth died and when the pyramids were built** - Mammoths were still alive on Wrangel Island when the pyramids were built. Fairly known.
+
+6. **Wright Brothers and the moon landing timeline** - A person could have witnessed both. Known.
+
+7. **Bananas are berries but strawberries aren&#39;t** - Fairly known trivia.
+
+8. **The blobfish only looks blobby out of water** - Less known! At its natural depth, it looks like a normal fish. The famous image is of a decompressed, damaged specimen.
+
+9. **There&#39;s a town in Norway (Rjukan) that uses giant mirrors to reflect sunlight into the town square** because it&#39;s in a valley that gets no direct sunlight for months.
+
+10. **Octopuses have three hearts and blue blood** - Fairly known.
+
+11. **The &quot;Mpemba effect&quot;** - Hot water can freeze faster than cold water under certain conditions. Named after a Tanzanian student. Interesting but somewhat known.
+
+12. **Scotland&#39;s national animal is the unicorn** - Fun fact, somewhat known.
+
+13. **There&#39;s enough DNA in your body to stretch to the sun and back dozens of times** - Known-ish.
+
+14. **The inventor of the Pringles can is buried in one** - Fredric Baur. Fun fact.
+
+15. **A day on Venus is longer than a year on Venus** - Venus rotates so slowly that its day (243 Earth days) is longer than its orbit around the sun (225 Earth days). This is a great one!
+
+16. **The Great Wall of China is not visible from space** - Debunking fact.
+
+17. **Humans share 50-60% of DNA with bananas** - Known-ish.
+
+18. **There are more possible chess games than atoms in the observable universe** - The Shannon number. Somewhat known.
+
+19. **Woolly mammoths were still alive when the Great Pyramid was built** - mentioned above.
+
+20. **The first computer programmer was Ada Lovelace in the 1840s** - Known.
+
+21. **Nintendo was founded in 1889 as a playing card company** - Somewhat known. It existed while the Ottoman Empire was still around.
+
+22. **Sharks are older than trees** - Sharks ~450 million years, trees ~350-390 million years. Also sharks are older than Saturn&#39;s rings possibly, and older than the North Star. This is a great one!
+
+23. **The Eiffel Tower grows taller in summer** due to thermal expansion (~15 cm). Somewhat known.
+
+24. **There&#39;s a giant water reservoir in space** - A cloud containing 140 trillion times Earth&#39;s ocean water around a quasar. Cool!
+
+25. **Your body produces 25 million new cells every second** - Numbers games.
+
+26. **The &quot;doorway effect&quot;** - Why you forget why you walked into a room. Psychologically interesting.
+
+27. **Crows can recognize human faces and hold grudges** - Somewhat known.
+
+28. **The placebo effect works even when you know it&#39;s a placebo** - Open-label placebos. This is genuinely surprising and less known!
+
+29. **There&#39;s a patent for a method of swinging on a swing** - Sideways swinging patent. Absurd patent trivia.
+
+30. **Betelgeuse and the pronunciation** - Meh.
+
+31. **The world&#39;s oldest known &quot;your mom&quot; joke** - On a Babylonian tablet from 1500 BCE. Fun!
+
+32. **Rats can be tickled and they &quot;laugh&quot;** at ultrasonic frequencies. Cute and somewhat known.
+
+33. **The Sahara was green ~6,000-10,000 years ago** and cycles between desert and savanna every ~20,000 years due to Earth&#39;s axial precession. Fascinating!
+
+34. **Cleopatra was Greek (Ptolemaic), not Egyptian** - Somewhat known.
+
+35. **The first oranges weren&#39;t orange** - They were green, from Southeast Asia. The fruit came before the color name in English. The color orange was named after the fruit, not vice versa. Before that, the color was called &quot;geoluread&quot; (yellow-red). This is a good one!
+
+36. **Oxford University predates the Aztec Empire** - Teaching began at Oxford in 1096; the Aztec Empire founded Tenochtitlan in 1325.
+
+37. **There&#39;s a species of ant that only has females** - Clonal raider ants reproduce via cloning.
+
+38. **The &quot;immortal&quot; hydra** - doesn&#39;t age.
+
+39. **Wright brothers&#39; first flight was shorter than a Boeing 747&#39;s wingspan** - Known-ish.
+
+40. **Humans and giraffes have the same number of neck vertebrae** (seven) - Known-ish.
+
+41. **A single teaspoon of neutron star would weigh ~6 billion tons** - Known-ish.
+
+42. **The moon is moving away from Earth ~3.8 cm/year** - Somewhat known.
+
+43. **There&#39;s a fungus (Ophiocordyceps) that turns ants into zombies** - Very known now due to The Last of Us.
+
+44. **The blobfish fact** (#8) is genuinely good because it corrects a misconception.
+
+45. **The Turritopsis jellyfish** - mentioned.
+
+46. **Honeybees can recognize human faces** - Interesting!
+
+47. **There&#39;s a lake in Tanzania (Lake Natron) that turns animals to stone** (calcifies them) - Sensationalized but interesting.
+
+48. **The longest time between two twins being born is 87 days** - Weird record.
+
+49. **You can&#39;t hum while holding your nose closed** - Try it! Fun interactive one. Actually you can hum briefly... The trick is you can&#39;t hum with your nose pinched AND mouth closed for long because the air needs to escape. Fun party trick.
+
+50. **The inventor of the fire hydrant is unknown because the patent office burned down** - This is a great ironic fact! The 1836 patent office fire destroyed records.
+
+51. **Sweden and Switzerland have an agreement about who&#39;s &quot;on top&quot;** - No, made up.
+
+52. **Liechtenstein once had an army of 80 men go to war and come back with 81** - They brought back an Italian friend. Fun story, possibly apocryphal.
+
+53. **The shortest war in history lasted 38-45 minutes** (Anglo-Zanzibar War, 1896). Somewhat known.
+
+54. **A &quot;jiffy&quot; is an actual unit of time** - 1/100th of a second in computing, or the time light takes to travel one fermi in physics. Fun!
+
+55. **The dot over the letter &quot;i&quot; is called a &quot;tittle&quot;** - Fun word trivia.
+
+56. **There&#39;s only one letter that doesn&#39;t appear in any U.S. state name: Q** - Fun trivia.
+
+57. **The phrase &quot;mad as a hatter&quot; comes from mercury poisoning in hat-making** - Known-ish.
+
+58. **Your nose can detect over a trillion smells** - Interesting.
+
+59. **The human brain generates about 20 watts of electrical power** - Enough to power a dim light bulb. Somewhat known.
+
+60. **There are more trees on Earth than stars in the Milky Way** - ~3 trillion trees vs ~100-400 billion stars. Great fact!
+
+61. **The first person to survive going over Niagara Falls in a barrel was a 63-year-old teacher (Annie Edson Taylor)** - with her cat! Fun.
+
+62. **Cows have best friends and get stressed when separated** - Cute, somewhat known.
+
+63. **Sea otters hold hands while sleeping** - Very known.
+
+64. **The word &quot;robot&quot; comes from a Czech word meaning &quot;forced labor&quot;** - From Karel Čapek&#39;s 1920 play R.U.R. Somewhat known.
+
+65. **Alaska is simultaneously the westernmost and easternmost state** - Because the Aleutian Islands cross the 180° meridian. Fun geography!
+
+66. **France was still executing people by guillotine when Star Wars premiered** - Last guillotine execution: September 10, 1977. Star Wars premiered May 25, 1977. Great juxtaposition fact!
+
+67. **Harvard was founded before calculus was invented** - Harvard 1636, Newton/Leibniz calculus ~1680s. Good one!
+
+68. **The last execution by guillotine in France happened the same year the first Star Wars came out** - See #66.
+
+69. **Woolly mammoths were alive when the pyramids were built** - See above.
+
+70. **There&#39;s a basketball court on the top floor of the U.S. Supreme Court building** - Known as &quot;the highest court in the land.&quot; Fun pun fact!
+
+71. **The inventor of Vaseline ate a spoonful of it every day** - Robert Chesebrough. Lived to 96. Fun!
+
+72. **Cheetahs can&#39;t roar; they meow and purr** - Fun animal fact.
+
+73. **The platypus glows under UV light** - Discovered in 2020! Biofluorescence. Genuinely recent and surprising.
+
+74. **Wombat poop is cube-shaped** - Very known now.
+
+75. **The longest English word without a vowel is &quot;rhythms&quot;** - Word trivia.
+
+76. **The Great Pyramids were already ancient when Cleopatra lived** - See #1.
+
+77. **A group of flamingos is called a &quot;flamboyance&quot;** - Known-ish.
+
+78. **The first alarm clock could only ring at 4 a.m.** - Levi Hutchins, 1787. Fun!
+
+79. **There&#39;s a village in India (Mawsynram) that&#39;s the wettest place on Earth** - Somewhat known.
+
+80. **The &quot;Boötes void&quot;** - A region of space 330 million light-years across with almost nothing in it. If the Milky Way were in it, we wouldn&#39;t have discovered other galaxies until the 1960s. Fascinating!
+
+Now, which one(s) to pick? The best approach is probably to pick one genuinely surprising fact and explain it well, maybe with a bonus. Or offer a couple. The response should be conversational and engaging, not a listicle dump.
+
+I think the France guillotine/Star Wars fact is excellent—it&#39;s a genuine time-juxtaposition surprise. The sharks older than trees one is great. The platypus glowing under UV is recent and delightful. The blobfish correction is great because it corrects a misconception people have.
+
+Let me think about what&#39;s least likely to be known:
+- The blobfish fact (corrects a known image)
+- Platypus biofluorescence (discovered 2020)
+- Open-label placebos working
+- The Sahara green cycle
+- The fire hydrant inventor unknown due to patent office fire
+
+I&#39;ll go with one strong main fact and maybe offer more. Actually, the format could be: one surprising fact told well, then offer to share more in a domain they like. Or give 2-3 short ones.
+
+Given the casual, playful nature of the request, I should match that energy. A conversational response with one or two genuinely surprising facts, told engagingly. Not too long. Maybe end with an offer for more or a question about what topics interest them.
+
+Let me pick: **The blobfish fact** is a great &quot;you&#39;ve been lied to&quot; reveal. The famous blobfish photo shows a decompressed specimen; at depth (600-1200m off Australia), it looks like a normal fish. Its body is gelatinous to withstand pressure, and when brought up rapidly, the pressure change destroys its body. So the sad blob face is basically a corpse damaged by decompression.
+
+Or **sharks are older than trees** — and older than Saturn&#39;s rings (possibly), the North Star, and grass. Sharks: ~450 million years. Trees: ~350-390 million years. Grass: ~55-70 million years. Polaris is only ~70 million years old. Dinosaurs ~240 million years. So sharks predate dinosaurs, trees, grass, and the North Star.
+
+Or the **guillotine/Star Wars** one: Hamida Djandoubi, executed by guillotine in Marseille on September 10, 1977 — months after Star Wars premiered (May 1977) and after the first Apple II computers were sold. France&#39;s last guillotine execution coincided with the space age, disco, and personal computing.
+
+I could combine a couple. Let me draft:
+
+---
+
+Here&#39;s one: France was still executing people by guillotine when Star Wars hit theaters. The last guillotine execution in France happened on September 10, 1977—about four months after Star Wars premiered, and the same year the Apple II went on sale. Capital punishment by beheading coexisted with disco, personal computers, and the space age.
+
+Want another? Sharks are older than trees. Sharks have been around for about 450 million years; the first true trees only appeared around 350-390 million years ago. Sharks also predate grass, the North Star, and possibly Saturn&#39;s rings.
+
+---
+
+That&#39;s good. Two facts, both genuinely surprising, well-contextualized. Maybe end with an offer to go deeper on a topic they like. Keep it conversational.
+
+Actually, let me verify facts:
+
+1. Last guillotine execution in France: Hamida Djandoubi, September 10, 1977, in Marseille (Baumettes prison). Star Wars US premiere: May 25, 1977. Star Wars French release: October 19, 1977 — so technically in France, Star Wars came out AFTER the last guillotine execution! Hmm. But the film premiered in the US in May 1977. The common framing is &quot;France was still using the guillotine when Star Wars premiered&quot; — true for the US premiere. The Apple II went on sale June 1977. So the statement &quot;The last guillotine execution happened after Star Wars premiered (in the US) and after the Apple II went on sale&quot; is accurate. I&#39;ll phrase carefully: &quot;four months after Star Wars premiered in the U.S.&quot;
+
+2. Sharks: earliest shark-like scales ~450 million years ago (Late Ordovician). True sharks (with teeth) ~400-420 mya. Trees: first true trees (Archaeopteris) ~350-390 mya (Devonian). So sharks predate trees by tens of millions of years. Grass: earliest evidence ~55-70 mya (some debate, possibly Late Cretaceous ~70-100 mya based on coprolite findings). Polaris: estimated age ~50-70 million years. Saturn&#39;s rings: debated, possibly 10-100 million years old (recent studies suggest young), possibly as old as the solar system. I should hedge on Saturn&#39;s rings with &quot;possibly&quot; or drop it. I&#39;ll keep trees, grass, and the North Star, and hedge rings.
+
+Format: conversational, two facts with brief context, light offer at the end. No headers needed. Short paragraphs. Maybe bold nothing or keep it plain—conversational tone suggests minimal formatting. Keepit snappy.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/anthropic-claude-opus-5.5/">← Anthropic: Claude Opus 5.5</a>
+            <a href="/">all models</a>
+            <a href="/m/xiaomi-mimo-v2.6-pro-ultraspeed/">Xiaomi: MiMo-V2.6-Pro-UltraSpeed →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

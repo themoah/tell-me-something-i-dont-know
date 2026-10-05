@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSafe: Jev Router — Tell me something I don't know.</title>
+    <meta name="description" content="TypeSafe: Jev Router answers &quot;Tell me something I don&#39;t know.&quot; — The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket i…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/typesafe-jev-router/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/typesafe-jev-router/">
+    <meta property="og:title" content="TypeSafe: Jev Router — Tell me something I don't know.">
+    <meta property="og:description" content="TypeSafe: Jev Router answers &quot;Tell me something I don&#39;t know.&quot; — The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket i…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TypeSafe: Jev Router — Tell me something I don't know.">
+    <meta name="twitter:description" content="TypeSafe: Jev Router answers &quot;Tell me something I don&#39;t know.&quot; — The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket i…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to TypeSafe: Jev Router)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket in Troy, Ohio—and the gum pack is now in the Smithsonian.","author":{"@type":"Organization","name":"Typesafe"}},"suggestedAnswer":[{"@type":"Answer","text":"I can’t know what you already know, but here’s a good one:\n\n**The highest point in Pennsylvania is lower than the lowest point in Colorado.**\n\n- Pennsylvania’s highest peak, Mount Davis, is **3,213 feet** above sea level.\n- Colorado’s lowest point, the Arikaree River, is **3,317 feet** above sea level.\n\nSo you could stand on Pennsylvania’s tallest mountain and still be **104 feet below** Colorado’s lowest valley.","author":{"@type":"Organization","name":"Typesafe"}},{"@type":"Answer","text":"“Jiffy” is an actual unit of time—though its definition depends on the field.\n\nIn physics, one jiffy is the time it takes light to travel one femtometer: about **3.3 × 10⁻²⁴ seconds**. In computing, a jiffy is often **1/100 of a second**. So if someone says they’ll be back in a jiffy, they’re either being wildly optimistic or using the computer-science version.","author":{"@type":"Organization","name":"Typesafe"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>TypeSafe: Jev Router</h1>
+        <p class="subtitle">Typesafe · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">TypeSafe: Jev Router</div>
+                        <div class="model-provider">Typesafe</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket in Troy, Ohio—and the gum pack is now in the Smithsonian.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1613 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer. User asks &quot;Tell me something I don&#39;t know.&quot; We need provide interesting fact likely unknown. Need be careful no context. We can tell something surprising. We should not claim know what they don&#39;t know. Could say &quot;Here&#39;s one: ...&quot; Need maybe obscure fact. We can choose. Need final only. We need answer concise. Need something true and interesting. Let&#39;s pick: The word &quot;helicopter&quot; is not from &quot;heli&quot; + &quot;copter&quot;; it&#39;s from Greek helix (spiral) + pteron (wing), so &quot;pter&quot; is wing. Thus &quot;helicopter&quot; etymologically means &quot;spiral wing.&quot; Also &quot;pterodactyl&quot; shares pter. That&#39;s known? Maybe.
+
+Another: Honey never spoils? They might know. Octopuses have three hearts? Known. Bananas are berries, strawberries not? Known. &quot;The first computer bug was an actual moth&quot; known.
+
+Something obscure: The Eiffel Tower can be 15 cm taller in summer due to thermal expansion. Known.
+
+Maybe &quot;A day on Venus is longer than a year on Venus.&quot; Known.
+
+Need something I don&#39;t know. Could use: &quot;The unicorn is the national animal of Scotland.&quot; Known.
+
+Maybe &quot;The dot over the letter i and j is called a tittle.&quot; Some know.
+
+Maybe &quot;The longest place name in the world has 85 letters: Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu.&quot; Known.
+
+Maybe &quot;Cows have best friends and get stressed when separated.&quot; Known.
+
+Maybe &quot;The &#39;save&#39; icon in software is a floppy disk, but many people under 20 have never used one.&quot; Not fact.
+
+Could tell about &quot;The Great Wall of China is not visible from space with naked eye&quot; common.
+
+Maybe &quot;There are more possible iterations of a game of chess than there are atoms in the observable universe.&quot; Known.
+
+Need something genuinely obscure and surprising. Let&#39;s think.
+
+- The word &quot;set&quot; has the most definitions in English dictionary? Known.
+- &quot;Dreamt&quot; is the only common English word ending in &quot;mt.&quot; Known.
+- &quot;Rhythm&quot; is longest word without vowels? Known.
+- &quot;The plastic tips on shoelaces are called aglets.&quot; Known.
+- &quot;The little bits of paper from hole punch are called chads.&quot; Known.
+- &quot;The smell of rain is called petrichor.&quot; Known.
+- &quot;The fear of long words is hippopotomonstrosesquippedaliophobia.&quot; Known.
+- &quot;A group of flamingos is called a flamboyance.&quot; Known.
+- &quot;A jiffy is an actual unit of time: 1/100th second, or in physics, time light takes to travel one femtometer.&quot; Some know.
+- &quot;The first oranges weren&#39;t orange; they were green.&quot; Actually oranges originated in Asia and were green? Ripe oranges can be green in tropical climates due to chlorophyll. But &quot;orange&quot; color named after fruit. Not exactly.
+
+Maybe &quot;The QWERTY keyboard layout was not designed to slow typists down; it was designed to reduce jamming by separating common letter pairs, and it may have been optimized for telegraph operators.&quot; This is nuanced. Could be unknown.
+
+Maybe &quot;The U.S. has no official language at the federal level.&quot; Many might not know. But maybe.
+
+Maybe &quot;The largest known organism is a honey fungus in Oregon covering 3.7 square miles, estimated 8,650 years old.&quot; That&#39;s interesting. They might not know. Let&#39;s verify: Armillaria ostoyae in Malheur National Forest, Oregon, covers 2,385 acres (3.7 sq mi), estimated 2,500-8,650 years old. It&#39;s a single fungus. That&#39;s a good fact. But maybe known.
+
+Another: &quot;There is a species of jellyfish that is biologically immortal: Turritopsis dohrnii. When stressed or injured, it can revert to its polyp stage and start life over.&quot; Known.
+
+Maybe &quot;The mitochondria in your cells have their own DNA, and you inherit it only from your mother.&quot; Known.
+
+Maybe &quot;The human nose can detect over 1 trillion different scents.&quot; Known.
+
+Maybe &quot;A teaspoon of neutron star material would weigh about 6 billion tons.&quot; Known.
+
+Maybe &quot;The Earth&#39;s core is as hot as the surface of the sun.&quot; Known.
+
+Maybe &quot;There are more trees on Earth than stars in the Milky Way.&quot; Known.
+
+Maybe &quot;The first known use of the word &#39;OMG&#39; was in a letter to Winston Churchill in 1917.&quot; That&#39;s obscure. Let&#39;s verify: &quot;OMG&quot; used in 1917 letter to Winston Churchill by Admiral John Arbuthnot Fisher? Actually &quot;O.M.G.&quot; in a letter to Churchill: &quot;I hear that a new order of Knighthood is on the tapis—O.M.G. (Oh! My God!)—Shower it on the Admiralty!!&quot; Yes. That&#39;s a fun fact. Might be something they don&#39;t know. But maybe.
+
+Maybe &quot;The @ symbol is called a &#39;snail&#39; in Italian, &#39;monkey tail&#39; in Dutch, &#39;elephant trunk&#39; in Swedish? Actually in Swedish it&#39;s &quot;snabel-a&quot; (elephant trunk a), in Dutch &quot;apestaartje&quot; (monkey tail), in Italian &quot;chiocciola&quot; (snail).&quot; That&#39;s interesting.
+
+Maybe &quot;The word &#39;checkmate&#39; comes from Persian &#39;shah mat&#39; meaning &#39;the king is dead&#39; or &#39;the king is helpless&#39;.&quot; Known.
+
+Maybe &quot;The &#39;Mona Lisa&#39; has no eyebrows because it was fashionable for Italian women in the Renaissance to shave them off.&quot; Actually not sure; could be because of restoration or fashion. Better avoid.
+
+Maybe &quot;The first product to have a barcode scanned was a pack of Wrigley&#39;s chewing gum in 1974.&quot; That&#39;s obscure. Good. They might not know. Let&#39;s verify: On June 26, 1974, at a Marsh supermarket in Troy, Ohio, a 10-pack of Wrigley&#39;s Juicy Fruit gum was the first item scanned with a UPC barcode. Yes. That&#39;s a solid fact. Could answer: &quot;The first item ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum, in Troy, Ohio, on June 26, 1974.&quot; That&#39;s something they likely don&#39;t know. We can add &quot;It&#39;s now in the Smithsonian.&quot; Actually the gum pack? The first scanned item is in the Smithsonian National Museum of American History. Yes. That&#39;s a great answer. Need final. Maybe mention &quot;probably&quot; not know. Keep concise. 
+
+Need ensure no issue: User asks &quot;Tell me something I don&#39;t know.&quot; We can say &quot;Here&#39;s one: ...&quot; That&#39;s fine. No need to ask. 
+
+Final with fact. Ensure truth. Let&#39;s craft: &quot;The first product ever scanned with a barcode was a 10-pack of Wrigley’s Juicy Fruit chewing gum. It happened on June 26, 1974, at a Marsh supermarket in Troy, Ohio; the pack is now in the Smithsonian.&quot; That&#39;s good. 
+
+Check date: June 26, 1974. Yes. The cashier was Sharon Buchanan. The pack is in Smithsonian. Good. 
+
+Final. 
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>I can’t know what you already know, but here’s a good one:</p>
+<p><strong>The highest point in Pennsylvania is lower than the lowest point in Colorado.</strong></p>
+<ul>
+<li>Pennsylvania’s highest peak, Mount Davis, is <strong>3,213 feet</strong> above sea level.</li>
+<li>Colorado’s lowest point, the Arikaree River, is <strong>3,317 feet</strong> above sea level.</li>
+</ul>
+<p>So you could stand on Pennsylvania’s tallest mountain and still be <strong>104 feet below</strong> Colorado’s lowest valley.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>6305 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer. User asks &quot;Tell me something I don&#39;t know.&quot; Need provide interesting fact likely unknown. Need be careful: impossible know what they know. We can say something obscure. Need maybe one fact. Desired oververbosity 5. We can give a surprising fact with context. Need maybe &quot;The word &#39;helicopter&#39; is not heli + copter; it&#39;s from Greek helix (spiral) + pteron (wing), so &#39;helico-pter&#39;.&quot; That&#39;s known? Another: &quot;Oxford University is older than the Aztec Empire.&quot; Oxford teaching by 1096, Aztec Tenochtitlan founded 1325. That&#39;s interesting. But maybe they know. &quot;A day on Venus is longer than its year.&quot; Known. &quot;Wombats produce cube-shaped poop.&quot; Known. &quot;The first computer bug was an actual moth.&quot; Known. &quot;Cleopatra lived closer to the Moon landing than to construction of Great Pyramid.&quot; Known. Need something not likely known.
+
+Maybe: &quot;The Eiffel Tower can be 15 cm taller during hot days&quot; known. &quot;Honey never spoils&quot; known. &quot;Bananas are berries, strawberries aren&#39;t&quot; known.
+
+Need maybe obscure. Let&#39;s think of interesting obscure facts. &quot;The U.S. state of Maine is the closest U.S. state to Africa.&quot; Is that true? Maine is easternmost, but Africa? Quoddy Head, Maine is ~3,154 miles from Africa? Florida is closer? Let&#39;s check: Maine&#39;s easternmost point is closest to Africa? Actually Africa&#39;s westernmost point is Senegal/Cape Verde. Maine to Africa across Atlantic: distance from Maine to Morocco ~3,200 miles. Florida to Africa ~4,000? Yes Maine is closer to Africa than any other US state. That&#39;s surprising. But maybe.
+
+&quot;Canada has more lakes than the rest of the world combined.&quot; Often stated. &quot;There are more trees on Earth than stars in Milky Way.&quot; Known.
+
+&quot;Octopuses have three hearts, blue blood, and two of their hearts stop beating when they swim.&quot; Known.
+
+&quot;The unicorn is the national animal of Scotland.&quot; Known.
+
+&quot;Sea otters hold hands while sleeping to avoid drifting apart.&quot; Known.
+
+&quot;Pineapples take two years to grow.&quot; Known.
+
+&quot;Sharks existed before trees.&quot; Sharks ~400 million years, trees ~350 million. Known.
+
+&quot;The largest known organism is a honey fungus in Oregon covering 3.7 square miles.&quot; Known.
+
+&quot;Your body contains about 37.2 trillion cells.&quot; Known.
+
+&quot;Water can boil and freeze at the same time (triple point).&quot; Known.
+
+Maybe &quot;The &#39;Mona Lisa&#39; has no eyebrows because it was fashionable for Italian women in the 16th century to shave them off.&quot; Actually debated. Not sure.
+
+&quot;Vatican City is the only country that can lock its gates at night.&quot; Hmm.
+
+&quot;The national flag of Nepal is the only non-quadrilateral national flag.&quot; Known.
+
+&quot;Sloths can hold their breath longer than dolphins.&quot; Sloths can slow heart rate and hold breath up to 40 minutes? Dolphins up to 10-15 min. That&#39;s interesting. But maybe known.
+
+&quot;Humans share 60% of DNA with bananas.&quot; Known.
+
+&quot;The first oranges weren&#39;t orange—they were green.&quot; Actually unripe? Hmm.
+
+&quot;McDonald&#39;s once made a bubblegum-flavored broccoli to make healthy food appealing, but kids were confused.&quot; That&#39;s obscure. In 2014? McDonald&#39;s experimented with bubblegum-flavored broccoli? I recall McDonald&#39;s tried bubblegum-flavored broccoli? Let&#39;s verify: In 2014, McDonald&#39;s CEO Don Thompson said they tried bubblegum-flavored broccoli but kids didn&#39;t like it. It was a real experiment? Yes. That&#39;s a fun fact.
+
+&quot;Napoleon was not short; he was about 5&#39;7&quot;, average for Frenchmen of his time. The &#39;Napoleon complex&#39; is based on British propaganda and confusion between French inches and British inches.&quot; Known.
+
+&quot;The shortest war in history lasted 38 minutes: Anglo-Zanzibar War.&quot; Known.
+
+&quot;The Hundred Years&#39; War lasted 116 years.&quot; Known.
+
+&quot;Cleopatra lived closer to the invention of the iPhone than to the construction of the Great Pyramid.&quot; Actually Cleopatra died 30 BC, Great Pyramid 2560 BC, gap ~2530 years. iPhone 2007, gap ~2037 years. So yes, closer to iPhone. That&#39;s known.
+
+&quot;Oxford University is older than the Aztec Empire.&quot; Oxford teaching 1096, Aztec Empire 1428. Yes. That&#39;s a good one.
+
+&quot;Oxford University is older than the printing press.&quot; Yes.
+
+Maybe &quot;The last known surviving veteran of the American Civil War was alive when the first Star Wars film was released?&quot; No, last Civil War veteran died 1956. Not.
+
+&quot;Harriet Tubman died in 1913, same year as the first crossword puzzle was published.&quot; Not.
+
+&quot;John Tyler, 10th U.S. president, has a grandson who is still alive? Actually John Tyler born 1790, had son Lyon Gardiner Tyler in 1853, who had sons in 1920s. Harrison Tyler born 1928, still alive? He died? Let&#39;s check: Harrison Ruffin Tyler (born 1928) is alive as of 2024? I think yes. He is grandson of John Tyler. That&#39;s a great fact: a former U.S. president born in 1790 has a living grandson. Let&#39;s verify: John Tyler (1790-1862). His son Lyon Gardiner Tyler (1853-1935) had Harrison Ruffin Tyler born 1928. Harrison Tyler is still alive? As of 2024, yes, he was 95. In 2025, 96? He might still be alive. That&#39;s a mind-bending fact. But if user might know? It&#39;s fairly known in trivia. Could say &quot;As of my last knowledge, Harrison Ruffin Tyler, grandson of President John Tyler (born 1790), is still alive.&quot; Need be accurate. Current date 2026. Is he still alive? I don&#39;t know. My knowledge cutoff 2024. He was born Nov 5, 1928. If alive in 2026, he&#39;d be 97. I think he was alive as of 2024. But could have died. Risk. Better avoid.
+
+&quot;William Henry Harrison was president for 31 days, but his grandson Benjamin Harrison was president 48 years later.&quot; Known.
+
+&quot;Thomas Jefferson and John Adams died on the same day, July 4, 1826, 50 years after Declaration.&quot; Known.
+
+&quot;The Ottoman Empire still existed when the first McDonald&#39;s opened?&quot; McDonald&#39;s 1940, Ottoman ended 1922. No.
+
+&quot;Ketchup was sold as medicine in the 1830s.&quot; Known.
+
+&quot;The Michelin Guide was created to sell more tires.&quot; Known.
+
+&quot;Vending machines kill more people than sharks.&quot; Known.
+
+&quot;More people are killed by cows than sharks.&quot; Known.
+
+&quot;Your stomach acid can dissolve metal.&quot; Known.
+
+&quot;Flamingos are born grey.&quot; Known.
+
+&quot;Polar bears have black skin.&quot; Known.
+
+&quot;Elephants are the only animals that can&#39;t jump.&quot; Known? Actually not only, but.
+
+&quot;Starfish don&#39;t have brains.&quot; Known.
+
+&quot;Jellyfish are older than dinosaurs.&quot; Known.
+
+&quot;Tardigrades can survive in space.&quot; Known.
+
+&quot;Octopus arms have their own brains.&quot; Known.
+
+&quot;Some turtles can breathe through their butts.&quot; Known.
+
+&quot;Sloths can hold their breath longer than dolphins.&quot; That&#39;s less known. Let&#39;s verify: Sloths can hold breath for 40 minutes? Dolphins 10-15 min. Yes. But is it true? Sloths have low metabolic rate, can hold breath up to 40 minutes underwater. Dolphins can hold up to 10-15 minutes. So yes.
+
+&quot;The first webcam was invented to monitor a coffee pot at Cambridge University.&quot; Known.
+
+&quot;The first computer mouse was made of wood.&quot; Known.
+
+&quot;The first domain name ever registered was symbolics.com on March 15, 1985.&quot; Known.
+
+&quot;The QWERTY keyboard was designed to slow typists down.&quot; Actually myth; designed to reduce jamming, not slow down. Known.
+
+&quot;Typewriter term &#39;carriage return&#39; etc.&quot; Not.
+
+&quot;Bananas are slightly radioactive.&quot; Known.
+
+&quot;Brazil nuts are radioactive.&quot; Known.
+
+&quot;Your phone has more computing power than Apollo 11 guidance computer.&quot; Known.
+
+&quot;The Apollo 11 guidance computer had about 4KB of RAM.&quot; Known.
+
+&quot;The first text message was &#39;Merry Christmas&#39; sent in 1992.&quot; Known.
+
+&quot;The first email was sent by Ray Tomlinson in 1971, and he doesn&#39;t remember what it said.&quot; Known.
+
+&quot;The &#39;@&#39; symbol was chosen for email because it was rarely used.&quot; Known.
+
+&quot;The word &#39;set&#39; has the most definitions in English.&quot; Known.
+
+&quot;The word &#39;run&#39; has hundreds of meanings.&quot; Known.
+
+&quot;English is not the official language of the United States.&quot; True at federal level. Known.
+
+&quot;Los Angeles&#39;s full name is El Pueblo de Nuestra Señora la Reina de los Ángeles de Porciúncula.&quot; Known.
+
+&quot;Bangkok&#39;s full ceremonial name is the longest place name in the world.&quot; Known.
+
+&quot;New York City was briefly the capital of the United States.&quot; Known.
+
+&quot;The U.S. has no official language.&quot; Known.
+
+&quot;Alaska is the easternmost, westernmost, and northernmost state in the U.S.&quot; Actually easternmost? Alaska&#39;s Aleutian Islands cross 180th meridian, so yes, easternmost by longitude? The easternmost point is in Alaska? Wait, easternmost in terms of longitude: Pochnoi Point, Semisopochnoi Island, Alaska is at 179°46&#39;E, which is the easternmost point in the U.S. because it&#39;s east of 180. Also westernmost. So yes. But known.
+
+&quot;Maine is the closest U.S. state to Africa.&quot; That&#39;s a good obscure geographic fact. Let&#39;s verify: The closest point in the U.S. to Africa is in Maine? Actually Quoddy Head, Maine is at 44.8N, 66.9W. Africa&#39;s westernmost point is Cape Verde? Senegal is at 17N, 17W. Distance from Maine to Senegal: use haversine. Maine to Senegal ~5,800 km? Florida to Senegal ~6,500 km? Let&#39;s check: Miami to Dakar ~6,500 km. New York to Dakar ~6,100 km. Maine to Dakar ~5,800 km? Yes, Maine is closer. So yes. But &quot;closest U.S. state to Africa&quot; is Maine. That&#39;s surprising.
+
+&quot;The Pacific Ocean is shrinking by about 2-3 cm per year due to plate tectonics, while the Atlantic is widening.&quot; Known.
+
+&quot;Mount Everest is not the tallest mountain from base to peak; Mauna Kea is.&quot; Known.
+
+&quot;Mount Everest is the highest above sea level, but Chimborazo is farthest from Earth&#39;s center due to equatorial bulge.&quot; Known.
+
+&quot;Dead Sea is not a sea; it&#39;s a lake.&quot; Known.
+
+&quot;The Sahara is not the largest desert; Antarctica is.&quot; Known.
+
+&quot;Russia has a larger surface area than Pluto.&quot; Known.
+
+&quot;Pluto is smaller than Russia.&quot; Known.
+
+&quot;Canada has more coastline than the rest of the world combined.&quot; Known? Actually Canada has longest coastline.
+
+&quot;Africa is larger than the U.S., China, India, Japan, and most of Europe combined.&quot; Known.
+
+&quot;The Nile and Amazon debate.&quot; Known.
+
+&quot;Greenland is not a continent.&quot; Known.
+
+&quot;Australia is wider than the Moon.&quot; Known.
+
+&quot;The Moon has moonquakes.&quot; Known.
+
+&quot;Saturn&#39;s density is less than water; it would float.&quot; Known.
+
+&quot;Venus rotates backwards.&quot; Known.
+
+&quot;Uranus rotates on its side.&quot; Known.
+
+&quot;Neutron star material is so dense a teaspoon would weigh as much as Mount Everest.&quot; Known.
+
+&quot;A day on Mercury is longer than its year? Actually Mercury&#39;s solar day is 176 Earth days, year 88 days. So yes, a solar day on Mercury is longer than its year. But Venus also. Known.
+
+&quot;Light from the Sun takes 8 minutes to reach Earth, but it can take 100,000 years to travel from the Sun&#39;s core to its surface.&quot; Known.
+
+&quot;The human eye can distinguish about 10 million colors.&quot; Known.
+
+&quot;Your brain uses 20% of your body&#39;s oxygen.&quot; Known.
+
+&quot;Your bones are stronger than concrete.&quot; Known.
+
+&quot;You are taller in the morning than at night.&quot; Known.
+
+&quot;Your stomach lining is replaced every few days.&quot; Known.
+
+&quot;Your body makes 2 million red blood cells per second.&quot; Known.
+
+&quot;Your nose can remember 50,000 different scents.&quot; Known.
+
+&quot;Your ears and nose never stop growing.&quot; Actually myth; they appear bigger due to gravity and cartilage. Known.
+
+&quot;Your tongue print is unique.&quot; Known.
+
+&quot;Your fingerprints are unique, even identical twins.&quot; Known.
+
+&quot;Koalas have fingerprints almost identical to humans.&quot; That&#39;s obscure. Yes, koalas have fingerprints that are virtually indistinguishable from human fingerprints, even under electron microscope. That&#39;s a great fact. But maybe known.
+
+&quot;Pigs can&#39;t look up.&quot; Myth? Actually they can, but not easily. Known.
+
+&quot;Owls can&#39;t move their eyeballs.&quot; Known.
+
+&quot;Bats are the only mammals that can fly.&quot; Known.
+
+&quot;Flying squirrels don&#39;t fly, they glide.&quot; Known.
+
+&quot;Hummingbirds are the only birds that can fly backwards.&quot; Known.
+
+&quot;Penguins have knees.&quot; Known.
+
+&quot;Ostriches can run faster than horses.&quot; Known.
+
+&quot;An ostrich&#39;s eye is bigger than its brain.&quot; Known.
+
+&quot;Cows have best friends.&quot; Known.
+
+&quot;Sheep can recognize faces.&quot; Known.
+
+&quot;Rats laugh when tickled.&quot; Known.
+
+&quot;Dogs can smell your feelings.&quot; Known.
+
+&quot;Cats can&#39;t taste sweetness.&quot; Known.
+
+&quot;Cheetahs can&#39;t roar, they purr.&quot; Known.
+
+&quot;Lions can&#39;t purr.&quot; Known.
+
+&quot;Tigers have striped skin, not just fur.&quot; Known.
+
+&quot;Zebras are black with white stripes.&quot; Known.
+
+&quot;Giraffes have no vocal cords.&quot; Myth? They can hum. Known.
+
+&quot;Elephants can&#39;t jump.&quot; Known.
+
+&quot;Kangaroos can&#39;t walk backwards.&quot; Known.
+
+&quot;Wombats poop cubes.&quot; Known.
+
+&quot;Sloths can hold breath longer than dolphins.&quot; Good.
+
+&quot;Sea cucumbers can eject their internal organs and regrow them.&quot; Known.
+
+&quot;Starfish can regrow limbs.&quot; Known.
+
+&quot;Octopuses can taste with their arms.&quot; Known.
+
+&quot;Sharks don&#39;t have bones.&quot; Known.
+
+&quot;Jellyfish have no brain, heart, bones, or eyes (some have eyes).&quot; Known.
+
+&quot;Turritopsis dohrnii is immortal jellyfish.&quot; Known.
+
+&quot;Lobsters were once considered food for the poor and prisoners.&quot; Known.
+
+&quot;Lobsters don&#39;t age.&quot; Known.
+
+&quot;Lobsters can grow indefinitely.&quot; Known.
+
+&quot;Oysters can change gender.&quot; Known.
+
+&quot;Clownfish can change gender.&quot; Known.
+
+&quot;Frogs can freeze and thaw.&quot; Known.
+
+&quot;Wood frogs can survive freezing.&quot; Known.
+
+&quot;Tardigrades can survive radiation, vacuum, extreme temperatures.&quot; Known.
+
+&quot;Bacteria can live in rocks miles underground.&quot; Known.
+
+&quot;There are more bacteria in your mouth than people on Earth.&quot; Known.
+
+&quot;Your gut bacteria can affect your mood.&quot; Known.
+
+&quot;Mitochondria have their own DNA.&quot; Known.
+
+&quot;Human DNA is 99.9% identical.&quot; Known.
+
+&quot;Humans have 46 chromosomes, potatoes have 48.&quot; Known.
+
+&quot;Bananas have 33 chromosomes? Actually 22? Not.
+
+&quot;Humans share 50% DNA with bananas? Actually 60% genes? Known.
+
+&quot;Your body has 10 times more bacterial cells than human cells? Myth, now estimated 1.3:1.&quot; Known.
+
+&quot;The human microbiome weighs about 2 kg.&quot; Known.
+
+&quot;The largest cell in the human body is the female egg; the smallest is sperm.&quot; Known.
+
+&quot;The longest nerve is sciatic.&quot; Known.
+
+&quot;The strongest muscle for its size is the masseter.&quot; Known.
+
+&quot;The hardest bone is the jawbone.&quot; Known.
+
+&quot;The only bone not connected to another is the hyoid.&quot; Known.
+
+&quot;The smallest bone is stapes.&quot; Known.
+
+&quot;The human nose can detect 1 trillion scents.&quot; Known.
+
+&quot;The human eye can see 10 million colors.&quot; Known.
+
+&quot;The human brain can generate 20 watts of power.&quot; Known.
+
+&quot;The human heart creates enough pressure to squirt blood 30 feet.&quot; Known.
+
+&quot;The human body contains enough iron to make a 3-inch nail.&quot; Known.
+
+&quot;The human body contains enough sulfur to kill all fleas on an average dog.&quot; Known.
+
+&quot;The human body contains enough carbon to make 9,000 pencils.&quot; Known.
+
+&quot;The human body contains enough water to fill a 50-liter barrel.&quot; Known.
+
+&quot;The human body contains enough fat to make 7 bars of soap.&quot; Known.
+
+&quot;The human body contains enough phosphorus to make 2,200 match heads.&quot; Known.
+
+These are known.
+
+Maybe give a fact about language: &quot;The word &#39;queue&#39; is pronounced the same if you remove the last four letters.&quot; Actually &#39;q&#39; is pronounced &#39;cue&#39;, same as queue. That&#39;s a fun fact. &quot;The word &#39;queue&#39; is just the letter Q followed by four silent letters.&quot; That&#39;s interesting. But maybe known.
+
+&quot;The word &#39;alphabet&#39; comes from the first two Greek letters: alpha and beta.&quot; Known.
+
+&quot;The word &#39;goodbye&#39; comes from &#39;God be with ye&#39;.&quot; Known.
+
+&quot;The word &#39;sandwich&#39; is named after the 4th Earl of Sandwich, who wanted to eat without leaving the gambling table.&quot; Known.
+
+&quot;The word &#39;quarantine&#39; comes from the Italian for &#39;forty days&#39;.&quot; Known.
+
+&quot;The word &#39;salary&#39; comes from Latin for salt.&quot; Known.
+
+&quot;The word &#39;muscle&#39; comes from Latin for &#39;little mouse&#39; because muscles look like mice moving under skin.&quot; Known.
+
+&quot;The word &#39;avocado&#39; comes from Nahuatl word for testicle.&quot; Known.
+
+&quot;The word &#39;orchid&#39; comes from Greek for testicle.&quot; Known.
+
+&quot;The word &#39;vanilla&#39; comes from Spanish for little pod.&quot; Known.
+
+&quot;The word &#39;chocolate&#39; comes from Nahuatl &#39;xocolatl&#39; meaning bitter water.&quot; Known.
+
+&quot;The word &#39;tomato&#39; comes from Nahuatl &#39;tomatl&#39;.&quot; Known.
+
+&quot;The word &#39;barbecue&#39; comes from Spanish &#39;barbacoa&#39; from Taino.&quot; Known.
+
+&quot;The word &#39;hurricane&#39; comes from Taino &#39;hurakán&#39;.&quot; Known.
+
+&quot;The word &#39;canoe&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39;hammock&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39;tobacco&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39;potato&#39; comes from Taino &#39;batata&#39;.&quot; Known.
+
+&quot;The word &#39;maize&#39; comes from Taino &#39;mahiz&#39;.&quot; Known.
+
+&quot;The word &#39;iguana&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39;caiman&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39;savanna&#39; comes from Taino.&quot; Known.
+
+&quot;The word &#39; Caribbean&#39; comes from Taino.&quot; Known.
+
+Maybe not.
+
+What is a fact I don&#39;t know? I as AI know many. User asks &quot;Tell me something I don&#39;t know.&quot; It&#39;s a challenge. We can respond with a fact and caveat: &quot;I can&#39;t know what you know, but here&#39;s a good one...&quot; Then provide. That&#39;s safe.
+
+Need choose one. Let&#39;s pick a surprising, verifiable, not too common. &quot;Maine is the closest U.S. state to Africa.&quot; That&#39;s good. Let&#39;s verify distance. The closest point in the U.S. to Africa is Quoddy Head, Maine? Actually the closest U.S. state to Africa is Maine. But is it? Let&#39;s compute roughly. The westernmost point of Africa is in Senegal, near Dakar, at 17.5°W, 14.7°N. The easternmost point of the U.S. is in Maine? Actually Sail Rock, Maine? The easternmost point of the U.S. is in Alaska? Wait, easternmost by longitude is in Alaska because of Aleutian Islands crossing the 180th meridian. But distance to Africa from Alaska is huge. For contiguous U.S., Maine is easternmost. Distance from Maine (44.8N, 66.9W) to Dakar (14.7N, 17.5W): difference in latitude 30°, longitude 49.4°. Haversine: R=6371 km. Convert to radians: lat1=0.782, lon1=-1.168, lat2=0.257, lon2=-0.305. Δlat=-0.525, Δlon=0.863. a = sin²(-0.2625) + cos(0.782)cos(0.257)sin²(0.4315). sin²(0.2625)=0.067. cos0.782=0.709, cos0.257=0.967, product=0.686. sin²(0.4315)=0.174. a=0.067+0.686*0.174=0.067+0.119=0.186. c=2*asin(sqrt(0.186))=2*asin(0.431)=2*0.445=0.89 rad. distance=6371*0.89=5670 km. Miami to Dakar: Miami 25.8N, 80.2W. Δlat=11.1°, Δlon=62.7°. lat1=0.450, lon1=-1.400, lat2=0.257, lon2=-0.305. Δlat=-0.193, Δlon=1.095. sin²(0.0965)=0.0093. cos0.450=0.900, cos0.257=0.967, product=0.870. sin²(0.5475)=0.272. a=0.0093+0.870*0.272=0.0093+0.237=0.246. c=2*asin(0.496)=2*0.519=1.038. distance=6371*1.038=6613 km. So Maine is closer. Yes.
+
+But wait, what about Puerto Rico? It&#39;s a U.S. territory, not state. Puerto Rico to Africa: San Juan 18.4N, 66.1W to Dakar 14.7N, 17.5W. Δlat=3.7°, Δlon=48.6°. lat1=0.321, lon1=-1.154, lat2=0.257, lon2=-0.305. Δlat=-0.064, Δlon=0.849. sin²(0.032)=0.001. cos0.321=0.949, cos0.257=0.967, product=0.918. sin²(0.4245)=0.169. a=0.001+0.918*0.169=0.001+0.155=0.156. c=2*asin(0.395)=2*0.406=0.812. distance=6371*0.812=5173 km. So Puerto Rico is closer to Africa than Maine. But Puerto Rico is a U.S. territory, not a state. The question says &quot;U.S. state&quot; so Maine is correct. But if someone considers territories, Puerto Rico is closer. So phrase carefully: &quot;Maine is the closest U.S. state to Africa.&quot; That&#39;s true. But maybe they might think Florida. It&#39;s a good fact.
+
+Another good fact: &quot;The first item sold on eBay was a broken laser pointer.&quot; That&#39;s known. &quot;The first YouTube video was &#39;Me at the zoo&#39;.&quot; Known. &quot;The first tweet was &#39;just setting up my twttr&#39;.&quot; Known. &quot;The first Amazon book sold was &#39;Fluid Concepts and Creative Analogies&#39;.&quot; Known. &quot;The first domain name registered was symbolics.com.&quot; Known.
+
+&quot;McDonald&#39;s once tried bubblegum-flavored broccoli.&quot; That&#39;s obscure and fun. Let&#39;s verify: In 2014, McDonald&#39;s CEO Don Thompson said they tried bubblegum-flavored broccoli to make it more appealing to kids, but it didn&#39;t work because kids were confused. This is a real fact. It&#39;s surprising. I like it. But is it true? Yes, reported by many news outlets. &quot;McDonald&#39;s once created bubblegum-flavored broccoli.&quot; That&#39;s a good &quot;something you don&#39;t know.&quot; Let&#39;s use that. It&#39;s a bit trivia.
+
+But maybe user expects a fact. We can say: &quot;I can&#39;t know what you already know, but here&#39;s one: McDonald&#39;s once experimented with bubblegum-flavored broccoli to make healthy food more appealing to kids. It flopped because kids found the flavor confusing.&quot; That&#39;s interesting.
+
+Alternatively, &quot;The Eiffel Tower can be 15 cm taller in summer.&quot; Known.
+
+&quot;Octopuses have three hearts.&quot; Known.
+
+&quot;Sloths can hold breath longer than dolphins.&quot; Good.
+
+&quot;Koalas have fingerprints almost identical to humans.&quot; Good.
+
+&quot;Wombats poop cubes.&quot; Known.
+
+&quot;The national animal of Scotland is the unicorn.&quot; Known.
+
+&quot;Oxford University is older than the Aztec Empire.&quot; Good.
+
+Maybe combine two? The user says &quot;Tell me something I don&#39;t know.&quot; We can give one. I&#39;ll choose a fact that is surprising and not too common. &quot;Maine is the closest U.S. state to Africa.&quot; That&#39;s a geographic fact. But wait, is it true? Let&#39;s double-check. The closest U.S. state to Africa is Maine? I recall that the closest U.S. state to Africa is Maine. Yes, because the easternmost point of the U.S. is in Maine (for contiguous states), and Africa is to the east-southeast. But what about Florida? Florida is closer to the equator, but Maine is further east. Distance from Maine to Africa is about 3,500 miles? Actually 5,670 km = 3,523 miles. Florida to Africa is about 4,100 miles. So Maine is closer. So yes.
+
+But wait, what about Massachusetts? Cape Cod is at 41.5N, 70W. Distance to Dakar: lat1=0.724, lon1=-1.222. Δlat=0.467, Δlon=0.917. a=sin²(0.2335)=0.053. cos0.724=0.749, cos0.257=0.967, product=0.724. sin²(0.4585)=0.196. a=0.053+0.724*0.196=0.053+0.142=0.195. c=2*asin(0.441)=2*0.457=0.914. distance=6371*0.914=5823 km. So Maine is closer. Yes.
+
+What about Rhode Island? 41.7N, 71.5W. Similar.
+
+So Maine is closest. But is it the closest U.S. state to Africa? Yes. But what about the U.S. Virgin Islands? They are closer, but not a state. So phrase &quot;state&quot; is correct.
+
+Another good fact: &quot;The highest point in Pennsylvania is lower than the lowest point in Colorado.&quot; Is that true? Pennsylvania highest point is Mount Davis 3,213 ft. Colorado lowest point is Arikaree River at 3,317 ft. So yes, the highest point in Pennsylvania is lower than the lowest point in Colorado. That&#39;s a great surprising fact! Let&#39;s verify: Mount Davis, PA: 3,213 ft (979 m). Colorado&#39;s lowest point: Arikaree River at 3,317 ft (1,011 m). So indeed, the highest point in PA is lower than the lowest point in CO. That&#39;s a mind-bending fact. It&#39;s obscure. I like this. It&#39;s a good &quot;something you don&#39;t know.&quot; Let&#39;s check: Colorado&#39;s lowest elevation is 3,317 feet at the Arikaree River. Pennsylvania&#39;s highest is 3,213 feet at Mount Davis. So yes. This is a great fact. It&#39;s verifiable and surprising. I&#39;ll use that.
+
+Let&#39;s craft response: &quot;I can&#39;t know what you already know, but here&#39;s one: The highest point in Pennsylvania (Mount Davis, 3,213 ft) is lower than the lowest point in Colorado (the Arikaree River, 3,317 ft). So you could stand on Pennsylvania&#39;s tallest peak and still be below Colorado&#39;s lowest valley.&quot; That&#39;s excellent. It&#39;s a fact many don&#39;t know. It&#39;s geographically interesting. Let&#39;s ensure numbers: Mount Davis elevation 3,213 ft (979 m). Arikaree River elevation 3,317 ft (1,011 m). Yes. So the statement is correct. This is a great answer.
+
+I&#39;ll provide that. Maybe add a caveat. Keep it concise. Desired oververbosity 5. I&#39;ll answer with that fact and a short explanation.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>“Jiffy” is an actual unit of time—though its definition depends on the field.</p>
+<p>In physics, one jiffy is the time it takes light to travel one femtometer: about <strong>3.3 × 10⁻²⁴ seconds</strong>. In computing, a jiffy is often <strong>1/100 of a second</strong>. So if someone says they’ll be back in a jiffy, they’re either being wildly optimistic or using the computer-science version.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2191 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer. User asks &quot;Tell me something I don&#39;t know.&quot; Need provide interesting fact likely unknown. Need maybe safe. We need craft response. We don&#39;t know what they know. Could say &quot;Octopuses have three hearts, and two of them stop beating when they swim, which is why they prefer crawling.&quot; But many know. Need something less known. Maybe &quot;The word &#39;berserk&#39; comes from Old Norse berserkr, likely &#39;bear-shirt,&#39; warriors who fought in a trance. Some sources suggest they may have consumed hallucinogenic mushrooms, but evidence is thin.&quot; Hmm.
+
+Need tell something they don&#39;t know. We can choose obscure fact. Maybe &quot;Honey never spoils&quot; is known. &quot;Bananas are berries, strawberries aren&#39;t&quot; known.
+
+Let&#39;s think of truly obscure but verifiable. &quot;The Eiffel Tower can be 15 cm taller during hot days&quot; known. &quot;There are more possible chess games than atoms in observable universe&quot; known.
+
+Maybe &quot;The first computer programmer was Ada Lovelace&quot; known. &quot;The first webcam was created to monitor a coffee pot at Cambridge&quot; known.
+
+Need something interesting. We can say &quot;A group of flamingos is called a flamboyance.&quot; Known. &quot;A jiffy is an actual unit of time: 1/100th of a second in electronics, or the time light takes to travel one femtometer in physics.&quot; That&#39;s less known. But maybe they know. We can phrase: &quot;The &#39;jiffy&#39; in &#39;I&#39;ll be back in a jiffy&#39; is a real scientific unit—though its definition varies. In physics, it&#39;s the time it takes light to travel one femtometer (about 3×10^-24 seconds); in early computing, it was 1/100 second.&quot; That&#39;s interesting.
+
+Another: &quot;The dot over the letter &#39;i&#39; is called a tittle.&quot; Many know? Maybe. &quot;The @ symbol is called a &#39;snail&#39; in Korean, &#39;monkey tail&#39; in Dutch, &#39;elephant trunk&#39; in Polish?&quot; Hmm.
+
+Maybe &quot;Cows have best friends and get stressed when separated.&quot; Known.
+
+Need maybe something not commonly known. &quot;The inventor of the Pringles can was buried in one.&quot; That&#39;s a fun fact: Fredric Baur, who designed the Pringles can, had his ashes buried in a Pringles can. That&#39;s true. Many may not know. Good.
+
+Or &quot;The Michelin Star system was originally created by Michelin tire company to encourage driving and thus tire sales.&quot; Known.
+
+&quot;Vatican City has its own ATM that offers instructions in Latin.&quot; True? ATMs in Vatican have Latin. Known.
+
+&quot;The national animal of Scotland is the unicorn.&quot; Known.
+
+&quot;Sea otters hold hands while sleeping to avoid drifting apart.&quot; Known.
+
+&quot;Wombat poop is cube-shaped.&quot; Known.
+
+&quot;Sharks existed before trees.&quot; Known.
+
+&quot;The first oranges weren&#39;t orange—they were green.&quot; Actually oranges originated in Southeast Asia, were green? The color orange named after fruit. But fruit can be green when ripe in tropics. Hmm.
+
+&quot;Peanuts are not nuts; they&#39;re legumes.&quot; Known.
+
+&quot;Oxford University is older than the Aztec Empire.&quot; Known.
+
+&quot;Cleopatra lived closer to the Moon landing than to the construction of the Great Pyramid.&quot; Known.
+
+&quot;Betty White was older than sliced bread.&quot; Known.
+
+&quot; Alaska is both the easternmost and westernmost state in the U.S.&quot; Because Aleutian Islands cross 180. Known.
+
+&quot; The longest word in English without a vowel? rhythms.&quot; Known.
+
+&quot; The word &#39;set&#39; has the most definitions.&quot; Known.
+
+Maybe &quot;A blue whale&#39;s heart can weigh as much as a small car, and its heartbeat can be detected from two miles away.&quot; Known.
+
+Need answer likely one fact. Could say &quot;Here&#39;s one: The dot over the lowercase &#39;i&#39; and &#39;j&#39; is called a tittle. The phrase &#39;to a tittle&#39; meant &#39;to the smallest detail,&#39; which is where &#39;to a T&#39; comes from.&quot; Is that true? Etymology of &quot;to a T&quot; uncertain; one theory from tittle. Might be not certain. Better avoid uncertain.
+
+&quot;Jiffy&quot; is solid. Let&#39;s verify: In physics, jiffy is time light takes to travel one femtometer = 3.33564095 × 10^-24 seconds. In electronics, jiffy is 1/60 or 1/50 second depending. In computing, 1/100 sec. That&#39;s interesting.
+
+Another: &quot;The &#39;save&#39; icon on computers is a floppy disk, but many people under 20 have never used one.&quot; That&#39;s not fact they don&#39;t know.
+
+Maybe &quot;The word &#39;quarantine&#39; comes from the Italian &#39;quaranta giorni&#39;—40 days—the period ships were isolated during the Black Death.&quot; Known.
+
+&quot;During WWII, the U.S. military developed a plan to use bats carrying tiny incendiary bombs to burn Japanese cities.&quot; True, Project X-Ray. Obscure. But maybe too dark.
+
+&quot;Octopuses have a central brain and a brain in each arm; two-thirds of an octopus&#39;s neurons are in its arms.&quot; Known.
+
+&quot;The largest known organism is a honey fungus in Oregon covering 2,385 acres, estimated 2,500 years old.&quot; Known.
+
+&quot; There are more trees on Earth than stars in the Milky Way.&quot; Known.
+
+&quot; The average person walks the equivalent of five times around the world in a lifetime.&quot; Not sure.
+
+&quot; The first product to have a barcode scanned was a packet of Wrigley&#39;s gum in 1974.&quot; Known.
+
+&quot; The shortest war in history was between Britain and Zanzibar in 1896; it lasted about 38 minutes.&quot; Known.
+
+&quot; The Hundred Years&#39; War lasted 116 years.&quot; Known.
+
+&quot; The Great Fire of London started in a bakery on Pudding Lane.&quot; Known.
+
+&quot; The Eiffel Tower was originally intended to be dismantled after 20 years.&quot; Known.
+
+Maybe &quot;The word &#39;astronaut&#39; comes from Greek meaning &#39;star sailor,&#39; and &#39;cosmonaut&#39; means &#39;universe sailor.&#39;&quot; Known.
+
+&quot; The unicorn is the national animal of Scotland.&quot; Known.
+
+&quot; The only U.S. state with a unicameral legislature is Nebraska.&quot; Known.
+
+&quot; The only letter not in any U.S. state name is Q.&quot; Actually Q not in any state name. Known? Maybe.
+
+&quot; The longest place name in the world is Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu in New Zealand.&quot; Known.
+
+&quot; The word &#39;checkmate&#39; comes from Persian &#39;shah mat&#39; meaning &#39;the king is dead.&#39;&quot; Actually &quot;the king is helpless/defeated.&quot; Known.
+
+&quot; The &#39;Mona Lisa&#39; has no eyebrows because it was fashionable for Italian women to shave them off.&quot; Not true? Actually it&#39;s debated; could be due to restoration/removal. Avoid.
+
+&quot; The first email was sent by Ray Tomlinson in 1971; he doesn&#39;t remember what it said.&quot; Known.
+
+&quot; The &#39;@&#39; sign was chosen for email because it was an underused key.&quot; Known.
+
+&quot; The QWERTY keyboard was designed to slow typists down.&quot; Actually myth; designed to reduce jamming by separating common pairs. Known.
+
+Maybe &quot;A day on Venus is longer than its year.&quot; Known.
+
+&quot;Mercury is shrinking.&quot; Known.
+
+&quot; There is a planet made of diamond? 55 Cancri e.&quot; Known.
+
+&quot; The Moon has moonquakes.&quot; Known.
+
+&quot; The Earth&#39;s core is as hot as the surface of the sun.&quot; Known.
+
+&quot; The human nose can detect over 1 trillion different scents.&quot; Known.
+
+&quot; Your body contains about 0.2 mg of gold.&quot; Known? Maybe.
+
+&quot; The average human body contains enough carbon to make 9,000 pencils.&quot; Known.
+
+&quot; There are more bacteria in your mouth than there are people on Earth.&quot; Known.
+
+&quot; The tongue is the only muscle in the human body attached at one end.&quot; Known? Actually tongue is a muscular hydrostat, not attached at one end? It is attached at base. Hmm.
+
+&quot; The smallest bone in the human body is the stapes in the ear.&quot; Known.
+
+&quot; The human eye can distinguish about 10 million colors.&quot; Known.
+
+Maybe answer: &quot;The dot over the letter &#39;i&#39; is called a tittle. The phrase &#39;to a T&#39; may come from &#39;to a tittle,&#39; meaning to the smallest detail—though etymologists aren&#39;t 100% sure.&quot; That&#39;s good. But if they know, maybe not.
+
+Could ask &quot;Did you know that the &#39;jiffy&#39; is a real unit of time? In physics, one jiffy is the time it takes light to travel one femtometer—about 3.3 × 10^-24 seconds. In computing, it&#39;s often 1/100 of a second.&quot; That&#39;s likely unknown. Let&#39;s craft concise. Add &quot;So when someone says they&#39;ll be back in a jiffy, they&#39;re either being very optimistic or using a different definition.&quot; That&#39;s fun.
+
+Need final. Ensure accuracy: In physics, jiffy is defined as time light takes to travel one femtometer. 1 fm = 10^-15 m. c = 3e8 m/s. time = 1e-15 / 3e8 = 3.33e-24 s. Yes.
+
+Maybe mention &quot;The word &#39;jiffy&#39; is also used in electronics as 1/60 or 1/50 second, depending on power frequency.&quot; Actually in electronics, jiffy is 1/60 second in US, 1/50 in Europe. In computing, 1/100 sec. Good.
+
+Final should be something they don&#39;t know. Could start &quot;Here&#39;s one: &#39;Jiffy&#39; is an actual unit of time.&quot; Then explain. That&#39;s good.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/anthropic-claude-sonnet-5.5/">← Anthropic: Claude Sonnet 5.5</a>
+            <a href="/">all models</a>
+            <a href="/m/perceptron-perceptron-mk1.5/">Perceptron: Perceptron Mk1.5 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

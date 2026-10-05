@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.ai: GLM 5.3 Prime — Tell me something I don't know.</title>
+    <meta name="description" content="Z.ai: GLM 5.3 Prime answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that still gives people chills: In 1838, Edgar Allan Poe published his only full-length novel, The Narrative of Arthur Gordon Pym of Nantucke…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3-prime/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/z-ai-glm-5.3-prime/">
+    <meta property="og:title" content="Z.ai: GLM 5.3 Prime — Tell me something I don't know.">
+    <meta property="og:description" content="Z.ai: GLM 5.3 Prime answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that still gives people chills: In 1838, Edgar Allan Poe published his only full-length novel, The Narrative of Arthur Gordon Pym of Nantucke…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Z.ai: GLM 5.3 Prime — Tell me something I don't know.">
+    <meta name="twitter:description" content="Z.ai: GLM 5.3 Prime answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one that still gives people chills: In 1838, Edgar Allan Poe published his only full-length novel, The Narrative of Arthur Gordon Pym of Nantucke…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Z.ai: GLM 5.3 Prime)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one that still gives people chills:\n\nIn 1838, Edgar Allan Poe published his only full-length novel, *The Narrative of Arthur Gordon Pym of Nantucket*. In it, four sailors are adrift at sea with no food, so they draw lots to decide who'll be sacrificed so the others can survive. The unlucky \"winner\" is a young sailor named Richard Parker.\n\nForty-six years later, in 1884, the real yacht *Mignonette* sank, leaving four men stranded in a lifeboat. Facing starvation, they killed and ate the 17-year-old cabin boy to survive.\n\nHis name was Richard Parker.\n\nThere's no explanation for the coincidence — Poe just picked a name. The real case became the famous legal ruling *R v Dudley and Stephens*, which established that necessity is not a defense to murder. And Yann Martel later named the tiger in *Life of Pi* Richard Parker as a deliberate nod to the whole eerie saga.\n\nWant another?","author":{"@type":"Organization","name":"Z Ai"}},"suggestedAnswer":[{"@type":"Answer","text":"Woolly mammoths were still alive while the pyramids were being built.\n\nA population of them survived on Wrangel Island, in the Arctic Ocean off Siberia, until roughly 2000 BCE — possibly as late as 1650 BCE. The Great Pyramid of Giza was finished around 2560 BCE. So for centuries, Egyptian pharaohs and living mammoths shared the planet, each completely unaware of the other's existence.\n\nWant another one? I can also aim at a specific topic if you'd like — history, space, animals, weird etymology.","author":{"@type":"Organization","name":"Z Ai"}},{"@type":"Answer","text":"Nearly two billion years ago, Earth ran a natural nuclear reactor — and it regulated itself.\n\nIn 1972, French scientists running routine tests on uranium ore from a mine in Oklo, Gabon noticed the samples were slightly short of uranium-235 — off by just three thousandths of a percent. The only known process that consumes U-235 is a fission chain reaction.\n\nIt turned out that about 1.7 billion years earlier, conditions at Oklo lined up perfectly. Natural uranium back then contained roughly 3% U-235 — today it's only 0.7%, which is why modern fuel has to be enriched. Groundwater seeping through the porous ore slowed the neutrons enough to sustain fission. When the reaction heated up, the water boiled away and the reactor shut itself down — until water seeped back in and it started again. It pulsed on and off like this for hundreds of thousands of years, across more than a dozen separate reactor zones.\n\nAnd the kicker: the radioactive waste stayed locked in the rock for two billion years. Scientists still study Oklo today as evidence that deep geological storage of nuclear waste can actually work.\n\nWant another one?","author":{"@type":"Organization","name":"Z Ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Z.ai: GLM 5.3 Prime</h1>
+        <p class="subtitle">Z Ai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>September 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Z.ai: GLM 5.3 Prime</div>
+                        <div class="model-provider">Z Ai</div>
+                        <div class="model-released">September 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one that still gives people chills:</p>
+<p>In 1838, Edgar Allan Poe published his only full-length novel, <em>The Narrative of Arthur Gordon Pym of Nantucket</em>. In it, four sailors are adrift at sea with no food, so they draw lots to decide who&#39;ll be sacrificed so the others can survive. The unlucky &quot;winner&quot; is a young sailor named Richard Parker.</p>
+<p>Forty-six years later, in 1884, the real yacht <em>Mignonette</em> sank, leaving four men stranded in a lifeboat. Facing starvation, they killed and ate the 17-year-old cabin boy to survive.</p>
+<p>His name was Richard Parker.</p>
+<p>There&#39;s no explanation for the coincidence — Poe just picked a name. The real case became the famous legal ruling <em>R v Dudley and Stephens</em>, which established that necessity is not a defense to murder. And Yann Martel later named the tiger in <em>Life of Pi</em> Richard Parker as a deliberate nod to the whole eerie saga.</p>
+<p>Want another?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>4302 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; This is a very open-ended request. They want to learn something surprising, interesting, or obscure. I should pick something genuinely fascinating and not overly well-known — not the usual &quot;honey never spoils&quot; or &quot;bananas are berries&quot; trivia that circulates everywhere. Let me think of something genuinely interesting and verifiable.
+
+Options:
+1. The fact that Oxford University is older than the Aztec Empire — this is fairly well-known internet trivia.
+2. Octopuses have three hearts and blue blood — also well-known.
+3. Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid — also popular.
+4. Something more obscure: The &quot;Great Emu War&quot; — fairly known.
+5. Wombats poop cubes — known.
+6. The fact that there&#39;s a &quot;point Nemo&quot; in the Pacific Ocean, the most remote place from land, so remote that the nearest humans are often astronauts on the ISS passing overhead — this is a good one, moderately known but genuinely delightful.
+7. The phenomenon of &quot;sonic booms&quot; and the fact that...
+8. The fact that trees can share nutrients through fungal networks (&quot;wood wide web&quot;) — fairly popularized.
+9. Something about history: In 1518, the &quot;dancing plague&quot; of Strasbourg where people danced uncontrollably for weeks, some allegedly to death — genuinely weird and less commonly known.
+10. The fact that the total weight of ants... (outdated claim).
+11. The fact that Saturn would float in water — well-known.
+12. The fact that the Eiffel Tower grows ~15 cm taller in summer due to thermal expansion — moderately known.
+13. The fact that the shortest war in history was between Britain and Zanzibar in 1896, lasting 38–45 minutes — fairly well-known trivia.
+14. Something about the human body: the stomach lining replaces itself every few days; you get a new stomach lining every 3-4 days because stomach acid would otherwise digest it. Moderately interesting.
+15. The fact that your brain invents the detail in your peripheral vision — it&#39;s low-res and your brain fills in.
+16. The fact that &quot;The Wonderful Wizard of Oz&quot; — hmm.
+17. Linguistics: The word &quot;nightmare&quot; comes from &quot;mare,&quot; a demon thought to sit on sleepers&#39; chests.
+18. The fact that there are more possible games of chess (Shannon number ~10^120) than atoms in the observable universe (~10^80) — well-known.
+19. The fact that in space, astronauts&#39; fingernails can fall off due to glove design — obscure and slightly gross.
+20. The fact that a group of flamingos is called a &quot;flamboyance&quot; — popular.
+21. The fact that the dot over lowercase &quot;i&quot; and &quot;j&quot; is called a &quot;tittle&quot; — moderately known.
+22. The fact that before alarm clocks, Britain had &quot;knocker-uppers&quot; — people paid to tap on your window with long poles — genuinely fun and moderately obscure.
+23. The fact that the &quot;Moon smells like gunpowder&quot; according to Apollo astronauts — fun, moderately obscure.
+24. The fact that &quot;sharks are older than trees&quot; — sharks ~450 million years, trees ~350–390 million years. Also &quot;sharks are older than Saturn&#39;s rings&quot; possibly (rings maybe 10–100 million years old, debated). That&#39;s a fun one but somewhat circulated.
+25. The fact that the Sahara used to be green — known.
+26. The fact that Cleopatra&#39;s era... covered.
+27. The fact that &quot;hot water can freeze faster than cold water&quot; (Mpemba effect) — known and contested.
+28. The fact that &quot;The US government once accidentally...&quot; hmm.
+29. The fact that &quot;Venus&#39;s day is longer than its year&quot; — Venus rotates once every 243 Earth days, orbits the sun in 225 Earth days. Moderately known but still surprises many.
+30. The fact that &quot;there are more trees on Earth than stars in the Milky Way&quot; (~3 trillion trees vs ~100–400 billion stars) — moderately known.
+31. The fact that &quot;bananas are radioactive&quot; — known.
+32. The fact that &quot;a single teaspoon of soil contains more microorganisms than there are people on Earth&quot; — nice.
+33. The fact that &quot;humans share about 50-60% of DNA with bananas&quot; — popular.
+34. The fact that &quot;the Guinness World Record for &#39;most valuable book&#39;...&quot; hmm.
+35. The fact that &quot;In 1919, a wave of molasses flooded Boston, killing 21 people&quot; — the Great Molasses Flood — genuinely surprising, moderately known but always delightful.
+36. The fact that &quot;Wojciech...&quot; hmm.
+37. The fact that &quot;the &#39;new car smell&#39; is the smell of adhesives and plastics off-gassing&quot; — meh.
+38. The fact that &quot;Scotland&#39;s national animal is the unicorn&quot; — popular.
+39. The fact that &quot;the longest concert&quot; — David Tudor / &quot;As Slow as Possible&quot; by John Cage, a performance in Halberstadt, Germany that started in 2001 and will last 639 years, ending in 2640. That&#39;s genuinely delightful and less commonly known. The organ performance changes chords every few years, and people attend &quot;chord change&quot; ceremonies.
+40. The fact that &quot;Poe&#39;s &#39;The Narrative of Arthur Gordon Pym&#39;&quot; — the novel that eerily predicted a cannibalism-at-sea incident (Richard Parker). In 1838, Edgar Allan Poe wrote a novel in which four shipwrecked sailors draw lots and eat the cabin boy, named Richard Parker. In 1884, a real yacht (Mignonette) sank and the survivors actually killed and ate the cabin boy — whose name was Richard Parker. That&#39;s an amazing coincidence story. Genuinely chilling and delightful.
+41. The fact that &quot;the &#39;butterfly effect&#39; term came from...&quot; meh.
+42. The fact that &quot;the Oxford English Dictionary&#39;s first editor...&quot; hmm.
+43. The fact that &quot;the &#39;save&#39; icon is a floppy disk&#39;&quot; — known.
+44. The fact that &quot;pigeons can be trained to distinguish...&quot; — pigeons were trained by B.F. Skinner for Project Pigeon (WWII missile guidance). Also Skinner&#39;s &quot;Project Pigeon&quot; — pigeons trained to peck at screens to guide missiles. Obscure and fun.
+45. The fact that &quot;the word &#39;quarantine&#39; comes from Italian &#39;quaranta giorni&#39; (forty days)&quot; — moderately known.
+46. The fact that &quot;in medieval times animals were put on trial&quot; — animals were tried in court, sometimes given lawyers, and executed. E.g., a pig was hanged in France in 1386. Genuinely bizarre and less commonly known.
+47. The fact that &quot;the &#39;Zwicky&#39;...&quot; hmm.
+48. The fact that &quot;the &#39;hundred years&#39; war&#39;...&quot; meh.
+49. The fact that &quot;the &#39;Great Stink&#39; of London 1858 led to the modern sewer system&quot; — moderately known.
+50. The fact that &quot;the &#39;Windy City&#39; name isn&#39;t about wind, it&#39;s about boastful politicians&quot; — moderately known.
+51. The fact that &quot;the &#39;cocoa&#39;...&quot; hmm.
+52. The fact that &quot;you can&#39;t hum while holding your nose closed&quot; — known and testable, fun.
+53. The fact that &quot;the &#39;Sahara dust&#39; fertilizes the Amazon&quot; — 27 million tons of Saharan dust crosses the Atlantic each year, fertilizing the Amazon rainforest. That&#39;s a beautiful fact. Moderately known but genuinely awe-inspiring.
+54. The fact that &quot;the &#39;octopus neurons&#39;...&quot; — two-thirds of an octopus&#39;s neurons are in its arms; each arm can act semi-independently. Popularized but still great.
+55. The fact that &quot;the &#39;tortoise&#39;...&quot; hmm.
+56. The fact that &quot;the &#39;Antikythera mechanism&#39;...&quot; — an ancient Greek analog computer from ~100 BC that predicted astronomical positions. Moderately known.
+57. The fact that &quot;the &#39;Baghdad battery&#39;...&quot; — speculative.
+58. The fact that &quot;the &#39;Voynich manuscript&#39;...&quot; — known.
+59. The fact that &quot;the &#39;Dancing Plague of 1518&#39;&quot; — mentioned above, genuinely weird: dozens of people danced in Strasbourg for days/weeks, some reportedly dying of heart attack or exhaustion; causes debated (ergotism? mass psychogenic illness?). Good one.
+60. The fact that &quot;the &#39;Year Without a Summer&#39; 1816 — due to Mount Tambora eruption — led Mary Shelley to write Frankenstein because the weather trapped her indoors at Lake Geneva.&quot; That&#39;s a great story chain: volcano → climate chaos → gothic literature. Moderately known but wonderful.
+61. The fact that &quot;the &#39;Carrington Event&#39; 1859 — telegraph operators got electric shocks, papers caught fire, auroras visible in the Caribbean.&quot; Good.
+62. The fact that &quot;the &#39;Tunguska event&#39;&quot; — known.
+63. The fact that &quot;the &#39;Tulip mania&#39;...&quot; — known.
+64. The fact that &quot;the &#39;Radium Girls&#39;...&quot; — known-ish.
+65. The fact that &quot;the &#39;Halcion&#39;...&quot; hmm.
+66. The fact that &quot;the &#39;Dunbar&#39;s number&#39;...&quot; — known.
+67. The fact that &quot;the &#39;Turritopsis dohrnii&#39; — the immortal jellyfish reverts to its polyp stage&quot; — moderately known.
+68. The fact that &quot;the &#39;planarian worms&#39; can remember...&quot; — planarians trained to navigate mazes retained memories after being decapitated and regenerating heads. That&#39;s wild and obscure-ish.
+69. The fact that &quot;the &#39;fermented shark&#39;...&quot; meh.
+70. The fact that &quot;the &#39;Waffle ice cream cone&#39; invented at 1904 World&#39;s Fair&quot; — known.
+71. The fact that &quot;the &#39;sandwich&#39; named after Earl of Sandwich&quot; — known.
+72. The fact that &quot;the &#39;Caesar salad&#39;...&quot; meh.
+73. The fact that &quot;the &#39;Casanova&#39;...&quot; meh.
+74. The fact that &quot;the &#39;Mithridates&#39;...&quot; hmm.
+75. The fact that &quot;the &#39;Pheidippides&#39;...&quot; meh.
+76. The fact that &quot;the &#39;Boston Molasses Flood&#39;&quot; — mentioned, good.
+77. The fact that &quot;the &#39;London Beer Flood 1814&#39;&quot; — a vat of beer burst, killing 8. Also good.
+78. The fact that &quot;the &#39;Dyatlov Pass&#39;&quot; — known.
+79. The fact that &quot;the &#39;Lead masks case&#39;&quot; — obscure.
+80. The fact that &quot;the &#39;Wow! signal&#39;&quot; — known.
+81. The fact that &quot;the &#39;Bootes void&#39;&quot; — the &quot;Great Nothing,&quot; a vast empty region of space. Moderately known.
+82. The fact that &quot;the &#39;cold spot&#39;&quot; — hmm.
+83. The fact that &quot;the &#39;Oumuamua&#39;&quot; — known.
+84. The fact that &quot;the &#39;dark flow&#39;&quot; — speculative.
+85. The fact that &quot;the &#39;Hubble deep field&#39;&quot; — pointing at &quot;nothing&quot; revealed thousands of galaxies. Moderately known but awe-inspiring.
+86. The fact that &quot;the &#39;Andromeda collision&#39;&quot; — known.
+87. The fact that &quot;the &#39;Ultimate fate&#39;...&quot; meh.
+88. The fact that &quot;the &#39;Voyager golden record&#39;&quot; — known.
+89. The fact that &quot;the &#39;Pale Blue Dot&#39; photo was taken because Carl Sagan insisted&#39;&quot; — known-ish.
+90. The fact that &quot;the &#39;Voyager 1 is farther than...&quot; meh.
+
+The Poe/Richard Parker coincidence is one of my favorites — genuinely jaw-dropping. But I should be careful to present it accurately: Poe&#39;s 1838 novel &quot;The Narrative of Arthur Gordon Pym of Nantucket&quot; includes four sailors adrift after a storm who draw lots and kill and eat the cabin boy, Richard Parker. In 1884, the yacht Mignonette sank; four survivors in a lifeboat killed the 17-year-old cabin boy, Richard Parker, to survive (the famous R v Dudley and Stephens case that established the necessity is no defense to murder). The coincidence of the name is real and eerie. This is well-documented. Good.
+
+The John Cage 639-year concert is also great and less known.
+
+The dancing plague is great.
+
+The animal trials are great.
+
+The planarian memory experiment is great but the research (McConnell&#39;s 1950s-60s work) has had replication issues; I should be careful. Maybe skip.
+
+Point Nemo: the oceanic pole of inaccessibility, ~2,688 km from nearest land. When the ISS passes overhead (~400 km up), astronauts are the nearest humans. Also NASA uses the area as a &quot;spacecraft cemetery&quot; to deorbit old craft. That&#39;s a lovely fact — moderately known but still delightful.
+
+Sahara dust fertilizing the Amazon: ~180 million tons of dust leaves Africa each year, ~27 million tons reaches the Amazon, delivering phosphorus that replaces what rains wash away. Beautiful.
+
+Which to choose? The user just wants one thing they don&#39;t know. I could offer one really good fact with a bit of storytelling, and maybe invite them to say if they already knew it or want another. A short, punchy, delightful response is best. I&#39;ll pick the Poe/Richard Parker one — it&#39;s a story, it&#39;s verifiable, and it&#39;s the kind of thing that makes people go &quot;no way.&quot;
+
+Actually, let me double check the details of the Poe story:
+- Poe&#39;s novel: &quot;The Narrative of Arthur Gordon Pym of Nantucket&quot; (1838). In it, the whaling ship Grampus mutinies; four survivors (Augustus, Pym, Peters, and Parker) are adrift; after many days starving, they decide to draw lots to determine who will be sacrificed for cannibalism. The lot falls to Richard Parker, the cabin boy (a mutineer in the novel, actually — he&#39;s one of the mutineers), who is killed and eaten. Yes, that&#39;s right.
+- Real event: 1884, the yacht Mignonette sank in a storm off the Cape of Good Hope. Four crew escaped in a lifeboat: Tom Dudley, Edwin Stephens, Edmund Brooks, and 17-year-old cabin boy Richard Parker. After ~24 days adrift without food and only rainwater, Parker fell ill (he had drunk seawater). Dudley and Stephens decided to kill him; they stabbed him and all three drank his blood and ate his flesh. They were rescued four days later. Back in England, they were tried — R v Dudley and Stephens — and convicted of murder, though their sentence was commuted. The case is famous in legal ethics.
+- The coincidence: name of the cabin boy, both cannibalized at sea after drawing lots/decision. The real Parker didn&#39;t draw lots — the decision was made for him (he was weakest). In Poe&#39;s novel, they drew lots. Still, the name and circumstances (cannibalism at sea, cabin boy victim) align eerily.
+- Also fun: in 2001, author Yann Martel named the tiger in &quot;Life of Pi&quot; Richard Parker, allegedly as a nod to this (the Edgar Allan Poe connection). Actually Martel said he chose the name partly because it seemed so fitting after coming across it — the tiger&#39;s name came from a real person: in 1884, a tiger named Richard Parker... hmm, actually the Life of Pi explanation: Martel got the name from the Poe novel. There was also a real Richard Parker involved in a shipwreck... There were multiple Richard Parkers associated with sea disasters. But I don&#39;t need to go into that; keep it tight.
+
+I&#39;ll present the Poe story. Keep it concise but vivid. Maybe end with a light offer for more. Format: a few short paragraphs, no headers, no lists. Conversational. Maybe 100-150 words. The user&#39;s request is casual, so a casual, engaging tone fits.
+
+Let me draft:
+
+&quot;In 1838, Edgar Allan Poe published his only novel, The Narrative of Arthur Gordon Pym. In it, four sailors are stranded at sea with no food, so they draw lots to decide who will be eaten. The unlucky &#39;winner&#39; is the cabin boy — a young man named Richard Parker.
+
+Forty-six years later, in 1884, a real yacht called the Mignonette sank, leaving four survivors adrift in a lifeboat. Facing starvation, they killed and ate the cabin boy. His name was Richard Parker.
+
+Poe called the coincidence &#39;an accident&#39; — he said he&#39;d simply picked a name that sounded appropriately ordinary. The real case became a landmark legal ruling (R v Dudley and Stephens) establishing that necessity is not a defense to murder.&quot;
+
+That&#39;s tight and accurate. Maybe add the note that Yann Martel named the tiger in Life of Pi after him partly as a nod. Could be a nice bonus. Or keep it clean. I&#39;ll add a one-line closer inviting more, or just end on the fact. A brief &quot;Want another?&quot; could be friendly but isn&#39;t necessary. The system prompt says to avoid unnecessary questions; a short offer is fine but optional. I think ending on the eerie note is stronger, maybe with a tiny offer.
+
+Actually, one nuance: Poe&#39;s character Richard Parker — in the novel, is he the cabin boy? Let me recall. In the novel, the Grampus is taken over by mutineers led by Augustus&#39;s father&#39;s crew... The four adrift are Pym, Augustus, Peters (a half-breed mutineer), and Richard Parker, another mutineer. Parker is described as a member of the crew; he&#39;s often described as the &quot;cabin boy&quot; in retellings, but I believe in the novel he&#39;s actually one of the mutineers, a sailor. Hmm. Common retellings say &quot;cabin boy&quot; for both. To be safe, I can say in Poe&#39;s novel the lot falls to a young sailor named Richard Parker, and in real life the victim was the 17-year-old cabin boy Richard Parker. That&#39;s accurate without overclaiming.
+
+Also, the real-life decision: Dudley and Stephens discussed drawing lots but decided instead to target Parker because he was dying anyway and had no family. So I should not claim the real event involved drawing lots. My draft says &quot;facing starvation, they killed and ate the cabin boy&quot; — accurate.
+
+One more check: Mignonette sank in 1884, yes. Poe&#39;s novel published 1838. 46 years apart, yes.
+
+Also, some accounts note Poe wrote that he chose the name because it &quot;suggested itself as appropriate&quot; — there&#39;s a quote where Poe said the choice was coincidental. I&#39;ll soften: &quot;Poe never explained the choice.&quot; Actually there&#39;s a letter where Poe addressed coincidences with his work... I&#39;m not certain about a specific quote, so I&#39;ll avoid attributing a quote. Just say it&#39;s a coincidence with no known explanation.
+
+Format: short paragraphs, no markdown headers. Maybe italics for book titles. Keep it around 120 words.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Woolly mammoths were still alive while the pyramids were being built.</p>
+<p>A population of them survived on Wrangel Island, in the Arctic Ocean off Siberia, until roughly 2000 BCE — possibly as late as 1650 BCE. The Great Pyramid of Giza was finished around 2560 BCE. So for centuries, Egyptian pharaohs and living mammoths shared the planet, each completely unaware of the other&#39;s existence.</p>
+<p>Want another one? I can also aim at a specific topic if you&#39;d like — history, space, animals, weird etymology.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>6675 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is a fun, open-ended request. Let me think about what would make a good response here.
+
+The challenge: I don&#39;t know what this specific person knows. So I need to pick something that&#39;s:
+1. Genuinely surprising/obscure enough that most people don&#39;t know it
+2. Verifiable and true (I should be careful not to share something that&#39;s actually a myth)
+3. Interesting enough to be worth sharing
+4. Not so obscure that it&#39;s boring trivia with no hook
+
+Let me brainstorm some candidates and verify their accuracy:
+
+1. **Octopuses have three hearts and blue blood** - Too well known. Most people have heard this.
+
+2. **Honey never spoils** - Also widely known.
+
+3. **The shortest war in history** - The Anglo-Zanzibar War (1896), lasting about 38-45 minutes. This is fairly well known among trivia enthusiasts but still surprises many people.
+
+4. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** - This is a classic mind-bender. The Great Pyramid was built around 2560 BCE, Cleopatra died 30 BCE, Moon landing 1969 CE. So pyramid to Cleopatra = ~2530 years, Cleopatra to Moon landing = ~1999 years. Yes, this is accurate! And it&#39;s genuinely mind-expanding because it reframes how we think about ancient history. But this one has circulated widely online, so many people have seen it.
+
+5. **Wombats poop cubes** - Fairly well known now due to internet virality.
+
+6. **There are more possible chess games than atoms in the observable universe** - The Shannon number (~10^120) vs atoms (~10^80). True in the sense of legal game sequences. Well known among nerds but still surprises many.
+
+7. **Bananas are berries but strawberries aren&#39;t** - Botanically true, widely circulated.
+
+8. **Your body replaces itself** - Cells regenerate at different rates, but neurons largely don&#39;t. The &quot;you&#39;re a new person every 7 years&quot; is a myth/oversimplification.
+
+9. **Trees can communicate through fungal networks** - The &quot;wood wide web&quot; concept. Real mycorrhizal networks exist, though the extent of &quot;communication&quot; is debated in recent research. Some claims are overblown.
+
+10. **The Eiffel Tower grows in summer** - About 15 cm taller due to thermal expansion. True! Nice physics fact.
+
+11. **Oxford University is older than the Aztec Empire** - Oxford teaching began ~1096, Aztec Empire founded 1428 (Tenochtitlan founded 1325). This is accurate and mind-bending! Teaching existed at Oxford by 1096, and the university developed rapidly from 1167. The Aztec Empire (Triple Alliance) was 1428-1521. Even if you date Aztec civilization to the founding of Tenochtitlan (~1325), Oxford predates it. This one is great because it collapses assumptions about &quot;ancient&quot; civilizations.
+
+12. **Sharks are older than trees** - Sharks ~450 million years ago, trees ~350-390 million years ago. Sharks appeared around 450 Mya in the Ordovician period (early shark-like fish), though &quot;true&quot; sharks are more like 420 Mya. Trees (Archaeopteris) around 385 Mya. So yes, sharks predate trees. Also sharks are older than Saturn&#39;s rings possibly (rings might be only ~100-400 million years old per recent research, though this is debated). Sharks predate the North Star? Hmm, Polaris&#39;s age is estimated at ~70 million years or so for its current state. Sharks are older than the rings of Saturn is a fun one but the ring age is contested.
+
+13. **Sharks are older than the rings of Saturn** - Recent research (2023) suggests Saturn&#39;s rings may be only 10-100 million years old. If true, sharks (450 Mya) predate them. But this is contested.
+
+14. **There&#39;s a species of jellyfish that is biologically immortal** - Turritopsis dohrnii. True, widely circulated.
+
+15. **Venus has a day longer than its year** - Venus rotates once every 243 Earth days, orbits the sun in 225 Earth days. True! Great fact.
+
+16. **The Sahara used to be green** - The Green Sahara/African Humid Period, ~5000-11000 years ago. True and fascinating.
+
+17. **Humans share ~50-60% DNA with bananas** - True in the sense of shared genes, often misquoted. The ~60% figure refers to shared genes, not total DNA.
+
+18. **The word &quot;ketchup&quot; derives from Chinese** - From Hokkien &quot;kê-tsiap&quot; (fish sauce). This is the leading etymology. Fun fact!
+
+19. **Nitrogen in chips bags** - Chips bags are inflated with nitrogen to keep them fresh and prevent oxidation. Known but still surprises some.
+
+20. **The dot over &quot;i&quot; and &quot;j&quot; is called a &quot;tittle&quot;** - True, fun vocabulary fact.
+
+21. **Scotland&#39;s national animal is the unicorn** - True! Fun fact.
+
+22. **A day on Venus is longer than a year on Venus** - Same as #15.
+
+23. **The total weight of ants vs humans** - This used to be cited as comparable, but recent estimates (2022) suggest ants&#39; biomass is much less than humans&#39;. The old claim is outdated.
+
+24. **You can&#39;t hum while holding your nose closed** - Because you need to exhale through your nose... actually you can hum with mouth closed but nose pinched? No—humming requires air passage. If you pinch your nose and close your mouth, you can&#39;t hum because air can&#39;t escape. This is a fun interactive fact! Try it: hum, then pinch your nose—the hum stops because the air has nowhere to go. Actually you can redirect... no, humming requires airflow through either nose or mouth. If both are blocked, no hum. This is a fun &quot;try it yourself&quot; fact.
+
+25. **The Moon has moonquakes** - True, discovered by Apollo seismometers.
+
+26. **Hot water can freeze faster than cold water** - The Mpemba effect. Real but controversial/not fully explained. Might be risky to state confidently.
+
+27. **Sloths can hold their breath longer than dolphins** - Sloths can slow their heart rate and hold breath up to 40 minutes; dolphins ~10-15 minutes typically. True-ish.
+
+28. **The longest recorded flight of a chicken is 13 seconds** - Trivia, true per Guinness.
+
+29. **A &quot;jiffy&quot; is an actual unit of time** - In physics, a jiffy is the time light takes to travel one centimeter (~33 picoseconds). True!
+
+30. **The Guinness Book of Records was created to settle bar arguments** - True! Created by Hugh Beaver in 1955 after an argument about the fastest game bird. Great fact with a story.
+
+31. **The first item sold on eBay was a broken laser pointer** - True, sold for $14.83 in 1995. Fun fact.
+
+32. **Peanuts aren&#39;t nuts** - Legumes. Well known.
+
+33. **The Great Wall of China is not visible from space with the naked eye** - True, and it corrects a common myth. Meta-fact!
+
+34. **Vending machines in Japan sell fresh eggs, etc.** - Fun but vague.
+
+35. **Time moves faster at your head than your feet** - Gravitational time dilation. True! NIST measured time dilation at sub-meter height differences with atomic clocks. Your head ages slightly faster than your feet. This is a genuinely mind-blowing physics fact that most people don&#39;t know. Einstein&#39;s general relativity: clocks closer to a gravitational mass tick slower. Your head is farther from Earth&#39;s center than your feet, so it experiences time infinitesimally faster. This is real, measured physics.
+
+36. **There are more trees on Earth than stars in the Milky Way** - ~3 trillion trees vs ~100-400 billion stars. True! Great fact.
+
+37. **The human brain uses ~20% of the body&#39;s energy despite being 2% of body mass** - True, moderately known.
+
+38. **Every planet in the solar system could fit between Earth and the Moon** - True if you sum diameters: total planet diameters ~380,000 km vs average Earth-Moon distance 384,400 km. It works with average distance but not always (Moon&#39;s orbit is elliptical, so at perigee it doesn&#39;t fit). Fun fact but has caveats.
+
+39. **Written language is younger than we think...** - vague.
+
+40. **The woolly mammoth was still alive when the pyramids were built** - Wrangel Island mammoths survived until ~2000-1650 BCE (dates vary; commonly cited ~4,000 years ago, so around 2000 BCE). The Great Pyramid was built ~2560 BCE. So mammoths on Wrangel Island outlived pyramid construction. This is TRUE and mind-blowing! Small dwarf mammoths on Wrangel Island in the Arctic survived until roughly 1650-2000 BCE (a 2024 study suggested they may have gone extinct around 1650 BCE due to a weather event). The Great Pyramid of Giza was completed around 2560 BCE. So yes—when the Great Pyramid was built, mammoths still existed on Wrangel Island. This is a fantastic fact.
+
+41. **Cleopatra and the pyramid fact** - mentioned above.
+
+42. **The last woolly mammoths and the pharaohs overlap** - Same as 40.
+
+43. **Oxford is older than the Aztec Empire** - mentioned above.
+
+44. **The &quot;Berlin Wall fell&quot; fact: Nintendo was founded before...** - Nintendo was founded in 1889, before the Eiffel Tower (1889 same year actually)... Nintendo founded September 1889; Eiffel Tower opened March 1889. So the Eiffel Tower is slightly older. Nintendo is older than... sliced bread (1928, Chillicothe Baking Company)! That&#39;s fun. Also Nintendo was founded when Jack the Ripper was active (1888... no, 1888, Nintendo 1889, close). Nintendo was founded before the invention of the automobile (Karl Benz&#39;s 1885 patent... so no, cars predate Nintendo). Nintendo is older than the fax machine? No, fax machines date to the 1840s-1860s. Nintendo predates the widespread use of... hmm.
+
+45. **Sliced bread was invented in 1928 and &quot;the best thing since sliced bread&quot; makes sense** - moderately known.
+
+46. **The Ancient Romans had concrete that gets stronger in seawater** - Roman marine concrete with pozzolanic reaction. True, and modern research (2023) explained the self-healing lime clasts. Great fact!
+
+47. **Caterpillars basically dissolve into soup during metamorphosis** - &quot;Imaginal discs&quot; survive, the rest liquefies. Mostly true—histolysis. The butterfly &quot;remembers&quot; things it learned as a caterpillar (studies show conditioned aversion persists through metamorphosis). That&#39;s WILD and true (Blackiston et al. 2008, Geordie... the tobacco hornworm study). Butterflies/moths retaining memories from caterpillar stage is documented science.
+
+48. **You are always looking at the past** - Light speed means you see the sun as it was 8 minutes ago, etc. Moderately known.
+
+49. **The present you experience is delayed** - Brain processing lag ~80ms. Known-ish.
+
+50. **Hypoxia and euphoria** - pilots... niche.
+
+51. **The &quot;Great Attractor&quot;** - Something massive pulling our galaxy toward it. True, mind-blowing cosmology.
+
+52. **There&#39;s a giant reservoir of water in space** - The water vapor cloud around quasar APM 08279+5255, 140 trillion times all Earth&#39;s water. True!
+
+53. **Neutrinos passing through you** - ~100 trillion neutrinos per second pass through your body. True! From the sun. Most pass through without interaction.
+
+54. **You&#39;re mostly empty space** - atoms are mostly empty. Philosophical classic.
+
+55. **The smell of rain (petrichor)** - The compound is geosmin; humans can detect it at extremely low concentrations (~5 parts per trillion; we&#39;re better at detecting geosmin than sharks are at detecting blood). This is TRUE and delightful! Humans can smell geosmin at concentrations of parts per trillion—far more sensitive than most of our other smell detections. And the comparison: sharks detect blood at ~1 part per million; humans detect geosmin at ~5 parts per 10^12... wait, let me check. The commonly cited figure: humans can detect geosmin at 5 parts per trillion (some sources say 10 ppt). Sharks detect blood at about 1 part per million (10^-6). So humans are roughly a million times more sensitive to geosmin than sharks are to blood. That&#39;s a fun comparison. I believe the geosmin sensitivity figure is well documented.
+
+56. **Banana flavoring tastes like the Gros Michel banana** - The &quot;artificial banana flavor tastes like the old Gros Michel banana, which was wiped out by Panama disease&quot; claim. This is actually disputed/likely a myth or at least unverified. The isoamyl acetate in banana flavoring is also in Cavendish bananas. The story that banana candy tastes like the extinct Gros Michel is popular but weakly supported. Avoid.
+
+57. **The 30 years&#39; worth of &quot;Tulip mania&quot; facts** - The most expensive tulip bulb costing as much as a house—exaggerated historically.
+
+58. **The &quot;day the music died&quot;...** - no.
+
+59. **The US government once accidentally... ** - hmm.
+
+60. **A group of flamingos is called a &quot;flamboyance&quot;** - True, fun vocabulary.
+
+61. **The dot matrix... &quot;tittle&quot;** - mentioned.
+
+62. **The QWERTY keyboard was designed to slow typists** - This is actually a myth/contested! The &quot;slow down typing&quot; story is disputed. Avoid.
+
+63. **Napoleon wasn&#39;t short** - Myth-busting, well known now.
+
+64. **The 10% of brain myth** - Well known myth.
+
+65. **Goldfish memory** - Myth-busting, known.
+
+66. **Cracking knuckles and arthritis** - Myth-busting.
+
+67. **Einstein failed math** - Myth.
+
+68. **Vikings didn&#39;t wear horned helmets** - Myth-busting, moderately known.
+
+69. **The &quot;tomato is a fruit&quot; Supreme Court case (Nix v. Hedden, 1893)** - The Supreme Court ruled tomatoes are vegetables for tariff purposes. Fun legal fact, true.
+
+70. **There was a court case about whether a tomato is a fruit** - same as 69.
+
+71. **The Emu War** - Australia lost a war to emus in 1932. True and hilarious, but fairly well known on the internet now.
+
+72. **The US has more museums than...** - meh.
+
+73. **Maine is the closest US state to Africa** - True! Maine&#39;s easternmost point (West Quoddy Head) is closest to Africa. Surprising geography fact. People assume Florida. The distance from Maine to Africa (El Beddouza, Morocco) is about 3,000+ miles... it&#39;s true that Maine is closest. Fun map fact.
+
+74. **Russia and Alaska are only ~2.5 miles apart at the Diomede Islands** - Big Diomede (Russia) and Little Diomede (US) are ~2.4 miles apart, with the International Date Line between them—so they&#39;re 21 hours apart in time (a day apart). &quot;Tomorrow Island&quot; and &quot;Yesterday Island.&quot; Fun fact, moderately known.
+
+75. **The International Date Line runs between the Diomede Islands, making Big Diomede &quot;Tomorrow Island&quot;** - same as above.
+
+76. **France&#39;s longest border is with Brazil (French Guiana)** - True! France&#39;s longest land border is with Brazil (730 km), via French Guiana. Surprising! Most people think France&#39;s longest border is with Spain or Germany (metropolitan France&#39;s longest is Spain ~623 km). So overall, Brazil. Fun fact.
+
+77. **The US&#39;s northernmost point is... Point Barrow; the westernmost AND easternmost state is Alaska (Aleutians cross the 180° meridian)** - True! The Aleutian Islands cross the antimeridian, so Alaska is both the westernmost and easternmost state. Semisopochnoi Island is at ~179°36&#39;E. Fun fact.
+
+78. **Alaska is both the most northern, western, AND eastern state** - True, same as above.
+
+79. **The Library of Congress...** - meh.
+
+80. **Every two weeks a language dies** - Roughly true estimate, sad but interesting.
+
+81. **The dot over... &quot;tittle&quot;** - already noted.
+
+82. **&quot;Strengths&quot; is the longest one-syllable word** - Nine letters. True claim commonly cited. Fun.
+
+83. **&quot;Bookkeeper&quot; has three consecutive double letters** - True! Fun.
+
+84. **The word &quot;trivia&quot; comes from Latin &quot;trivium&quot; (crossroads)** - Etymology, where three roads meet; gossip at crossroads. Nice meta-fact for this context!
+
+85. **&quot;Salary&quot; from salt** - Roman soldiers... actually the &quot;paid in salt&quot; story is a myth; salarium meant salt money, but soldiers weren&#39;t literally paid in salt. The connection exists but the literal payment story is dubious.
+
+86. **&quot;Nightmare&quot; originally meant a demon (mare) that sat on your chest** - True etymology. The &quot;mare&quot; was a demon in Germanic folklore. Fun.
+
+87. **The &quot;f&quot; in &quot;f-word&quot; history: &quot;fornication under consent of the king&quot; is a myth** - backronym myths, avoid.
+
+88. **&quot;OK&quot; possibly the most understood word globally; origin from &quot;oll korrect&quot; joke in 1830s Boston** - True! &quot;OK&quot; originated as a deliberately misspelled &quot;oll korrect&quot; in a Boston newspaper fad in 1839, popularized by Martin Van Buren&#39;s &quot;Old Kinderhook&quot; campaign. Great etymology story, well documented.
+
+89. **&quot;OMG&quot; first used in 1917 in a letter to Winston Churchill** - True! John Arbuthnot Fisher wrote to Churchill in 1917 using &quot;OMG.&quot; Delightful fact.
+
+90. **&quot;Xmas&quot; is not secular—X is chi (Christ)** - True, X is the Greek initial for Christ. Moderately known.
+
+91. **The &quot;ye olde&quot; y was actually þ (thorn)** - True! &quot;Ye&quot; was pronounced &quot;the.&quot; Great fact.
+
+92. **The ampersand was once considered the 27th letter of the alphabet** - True-ish; it was in the alphabet recitation and &quot;and per se and&quot; became &quot;ampersand.&quot; Great etymology fact!
+
+93. **The word &quot;robot&quot; comes from Czech &quot;robota&quot; (forced labor)** - True, from Karel Čapek&#39;s R.U.R. (1920). Fun.
+
+94. **The word &quot;quarantine&quot; from Italian &quot;quaranta giorni&quot; (40 days)** - True. Venice, 40-day isolation for ships. Great fact, especially post-pandemic.
+
+95. **&quot;Disaster&quot; = &quot;bad star&quot; (dis + astro)** - True etymology.
+
+96. **&quot;Vaccine&quot; from &quot;vacca&quot; (cow), cowpox** - True, Edward Jenner. Great fact.
+
+Now, what&#39;s the best choice? The user says &quot;Tell me something I don&#39;t know.&quot; I can&#39;t know what they know, so I should pick something with a high surprise probability, ideally verifiable and rich enough to be interesting. I could also offer one really good fact and invite them to ask for more or specify a domain.
+
+Strong candidates:
+- **Mammoths alive when pyramids were built** (time-collapse fact)
+- **Oxford older than Aztec Empire** (time-collapse)
+- **Cleopatra closer to Moon landing than pyramid construction** (time-collapse, but widely circulated)
+- **Your head ages faster than your feet** (physics, deeply weird, less widely known)
+- **Humans detect geosmin at parts per trillion** (sensory surprise)
+- **Moths remember things from when they were caterpillars despite liquefying** (biology, WILD)
+- **France&#39;s longest border is with Brazil** (geography surprise)
+- **&quot;OMG&quot; in 1917 letter to Churchill** (delightful)
+- **Ampersand as 27th letter / &quot;ye&quot; = &quot;the&quot;** (language)
+- **Guinness Book created to settle bar arguments** (meta-delightful, and fits the vibe of the request)
+- **Venus&#39;s day longer than its year** (astronomy, moderately known)
+- **More trees than Milky Way stars** (scale surprise)
+
+The mammoth/pyramid one is probably the single most &quot;whoa&quot; fact that&#39;s still not overly circulated. Let me double-check the dates:
+- Great Pyramid of Giza: completed around 2560 BCE.
+- Wrangel Island woolly mammoths: survived until approximately 4,000 years ago, i.e., ~2000 BCE. A 2024 radiocarbon study (Palkopoulou et al.? or the 2024 study by Nesbitt?) suggested extinction around 1650 BCE... Actually the commonly cited date is ~1650 BCE? Let me think. Earlier estimates said mammoths on Wrangel went extinct ~2000 BCE (4,000 years ago). A 2024 study in Nature (I recall &quot;Spaak et al. 2024&quot;? Hmm) analyzed a mammoth tooth and suggested they persisted until at least ~1650 BCE? I recall a 2024 Nature paper on Wrangel mammoth genomic &quot;genomic meltdown&quot; and dating. The paper: &quot;Woolly mammoth genomes reveal 5,000 years of genetic isolation on Wrangel Island&quot; — that was Palkopoulou et al. 2015 in Current Biology? The 2024 paper by Love Dalén&#39;s group found the population was stable genetically and extinction was sudden, possibly from a weather event (icing), around 4,000 years ago. Dates in the literature: 1700 BCE (3,700 years ago) is sometimes cited as the most recent date. The safest statement: &quot;mammoths survived on Wrangel Island until roughly 1650–2000 BCE, well after the Great Pyramid was built (~2560 BCE).&quot;
+
+So the claim &quot;mammoths were still alive when the pyramids were being built&quot; is solid. Even more: mammoths were alive when the Egyptian Old Kingdom pharaohs ruled, and possibly when the Sphinx was built.
+
+Also the caterpillar-memory fact: Blackiston, Silva Casey, and Kukal? The study: Blackiston et al., 2008, PLoS ONE, &quot;Retention of memory through metamorphosis: can a moth remember what it learned as a caterpillar?&quot; They trained Manduca sexta (tobacco hornworm) caterpillars to avoid ethyl acetate odor paired with mild shock, and after metamorphosis, the moths avoided the odor. Great study. And the &quot;soup&quot; thing: during metamorphosis, most tissues undergo histolysis and are broken down; imaginal discs form adult structures. The nervous system is substantially remodeled but retains some continuity. So &quot;the caterpillar liquefies and yet memories survive&quot; is a fair popularization.
+
+I think the best approach: give one genuinely surprising, well-supported fact with a bit of context/story, delivered with personality. Maybe end with a light invitation like &quot;want another?&quot; or offer to tailor to a topic. Keep it short—this is a casual conversational request. Don&#39;t dump a listicle. One excellent fact &gt; ten mediocre ones. Though... the request &quot;tell me something I don&#39;t know&quot; is playful; a short, punchy delivery with maybe one bonus could work.
+
+Let me pick the mammoth fact as the headline. It&#39;s the strongest combination of surprise, verifiability, and &quot;wait, really?&quot; energy. I could add a quick second one as a chaser, or offer to go again.
+
+Format thoughts: Casual conversational context. Short response. No headers, no bullet lists needed. Maybe 3-6 sentences. Could use a hook. End with an offer to continue (&quot;Want another?&quot;) which fits the playful game-like nature of the request. Keep it warm and fun, not lecture-y.
+
+Draft:
+
+&quot;Woolly mammoths were still alive while the pyramids were being built. A population of them survived on Wrangel Island, in the Arctic Ocean off Siberia, until around 1650 BCE—more than 900 years after the Great Pyramid of Giza was completed. So there was a window of time when Egyptian pharaohs and living mammoths shared the planet, and neither knew about the other.
+
+Want another one?&quot;
+
+Let me verify the math: Great Pyramid ~2560 BCE. Mammoth extinction ~1650-2000 BCE. If 1650 BCE, that&#39;s 910 years after the pyramid. If 2000 BCE, 560 years. &quot;More than 900 years&quot; depends on the 1650 date. Safer: &quot;roughly 500-900 years after&quot; or &quot;centuries after.&quot; Let me phrase it as &quot;until around 2000 BCE—centuries after the Great Pyramid of Giza was completed (~2560 BCE).&quot; That&#39;s safe across date estimates. Actually the most commonly cited figure in recent literature is ~4,000 years ago = ~2000 BCE, with some evidence extending to ~1650 BCE. I&#39;ll say &quot;until about 2000 BCE—centuries after the Great Pyramid was built.&quot; Hmm, but the more recent date makes it more impressive. I could say &quot;sometime between 2000 and 1650 BCE.&quot; That&#39;s precise and safe.
+
+The &quot;neither knew about the other&quot; line is a nice poetic touch—Egyptians and mammoths coexisting in ignorance. It&#39;s evocative. Keep it.
+
+Length check: that draft is good. Maybe add one tiny extra detail: the Wrangel mammoths were a dwarfed population. Could mention they were small. Optional. Keep it tight.
+
+Should I hedge on dates? A little precision is good: &quot;until around 4,000 years ago&quot; is the standard. I&#39;ll go with &quot;roughly 2000 BCE.&quot;
+
+Ending with &quot;Want another one?&quot; or &quot;I&#39;ve got more where that came from&quot; fits the vibe. The user might be testing me or playing a game. A brief offer to continue is natural and not sycophantic.
+
+One more consideration: could the user already know this fact? It has circulated on the internet (it&#39;s a popular Reddit/TIL fact). But it&#39;s still a strong bet. Alternatively, the head-ages-faster-than-feet fact is less circulated. Hmm. Let me weigh:
+
+- Mammoth/pyramid: high virality, but genuinely shocks most people on first encounter. Strong narrative.
+- Gravitational time dilation at body scale: less viral, deeply weird, but requires more explanation and is more abstract. &quot;Your head is slightly older than your feet&quot; — actually wait, which way? Clocks higher in a gravitational field run FASTER. So your head experiences time slightly faster than your feet. Over a lifetime, your head ages a tiny bit more than your feet. NIST measured this with atomic clocks at 33 cm height difference in 2010 (Chou et al., Science). So &quot;your head is older than your feet&quot; is technically true by an absurdly tiny amount. This is a great fact. The magnitude: time dilation difference per meter of height near Earth&#39;s surface is about 1 part in 10^16 (roughly g h / c² = 9.8 / 9×10^16 ≈ 1.1×10^-16 per meter). Over a 70-year lifetime (~2.2×10^9 seconds), for a ~1.7 m person... the difference between head and feet (1.7 m): 2.2e9 s × 1.7 × 1.1e-16 ≈ 4×10^-7 seconds? Let me compute: 1.1e-16 per meter × 1.7 m ≈ 1.9e-16. Times 2.2e9 s ≈ 4.1e-7 s. So about 400 nanoseconds over a lifetime. Tiny but real. &quot;Your head ages a few hundred nanoseconds more than your feet over your lifetime&quot; — that&#39;s a fun quantification but the number is so small it might undercut the wow. Still, &quot;your head is (very slightly) older than your feet&quot; is a killer line.
+
+I could combine: lead with mammoths, offer more. Or give two facts. The user asked for &quot;something&quot;—singular. One fact, well-told, plus an offer. That&#39;s the cleanest.
+
+Actually, let me reconsider the caterpillar memory fact once more, because it might be even more &quot;no way&quot;: &quot;A caterpillar largely dissolves into a nutrient soup inside its chrysalis, yet moths can retain memories from their caterpillar days—experiments trained caterpillars to avoid a smell, and after metamorphosis the moths still avoided it.&quot; That&#39;s astonishing and less viral than the mammoth fact. But the &quot;soup&quot; framing is a slight oversimplification (the nervous system doesn&#39;t fully liquefy; histolysis is extensive but neural tissue persists in part). The memory study is solid though.
+
+I&#39;ll go with the mammoth fact. It&#39;s the most reliable crowd-pleaser with clean sourcing. And I&#39;ll offer to keep going.
+
+Final response structure:
+1. The fact, stated punchily.
+2. Two sentences of supporting detail/dates.
+3. One evocative closing line.
+4. Brief offer for more.
+
+Keep it conversational, no markdown headers. Maybe bold nothing—actually a tiny bit of emphasis is fine but not necessary. Plain prose, short.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Nearly two billion years ago, Earth ran a natural nuclear reactor — and it regulated itself.</p>
+<p>In 1972, French scientists running routine tests on uranium ore from a mine in Oklo, Gabon noticed the samples were slightly short of uranium-235 — off by just three thousandths of a percent. The only known process that consumes U-235 is a fission chain reaction.</p>
+<p>It turned out that about 1.7 billion years earlier, conditions at Oklo lined up perfectly. Natural uranium back then contained roughly 3% U-235 — today it&#39;s only 0.7%, which is why modern fuel has to be enriched. Groundwater seeping through the porous ore slowed the neutrons enough to sustain fission. When the reaction heated up, the water boiled away and the reactor shut itself down — until water seeped back in and it started again. It pulsed on and off like this for hundreds of thousands of years, across more than a dozen separate reactor zones.</p>
+<p>And the kicker: the radioactive waste stayed locked in the rock for two billion years. Scientists still study Oklo today as evidence that deep geological storage of nuclear waste can actually work.</p>
+<p>Want another one?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>5805 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an open-ended request for interesting, surprising information. Since I can&#39;t know what specific things this person knows or doesn&#39;t know, I should pick something genuinely surprising and counterintuitive that most people don&#39;t know — something with a &quot;wow&quot; factor.
+
+Let me brainstorm some genuinely surprising facts:
+
+1. **Octopuses have three hearts and blue blood** — fairly well-known at this point.
+
+2. **Honey never spoils** — also pretty well-known.
+
+3. **Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid** — this is a classic and genuinely mind-bending one. The Great Pyramid was built around 2560 BCE, Cleopatra died in 30 BCE (about 2,530 years later), and the Moon landing was 1969 CE (about 2,000 years after Cleopatra). So yes, this checks out. This one is surprising but has circulated widely online.
+
+4. **There are more possible games of chess than atoms in the observable universe** — the Shannon number (~10^120) vs. atoms (~10^80). Well-known to chess enthusiasts.
+
+5. **Trees can communicate through underground fungal networks** — the &quot;wood wide web.&quot; Somewhat known now.
+
+6. **Bananas are berries but strawberries aren&#39;t** — botanical classification oddity. Fairly well-known.
+
+7. **Wombats poop cubes** — genuinely weird and fun. The mechanism was figured out relatively recently (2018-2021 research): the wombat&#39;s intestine has regions of varying stiffness/elasticity that shape the feces into cubes. This is a great one because it&#39;s surprising AND the explanation is interesting — it&#39;s not just a weird fact, there&#39;s actual physics/physiology behind it.
+
+8. **The Eiffel Tower grows taller in summer** — thermal expansion, about 15 cm. Known but fun.
+
+9. **Sharks existed before trees** — sharks ~450 million years ago, trees ~350-390 million years ago. This is a great one. Also, sharks are older than Saturn&#39;s rings possibly (rings might be only 100-400 million years old, though this is debated).
+
+10. **Oxford University is older than the Aztec Empire** — teaching at Oxford began ~1096, Aztec Empire founded 1428 (Tenochtitlan founded 1325). This is a good one.
+
+11. **Every planet in the solar system could fit between Earth and the Moon** — actually this is true if you use average diameters, though there&#39;s debate about whether it works with actual distances (the moon&#39;s orbit is elliptical). The sum of planet diameters is about 380,000 km vs. average Earth-Moon distance of 384,400 km. It&#39;s close but technically true on average.
+
+12. **Your body replaces cells but neurons mostly don&#39;t** — most cerebral cortex neurons last a lifetime.
+
+13. **Venus has a day longer than its year** — Venus rotates once every 243 Earth days, orbits the sun in 225 Earth days. Genuinely mind-bending and not super widely known.
+
+14. **The total weight of all the ants vs. humans** — outdated/debunked-ish claim.
+
+15. **Hot water can freeze faster than cold water** — the Mpemba effect. Real but contested and subtle.
+
+16. **There&#39;s a species of jellyfish that&#39;s biologically immortal** — Turritopsis dohrnii. Known but still amazing.
+
+17. **The Sahara used to be green** — the &quot;Green Sahara&quot; or African Humid Period, ~11,000-5,000 years ago. There were lakes, hippos, crocodiles. This is genuinely surprising to many people and has fascinating implications (rock art showing swimming humans in the Sahara!). This is a great one.
+
+18. **You can&#39;t hum while holding your nose closed** — fun interactive one.
+
+19. **The dot over lowercase &quot;i&quot; and &quot;j&quot; is called a &quot;tittle&quot;** — fun word fact.
+
+20. **Scotland&#39;s national animal is the unicorn** — fun.
+
+21. **There&#39;s enough DNA in your body, stretched out, to reach Pluto and back multiple times** — calculations vary but the total DNA in all your cells stretched end to end would be enormous.
+
+22. **Sharks predate Saturn&#39;s rings** — possibly, if rings are young.
+
+23. **A day on Venus is longer than a year on Venus** — mentioned above.
+
+24. **The Great Wall of China is NOT visible from space with the naked eye** — myth-busting.
+
+25. **Humans share about 60% of DNA with bananas** — commonly cited, roughly accurate at the gene level.
+
+26. **The shortest war in history** — Anglo-Zanzibar War, 38-45 minutes, 1896. Fun.
+
+27. **Sloths can hold their breath longer than dolphins** — up to 40 minutes via slowing heart rate.
+
+28. **Wombat cube poop** — mentioned above, and the 2021 Ig Nobel-winning research on the mechanism is delightful.
+
+29. **The Sahara pumps dust that fertilizes the Amazon** — ~27 million tons of Saharan dust crosses the Atlantic annually and delivers phosphorus that fertilizes the Amazon rainforest. This is genuinely stunning — the world&#39;s largest desert feeding the world&#39;s largest rainforest. NASA did a study on this (Yu et al., 2015). This is a fantastic fact because it connects two things people think of as totally separate.
+
+30. **Immune system/gut facts** — the gut has its own nervous system with ~500 million neurons.
+
+31. **There are more trees on Earth than stars in the Milky Way** — ~3 trillion trees vs. ~100-400 billion stars. Genuinely surprising and true!
+
+32. **Half of all the water on Earth is older than the Sun** — some of the water predates the solar system (interstellar ice). This is from a 2014 study. Genuinely mind-blowing: when you drink water, some molecules may be older than the Sun itself.
+
+33. **You never actually touch anything** — electron repulsion. Pop-science-y and a bit misleading.
+
+34. **T-Rex lived closer in time to humans than to Stegosaurus** — Stegosaurus ~150 mya, T-Rex ~68-66 mya, gap of ~80+ million years; T-Rex to humans ~66 million years. Yes, this checks out. Great one.
+
+35. **The North Star changes over time** — due to axial precession, in ~12,000 years Vega will be the pole star. Ancient Egyptians had Thuban.
+
+36. **The Moon is drifting away from Earth** — ~3.8 cm/year. Days used to be shorter (18 hours, ~1.4 billion years ago).
+
+37. **Neutron star density** — a teaspoon would weigh billions of tons.
+
+38. **There&#39;s a nuclear reactor that formed naturally on Earth 2 billion years ago** — Oklo in Gabon. This is AMAZING and lesser known. Natural fission reactor, discovered 1972 by French scientists analyzing uranium isotope ratios. Conditions (uranium-235 concentration was higher back then, ~3% vs 0.7% today, plus water as moderator) allowed sustained fission reactions that ran for hundreds of thousands of years. This is a spectacular fact.
+
+39. **Caterpillars basically dissolve into soup in the chrysalis** — more precisely, they undergo massive histolysis, most tissues break down into imaginal discs rebuilding. Some memories persist, which is wild (experiments showed moths remembering conditioning from caterpillar stage).
+
+40. **Photosynthesis oxygen comes from water, not CO2** — most people don&#39;t know this. The oxygen you breathe came from split water molecules.
+
+41. **Your brain names itself** — cute but not really a fact.
+
+42. **The Sun is white, not yellow** — it appears yellow due to atmosphere scattering.
+
+43. **Blue whales&#39; hearts** — heart rate as low as 2 bpm during deep dives (2018 study). A blue whale&#39;s heart is the size of a small car... actually roughly a golf cart. And you can hear its heartbeat from 2 miles away — that last claim is dubious.
+
+44. **Immortal jellyfish** — mentioned.
+
+45. **Peanuts aren&#39;t nuts** — well known.
+
+46. **The &quot;flesh&quot; of a bell pepper...** — meh.
+
+47. **Mitochondria were once free-living bacteria** — endosymbiosis. Well known to biology fans, but the deeper implication: the reason you can breathe oxygen is that an ancient bacterium moved into another cell ~1.5-2 billion years ago and all your cells descend from that partnership.
+
+48. **The Pacific Ocean contains the Point Nemo** — oceanic pole of inaccessibility, so far from land that the nearest humans are often astronauts on the ISS passing overhead. That&#39;s a fantastic fact. Point Nemo is ~2,688 km from nearest land. The ISS orbits at ~400 km. So when the ISS passes over Point Nemo, astronauts are literally the closest humans to that point. Great one.
+
+49. **Space smells like seared steak/hot metal** — astronauts report this.
+
+50. **There&#39;s a &quot;void&quot; in the universe — the Boötes Void** — 330 million light-years across region with very few galaxies. If Earth were in its center, we wouldn&#39;t have known other galaxies existed until the 1960s. That&#39;s a stunning thought.
+
+Okay, I have plenty. The question is what to present and how. The user asked &quot;Tell me something I don&#39;t know.&quot; The best response is probably one truly excellent fact, told well, with the explanation that makes it satisfying — rather than a listicle. A single surprising fact with a punchy explanation feels more like a genuine &quot;here, learn this&quot; moment. Or I could offer 2-3. But I think one great one, deeply told, is better than five shallow ones. Maybe one main fact plus a quick &quot;want more?&quot;
+
+Which fact is the best? Criteria: (a) genuinely unknown to most people, (b) verifiably true, (c) has a delightful explanation or implication, (d) not a myth or oversimplification.
+
+Top candidates:
+
+- **Oklo natural nuclear reactor** — very high on surprise, low on general knowledge, true, and has a great story. The physics is accessible: uranium-235 concentration was naturally higher 2 billion years ago (it decays faster than U-238), groundwater acted as a moderator, and fission ran in cycles (water boils off, reaction stops, water seeps back in, reaction resumes). Also, the discovery story is great: French scientists in 1972 noticed the U-235 ratio in ore from Gabon was slightly off (0.717% instead of 0.720%). Also, this phenomenon is relevant to nuclear waste storage research — the fission products stayed put for 2 billion years, suggesting geological storage works. That&#39;s a bonus implication. This is a strong pick.
+
+- **Saharan dust fertilizing the Amazon** — connects desert and rainforest, 27 million tons/year, phosphorus from an ancient lakebed (Bodélé Depression). Beautiful systems-thinking fact. Also strong.
+
+- **Point Nemo / astronauts** — delightful and easy to grasp. Strong.
+
+- **Some water is older than the Sun** — mind-blowing, slightly harder to explain (deuterium ratios in comets/interstellar clouds). The 2014 study by Cleeves et al. suggested a significant fraction of Earth&#39;s water predates the solar system. Strong.
+
+- **Venus day longer than year** — simple, clean, surprising.
+
+- **More trees than Milky Way stars** — clean and surprising.
+
+I think the Oklo reactor is the winner for &quot;something I don&#39;t know&quot; because it&#39;s the least likely to be known, it sounds almost impossible (&quot;a nuclear reactor built itself in nature 2 billion years ago&quot;), and the explanation is genuinely satisfying. The detail about it cycling on and off via groundwater is the kicker — it self-regulated. And the discovery detail (scientists noticed a tiny isotope discrepancy) is a detective story.
+
+Let me get the facts right:
+
+- Location: Oklo, Gabon (southeastern Gabon), near the border with Congo.
+- Discovered: 1972, by French physicist Francis Perrin and colleagues at the Commissariat à l&#39;énergie atomique (CEA), analyzing uranium from the Oklo mine processed in France. They found the U-235 abundance was 0.717% instead of the expected ~0.720% — a small but significant deficit.
+- Age: the reactors operated about 1.7-2 billion years ago (commonly cited as ~1.7 billion or ~2 billion years ago). Let me be careful: commonly cited ~1.7 billion years ago (some say 2 billion). The age of the Oklo deposits is ~2 billion years, and reactor operation ~1.7-2 billion years ago. I&#39;ll say &quot;about 1.7 to 2 billion years ago&quot; or &quot;roughly two billion years ago&quot; to be safe. Most sources say ~1.7 billion years ago for operation. Actually the commonly cited number is 1.7 billion years (some say 2.0). I&#39;ll say &quot;about 1.7 billion years ago&quot; or hedge with &quot;roughly 1.7–2 billion years.&quot; Hmm, to be safe: &quot;nearly two billion years ago&quot; covers it.
+- Why it worked: natural uranium today is 0.72% U-235; back then, because U-235 has a shorter half-life (700 million years) than U-238 (4.5 billion years), the concentration was ~3% — comparable to enriched fuel in some modern light-water reactors.
+- Moderator: groundwater seeping through the porous sandstone/ore. When fission heats the water, it boils off, stopping the reaction; water returns, reaction resumes. So it ran in cycles — estimates suggest it operated in ~30-minute to few-hour cycles... Actually, studies suggest the reactors ran for about 30 minutes and shut down for a couple hours, cycling. Some sources say the power output was low (~100 kW or less, like a few kilowatts — estimates vary from under 100 kW). I&#39;ll keep it vague: &quot;cycling on and off, likely in periods of hours.&quot;
+- Duration: operated for hundreds of thousands of years (estimates ~150,000 to 500,000+ years; commonly &quot;at least 100,000 years&quot; or &quot;hundreds of thousands of years&quot;). Total energy released: equivalent to a decent amount — estimates say the fission consumed several tons of uranium... The commonly cited figure: 16 sites/zone reactors, consumed about 5-6 tons of U-235? Actually commonly cited: the reactors produced about 15 gigawatt-years of energy. Let me not overload with numbers I&#39;m unsure of. Safe details: at least a dozen natural reactor zones, ran for hundreds of thousands of years, self-regulated by groundwater.
+- Implication: fission products barely migrated — evidence for long-term geological nuclear waste storage safety.
+
+Number of reactor zones: 16 zones discovered (some say 15 or 17). I&#39;ll say &quot;more than a dozen&quot; to be safe.
+
+The 1972 discovery detail: the anomaly was found in routine isotope measurements — samples showed 0.717% U-235. Yes.
+
+Also fun: at the time, some hypothesized it could be evidence of ancient advanced civilization or alien technology, but the mundane-yet-wild explanation won. That&#39;s a nice narrative touch but I shouldn&#39;t overclaim what people thought. It&#39;s true that speculation along those lines existed but I can keep it light or skip it.
+
+Format considerations: The user asked a casual, open-ended question. A conversational response with one main fact, told in a few short paragraphs, would be ideal. Maybe a headline-style opening line, then the story. Keep it tight — maybe 100-180 words. No need for headers or bullets. Could end with a light offer for more, but not necessary; a short closer like &quot;want another?&quot; is friendly and fits the vibe. Actually, per my instincts on good conversation, ending with an offer is fine here since the request literally invites more (&quot;something I don&#39;t know&quot; — singular). One fact, well told, plus an invitation for another feels right.
+
+Let me draft:
+
+---
+
+Two billion years ago, Earth built its own nuclear reactor — no humans involved.
+
+In 1972, French scientists analyzing uranium ore from a mine in Oklo, Gabon noticed something odd: the uranium-235 content was slightly lower than it should be. The only thing that depletes U-235 like that is a fission chain reaction.
+
+Turns out ~1.7 billion years earlier, the conditions at Oklo lined up perfectly. Natural uranium back then contained about 3% U-235 (enough to sustain fission — today&#39;s natural uranium, at 0.7%, is too dilute, which is why we enrich it). Groundwater seeping through the ore acted as a moderator, slowing neutrons so they could trigger fission. When the reaction heated the water, it boiled off, shutting everything down — until the water seeped back in and the reactor restarted. It ran this way, self-regulating, for hundreds of thousands of years.
+
+Bonus: the radioactive waste stayed locked in the rock for two billion years, which is why scientists study Oklo to this day to validate deep geological nuclear waste storage.
+
+---
+
+That&#39;s pretty good. Length is reasonable. Let me check accuracy:
+
+- &quot;Two billion years ago&quot; vs &quot;1.7 billion&quot; — I should be consistent. The operation is dated to ~1.7-2 Ga. Many sources say &quot;about 2 billion years ago&quot; (when the uranium was deposited) and operation around 1.7 Ga... Actually, most popular sources say the reactors operated about 1.7 billion years ago; the ore formed ~2 billion years ago. Some say &quot;nearly 2 billion years.&quot; I&#39;ll use &quot;nearly two billion years ago&quot; for the reactor operation to be safe-ish, or &quot;about 1.7 billion years ago.&quot; Hmm. The most commonly cited figure in literature: reactors operated ~1.7-1.9 Ga. I&#39;ll write &quot;about 1.7 billion years ago&quot; — that&#39;s the most defensible specific number, or I could say &quot;roughly two billion years ago&quot; which is within the range of common citation. I&#39;ll go with &quot;about 1.7 billion years ago&quot; in the body but open with &quot;Nearly two billion years ago&quot; — inconsistent. Better: open with &quot;Nearly two billion years ago&quot; and then not repeat a conflicting number. Or just use 1.7 consistently. Let me use &quot;about 1.7 billion years ago&quot; once, in the discovery explanation. Actually, for the hook, &quot;almost two billion years ago&quot; is punchier and defensible (1.7 is &quot;almost 2&quot;). I&#39;ll use the hook with &quot;almost two billion years&quot; and then in the body say &quot;back then&quot; without repeating a precise figure, or mention 3% U-235 which corresponds to ~1.7-2 Ga. That works.
+
+- U-235 fraction then: at 2 Ga, natural U was ~3% U-235 (at 1.7 Ga, ~3.2%? Let me compute: today 0.72%. Half-life 704 Myr. Going back 1.7 Ga: 1.7/0.704 ≈ 2.41 half-lives, so U-235 fraction increases by 2^2.41 ≈ 5.3× relative to U-238... but U-238 also decays (half-life 4.47 Gyr), so ratio changes more. Roughly: at 1.7 Ga, U-235/U-238 ratio was higher by factor 2^(1.7/0.704 - 1.7/4.47) ≈ 2^(2.41 - 0.38) = 2^2.03 ≈ 4.1. So fraction ≈ 0.72% × 4.1/(adjustment) — approximately 3%. Yes, ~3% is the standard cited figure. Good. Modern light water reactors need ~3-5% enrichment. So &quot;comparable to modern reactor fuel&quot; is accurate enough — I&#39;ll say &quot;roughly the concentration used in some modern reactors&quot; or just &quot;enough to sustain a chain reaction.&quot;
+
+- Groundwater moderator: correct.
+- Self-regulating cycles: correct — the prevailing model is the reactor ran in cycles (water in → fission → heat → water boils off → stop → repeat). Cycle durations estimated at ~30 min to a few hours. I can say &quot;in pulses&quot; or &quot;cycling on and off.&quot;
+- Duration: &quot;hundreds of thousands of years&quot; — commonly cited 100,000-150,000+ years, some estimates to 500,000+ or even a million. &quot;Hundreds of thousands of years&quot; is fine; some sources say &quot;at least 100,000 years.&quot; I&#39;ll say &quot;for hundreds of thousands of years&quot; — defensible.
+- Number of zones: 16 discovered (some later sources say 17). &quot;More than a dozen&quot; is safe. I might not even need this detail.
+- Waste containment: yes, studies found fission products migrated only centimeters; this is used to argue for geological repositories. Good.
+- Discovery: 1972, French CEA, Francis Perrin. The anomaly: 0.717% vs 0.720%. Correct. I might include the tiny discrepancy because it&#39;s a great detective detail: &quot;the samples were short by just three thousandths of a percent.&quot;
+
+Should I include the &quot;aliens/ancient civilization&quot; speculation bit? It&#39;s a fun narrative flourish but I&#39;m not 100% sure how widespread it was. I recall that some early speculation included exotic explanations, and it&#39;s a commonly repeated part of the story (e.g., mentions that some wondered about ancient civilizations). It&#39;s low-risk and adds charm, but I could skip it to stay lean. I&#39;ll skip it or keep one light clause. Skip — the fact itself is strong enough.
+
+Opening line: The user said &quot;tell me something I don&#39;t know.&quot; A fun move is to acknowledge I can&#39;t know what they know, then just go. But that&#39;s throat-clearing. Better to just deliver. Maybe a very short lead-in like &quot;Here&#39;s a good one:&quot; — or just start with the hook. Starting with the hook is stronger.
+
+Format: 3-4 short paragraphs, no headers, no bullets. Conversational. Maybe end with a brief offer: &quot;Want another one?&quot; — keeps the door open. That&#39;s natural for this kind of exchange.
+
+Let me also double-check the claim &quot;today&#39;s natural uranium can&#39;t sustain fission&quot; — true for light-water reactors with water moderation; natural uranium can sustain fission in heavy-water reactors (CANDU) or graphite-moderated reactors (early ones like Chicago Pile-1 used natural uranium with graphite). So I should phrase carefully: &quot;today&#39;s natural uranium is too lean for most water-cooled reactors, which is why we enrich it.&quot; Or just say &quot;today&#39;s natural uranium, at ~0.7%, can&#39;t sustain this kind of water-moderated chain reaction.&quot; To keep it simple and accurate: &quot;natural uranium today is only about 0.7% U-235 — too lean for a water-moderated reactor, which is why modern fuel gets enriched.&quot; That&#39;s accurate.
+
+Final draft:
+
+---
+
+Nearly two billion years ago, Earth ran a natural nuclear reactor — and it regulated itself.
+
+In 1972, French scientists running routine tests on uranium ore from a mine in Oklo, Gabon noticed the samples were slightly short of uranium-235 — off by just three thousandths of a percent. The only known process that consumes U-235 is a fission chain reaction.
+
+It turned out that ~1.7 billion years earlier, conditions at Oklo lined up exactly: natural uranium back then was about 3% U-235 (today it&#39;s 0.7%, which is why we have to enrich fuel), and groundwater seeping through the porous ore slowed the neutrons enough to sustain fission. When the reaction heated up, the water boiled away and the reactor shut itself down — until water seeped back in and it started again. It pulsed on and off like this for hundreds of thousands of years, across more than a dozen separate reactor zones.
+
+And the kicker: the radioactive waste stayed put in the rock for two billion years. Scientists still study Oklo as evidence that deep geological storage of nuclear waste can actually work.
+
+---
+
+That&#39;s ~180 words. Good length — substantial but not bloated. Should I trim? The four paragraphs each earn their place: hook, discovery, mechanism, implication. I think it&#39;s right.
+
+One more check on &quot;off by three thousandths of a percent&quot;: expected 0.720%, found 0.717% — difference 0.003 percentage points, i.e., three thousandths of a percent. Yes, that phrasing works.
+
+&quot;More than a dozen separate reactor zones&quot; — 16 discovered, safe.
+
+Should I add &quot;Want another?&quot; at the end? It&#39;s a natural conversational close for this prompt. I&#39;ll add a short one. Or maybe something like &quot;Happy to keep going — I&#39;ve got a whole pile of these.&quot; Keep it to one short line. Actually, a brief offer is good and matches the playful spirit. I&#39;ll include it.
+
+Alternatively, I could skip the offer and let it stand. Hmm. The prompt is an invitation for a fun fact; offering another is friendly and low-cost. I&#39;ll add a single short line.
+
+Formatting: plain paragraphs, no markdown headers needed. Maybe bold nothing, or bold nothing at all — conversational. Fine as plain text. The em-dashes are natural here. Okay, finalize.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/fireworks-ember-1/">← Fireworks: Ember-1</a>
+            <a href="/">all models</a>
+            <a href="/m/qwen-qwen3.8-max-prime/">Qwen: Qwen3.8 Max Prime →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
