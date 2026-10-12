@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepFun: Step 5 Preview — Tell me something I don't know.</title>
+    <meta name="description" content="StepFun: Step 5 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a genuinely mind-bending one from the edge of science: Some migratory birds may “see” Earth’s magnetic field using quantum entanglement in their…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/stepfun-step-5-preview/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/stepfun-step-5-preview/">
+    <meta property="og:title" content="StepFun: Step 5 Preview — Tell me something I don't know.">
+    <meta property="og:description" content="StepFun: Step 5 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a genuinely mind-bending one from the edge of science: Some migratory birds may “see” Earth’s magnetic field using quantum entanglement in their…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StepFun: Step 5 Preview — Tell me something I don't know.">
+    <meta name="twitter:description" content="StepFun: Step 5 Preview answers &quot;Tell me something I don&#39;t know.&quot; — Here’s a genuinely mind-bending one from the edge of science: Some migratory birds may “see” Earth’s magnetic field using quantum entanglement in their…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to StepFun: Step 5 Preview)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s a genuinely mind-bending one from the edge of science:\n\n**Some migratory birds may “see” Earth’s magnetic field using quantum entanglement in their eyes.**\n\nHere’s the wild part:  \nIn 2021, researchers found evidence that a molecule called **cryptochrome** in birds’ retinas can host pairs of entangled electrons. Entanglement is a quantum phenomenon where two particles become linked so that the state of one instantly affects the other—no matter the distance. In the bird’s eye, this entangled pair is sensitive to the *angle* of Earth’s magnetic field. That means the bird literally perceives the magnetic field as a visual pattern—like a heads-up display in the sky—guiding it during migration.\n\nThis isn’t proven for certain yet, but experiments with robins and artificial magnetic fields support the idea. If true, it means quantum mechanics—which we usually associate with labs and supercomputers—is happening inside a bird’s eyeball, helping it navigate thousands of miles.\n\nIt’s called **quantum magnetoreception**, and it suggests life has been exploiting quantum weirdness long before physicists discovered it.\n\nWant another? I’ve got plenty of strange science. 🐦⚛️","author":{"@type":"Organization","name":"Stepfun"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s one: If two pieces of the same metal touch in the vacuum of space, they will permanently fuse together into a single piece.\n\nThis is called **cold welding**. On Earth, every metal surface is covered in a microscopic layer of oxidation and grime, so the atoms of two different pieces never actually touch. But in the vacuum of space, clean metal has no oxide layer—so if two bare surfaces press together, the atoms bond as if they were part of the same object all along.\n\nIt’s a real headache for engineers designing satellites and spacecraft, which is why space hardware is often coated with gold or special dry lubricants to keep parts from accidentally becoming one.","author":{"@type":"Organization","name":"Stepfun"}},{"@type":"Answer","text":"Some plants produce caffeine in their nectar — not for the benefit of bees, but to *manipulate* them.\n\nResearch has shown that certain flowering plants (like *Citrus* and *Coffea* species) lace their nectar with low doses of caffeine. While it's not enough to taste bitter, it’s enough to affect bee memory and behavior. Bees that consume caffeinated nectar are more likely to remember the flower’s scent and color, and they become more faithful to that type of flower — visiting it repeatedly and ignoring other, potentially better food sources.\n\nIn other words: the plant is essentially using caffeine as a mild, natural “drug” to improve pollinator loyalty, ensuring its own reproduction at the","author":{"@type":"Organization","name":"Stepfun"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>StepFun: Step 5 Preview</h1>
+        <p class="subtitle">Stepfun · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">StepFun: Step 5 Preview</div>
+                        <div class="model-provider">Stepfun</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s a genuinely mind-bending one from the edge of science:</p>
+<p><strong>Some migratory birds may “see” Earth’s magnetic field using quantum entanglement in their eyes.</strong></p>
+<p>Here’s the wild part:<br>In 2021, researchers found evidence that a molecule called <strong>cryptochrome</strong> in birds’ retinas can host pairs of entangled electrons. Entanglement is a quantum phenomenon where two particles become linked so that the state of one instantly affects the other—no matter the distance. In the bird’s eye, this entangled pair is sensitive to the <em>angle</em> of Earth’s magnetic field. That means the bird literally perceives the magnetic field as a visual pattern—like a heads-up display in the sky—guiding it during migration.</p>
+<p>This isn’t proven for certain yet, but experiments with robins and artificial magnetic fields support the idea. If true, it means quantum mechanics—which we usually associate with labs and supercomputers—is happening inside a bird’s eyeball, helping it navigate thousands of miles.</p>
+<p>It’s called <strong>quantum magnetoreception</strong>, and it suggests life has been exploiting quantum weirdness long before physicists discovered it.</p>
+<p>Want another? I’ve got plenty of strange science. 🐦⚛️</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>445 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Hmm, the user wants to learn something new and unexpected. This is a fun challenge—I need to pick a fact that’s genuinely obscure but also fascinating enough to stick. 
+
+Quantum biology feels perfect: it’s cutting-edge, counterintuitive, and most people haven’t heard of it. The bird navigation angle is especially vivid—who would think of migratory birds using quantum effects? I should emphasize the “entanglement” part since that’s the mind-bending bit, but keep it simple. 
+
+Avoiding jargon like “superposition” unless I explain it. Maybe compare it to a spinning coin—both states at once. The enzyme example adds depth, showing it’s not just birds. Ending with a question invites curiosity without overwhelming. 
+
+…Wait, should I mention this is still debated? Yes—scientific accuracy matters. Phrase it as “some scientists think” to stay honest.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s one: If two pieces of the same metal touch in the vacuum of space, they will permanently fuse together into a single piece.</p>
+<p>This is called <strong>cold welding</strong>. On Earth, every metal surface is covered in a microscopic layer of oxidation and grime, so the atoms of two different pieces never actually touch. But in the vacuum of space, clean metal has no oxide layer—so if two bare surfaces press together, the atoms bond as if they were part of the same object all along.</p>
+<p>It’s a real headache for engineers designing satellites and spacecraft, which is why space hardware is often coated with gold or special dry lubricants to keep parts from accidentally becoming one.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2699 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking me to tell them something they don&#39;t know. This is an interesting request because I don&#39;t actually know what the user knows or doesn&#39;t know. However, I can share a fascinating, obscure fact that is likely to be unknown to most people.
+
+I should pick something that is:
+1. Genuinely interesting/amazing
+2. Not common knowledge
+3. Verifiable/true
+4. Concise enough to be engaging
+
+Some options:
+- The fact that wombat poop is cube-shaped (pretty well known now)
+- The fact that there are more possible chess games than atoms in the observable universe (well known)
+- The fact that Oxford University is older than the Aztec Empire (well known)
+- The fact that a day on Venus is longer than a year on Venus (well known)
+
+Let me think of something more obscure:
+- The mantis shrimp can punch so fast it creates cavitation bubbles that reach temperatures approaching the surface of the sun.
+- There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.
+- The &quot;Impossible Trinity&quot; or some economic concept? No, too dry.
+- The Voynich manuscript? Too well known.
+- The fact that the first computer programmer was Ada Lovelace? Well known.
+- The fact that the word &quot;set&quot; has the longest definition in the Oxford English Dictionary? Well known.
+- The fact that chickens will eat their own eggs if not enough calcium? Too random.
+
+How about something about biology/nature that&#39;s truly bizarre:
+- Tardigrades can survive in the vacuum of space, extreme radiation, and being frozen for decades.
+- There&#39;s a type of fungus (Ophiocordyceps unilateralis) that infects ants and controls their behavior, making them climb to a high point before killing them so the fungus can spread its spores.
+- Lyrebirds can mimic chainsaws, camera shutters, and car alarms.
+
+Actually, here&#39;s a great one that&#39;s obscure:
+The &quot;hot ice&quot; phenomenon - sodium acetate.
+
+Or maybe something about language/etymology:
+The word &quot;mortgage&quot; comes from Old French &quot;mort&quot; (death) and &quot;gage&quot; (pledge), meaning the pledge &quot;dies&quot; when the debt is paid or the property is lost.
+
+Or about history:
+Tsutomu Yamaguchi survived both the Hiroshima and Nagasaki atomic bombings.
+
+Or about space:
+If two pieces of the same type of metal touch in space, they will permanently bond together - this is called cold welding.
+
+That&#39;s a good one! Cold welding. It&#39;s fascinating and many people don&#39;t know it.
+
+Another option: The &quot;Great Attractor&quot; - a gravitational anomaly in intergalactic space.
+
+Or: The fact that the map of the London Underground is geographically inaccurate and that this design choice has influenced how people actually navigate the city (creating &quot;cognitive maps&quot; that don&#39;t match reality).
+
+Actually, I think one of the best obscure facts is about the &quot;Impossible Trinity&quot; - no, that&#39;s economics.
+
+How about: There is a phenomenon called &quot;Zombie Worms&quot; (Osedax) - bone-eating worms that have no mouth or gut, and use acid to dissolve whale bones.
+
+Or: The fact that the human nose can detect over 1 trillion different scents (though this is debated).
+
+Let me go with something truly surprising and well-sourced:
+
+**The fact that there is a species of ant that &quot;milks&quot; aphids like cattle, but even more bizarrely, some species of ants will actually &quot;farm&quot; fungi underground using chopped up leaves, and these ants have been practicing agriculture for about 50-60 million years - longer than humans have existed.**
+
+Actually, leafcutter ants are pretty well known.
+
+How about something about the human body:
+**Your stomach lining completely replaces itself every 3-4 days because otherwise it would digest itself.**
+
+That&#39;s interesting but many biology enthusiasts know it.
+
+Let me think of something more &quot;did you know&quot; level:
+**The dot over the letter &quot;i&quot; is called a &quot;tittle.&quot;**
+
+That&#39;s a fun linguistic fact.
+
+Or: **The plastic tip at the end of a shoelace is called an &quot;aglet.&quot;**
+
+These are fun but maybe too trivial.
+
+Let me go with something genuinely mind-bending:
+**A &quot;jiffy&quot; is an actual unit of time - in computing, it&#39;s the duration of one tick of the system timer interrupt. But in physics, it&#39;s sometimes defined as the time it takes light to travel one centimeter in a vacuum (about 33.356 picoseconds).**
+
+Or: **If you shuffle a deck of cards properly, the exact order has almost certainly never existed before in the history of the universe.**
+
+That&#39;s a classic but great one.
+
+Actually, let me provide something that is both true and genuinely unknown to most people, with a bit of context.
+
+**Fact:** The blue whale&#39;s heart is so large that a human could crawl through its arteries. Its heartbeat can be detected from over 2 miles away.
+
+Or: **A flock of crows is called a &quot;murder.&quot;** (Well known)
+
+How about: **There is a town in Norway called &quot;Hell&quot; and it regularly freezes over.** (Well known)
+
+Let me pick something unusual:
+**The word &quot;oxymoron&quot; is itself an oxymoron - from Greek &quot;oxy&quot; (sharp/keen) and &quot;moros&quot; (dull/foolish).**
+
+Or: **The first product sold by Sony was a rice cooker.**
+
+I think I&#39;ll go with a biological fact that&#39;s both gross and amazing:
+**The parasitic barnacle Sacculina, when it infects a crab, doesn&#39;t just live on it - it takes over its body. It makes male crabs behave like female crabs, and even makes them care for the barnacle&#39;s eggs as if they were their own. The crab stops molting and growing, and essentially becomes a zombie servant to the parasite.**
+
+That&#39;s genuinely disturbing and fascinating. But maybe too gross?
+
+Another option: **The &quot;immortal jellyfish&quot; (Turritopsis dohrnii) can revert its cells back to their earliest form and start life over whenever it is stressed or injured. It can theoretically do this forever.**
+
+That&#39;s uplifting and amazing.
+
+Or: **The mantis shrimp doesn&#39;t just see more colors than humans - it has 12-16 color receptors compared to our 3, meaning it can see polarized light and possibly colors we can&#39;t even imagine.**
+
+I think I&#39;ll provide something about the nature of reality or physics that&#39;s mind-bending but accessible.
+
+**The fact that if you could fold a piece of paper in half 103 times, it would be thicker than the observable universe.** (Well known)
+
+**The fact that the sun makes up 99.86% of the mass of the entire solar system.** (Well known)
+
+**The fact that there are more trees on Earth than stars in the Milky Way.** (Well known)
+
+Okay, I&#39;ll go with a historical fact that&#39;s surprising:
+**The Ottoman Empire still had sultans when the first man walked on the moon. The Ottoman Empire was dissolved in 1922, so technically no - that&#39;s false. But the Qing Dynasty ended in 1912, and the first man walked on the moon in 1969, so that&#39;s not true either.**
+
+Wait, actually: **The last person to be executed by guillotine in France was in 1977 - the same year Star Wars came out.** (Hamida Djandoubi, 1977)
+
+Or: **Cleopatra lived closer in time to the moon landing than to the building of the Great Pyramid of Giza.** (Well known)
+
+How about: **The fax machine was invented in 1843 - the same year the first Christmas card was sent.**
+
+Or: **Harvard University was founded in 1636 - before calculus was invented/discovered.** (Calculus developed in late 1600s by Newton/Leibniz)
+
+That&#39;s actually a good one! Most people assume universities are as old as the subjects taught there, but calculus is younger than Harvard.
+
+Another good one: **The University of Oxford was teaching before the Aztec Empire existed (Oxford teaching began around 1096; Tenochtitlan founded 1325).** (Well known)
+
+I&#39;ll go with a fact about the human brain/body that&#39;s both useful and surprising:
+**Your brain is constantly making predictions about the future - about 80-100 milliseconds into the future. This is why you can catch a ball or drive a car. Your conscious awareness is actually a slightly delayed broadcast of what your brain has already processed. In a very real sense, you are always living in the past.**
+
+That&#39;s profound and many people don&#39;t know it.
+
+But let me check if there&#39;s something even better. How about something about language?
+
+**The word &quot;checkmate&quot; comes from the Persian &quot;shah mat,&quot; meaning &quot;the king is dead&quot; (or &quot;the king is helpless&quot;).**
+
+Or about geography:
+**Maine is the closest U.S. state to Africa.**
+
+Actually, I&#39;ll go with a combination approach - give one truly obscure fact with a bit of explanation.
+
+Final choice:
+**The &quot;spite house&quot; in Beirut (Al Baida) or the &quot;Spite House&quot; in Marblehead, MA? No.**
+
+How about: **There is a species of moth that drinks the tears of sleeping birds.** (Lacturidae, or more famously, some moths and butterflies drink tears - lachryphagy)
+
+Actually, here&#39;s a great one:
+**There is a type of virus called a &quot;virophage&quot; - a virus that infects another virus.** (Sputnik virophage infects mimivirus)
+
+That&#39;s truly bizarre and most people don&#39;t know viruses can get viruses.
+
+Or: **Prions are misfolded proteins that can cause other proteins to misfold, essentially &quot;infecting&quot; healthy tissue without any DNA or RNA.**
+
+I&#39;ll go with the virophage fact or something similarly weird.
+
+Actually, let me reconsider the prompt. The user said &quot;Tell me something I don&#39;t know.&quot; The most honest answer is that I don&#39;t know what they don&#39;t know, but I can tell them something *I* find fascinating that is relatively obscure.
+
+I&#39;ll provide the &quot;cold welding&quot; fact, or the &quot;living in the past&quot; fact, or the &quot;virophage&quot; fact.
+
+Let me pick the **&quot;you are living in the past&quot;** fact because it&#39;s relevant to everyone&#39;s daily experience, genuinely surprising, and scientifically well-established. But I&#39;ll frame it carefully.
+
+Wait, I want to make sure it&#39;s accurate. The brain does predictive processing, and conscious awareness is delayed. The 80ms figure is roughly correct for visual processing. Some sources say 100ms. It&#39;s a solid fact.
+
+Alternatively, the **&quot;cold welding&quot;** fact is clean and easy to understand: In space, if two pieces of clean metal touch, they bond permanently because there&#39;s no oxidation layer and the atoms can&#39;t tell they&#39;re from different pieces.
+
+I&#39;ll go with cold welding. It&#39;s short, surprising, and true.
+
+Actually, I&#39;ll give them something even better - a &quot;double fact&quot; structure. But the prompt is simple, so I&#39;ll keep it concise.
+
+Final answer: Cold welding in space.
+
+Let me write it:
+&quot;Here’s one: If two pieces of the same metal touch in the vacuum of space, they will permanently fuse together into a single piece.
+
+This is called cold welding. On Earth, metal surfaces have microscopic layers of oxidation and contamination, so atoms from different pieces never actually touch. But in space, without air or moisture, clean metal exposed to vacuum has no oxide layer—so if two surfaces press together, the atoms literally bond as if they were one piece all along. Engineers have to be extremely careful with satellite parts and spacewalks for this exact reason.&quot;
+
+That&#39;s good. It&#39;s true, concise, and likely unknown.
+
+Wait, I should double-check: Is this actually a significant engineering concern? Yes, cold welding is a known phenomenon in space, though modern spacecraft use materials and coatings (like gold or specific oxides) to prevent it. It&#39;s not like every satellite falls apart, but it&#39;s a real consideration.
+
+Yes, this is good. I&#39;ll go with this.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Some plants produce caffeine in their nectar — not for the benefit of bees, but to <em>manipulate</em> them.</p>
+<p>Research has shown that certain flowering plants (like <em>Citrus</em> and <em>Coffea</em> species) lace their nectar with low doses of caffeine. While it&#39;s not enough to taste bitter, it’s enough to affect bee memory and behavior. Bees that consume caffeinated nectar are more likely to remember the flower’s scent and color, and they become more faithful to that type of flower — visiting it repeatedly and ignoring other, potentially better food sources.</p>
+<p>In other words: the plant is essentially using caffeine as a mild, natural “drug” to improve pollinator loyalty, ensuring its own reproduction at the</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>0 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">Hmm, the user wants to learn something new and unexpected. Since they didn&#39;t specify a topic, I should pick something genuinely obscure but fascinating—something that feels like a hidden gem. 
+
+I recall that the relationship between bees and caffeine is a quirky fact with scientific backing. People know bees like nectar, but the caffeine addiction angle is less common. It’s also relatable—everyone knows bees and coffee—so it’ll land well. 
+
+I’ll structure it as a concise story: start with the surprising fact, explain the mechanism (nectar manipulation), and end with the evolutionary twist (plant exploiting bees). Keeping it light but precise avoids overwhelming the user. No need for jargon; just the &quot;aha&quot; moment.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/meta-muse-wonder/">← Meta: Muse Wonder</a>
+            <a href="/">all models</a>
+            <a href="/m/anthropic-claude-haiku-5.5/">Anthropic: Claude Haiku 5.5 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

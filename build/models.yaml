@@ -1314,3 +1314,35 @@ models:
     license: "open-source"
     released: "September 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "meta/muse-wonder"
+    name: "Meta: Muse Wonder"
+    provider: "Meta"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "stepfun/step-5-preview"
+    name: "StepFun: Step 5 Preview"
+    provider: "Stepfun"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "anthropic/claude-haiku-5.5"
+    name: "Anthropic: Claude Haiku 5.5"
+    provider: "Anthropic"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "google/gemini-nano-banana-2.1"
+    name: "Google: Nano Banana 2.1"
+    provider: "Google"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "mistralai/mistral-large-4-0"
+    name: "Mistral: Mistral Large 4"
+    provider: "Mistral"
+    license: "commercial"
+    released: "October 2026"
+
