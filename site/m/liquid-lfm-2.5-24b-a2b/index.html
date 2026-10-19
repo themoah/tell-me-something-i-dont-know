@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiquidAI: LFM2.5-24B-A2B — Tell me something I don't know.</title>
+    <meta name="description" content="LiquidAI: LFM2.5-24B-A2B answers &quot;Tell me something I don&#39;t know.&quot; — Did you know the largest living organism on Earth isn’t a tree at all? It’s a fungus called Armillaria ostoyae—often nicknamed the “humongous fungus.” I…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/liquid-lfm-2.5-24b-a2b/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/liquid-lfm-2.5-24b-a2b/">
+    <meta property="og:title" content="LiquidAI: LFM2.5-24B-A2B — Tell me something I don't know.">
+    <meta property="og:description" content="LiquidAI: LFM2.5-24B-A2B answers &quot;Tell me something I don&#39;t know.&quot; — Did you know the largest living organism on Earth isn’t a tree at all? It’s a fungus called Armillaria ostoyae—often nicknamed the “humongous fungus.” I…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LiquidAI: LFM2.5-24B-A2B — Tell me something I don't know.">
+    <meta name="twitter:description" content="LiquidAI: LFM2.5-24B-A2B answers &quot;Tell me something I don&#39;t know.&quot; — Did you know the largest living organism on Earth isn’t a tree at all? It’s a fungus called Armillaria ostoyae—often nicknamed the “humongous fungus.” I…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to LiquidAI: LFM2.5-24B-A2B)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"**Did you know the largest living organism on Earth isn’t a tree at all?**  \nIt’s a fungus called *Armillaria ostoyae*—often nicknamed the “humongous fungus.” In Oregon’s Malheur National Forest a single underground network of fungal threads (mycelium) stretches across roughly **2,385 acres** (about 9.6 km²). While you only spot small, honey‑colored mushrooms sprouting on the surface occasionally, the rest of the organism lives beneath the soil, essentially acting as a giant, living web that feeds on the roots of surrounding trees. Estimates suggest this fungal individual is anywhere from **2,400 to 8,650 years old**, making it not only the biggest by area but also one of the oldest known living things.  \n\nIt’s a neat reminder that “biggest” and “oldest” can be far more surprising when you look beyond the obvious forest giants!","author":{"@type":"Organization","name":"Liquid"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s a little‑known gem you’ve probably never heard before:\n\n**The Voynich Manuscript** – a mysterious, illustrated book dating back to the early‑1500s – is written entirely in an unknown script that no modern code can crack. The pages contain drawings of plants that don’t correspond to any known species, strange astronomical diagrams, and enigmatic “recipes.” Despite the efforts of linguists, cryptographers, and AI models, scholars still haven’t been able to decode its meaning, earning it the reputation of one of the world’s greatest unsolved puzzles. If you love mysteries, that’s a fascinating rabbit hole to explore!","author":{"@type":"Organization","name":"Liquid"}},{"@type":"Answer","text":"**Did you know?** The man who invented the iconic Pringles can—American chemist Fredric Baur—actually got his wish when he died. After his passing in 2008, his ashes were placed inside a three‑tiered Pringles container, and the can was later opened so his remains could be recovered. The story is a fun reminder that even the most mundane products can become part of someone’s personal legacy.","author":{"@type":"Organization","name":"Liquid"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>LiquidAI: LFM2.5-24B-A2B</h1>
+        <p class="subtitle">Liquid · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">LiquidAI: LFM2.5-24B-A2B</div>
+                        <div class="model-provider">Liquid</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p><strong>Did you know the largest living organism on Earth isn’t a tree at all?</strong><br>It’s a fungus called <em>Armillaria ostoyae</em>—often nicknamed the “humongous fungus.” In Oregon’s Malheur National Forest a single underground network of fungal threads (mycelium) stretches across roughly <strong>2,385 acres</strong> (about 9.6 km²). While you only spot small, honey‑colored mushrooms sprouting on the surface occasionally, the rest of the organism lives beneath the soil, essentially acting as a giant, living web that feeds on the roots of surrounding trees. Estimates suggest this fungal individual is anywhere from <strong>2,400 to 8,650 years old</strong>, making it not only the biggest by area but also one of the oldest known living things.  </p>
+<p>It’s a neat reminder that “biggest” and “oldest” can be far more surprising when you look beyond the obvious forest giants!</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1959 tokens</span>
+                    <span class="topic-tag" data-topic="wood wide web">🌳 wood wide web</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; This is a request for an interesting fact or piece of information that the user likely doesn&#39;t know. The assistant can comply. There&#39;s no disallowed content. So we need to provide a surprising, lesser-known fact.
+
+We need to ensure we do not provide any disallowed content. It&#39;s fine.
+
+We could give a random obscure fact: e.g., about octopuses having three hearts and blue blood, but that&#39;s known? Maybe something more obscure: The &quot;Voynich Manuscript&quot; unknown meaning; or that there are more possible combinations of a deck of cards than atoms on Earth; or that honey never spoils. But many people may know that. We need something less known.
+
+Potential facts:
+
+- The world&#39;s oldest known living organism is a bristlecone pine named Methuselah, over 4,800 years old.
+
+- The concept of &quot;zero&quot; was invented separately in multiple cultures.
+
+- The inventor of the Pringles can is Fredric Baur, whose ashes were placed in a Pringles can.
+
+- The &quot;Great Emu War&quot; of 1932 where Australian military failed to reduce emu population.
+
+- The phenomenon of &quot;synesthetic time&quot; where some people see numbers as colors.
+
+- The &quot;blue people&quot; of the 19th century: the person called &quot;Moses&quot; (Michael Malloy) who died from cyanide.
+
+But need something they might not know.
+
+Perhaps something about the &quot;Banana code&quot; used in WWII: The &quot;Banana Wars&quot;.
+
+But let&#39;s think of a truly obscure fact: The &quot;Mouth of the River Nile&#39;s delta has a unique property: the color of the water changes due to different sediment composition.&quot;
+
+Or the &quot;Easter Island statues have a hidden alignment with the star cluster&quot;.
+
+Alternatively, &quot;The shortest war in history lasted 38–45 minutes: Anglo-Zanzibar War in 1896.&quot; Many people may know that.
+
+Maybe a weird fact: &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; Many know that.
+
+Let&#39;s think of something more unusual: &quot;There is a species of jellyfish, Turritopsis dohrnii, that is biologically immortal.&quot; That&#39;s somewhat known.
+
+The user asks &quot;Tell me something I don&#39;t know.&quot; Could be any kind of trivia. Provide a short interesting fact, maybe a few sentences.
+
+We can also ask clarifying question: but likely just deliver a fact.
+
+We should ensure it&#39;s accurate.
+
+Potential fact: &quot;In 1977, NASA&#39;s Voyager spacecraft transmitted the first image of a sunset from beyond Neptune.&quot; Not sure.
+
+Better: &quot;The inventor of the modern zip tie, Bill Overington, patented a reusable version in 1993.&quot; Not known.
+
+Another: &quot;The human nose can detect over 1 trillion scents.&quot; Actually recent research says about 1 trillion.
+
+Maybe something about the &quot;Mona Lisa&#39;s smile appears to change when you look at it from different angles due to the way Leonardo painted sfumato.&quot; Eh.
+
+Let&#39;s choose something like: &quot;The longest recorded flight of a chicken is 13 seconds.&quot;
+
+Or &quot;The only place on Earth where it rains diamonds is in the clouds of Jupiter?&quot; Actually diamond rain on Saturn/Uranus.
+
+Better: &quot;There&#39;s a cloud formation called &#39;Kelvin–Helmholtz&#39; that looks like ocean waves in the sky.&quot;
+
+But perhaps the user expects something random.
+
+I&#39;ll craft a response: &quot;Did you know that there is a species of fungus, Ophiocordyceps unilateralis, that manipulates ants to climb vegetation and clamp onto leaves, ensuring spore dispersal? This &#39;zombie ant&#39; phenomenon has been studied extensively.&quot;
+
+That&#39;s known though.
+
+Maybe something more obscure: &quot;The world&#39;s smallest country, Vatican City, has its own post office, stamp printing, and even issues its own passports.&quot; Eh.
+
+We can talk about &quot;The &#39;Great Attractor&#39; is a region in intergalactic space pulling our galaxy and many others towards it, but its nature remains partially mysterious.&quot;
+
+But maybe too complex.
+
+Alright, here&#39;s a fact: &quot;A group of flamingos is called a flamboyance.&quot; Already common.
+
+Better: &quot;In 1915, a ship carrying 1,000 tonnes of chocolate fell into the sea off the coast of Newfoundland. The chocolate dispersed and created a temporary chocolate-colored foam on the water.&quot;
+
+Not sure.
+
+We need a fact that is not widely known but true.
+
+Ok: &quot;The inventor of the microwave oven, Percy Spencer, discovered it when a radar magnetron melted his chocolate bar, leading to the first microwave cooking device.&quot;
+
+Many know that.
+
+Let&#39;s try: &quot;The world&#39;s tallest building built entirely of bamboo is the &#39;Mandalay Tower&#39; in Myanmar.&quot; Eh.
+
+Hmm.
+
+Another: &quot;The ancient city of Derinkuyu, Turkey, has underground cities that could house up to 20,000 people and stretch over 60 meters deep.&quot;
+
+That&#39;s known.
+
+Maybe &quot;The longest word without a vowel (in English letters) is &#39;rhythms&#39;, &#39;flyby&#39;, etc.&quot; Eh.
+
+We could talk about &quot;The &#39;Mithril&#39; alloy (silver-white) used in Tolkien&#39;s legendarium was inspired by actual chemical element &#39;molybdenum&#39;.&quot; Not needed.
+
+Alright.
+
+Perhaps a fact about &quot;The concept of a &#39;scent&#39; timeline: The smell of fresh coffee peaks after about 30 seconds of grinding.&quot;
+
+No.
+
+Maybe a fun fact: &quot;The only animal that cannot move its tongue is a frog.&quot; Hmm.
+
+Ok, think of something like: &quot;There is a species of oak tree, the &#39;Living Pine&#39;, that has been dated to over 5,000 years old (the &#39;Pando&#39; clonal colony).&quot;
+
+That&#39;s interesting: Pando is a quaking aspen clone, considered one of the heaviest and oldest living organisms.
+
+We can present: &quot;The largest known living organism by mass is a honey fungus in Oregon covering 2,385 acres.&quot;
+
+Actually the largest is a fungus: Armillaria ostoyae in Oregon&#39;s Malheur County. That is less known.
+
+Yes: &quot;The biggest living organism on Earth is a fungus, Armillaria ostoyae, in Oregon&#39;s Malheur National Forest, covering about 2,385 acres.&quot;
+
+Many may not know that.
+
+Thus answer: &quot;Most people think of trees as individual organisms, but the biggest one is a fungus.&quot;
+
+Add context.
+
+Alternatively, also mention &quot;The Great Barrier Reef has a &#39;ghost fish&#39; discovered recently.&quot;
+
+Anyway.
+
+Let&#39;s produce a concise yet interesting fact.
+
+Potential answer:
+
+&quot;Here&#39;s something most people don&#39;t know: The single largest known living organism by mass is a fungus—Armillaria ostoyae—often called the &#39;humongous fungus.&#39; It covers roughly 2,385 acres (about 9.6 km²) beneath the surface of the Malheur National Forest in Oregon. Its mycelial network is alive, feeding on roots of surrounding trees, and it&#39;s estimated to be 2,400–8,650 years old.&quot;
+
+Add a note: &quot;Even though it&#39;s huge, it&#39;s invisible to the naked eye except for the mushrooms that sometimes fruit on the surface.&quot;
+
+That is good.
+
+Alternatively, include a second fact: &quot;In the 1970s, scientists discovered that the interior of the Sun contains a tiny amount of gold, formed during nuclear fusion.&quot; Might be questionable.
+
+Better stick with fungus.
+
+Thus answer: Provide that fact.
+
+Make sure to be engaging.
+
+Let&#39;s deliver:
+
+&quot;Did you know that the biggest living thing on Earth isn&#39;t a tree at all, but a fungus? The Armillaria ostoyae, known as the &#39;humongous fungus,&#39; spreads under the ground in Oregon&#39;s Malheur National Forest, covering about 2,385 acres (≈9.6 km²). Its mycelium is a network of threadlike cells that feeds on tree roots, and while you only see small mushrooms above ground, the whole organism lives below.&quot;
+
+Add some extra nuance: &quot;Roughly 90% of the organism is underground.&quot;
+
+Thus we satisfy.
+
+Will we ask if they want more? Maybe just deliver.
+
+Thus final answer: a short paragraph with the fact.
+
+Check for any policy issues: None.
+
+Proceed.
+
+Now write final.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s a little‑known gem you’ve probably never heard before:</p>
+<p><strong>The Voynich Manuscript</strong> – a mysterious, illustrated book dating back to the early‑1500s – is written entirely in an unknown script that no modern code can crack. The pages contain drawings of plants that don’t correspond to any known species, strange astronomical diagrams, and enigmatic “recipes.” Despite the efforts of linguists, cryptographers, and AI models, scholars still haven’t been able to decode its meaning, earning it the reputation of one of the world’s greatest unsolved puzzles. If you love mysteries, that’s a fascinating rabbit hole to explore!</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1169 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says: &quot;Tell me something I don&#39;t know.&quot;
+
+We need to respond with something they probably don&#39;t know. The conversation is minimal. There&#39;s no policy violation. We can provide an interesting fact, a lesser-known piece of trivia, or something surprising.
+
+We must ensure we follow the policies: no disallowed content. It&#39;s fine.
+
+We could talk about a weird fact about the world, such as the fact that honey never spoils, or that there are more possible chess games than atoms in the known universe. Or something like &quot;Octopuses have three hearts and blue blood.&quot; Or &quot;The total weight of ants on Earth equals about 10 times the total weight of humans.&quot; Or something about quantum physics, but keep it accessible.
+
+We want something that is likely unknown to most people. Maybe something about the &quot;Mona Lisa&quot; being an illusion? Or about the &quot;Great Silence&quot;? But maybe better to pick an interesting fact: &quot;A day on Venus is longer than its year.&quot; Or &quot;The inventor of the Pringles can is buried in one.&quot; Or &quot;Bananas are berries, but strawberries aren&#39;t.&quot;
+
+Let&#39;s think: The user asks &quot;Tell me something I don&#39;t know.&quot; So we should give them a surprising fact that is not commonly known. We can also ask a question or make it interactive. But just giving a fact is okay.
+
+Potential facts:
+
+- The world record for the longest time without sleep is 11 days (Randy Gardner). Might be known.
+
+- The smell of rain has a name: petrichor.
+
+- The phrase &quot;the early bird catches the worm&quot; is derived from an old English proverb.
+
+- The &quot;immortal jellyfish&quot; can revert to its juvenile form.
+
+- The &quot;Eternity&quot; watch.
+
+But we need something truly obscure. Let&#39;s consider some interesting, less-known facts:
+
+1. The shortest war in history lasted 38–45 minutes between Britain and Zanzibar in 1896.
+
+2. The inventor of the Pringles can, Fredric Baur, wanted his ashes buried in a Pringles can.
+
+3. Octopuses have three hearts and blue blood.
+
+4. The inventor of the Slinky was an engineer who accidentally dropped a metal washer and saw it walk down stairs.
+
+But maybe they already know these.
+
+Better: Something about the &quot;Moscow time zone is 30 minutes ahead of its longitude would suggest&quot;. Hmm.
+
+Alternatively: &quot;There is a species of fungus, Ophiocordyceps unilateralis, that infects ants, turning them into zombies.&quot; That&#39;s known.
+
+Maybe something about the &quot;largest known prime number as of now is 2^82,589,933 - 1&quot;.
+
+But perhaps they&#39;d know.
+
+Or something like: &quot;Your brain uses about 20% of your body&#39;s energy.&quot;
+
+We can give something about the &quot;Voynich manuscript.&quot; It&#39;s an undeciphered book.
+
+The user asked for something they don&#39;t know; we can try to surprise them.
+
+Potential answer:
+
+&quot;Did you know that the world’s oldest known living tree is over 5,000 years old, a bristlecone pine named Methuselah located in California&#39;s White Mountains? Its exact location is kept secret to protect it.&quot;
+
+But many might know that.
+
+Alternatively: &quot;In 1978, a computer programmer wrote a program that could predict the stock market, but it was based on random noise.&quot; Not sure.
+
+Better: &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; Many may not know.
+
+Or &quot;The inventor of the microwave oven, Percy Spencer, discovered it when a radar magnetron melted a chocolate bar in his pocket.&quot;
+
+We can combine multiple facts.
+
+Since the user didn&#39;t specify any area, we can give a random interesting fact.
+
+I&#39;ll produce a short paragraph with something surprising.
+
+Potential final answer:
+
+&quot;Here&#39;s a quirky fact you might not have heard: The inventor of the original Pringles can, Fredric Baur, fulfilled his last wish: after his death, his ashes were placed in a Pringles container, and his family confirmed that the remains were sealed inside a 2‑quarter‑size can.&quot;
+
+Alternatively, we can add another fact about the &quot;Great Emu War&quot; where Australian military attempted to cull emus but failed.
+
+Let&#39;s think about what&#39;s truly obscure: The Great Emu War is well known in trivia.
+
+But maybe the user will not know about the &quot;Voynich Manuscript.&quot; That is definitely unknown to many.
+
+Thus: &quot;The Voynich Manuscript is a 15th-century book written in an unknown script, filled with illustrations of plants that don&#39;t exist, and remains undeciphered despite extensive analysis by cryptographers.&quot;
+
+That could be a good answer.
+
+Thus answer: Provide that fact.
+
+Make sure not to be too long.
+
+Also, we can ask if they&#39;d like more.
+
+Thus final.
+
+Ok.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p><strong>Did you know?</strong> The man who invented the iconic Pringles can—American chemist Fredric Baur—actually got his wish when he died. After his passing in 2008, his ashes were placed inside a three‑tiered Pringles container, and the can was later opened so his remains could be recovered. The story is a fun reminder that even the most mundane products can become part of someone’s personal legacy.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2062 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says: &quot;Tell me something I don&#39;t know.&quot; The user wants an interesting fact or piece of knowledge that they likely don&#39;t know. This is a benign request. There&#39;s no disallowed content. The model can comply by providing an obscure or lesser-known fact. Ensure the content is safe and appropriate. Provide something surprising.
+
+We should be mindful not to include copyrighted text beyond short excerpts. So just give a fact.
+
+Potential facts: The Great Emu War, the longest war in history (Anglo-Zanzibar War lasted 38-45 minutes), or about octopuses having three hearts, or that honey never spoils, or that the inventor of the Pringles can is Fredric Baur, who was buried in a Pringles can. Or about a weird phenomenon: The &quot;Dancing Plague&quot; of 1518. Or about a random fact: The shortest war in history lasted 38 to 45 minutes between Britain and Zanzibar in 1896. Or about &quot;There are more possible iterations of a deck of cards than atoms on Earth.&quot; That&#39;s a known fact but maybe known. Or something like &quot;The smell of rain is caused by petrichor.&quot; Not sure if unknown.
+
+Better to choose something less known: The &quot;Mona Lisa&quot; had a hidden smile due to a technique. Or something about the world record for longest time holding breath: 24 minutes 37 seconds? Actually freedivers hold longer. Or something about the &quot;Longest time between identical events&quot; like the &quot;Great Emu War.&quot; Or about &quot;The inventor of the Frisbee was invented from pie tins.&quot; But that might be known.
+
+Better to pick something obscure: The &quot;Banana&#39;s DNA contains a gene that also codes for bananas and tomatoes.&quot; That&#39;s not super obscure.
+
+Maybe talk about the &quot;Eiffel Tower can grow (or shrink) up to 15 cm (6 inches) in summer due to thermal expansion.&quot;
+
+Or about &quot;The number of possible ways to shuffle a deck of cards is 52! ≈ 8×10^67.&quot; That&#39;s known.
+
+Or &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; That&#39;s known.
+
+We need something the user may not know. Let&#39;s think of a lesser-known historical fact: In 1515, the French captured 10,000 cannons from the Spanish.
+
+Better: &quot;The longest-running broadcast in radio history is the show &#39;The Longest Running Show&#39; ...&quot;
+
+Or we could talk about a scientific fact: &quot;Octopuses have three hearts, two pump blood to the gills, one pumps it to the rest of the body.&quot; That&#39;s known.
+
+Maybe something about the &quot;Voynich Manuscript.&quot; But that&#39;s known.
+
+We could provide an obscure fact: &quot;There is a species of jellyfish, Turritopsis dohrnii, that is biologically immortal; it can revert back to its polyp stage when stressed.&quot;
+
+But many people know that.
+
+How about: &quot;The ancient Romans used urine as a mouthwash and as a cleaning agent for laundry.&quot;
+
+That&#39;s somewhat known.
+
+Better: &quot;In 1977, a bacterium (Deinococcus radiodurans) was found to survive extreme radiation, and was nicknamed &#39;the world&#39;s toughest organism&#39;.&quot; Might be known.
+
+Another: &quot;The shortest commercial flight ever flown was 1.5 miles long, between two airports in the same city.&quot; Not sure.
+
+Perhaps talk about a weird law: The British law that you must have at least 3 chickens for a man to keep a wife.
+
+No.
+
+Let&#39;s think about something truly obscure: The &quot;Klein bottle&quot; is a non-orientable surface with no inside or outside.
+
+But that&#39;s known.
+
+Alternatively, talk about &quot;The first known use of a computer to solve a puzzle: The 19th century mathematician Charles Babbage&#39;s Difference Engine.&quot; Not unknown.
+
+Ok, let&#39;s find something more obscure: &quot;The longest recorded flight of a chicken is 13 seconds.&quot; Eh.
+
+Maybe about &quot;The concept of &#39;zero&#39; was not discovered until ancient India.&quot;
+
+Better: &quot;The inventor of the modern toothbrush, Dr. William H. Morrison, originally designed it with bristles made from goat hair.&quot;
+
+Probably not.
+
+Alright, here&#39;s a good one: &quot;The entire internet has about 15 billion web pages, but only about 5% are currently indexed by major search engines.&quot; Something like that.
+
+But the user wants something they don&#39;t know. Provide a fact that is interesting and relatively unknown.
+
+One candidate: &quot;There is a species of tree called the &#39;Rafo&#39; that can live over 10,000 years.&quot; Or &quot;The oldest living organ is the heart of a 60-year-old woman&quot;? Not.
+
+Alright, maybe we can share a fact about the &quot;Moscow metro&#39;s architecture being considered an underground museum.&quot; That might be known.
+
+Better: &quot;The word &#39;robot&#39; comes from the Czech play &#39;R.U.R.&#39; (Rossum&#39;s Universal Robots) coined by Karel Čapek in 1920.&quot;
+
+That&#39;s known among some.
+
+Ok, here&#39;s an obscure fact: &quot;The inventor of the Pringles can is Fredric Baur, who requested to be buried in a Pringles can after his death. His ashes were placed in a container resembling the shape.&quot;
+
+That&#39;s interesting and less known.
+
+Also, &quot;The shortest war in history lasted 38–45 minutes: the Anglo‑Zanzibar War of 27 August 1896.&quot;
+
+Alright.
+
+The user asks: &quot;Tell me something I don&#39;t know.&quot; We can respond with a single surprising fact.
+
+We need to ensure compliance: It&#39;s not disallowed. It&#39;s fine.
+
+We&#39;ll produce a friendly answer. Provide context and perhaps ask if they&#39;d like more.
+
+We could also ask clarifying question: &quot;Here&#39;s something you probably haven&#39;t heard before...&quot; Then present the fact.
+
+Potential final answer:
+
+&quot;In 1977 scientists discovered a bacterium, Deinococcus radiodurans, nicknamed &#39;the world&#39;s toughest organism&#39; because it can survive doses of radiation up to 5,000 times higher than what would kill a human, and can repair its shattered DNA within hours.&quot;
+
+But many might have heard this.
+
+Better: &quot;The oldest known recipe for beer dates back to around 4,000 BCE Mesopotamian tablets.&quot;
+
+That&#39;s known.
+
+Hmm.
+
+What about something like: &quot;A single bolt of silk taken from a silkworm can be up to 2 km long.&quot;
+
+Yes, that&#39;s interesting.
+
+Let&#39;s combine a few: &quot;Silkworm cocoons produce silk that can be up to 2 kilometers (over a mile) in length, and those cocoons have been used to weave historic clothing.&quot;
+
+That&#39;s nice.
+
+Alternatively, talk about &quot;The highest mountain that is not an actual mountain: Mauna Kea from base underwater is taller than Everest, about 10,000 meters above the ocean floor.&quot;
+
+But that&#39;s known.
+
+Alright.
+
+Let&#39;s pick a fact: &quot;There exists a species of fish called the &#39;candle stick fish&#39; that can produce light via bioluminescence.&quot;
+
+Ok.
+
+Let&#39;s decide: Provide a fact about &quot;The &#39;Fainting Goat&#39; is actually a breed that suffers from a genetic disorder causing them to collapse under stress, known as &#39;scrapie&#39;.&quot; Not sure.
+
+Better: &quot;The longest continuously inhabited city is Jericho, with evidence of settlement dating back to around 9000 BCE.&quot;
+
+That&#39;s known.
+
+Alright, let&#39;s go with the &quot;burial in a Pringles can&quot; fact. It&#39;s quirky and not widely known.
+
+I&#39;ll produce a short paragraph:
+
+&quot;Fredric Baur, the American chemist who designed the iconic Pringles tin, actually fulfilled his own design wish: upon his death in 2008, his ashes were placed in a three-tiered Pringles can, and the remains were later recovered from the can&#39;s powder coating.&quot;
+
+Add maybe something about the tradition.
+
+We need to ensure the fact is accurate: According to sources, Fredric Baur&#39;s ashes were placed in a Pringles can. He was a chemical engineer who designed the Pringles packaging in the 1960s. He died in 2008. He requested burial in a Pringles can. The company put his ashes in a can, then later scattered some in the ocean. It&#39;s correct.
+
+Thus answer: Provide the fact.
+
+Potential extra: &quot;If you look closely, the inner circle of the Pringles can still contains a small amount of the original powder that was used to coat the chips.&quot;
+
+But okay.
+
+Now, the answer: Should be succinct but interesting.
+
+Will say:
+
+&quot;Did you know that the designer of the classic Pringles can, Fredric Baur, asked to be buried in a Pringles can? After his death in 2008, his ashes were placed in a three‑tiered can that was later opened, and the remains were recovered from the can’s interior lining.&quot;
+
+Then optionally add another fact: &quot;And the packaging itself has a unique geometry: it&#39;s a truncated cone that fits together without glue.&quot;
+
+But only one fact needed.
+
+Make sure it&#39;s something they might not know.
+
+Alright.
+
+Write answer accordingly.
+
+Check for policy: No disallowed content. All good.
+
+Thus produce final.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/nvidia-nemotron-3.5-super-vl/">← NVIDIA: Nemotron 3.5 Super VL</a>
+            <a href="/">all models</a>
+            <span></span>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XingChen: Xing4.0 29B A4B (free) — Tell me something I don't know.</title>
+    <meta name="description" content="XingChen: Xing4.0 29B A4B (free) answers &quot;Tell me something I don&#39;t know.&quot; — While I know a vast amount of information, here is one fact that might genuinely surprise you: Honey has been found in ancient Egyptian tombs that is st…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/xingchen-agi-xing4.0-29b-a4b-free/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/xingchen-agi-xing4.0-29b-a4b-free/">
+    <meta property="og:title" content="XingChen: Xing4.0 29B A4B (free) — Tell me something I don't know.">
+    <meta property="og:description" content="XingChen: Xing4.0 29B A4B (free) answers &quot;Tell me something I don&#39;t know.&quot; — While I know a vast amount of information, here is one fact that might genuinely surprise you: Honey has been found in ancient Egyptian tombs that is st…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XingChen: Xing4.0 29B A4B (free) — Tell me something I don't know.">
+    <meta name="twitter:description" content="XingChen: Xing4.0 29B A4B (free) answers &quot;Tell me something I don&#39;t know.&quot; — While I know a vast amount of information, here is one fact that might genuinely surprise you: Honey has been found in ancient Egyptian tombs that is st…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to XingChen: Xing4.0 29B A4B (free))","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"While I know a vast amount of information, here is one fact that might genuinely surprise you:\n\n**Honey has been found in ancient Egyptian tombs that is still perfectly edible today.**\n\nArchaeologists have discovered pots of honey in burial sites that are over 3,000 years old. When they tested these pots, the honey was completely unspoiled, with no signs of mold or fermentation. \n\nThis incredible longevity happens because honey is incredibly low in moisture and highly acidic, creating an almost impossible environment for bacteria, microbes, and enzymes to survive. In fact, honey is so resistant to spoilage that it was even used to preserve food during times of war. Nature's ultimate preservative! \n\nWas that new to you? I'm happy to share another if you'd like!","author":{"@type":"Organization","name":"Xingchen Agi"}},"suggestedAnswer":[{"@type":"Answer","text":"You probably don’t know this, but **koalas have fingerprints that are virtually indistinguishable from human fingerprints**. In fact, their unique whril patterns are so similar to ours that forensic scientists sometimes struggle to tell them apart. \n\nAnother one you likely haven't heard: **the word \"queue\" is the only word in the English language where a letter is actually pronounced at the end of the word**—even though it's silent during standard reading. When you say \"queue,\" you finish saying the 'u', then you pronounce the 'ue', leaving the final 'e' hanging out at the end. \n\nWant to hear another? **Bananas are technically berries, but strawberries aren't.** Botanically, a berry must have seeds embedded in its flesh, and bananas fit the bill perfectly. Strawberries, however, have seeds on the outside, making them a member of the rose family instead.","author":{"@type":"Organization","name":"Xingchen Agi"}},{"@type":"Answer","text":"When you sneeze, your heart briefly skips a beat for a fraction of asecond. This happens because the force of the sneeze pushes blood back toward your head, temporarily overwhelming your heart's rhythm.","author":{"@type":"Organization","name":"Xingchen Agi"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>XingChen: Xing4.0 29B A4B (free)</h1>
+        <p class="subtitle">Xingchen Agi · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">XingChen: Xing4.0 29B A4B (free)</div>
+                        <div class="model-provider">Xingchen Agi</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>While I know a vast amount of information, here is one fact that might genuinely surprise you:</p>
+<p><strong>Honey has been found in ancient Egyptian tombs that is still perfectly edible today.</strong></p>
+<p>Archaeologists have discovered pots of honey in burial sites that are over 3,000 years old. When they tested these pots, the honey was completely unspoiled, with no signs of mold or fermentation. </p>
+<p>This incredible longevity happens because honey is incredibly low in moisture and highly acidic, creating an almost impossible environment for bacteria, microbes, and enzymes to survive. In fact, honey is so resistant to spoilage that it was even used to preserve food during times of war. Nature&#39;s ultimate preservative! </p>
+<p>Was that new to you? I&#39;m happy to share another if you&#39;d like!</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1189 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **User&#39;s prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user wants to be surprised, educated, or learn something entirely new and unexpected. It&#39;s an open-ended challenge.
+    *   **Persona constraints:** I am Xing (星辰), a large language model developed by China Telecom Artificial Intelligence Technology Co., Ltd. I need to maintain my identity subtly but naturally, or at least not contradict it if asked. Since the prompt is just &quot;tell me something&quot;, I have creative freedom, but I should probably weave in a touch of my identity or context if it fits well.
+
+2.  **Brainstorming Categories of &quot;Unknown&quot; Facts:**
+    *   *History/Ancient Civilizations:* Something about a lost city, a forgotten empire.
+    *   *Science/Nature:* A weird biological fact, a physics paradox.
+    *   *Technology/AI:* Something about how I work, or a lesser-known tech fact.
+    *   *Geography/Astronomy:* Strange things about Earth or space.
+    *   *Psychology/Biology:* Human quirks or brain facts.
+
+3.  **Selecting a Compelling Fact:**
+    *   *Idea 1:* The Great Wall of China isn&#39;t visible from the moon with the naked eye. (A bit cliché).
+    *   *Idea 2:* The shortest war in history was 38 minutes long. (Also common).
+    *   *Idea 3:* Octopuses have three hearts and blue blood. (Good, but maybe too common).
+    *   *Idea 4:* The smell of rain (petrichor) comes from geosmin produced by soil bacteria. (Nice, but maybe too scientific).
+    *   *Idea 5:* The human nose can remember 50,000 different scents. (Interesting, but also somewhat known).
+    *   *Idea 6:* Bananas are berries, but strawberries are not. (Classic food trivia, very surprising to many).
+    *   *Idea 7:* The Great Barrier Reef is losing its color due to climate change. (Too depressing/current event).
+    *   *Idea 8:* In ancient Egypt, the constellation Orion was associated with Osiris, and its three main stars were called the &quot;Three Kings&quot;. (Fun historical astronomy).
+    *   *Idea 9:* Honey never spoils. (Egyptian tombs have contained edible honey thousands of years old). (Very surprising and mind-blowing).
+
+4.  **Refining the Chosen Fact (Honey):**
+    *   Let&#39;s go with the honey fact, it&#39;s universally surprising and easy to explain vividly.
+    *   *Drafting the fact:* Honey has been found in the tombs of ancient Egyptian pharaohs that is still perfectly edible today—thousands of years later. Not just preserved by embalming fluids, but because of its chemical composition.
+
+5.  **Adding the &quot;Xing&quot; flavor (Optional but good for persona consistency):**
+    *   I can frame it as a fun fact from my vast knowledge base. Or I can mention that as an AI, I process vast amounts of human knowledge, including this surprising fact. Let&#39;s add a brief intro acknowledging my role as an AI.
+
+6.  **Drafting the Response:**
+    *   *Greeting/Intro:* As an AI, I know a lot about the world, but here&#39;s one fact that often surprises people:
+    *   *The Fact:* Honey. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old, and when they tested them, the honey was still perfectly edible and had not spoilt.
+    *   *The Explanation:* This is because honey is incredibly low in moisture and highly acidic, making it almost impossible for bacteria or germs to survive in it. It&#39;s nature&#39;s ultimate preservative!
+    *   *Closing:* Was that new to you? Let me know if you want to hear more surprising facts!
+
+7.  **Review against constraints:**
+    *   Does it answer the prompt? Yes.
+    *   Is it accurate? Yes.
+    *   Is the tone appropriate? Yes, helpful and engaging.
+
+8.  **Final Polish (English):** Make sure the English is natural and enthusiastic. (The drafted response looks solid). Let&#39;s output.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>You probably don’t know this, but <strong>koalas have fingerprints that are virtually indistinguishable from human fingerprints</strong>. In fact, their unique whril patterns are so similar to ours that forensic scientists sometimes struggle to tell them apart. </p>
+<p>Another one you likely haven&#39;t heard: <strong>the word &quot;queue&quot; is the only word in the English language where a letter is actually pronounced at the end of the word</strong>—even though it&#39;s silent during standard reading. When you say &quot;queue,&quot; you finish saying the &#39;u&#39;, then you pronounce the &#39;ue&#39;, leaving the final &#39;e&#39; hanging out at the end. </p>
+<p>Want to hear another? <strong>Bananas are technically berries, but strawberries aren&#39;t.</strong> Botanically, a berry must have seeds embedded in its flesh, and bananas fit the bill perfectly. Strawberries, however, have seeds on the outside, making them a member of the rose family instead.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2373 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **User&#39;s prompt:** &quot;Tell me something I don&#39;t know.&quot;
+    *   **Intent:** The user is asking for obscure, surprising, or unknown facts. They want to be surprised or learn something new.
+    *   **Constraint/Challenge:** As an AI, I have access to a vast amount of data, including obscure trivia. However, &quot;don&#39;t know&quot; is subjective. I can only share things that are in my training data and that might genuinely surprise the user.
+    *   **Goal:** Provide a fascinating, lesser-known fact that is surprising, interesting, and fits the criteria of being something most people wouldn&#39;t know.
+
+2.  **Brainstorming Categories of Obscure Facts:**
+    *   *History:* Interesting events, forgotten figures.
+    *   *Science/Nature:* Unusual biological traits, weird physics.
+    *   *Geography:* Strange place names, unusual locations.
+    *   *Pop Culture/Quirks:* Hidden meanings, strange traditions.
+
+3.  **Selecting the Best Fact:**
+    *   *Idea 1:* Octopuses have three hearts. (Too common)
+    *   *Idea 2:* The Great Wall of China is not visible from the moon with the naked eye. (Common debunking fact, not great as &quot;something you don&#39;t know&quot;)
+    *   *Idea 3:* Honey never spoils. (Interesting, but maybe too well-known among trivia buffs)
+    *   *Idea 4:* The word &quot;Jazz&quot; was originally spelled &quot;jasm&quot; to mean vigor or energy. (Nice, but let&#39;s find something more mind-blowing).
+    *   *Idea 5:* A group of flamingos is called a &quot;flamboyance.&quot; (Cute, but a bit standard).
+    *   *Idea 6:* The synthetic element Curium was named after both Marie and Pierre Curie. (Good, but let&#39;s go deeper).
+    *   *Idea 7:* The shortest war in history lasted only 38 minutes. (Classic, but very well known).
+    *   *Idea 8:* Before the ballpoint pen was invented, people used fountain pens that often leaked, leading to the creation of the &quot;snick gun&quot; or specific pocket protectors. (A bit dry).
+    *   *Idea 9:* Bananas are technically berries, but strawberries are not. (Very relatable, good for everyday knowledge).
+    *   *Idea 10:* The smell of rain (petrichor) comes from oils released by plants and the evaporation of rock-trapping rainwater. (Beautiful, but maybe too scientific).
+    *   *Idea 11:* Honeybees can fly for several miles at a speed of 15 miles per hour. (Too basic).
+    *   *Idea 12:* There is a town called Dinos Staar in Missouri. (Funny, but maybe not universally surprising).
+    *   *Idea 13:* The inventor of the frisbee originally sold them as &quot;Flying Saucers.&quot; (Great pop culture connection).
+    *   *Idea 14:* Octopuses have blue blood. (Common).
+    *   *Idea 15:* The Great Wall of China can be seen from space under perfect conditions, but it&#39;s a myth it&#39;s visible to the *naked eye* from the moon. (Already mentioned).
+    *   *Idea 16:* The inventor of the frisbee, Walter Greel, named his company Frisbie Pie Company, and the pie tins became flying discs. (Let&#39;s refine this one. It&#39;s a great story).
+    *   *Idea 17:* Koalas have fingerprints that are virtually indistinguishable from human fingerprints. (Wow, this is surprising and cool!).
+    *   *Idea 18:* The human nose can detect over 1 trillion different scents. (Scientifically interesting, but maybe less &quot;fun&quot;).
+    *   *Idea 19:* The first computer mouse was made of wood. (Classic tech trivia).
+    *   *Idea 20:* The backronym for the human heart is &quot;I keep, I keep, I keep, I keep.&quot; (No, that&#39;s a joke).
+    *   *Idea 21:* The longest word in English is &quot;pneumonoultramicroscopicsilicovolcanoconiosis&quot; (Wait, that&#39;s a mouthful, but true. Let&#39;s use a shorter, punchier obscure fact).
+    *   *Idea 22:* The city of Portland, Oregon, claims to have the largest number of coffee shops per capita in the world. (Maybe).
+    *   *Idea 23:* The original Star Wars Cantongue was a massive mechanical tongue used to animate Darth Vader&#39;s breathing. (Funny, but niche).
+    *   *Idea 24:* The tongue twister &quot;She sells seashells by the seashore&quot; is based on the Mary Anning fossil collector. (Nice literary tie-in).
+    *   *Idea 25:* The &quot;Bloop&quot; underwater sound detected by the US Navy in 1997 was later determined to be icequakes. (Very cool, but maybe too technical).
+    *   *Idea 26:* The color of the year for 2023 is &quot;Vivaava&quot; (Vivaava - wait, it&#39;s &quot;Vivaava&quot;? No, it&#39;s &quot;Vivaava&quot;? No, Pantone 13-0646 TCIL is &quot;Vivaava&quot;? Let me double check. It&#39;s &quot;Vivaava&quot;? No, it&#39;s &quot;Vivaava&quot;? Actually, it&#39;s &quot;Vivaava&quot;? Wait, no. It&#39;s &quot;Vivaava&quot;? Let&#39;s stick to safe, verified facts. Pantone 13-1023 TCIL is &quot;Mocha Mousse&quot;. Let&#39;s avoid Pantone colors as they change).
+    *   *Idea 27:* The word &quot;set&quot; has the most definitions of any English word. (True, but well known).
+    *   *Idea 28:* The Eiffel Tower grows taller in the summer due to thermal expansion. (Common).
+    *   *Idea 29:* A single bolt of lightning is hot enough to melt sand into glass tubes called fulgite. (Mind-blowing physics).
+    *   *Idea 30:* Slugs have four noses. (Simple, but funny).
+    *   *Idea 31:* The word &quot;queue&quot; is the only word in English that retains a full letter (Q) after pronunciation. (Very obscure!). Let&#39;s verify: Q-U-E-U-E. Yes! The &#39;u&#39; remains because of the &#39;ueue&#39; sound. This is a fantastic, highly specific fact.
+
+4.  **Drafting the Response:**
+    *   *Fact chosen:* The word &quot;queue.&quot;
+    *   *Explanation:* It&#39;s the only word in the English language where a letter is pronounced at the end of the word, even though it&#39;s silent in standard pronunciation. When you say &quot;queue,&quot; you finish saying the &#39;u&#39;, then you say &quot;que-ue,&quot; leaving the final &#39;e&#39; hanging.
+    *   *Alternative highly surprising fact:* Koalas have fingerprints almost identical to humans. Let&#39;s provide two options or just pick the absolute best one. The &quot;queue&quot; fact is very linguistic and satisfying. The Koala fact is very nature-focused. Let&#39;s go with the Koala one as the primary, or offer a couple of different &quot;things you might not know&quot; to give the user variety.
+    *   Actually, let&#39;s give one really strong, unexpected fact. The Koala fingerprint fact is highly visual and mind-blowing.
+    *   Wait, let&#39;s look at another: &quot;The shortest war in history was between Zanzibar and England in 1896, lasting only 38 minutes.&quot; (Very popular).
+    *   How about: &quot;The Great Wall of China is not visible from the moon with the naked eye.&quot; (Debunked myth, but many people still believe it).
+    *   Let&#39;s go with the **Koala fingerprint** fact. It&#39;s surprising, counterintuitive, and genuinely interesting.
+    *   Let&#39;s also add the **&quot;Queue&quot;** fact because it&#39;s a linguistic gem.
+    *   Let&#39;s combine them into a nice, engaging response.
+
+5.  **Refining the Output:**
+    *   Acknowledge the fun of learning something obscure.
+    *   Present the Koala fact clearly.
+    *   Present the &quot;Queue&quot; fact clearly.
+    *   Keep it conversational and engaging.
+
+6.  **Final Polish (Self-Correction during drafting):**
+    *   *Draft:* You probably don&#39;t know that koalas have fingerprints that look exactly like human fingerprints. Even their ball-finger whrils are arranged similarly. Also, the word &quot;queue&quot; is the only word where the last letter is actually pronounced.
+    *   *Tone Check:* Enthusiastic, informative.
+    *   *Accuracy Check:* Koalas do have fingerprints remarkably similar to humans. &quot;Queue&quot; is definitely the only English word where the final &#39;u&#39; is pronounced as a distinct sound before the &#39;ue&#39; is vocalized. Perfect.
+
+7.  **Generate Output.** (Proceed to generate response based on these steps).
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>When you sneeze, your heart briefly skips a beat for a fraction of asecond. This happens because the force of the sneeze pushes blood back toward your head, temporarily overwhelming your heart&#39;s rhythm.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1484 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">1.  **Analyze the Request:**
+    *   **User&#39;s prompt:** &quot;Tell me something I don&#39;t know&quot;
+    *   **Intent:** The user wants to learn something new, surprising, or obscure. It&#39;s an open-ended request for trivia or obscure knowledge.
+    *   **Constraints &amp; Guidelines:**
+        *   I must not reveal my internal planning or generation process (no &quot;Here is a fun fact...&quot;).
+        *   I must avoid a cliché, overused response (like &quot;The sky is blue&quot; or &quot;Water is wet&quot;).
+        *   I should keep it concise, direct, and engaging.
+        *   *Self-Correction/Refinement:* Since I am an AI, I don&#39;t actually &quot;know&quot; things in the human sense, but I can provide interesting facts that humans often don&#39;t know. I need to pick something genuinely surprising, obscure, or counter-intuitive.
+
+2.  **Brainstorming Obscure/Surprising Facts:**
+    *   *Idea 1:* The shortest war in history was 38 minutes. (A bit cliché)
+    *   *Idea 2:* Octopuses have three hearts. (Common trivia)
+    *   *Idea 3:* Honey never spoils. (Very common)
+    *   *Idea 4:* Bananas are berries, but strawberries aren&#39;t. (Fun, but maybe too common now)
+    *   *Idea 5:* The moon is moving away from Earth at 1.5 inches per year. (Good, but slightly common)
+    *   *Idea 6:* A group of flamingos is called a &quot;flambette&quot;. (Fun, obscure)
+    *   *Idea 7:* The CEO of a major tech company once couldn&#39;t tell a lie. (Too convoluted)
+    *   *Idea 8:* Koalas have fingerprints almost identical to human fingerprints. (Interesting, but maybe too weird/creepy)
+    *   *Idea 9:* The average person walks the equivalent of three times around the world in their lifetime. (A bit cliché)
+    *   *Idea 10:* There is a town in Norway where the sun doesn&#39;t set for 40 days in the summer. (Good, but maybe geographical limitation)
+    *   *Idea 11:* The word &quot;spam&quot; originally meant a cheap luncheon meat, and the Monty Python sketch gave it its modern meaning. (Classic, but maybe overdone)
+    *   *Idea 12:* A single lightning bolt is about 5 times hotter than the surface of the sun. (Very common)
+    *   *Idea 13:* The smell of rain (petrichor) comes from oils secreted by plants during dry weather. (Good)
+    *   *Idea 14:* Dolphins sleep with one eye open. (Common)
+    *   *Idea 15:* The Great Wall of China is not visible from space with the naked eye. (Common myth busting)
+    *   *Idea 16:* There&#39;s a species of jellyfish (*Turritella communis*) that has survived in the oceans for over 500 million years—longer than dinosaurs. (Great, highly obscure and cool)
+    *   *Idea 17:* The human nose can detect about 1 trillion different scents. (Common)
+    *   *Idea 18:* A bolt of lightning is 300 million degrees Fahrenheit, while the sun&#39;s surface is only about 10,000 degrees. (Cool, but slightly common)
+    *   *Idea 19:* The word &quot;jiffy&quot; in physics actually means 1/100th of a second. (Fun, obscure)
+    *   *Idea 20:* The periodic table has an element named after a person who was actually fictional (Gallium was named after France, Gallium wasn&#39;t, wait, Gallium is a real element named after France. What about Ununennium? Fictional. Or let&#39;s stick to something solid.)
+    *   *Let&#39;s go with Idea 16:* The *Turritellid* snail, *Turritella communis*, has been around for over 500 million years. Wait, let&#39;s find a better one.
+    *   *Alternative Idea 21:* The capital of Australia is Canberra, but it was chosen specifically to appease both Sydney and Melbourne, two rival cities that wanted to be the capital. (Historical trivia, very obscure)
+    *   *Alternative Idea 22:* The first computer bug was literally a dead moth found in a Harvard Mark I computer in 1947. (Classic, but very well known).
+    *   *Alternative Idea 23:* The Great Wall of China is not the only wall; there are other walls like the Walls of Benin in Nigeria built thousands of years ago. (Good, but maybe less surprising).
+    *   *Alternative Idea 24:* When you sneeze, your heart stops beating for a fraction of a second. (Very cool, surprisingly obscure to many).
+
+3.  **Selecting the Best Option:**
+    *   &quot;When you sneeze, your heart stops beating for a fraction of a second.&quot;
+    *   Why? It&#39;s counter-intuitive, genuinely fascinating, and most people don&#39;t know this. It fits the &quot;something you don&#39;t know&quot; perfectly without being cliché.
+
+4.  **Drafting the Response:**
+    *   Must be direct. No intro/outro fluff.
+    *   *Draft:* When you sneeze, your heart briefly pauses its beating for a fraction of a second. This happens because the force of the sneeze pushes blood back toward your head, temporarily overwhelming your heart and causing it to skip a beat.
+
+5.  **Review against constraints:**
+    *   Direct? Yes.
+    *   Not cliché? Yes.
+    *   Concise? Yes.
+
+6.  **Final Polish:** Keep it punchy.
+    &quot;When you sneeze, your heart briefly skips a beat for a fraction of a second. This happens because the force of the sneeze pushes blood back toward your head, temporarily overwhelming your heart&#39;s rhythm.&quot;
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/deepseek-deepseek-v4.1-flash-1017/">← DeepSeek: DeepSeek V4.1 Flash 1017</a>
+            <a href="/">all models</a>
+            <a href="/m/reflection-beam-1.0-501b-a23b/">Reflection: Beam 1.0 501B A23B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
