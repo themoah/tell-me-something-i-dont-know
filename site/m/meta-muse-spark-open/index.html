@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta: Muse Spark Open — Tell me something I don't know.</title>
+    <meta name="description" content="Meta: Muse Spark Open answers &quot;Tell me something I don&#39;t know.&quot; — I don&#39;t know what you know, so I&#39;ll gamble on something you probably don&#39;t: A photon of light hitting your face today was born 100,000 years ago. Light…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/meta-muse-spark-open/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/meta-muse-spark-open/">
+    <meta property="og:title" content="Meta: Muse Spark Open — Tell me something I don't know.">
+    <meta property="og:description" content="Meta: Muse Spark Open answers &quot;Tell me something I don&#39;t know.&quot; — I don&#39;t know what you know, so I&#39;ll gamble on something you probably don&#39;t: A photon of light hitting your face today was born 100,000 years ago. Light…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta: Muse Spark Open — Tell me something I don't know.">
+    <meta name="twitter:description" content="Meta: Muse Spark Open answers &quot;Tell me something I don&#39;t know.&quot; — I don&#39;t know what you know, so I&#39;ll gamble on something you probably don&#39;t: A photon of light hitting your face today was born 100,000 years ago. Light…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Meta: Muse Spark Open)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"I don't know what you know, so I'll gamble on something you *probably* don't:\n\n**A photon of light hitting your face today was born 100,000 years ago.**\n\nLight takes 8 minutes to get from the Sun to Earth, but that's just the last leg of the trip. Photons are created by fusion in the Sun's core, and then spend 100,000 to 1 *million* years bouncing around randomly inside the Sun's dense radiative zone trying to escape. Once they finally break free of the surface, *then* they sprint to you in 8 minutes.\n\nSo sunlight is ancient light on a super fast delivery.\n\nHere are two more on the house, in case you knew that one:\n\n**1. Trees have an internet.**\nForests are connected underground by a massive network of fungi called mycorrhizae - scientists call it the \"Wood Wide Web.\" Trees use it to share nutrients and send chemical warning signals. Mother trees will even pump extra sugars to their sick offspring through it.\n\n**2. There is a biologically immortal animal.**\nThe jellyfish *Turritopsis dohrnii* never really dies of old age. When it's injured, sick, or just old, it can revert its cells back to childhood and turn back into a baby polyp. Then it starts its life over. It can do this indefinitely.\n\n**3. Shuffling cards creates something that has never existed before.**\nThere are 8.07 x 10^67 ways to shuffle a 52-card deck. That's 80,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 ways.\n\nEvery time you shuffle well, you are almost certainly holding an arrangement of cards that has never existed in human history and will never exist again.\n\nWant more? Give me a category - space, body, history, psychology, animals - and I'll go deeper down the rabbit hole.","author":{"@type":"Organization","name":"Meta"}},"suggestedAnswer":[{"@type":"Answer","text":"Challenge accepted. I don't know what you know, so I'll aim for something you *probably* don't:\n\n**You can't hum while holding your nose.**\n\nTry it right now - pinch your nose shut and try to hum. You can't. Humming requires air to escape through your nose, and when it's blocked there's nowhere for it to go.\n\nHere are two more while I'm at it:\n\n**1. There are more ways to shuffle a deck of cards than atoms on Earth.**\n52 cards = 52! possible shuffles. That's an 8 followed by 67 zeros. There are only about 10^50 atoms on Earth. That means every time you shuffle a deck well, you've almost certainly created an order of cards that has *never existed before* in human history.\n\n**2. Cleopatra lived closer to you ordering pizza than to the pyramids being built.**\nThe Great Pyramid was finished around 2560 BCE. Cleopatra died in 30 BCE. That's a ~2,500 year gap. You are only ~2,050 years after Cleopatra. She would have been studying the pyramids as \"ancient history\" just like we study her.\n\nWant another one? Tell me the vibe - creepy, mind-bending, cute, useless trivia, or science - and I'll go deeper.","author":{"@type":"Organization","name":"Meta"}},{"@type":"Answer","text":"I have no idea what you *do* know, so I'll go for one that surprises almost everyone:\n\n**You are literally glowing right now.**\n\nNot metaphorically. In 2009, Japanese researchers put people in ultra-sensitive cameras in complete darkness and found that humans emit a tiny amount of visible light.\n\nIt's called ultra-weak photon emission — a byproduct of your metabolism. It's about 1,000 times too dim for your eyes to see, it peaks around 4pm and is lowest around 10am, and your face glows more than the rest of you.\n\nSo you're bioluminescent. You're just a really dim flashlight.\n\nA couple rapid-fire backups in case you knew that one:\n\n1. **Sharks are older than trees.** Sharks have been around for ~440 million years. The first trees showed up around 385 million years ago.\n\n2. **Wombats poop cubes.** They make 4-8 flat-sided cubes a day to stack and mark territory. Scientists actually won an Ig Nobel Prize figuring out how their intestines squeeze it into corners.\n\nWant another one? Give me a category — space, body, history, creepy, cute — and I'll go deeper.","author":{"@type":"Organization","name":"Meta"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Meta: Muse Spark Open</h1>
+        <p class="subtitle">Meta · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="1">★<span class="star-empty">☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Meta: Muse Spark Open</div>
+                        <div class="model-provider">Meta</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="1">★<span class="star-empty">☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I don&#39;t know what you know, so I&#39;ll gamble on something you <em>probably</em> don&#39;t:</p>
+<p><strong>A photon of light hitting your face today was born 100,000 years ago.</strong></p>
+<p>Light takes 8 minutes to get from the Sun to Earth, but that&#39;s just the last leg of the trip. Photons are created by fusion in the Sun&#39;s core, and then spend 100,000 to 1 <em>million</em> years bouncing around randomly inside the Sun&#39;s dense radiative zone trying to escape. Once they finally break free of the surface, <em>then</em> they sprint to you in 8 minutes.</p>
+<p>So sunlight is ancient light on a super fast delivery.</p>
+<p>Here are two more on the house, in case you knew that one:</p>
+<p><strong>1. Trees have an internet.</strong>
+Forests are connected underground by a massive network of fungi called mycorrhizae - scientists call it the &quot;Wood Wide Web.&quot; Trees use it to share nutrients and send chemical warning signals. Mother trees will even pump extra sugars to their sick offspring through it.</p>
+<p><strong>2. There is a biologically immortal animal.</strong>
+The jellyfish <em>Turritopsis dohrnii</em> never really dies of old age. When it&#39;s injured, sick, or just old, it can revert its cells back to childhood and turn back into a baby polyp. Then it starts its life over. It can do this indefinitely.</p>
+<p><strong>3. Shuffling cards creates something that has never existed before.</strong>
+There are 8.07 x 10^67 ways to shuffle a 52-card deck. That&#39;s 80,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 ways.</p>
+<p>Every time you shuffle well, you are almost certainly holding an arrangement of cards that has never existed in human history and will never exist again.</p>
+<p>Want more? Give me a category - space, body, history, psychology, animals - and I&#39;ll go deeper down the rabbit hole.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2288 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span> <span class="topic-tag" data-topic="wood wide web">🌳 wood wide web</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">User says &quot;Tell me something I don&#39;t know.&quot; We need to respond with something interesting, obscure, surprising. Could do multiple facts. Should be engaging. Perhaps ask about interests? But provide something. Need to be creative.
+
+We don&#39;t know what user knows, so we need to pick something likely unknown. Provide maybe several facts across domains: science, history, psychology, etc.
+
+Could provide something like: octopuses have three hearts, etc. But that&#39;s well known. Need something truly obscure.
+
+Ideas:
+- Bananas are berries but strawberries aren&#39;t.
+- There is a species of immortal jellyfish.
+- Wombat poop is cube-shaped.
+- The Eiffel Tower can grow 6 inches in summer due to thermal expansion.
+- Humans share 50% DNA with bananas.
+- Scotland&#39;s national animal is unicorn.
+- There is a planet where it rains glass.
+- Your stomach gets new lining every 3-4 days.
+- The sound of a black hole is B-flat 57 octaves below middle C.
+- There are more trees on Earth than stars in Milky Way.
+- Sharks existed before trees.
+- Cleopatra lived closer to moon landing than to construction of Great Pyramid.
+- You can&#39;t hum while holding your nose.
+- etc.
+
+Need to pick something less known.
+
+Could do: In 1956, a US town... Or the &quot;Wow! signal&quot;.
+
+Better to give a few mind-blowing facts tailored to be likely unknown.
+
+Possibly ask follow-up: What category? But provide immediate value.
+
+We could also do a unique angle: Tell me something I don&#39;t know - meta response: Explain unknown unknowns.
+
+We should be playful, conversational.
+
+We should avoid being too generic. Perhaps provide 3-5 facts from different categories: Space, Biology, History, Human behavior.
+
+We can also provide a deep dive into one fascinating topic.
+
+Options for obscure facts:
+- The &quot;Mice Utopia Experiment&quot; Universe 25.
+- There&#39;s a fungus that turns ants into zombies.
+- Humans glow faintly (bioluminescence) but eyes can&#39;t see.
+- The Oxford University is older than Aztec Empire.
+- There is enough gold in Earth&#39;s core to coat entire planet.
+- Water can boil and freeze at same time at triple point.
+- Honey never spoils - edible 3000-year-old honey found.
+- The Dutch village of Giethoorn has no roads, only canals.
+- Your brain generates ~20 watts of power.
+- Every two minutes we take more pictures than humanity did in 19th century.
+
+We want something I don&#39;t know - we should assume user is intelligent. Provide something surprising and verifiable.
+
+Could do: The reason you get goosebumps.
+
+We could structure answer: Here&#39;s something wild - then explanation.
+
+Add humor.
+
+Possibly personalize: Since I don&#39;t know what you know, here&#39;s a buffet.
+
+Better to give one killer fact with story.
+
+Example: In 1977, we received a 72-second radio signal from space that looked exactly like alien contact, called the Wow! signal, and it&#39;s never been explained or repeated.
+
+Or: There is a forest in Poland where all trees are bent at 90 degrees (Crooked Forest) and no one knows why.
+
+Or: Lake Hillier in Australia is bubblegum pink year-round and scientists aren&#39;t 100% sure why.
+
+Or: You have a second brain in your gut with 100 million neurons.
+
+Could do: Octopus arms have minds of their own - two-thirds of neurons in arms.
+
+We should make it engaging and invite follow-up.
+
+We should avoid condescending.
+
+We should keep tone friendly.
+
+We might ask: Want more? What topic?
+
+We should not claim to know user&#39;s knowledge.
+
+We can provide citations? Not needed.
+
+We should ensure facts are accurate.
+
+Let&#39;s craft final answer: Provide 3-4 lesser-known facts, each with short explanation.
+
+Make it punchy.
+
+Potential structure:
+
+Alright, here&#39;s one you probably haven&#39;t heard...
+
+1. ...
+2. ...
+3. ...
+
+Or pick one deep fact: The Earth has a secret 8th continent Zealandia...
+
+Better to be diverse.
+
+We should avoid overused facts like &quot;octopus has three hearts&quot; - that&#39;s too known for many.
+
+We need more obscure:
+
+- Sharks are older than the North Star (Polaris). Sharks ~400M years, Polaris ~70M years.
+- There are more ways to shuffle a deck of cards than atoms on Earth. 8.07e67 vs ~1e50 atoms on Earth? Actually atoms on Earth ~1.33e50, shuffles 8e67, yes.
+- Your eyes blink ~28,800 times a day but your brain edits out the darkness so you never notice.
+- The Sahara Desert used to be green and have lakes with hippos 6,000 years ago.
+- Astronauts in space can&#39;t burp because there&#39;s no gravity to separate gas.
+
+We can pick those.
+
+We should ensure we are correct: Can astronauts burp? Actually they can but it&#39;s difficult; without gravity gas doesn&#39;t rise.
+
+We should be careful with accuracy.
+
+Better facts:
+
+- There is a type of jellyfish that is biologically immortal: Turritopsis dohrnii can revert to polyp stage.
+- Wombats are only animal to produce cube-shaped poop to mark territory without it rolling away.
+- Before erasers were invented, bread was used to erase pencil marks.
+- The total weight of all ants on Earth is greater than total weight of all humans? Actually debatable, recent studies say ants ~12 megatons dry weight vs humans ~60 megatons? So not. Better not use contested.
+
+- Humans shed ~600,000 skin particles every hour, most dust in house is skin? Actually myth, most dust is soil, fibers.
+
+We should avoid myths.
+
+We should provide solid facts.
+
+Ideas for solid obscure facts:
+
+1. **You can hear a black hole.** NASA sonified pressure waves from Perseus cluster black hole - it&#39;s a B-flat 57 octaves below middle C.
+
+2. **There is a town in Norway where the sun doesn&#39;t set for 2 months and doesn&#39;t rise for 2 months.** Actually many Arctic towns.
+
+3. **Trees talk to each other via underground fungal networks (Wood Wide Web) and even send nutrients to sick neighbors.**
+
+4. **Your blood is actually never blue - veins look blue due to light scattering.**
+
+5. **The inventor of the frisbee was turned into a frisbee after he died - Walter Morrison was cremated and made into a memorial frisbee.**
+
+That&#39;s good obscure.
+
+We should pick maybe 3.
+
+We should deliver with storytelling.
+
+We should end with question: Want more on X?
+
+We should keep tone light, curious.
+
+We should not be too long but thorough.
+
+We should consider user might want something philosophical.
+
+We could also do: Tell me something I don&#39;t know - meta: You don&#39;t know what you&#39;ll forget tomorrow.
+
+We should avoid being too meta.
+
+We should ensure we comply with policy: No disallowed content. It&#39;s fine.
+
+We should use second person.
+
+We should maybe add humor: I don&#39;t know what you don&#39;t know, so I&#39;ll gamble.
+
+We should maybe ask about interests for next fact.
+
+We should provide citations? Not required.
+
+We should ensure we don&#39;t hallucinate.
+
+We should provide final answer in engaging style.
+
+We should maybe include one fact that is mind-blowing and recent: James Webb discovered galaxies that shouldn&#39;t exist...
+
+We could do: Light from the sun is 8 minutes old, but photons inside sun took 100,000 years to get out.
+
+That&#39;s good: A photon takes 100k-1M years to escape sun&#39;s core to surface, then 8 min to Earth.
+
+We should ensure accuracy: Yes, radiative zone random walk.
+
+We should deliver.
+
+We should maybe include sources? Not needed.
+
+We should keep language simple.
+
+We should not be overly formal.
+
+We should add a bit of wit.
+
+We should ensure we answer in English as user asked in English.
+
+We should not ask for personal data.
+
+We should proceed to final.
+
+We should consider adding bullet points.
+
+We should ensure we don&#39;t repeat known facts like &quot;water is wet&quot;.
+
+We should provide something truly surprising.
+
+We should maybe tailor to adult.
+
+We should avoid being too childish.
+
+We should ensure we don&#39;t use excessive emojis? Some is okay but not too many.
+
+We should provide final answer.
+
+We should maybe include a fact about human body: You have ~38 trillion bacteria vs 30 trillion human cells - you&#39;re more bacteria than human.
+
+We should ensure that&#39;s accurate: Recent estimate ~38T bacteria vs 30T human cells.
+
+We should include that.
+
+We should pick 3-4 best:
+
+1. Light you&#39;re seeing from sun is ancient.
+2. Trees have internet.
+3. There is an immortal jellyfish.
+4. Shuffling cards fact.
+
+We should choose.
+
+We should deliver final answer with hook.
+
+We should end with invitation.
+
+We should not be too long: maybe ~250-350 words.
+
+We should ensure we are helpful.
+
+We should proceed.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Challenge accepted. I don&#39;t know what you know, so I&#39;ll aim for something you <em>probably</em> don&#39;t:</p>
+<p><strong>You can&#39;t hum while holding your nose.</strong></p>
+<p>Try it right now - pinch your nose shut and try to hum. You can&#39;t. Humming requires air to escape through your nose, and when it&#39;s blocked there&#39;s nowhere for it to go.</p>
+<p>Here are two more while I&#39;m at it:</p>
+<p><strong>1. There are more ways to shuffle a deck of cards than atoms on Earth.</strong>
+52 cards = 52! possible shuffles. That&#39;s an 8 followed by 67 zeros. There are only about 10^50 atoms on Earth. That means every time you shuffle a deck well, you&#39;ve almost certainly created an order of cards that has <em>never existed before</em> in human history.</p>
+<p><strong>2. Cleopatra lived closer to you ordering pizza than to the pyramids being built.</strong>
+The Great Pyramid was finished around 2560 BCE. Cleopatra died in 30 BCE. That&#39;s a ~2,500 year gap. You are only ~2,050 years after Cleopatra. She would have been studying the pyramids as &quot;ancient history&quot; just like we study her.</p>
+<p>Want another one? Tell me the vibe - creepy, mind-bending, cute, useless trivia, or science - and I&#39;ll go deeper.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1955 tokens</span>
+                    <span class="topic-tag" data-topic="cleopatra">👑 cleopatra</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">User wants something they don&#39;t know. Need to respond with something interesting, obscure, surprising. Could ask about interests, but better give something cool.
+
+We should be engaging. Provide multiple facts? Perhaps one deep fact. Or give options. The prompt is vague. We can give a fascinating fact.
+
+We should tailor to be surprising. Perhaps something about science, history, psychology.
+
+We could say: You don&#39;t know what you don&#39;t know, but here&#39;s something... Provide something like: Octopuses have three hearts and blue blood, but also... Or the universe... Or about human body.
+
+Better to give a few facts across categories, let user choose.
+
+Make it conversational, playful.
+
+Possibly add: Did you know that...
+
+We can make it interactive. Ask what kind of thing they want.
+
+We should avoid being too generic. Provide something truly lesser known.
+
+Ideas:
+
+- Bananas are berries but strawberries are not.
+- There is a species of jellyfish that is biologically immortal (Turritopsis dohrnii).
+- Humans share 50% DNA with bananas? That&#39;s known.
+- Wombat poop is cube-shaped.
+- Scotland&#39;s national animal is unicorn.
+- There are more trees on Earth than stars in Milky Way.
+- Your stomach gets a new lining every 3-4 days or else it would digest itself.
+- The Eiffel Tower can grow 6 inches in summer due to thermal expansion.
+- Water can boil and freeze at same time at triple point.
+- There is a planet where it rains glass sideways (HD 189733b).
+- Shakespeare invented over 1700 words.
+- Octopus arms have neurons...
+
+Better to give something mind-blowing: The light from the sun is 8 minutes old, but photons inside sun take 100,000 years to get out.
+
+Or: You have likely never seen your true face, only reflections and photos which are reversed/distorted.
+
+Or: Humans glow, but eyes can&#39;t see it - bioluminescence.
+
+Or: There is an undiscovered color? No.
+
+Provide a fact about time: Cleopatra lived closer to moon landing than to building of Great Pyramid.
+
+That&#39;s a good one many don&#39;t know.
+
+Or: Oxford University is older than Aztec Empire.
+
+We can deliver one great fact with explanation.
+
+We should be personable. Ask follow up.
+
+We should not assume what they know. Provide something obscure.
+
+We could do: Tell me something I don&#39;t know -&gt; respond with meta: The fact that you will die on a day that will have a weather forecast.
+
+Hmm.
+
+Better to give multiple tiers: Science, History, Human Body, Space.
+
+Make it memorable.
+
+Add humor.
+
+Potentially ask: What vibe do you want? Creepy, cool, useless trivia?
+
+Provide something like: Your brain generates about 20 watts of power - enough to power a dim light bulb.
+
+We should ensure compliance.
+
+We can respond in engaging tone.
+
+Perhaps include sources? Not needed.
+
+We can also do a trick: Tell them about &quot;sonder&quot; or &quot;vellichor&quot; etc.
+
+We should avoid repeating common facts they&#39;ve likely heard. Provide deep cut.
+
+Deep cuts:
+
+- There is a mushroom that creates wind to spread spores.
+- Trees can communicate via Wood Wide Web mycorrhizal network.
+- Humans have stripes called Blaschko&#39;s lines invisible normally.
+- Before erasers, bread was used to erase pencil.
+- The inventor of the frisbee was turned into a frisbee after he died (cremated and made into memorial frisbee).
+- Lobsters were once considered prison food, fed to prisoners so often it was considered cruel.
+- In Switzerland it&#39;s illegal to own just one guinea pig because they get lonely.
+- Australian army once lost a war to emus (Emu War 1932).
+
+Emu War is good.
+
+We can pick one and elaborate.
+
+We should make response concise but interesting. Offer to give more.
+
+Possibly tailor: Since we don&#39;t know user, give a fact that is almost universally unknown.
+
+We can say: Here&#39;s one...
+
+Make it interactive.
+
+Probably best structure:
+
+Hey, here&#39;s a good one...
+
+Explain fact.
+
+Then: Want more? Tell me category.
+
+Add playful challenge.
+
+We should not be too long.
+
+We must not be condescending.
+
+We should use second person.
+
+We can add: Something you don&#39;t know about yourself?
+
+E.g., You shed about 600,000 skin particles every hour, and much of household dust is dead skin? Actually dust is mostly not skin, myth. So correct myth.
+
+Better to debunk myth: You don&#39;t swallow 8 spiders a year in sleep - that was made up.
+
+We can do myth-busting.
+
+We should ensure factual accuracy.
+
+Let&#39;s pick 3 facts of different flavors to maximize chance they don&#39;t know one.
+
+Provide:
+
+1. Space/Time mind-bender
+2. Biology weirdness
+3. Human history weirdness
+
+Add sources? Not needed.
+
+Use friendly tone.
+
+We can also ask about their interests to personalize next fact.
+
+We should not ask for personal data.
+
+We can comply.
+
+Make sure not to be too generic AI.
+
+We should answer in English as user asked in English.
+
+We can add humor.
+
+Potential final answer:
+
+Alright, here&#39;s one...
+
+Maybe include: There are more ways to shuffle a deck of cards than atoms on Earth. That&#39;s 8.06e67.
+
+That&#39;s mind-blowing.
+
+Let&#39;s do that.
+
+We should ensure we don&#39;t claim false.
+
+Let&#39;s verify: Number of ways to shuffle 52 cards = 52! ≈ 8.0658e67. Atoms on Earth ≈ 1.33e50 atoms. Yes, shuffles &gt; atoms on Earth. Actually true.
+
+That&#39;s a good one many don&#39;t know.
+
+Another: The universe&#39;s color is beige - cosmic latte.
+
+We can deliver.
+
+We should pick one main fact, then offer more.
+
+Make response engaging.
+
+We should not be overly verbose.
+
+We can add: &quot;Tell me something I don&#39;t know&quot; -&gt; playful: I don&#39;t know what you don&#39;t know, but I&#39;ll try.
+
+We should avoid cliché.
+
+We can respond with: Did you know that...
+
+We should ensure we don&#39;t violate policy. It&#39;s fine.
+
+We can add follow-up question.
+
+We should not hallucinate.
+
+We should keep tone friendly, curious.
+
+We should not use excessive emojis. Maybe one.
+
+We should ensure we don&#39;t be too formal.
+
+We should answer.
+
+Potential answer structure:
+
+- Acknowledge challenge
+- Drop fact #1 (e.g., Cleopatra vs Moon landing vs Pyramids)
+- Drop fact #2 (e.g., trees talking)
+- Drop fact #3 (e.g., your brain deletes memories)
+
+Offer to go deeper.
+
+We can do that.
+
+We should make it memorable.
+
+We should ensure we don&#39;t repeat same fact everyone knows.
+
+We should avoid overused facts like &quot;octopus has three hearts&quot; - many know.
+
+Pick obscure but verified.
+
+Obscure facts:
+
+- Honey never spoils. Archaeologists found 3000-year-old honey in Egyptian tombs still edible.
+- That&#39;s known but still cool.
+
+- Humans are bioluminescent but 1000x too dim to see.
+
+- There&#39;s a lake under Antarctica that hasn&#39;t been exposed for millions of years (Lake Vostok).
+
+- Your eyes have a blind spot where optic nerve leaves, brain fills it in, you never notice.
+
+We can do blind spot demonstration.
+
+We can do: You can&#39;t hum while holding your nose. Try it.
+
+That&#39;s interactive.
+
+We can say: Try to hum while pinching your nose shut - you can&#39;t. Because humming requires air to escape through nose.
+
+That&#39;s fun, testable.
+
+We can include that.
+
+We should provide something they can verify now.
+
+That is engaging.
+
+We can do: Here&#39;s something you didn&#39;t know about yourself 5 seconds ago...
+
+We should combine.
+
+Let&#39;s craft final answer:
+
+&quot;Challenge accepted... Here&#39;s 3...&quot;
+
+Make it punchy.
+
+Add: Want creepy, cute, or mind-bending next?
+
+We should keep it shortish, maybe ~200-250 words.
+
+We should not be too long.
+
+We should ensure we don&#39;t ask for personal info.
+
+We should be helpful.
+
+We should not mention cutoff.
+
+We should answer in final channel.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>I have no idea what you <em>do</em> know, so I&#39;ll go for one that surprises almost everyone:</p>
+<p><strong>You are literally glowing right now.</strong></p>
+<p>Not metaphorically. In 2009, Japanese researchers put people in ultra-sensitive cameras in complete darkness and found that humans emit a tiny amount of visible light.</p>
+<p>It&#39;s called ultra-weak photon emission — a byproduct of your metabolism. It&#39;s about 1,000 times too dim for your eyes to see, it peaks around 4pm and is lowest around 10am, and your face glows more than the rest of you.</p>
+<p>So you&#39;re bioluminescent. You&#39;re just a really dim flashlight.</p>
+<p>A couple rapid-fire backups in case you knew that one:</p>
+<ol>
+<li><p><strong>Sharks are older than trees.</strong> Sharks have been around for ~440 million years. The first trees showed up around 385 million years ago.</p>
+</li>
+<li><p><strong>Wombats poop cubes.</strong> They make 4-8 flat-sided cubes a day to stack and mark territory. Scientists actually won an Ig Nobel Prize figuring out how their intestines squeeze it into corners.</p>
+</li>
+</ol>
+<p>Want another one? Give me a category — space, body, history, creepy, cute — and I&#39;ll go deeper.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2963 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond with something interesting, obscure fact. User wants &quot;Tell me something I don&#39;t know.&quot; Could assume unknown, but provide interesting fact. Should be engaging. Provide multiple options? Perhaps ask about category? Provide fascinating fact.
+
+We should be creative. Provide something surprising. Maybe several facts across domains.
+
+We should keep tone friendly, playful. Perhaps give a fact that is mind-blowing.
+
+We could give fact about octopus, bananas, universe, etc.
+
+Possibly tailor to unknown. Provide fact about: There is a species of immoral jellyfish? Or that wombat poop is cube-shaped. Or that there is more trees on Earth than stars in Milky Way. Or that Scotland&#39;s national animal is unicorn.
+
+We could ask follow-up: what category you want.
+
+We should avoid condescending. Provide something genuinely obscure.
+
+Potential facts:
+
+- Humans share 50% DNA with bananas.
+- The Eiffel Tower can grow 6 inches in summer due to thermal expansion.
+- Octopuses have three hearts, blue blood.
+- There is a planet made of diamonds (55 Cancri e)
+- Your stomach gets new lining every 3-4 days or you&#39;d digest yourself.
+- Water can boil and freeze at same time at triple point.
+- Sharks existed before trees.
+- The universe&#39;s color is beige - cosmic latte.
+- Cleopatra lived closer to moon landing than to pyramids construction.
+- There&#39;s a fungus that is largest living organism.
+
+Choose one deep dive or multiple quick facts.
+
+User prompt is open. Probably provide one excellent fact with explanation, then offer more.
+
+We should be concise but interesting. Add humor.
+
+We should not claim to know what user knows/doesn&#39;t know. Acknowledge we don&#39;t know what they know.
+
+We could do interactive: Tell me something I don&#39;t know.
+
+Answer: Did you know...
+
+Make it memorable.
+
+Potential structure:
+
+Alright, bet: ...
+
+Fact: Bananas are berries but strawberries aren&#39;t.
+
+Or: You have never seen your own face, only reflections/photos.
+
+Or: There&#39;s an immortal jellyfish.
+
+Better to give fact that is less commonly known. Many people know octopus hearts. Need more obscure.
+
+Obscure facts:
+
+- The inventor of the frisbee was turned into a frisbee after he died (Walter Morrison cremated and made into memorial frisbee).
+- Before erasers, people used bread to erase pencil.
+- There&#39;s a town in Norway where it&#39;s illegal to die (Longyearbyen - because bodies don&#39;t decompose in permafrost). Actually not illegal but discouraged.
+- Humans glow, but eyes can&#39;t see it - bioluminescence.
+- Australia once lost a war to emus - Emu War 1932.
+- Whales have menopause - only 3 species: humans, killer whales, short-finned pilot whales.
+- The Hawaiian alphabet has only 12 letters.
+- Oxford University is older than Aztec Empire.
+- There&#39;s enough gold in Earth&#39;s core to coat entire planet.
+
+Pick one and elaborate.
+
+We could provide fact about time: If you folded paper 42 times, it would reach moon.
+
+Or about space: Venus has day longer than year.
+
+We should provide source? Not needed.
+
+Make it engaging, conversational.
+
+Potentially ask: What topic you want?
+
+User likely expects single interesting fact. Provide maybe 3 quick facts to maximize chance they don&#39;t know.
+
+We should avoid repeating common trivia. Provide lesser-known.
+
+Ideas for lesser-known:
+
+- Your brain deletes your nose from your vision - you can see it if you try, but brain filters it.
+- People with blue eyes share single common ancestor from ~10,000 years ago.
+- Trees communicate via underground fungal network - Wood Wide Web.
+- There are more ways to shuffle deck of cards than atoms on Earth.
+- Light from Sun is 30,000 years old? Actually photons take long to escape core.
+
+Better fact: The Apollo astronauts&#39; spacesuits were made by a bra manufacturer - Playtex.
+
+Or: Coca-Cola&#39;s first bottle was designed to be recognized in dark or broken.
+
+Or: Honey never spoils - edible 3000-year-old honey found in Egyptian tombs.
+
+Honey fact is fairly known though.
+
+We could do: You are made of stardust but also - humans emit light.
+
+We could do fact about language: &quot;Bookkeeper&quot; is only English word with three consecutive double letters.
+
+Or &quot;Dreamt&quot; is only word ending in &quot;mt&quot;.
+
+We need to choose one killer fact.
+
+How about: There is a species of tree that bleeds? Dragon&#39;s blood tree.
+
+Or: Wombats poop cubes.
+
+Wombat cube poop is great because it&#39;s weird and explanation is interesting: to mark territory without rolling off.
+
+We could elaborate: Scientists won Ig Nobel Prize for studying it.
+
+That is good: obscure, funny, scientific.
+
+Another good: Sharks are older than Saturn&#39;s rings? No.
+
+Sharks older than trees: Sharks ~400 million years ago, trees ~350 million years ago.
+
+That is mind-blowing.
+
+We could combine: Sharks are older than trees, and also older than Saturn&#39;s rings.
+
+We could do: The universe has a &quot;cold spot&quot; - supervoid.
+
+We should decide.
+
+Probably best answer: Give one main fact with story, plus two bonus rapid-fire facts.
+
+Tone: playful, curious.
+
+Add disclaimer: I don&#39;t know what you know, but here&#39;s something most people don&#39;t know.
+
+We should avoid being too long. Keep readable.
+
+We should also invite user to specify interest for more tailored facts.
+
+We should not be overly formal.
+
+We should ensure no disallowed content. It&#39;s safe.
+
+We could add citations? Not needed.
+
+We should consider user language: English. Respond in English.
+
+We could add humor: &quot;Tell me something I don&#39;t know&quot; - classic challenge.
+
+We should respond accordingly.
+
+Potential final answer structure:
+
+&gt; I don&#39;t know what you know, but I bet you didn&#39;t know...
+
+Fact #1: Octopuses edit their own RNA to adapt to temperature, effectively rewriting their own genetics on the fly.
+
+That&#39;s pretty obscure and cool.
+
+Or fact: Your heart will beat about 3 billion times, and generates enough energy to drive truck to moon and back.
+
+Choose one.
+
+Let&#39;s propose:
+
+Did you know that there is a fungus in Oregon that is over 8,000 years old, covers 3.5 square miles, weighs more than 400 tons, and is considered the largest living organism on Earth - and it&#39;s been killing trees the whole time.
+
+That&#39;s Armillaria ostoyae.
+
+That&#39;s good obscure.
+
+Alternatively, bananas are radioactive due to potassium-40, but you&#39;d need to eat 10 million at once to die of radiation poisoning.
+
+We can do that.
+
+We need to pick final.
+
+I think best is: Wombat cube poop + explanation, plus sharks older than trees, plus Playtex spacesuits.
+
+Provide variety.
+
+Make answer memorable.
+
+Add question at end: Want more? Science, history, creepy, etc.?
+
+We should keep personality.
+
+We should not assume gender.
+
+We should not be too verbose.
+
+Probably include bullet list.
+
+We should ensure we don&#39;t hallucinate too much. Ensure facts are accurate.
+
+Check accuracy:
+
+- Wombats produce cube-shaped poop: True. Research published 2018, Ig Nobel Prize 2019. Reason: to mark territory, stacks, intestinal elasticity.
+- Sharks existed before trees: True. Sharks ~440 million years ago, earliest trees ~385 million years ago.
+- Playtex made Apollo spacesuits: True. International Latex Corporation (ILC Dover), division of Playtex.
+- Armillaria ostoyae in Malheur National Forest, Oregon: estimated 2,000-8,000 years old, covers 2,385 acres (3.7 sq miles). Considered largest organism by area. True.
+- Bananas radioactive: True, contain potassium-40.
+- Venus day longer than year: True. Venus rotates slowly, day ~243 Earth days, year ~225 Earth days.
+- Oxford older than Aztec: Oxford teaching since 1096, Aztec empire founded 1428. True.
+- Scotland national animal unicorn: True since 15th century.
+- Eiffel Tower grows 6 inches in summer: True, thermal expansion ~15 cm.
+- Humans share 50% DNA with bananas: True ~50-60%.
+- Blue eyes single ancestor ~6,000-10,000 years ago: Research suggests mutation ~6,000-10,000 years ago.
+- Honey never spoils: True, low moisture, acidic, found in Egyptian tombs edible.
+- 52! shuffles &gt; atoms on Earth: 52! ≈ 8e67, atoms on Earth ≈ 1e50, so true. Stars in observable universe ~1e24? Actually ~1e24 stars, so shuffles more than that too.
+
+All good.
+
+We should pick one deep dive to be thorough.
+
+User: &quot;Tell me something I don&#39;t know.&quot; Could respond with witty: &quot;You don&#39;t know what you don&#39;t know&quot; but better to just give fact.
+
+We should avoid patronizing: &quot;You probably don&#39;t know...&quot;
+
+We should be humble: &quot;I have no idea what you know, so here&#39;s my best shot...&quot;
+
+We should add fun.
+
+We should not ask for personal data.
+
+We should keep answer relatively short but informative.
+
+We should use second person.
+
+Potential final answer:
+
+Here&#39;s one that messes with people: ...
+
+Make it conversational.
+
+Add maybe 3 facts categorized: Space, Body, History.
+
+We should ensure we don&#39;t repeat too common facts like &quot;octopus has three hearts&quot; - many know.
+
+Better obscure: Octopuses have RNA editing.
+
+We could mention: Humans glow - Japanese scientists photographed it with ultra-sensitive cameras, we emit tiny amount of light that peaks in late afternoon.
+
+That&#39;s obscure and cool: Humans are literally bioluminescent, just too dim to see.
+
+That is great &quot;something you don&#39;t know&quot;.
+
+Let&#39;s do that as main fact: You glow in the dark. Literally.
+
+Explain: 2009 Japanese researchers, Tohoku Institute of Technology, used ultra-sensitive CCD cameras, found human bodies emit visible light, rhythmic, most at 4pm, least at 10am. Face glows more than rest.
+
+That&#39;s fascinating and most people don&#39;t know.
+
+We can make that main fact.
+
+Then add bonus facts.
+
+Structure:
+
+Hey, challenge accepted...
+
+Main fact: You are literally glowing right now.
+
+Explanation.
+
+Bonus: Two more quick ones.
+
+End with question: What flavor you want next?
+
+That would be engaging.
+
+We should ensure tone is friendly AI assistant.
+
+We should not claim to be human.
+
+We should not mention cutoff.
+
+We should answer in English.
+
+We should maybe add emojis? Probably minimal, maybe one. Keep professional but fun.
+
+We should avoid overuse of formatting? Use some bold/italics for emphasis.
+
+We should keep answer not too long: maybe 200-300 words.
+
+We should ensure we comply with policy: No disallowed content. It&#39;s fine.
+
+We should not provide misinformation. Ensure glow fact is accurate: Yes, study by Hitoshi Wada et al., PLOS ONE 2009: &quot;Human Body Luminescence&quot;. They found ultra-weak photon emission.
+
+We should cite correctly.
+
+We should not fabricate.
+
+We should provide final answer.
+
+We should consider alternative: User might be testing AI. Provide creative answer.
+
+We should not be repetitive.
+
+We should add humor.
+
+We should ensure we don&#39;t say &quot;As an AI...&quot; too much. Avoid that cliché.
+
+We should just answer.
+
+Potential final answer draft:
+
+&gt; I don&#39;t know your trivia level, so I&#39;ll go with something that surprises almost everyone...
+
+&gt; You&#39;re glowing right now.
+
+&gt; etc.
+
+Add bonus.
+
+Make it punchy.
+
+We should ensure we answer fully.
+
+We should not ask clarifying question only; provide fact.
+
+We should provide something I don&#39;t know - we can&#39;t know what they don&#39;t know, acknowledge.
+
+We should deliver.
+
+We should use contractions for natural tone.
+
+We should avoid being too formal.
+
+We should add maybe footnote: Want creepy, cute, space?
+
+We should ensure we don&#39;t violate style: No excessive formatting.
+
+We should produce final answer now.
+
+We should consider length: Medium.
+
+We should ensure we don&#39;t hallucinate study details: Let&#39;s verify: Study: Masaki Kobayashi, Daisuke Kikuchi, Hitoshi Okamura, PLOS ONE, July 16, 2009. Title: &quot;Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm&quot;. Found human body glows, photon emission lowest at 10am, highest at 4pm. Face glows more. Intensity 1000x less than visible to naked eye.
+
+Yes correct.
+
+We should mention that.
+
+We should also note it&#39;s not metaphorical.
+
+We should provide that.
+
+We should ensure we don&#39;t overclaim: It&#39;s not like glow stick, it&#39;s ultra-weak bioluminescence from metabolic reactions.
+
+We should explain.
+
+We should add bonus facts: Wombat cubes, sharks older than trees.
+
+We should keep it.
+
+We should end with invitation.
+
+We should not use too many emojis.
+
+We should produce final answer in final channel.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/moondream-moondream3.1-9b-a2b/">← Moondream: Moondream 3.1</a>
+            <a href="/">all models</a>
+            <a href="/m/nvidia-nemotron-3.5-super-vl/">NVIDIA: Nemotron 3.5 Super VL →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
