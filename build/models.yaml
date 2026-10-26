@@ -1438,3 +1438,29 @@ models:
     license: "open-weights"
     released: "October 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "moonshotai/kimi-k3.1-pro"
+    name: "MoonshotAI: Kimi K3.1 Pro"
+    provider: "Moonshotai"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "inception/mercury-3"
+    name: "Inception: Mercury 3"
+    provider: "Inception"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "recursive/flint-v1.0:free"
+    name: "Recursive: Flint (free)"
+    provider: "Recursive"
+    license: "open-source"
+    released: "October 2026"
+
+  - id: "minimax/minimax-m3.1-flash"
+    name: "MiniMax: MiniMax M3.1 Flash"
+    provider: "Minimax"
+    license: "open-weights"
+    released: "October 2026"
+
