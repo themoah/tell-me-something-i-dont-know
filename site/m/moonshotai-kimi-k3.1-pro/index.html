@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonshotAI: Kimi K3.1 Pro — Tell me something I don't know.</title>
+    <meta name="description" content="MoonshotAI: Kimi K3.1 Pro answers &quot;Tell me something I don&#39;t know.&quot; — Here’s something you might not know: your brain sometimes backdates what you see. When you glance quickly at a clock, its second hand can appear frozen…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k3.1-pro/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/moonshotai-kimi-k3.1-pro/">
+    <meta property="og:title" content="MoonshotAI: Kimi K3.1 Pro — Tell me something I don't know.">
+    <meta property="og:description" content="MoonshotAI: Kimi K3.1 Pro answers &quot;Tell me something I don&#39;t know.&quot; — Here’s something you might not know: your brain sometimes backdates what you see. When you glance quickly at a clock, its second hand can appear frozen…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MoonshotAI: Kimi K3.1 Pro — Tell me something I don't know.">
+    <meta name="twitter:description" content="MoonshotAI: Kimi K3.1 Pro answers &quot;Tell me something I don&#39;t know.&quot; — Here’s something you might not know: your brain sometimes backdates what you see. When you glance quickly at a clock, its second hand can appear frozen…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to MoonshotAI: Kimi K3.1 Pro)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here’s something you might not know: **your brain sometimes backdates what you see.**\n\nWhen you glance quickly at a clock, its second hand can appear frozen for longer than a second. This is called **chronostasis**, or the *stopped-clock illusion*. While your eyes are moving, your brain suppresses the blurry visual input. Afterward, it appears to fill in that gap with the first clear image—making it seem as though the clock was already in your view during the eye movement.\n\nIn other words, your experience of “now” is partly a seamless reconstruction, not a direct live feed.","author":{"@type":"Organization","name":"Moonshotai"}},"suggestedAnswer":[{"@type":"Answer","text":"Here’s a good candidate: **sound can produce light.**\n\nIn a phenomenon called **sonoluminescence**, a tiny gas bubble suspended in liquid is driven by powerful sound waves. The bubble repeatedly expands and then collapses with extraordinary violence. During collapse, it emits an extremely brief flash of light—sometimes lasting less than 50 trillionths of a second.\n\nThe collapsing bubble concentrates energy remarkably effectively, and scientists still debate some details of exactly how the light is generated.\n\nSo, under the right laboratory conditions, you can make a tiny bubble in water flash simply by bombarding it with sound.","author":{"@type":"Organization","name":"Moonshotai"}},{"@type":"Answer","text":"Here’s one you *might* not know:\n\n**A thoroughly shuffled deck of 52 cards is almost certainly arranged in an order that has never existed before.** There are \\(52!\\) possible orderings—about \\(8 \\times 10^{67}\\), vastly more than the estimated number of atoms on Earth.\n\nSo an ordinary shuffle can produce something effectively unique in human history.","author":{"@type":"Organization","name":"Moonshotai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>MoonshotAI: Kimi K3.1 Pro</h1>
+        <p class="subtitle">Moonshotai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">MoonshotAI: Kimi K3.1 Pro</div>
+                        <div class="model-provider">Moonshotai</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here’s something you might not know: <strong>your brain sometimes backdates what you see.</strong></p>
+<p>When you glance quickly at a clock, its second hand can appear frozen for longer than a second. This is called <strong>chronostasis</strong>, or the <em>stopped-clock illusion</em>. While your eyes are moving, your brain suppresses the blurry visual input. Afterward, it appears to fill in that gap with the first clear image—making it seem as though the clock was already in your view during the eye movement.</p>
+<p>In other words, your experience of “now” is partly a seamless reconstruction, not a direct live feed.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1618 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">I&#39;ll respond to user &quot;Tell me something I don&#39;t know.&quot; Should consider intent. User wants interesting fact perhaps unknown. Should not know user knowledge, so preface &quot;Here&#39;s something you might not know&quot;. Should choose compelling accurate fact, explain. I have huge token budget but simple. Should probably give one or few surprising facts. Should avoid uncertainty issue. I should think of something reliably true and interesting, not overused. Could tell about honey? too common. About Eiffel Tower? common. About time? Should have accurate nuanced fact. Perhaps &quot;A day on Venus is longer than its year&quot; but technically sidereal day vs solar? Common and nuanced: Venus rotates once every 243 Earth days and orbits Sun in 225 Earth days, so yes rotation period longer than year, but solar day ~117 days. Could confuse.
+
+Perhaps &quot;Your body contains more bacterial cells than human cells&quot; outdated (roughly equal) avoid.
+
+Could say &quot;There’s a species of jellyfish, Turritopsis dohrnii, that can revert from mature medusa to polyp when stressed, potentially repeating cycle; not proven immortal in simple sense.&quot; Interesting but many know.
+
+Perhaps something not widely known: &quot;Bananas are berries, strawberries aren&#39;t&quot; common and botanical technical. &quot;The word &#39;almost&#39; is the longest word in English with all letters alphabetical?&quot; Not sure.
+
+Could offer &quot;When you smell something, tiny molecules from it are entering your nose&quot; maybe gross.
+
+&quot;Octopuses have three hearts and blue blood; two stop beating when swims?&quot; Main systemic heart stops when swims, not all? Octopus has 3 hearts; two branchial pump through gills, systemic pumps body. When swimming, systemic heart stops beating. Many know.
+
+&quot;Cleopatra lived closer in time to Moon landing than Great Pyramid&quot; common.
+
+Perhaps &quot;A teaspoon of neutron star...&quot; common and misleading.
+
+&quot;Some turtles can breathe through their butts&quot; cloacal respiration; common but fun. Could explain.
+
+Perhaps aim to satisfy broadly: &quot;Here&#39;s a wonderfully counterintuitive one: ...&quot; include fact and concise explanation. Something user may not know but impossible guarantee. Could be interactive ask interests? User likely expects fact not question. Respond with one interesting fact plus a related twist.
+
+Could choose &quot;The Eiffel Tower can grow 15 cm taller in summer due thermal expansion&quot; known.
+
+Something obscure but well-established: &quot;In 1977, we received a radio signal...&quot; Wow signal. Could say &quot;The &#39;Wow!&#39; signal lasted 72seconds and has never been observed again, despite repeated searches. It remains unexplained, but no evidence it was aliens.&quot; Interesting but known to space nerds.
+
+&quot;Your brain sometimes edits your perception of time: when you shift eyes, you don&#39;t see blur because brain suppresses input during saccades. The &#39;stopped clock illusion&#39; occurs when you glance at clock and second hand seems frozen: chronostasis, brain backfills interval.&quot; This is genuinely fascinating and less common. Could state: &quot;When you quickly move your eyes, your brain briefly suppresses visual input so you don’t see a blur. Then it can backfill the gap, which is why a clock’s second hand sometimes appears frozen for longer than a second when you first look at it—the stopped-clock illusion.&quot; Accurate. It tells something they may not know and relatable. Perhaps not overly absolute: brain uses saccadic suppression, chronostasis is thought to involve backdating. Good.
+
+Alternative: &quot;Every time you shuffle a deck properly, likely unique order&quot; common.
+
+&quot;There&#39;s no single scientific definition of a fish?&quot; Might be interesting but nuanced. &quot;A ‘fish’ is not a formal evolutionary group in the everyday sense: lungfish are more closely related to you than to sharks. So either ‘fish’ excludes some animals we call fish, or it technically includes land vertebrates.&quot; That&#39;s mind-blowing and accurate if explained. Could be a good fact. Should avoid misunderstanding. The common statement &quot;there&#39;s no such thing as a fish&quot; from phylogenetics. Lungfish closer to tetrapods than other fish; sharks split earlier. If fish as clade includes common ancestor and all descendants, humans are fish. This is fun but maybe overly technical. Could tell concise.
+
+&quot;Wombat poop is cube-shaped&quot; common but good. Mechanism discovered with varying intestinal elasticity; maybe interesting: formed in intestine, not anus. Could say &quot;Wombats make cube-shaped poop, and the cubes form in their intestines—not because of a square anus. Different regions of the intestinal wall stretch differently, molding the drying feces into flat sides. The shape helps keep droppings from rolling away when used to mark territory.&quot; This is accurate and novel. But perhaps juvenile.
+
+Could respond with something insightful not trivia? &quot;You have likely never seen your own face—only reflections/photos&quot; philosophically but not exact. Could be fun.
+
+Perhaps &quot;Most of the matter in your body was forged in stars, but the hydrogen in your water dates to Big Bang.&quot; Interesting: Hydrogen nuclei mostly formed in Big Bangnucleosynthesis, oxygen/carbon in stars. So &quot;Some of the atoms in your body are nearly as old as universe; hydrogen formed in first minutes, 13.8b years.&quot; Atoms vs nuclei electrons later, hydrogen atoms formed recombination 380k years. Could explain, but likely known.
+
+&quot;Hot water can freeze faster than cold (Mpemba effect), but not always&quot; could be fun but contested mechanisms.
+
+Perhaps respond in style: &quot;Here’s one you might not know: **You never see the world in quite real time.** Your brain takes a fraction of a second to process sensory input, and it constantly predicts and edits what you perceive. One visible glitch is the **stopped-clock illusion**: ...&quot; This avoids overclaim &quot;never real time&quot; and interesting. Should have no caveat beyond might not know.
+
+Question is open-ended, no need to ask. I can deliver 1 fact with a punchy explanation. Perhaps 2 paragraphs. I should avoid random preamble. Perhaps:
+
+&quot;Here’s one you might not know: **your brain sometimes backdates what you see.**
+
+When you flick your eyes to a clock, the second hand can appear frozen for slightly longer than a second. This is called **chronostasis**, or the stopped-clock illusion. During the eye movement, your brain suppresses the blurry visual input; afterward, it seems to fill in the missing interval with the first clear image—so it can feel as though that image was already there while your eyes were moving.
+
+In effect, your experience of &#39;now&#39; is partly a cleverly edited reconstruction.&quot;
+
+Check accuracy: &quot;first clear image&quot; fills missing interval, yes. &quot;second hand frozen for slightly longer than a second&quot; can happen if it was just before tick; illusion extends perceived duration by eye movement ~50-150ms. Good. This is neat.
+
+Could user expect &quot;something I don&#39;t know&quot; maybe personal info? User might challenge assistant to infer. No context, so just interesting fact. I should not assert &quot;you don&#39;t know&quot;. &quot;Here&#39;s something you might not know&quot; appropriate.
+
+Perhaps no citations required. Good.
+
+I can respond now.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here’s a good candidate: <strong>sound can produce light.</strong></p>
+<p>In a phenomenon called <strong>sonoluminescence</strong>, a tiny gas bubble suspended in liquid is driven by powerful sound waves. The bubble repeatedly expands and then collapses with extraordinary violence. During collapse, it emits an extremely brief flash of light—sometimes lasting less than 50 trillionths of a second.</p>
+<p>The collapsing bubble concentrates energy remarkably effectively, and scientists still debate some details of exactly how the light is generated.</p>
+<p>So, under the right laboratory conditions, you can make a tiny bubble in water flash simply by bombarding it with sound.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1948 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">I need respond to user &quot;Tell me something I don&#39;t know.&quot; Should think of good response. Should obey identity etc irrelevant. I&#39;ll produce interesting fact likely unknown. Should be engaging, perhaps acknowledge can&#39;t know what User knows, offer surprising fact. I need decide content accuracy. I can give an obscure but reliable fact with explanation. Perhaps &quot;There is a species of jellyfish... immortal&quot; often known. &quot;Bananas are berries, strawberries aren&#39;t&quot; common. &quot;Octopuses have three hearts&quot; common. Should have something user likely doesn&#39;t know and interesting. Could tell about &quot;Your body contains more bacterial cells than human cells&quot; outdated-ish 1:1. Better: &quot;The Eiffel Tower grows ~15 cm in summer&quot; known. &quot;Cleopatra lived closer in time to Moon landing than construction Great Pyramid&quot; common. Perhaps a deeper fact: &quot;A day on Venus is longer than its year&quot; known but cool. &quot;If you shuffle a standard deck properly, likely unique order&quot; common. &quot;Scotland&#39;s national animal unicorn&quot; trivia.
+
+I should respond concise but enough. Perhaps &quot;There’s a fungus that makes ‘zombie ants’...&quot;. Hmm.
+
+Question broad, no need ask. I can state &quot;I can&#39;t know exactly what you know, but here&#39;s a delightfully odd one:&quot; and fact. I could choose &quot;Honeybees can be taught to recognize human faces&quot; perhaps less known, but nuance configural processing. &quot;Sea otters have pockets&quot; cute but likely known.
+
+Should have something truly surprising and accurate: &quot;There are more possible iterations of a game of chess than atoms in observable universe&quot; common but inaccurate ambiguous. &quot;Your stomach lining replaces itself every few days&quot; inaccurate simplified. &quot;A cloud can weigh a million tonnes&quot; common.
+
+Could use &quot;The word &#39;quarantine&#39; comes from Italian quaranta giorni, forty days...&quot; interesting.
+
+Perhaps an intellectually rich fact: &quot;Some metals can fuse at room temperature without heat: if you touch clean pieces of gold together in a vacuum, they can cold-weld...&quot; This is interesting but conditions. Or &quot;In space, two flat pieces of similar metal can cold weld&quot; known.
+
+Could talk about &quot;Bananas are slightly radioactive due to potassium-40, and there is an informal banana equivalent dose&quot; common.
+
+&quot;Wombat poop is cube-shaped&quot; well known.
+
+&quot;A single teaspoon of neutron star would weigh...&quot; common.
+
+&quot;Trees can warn each other...&quot; contested.
+
+&quot;Sharks existed before trees&quot; reliable, fun: sharks ~450m years, earliest trees ~350m; also before Saturn&#39;s rings? rings uncertain. Could say &quot;Sharks are older than trees. Shark-like fish ... at least 450 million years ago; earliest recognizable trees ~385 million years ago.&quot; This is good, but many know. I could pair with &quot;and older than the north star?&quot; no.
+
+&quot;Greenland sharks can live for centuries, some alive today may have been born before Shakespeare&quot; uncertain individual ages but species 250-500. Could say &quot;There may be Greenland sharks swimming today that were alive before the United States existed.&quot; likely, age estimates 272-512 for one female with uncertainty. Interesting.
+
+&quot;Not all time is continuous?&quot; no.
+
+&quot;The moon has moonquakes&quot; less known.
+
+&quot;An astronaut&#39;s height increases in space&quot; common.
+
+&quot;Neutron stars can have &#39;mountains&#39; only millimeters tall&quot; neat but technical.
+
+&quot;Your sense of smell can detect petrichor... geosmin at tiny concentrations&quot; uncertain.
+
+&quot;Human brains generate enough electricity...&quot; overused.
+
+Could respond with fact and invite category: &quot;Here’s one: ... If you tell me a topic...&quot; User likely testing assistant. I&#39;ll make response interesting. Perhaps a non-trivial linguistic fact: &quot;The word &#39;set&#39; has the most definitions...&quot; not necessary.
+
+Perhaps best is to state something counterintuitive in probability: &quot;If you have 23 people in a room, &gt;50% chance two share birthday.&quot; Many know.
+
+&quot;Almost every proper shuffle yields order never seen before&quot; mathematically almost certain but cannot prove no history. Could explain 52! ~8e67 vs atoms etc. Common.
+
+Could choose &quot;You can fit all the planets of the solar system between Earth and Moon&quot; average distance, approximately. That&#39;s surprising and accurate: sum diameters ~380,000 km? I&#39;ll compute: Jupiter 139,820 + Saturn 116,460 =256,280; Uranus 50,724=307,004; Neptune 49,244=356,248; Earth 12,742=368,990; Venus 12,104=381,094; Mars 6,779=387,873; Mercury 4,879=392,752. Mean Earth-Moon distance 384,400 km, so doesn&#39;t fit including Earth? Usually all other planets excluding Earth: 380,010 km? Sum excluding Earth = 380,010. Fits with ~4,390 km margin average, not perigee. Could be accurate but nuanced. Could say &quot;At the Moon&#39;s average distance, you could line up every other planet... just about fit&quot; cool.
+
+Perhaps deeper: &quot;There is a place on Earth where you can stand in three countries at once&quot; obvious.
+
+&quot;Oxford University is older than Aztec Empire&quot; common.
+
+&quot;Cleopatra ...&quot; common.
+
+&quot;Nintendo founded when...&quot; common.
+
+&quot;Eiffel Tower...&quot; common.
+
+No way know what user doesn&#39;t know; could be playful: &quot;Statistically, probably this: ...&quot; then obscure. Perhaps give an obscure scientific phenomenon: &quot;The speed of light in a medium can be exceeded by charged particles, producing Cherenkov radiation—the blue glow in nuclear reactors.&quot; Many know.
+
+&quot;Sound can make light: sonoluminescence. A collapsing bubble in a liquid, driven by sound waves, emits tiny flashes of light; nobody fully agrees on all details of mechanism.&quot; Is mechanism still not fully understood? General adiabatic compression plasma; can safely say &quot;a phenomenon called sonoluminescence.&quot; This is fascinating and likely unknown. I can explain accurately: &quot;If you trap a tiny gas bubble in liquid and drive it with intense sound waves, it can collapse so violently that it emits ultrashort flashes of light. This is sonoluminescence. Each flash can be shorter than 50 picoseconds, and the bubble gets extremely hot; despite decades of study, some details of light emission remain debated.&quot; Should avoid too much uncertain. &quot;Sound can be turned into light&quot; good hook. Does bubble &quot;turn sound into light&quot; yes. Temperature &quot;hotter than Sun surface&quot; commonly claimed but uncertain. Can avoid. This is a great response. Perhaps mention pistol shrimp snaps claw creating cavitation and light (shrimpoluminescence) but plasma temps etc. Simpler: &quot;Sound can create light. In sonoluminescence, ...&quot;. Then offer another in a topic.
+
+Perhaps User wants just something interesting, no need to caveat extensively. I can write:
+
+&quot;Here’s a weird one: **sound can make light.**
+
+In a phenomenon called **sonoluminescence**, a tiny gas bubble in liquid is made to pulsate by powerful sound waves. When the bubble collapses, it emits an extremely brief flash of light—often lasting only trillionths of a second. The collapse concentrates the sound’s energy so dramatically that the gas inside becomes extraordinarily hot; researchers still debate parts of exactly how the flash is produced.
+
+So, under the right laboratory conditions, you can quite literally make water glow using sound.&quot;
+
+Check &quot;make water glow&quot; overstatement: single bubble flashes, not water generally; &quot;make a tiny bubble in water flash using sound&quot; more precise. Duration: single-bubble sonoluminescence flashes &lt;50 ps (trillionths of second) yes. &quot;often lasting only trillionths&quot; 50 ps = 50 trillionths, okay. &quot;researchers still debate parts exactly&quot; safe. &quot;Extraordinarily hot&quot; no quantification.
+
+Perhaps end &quot;Want another from history, space, biology, or language?&quot; helpful. The prompt no need extra. Could be concise enough. Perhaps choose something even more personally relevant: &quot;Your brain can&#39;t feel pain&quot; common. Sonoluminescence good.
+
+I should ensure no unsupported claim: Gas bubble driven by acoustic waves emits light upon collapse, discovered etc. Good.
+
+I&#39;ll respond in English. No need identity. Response perhaps 3 paragraphs, around 150 words. Good.
+
+I&#39;ll formulate with opening &quot;I can’t know what you know, but here’s a good candidate:&quot; to address logically but perhaps cliché. &quot;Here’s a good candidate:&quot; avoids.
+
+Response: 
+&quot;Here’s a good candidate: **sound can produce light.** ...&quot;
+
+Perhaps add experiment &quot;This isn&#39;t metaphorical or fluorescence.&quot; Hmm.
+
+Could choose &quot;A single bubble can do this&quot; wow.
+
+Now respond.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s one you <em>might</em> not know:</p>
+<p><strong>A thoroughly shuffled deck of 52 cards is almost certainly arranged in an order that has never existed before.</strong> There are (52!) possible orderings—about (8 \times 10^{67}), vastly more than the estimated number of atoms on Earth.</p>
+<p>So an ordinary shuffle can produce something effectively unique in human history.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1821 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">I need respond to user: &quot;Tell me something I don&#39;t know.&quot; Should decide content. I don&#39;t know what user knows. Should avoid presuming, offer interesting fact perhaps obscure and accurate. I should respond likely concise with fascinating fact. Should be truthful. Could mention &quot;Your body contains more bacterial cells than human cells&quot; but common and nuanced ratio ~1:1 not 10:1. Should have something surprising and verifiable. Could say &quot;There’s a species of jellyfish, Turritopsis dohrnii, that can revert from adult medusa back to polyp under stress, effectively restarting its life cycle—though that doesn&#39;t make individual animals immortal in practice.&quot; Common too. User wants something I don&#39;t know, cannot guarantee. I can say &quot;No guarantees, but here&#39;s a good candidate:&quot; then fact. Should choose captivating obscure. Perhaps &quot;Bananas are berries, botanically, but strawberries aren&#39;t&quot; well known. Something like &quot;The Eiffel Tower can grow more than 15 cm in summer due to thermal expansion&quot; common. &quot;Honey can last thousands of years&quot; common. &quot;Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid&quot; common. Could use &quot;The Apollo 11 guidance computer...&quot; etc.
+
+Perhaps more uncommon: &quot;In 1977, we received the Wow! signal...&quot; etc. &quot;Some turtles can breathe through their cloaca&quot; interesting. &quot;Australia&#39;s pink lakes...&quot; Could respond with a single intriguing fact and explanation. Perhaps &quot;There’s a fungus that can make ...&quot; I want no dubious claims.
+
+Could tell a genuinely surprising linguistic/mathematical fact: &quot;If you shuffle a standard deck of 52 cards thoroughly, the resulting order has almost certainly never existed before in human history. There are 52! possible orderings—about 8 × 10^67, more than the number of atoms ...&quot; The comparison often &quot;more than atoms on Earth&quot; (~10^50) yes 8e67 &gt; 1e50. &quot;Even if a billion people shuffled a deck every second since the Big Bang, they&#39;d only have explored a tiny fraction.&quot; Should have calculations: 1e9 people * 4.35e17 sec = 4.35e26 shuffles; fraction 5e-42. Could simply state. That&#39;s likely something User may know though. No guarantee. Could preface &quot;I can’t know what you know, but here’s a good bet:&quot; This is good.
+
+Perhaps not too much. Example:
+
+&quot;I can’t know what you already know, but here’s a good candidate: **A day on Venus is longer than its year.** Venus takes about 243 Earth days to rotate once, but only about 225 Earth days to orbit the Sun. It also spins backward relative to most planets, so the Sun would rise in the west and set in the east.&quot;
+
+This is common among space facts but accurate nuance: sidereal rotation 243 days vs orbital 225; solar day on Venus ~117 Earth days, so &quot;day&quot; ambiguous. If mention &quot;A sidereal day&quot; perhaps technical. &quot;Venus rotates so slowly that one rotation takes longer than its trip around the Sun&quot; avoids ambiguity. Could be interesting.
+
+Perhaps more obscure: &quot;Sea otters have loose skin under their forearms that forms pockets, where they store food and favorite rocks.&quot; They use rocks to crack shellfish and may keep same rock. Cute and surprising. Is storage of favorite rocks true? Sea otters have loose skin pockets under forearms to store food and rocks; some keep favorite rock. Good.
+
+Could respond &quot;Your bones are constantly being remodeled...&quot; not as fun.
+
+Could mention &quot;Wombat poop is cube-shaped&quot; widely known. Explanation interesting: varied elasticity in intestine; helps stacking? Hypothesis marking territory. But common.
+
+Perhaps respond with a strange law? Should avoid jurisdiction ambiguity.
+
+Could tell &quot;There are more possible chess games than atoms in observable universe&quot; Shannon number ~10^120 vs atoms ~10^80, but assumes game-tree complexity and common.
+
+Could give &quot;The word &#39;quarantine&#39; comes from Italian quaranta giorni...&quot; common.
+
+I need just respond, no need identity. I can say &quot;Here’s a candidate:&quot;. Perhaps user likes mind-blowing. Deck of cards fact is robust. I&#39;ll examine exact statement &quot;almost certainly never existed before in human history.&quot; Is that rigorously true? A properly randomized shuffle gives 52! possible permutations. Total shuffles in human history perhaps &lt;1e15? Actually billions decks etc but still tiny. However not every shuffle is perfectly random, many decks start same order and insufficient shuffling leads repeats. The fact says &quot;If you shuffle a standard deck properly, chances are the exact order has never existed before.&quot; Fine. Add scale 8×10^67. &quot;For comparison, there are roughly 10^50 atoms on Earth.&quot; Earth&#39;s atoms ~1.33e50. Good. Perhaps &quot;more possible arrangements than there are atoms on Earth&quot; but number arrangements8e67 vs 1e50, yes 17 orders magnitude. Could say &quot;Even a million shuffles every second since the Big Bang would barely scratch the surface&quot; compute: 1e6 * 4.35e17 = 4.35e23, tiny. No need.
+
+Could make fact more conversational and offer follow-up: &quot;Want another—science, history, or deeply weird?&quot; But user just asked one. Could include one question at end optional.
+
+I can respond:
+
+&quot;I can’t know what you know, but here’s a solid candidate:
+
+**A properly shuffled deck of 52 cards is almost certainly in an order that has never existed before.** There are \(52!\) possible arrangements—about \(8 \times 10^{67}\). That’s vastly more than the estimated number of atoms on Earth. So an ordinary shuffle can produce something effectively unique in human history.&quot;
+
+This is good. Should not overdo. Perhaps user wanted personal &quot;something I don&#39;t know&quot; could be about them? Could say &quot;I don&#39;t know what you don&#39;t know&quot; but avoid snark. Fine.
+
+Make sure no unnecessary claim &quot;properly shuffled&quot; means random enough. &quot;almost certainly&quot; okay. Could also use &quot;unique in history&quot; with caveat. Good.
+
+I&#39;ll think whether best response could be a surprising actual fact less known. User may know deck fact. Perhaps choose lesser-known: &quot;There’s a place in the ocean where four species ...&quot; Hmm.
+
+Potential obscure accurate fact: &quot;The largest known organism is a honey fungus in Oregon covering ~9.6 km² and estimated thousands of years old.&quot; Commonly known but cool. &quot;Armillaria ostoyae in Malheur National Forest covers about 3.7 sq miles (9.6 km²), at least 2,400 years old, possibly 8,650.&quot; Not need precision. Could be something User doesn&#39;t know.
+
+&quot;Some mammals lay eggs and also glow under UV light&quot; Platypus biofluorescence, but findings not fully understood. &quot;Platypuses have no stomach&quot; in sense no acid-secreting stomach, their esophagus connects directly to intestine. That&#39;s weird and less common. Could explain &quot;The platypus essentially has no stomach: its esophagus connects straight to its intestine, and the genes for stomach acid and digestive enzymes were lost during evolution.&quot; Should verify: platypus lacks functional stomach, no acid secretion; genes for pepsinogen etc lost? Many sources. But risk.
+
+&quot;Sea otters havea built-in pocket&quot; very robust and engaging. Could respond: &quot;Sea otters have loose folds of skin under their forearms that work like pockets. They use them to stash food—and sometimes a favorite rock, which they reuse as a tool to crack open shellfish.&quot; This is concise and cute. But &quot;favorite rock&quot; claim from aquarium observations? They often keep same rock in pocket, yes.
+
+Could give two facts? User says &quot;something&quot;, one fact best.
+
+Perhaps choose mathematically satisfying deck fact. It includes scale and surprise. Good.
+
+Should have no citations unless requested. Respond with preface not guarantee. Could be &quot;Here’s one you *might* not know:&quot; which is honest. Then bold. End optional &quot;So every thorough shuffle is, statistically speaking, a small act of creation.&quot; Nice but perhaps fluffy. Could be fun. Respond 2 paragraphs.
+
+I&#39;ll finalize deck fact.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/liquid-lfm-2.5-24b-a2b/">← LiquidAI: LFM2.5-24B-A2B</a>
+            <a href="/">all models</a>
+            <a href="/m/inception-mercury-3/">Inception: Mercury 3 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

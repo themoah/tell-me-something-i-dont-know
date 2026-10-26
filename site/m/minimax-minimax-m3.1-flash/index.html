@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMax: MiniMax M3.1 Flash — Tell me something I don't know.</title>
+    <meta name="description" content="MiniMax: MiniMax M3.1 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that reliably surprise people: Sharks existed before trees. Sharks showed up roughly 450 million years ago; the first forests didn…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/minimax-minimax-m3.1-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/minimax-minimax-m3.1-flash/">
+    <meta property="og:title" content="MiniMax: MiniMax M3.1 Flash — Tell me something I don't know.">
+    <meta property="og:description" content="MiniMax: MiniMax M3.1 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that reliably surprise people: Sharks existed before trees. Sharks showed up roughly 450 million years ago; the first forests didn…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MiniMax: MiniMax M3.1 Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="MiniMax: MiniMax M3.1 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here are a few things that reliably surprise people: Sharks existed before trees. Sharks showed up roughly 450 million years ago; the first forests didn…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to MiniMax: MiniMax M3.1 Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here are a few things that reliably surprise people:\n\n**Sharks existed before trees.** Sharks showed up roughly 450 million years ago; the first forests didn't appear until ~390 million years ago. For about 60 million years, sharks were the apex predators of a planet that was mostly empty of land animals.\n\n**Wombats poop cubes.** Actual cubic droppings. A 2018 study found the shape comes from the intestine's varying elasticity squeezing the feces into flat-sided molds as they dry — and it makes them stack, which is how wombats mark territory.\n\n**The first \"computer bug\" was literally a moth.** On September 9, 1947, a moth got stuck in a relay of the Harvard Mark II. Grace Hopper's team taped it into the logbook with the note \"First actual case of bug being found.\" The moth is now in the Smithsonian.\n\n**Octopuses edit their own RNA.** They can rewrite messenger RNA on the fly, letting their cells adapt to changing conditions — a capability we only began to understand in 2013. They also have three hearts, copper-based blue blood, and taste with their suckers.\n\n**Oxford University is older than the Aztec Empire.** Teaching was happening at Oxford by 1096. Tenochtitlan was founded in 1428.\n\n**The Eiffel Tower changes height with the weather.** Iron expands in heat, so it grows about 15 cm taller in summer and shrinks in winter.\n\n**More possible chess games than atoms in the observable universe.** The Shannon number (~10^120) for possible games dwarfs the ~10^80 atoms in the cosmos.\n\nBonus oddity: the inventor of the Pringles can, Fredric Beur, requested that half his ashes be buried in a can of Original flavor.\n\nWant more in a particular direction — weird biology, strange history, math that breaks the brain?","author":{"@type":"Organization","name":"Minimax"}},"suggestedAnswer":[{"@type":"Answer","text":"Here's one that usually gets people: **sharks existed before trees.**\n\nShark-like fish showed up roughly 450 million years ago, in the oceans of the Silurian. The first real forests — the towering *Archaeopteris* — wouldn't appear for another 70 million years or so. So for a stretch of Earth's history, the land was basically barren rock and fungus, and the ocean was already full of things that looked a lot like modern sharks.\n\nA few more in the same spirit:\n\n- **Octopuses have blue blood and three hearts**, and two-thirds of their neurons are in their arms rather than their head. Each arm can, in a sense, think independently — an octopus in a tank can solve a maze in one arm while the rest of the body stays put.\n- **Wombats produce cube-shaped poop.** Australian researchers in 2018 worked out why: the intestines aren't uniform, so the final stretch of the gut squeezes the waste into flat-sided blocks as it dries. It's the only known animal that does it.\n- **Oxford University was teaching by 1096.** The Aztec Empire, founded in 1428, is roughly 300 years *younger* than Oxford's earliest recorded classes.\n- **The Eiffel Tower grows about 15 cm taller in summer**, because steel expands in heat. It's shrunk back to its winter size ever since.\n- **The inventor of the Pringles can was buried in one** — Fredric Baur requested that a portion of his ashes go in the original flavor, and his family obliged.\n\nWant more in a particular direction? Space, biology, history, weird words — I'm happy to keep going.","author":{"@type":"Organization","name":"Minimax"}},{"@type":"Answer","text":"Here's one with a great punchline:\n\n**The inventor of the Pringles can was buried in a Pringles can.** Fredric Baur designed the iconic saddle-shaped can in the late 1960s, and by the time he died in 2008 he was sick and housebound. His last wish was to be interred in one of his own cans. His family obliged — part of him went into a can, the rest of his ashes went in alongside. His dentures are now displayed in a Pringles can at the Cincinnati Museum Center in his hometown of Cincinnati, and the company made him a special oversized \"Big Daddy\" can for the occasion. He got his wish, and so did everyone who ever wondered what was actually in the thing.\n\nA few more, since you asked:\n\n- **The Eiffel Tower is taller in summer than winter.** About 15 cm, because it expands in heat — and it was originally designed to be taken down and dismantled after 20 years. It's been standing for over 135.\n\n- **Oxford University is older than the Aztec Empire.** Teaching was happening at Oxford around 1096; Tenochtitlan was founded in 1428.\n\n- **Honey doesn't spoil.** Archaeologists have opened Egyptian tombs containing 3,000-year-old honey that was still perfectly edible — low water content, high acidity, and enzymes that make it inhospitable to microbes.\n\n- **There's a jellyfish that can't die.** *Turritopsis dohrnii* can revert from its adult medusa stage back to a juvenile polyp and start life over, indefinitely. It usually dies of predation or starvation, but aging isn't the cause.\n\n- **Your blood would be blue if you were an octopus.** It uses copper-based hemocyanin instead of iron-based hemoglobin.\n\n- **Nintendo started in 1889 making playing cards.** Hand-painted *hanafuda* cards, sold out of a Kyoto shop. The video game empire took another 60 years to happen.\n\n- **Humans can distinguish at least a trillion different smells.** A 2014 *Science* study demolished the old \"10,000 smells\" figure — and the previous scientific estimate had been as low as 350.\n\nWant me to go deeper on any of these? I can also go weirder.","author":{"@type":"Organization","name":"Minimax"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>MiniMax: MiniMax M3.1 Flash</h1>
+        <p class="subtitle">Minimax · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">MiniMax: MiniMax M3.1 Flash</div>
+                        <div class="model-provider">Minimax</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="0"><span class="star-empty">☆☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here are a few things that reliably surprise people:</p>
+<p><strong>Sharks existed before trees.</strong> Sharks showed up roughly 450 million years ago; the first forests didn&#39;t appear until ~390 million years ago. For about 60 million years, sharks were the apex predators of a planet that was mostly empty of land animals.</p>
+<p><strong>Wombats poop cubes.</strong> Actual cubic droppings. A 2018 study found the shape comes from the intestine&#39;s varying elasticity squeezing the feces into flat-sided molds as they dry — and it makes them stack, which is how wombats mark territory.</p>
+<p><strong>The first &quot;computer bug&quot; was literally a moth.</strong> On September 9, 1947, a moth got stuck in a relay of the Harvard Mark II. Grace Hopper&#39;s team taped it into the logbook with the note &quot;First actual case of bug being found.&quot; The moth is now in the Smithsonian.</p>
+<p><strong>Octopuses edit their own RNA.</strong> They can rewrite messenger RNA on the fly, letting their cells adapt to changing conditions — a capability we only began to understand in 2013. They also have three hearts, copper-based blue blood, and taste with their suckers.</p>
+<p><strong>Oxford University is older than the Aztec Empire.</strong> Teaching was happening at Oxford by 1096. Tenochtitlan was founded in 1428.</p>
+<p><strong>The Eiffel Tower changes height with the weather.</strong> Iron expands in heat, so it grows about 15 cm taller in summer and shrinks in winter.</p>
+<p><strong>More possible chess games than atoms in the observable universe.</strong> The Shannon number (~10^120) for possible games dwarfs the ~10^80 atoms in the cosmos.</p>
+<p>Bonus oddity: the inventor of the Pringles can, Fredric Beur, requested that half his ashes be buried in a can of Original flavor.</p>
+<p>Want more in a particular direction — weird biology, strange history, math that breaks the brain?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2505 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span> <span class="topic-tag" data-topic="eiffel tower">🗼 eiffel tower</span> <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; This is an open-ended request for novelty. I should share something genuinely interesting and less commonly known. Let me pick a few facts that are surprising and well-verified.
+
+Good candidates:
+1. Oxford University is older than the Aztec Empire — teaching existed from 1096, Aztec founded ~1428. This is a classic but good.
+2. There is a species of jellyfish (Turritopsis dohrnii) — immortal jellyfish.
+3. Bananas are radioactive (potassium-40) — mildly known.
+4. Honey never spoils — 3000-year-old honey found in Egyptian tombs edible.
+5. Wombat poop is cube-shaped.
+6. There are more possible configurations of a chessboard than atoms in the observable universe (Shannon number ~10^120 vs ~10^80 atoms).
+7. The inventor of the Pringles can is buried in one.
+8. A group of flamingos is a &quot;flamboyance.&quot;
+9. Scotland&#39;s national animal is the unicorn.
+10. Octopuses have three hearts, blue blood.
+11. There&#39;s a town in the US named &quot;Ord&quot; ... etc.
+12. Bubble wrap was originally invented as wallpaper.
+13. The inventor of the frisbee was turned into a frisbee after death (Ed Headrick) — hmm, actually he was cremated and ashes put in a Frisbee.
+14. There&#39;s a species of moth, &quot;Phalaenoides,&quot; no.
+15. &quot;Sharks existed before trees&quot; — sharks ~450 million years, trees ~380 million years. Good.
+16. Neutron star: teaspoon of matter ~ a billion tons.
+17. Time passes faster at your altitude — you age differently on mountains.
+18. There&#39;s a lake in the Netherlands... hmm.
+19. The word &quot;posh&quot; is a backronym — actually debunked, it&#39;s from &quot;port out, starboard home&quot; but that was fake. Skip.
+20. A day on Venus is longer than its year.
+21. The small intestine is the longest organ in the human body (~6 meters) if you include... actually skin is the largest organ; small intestine is longest internal organ.
+22. There&#39;s a Japanese train station... hmm.
+23. Cows have best friends and get stressed when separated.
+24. Leeches have 32 brains.
+25. The Eiffel Tower grows ~15 cm taller in summer.
+26. Oxford University older than Aztec Empire.
+27. There&#39;s a species of bird that can fly backwards — the hummingbird.
+28. Wombat cube poop.
+29. There&#39;s a place in the US where... &quot;Hawaii has its own time zone.&quot;
+30. Norway&#39;s Constitution... hmm.
+31. &quot;Octopus&quot; — the plural is octopuses.
+32. There&#39;s a mushroom that grows... 
+33. Sea otters hold hands.
+34. The dot over lowercase i/j and comma are called tittles.
+35. There&#39;s a real town named &quot;Toast&quot; in North Carolina.
+36. &quot;More than 80% of the ocean is unexplored.&quot;
+37. There&#39;s a Roman named... hmm.
+38. The word &quot;hello&quot; was coined by Thomas Edison for telephone use.
+39. Hot water can freeze faster than cold water — Mpemba effect.
+40. There&#39;s a species of ant that... &quot;Ants don&#39;t have lungs.&quot;
+41. In 1910, the first airplane flight over the English Channel.
+42. The Library of Congress has the largest collection... 
+43. There&#39;s a 1919 horse that... hmm.
+
+Maybe better: something unexpected and specific:
+- There are more trees on Earth than stars in the Milky Way (~3 trillion trees vs 100-400 billion stars). Good fact.
+- A group of jellyfish is a &quot;smack.&quot;
+- The first computer bug was a moth stuck in a relay — Grace Hopper, 1947.
+- Nobel Prize: Alfred Nobel was an inventor of dynamite; he left money.
+- &quot;Cow tipping&quot; ... no.
+- The longest-lived animal is a Greenland shark (~400 years).
+- There&#39;s a bird that can&#39;t fly but is a &quot;turkey&quot; — no.
+- The world&#39;s largest hot spring...
+- There&#39;s a species of frog that can survive being frozen solid (wood frog).
+- In space, a NASA astronaut... hmm.
+- The &quot;Painted Desert&quot;...
+
+Also fun: the &quot;Mongolian death worm&quot; is a hoax. Or: there&#39;s a lake where you can... 
+
+Another good one: There is a 17-year cicada whose nymphs live underground. Or: &quot;There are around 2,000 languages with a word for...&quot;
+
+Let me pick a handful with variety, presented engagingly, with a couple of deeper ones. The user seems to want novelty, so I should aim for facts that are surprising but true, and maybe mix in a couple of &quot;wait, really?&quot; ones.
+
+I&#39;ll structure it as a short list of ~5-7 facts, each with a brief explanation. Let me make sure facts are accurate.
+
+1. Sharks existed before trees. Sharks appeared ~450 million years ago (earliest shark-like scales ~430-450 Ma); trees ~385-390 Ma. Accurate.
+
+2. The first &quot;computer bug&quot; was literally a moth — September 9, 1947, Grace Hopper&#39;s team found a moth in the Harvard Mark II relay. Accurate; the log book with the moth is at the Smithsonian.
+
+3. The Eiffel Tower shrinks in winter and grows in summer (~15-17 cm) due to thermal expansion of iron. Accurate.
+
+4. Octopuses have three hearts, blue copper-based blood, and their blood is toxic to... they have hemocyanin. Also they can edit their own RNA (psmα gene editing) — discovered in 2013 (Garneau et al.). That&#39;s a cool one.
+
+5. Wombat poop is cubical — yes, cubic feces; 2018 study (Gibson et al., PLOS ONE) showed the shape arises in the intestine with varying elasticity. Accurate.
+
+6. Oxford University: teaching by 1096, Aztec Empire founded 1428 (or 1440s). Accurate.
+
+7. There&#39;s more possible chess positions (~10^47) than... hmm, the Shannon number 10^120 is number of possible games. Number of atoms in observable universe ~10^80. Accurate as an estimate.
+
+8. Honey found in Egyptian tombs (over 3,000 years old) still edible. Accurate.
+
+9. A group of flamingos is a &quot;flamboyance&quot;; group of jellyfish &quot;smack&quot;; group of owls &quot;parliament.&quot; Fine.
+
+10. There&#39;s a town in North Carolina named &quot;Toast.&quot; Accurate — Toast, NC, in Surry County.
+
+11. Venus: day (243 Earth days sidereal rotation) longer than year (225 Earth days). Accurate.
+
+12. The inventor of the Pringles can is buried in a Pringles can — Fredric Baur. He requested half a can of Original flavor. Accurate.
+
+13. There are ~3 trillion trees on Earth vs 100–400 billion stars in the Milky Way. Accurate-ish (2015 Potapov et al. estimate ~3.04 trillion trees).
+
+14. The dot on i is a &quot;tittle.&quot; Trivial but fun.
+
+15. &quot;The small intestine is the longest organ&quot; — but skin is largest organ. Skip.
+
+16. Leeches have 32 brains — actually one brain and 32 ganglia (segmental). Semi-true; be careful. Better: leeches have 32 separate nerve ganglia. I&#39;d phrase carefully.
+
+17. Cows have best friends — research (University of Northampton) showed cows form social preferences. Accurate.
+
+18. Scotland&#39;s national animal is the unicorn — accurate, in the Royal Banner of Scotland.
+
+19. &quot;A group of ravens is a murder.&quot; Fine.
+
+20. The word &quot;hello&quot; was popularized by Edison who suggested &quot;ahoy&quot; for phones. &quot;Hello&quot; was in use before Edison (1890s, &quot;hello&quot; attested 1826 or so). Edison suggested &quot;ahoy&quot; as the telephone greeting. Fine but let&#39;s not overstate.
+
+Let me pick a mix: some &quot;mind-blown&quot; science/history, some delightful trivia, and one or two with a &quot;why it matters.&quot;
+
+Format: short intro line, then a handful of facts with bold lead-ins and one-sentence explanations. Keep it not too long. Maybe 6 facts. End with an offer for more of a certain flavor.
+
+I&#39;ll go with:
+1. Sharks before trees.
+2. Wombat cube poop (with the science of why).
+3. The first computer bug was a moth.
+4. Octopuses edit their own RNA (and have blue blood, 3 hearts).
+5. Oxford older than the Aztec Empire.
+6. The Eiffel Tower breathes/shrinks with seasons.
+7. Bonus: Pringles inventor buried in a can; or toast town.
+
+Maybe 7 items, grouped loosely. Keep each tight. Let me write.
+
+Also I could add something more obscure: &quot;There is a species of deep-sea fish, the &#39;snotfish&#39;...&quot; or &quot;In 2019, scientists found a bacteria that can eat plastic (PETase).&quot; Or &quot;There&#39;s a &#39;ghost&#39; species of frog.&quot; Or &quot;The word &#39;elderberries&#39;...&quot; Hmm.
+
+Another great one: &quot;Your body replaces skin cells every ~2-4 weeks so you get a new &#39;you&#39;...&quot; — but that&#39;s often overstated.
+
+Another: &quot;The sun is losing 4 million tons of mass per second, and Earth gains ~50,000 tons of meteorite dust per year.&quot; Fine.
+
+Another obscure fun one: &quot;In 1959, a Soviet scientist... &quot; skip.
+
+Another: &quot;There&#39;s an island in the Pacific... &quot; skip.
+
+Another great one: &quot;Octopuses taste with their arms.&quot; True — chemoreceptors on suckers.
+
+Another: &quot;A single teaspoon of neutron star matter would weigh about a billion tons on Earth.&quot; Good.
+
+Another: &quot;Antarctica is the largest desert.&quot; Common-ish.
+
+Another: &quot;Honey never spoils&quot; — put in as a bonus with the 3000-year-old Egyptian tomb honey.
+
+I&#39;ll write ~7 items with punchy formatting.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here&#39;s one that usually gets people: <strong>sharks existed before trees.</strong></p>
+<p>Shark-like fish showed up roughly 450 million years ago, in the oceans of the Silurian. The first real forests — the towering <em>Archaeopteris</em> — wouldn&#39;t appear for another 70 million years or so. So for a stretch of Earth&#39;s history, the land was basically barren rock and fungus, and the ocean was already full of things that looked a lot like modern sharks.</p>
+<p>A few more in the same spirit:</p>
+<ul>
+<li><strong>Octopuses have blue blood and three hearts</strong>, and two-thirds of their neurons are in their arms rather than their head. Each arm can, in a sense, think independently — an octopus in a tank can solve a maze in one arm while the rest of the body stays put.</li>
+<li><strong>Wombats produce cube-shaped poop.</strong> Australian researchers in 2018 worked out why: the intestines aren&#39;t uniform, so the final stretch of the gut squeezes the waste into flat-sided blocks as it dries. It&#39;s the only known animal that does it.</li>
+<li><strong>Oxford University was teaching by 1096.</strong> The Aztec Empire, founded in 1428, is roughly 300 years <em>younger</em> than Oxford&#39;s earliest recorded classes.</li>
+<li><strong>The Eiffel Tower grows about 15 cm taller in summer</strong>, because steel expands in heat. It&#39;s shrunk back to its winter size ever since.</li>
+<li><strong>The inventor of the Pringles can was buried in one</strong> — Fredric Baur requested that a portion of his ashes go in the original flavor, and his family obliged.</li>
+</ul>
+<p>Want more in a particular direction? Space, biology, history, weird words — I&#39;m happy to keep going.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1032 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span> <span class="topic-tag" data-topic="eiffel tower">🗼 eiffel tower</span> <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span> <span class="topic-tag" data-topic="sharks">🦈 sharks</span> <span class="topic-tag" data-topic="wombats">🐾 wombats</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks &quot;Tell me something I don&#39;t know.&quot; I should share an interesting, less-common fact. Let me pick something genuinely surprising and verifiable.
+
+Some good candidates:
+- Octopuses have three hearts and blue blood.
+- Bananas are radioactive (potassium-40).
+- Honey never spoils; archaeologists found edible honey in Egyptian tombs.
+- There&#39;s a species of jellyfish (Turritopsis dohrnii) that is biologically immortal.
+- Wombat feces are cube-shaped.
+- The inventor of the Pringles can is buried in one.
+- Oxford University is older than the Aztec Empire.
+- A group of flamingos is a &quot;flamboyance.&quot;
+- Sea cucumbers have no brain and can eviscerate themselves.
+- The Eiffel Tower grows ~15cm taller in summer because iron expands.
+- Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid. (Actually: Great Pyramid built ~2560 BC; Cleopatra died 30 BC. Time from Cleopatra to Moon landing 1969 = ~2000 years. Time from Great Pyramid to Cleopatra = ~2500 years. So yes, closer.)
+- Sourdough... hmm.
+- Sharks existed before trees (sharks ~450 million years ago, trees ~350-380 million years ago).
+- There&#39;s a small percentage of people with a &quot;fourth&quot; type of blood... eh.
+- The human nose can detect over 1 trillion odors (that claim is contested).
+- &quot;Nintendo&quot; was originally a playing card company.
+- The word &quot;posh&quot; origin myth.
+
+Let me pick a couple of interesting ones with a bit of detail, avoiding contested claims. Maybe present 3-4 facts, with one highlighted. Keep it engaging and conversational, not a list dump of trivia. Actually the prompt is open-ended — a fun, surprising fact with a bit of storytelling works well.
+
+Let me pick the best: The Eiffel Tower summer height, plus Oxford older than Aztecs, plus sharks before trees, plus wombat cube poop, plus octopus blue blood.
+
+I&#39;ll keep it tight — maybe 4 facts, one in depth. Let me write it with some personality.
+
+Let me verify facts:
+- Eiffel Tower: expands about 15 cm (6 in) in summer. Yes, commonly cited ~15cm.
+- Oxford University teaching existed by 1096; Aztec Empire founded 1428. Yes.
+- Sharks: earliest shark-like fish ~450 million years ago (Silurian); trees ~380 million years ago (first forests ~385 mya, Archaeopteris). So sharks predate trees by ~50-70 million years. Reasonable.
+- Wombat cube-shaped feces: yes, Melbourne scientists, 2018 (Paty Newsome), cubic poop.
+- Octopus: three hearts, blue blood (hemocyanin), two-thirds of neurons in arms.
+- Turritopsis dohrnii immortal jellyfish — real but nuanced.
+- Honey in Egyptian tombs — reported, though some claims are questionable; still widely cited.
+- Bananas radioactive — potassium-40, yes.
+- Pringles inventor Fredric Baur buried in a Pringles can — yes, he requested portion of his ashes in original flavor can.
+
+I&#39;ll write something like: a short hook, then a few facts, then offer. Keep formatting modest — a few short paragraphs or a compact list.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one with a great punchline:</p>
+<p><strong>The inventor of the Pringles can was buried in a Pringles can.</strong> Fredric Baur designed the iconic saddle-shaped can in the late 1960s, and by the time he died in 2008 he was sick and housebound. His last wish was to be interred in one of his own cans. His family obliged — part of him went into a can, the rest of his ashes went in alongside. His dentures are now displayed in a Pringles can at the Cincinnati Museum Center in his hometown of Cincinnati, and the company made him a special oversized &quot;Big Daddy&quot; can for the occasion. He got his wish, and so did everyone who ever wondered what was actually in the thing.</p>
+<p>A few more, since you asked:</p>
+<ul>
+<li><p><strong>The Eiffel Tower is taller in summer than winter.</strong> About 15 cm, because it expands in heat — and it was originally designed to be taken down and dismantled after 20 years. It&#39;s been standing for over 135.</p>
+</li>
+<li><p><strong>Oxford University is older than the Aztec Empire.</strong> Teaching was happening at Oxford around 1096; Tenochtitlan was founded in 1428.</p>
+</li>
+<li><p><strong>Honey doesn&#39;t spoil.</strong> Archaeologists have opened Egyptian tombs containing 3,000-year-old honey that was still perfectly edible — low water content, high acidity, and enzymes that make it inhospitable to microbes.</p>
+</li>
+<li><p><strong>There&#39;s a jellyfish that can&#39;t die.</strong> <em>Turritopsis dohrnii</em> can revert from its adult medusa stage back to a juvenile polyp and start life over, indefinitely. It usually dies of predation or starvation, but aging isn&#39;t the cause.</p>
+</li>
+<li><p><strong>Your blood would be blue if you were an octopus.</strong> It uses copper-based hemocyanin instead of iron-based hemoglobin.</p>
+</li>
+<li><p><strong>Nintendo started in 1889 making playing cards.</strong> Hand-painted <em>hanafuda</em> cards, sold out of a Kyoto shop. The video game empire took another 60 years to happen.</p>
+</li>
+<li><p><strong>Humans can distinguish at least a trillion different smells.</strong> A 2014 <em>Science</em> study demolished the old &quot;10,000 smells&quot; figure — and the previous scientific estimate had been as low as 350.</p>
+</li>
+</ul>
+<p>Want me to go deeper on any of these? I can also go weirder.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2132 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span> <span class="topic-tag" data-topic="octopus">🐙 octopus</span> <span class="topic-tag" data-topic="eiffel tower">🗼 eiffel tower</span> <span class="topic-tag" data-topic="oxford university">🎓 oxford university</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks &quot;Tell me something I don&#39;t know.&quot; This is an open-ended request. I should share something genuinely interesting and less commonly known. Let me pick something specific and verifiable that&#39;s genuinely surprising.
+
+Good candidates:
+- The inventor of the Pringles can was buried in one. Fredric Baur.
+- Honey never spoils — 3000-year-old honey found in Egyptian tombs still edible.
+- Octopus blood is blue because it uses hemocyanin.
+- There&#39;s a species of jellyfish that is effectively immortal (Turritopsis dohrnii).
+- Bananas are radioactive (potassium-40).
+- The &quot;Wobbuffet&quot; name origin.
+- In 1919, milk was... hmm.
+- The Eiffel Tower grows ~15cm taller in summer due to thermal expansion.
+- Oxford University is older than the Aztec Empire.
+- Nintendo was founded in 1889, originally playing cards.
+- The word &quot;posh&quot; origin myth.
+- Actually a fun one: the inventor of the Pringles can.
+- Another: There&#39;s a Japanese train station... no.
+- The &quot;Hamlet&quot; and... skip.
+
+Maybe something with a bit more depth — a less famous fact with an interesting mechanism. Let me do a couple of them, well-told, with a twist. Maybe lead with one strong one and offer more.
+
+Strong pick: A 2017 study found that... hmm, let me stay with well-established facts.
+
+Let me tell a few genuinely surprising ones with brief explanations:
+
+1. The Eiffel Tower is taller in summer and shrinks in winter — about 15 cm (6 inches), because iron expands in heat. It also was designed to be dismantled and was only meant to last 20 years.
+
+2. Oxford University was founded around 1096, while the Aztec Empire was founded in 1428 — so Oxford is older than the Aztec Empire by over 300 years.
+
+3. Honey found in Egyptian tombs (over 3,000 years old) was still edible — because of low moisture, acidity, and antimicrobial compounds.
+
+4. Turritopsis dohrnii — the immortal jellyfish.
+
+5. Octopus blood is blue.
+
+6. Nintendo, founded 1889, originally made playing cards (hanafuda).
+
+7. The inventor of the Pringles can was buried in one.
+
+Let me pick one as the &quot;headline&quot; with depth, and then a short list. I&#39;ll aim for engaging, concise, with a bit of texture. Maybe lead with something less common than the Eiffel Tower one? Actually the Eiffel Tower thermal expansion one is well-known-ish. Let me lead with something more obscure but delightful.
+
+Idea: There&#39;s a species of frog that can survive being frozen solid — the wood frog, and its glucose acts as a cryoprotectant, essentially turning its body into &quot;sugar syrup.&quot; That&#39;s cool but known.
+
+More obscure: The &quot;immortal&quot; jellyfish Turritopsis dohrnii can revert to its polyp stage, but it&#39;s been argued it dies from predation/starvation.
+
+Obscure and delightful: In 1958, a fossil... hmm.
+
+Another: &quot;The word &#39;sushi&#39;...&quot; skip.
+
+Let me do: The inventor of the Pringles can — Fredric Baur — and the story about his last wish to be buried in a Pringles can, and that his family fulfilled it. Also his children donated his dentures to the Cincinnati Museum Center, which is displayed next to the original can mold. That&#39;s a fun story.
+
+Also: There&#39;s a 2,000-year-old... hmm.
+
+Another great obscure one: The &quot;Frankincense&quot; ... skip.
+
+Another: A group of scientists in 2018 found that... skip.
+
+Another genuinely fun one: The &quot;Mona Lisa&quot; is smaller than most people think? Hmm, that&#39;s debatable.
+
+Another: &quot;The Vatican City is the world&#39;s smallest country, and it has a national football team that lost its first game 0-10...&quot; meh.
+
+Another: In 2002, an Australian... skip.
+
+Let me also consider: &quot;The human nose can distinguish at least 1 trillion different olfactory stimuli&quot; (Science 2014) — often misquoted as &quot;1 trillion smells.&quot; Actually the study said at least 1 trillion, and people can identify... The claim &quot;at least 1 trillion&quot; was from 2014 Science paper. Also &quot;more than 1 trillion&quot; is fine but the more surprising framing: older estimate was ~350 smells. That&#39;s fun because the myth &quot;humans can only smell 10,000 things&quot; is wrong in both directions.
+
+I think I&#39;ll structure: one headline story with a bit of narrative (Pringles inventor), then a short &quot;also&quot; list of 4-5 quick surprises, then offer to go deeper on any.
+
+Keep it tight and well-written. Use light formatting.
+
+Let me write it.
+
+Facts to be careful about:
+- Fredric Baur, inventor of the Pringles can, died in 2008. His last wish was to be buried in a Pringles can. His family buried part of him in a Pringles can; the rest was cremated and the can... Actually the story: &quot;Baur&#39;s children buried part of him in a Pringles can and the rest of his ashes were placed in the can as well.&quot; The Cincinnati Museum Center has his dentures displayed in a Pringles can. Also, before he died, he designed a new, improved can — the &quot;biggest Pringles can ever&quot; with a three-foot diameter... Actually the &quot;biggest Pringles can&quot; was made for him and it&#39;s at the Cincinnati Museum Center. Let me be careful: the retired VP of marketing at Frito-Lay, Fredric Baur, designed the can shape. He requested his dentures be put in a Pringles can and displayed at the Cincinnati Museum Center. He also designed a &quot;biggest can&quot; — a 10-foot? Let me recall: &quot;He also designed a new Pringles can... the world&#39;s largest Pringles can, which was 2.5 feet tall.&quot; Hmm, I recall reporting that he created a special can for his burial, a &quot;Big Daddy&quot; Pringles can. I&#39;ll phrase carefully without over-specific numbers I&#39;m unsure of.
+
+I&#39;ll say: Fredric Baur designed the iconic saddle-shaped can in 1968-ish (the can was patented 1970, launched 1971). He died in 2008, and his family buried him in a Pringles can, per his request. His dentures are now in a Pringles can at the Cincinnati Museum Center.
+
+- Eiffel Tower: designed by Gustave Eiffel, built 1887-1889 for the World&#39;s Fair, intended to stand for 20 years and be dismantled. Height changes by ~15 cm (about 6 in) — actually reported as up to 15 cm due to thermal expansion of the 7,300 tonnes of iron. Also the foundation pillars are designed to allow movement. Good.
+
+- Oxford: teaching existed from 1096; Aztecs founded their empire/capital Tenochtitlan in 1428. So Oxford predates the Aztec Empire. Good.
+
+- Honey: 3,000-year-old honey in Egyptian tombs still edible. Good.
+
+- Turritopsis dohrnii: immortal jellyfish. Good.
+
+- Octopus blood blue (hemocyanin, copper-based). Good.
+
+- Nintendo founded 1889 by Fusajiro Yamauchi making hanafuda cards. Good.
+
+- Olfactory: 2014 Science study, at least 1 trillion odorants. Older estimate ~350 smells. I&#39;ll mention carefully.
+
+- Wood frog freeze tolerance: up to  ~65-70% of body water frozen, glucose as cryoprotectant, heart stops, breathes through skin. Good.
+
+- Bananas are radioactive due to potassium-40 — mildly radioactive, harmless. Good.
+
+Let me write with energy and a bit of wit. Not too long.
+
+I&#39;ll add the &quot;also&quot; list with brief one-liners, and the &quot;if you want more&quot; offer.
+
+Length: moderate — maybe 350-450 words.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/recursive-flint-v1.0-free/">← Recursive: Flint (free)</a>
+            <a href="/">all models</a>
+            <span></span>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
