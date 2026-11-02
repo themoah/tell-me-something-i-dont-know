@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle AI: Particle-1 — Tell me something I don't know.</title>
+    <meta name="description" content="Particle AI: Particle-1 answers &quot;Tell me something I don&#39;t know.&quot; — There’s a defunct nuclear reactor orbiting Earth: the U.S. SNAP-10A, launched in 1965. It operated for 43 days, shut down, and is still in orbit—making…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/particle-ai-particle-1/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/particle-ai-particle-1/">
+    <meta property="og:title" content="Particle AI: Particle-1 — Tell me something I don't know.">
+    <meta property="og:description" content="Particle AI: Particle-1 answers &quot;Tell me something I don&#39;t know.&quot; — There’s a defunct nuclear reactor orbiting Earth: the U.S. SNAP-10A, launched in 1965. It operated for 43 days, shut down, and is still in orbit—making…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Particle AI: Particle-1 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Particle AI: Particle-1 answers &quot;Tell me something I don&#39;t know.&quot; — There’s a defunct nuclear reactor orbiting Earth: the U.S. SNAP-10A, launched in 1965. It operated for 43 days, shut down, and is still in orbit—making…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Particle AI: Particle-1)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"There’s a defunct nuclear reactor orbiting Earth: the U.S. **SNAP-10A**, launched in 1965. It operated for 43 days, shut down, and is still in orbit—making it the only American fission reactor ever launched into space.","author":{"@type":"Organization","name":"Particle Ai"}},"suggestedAnswer":[{"@type":"Answer","text":"Octopuses have a decentralized nervous system: roughly two-thirds of their neurons are in their arms, not their central brain. That lets each arm process information and act semi-independently—so an octopus can be probing a crevice with one arm while another is doing something else.","author":{"@type":"Organization","name":"Particle Ai"}},{"@type":"Answer","text":"Old books can smell faintly of vanilla because lignin in paper slowly breaks down into vanillin as the book ages—along with other compounds that give the dusty, papery notes. It’s one reason used bookstores have that distinctive smell.","author":{"@type":"Organization","name":"Particle Ai"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Particle AI: Particle-1</h1>
+        <p class="subtitle">Particle Ai · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>October 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Particle AI: Particle-1</div>
+                        <div class="model-provider">Particle Ai</div>
+                        <div class="model-released">October 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>There’s a defunct nuclear reactor orbiting Earth: the U.S. <strong>SNAP-10A</strong>, launched in 1965. It operated for 43 days, shut down, and is still in orbit—making it the only American fission reactor ever launched into space.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>811 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer. User asks &quot;Tell me something I don&#39;t know.&quot; Need provide interesting fact unknown. Need be concise. Could say something obscure. Need ensure true. Maybe about octopus? They know? Need something surprising. &quot;A day on Venus is longer than its year&quot; common. &quot;Bananas are radioactive&quot; common. &quot;Honey never spoils&quot; common. Need less known. Could mention &quot;The Eiffel Tower can be 15 cm taller during summer due to thermal expansion&quot; common. &quot;There are more trees on Earth than stars in Milky Way&quot; common. Need something obscure and true. Maybe &quot;Wombat poop is cube-shaped&quot; common. &quot;Sea otters hold hands&quot; common.
+
+Need answer with caveat &quot;Here&#39;s one...&quot; Fact: &quot;The first computer bug was an actual moth found in the Harvard Mark II in 1947, taped into the logbook.&quot; Common. &quot;The word &#39;nerd&#39; was coined by Dr. Seuss in If I Ran the Zoo (1950).&quot; Some know. &quot;The unicorn is Scotland&#39;s national animal.&quot; common. &quot;A group of flamingos is called a flamboyance.&quot; common.
+
+Need something truly less known: &quot;The tiny island of Sark was the last feudal state in Europe until 2008&quot; maybe. &quot;The US has no official language at federal level&quot; common. &quot;The inventor of the Pringles can was buried in one&quot; true? Fredric Baur requested burial in Pringles can; ashes in can. Common.
+
+Maybe &quot;The smell of rain is called petrichor, and it&#39;s partly produced by bacteria&quot; common. &quot;There are more possible chess games than atoms in observable universe&quot; common.
+
+Need answer likely acceptable. Need maybe &quot;Octopuses have three hearts, but the third stops beating when they swim, which is why they prefer crawling.&quot; common.
+
+Need something not known: &quot;The paper size A4 has an aspect ratio of sqrt(2), so folding it in half gives A5 with same ratio.&quot; common. &quot;The &#39;save&#39; icon is a floppy disk&quot; obvious.
+
+Maybe fact about language: &quot;The word &#39;alphabet&#39; comes from first two Greek letters alpha and beta&quot; common.
+
+Need maybe &quot;In 1961, the US launched a nuclear reactor into space; it&#39;s still in orbit&quot; true? SNAP-10A launched 1965, still in orbit. Interesting. &quot;There is a nuclear reactor in orbit around Earth&quot; maybe unknown. SNAP-10A was launched April 3 1965, operated 43 days, remains in orbit. It&#39;s the only US nuclear reactor launched into space? Yes. Could mention. Need verify: SNAP-10A is in Earth orbit, shutdown, remains. It is a nuclear fission reactor. Good.
+
+Could answer: &quot;There is a defunct nuclear reactor orbiting Earth: the U.S. SNAP-10A, launched in 1965, operated for 43 days and is still in orbit.&quot; That is something many don&#39;t know. Need ensure not wrong: SNAP-10A launched aboard Atlas-Agena D from Vandenberg, operated 43 days, shutdown due to spacecraft failure? It remains in orbit. It was a 500-watt reactor. It is in a 1,300 km orbit? It will remain for ~4,000 years. Good.
+
+Need maybe mention &quot;not the only&quot; Soviet RORSATs had reactors. But &quot;a&quot; defunct nuclear reactor. Good.
+
+Need final concise. Could say &quot;Here’s one: There’s a dead nuclear reactor orbiting Earth...&quot; Need no excessive. Ensure answer direct.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Octopuses have a decentralized nervous system: roughly two-thirds of their neurons are in their arms, not their central brain. That lets each arm process information and act semi-independently—so an octopus can be probing a crevice with one arm while another is doing something else.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>499 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user asks &quot;Tell me something I don&#39;t know.&quot; Need provide interesting fact likely unknown. Need be concise. Need maybe random surprising fact. Need ensure true. Could say octopuses have three hearts, but many know. Need something less common. &quot;Bananas are berries, strawberries aren&#39;t&quot; common. &quot;Honey never spoils&quot; common/misleading. Need something obscure and verifiable. Maybe &quot;The Eiffel Tower can be 15 cm taller in summer due to thermal expansion&quot; common. &quot;A day on Venus is longer than its year&quot; common. &quot;Wombat poop cube&quot; common. Need something genuinely less known. Could mention &quot;The word &#39;alphabet&#39; comes from first two Greek letters alpha and beta&quot; common. &quot;Sharks existed before trees&quot; common. &quot;Cleopatra lived closer to moon landing than to construction of Great Pyramid&quot; common. Need something obscure.
+
+Maybe &quot;There are more possible iterations of a game of chess than there are atoms in the observable universe&quot; common. Need something not known. &quot;The smell of rain is called petrichor&quot; somewhat known. &quot;Some turtles can breathe through their butts&quot; common. Hmm.
+
+Need answer: &quot;The human nose can detect over 1 trillion different odors&quot; maybe known. &quot;Your stomach lining replaces itself every few days&quot; common. Need something surprising.
+
+Could use &quot;The first computer bug was an actual moth&quot; common. &quot;The QWERTY keyboard was designed to slow typing&quot; myth. Avoid myths.
+
+Maybe &quot;A cloud can weigh more than a million pounds&quot; common. &quot;The average person walks the equivalent of five times around the world in a lifetime&quot; maybe.
+
+Need &quot;something I don&#39;t know&quot; impossible know but offer. Could say &quot;Octopuses have a decentralized nervous system: about two-thirds of their neurons are in their arms, so each arm can act semi-independently.&quot; This is interesting and maybe unknown. Good. Need answer with one fact. Maybe add context. Keep concise. Ensure no overexplaining. Could mention &quot;This is why an octopus can explore with one arm while another does something else.&quot; Good. Final.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Old books can smell faintly of vanilla because lignin in paper slowly breaks down into vanillin as the book ages—along with other compounds that give the dusty, papery notes. It’s one reason used bookstores have that distinctive smell.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1831 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer. Need &quot;Tell me something I don&#39;t know.&quot; Need provide interesting fact. Need not know user. Need something obscure. Need be concise. Could give fact with caveat. Need something they likely don&#39;t know. Choose surprising: &quot;There are more possible chess games than atoms in observable universe&quot; common. Better obscure: &quot;The Eiffel Tower can be 15 cm taller in summer due thermal expansion&quot; common. &quot;Octopuses have three hearts and blue blood&quot; common. Need something less known. Maybe &quot;Wombat poop is cube-shaped&quot; common. &quot;Bananas are berries, strawberries aren&#39;t&quot; common. Need something genuinely obscure. Could say &quot;The word &#39;set&#39; has most definitions in English&quot; common. Need &quot;something I don&#39;t know&quot; impossible. Provide a fact with source-ish.
+
+Interesting: &quot;A day on Venus is longer than its year&quot; common. &quot;There are no muscles in fingers&quot; common. Need obscure: &quot;The unicorn is Scotland&#39;s national animal&quot; common. &quot;Honey never spoils&quot; common.
+
+Maybe: &quot;The first computer programmer was Ada Lovelace&quot; common.
+
+Need something not known: &quot;The Pacific Ocean is shrinking by a few centimeters per year while the Atlantic is widening&quot; known. &quot;The largest living organism is a fungus in Oregon&quot; common.
+
+Could use: &quot;In 1961, the U.S. Air Force considered detonating a nuclear bomb on the Moon as a Cold War display (Project A119)&quot; somewhat known. &quot;The U.S. once accidentally dropped a nuclear bomb on South Carolina in 1958; its conventional explosives detonated but the nuclear core didn&#39;t.&quot; Known.
+
+Need answer can be one fact. &quot;A single strand of spider silk is stronger by weight than steel, and some spiders can tune silk stiffness by adjusting humidity&quot; maybe.
+
+Maybe obscure: &quot;The &#39;sounds&#39; of a firework are not just chemical: the whistle comes from a cavity that resonates as the shell burns, not from explosives.&quot; Hmm.
+
+Need &quot;Tell me something I don&#39;t know.&quot; We can answer with a fact and note &quot;you may know.&quot; Choose: &quot;The Antarctic ice sheet is so heavy that it depresses the Earth&#39;s crust by up to about 500 meters; if it melted, parts of Antarctica would rebound hundreds of meters over millennia.&quot; That&#39;s interesting and less common. Need accurate: Bedrock depression up to ~1 km? Antarctica isostatic depression maybe up to 500m? Let&#39;s verify: Antarctic ice sheet depresses bedrock by up to 1 km? The Gamburtsev? Isostatic depression under ice sheets can be ~ hundreds m. In Antarctica, bedrock below sea level. &quot;up to about 500 m&quot; plausible. But need not overclaim.
+
+Another fact: &quot;The Earth&#39;s magnetic north pole is moving fast enough that NOAA had to update the World Magnetic Model early in 2019; it crossed the International Date Line in 2017.&quot; Known.
+
+Need &quot;something you don&#39;t know&quot; maybe a linguistic fact: &quot;The word &#39;orange&#39; didn&#39;t originally name the fruit; the color was named after the fruit. Before that, English used &#39;geoluhread&#39; (yellow-red).&quot; Common.
+
+Obscure: &quot;In the 18th century, European mapmakers sometimes labeled unexplored regions &#39;terra incognita&#39; and filled them with speculative mountains, rivers, and even imaginary nations; one map showed a &#39;Kingdom of Anian&#39; in Alaska.&quot; Hmm.
+
+Maybe answer: &quot;The smell of rain is called petrichor, and a major component is geosmin, which humans can detect at about 5 parts per trillion—roughly a few drops in an Olympic swimming pool.&quot; This is known but nice. Need &quot;something I don&#39;t know&quot; maybe &quot;Your nose is more sensitive to geosmin than a shark is to blood&quot; not exactly.
+
+Could give a weird fact: &quot;There is a species of jellyfish (Turritopsis dohrnii) that can revert to its juvenile stage, effectively making it biologically immortal—unless eaten or killed.&quot; Common.
+
+Need maybe &quot;The human body contains more bacterial cells than human cells&quot; outdated. Avoid.
+
+Let&#39;s craft answer: &quot;Here&#39;s one: The &#39;hum&#39; of a fluorescent light isn&#39;t usually the light itself—it&#39;s the magnetic ballast vibrating at twice the AC line frequency (100/120 Hz), which is why it can sound like a low buzz.&quot; Hmm.
+
+Need likely unknown: &quot;The U.S. has a secretive military spaceplane, X-37B, that has spent more than 900 days in orbit on a single mission&quot; known.
+
+Maybe &quot;The first webcam was pointed at a coffee pot at Cambridge to avoid wasted trips.&quot; Common.
+
+Need answer with one fact. Choose obscure and verifiable: &quot;The International Space Station&#39;s urine-recycling system can recover about 98% of water from urine and sweat; astronauts drink it after processing.&quot; Known.
+
+Maybe &quot;A &#39;jiffy&#39; is an actual unit of time: 1/100th of a second in some fields, but in physics it can mean the time light takes to travel one femtometer (~3×10^-24 s).&quot; Interesting. But &quot;something I don&#39;t know&quot; maybe.
+
+Need answer not too long. We can say &quot;Here’s a less-common one: ...&quot; Good.
+
+Let&#39;s pick: &quot;The Earth&#39;s atmosphere has a &#39;third pole&#39;—the Tibetan Plateau/Himalaya ice fields—and they hold the largest ice mass outside the Arctic and Antarctic; their meltwater supports about 2 billion people.&quot; Known.
+
+Need &quot;something I don&#39;t know&quot; maybe &quot;The word &#39;quarantine&#39; comes from Venetian &#39;quaranta giorni&#39;—40 days—used to isolate ships during the Black Death.&quot; Common.
+
+Need maybe &quot;A group of flamingos is called a flamboyance&quot; common.
+
+Obscure scientific: &quot;There are more trees on Earth than stars in the Milky Way&quot; common. &quot;There are more synapses in one human brain than stars in Milky Way&quot; common.
+
+Maybe use &quot;The largest known volcano in the solar system is Mars&#39;s Olympus Mons, but the largest known impact crater is on the Moon&#39;s far side (South Pole–Aitken basin), ~2,500 km wide.&quot; Known.
+
+Need maybe &quot;The deepest point in the ocean, Challenger Deep, is so deep that if Mount Everest were placed there, its peak would still be over 2 km underwater.&quot; Common.
+
+Need answer with a fact that is surprising and not common. Maybe &quot;Some ants can survive underwater for days by trapping air bubbles; they use the bubbles as gills.&quot; Hmm.
+
+Could answer: &quot;The &#39;five-second rule&#39; has a microbial twist: researchers found that moisture, surface type, and contact time matter more than the number five—and on carpet, transfer can be low, while on stainless steel it can be high.&quot; Not &quot;don&#39;t know.&quot;
+
+Maybe &quot;The first known use of the word &#39;hello&#39; in print was in 1826, but it became popular as a telephone greeting partly because Thomas Edison promoted it over Alexander Graham Bell&#39;s preferred &#39;ahoy&#39;.&quot; This is known but fun. Bell wanted &quot;ahoy-hoy&quot;. Good. User likely knows? Maybe.
+
+Need &quot;Tell me something I don&#39;t know&quot; as prompt. Answer can be &quot;Here’s one you might not: ...&quot; Good.
+
+Need ensure no false. Let&#39;s choose obscure fact: &quot;The &#39;smell&#39; of old books is partly due to lignin in paper breaking down into vanillin, which is why old books can smell faintly like vanilla.&quot; This is interesting and less common. Accurate: Lignin degradation releases vanillin. Good. Could include &quot;along with acetic acid and furfural.&quot; Nice.
+
+Need final answer concise. Maybe: &quot;Old books can smell like vanilla because lignin in paper breaks down into vanillin as it ages; that&#39;s one reason used bookstores have that sweet, dusty scent.&quot; That is likely something they don&#39;t know. Good.
+
+Need answer only. Use final. 
+Need maybe mention &quot;You may already know, but...&quot; no. Final with fact. 
+Need desired oververbosity 5, but user asks simple. Keep 2 sentences. 
+Need not say &quot;I don&#39;t know what you know.&quot; Good.
+
+Final: &quot;Old books can smell faintly of vanilla because lignin in paper slowly breaks down into vanillin as the book ages—along with other compounds that give the dusty, papery notes.&quot; Good. 
+Need maybe &quot;That&#39;s one reason used bookstores have that distinctive smell.&quot; Good. 
+Done.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/z-ai-glm-5.3-flashx-legal/">← Z.ai: GLM 5.3 FlashX Legal</a>
+            <a href="/">all models</a>
+            <a href="/m/openai-gpt-6.1-terra-pro/">OpenAI: GPT-6.1 Terra Pro →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
