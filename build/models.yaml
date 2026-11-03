@@ -1464,3 +1464,35 @@ models:
     license: "open-weights"
     released: "October 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "z-ai/glm-5.3-flashx-legal"
+    name: "Z.ai: GLM 5.3 FlashX Legal"
+    provider: "Z Ai"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "particle-ai/particle-1"
+    name: "Particle AI: Particle-1"
+    provider: "Particle Ai"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "openai/gpt-6.1-terra-pro"
+    name: "OpenAI: GPT-6.1 Terra Pro"
+    provider: "OpenAI"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "openai/gpt-6.1-terra"
+    name: "OpenAI: GPT-6.1 Terra"
+    provider: "OpenAI"
+    license: "commercial"
+    released: "October 2026"
+
+  - id: "prism-ml/ternary-bonsai-2-9b"
+    name: "PrismML: Ternary Bonsai 2 9B"
+    provider: "Prism Ml"
+    license: "open-source"
+    released: "October 2026"
+
