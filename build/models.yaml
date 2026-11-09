@@ -1496,3 +1496,59 @@ models:
     license: "open-source"
     released: "October 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "meta/muse-ember"
+    name: "Meta: Muse Ember"
+    provider: "Meta"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "google/gemini-omni-1.2-flash"
+    name: "Google: Gemini Omni 1.2 Flash"
+    provider: "Google"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "google/gemini-omni-1.1-flash"
+    name: "Google: Gemini Omni 1.1 Flash"
+    provider: "Google"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "ricursiveai/ripple-65b-preview"
+    name: "Ricursive: Ripple 65B Preview"
+    provider: "Ricursiveai"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "stealth/crouton-alpha"
+    name: "Crouton Alpha"
+    provider: "Stealth"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "openrouter/auto"
+    name: "Auto Router"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "openrouter/auto-code"
+    name: "Auto Code"
+    provider: "Openrouter"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "liquid/lfm-3-1.7b"
+    name: "LiquidAI: LFM3-1.7B"
+    provider: "Liquid"
+    license: "open-weights"
+    released: "November 2026"
+
+  - id: "tencent/hy4"
+    name: "Tencent: Hy4"
+    provider: "Tencent"
+    license: "open-weights"
+    released: "November 2026"
+
