@@ -231,8 +231,13 @@ export function parseReleasedToTimestamp(released?: string): number {
     return new Date(year, month, 1).getTime();
 }
 
+/** Topics shown in the Hive Mind section (bars and heatmap), most frequent first. */
+export function hiveMindTopics(stats: Data['stats'], minCount = MIN_TOPIC_BAR_COUNT): string[] {
+    return Object.entries(stats.topic_frequency).filter(([, count]) => count >= minCount).map(([t]) => t);
+}
+
 export function renderTopicBars(stats: Data['stats'], minCount = MIN_TOPIC_BAR_COUNT): string {
-    const topics = Object.entries(stats.topic_frequency).filter(([, count]) => count >= minCount);
+    const topics = hiveMindTopics(stats, minCount).map(t => [t, stats.topic_frequency[t]] as const);
     const maxCount = Math.max(...topics.map(([, c]) => c), 1);
     let html = '';
     for (const [topic, count] of topics) {
@@ -248,6 +253,90 @@ export function renderTopicBars(stats: Data['stats'], minCount = MIN_TOPIC_BAR_C
             </div>`;
     }
     return html;
+}
+
+// ---- Topic popularity over model release time: heatmap (inline SVG, no client JS) ----
+
+export interface TrendMonth { ts: number; label: string; runs: number; counts: number[]; }
+
+const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const emptyMonth = (ts: number, topics: string[]): TrendMonth => {
+    const d = new Date(ts);
+    return { ts, label: `${MONTH_ABBR[d.getMonth()]} ${d.getFullYear()}`, runs: 0, counts: topics.map(() => 0) };
+};
+
+/**
+ * Per release month, oldest first: successful runs and, per topic (same order as `topics`), runs
+ * mentioning it. Calendar-contiguous: months with no models come back with runs = 0, so the axis
+ * never makes a 9-month gap look like one step.
+ */
+export function topicTrend(models: Model[], topics: string[]): TrendMonth[] {
+    const byTs = new Map<number, TrendMonth>();
+    for (const model of models) {
+        const ts = parseReleasedToTimestamp(model.released);
+        if (ts === Number.MAX_SAFE_INTEGER) continue;
+        let month = byTs.get(ts);
+        if (!month) {
+            month = emptyMonth(ts, topics);
+            byTs.set(ts, month);
+        }
+        for (const run of model.runs) {
+            if (!run.success) continue;
+            month.runs++;
+            topics.forEach((t, i) => { if (run.topics?.includes(t)) month!.counts[i]++; });
+        }
+    }
+    const out: TrendMonth[] = [];
+    for (const m of [...byTs.values()].sort((a, b) => a.ts - b.ts)) {
+        if (out.length) {
+            const prev = new Date(out[out.length - 1].ts);
+            for (let d = new Date(prev.getFullYear(), prev.getMonth() + 1, 1); d.getTime() < m.ts; d = new Date(d.getFullYear(), d.getMonth() + 1, 1)) {
+                out.push(emptyMonth(d.getTime(), topics));
+            }
+        }
+        out.push(m);
+    }
+    return out;
+}
+
+const HEAT_W = 720;
+const HEAT_LABEL_W = 160;
+const HEAT_ROW_H = 22;
+/** Cell shade saturates here: a few tiny early months hit 100% and would wash out everything else. */
+const HEAT_SATURATE_PCT = 50;
+
+/** Rows = topics, columns = calendar release months (months without models stay blank), shade = % of that month's responses. */
+export function renderTopicHeatmap(months: TrendMonth[], topics: string[]): string {
+    if (!months.length || !topics.length) return '';
+    const R = 8, T = 6, B = 40;
+    const cellW = (HEAT_W - HEAT_LABEL_W - R) / months.length;
+    const h = T + topics.length * HEAT_ROW_H + B;
+    const pct = (m: TrendMonth, i: number) => (m.runs ? (m.counts[i] / m.runs) * 100 : 0);
+    const maxP = Math.min(HEAT_SATURATE_PCT, Math.max(...months.flatMap(m => topics.map((_, i) => pct(m, i))), 1));
+
+    let out = `<svg viewBox="0 0 ${HEAT_W} ${h}" role="img" aria-label="Heatmap of topic popularity by model release month">`;
+    topics.forEach((t, i) => {
+        const y = T + i * HEAT_ROW_H;
+        out += `<g class="heat-row" data-topic="${escapeHtml(t)}" role="button" tabindex="0" aria-label="Filter models by ${escapeHtml(t)}"><text class="heat-tick" x="${HEAT_LABEL_W - 8}" y="${y + HEAT_ROW_H / 2 + 4}" text-anchor="end">${topicEmoji(t)} ${escapeHtml(t)}</text>`;
+        months.forEach((m, k) => {
+            if (!m.runs) return; // no models that month: leave the column blank
+            const p = pct(m, i);
+            const opacity = (0.05 + 0.95 * Math.min(1, p / maxP)).toFixed(2);
+            const month = m.counts[i] > 0 ? ` data-month="${m.ts}"` : ''; // empty cells aren't clickable
+            out += `<rect class="heat-cell"${month} x="${(HEAT_LABEL_W + k * cellW + 1).toFixed(1)}" y="${y + 1}" width="${(cellW - 2).toFixed(1)}" height="${HEAT_ROW_H - 2}" rx="3" fill-opacity="${opacity}">`
+                + `<title>${escapeHtml(`${m.label} · ${t}: ${p.toFixed(0)}% (${m.counts[i]} of ${m.runs} responses)`)}</title></rect>`;
+        });
+        out += '</g>';
+    });
+    months.forEach((m, k) => {
+        const d = new Date(m.ts), x = HEAT_LABEL_W + k * cellW + cellW / 2, y = T + topics.length * HEAT_ROW_H;
+        if (k % 3 === 0) { // quarterly month labels, else they collide
+            out += `<text class="heat-tick" x="${x.toFixed(1)}" y="${y + 14}" text-anchor="middle">${d.getMonth() + 1}/${String(d.getFullYear()).slice(2)}</text>`;
+        }
+        if (m.runs) out += `<text class="heat-tick heat-n" x="${x.toFixed(1)}" y="${y + 30}" text-anchor="middle">${m.runs}</text>`;
+    });
+    return out + '</svg>';
 }
 
 export function renderTopTopicCallout(stats: Data['stats']): string {
@@ -585,6 +674,8 @@ async function main() {
     );
     html = html.replace('<!-- SLOT:hero -->', () => renderHero(candidates));
     html = html.replace('<!-- SLOT:topicbars -->', () => renderTopicBars(data.stats));
+    const heatTopics = hiveMindTopics(data.stats);
+    html = html.replace('<!-- SLOT:heatmap -->', () => renderTopicHeatmap(topicTrend(data.models, heatTopics), heatTopics));
 
     const callout = renderTopTopicCallout(data.stats);
     if (callout) {

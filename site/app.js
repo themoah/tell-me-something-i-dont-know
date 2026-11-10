@@ -69,6 +69,7 @@
     if (grid) {
         const visibleCountEl = document.getElementById('visible-count');
         const topicBarsEl = document.getElementById('topic-bars');
+        const TOPIC_ROW = '.topic-bar-row[data-topic], .heat-row[data-topic]'; // bar rows + heatmap rows
 
         // Scroll-in animation
         const observer = new IntersectionObserver((entries) => {
@@ -102,6 +103,7 @@
         const filterPills = document.querySelectorAll('.filter-pill[data-filter]');
         let activeLicenseFilter = 'all';
         let activeTopicFilter = null;
+        let activeMonthFilter = null; // heatmap cell: release-month timestamp (matches card data-sort-released)
 
         function switchToFirstRunWithTopic(card, topic) {
             let targetRun = null;
@@ -121,14 +123,19 @@
             document.querySelectorAll('.model-card').forEach((card) => {
                 const licenseMatch = activeLicenseFilter === 'all' || card.dataset.license === activeLicenseFilter;
                 const topicMatch = !activeTopicFilter || (card.dataset.topics || '').split(',').includes(activeTopicFilter);
-                const show = licenseMatch && topicMatch;
+                const monthMatch = !activeMonthFilter || card.dataset.sortReleased === activeMonthFilter;
+                const show = licenseMatch && topicMatch && monthMatch;
                 card.style.display = show ? '' : 'none';
                 if (show && activeTopicFilter) switchToFirstRunWithTopic(card, activeTopicFilter);
                 if (show) visible++;
             });
             if (visibleCountEl) visibleCountEl.textContent = `${visible} model${visible !== 1 ? 's' : ''}`;
-            document.querySelectorAll('.topic-bar-row[data-topic]').forEach((row) => {
+            document.querySelectorAll(TOPIC_ROW).forEach((row) => {
                 row.classList.toggle('active', row.dataset.topic === activeTopicFilter);
+            });
+            document.querySelectorAll('.heat-cell[data-month]').forEach((cell) => {
+                cell.classList.toggle('active', cell.dataset.month === activeMonthFilter
+                    && cell.closest('.heat-row').dataset.topic === activeTopicFilter);
             });
             document.querySelectorAll('.topic-tag[data-topic]').forEach((tag) => {
                 tag.classList.toggle('active', tag.dataset.topic === activeTopicFilter);
@@ -139,6 +146,7 @@
             const tag = e.target.closest('.topic-tag[data-topic]');
             if (tag) {
                 activeTopicFilter = activeTopicFilter === tag.dataset.topic ? null : tag.dataset.topic;
+                activeMonthFilter = null;
                 updateFilter();
                 return;
             }
@@ -147,12 +155,55 @@
             switchRun(tab.closest('.model-card'), tab.dataset.run);
         });
 
+        // Hive Mind view toggle: totals (bars) <-> over time (heatmap)
+        const heatmapEl = document.getElementById('topic-heatmap');
+        const viewPills = document.querySelectorAll('.view-toggle [data-view]');
+        viewPills.forEach((pill) => pill.addEventListener('click', () => {
+            const showHeat = pill.dataset.view === 'heatmap';
+            activeMonthFilter = null; // a heatmap cell's month filter has no indicator outside the heatmap
+            updateFilter();
+            if (topicBarsEl) topicBarsEl.classList.toggle('hidden', showHeat);
+            if (heatmapEl) heatmapEl.classList.toggle('hidden', !showHeat);
+            viewPills.forEach((p) => {
+                p.classList.toggle('active', p === pill);
+                p.setAttribute('aria-pressed', String(p === pill));
+            });
+        }));
+
         if (topicBarsEl) {
             topicBarsEl.addEventListener('click', (e) => {
                 const row = e.target.closest('.topic-bar-row[data-topic]');
                 if (!row) return;
                 activeTopicFilter = activeTopicFilter === row.dataset.topic ? null : row.dataset.topic;
+                activeMonthFilter = null;
                 updateFilter();
+            });
+        }
+
+        // Rows are focusable (role=button): Enter/Space acts like a click on the row label.
+        if (heatmapEl) {
+            heatmapEl.addEventListener('keydown', (e) => {
+                if ((e.key !== 'Enter' && e.key !== ' ') || !e.target.classList.contains('heat-row')) return;
+                e.preventDefault();
+                e.target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+            });
+        }
+
+        // Heatmap: row label = topic across all months; non-empty cell = topic in that release month.
+        if (heatmapEl) {
+            heatmapEl.addEventListener('click', (e) => {
+                const row = e.target.closest('.heat-row[data-topic]');
+                if (!row) return;
+                const cell = e.target.closest('.heat-cell');
+                if (cell && !cell.dataset.month) return; // empty cell: nothing to show
+                const topic = row.dataset.topic;
+                const month = cell ? cell.dataset.month : null;
+                const clearing = activeTopicFilter === topic && activeMonthFilter === month;
+                activeTopicFilter = clearing ? null : topic;
+                activeMonthFilter = clearing ? null : month;
+                updateFilter();
+                // The cards are far below the heatmap: bring the result into view.
+                if (!clearing) document.querySelector('.filter-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         }
 
