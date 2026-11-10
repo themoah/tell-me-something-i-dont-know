@@ -7,6 +7,7 @@ import 'dotenv/config';
  * Filters:
  *   - Only models with `created` within the last 30 days
  *   - Only text-in / text-out models (drops image-gen, audio/TTS, etc.)
+ *   - Drops OpenRouter meta-routers (tokenizer "Router", e.g. openrouter/auto)
  *   - Dedup by both ID and normalized name
  *
  * Usage:
@@ -103,6 +104,7 @@ interface ORModel {
     input_modalities?: string[];
     output_modalities?: string[];
     modality?: string;
+    tokenizer?: string;
   };
   pricing?: { completion?: string };
 }
@@ -174,6 +176,13 @@ export function isRedundantVariant(id: string, allIds: Set<string>): boolean {
   const colon = id.indexOf(':');
   if (colon === -1) return false;
   return allIds.has(id.slice(0, colon));
+}
+
+// OpenRouter meta-routers (`openrouter/auto`, `auto-code`, `fusion`, ...) pick a
+// model per request, so they aren't a model in their own right. The API tags
+// them with tokenizer "Router".
+export function isRouter(m: ORModel): boolean {
+  return m.architecture?.tokenizer === 'Router';
 }
 
 function isRecent(m: ORModel, cutoff: number): boolean {
@@ -253,12 +262,13 @@ async function main() {
 
   const cutoff = Math.floor(Date.now() / 1000) - THIRTY_DAYS_SEC;
 
-  const drops = { variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, fast: 0, tooExpensive: 0, latestAlias: 0 };
+  const drops = { variant: 0, old: 0, nonText: 0, idMatch: 0, nameMatch: 0, fast: 0, tooExpensive: 0, latestAlias: 0, router: 0 };
   const newModels: ModelYaml[] = [];
   const hfCache = new Map<string, string | null>();
 
   for (const candidate of allModels) {
     if (isRedundantVariant(candidate.id, allIds)) { drops.variant++; continue; }
+    if (isRouter(candidate)) { drops.router++; continue; }
     if (hasLatestToken(candidate.id)) { drops.latestAlias++; continue; }
     if (hasFastToken(candidate.id)) { drops.fast++; continue; }
     if (!isRecent(candidate, cutoff)) { drops.old++; continue; }
@@ -288,7 +298,7 @@ async function main() {
   console.log(
     `  Filter drops: variant=${drops.variant} older-than-30d=${drops.old} ` +
       `non-text=${drops.nonText} id-match=${drops.idMatch} name-match=${drops.nameMatch} ` +
-      `fast=${drops.fast} too-expensive=${drops.tooExpensive} latest-alias=${drops.latestAlias}`,
+      `fast=${drops.fast} too-expensive=${drops.tooExpensive} latest-alias=${drops.latestAlias} router=${drops.router}`,
   );
 
   if (newModels.length === 0) {

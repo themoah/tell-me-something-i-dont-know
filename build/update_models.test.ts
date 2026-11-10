@@ -5,6 +5,7 @@ import {
   deriveProvider,
   bumpPatch,
   isRedundantVariant,
+  isRouter,
 } from './update_models.ts';
 
 test('classifyLicenseString: apache-2.0 → open-source', () => {
@@ -94,4 +95,16 @@ test('isRedundantVariant: variant-only model (no base) → kept', () => {
 test('isRedundantVariant: plain id (no colon) → not a variant', () => {
   const ids = new Set(['anthropic/claude-sonnet-4.6']);
   assert.equal(isRedundantVariant('anthropic/claude-sonnet-4.6', ids), false);
+});
+
+test('isRouter: tokenizer "Router" (openrouter/auto) → true', () => {
+  assert.equal(isRouter({ id: 'openrouter/auto', name: 'Auto Router', architecture: { tokenizer: 'Router' } }), true);
+});
+
+test('isRouter: stealth model under openrouter/ prefix → false', () => {
+  assert.equal(isRouter({ id: 'openrouter/owl-alpha', name: 'Owl Alpha', architecture: { tokenizer: 'Other' } }), false);
+});
+
+test('isRouter: no architecture → false', () => {
+  assert.equal(isRouter({ id: 'a/b', name: 'B' }), false);
 });
