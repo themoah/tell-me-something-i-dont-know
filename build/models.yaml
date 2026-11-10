@@ -1528,18 +1528,6 @@ models:
     license: "commercial"
     released: "November 2026"
 
-  - id: "openrouter/auto"
-    name: "Auto Router"
-    provider: "Openrouter"
-    license: "commercial"
-    released: "November 2026"
-
-  - id: "openrouter/auto-code"
-    name: "Auto Code"
-    provider: "Openrouter"
-    license: "commercial"
-    released: "November 2026"
-
   - id: "liquid/lfm-3-1.7b"
     name: "LiquidAI: LFM3-1.7B"
     provider: "Liquid"

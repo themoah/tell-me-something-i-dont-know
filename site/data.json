@@ -5,12 +5,12 @@
     "max_tokens": 500,
     "runs_per_model": 3,
     "generated_at": "2026-11-09T19:29:07.526Z",
-    "total_models": 245
+    "total_models": 243
   },
   "stats": {
-    "total_models": 245,
-    "total_responses": 734,
-    "total_tokens": 877470,
+    "total_models": 243,
+    "total_responses": 728,
+    "total_tokens": 876493,
     "total_reasoning_tokens": 0,
     "topic_frequency": {
       "octopus": 111,
@@ -20,9 +20,9 @@
       "honey": 32,
       "oxford university": 30,
       "venus": 29,
-      "wombats": 29,
+      "wombats": 27,
       "anglo-zanzibar war": 25,
-      "bananas": 20,
+      "bananas": 19,
       "wood wide web": 14,
       "sloths": 14,
       "eiffel tower": 13,
@@ -9322,80 +9322,6 @@
           "topics": [
             "cleopatra"
           ]
-        }
-      ]
-    },
-    {
-      "id": "openrouter/auto",
-      "name": "Auto Router",
-      "provider": "Openrouter",
-      "license": "commercial",
-      "released": "November 2026",
-      "runs": [
-        {
-          "success": true,
-          "content": "Here's something you likely don't know:\n\n**There are more possible games of chess than there are atoms in the observable universe.**\n\nThe number of legal chess positions is estimated at around 10^43, but the number of possible *games* (sequences of moves) is estimated at around 10^120. For comparison, the observable universe contains roughly 10^80 atoms. So the game tree of chess is vastly larger than the physical universe — which is why chess has never been \"solved\" and never will be by brute force.\n\nA bonus one: **Wombats produce cube-shaped droppings** — the only known animal to do so. Their intestines have varying elasticity that sculpts the feces into cubes, which stops them from rolling off rocks and helps mark territory.",
-          "tokens_prompt": 12,
-          "tokens_completion": 159,
-          "finish_reason": "stop",
-          "topics": [
-            "wombats"
-          ]
-        },
-        {
-          "success": true,
-          "content": "Here's one: **Wombats produce cube-shaped poop.**\n\nTheir intestines have varying elasticity, which shapes the feces into cubes. This stops the droppings from rolling away, so wombats can stack them on rocks and logs to mark territory. It's the only known animal that produces cube-shaped poop.",
-          "tokens_prompt": 12,
-          "tokens_completion": 62,
-          "finish_reason": "stop",
-          "topics": [
-            "wombats"
-          ]
-        },
-        {
-          "success": true,
-          "content": "Here’s something you might not know:\n\n**There are more possible chess games than there are atoms in the observable universe.** The Shannon number, a famous estimate of the game-tree complexity of chess, is around \\(10^{120}\\). The number of atoms in the observable universe is estimated to be about \\(10^{80}\\). So the number of possible chess games vastly exceeds the number of atoms—by a factor of \\(10^{40}\\).\n\nA related surprise: **the number of possible legal positions in chess** (not games, just board arrangements) is estimated at around \\(10^{43}\\) to \\(10^{50}\\)—still astronomically large, but far smaller than the game-tree complexity.\n\nWant another? **Bananas are slightly radioactive**—not because of pesticides or processing, but because they’re rich in potassium, and a small fraction of natural potassium is the radioactive isotope potassium-40. The dose is tiny (about 0.1 microsieverts per banana), which is why the \"banana equivalent dose\" is sometimes used as a playful unit of radiation exposure.",
-          "tokens_prompt": 12,
-          "tokens_completion": 221,
-          "finish_reason": "stop",
-          "topics": [
-            "bananas"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "openrouter/auto-code",
-      "name": "Auto Code",
-      "provider": "Openrouter",
-      "license": "commercial",
-      "released": "November 2026",
-      "runs": [
-        {
-          "success": true,
-          "content": "Tin can “cry” when you bend it.\n\nA fairly pure tin bar makes a faint crackling sound as its crystal structure suddenly rearranges under stress—a process called **crystal twinning**. It’s known as the *tin cry*: you’re literally hearing changes inside a metal’s crystals.",
-          "tokens_prompt": 13,
-          "tokens_completion": 175,
-          "finish_reason": "stop",
-          "reasoning": "**Explaining fascinating facts**\n\nI need to present interesting and concise explanations. I’m thinking about subjects like the oldest rings in sharks or the RNA in octopuses—though I’m uncertain about that. I find it intriguing that turtles breathe through their cloaca, which not everyone knows. The idea that \"your brain doesn't have pain receptors\" is familiar, along with metals that \"scream\" when bent, like tin. I can explain that when a bar of tin is bent, it can \"scream\" or make a crackling sound due to the reorientation of the crystals.",
-          "topics": []
-        },
-        {
-          "success": true,
-          "content": "Some bacteria carry their own **magnetic compass**.\n\nThey grow tiny crystals of magnetic minerals inside their cells, often arranged in a chain. This makes the whole bacterium align with Earth’s magnetic field, helping it navigate toward the low-oxygen conditions it prefers.\n\nWe invented compass needles; bacteria evolved theirs.",
-          "tokens_prompt": 13,
-          "tokens_completion": 179,
-          "finish_reason": "stop",
-          "topics": []
-        },
-        {
-          "success": true,
-          "content": "About 2 billion years ago, **nuclear reactors operated naturally inside the Earth**.\n\nAt Oklo, in what’s now Gabon, uranium deposits were concentrated enough to sustain nuclear fission. Groundwater helped the reactions along by slowing neutrons. As the reactors heated up, the water boiled away and the reactions stopped; when water returned, they restarted.\n\nNature had built a self-regulating nuclear reactor long before humans existed.",
-          "tokens_prompt": 13,
-          "tokens_completion": 181,
-          "finish_reason": "stop",
-          "reasoning": "**Gathering Interesting Facts**\n\nI need to find some interesting and succinct true facts that aren't commonly known. I could go with something about sharks being older than Saturn's rings, but I'm uncertain. Or, there's the octopus fact about tasting with its arms. Another might be that some turtles can absorb oxygen through their cloaca. The idea that Oxford University is older than the Aztec Empire is a classic. Oh, and natural nuclear reactors existing for 2 billion years at Oklo is a strong detail. I want to deliver something engaging without making claims I'm unsure about.",
-          "topics": []
         }
       ]
     },
