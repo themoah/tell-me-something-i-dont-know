@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tencent: Hy4 — Tell me something I don't know.</title>
+    <meta name="description" content="Tencent: Hy4 answers &quot;Tell me something I don&#39;t know.&quot; — Your head is older than your feet. Not metaphorically. Gravity slows time, and the gradient is measurable across your own height: near Earth&#39;s surface,…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/tencent-hy4/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/tencent-hy4/">
+    <meta property="og:title" content="Tencent: Hy4 — Tell me something I don't know.">
+    <meta property="og:description" content="Tencent: Hy4 answers &quot;Tell me something I don&#39;t know.&quot; — Your head is older than your feet. Not metaphorically. Gravity slows time, and the gradient is measurable across your own height: near Earth&#39;s surface,…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tencent: Hy4 — Tell me something I don't know.">
+    <meta name="twitter:description" content="Tencent: Hy4 answers &quot;Tell me something I don&#39;t know.&quot; — Your head is older than your feet. Not metaphorically. Gravity slows time, and the gradient is measurable across your own height: near Earth&#39;s surface,…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Tencent: Hy4)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"**Your head is older than your feet.**\n\nNot metaphorically. Gravity slows time, and the gradient is measurable across your own height: near Earth's surface, a clock gains roughly **1.1 × 10⁻¹⁶** of a second per second for every metre you raise it. Across ~1.7 m of upright human, that's about 1.9 × 10⁻¹⁶ — which, over an 80-year life, accumulates to **roughly half a microsecond**. Your scalp has genuinely experienced about 0.0000005 more seconds of existence than your soles.\n\nThis isn't a thought experiment. In 2010, NIST physicists put two aluminium-ion optical clocks on a bench, raised one by **33 centimetres**, and watched it tick faster by the predicted ~4 × 10⁻¹⁷. GPS runs on the same correction at scale: satellite clocks gain ~45 µs/day from weaker gravity and lose ~7 µs/day to orbital speed, so ~38 µs/day is baked into the system. Skip that correction and your phone's position drifts about 10 km per day.\n\nThe odd part isn't that relativity is true — it's that it's *domestic*. It's happening right now, between your knees and your eyebrows, and has been your whole life.\n\nOne from a completely different shelf, in case that one you did know: **bdelloid rotifers** appear to have gone without sex for tens of millions of years. They survive by drying into dust, letting their DNA shatter, and reassembling it — with a noticeable slice of their genes apparently scavenged from bacteria, fungi and algae.\n\nWant the next one weirder, or closer to home?","author":{"@type":"Organization","name":"Tencent"}},"suggestedAnswer":[{"@type":"Answer","text":"Most silent letters are fossils — sounds we used to say and stopped. But a handful are **forgeries**: letters that were never pronounced by anyone, inserted by 16th- and 17th-century scholars who wanted English to look more Latin than it was.\n\n- **island** was Old English *īgland* (\"isle\" + \"land\"), no *s* anywhere. Scribes added one because they assumed it belonged with Old French *isle* / Latin *insula*. It doesn't — the two words are unrelated lookalikes. Meanwhile French quietly *dropped* that same *s* and left a circumflex as a receipt: *île*. So the *s* jumped ship from one word to the other.\n- **debt** and **doubt** came through French as *dette* and *doute*. Latin-minded editors re-inserted the *b* of *debitum* and *dubitare*. Nobody ever said it.\n- **ptarmigan** is from Gaelic *tarmachan*. Someone decided it must derive from Greek *pterón* (\"wing\") and bolted a *p* on the front. It's the only English word beginning *pt-* that has no Greek ancestry.\n\nThe punchline: those letters were born silent. They're not decayed pronunciation, they're 500-year-old flexes that printers standardized and spellcheck now polices.\n\nAnd if you already knew that one: a tall tree doesn't *pump* water upward. It pulls it under **negative pressure**, like sucking on a 100-metre straw, and on a hot afternoon the trunk measurably shrinks as its stored water gets drafted into the stream, then swells back overnight. When the tension gets too high the water column snaps — and the tree emits tiny ultrasonic *clicks* that researchers can record. Thirsty forests are quietly popping.\n\nWant another, or shall I go weirder?","author":{"@type":"Organization","name":"Tencent"}},{"@type":"Answer","text":"I can't audit your mental hard drive, but here's one that usually slips past people:\n\n**Some of English's silent letters were added on purpose — by scholars who were simply wrong.**\n\nIn the 1400s–1500s, editors got it into their heads that words ought to *look* like their Latin ancestors, so they quietly \"corrected\" the spelling:\n\n- **debt** was *dette* (via Old French). They inserted a **b** to echo Latin *debitum*.\n- **island** was Old English *īgland* — *īg* + *land*, a purely Germanic word. Scribes added the **s** because they assumed it was related to *isle* (Latin *insula*). It isn't.\n- **receipt** was *receite*; the **p** was restored to match *receptus*.\n\nNobody ever pronounced those letters. They were cosmetic repairs based on a bad guess, and we've all been faithfully reproducing a 500-year-old typo ever since — usually while writing a grocery list.\n\nWant me to go weirder, or try a different category entirely?","author":{"@type":"Organization","name":"Tencent"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Tencent: Hy4</h1>
+        <p class="subtitle">Tencent · <span class="license-tag open-weights">open weights</span> <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>November 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Tencent: Hy4</div>
+                        <div class="model-provider">Tencent</div>
+                        <div class="model-released">November 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-weights">open weights</span>
+                        <span class="originality-badge" data-score="3">★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p><strong>Your head is older than your feet.</strong></p>
+<p>Not metaphorically. Gravity slows time, and the gradient is measurable across your own height: near Earth&#39;s surface, a clock gains roughly <strong>1.1 × 10⁻¹⁶</strong> of a second per second for every metre you raise it. Across ~1.7 m of upright human, that&#39;s about 1.9 × 10⁻¹⁶ — which, over an 80-year life, accumulates to <strong>roughly half a microsecond</strong>. Your scalp has genuinely experienced about 0.0000005 more seconds of existence than your soles.</p>
+<p>This isn&#39;t a thought experiment. In 2010, NIST physicists put two aluminium-ion optical clocks on a bench, raised one by <strong>33 centimetres</strong>, and watched it tick faster by the predicted ~4 × 10⁻¹⁷. GPS runs on the same correction at scale: satellite clocks gain ~45 µs/day from weaker gravity and lose ~7 µs/day to orbital speed, so ~38 µs/day is baked into the system. Skip that correction and your phone&#39;s position drifts about 10 km per day.</p>
+<p>The odd part isn&#39;t that relativity is true — it&#39;s that it&#39;s <em>domestic</em>. It&#39;s happening right now, between your knees and your eyebrows, and has been your whole life.</p>
+<p>One from a completely different shelf, in case that one you did know: <strong>bdelloid rotifers</strong> appear to have gone without sex for tens of millions of years. They survive by drying into dust, letting their DNA shatter, and reassembling it — with a noticeable slice of their genes apparently scavenged from bacteria, fungi and algae.</p>
+<p>Want the next one weirder, or closer to home?</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>3747 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to hear something they don&#39;t know — a &quot;wow&quot; fact, obscure, counterintuitive, ideally verifiable and genuinely surprising. I should pick one strong fact rather than a list, deliver it with a hook, explain why it&#39;s weird, and maybe add a tiny bonus. Avoid overly common &quot;fun facts&quot; (bananas are berries, octopuses have three hearts, etc.) since those are widely known. Need something lesser-known but accurate.
+
+Candidates:
+1. **The &quot;Wood Wide Web&quot; is contested** — too trendy/debated.
+2. **Wombat cube poop** — fairly well known now.
+3. **Tardigrades / quantum entanglement claim** — dubious.
+4. **The 1977 &quot;Wow! signal&quot;** — known among nerds.
+5. **Octopus/cephalopod RNA editing** — good, less known: cephalopods massively edit their RNA, sacrificing DNA evolution speed; they &quot;rewrite&quot; proteins on the fly, especially for nervous system genes. Also they can edit RNA in response to temperature (Antarctic vs tropical octopus). Accurate, surprising.
+6. **Your body has more bacterial cells...** — outdated/myth-ish (roughly 1:1, not 10:1). Could actually use the *correction* as the fact: the 10:1 claim is a myth; it&#39;s ~1:1, and a bowel movement resets the ratio. That&#39;s a nice &quot;you probably know the wrong version&quot; twist. But user said &quot;something I don&#39;t know,&quot; and correcting a myth is satisfying.
+7. **The Earth&#39;s inner core rotates slightly differently and recently slowed/reversed relative to mantle** — 2023 Nature study, nuanced, might be overstated.
+8. **There&#39;s a fungus that makes cicadas...** — known-ish.
+9. **The &quot;Mpemba effect&quot;** — known.
+10. **Sharks predate trees** — good, punchy: sharks ~400+ Myr, trees (Archaeopteris) ~370 Myr; also sharks predate Saturn&#39;s rings? Rings maybe young (~100 Myr) — that&#39;s a great combo: sharks are older than trees AND older than Saturn&#39;s rings (if ring age estimate ~10–100 Myr holds). Careful: ring age is debated, but recent Cassini-based estimates suggest 100–400 Myr at most, likely younger than sharks. Nice.
+11. **Honeybees can be trained to detect landmines / understand &quot;zero&quot;** — zero concept in bees is neat (2018 Science, bees grasp zero as a quantity less than one). Less known.
+12. **The human eye can detect a single photon** — actually rods can respond to single photons, but perception threshold ~5–7 photons; known-ish.
+13. **There&#39;s a &quot;missing&quot; color: impossible colors / chimerical colors via retinal fatigue** — obscure.
+14. **Crows/parrots have a &quot;third eyelid&quot;** — meh.
+15. **The Antarctic ice sheet contains ancient air bubbles but also... ** meh.
+16. **Time dilation: your feet age slightly slower than your head** — cute, derive ~ a few nanoseconds over a lifetime due to gravitational time dilation (height 1.7 m → Δt/t ≈ gh/c² ≈ 1.9e-16 → over 80 yr ≈ 0.5 microseconds? Let&#39;s compute: 1.9e-16 × 2.5e9 s ≈ 4.8e-7 s = 0.5 µs. Yes, about half a microsecond). That&#39;s a delightful, precise, verifiable fact with a calculation. Combined with &quot;airplane/atomic clock&quot; experiments (Hafele–Keating, 1971; 2010 NIST optical clocks at 33 cm). Very good.
+17. **Sloths&#39; fur hosts a whole ecosystem and moths, and sloths descend to poop to feed the moths — and risk death doing so** — known-ish but the mutualism detail (moths → algae → sloth eats algae) is a lovely loop. Slightly known.
+18. **The &quot;immortal&quot; Turritopsis dohrnii** — known.
+19. **Bdelloid rotifers haven&#39;t had sex in ~40 million years and steal foreign genes** — genuinely obscure and wild. Accurate-ish: asexual for tens of millions of years, survive desiccation, incorporate horizontal gene transfer (up to ~10% genes from bacteria/fungi/plants), and resist radiation via extraordinary DNA repair. Great &quot;something you don&#39;t know.&quot;
+20. **There are more possible chess positions than atoms in observable universe** — known (Shannon number 10^120 vs 10^80), but also *more possible games of Go*. Known among nerds.
+21. **Your stomach doesn&#39;t &quot;growl&quot; from hunger alone; it&#39;s the migrating motor complex, a cleaning wave that sweeps the gut every ~90 min, and it&#39;s suppressed by eating** — nice, everyday, obscure. Borborygmi. Good.
+22. **The smell of rain (petrichor) is partly antibiotics from soil bacteria (Streptomyces, geosmin), and humans detect geosmin at ~0.4 ppb — better than sharks detect blood** — great, sensory + precise. Also camels can detect geosmin to find water? There&#39;s a claim that geosmin helps camels/elephants find water; more solid: humans are exquisitely sensitive to geosmin (~0.006–0.4 ppb), some say more sensitive than sharks to blood (shark ~1 ppm), so comparison ~1000–10000×. Also geosmin causes off-flavor in wine/water and catfish. Very good.
+23. **A day on Venus is longer than a year on Venus** — fairly known.
+24. **Pluto has a heart-shaped glacier that drives winds / Sputnik Planitia** — niche.
+25. **The &quot;dark&quot; of the night sky isn&#39;t just absence — you can see zodiacal light / airglow, and the sky never gets fully black because of airglow from chemical reactions ~90 km up (OH, sodium, oxygen), which is bright enough that even with no moon/light pollution the sky glows faint green** — lovely and genuinely unknown to most. Also &quot;the night sky is never truly black&quot; plus airglow can be seen from ISS as a thin green band. Great.
+
+I think the best single answer: combine a lead fact that&#39;s surprising + precise + verifiable, then a short &quot;and one more&quot; bonus. Let me choose **geosmin / petrichor sensitivity** OR **head ages faster than feet** OR **bdelloid rotifers**. 
+
+Which is most likely &quot;something I don&#39;t know&quot;? Rotifers are the most obscure. But the head/feet one is personally involving and has a delightful calculable number. Geosmin is sensory and relatable.
+
+Maybe do one main fact with a mini-chain: **&quot;You are, measurably, older at the top than the bottom.&quot;** Include NIST 2010 experiment with optical clocks at 33 cm showing time dilation at everyday speeds/heights; compute ~0.5 µs over a lifetime. Then a compact &quot;bonus, since one fact rarely feels like enough&quot;: geosmin sensitivity or rotifers. But user asked &quot;something&quot; — one thing, well told, is more elegant. Could give one fact plus a tiny aftertaste.
+
+I&#39;ll go with the time-dilation one as the main, because it&#39;s counterintuitive, rigorously true, involves the user&#39;s own body, and includes a real experiment. Then add a one-line bonus about geosmin or rotifers? Hmm, risk of diluting. I&#39;ll include a short &quot;If that one landed, here&#39;s a second from a completely different shelf&quot; — a single sentence. Actually the instruction &quot;Tell me something I don&#39;t know&quot; — a confident single fact with a small coda is best. Let me do main + 2-line &quot;related weirdness&quot; maybe. Keep it tight, ~150-200 words.
+
+Let me verify numbers carefully:
+- Gravitational time dilation near Earth&#39;s surface: Δf/f = gh/c². g=9.81, h=1.7 m, c²=8.99e16 → 9.81*1.7/8.99e16 = 16.68/8.99e16 = 1.855e-16.
+- 80 years = 80 × 365.25 × 86400 = 2.524e9 s. × 1.855e-16 = 4.68e-7 s ≈ 0.47 µs. So &quot;about half a microsecond.&quot; Good.
+- NIST 2010 (Chou et al., Science, &quot;Optical Clocks and Relativity&quot;): two Al+ optical clocks, one raised by 33 cm, showed ~4×10^-17 frequency shift, consistent with gh/c² = 9.81*0.33/8.99e16 = 3.6e-17. They also tested speed dilation at ~10 m/s. Good.
+- Hafele–Keating 1971: flying atomic clocks east/west, ns-scale differences. Good.
+- Also GPS satellites must correct ~38 µs/day (45 µs gravitational − 7 µs kinematic). Maybe mention as the practical consequence. That&#39;s a nice &quot;this isn&#39;t philosophy, your phone depends on it.&quot;
+
+Caveat: feet vs head — also kinematic effects from movement, but gravitational dominates for static standing; fine. Say &quot;if you spend your life upright.&quot;
+
+Second fact option (bonus): geosmin: humans detect ~0.4 parts per billion (some sources 0.006 ppb / 5 ppt? Let&#39;s be careful). Literature: geosmin odor threshold in water ~0.006–0.01 µg/L (= 6–10 ng/L = ~0.006–0.01 ppb) for sensitive individuals; commonly cited &quot;0.4 ppb&quot; (0.4 µg/L) in older literature; some say humans detect at 0.4 parts per billion, &quot;more sensitive than sharks detecting blood at 1 ppm.&quot; Sharks: ~1 part per million for some amino acids, but actually sharks detect blood at ~1 ppm (one part per million) — commonly cited but debated. To avoid shaky comparisons, I&#39;d say &quot;a few parts per trillion&quot; with hedge &quot;for some people&quot; — risky. Let me instead use the rotifer as bonus, or skip the bonus entirely.
+
+Alternative bonus that&#39;s rock solid: **Bdelloid rotifers** — &quot;a class of microscopic animals hasn&#39;t had sex in tens of millions of years, and instead survives by drying into dust, shattering its own DNA, and patching it back together with genes scavenged from bacteria, fungi and plants.&quot; Accuracy: bdelloids are obligately asexual (no males ever observed), ancient asexual ~ tens of Myr (estimates 40–80 Myr, debated but widely cited ~40 Myr); anhydrobiosis with DNA double-strand breaks repaired; HGT up to ~8–10% of genes from non-metazoans (Boothby et al. 2015, debated re contamination but later supported). Also they&#39;re resistant to ionizing radiation (Dsup? no, that&#39;s tardigrades; bdelloids also tolerate high radiation, ~1000 Gy, linked to DNA repair). I&#39;d phrase carefully: &quot;roughly a tenth of their active genes appear to have been borrowed from bacteria, fungi and algae.&quot; Fine with &quot;appear.&quot;
+
+Hmm — maybe cleaner: give ONE fact, and end with an invitation (&quot;Want another, from biology / history / space?&quot;). That respects &quot;something&quot; and invites more. But a tiny second fact adds delight. I&#39;ll do main fact + a 2-sentence &quot;and because one is never enough&quot; with the rotifer, clearly labeled as a bonus. Actually I worry about overstuffing. Let me decide: main fact well told (~140 words) + one-line bonus + offer. Good.
+
+Tone: conversational, a bit wry, no hedging fluff, no &quot;Did you know?&quot; cliché. Start with the claim directly.
+
+Draft:
+
+&quot;Your head is older than your feet.
+
+Not metaphorically. Gravity slows time, and the effect is measurable across the height of your own body. Near Earth&#39;s surface the fractional difference is gh/c² — about 1.9 × 10⁻¹⁶ per metre. Over an upright lifetime of ~80 years, that adds up to roughly half a microsecond: by the time you&#39;re 80, your scalp has lived about 0.0000005 seconds more than your soles.
+
+This isn&#39;t a thought experiment. In 2010 NIST physicists put two aluminium-ion optical clocks on a bench, lifted one by 33 centimetres, and watched it tick faster by the predicted ~4 × 10⁻¹⁷. GPS has to correct for the same effect on a bigger scale: satellite clocks run ~45 µs/day fast from weaker gravity, minus ~7 µs/day from their orbital speed, so ~38 µs/day is baked into the system. Without it, your phone&#39;s location would drift by ~10 km per day.
+
+The strange part isn&#39;t that relativity is real. It&#39;s that it&#39;s *domestic*: it&#39;s happening, right now, between your knees and your eyebrows.
+
+Bonus, from a different shelf: bdelloid rotifers — microscopic freshwater animals — appear to have gone without sex for tens of millions of years; they survive by drying into dust, letting their DNA shatter, and reassembling it with genes scavenged from bacteria and fungi.
+
+Want the next one weirder, or closer to home?&quot;
+
+Check GPS drift: 38 µs × c = 38e-6 × 3e8 = 11,400 m ≈ 11 km/day. Commonly cited &quot;about 10 km per day.&quot; Good.
+
+Check &quot;lifted one by 33 cm and watched it tick faster&quot; — yes, the raised clock ticked faster (higher = less gravity = faster). Good.
+
+Check &quot;scalp has lived ~0.5 µs more&quot; — yes, higher clock runs faster → more elapsed proper time. Good.
+
+Check &quot;1.9 × 10⁻¹⁶ per metre&quot; — gh/c² with h=1 → 9.81/8.99e16 = 1.09e-16 per metre. Oops! I made an error: per metre it&#39;s 1.09e-16, and for 1.7 m it&#39;s 1.85e-16. Need to fix. Say &quot;about 1.1 × 10⁻¹⁶ for every metre of height&quot; and then 1.7 m → 1.9e-16. Let me correct carefully.
+
+So: Δf/f per metre = 1.09 × 10⁻¹⁶ /m. For 1.7 m: 1.85 × 10⁻¹⁶. Over 2.52e9 s: 4.7e-7 s. Good.
+
+Also 33 cm: 1.09e-16 × 0.33 = 3.6e-17 ≈ 4e-17. Good, consistent.
+
+Let me write it cleanly. Also avoid too many numbers? A few are fine, they add credibility. Maybe trim to keep readability. I&#39;ll keep the key ones.
+
+Formatting: short paragraphs, one bolded opening maybe. Use minimal markdown. Fine.
+
+Final answer should not claim certainty about what they don&#39;t know — can add a light &quot;unless you&#39;re a NIST physicist&quot; wink. Nice.
+
+Let me finalize.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Most silent letters are fossils — sounds we used to say and stopped. But a handful are <strong>forgeries</strong>: letters that were never pronounced by anyone, inserted by 16th- and 17th-century scholars who wanted English to look more Latin than it was.</p>
+<ul>
+<li><strong>island</strong> was Old English <em>īgland</em> (&quot;isle&quot; + &quot;land&quot;), no <em>s</em> anywhere. Scribes added one because they assumed it belonged with Old French <em>isle</em> / Latin <em>insula</em>. It doesn&#39;t — the two words are unrelated lookalikes. Meanwhile French quietly <em>dropped</em> that same <em>s</em> and left a circumflex as a receipt: <em>île</em>. So the <em>s</em> jumped ship from one word to the other.</li>
+<li><strong>debt</strong> and <strong>doubt</strong> came through French as <em>dette</em> and <em>doute</em>. Latin-minded editors re-inserted the <em>b</em> of <em>debitum</em> and <em>dubitare</em>. Nobody ever said it.</li>
+<li><strong>ptarmigan</strong> is from Gaelic <em>tarmachan</em>. Someone decided it must derive from Greek <em>pterón</em> (&quot;wing&quot;) and bolted a <em>p</em> on the front. It&#39;s the only English word beginning <em>pt-</em> that has no Greek ancestry.</li>
+</ul>
+<p>The punchline: those letters were born silent. They&#39;re not decayed pronunciation, they&#39;re 500-year-old flexes that printers standardized and spellcheck now polices.</p>
+<p>And if you already knew that one: a tall tree doesn&#39;t <em>pump</em> water upward. It pulls it under <strong>negative pressure</strong>, like sucking on a 100-metre straw, and on a hot afternoon the trunk measurably shrinks as its stored water gets drafted into the stream, then swells back overnight. When the tension gets too high the water column snaps — and the tree emits tiny ultrasonic <em>clicks</em> that researchers can record. Thirsty forests are quietly popping.</p>
+<p>Want another, or shall I go weirder?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2524 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user wants to hear something they don&#39;t know — a surprising fact, obscure trivia, or counterintuitive insight. I should pick something genuinely interesting, verifiable, and not too commonly circulated (avoid &quot;bananas are berries&quot; or &quot;octopuses have three hearts&quot; tier stuff, though those are fun, they&#39;re widely known). Let me think of a few candidates:
+
+1. **The &quot;Wood Wide Web&quot; nuance / mycorrhizal networks** — fairly well known now, maybe too popular.
+2. **Wolves changing rivers (trophic cascade)** — very well known YouTube fact.
+3. **The fact that Cleopatra lived closer in time to the Moon landing than to the Great Pyramid** — well known now.
+4. **Oxford University is older than the Aztec Empire** — also well known-ish.
+5. **Honeybees can recognize human faces** — moderately known.
+6. **The &quot;Boustrophedon&quot; / writing direction** — nice but niche.
+7. **That the human eye has a blind spot and your brain fills it in with a &quot;best guess&quot; — and you can demo it** — known but interactive.
+8. **That there&#39;s a bacterium (*Deinococcus radiodurans*) that can survive 5,000 Gy of radiation, and it was discovered in a can of ground meat that had been irradiated to sterilize it** — good, less known, vivid detail.
+9. **That the Antikythera mechanism had a differential gear** — known among history buffs.
+10. **That &quot;the smell of rain&quot; (petrichor) is partly caused by actinobacteria spores aerosolized by raindrops, and the word was coined in 1964 by two Australian CSIRO scientists in a short letter to *Nature*** — lovely, specific, moderately obscure. The spore mechanism (geosmin) is a nice extra.
+11. **That trees &quot;drink&quot; through tension, not pressure — the cohesion-tension theory means water in xylem is under *negative* pressure (like being pulled), and on hot days a tall tree&#39;s trunk measurably shrinks by a fraction of a millimeter, then re-expands at night. Dendrometers record this daily.** — This is genuinely counterintuitive and I think less commonly known. Water being *pulled* up 100 m against gravity with no pump, under tension, and the tree physically contracting. That&#39;s a great one.
+12. **That your stomach doesn&#39;t &quot;growl&quot; from hunger alone — borborygmi are the migrating motor complex, a housekeeping wave that sweeps the empty gut, and it&#39;s triggered by the hormone motilin; it actually happens *more* when empty because there&#39;s no food to muffle the sound of gas+fluid being pushed along.** — good, relatable.
+13. **That there are more possible iterations of a game of chess than atoms in the observable universe (Shannon number ~10^120 vs ~10^80)** — well known.
+14. **That a day on Venus is longer than a year on Venus** — well known-ish but still delightful.
+15. **That the &quot;silent&quot; letter in &quot;island&quot; was inserted by mistake — it&#39;s from Old English *īgland*, and scribes in the 16th century added the &#39;s&#39; by false association with Latin *insula* / French *isle*, and we&#39;ve been pronouncing/spelling a fake etymology ever since.** — This is a genuinely delightful, obscure etymology fact. Very &quot;tell me something I don&#39;t know.&quot; Same family: &quot;debt&quot; got its &#39;b&#39; from Latin *debitum* added by scholars, &quot;scissors&quot; got its &#39;s&#39; confusion, &quot;ptarmigan&quot; got a fake &#39;p&#39; from Greek *pteron* (wing) — actually the &#39;p&#39; in ptarmigan was added by 16th-century scholars who wrongly thought it was Greek-derived, and it&#39;s the only English word starting with &quot;pt&quot; that isn&#39;t Greek. That&#39;s a fun one.
+
+Let me pick one strong primary fact with a couple of layered details, and maybe offer a couple of quick bonus ones so there&#39;s a good chance at least one is new. But the prompt is singular — &quot;something.&quot; I think best is to lead with ONE really good, well-told fact, then optionally a short &quot;and if you knew that one...&quot; tail. That respects the ask while hedging.
+
+I&#39;ll go with the **island / ptarmigan &quot;ghost letters&quot; from scholarly vandalism** — it&#39;s surprising, has a human story (Renaissance scholars confidently &quot;fixing&quot; words wrong), and changes how you see the page. Actually, let me combine: the phenomenon is &quot;etymological respelling,&quot; and the best cluster is island, debt, ptarmigan, and also &quot;scissors&quot;? Let me verify accuracy carefully:
+
+- **island**: OE *īgland* / *īland* (from *īg* &quot;island&quot; + land). The &#39;s&#39; appears in late Middle English / early modern, by influence of Old French *isle* (from Latin *insula*). Correct. Note: *isle* itself genuinely comes from *insula* (via OF *isle*, later *île* with circumflex marking the lost s). So two unrelated words merged visually. Good.
+- **debt**: ME *dette* from OF *dete* &lt; Latin *debita*. The &#39;b&#39; was restored in the 15th–16th c. by Latin-minded scribes. Correct. Same with *doubt* (doute &lt; dubitare) — the &#39;b&#39; in doubt is also a Latin restoration. Nice pairing.
+- **ptarmigan**: from Scottish Gaelic *tarmachan*, earlier *termigan* etc. The &#39;p&#39; was added c. 1680s(?) by writers who fancied a Greek *pteron* &quot;wing&quot; connection. Actually earliest is 16th c. (Boke of St Albans? no). Let me be careful: OED says the word appears as *tarmigan* / *termigant* in 16th c., and the spelling with p- appears in the 17th century, &quot;due to a fancied derivation from Greek πτερόν.&quot; I&#39;ll say &quot;17th-century scholars&quot; to be safe, or just &quot;scholars who assumed a Greek origin&quot; without a hard date. Good.
+- **scissors**: from OF *cisoires* &lt; Late Latin *cisoria*, from *caedere* &quot;to cut.&quot; The &#39;sc&#39; spelling came by association with Latin *scindere* &quot;to split&quot; / *scissor*. Also a false-ish respelling. I might skip to avoid overclaiming.
+- Bonus: **&quot;colonel&quot;** pronunciation weirdness — different mechanism, skip.
+- **&quot;ghost&quot;** got its &#39;h&#39; from Flemish *gheest* — a printing-house influence, not scholarly. Could mention but might muddy.
+
+So the theme: **Renaissance scribes vandalized English spelling to show off their Latin, and the errors are still in every word processor.** That&#39;s a great &quot;something you don&#39;t know&quot; with a punchline: *island* has no historical right to its &#39;s&#39;; *debt* and *doubt* have no right to their &#39;b&#39;; *ptarmigan* has a fake Greek &#39;p&#39;. And the kicker: *isle* lost its &#39;s&#39; in French (île) while *island* gained one in English — the two words crossed in the night.
+
+Let me write it with a bit of flair, concise, no over-explaining, and end with a light offer. Maybe include the interactive/verifiable bit: &quot;You can check it: Old English *īgland*.&quot; Also mention that nobody ever pronounced those letters — they were silent from birth, which is why they&#39;re silent today. That&#39;s the real &quot;aha&quot;: silent letters are usually fossils of sounds we lost, but *these* ones were never sounds at all. That&#39;s the crisp insight. 
+
+Structure:
+- Hook: &quot;Most silent letters are fossils. A few are forgeries.&quot;
+- Explain with 3 examples.
+- The crossing detail about isle/île.
+- The takeaway line: &quot;So there are letters in English that were never spoken by anyone — they were typos made by people showing off, ratified by printers, and now enforced by spellcheck.&quot;
+- Optional: &quot;If that one you knew, here&#39;s a backup:&quot; with the tree tension fact (short). That hedges nicely and is a genuinely different domain.
+
+Keep it tight — maybe 180–220 words. Tone: wry, curious, not lecturing. No hedging about &quot;you might already know.&quot; Just tell it.
+
+Let me double-check the tree fact for the backup: Cohesion-tension theory (Dixon &amp; Joly, 1894). Xylem sap under negative hydrostatic pressure, typically −0.5 to −2 MPa, can reach −3 MPa or lower in drought. Trunk diameter does measurably shrink during the day (stem shrinkage, recorded by dendrometers) due to water stored in elastic tissues being drawn into the transpiration stream, then recovers overnight. Yes, accurate. Cavitation/embolism is the failure mode — the water column literally snaps and you hear it (acoustic emissions, ultrasonic clicks). That&#39;s a lovely extra: trees make tiny ultrasonic popping sounds when they&#39;re thirsty. Actually that&#39;s a great fact on its own and quite obscure. Maybe use that as the backup instead — &quot;drought-stressed trees emit ultrasonic clicks you can record with a sensor; it&#39;s the sound of water columns snapping.&quot; Both accurate and delightful.
+
+I&#39;ll fold: backup = trees pull water under tension and click when it breaks. Two sentences.
+
+Write it.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>I can&#39;t audit your mental hard drive, but here&#39;s one that usually slips past people:</p>
+<p><strong>Some of English&#39;s silent letters were added on purpose — by scholars who were simply wrong.</strong></p>
+<p>In the 1400s–1500s, editors got it into their heads that words ought to <em>look</em> like their Latin ancestors, so they quietly &quot;corrected&quot; the spelling:</p>
+<ul>
+<li><strong>debt</strong> was <em>dette</em> (via Old French). They inserted a <strong>b</strong> to echo Latin <em>debitum</em>.</li>
+<li><strong>island</strong> was Old English <em>īgland</em> — <em>īg</em> + <em>land</em>, a purely Germanic word. Scribes added the <strong>s</strong> because they assumed it was related to <em>isle</em> (Latin <em>insula</em>). It isn&#39;t.</li>
+<li><strong>receipt</strong> was <em>receite</em>; the <strong>p</strong> was restored to match <em>receptus</em>.</li>
+</ul>
+<p>Nobody ever pronounced those letters. They were cosmetic repairs based on a bad guess, and we&#39;ve all been faithfully reproducing a 500-year-old typo ever since — usually while writing a grocery list.</p>
+<p>Want me to go weirder, or try a different category entirely?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2001 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user is asking for something they don&#39;t know. This is a classic open-ended curiosity prompt. I should pick a genuinely surprising, obscure, but verifiable fact—something that feels delightful and mind-expanding rather than random trivia. It should be concise, well-explained, and ideally have a &quot;wait, really?&quot; twist.
+
+Let me brainstorm candidates:
+
+1. **Octopuses have three hearts and blue blood, and two of the hearts stop when they swim** — fairly well-known now, maybe too common.
+2. **Wombat poop is cube-shaped** — popular but still fun. Maybe too well-known.
+3. **There&#39;s a fungus that turns cicadas into &quot;zombies&quot; and makes them keep mating** — cool but a bit gross.
+4. **The &quot;dancing plague&quot; of 1518** — interesting but widely covered.
+5. **Honeybees can recognize human faces** — nice, moderately obscure.
+6. **Trees can &quot;warn&quot; each other via fungal networks** — contested scientifically lately, avoid.
+7. **A day on Venus is longer than a year on Venus** — great, counterintuitive, clean. But fairly known among space nerds.
+8. **Bananas are berries but strawberries aren&#39;t** — classic, but pretty common.
+9. **The inventor of the Pringles can is buried in one** — fun, but maybe too meme-y.
+10. **Sharks are older than trees** — excellent. Genuinely mind-bending, still somewhat under-known, and verifiable (sharks ~400M years, trees/Archaeopteris ~350-370M years). Also older than Saturn&#39;s rings? That&#39;s a newer finding but debated.
+11. **There&#39;s a lake in Tanzania that turns animals into &quot;statues&quot; (Lake Natron)** — slightly sensationalized, avoid.
+12. **Your stomach doesn&#39;t actually &quot;rumble&quot; from hunger—it&#39;s the migrating motor complex sweeping leftovers, and it&#39;s loudest because there&#39;s air, not food** — nice, relatable, mildly obscure.
+13. **The word &quot;orange&quot; came from the fruit, not the color** — lovely etymology fact. Before the fruit arrived in Europe, English speakers called the color &quot;geoluhread&quot; (yellow-red) or &quot;crog&quot;. Really nice &quot;oh!&quot; factor.
+14. **Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid** — classic, very well-known now.
+15. **Oxford University is older than the Aztec Empire** — also classic.
+16. **Some turtles breathe through their butts (cloacal respiration)** — fun, but meme-famous.
+17. **The Eiffel Tower can grow ~15 cm taller in summer** — thermal expansion, neat, moderately obscure.
+18. **There&#39;s a &quot;silent&quot; letter that was deliberately added by scholars: the &#39;s&#39; in &quot;island&quot; was inserted by people who wrongly thought it came from Latin *insula* (it&#39;s actually Old English *īgland*)** — oh, this is a really good one. Delightful, obscure, shows how language mistakes get fossilized. Similarly the &#39;b&#39; in &quot;debt&quot; was added to mimic Latin *debitum*. This is a nice &quot;someone made a typo and we&#39;ve all been living with it for 500 years&quot; fact.
+
+I think I&#39;ll go with the &quot;orange came before the color&quot; OR the &quot;deliberately added silent letters&quot; one. Let me combine? No, better to give one strong thing with a little texture, then offer to go deeper. Actually the prompt says &quot;Tell me something I don&#39;t know&quot; — singular. One crisp fact, well told, with a tiny bit of &quot;why it matters,&quot; then a light invitation.
+
+Let me pick the **orange etymology**, because it&#39;s clean, surprising, and has a lovely cascade: the fruit → the color → and then it messed up rhyming poetry (&quot;orange&quot; has no perfect rhyme in English, which is why poets cheat). Hmm, actually the &quot;no rhyme&quot; thing is a fun bonus. But careful: &quot;sporange&quot; / &quot;Blorenge&quot; (a hill in Wales) are sometimes cited as rhymes. I can mention it lightly as a bonus without overclaiming.
+
+Alternatively the **silent letter added on purpose** is more &quot;I definitely didn&#39;t know that.&quot; Let me weigh: which is less likely known? I&#39;d say the deliberate letter insertion. The orange one has circulated a fair bit. The &quot;debt/island&quot; pedantry is more niche and genuinely feels like insider knowledge.
+
+Let me go with a hybrid framing: lead with the deliberate typo fact, since it&#39;s the strongest &quot;wait, someone *did* that on purpose?&quot; and then add one tiny related bonus. Actually, keep it focused. One fact, three sentences, then a playful closer.
+
+Draft:
+
+&quot;Scholars in the 15th–16th centuries *added* silent letters to English words on purpose, to make them look more Latin — and we&#39;ve been spelling them that way ever since.
+
+`debt` was `dette` (from Old French). Someone inserted the `b` to nod to Latin *debitum*. `island` was `īgland` (Old English, &quot;island-land&quot;); the `s` was grafted on because people mistakenly assumed it came from Latin *insula*. It didn&#39;t. Same story with the `c` in `scissors` (from *cisorium*, mislinked to *scindere*) and the `p` in `receipt`.
+
+So a handful of Renaissance editors essentially made a cosmetic &#39;fix&#39; based on a wrong guess, and half a billion people now quietly honor that typo every time they write a grocery list.&quot;
+
+That&#39;s good. Let me verify details:
+- debt: Middle English *dette*, from Old French *dete/dette*, from Latin *debita*. The b was reintroduced in the 15th c. under Latin influence. ✔
+- island: OE *īgland* / *īland*, from *īg* &quot;island&quot; + *land*. The s appeared in the 15th–16th c. by confusion with Old French *isle* (from Latin *insula*). Careful: it&#39;s actually influence from *isle* rather than a direct wrong etymology — but the outcome is the same: the s is spurious, since island is Germanic, not related to *insula*. I should phrase it accurately: &quot;because scribes assumed it was kin to *isle* (Latin *insula*). It isn&#39;t.&quot; That&#39;s precise. ✔
+- scissors: Middle English *cisours*, from Old French *cisoires*, from Late Latin *cisorium* (cutting tool), from *caedere*. The *sc-* spelling came in the 16th c. by association with Latin *scindere* / *scissor*. ✔ Good.
+- receipt: ME *receite* from Old French *recete*, Latin *recepta*; the p was restored to match *receptus*. ✔
+
+Nice, all solid. I&#39;ll keep two or three examples, not all four, to avoid a list dump. Maybe debt + island + receipt, with scissors as a quick aside. Actually three is enough.
+
+Tone: warm, a little conspiratorial, not lecture-y. End with a light offer: &quot;Want another one, or want me to go weirder?&quot; — or better, a cheeky line about the grocery list, then a small invitation.
+
+I should also hedge gracefully on &quot;something you don&#39;t know&quot; — I can&#39;t actually know what they know, so a tiny playful acknowledgment is charming: &quot;I can&#39;t verify your mental hard drive, but here&#39;s one that usually slips past people:&quot;. That&#39;s a nice opener. Keep it short though.
+
+Final structure:
+1. Playful one-line hedge.
+2. The fact, bolded or clean.
+3. Examples with the before/after.
+4. The kicker.
+5. Light offer.
+
+Length: ~120 words. Good. No headers needed, maybe one bold phrase. Let&#39;s write it.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/liquid-lfm-3-1.7b/">← LiquidAI: LFM3-1.7B</a>
+            <a href="/">all models</a>
+            <span></span>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>

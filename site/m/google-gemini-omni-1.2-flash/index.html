@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google: Gemini Omni 1.2 Flash — Tell me something I don't know.</title>
+    <meta name="description" content="Google: Gemini Omni 1.2 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here is a mind-bending fact about the natural world: Sharks are older than trees. They are also older than Saturn’s rings. Here is how the timeline brea…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/google-gemini-omni-1.2-flash/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/google-gemini-omni-1.2-flash/">
+    <meta property="og:title" content="Google: Gemini Omni 1.2 Flash — Tell me something I don't know.">
+    <meta property="og:description" content="Google: Gemini Omni 1.2 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here is a mind-bending fact about the natural world: Sharks are older than trees. They are also older than Saturn’s rings. Here is how the timeline brea…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google: Gemini Omni 1.2 Flash — Tell me something I don't know.">
+    <meta name="twitter:description" content="Google: Gemini Omni 1.2 Flash answers &quot;Tell me something I don&#39;t know.&quot; — Here is a mind-bending fact about the natural world: Sharks are older than trees. They are also older than Saturn’s rings. Here is how the timeline brea…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="3"] { color: var(--open-source); }
+        .originality-badge[data-score="2"] { color: var(--accent); }
+        .originality-badge[data-score="1"] { color: var(--text-dim); }
+        .originality-badge[data-score="0"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--text-dim);
+        }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Google: Gemini Omni 1.2 Flash)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here is a mind-bending fact about the natural world:\n\n**Sharks are older than trees. They are also older than Saturn’s rings.**\n\nHere is how the timeline breaks down:\n\n*   **Sharks:** The earliest evidence of shark scales dates back about **450 million years**. \n*   **Trees:** The earliest species that we would visually recognize as a tree (like the *Archaeopteris*) didn't evolve until about **350 million years ago**. \n\nThat means for roughly 100 million years, there were sharks swimming in the oceans, but not a single tree on Earth. (Before trees, the land was dominated by giant fungi and small plants).\n\n**To make it even weirder:**\nRecent data from the Cassini spacecraft suggests that Saturn’s rings are likely only **10 to 100 million years old** (formed from a destroyed icy moon). \n\nThis means that sharks had already been swimming on Earth for about 350 million years, and the dinosaurs had already lived and died, by the time Saturn got its rings. \n\nSo, next time you look at a shark, remember: you are looking at a living lineage that is older than trees and older than the most famous feature of our solar system.","author":{"@type":"Organization","name":"Google"}},"suggestedAnswer":[{"@type":"Answer","text":"Here is a fact that sounds like science fiction, but is completely true:\n\n**Humans are bioluminescent. You are actually glowing in the dark right now, but you just can't see it.**\n\nIn 2009, Japanese scientists using ultra-sensitive cameras discovered that the human body emits visible light. \n\nHere are the details:\n* **The Cause:** The glow is a side effect of our metabolism. It is created by cellular respiration—specifically, when free radicals generated by cellular respiration react with ambient fluorophores (glowing chemicals) in our bodies.\n* **Why we can't see it:** The light we emit is about 1,000 times less intense than the levels our eyes are capable of perceiving. It’s essentially drowned out by the ambient light around us and our own eyes' limitations.\n* **The Pattern:** The glow isn't constant. It rises and falls in a 24-hour cycle. It is at its weakest in the late morning and peaks in the late afternoon.\n* **The Brightest Spot:** The brightest light comes from our faces—specifically our foreheads, necks, and cheeks. \n\n***\n\n**Bonus Fact (just in case you knew that one):**\nA typical, fluffy cumulus cloud (the nice weather kind) weighs about **1.1 million pounds** (approx. 500,000 kg). That is equivalent to about 100 elephants or a fully loaded Boeing 747. It stays afloat because that immense weight is spread out over a massive area, and the cloud is less dense than the dry air below it. \n\nDid you know either of those?","author":{"@type":"Organization","name":"Google"}},{"@type":"Answer","text":"Here is something about your own body that you probably don’t know: **You have invisible stripes all over your body.**\n\nThey are called **Blaschko’s lines**, and you have had them since you were an embryo.\n\nIn the late 19th century, a German dermatologist named Alfred Blaschko was studying patients with various skin conditions. He noticed that their rashes, moles, and pigmentations seemed to follow very specific, identical patterns across different patients. \n\nHe mapped them out and discovered that we all have a \"map\" written into our skin:\n*   **V-shapes** over your upper back.\n*   **S-shapes** on your abdomen and sides.\n*   **Inverted U-shapes** from your breastbone to your upper arm.\n*   **Perpendicular waves** down your arms and legs.\n\n**Why are they there?**\nWhen you were just a tiny clump of cells in the womb, your cells multiplied and migrated to form your skin. Blaschko's lines are essentially the \"footprints\" of that cellular movement. \n\n**Why can't you see them?**\nNormally, your skin cells all have the same pigment, so the lines are invisible. However, they can become visible under certain circumstances:\n1.  **Certain skin conditions:** Some genetic disorders or rashes (like eczema or lupus) will follow these exact paths.\n2.  **Chimerism:** If a person is a \"chimera\" (meaning they absorbed a twin in the womb and have two distinct sets of DNA), their skin cells might produce slightly different amounts of pigment, making the swirls and stripes clearly visible under normal light.\n3.  **UV Light:** In some people, these lines can be seen under specific types of ultraviolet lighting. \n\n***\n\n**Bonus Fact just in case you already knew that:**\nSharks are older than trees. And trees are older than Saturn's rings. \n*   **Sharks:** ~400+ million years old.\n*   **Trees:** ~350 million years old.\n*   **Saturn's Rings:** ~10 to 100 million years old (formed when dinosaurs were already roaming the Earth).","author":{"@type":"Organization","name":"Google"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Google: Gemini Omni 1.2 Flash</h1>
+        <p class="subtitle">Google · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="1">★<span class="star-empty">☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>November 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Google: Gemini Omni 1.2 Flash</div>
+                        <div class="model-provider">Google</div>
+                        <div class="model-released">November 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="1">★<span class="star-empty">☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here is a mind-bending fact about the natural world:</p>
+<p><strong>Sharks are older than trees. They are also older than Saturn’s rings.</strong></p>
+<p>Here is how the timeline breaks down:</p>
+<ul>
+<li><strong>Sharks:</strong> The earliest evidence of shark scales dates back about <strong>450 million years</strong>. </li>
+<li><strong>Trees:</strong> The earliest species that we would visually recognize as a tree (like the <em>Archaeopteris</em>) didn&#39;t evolve until about <strong>350 million years ago</strong>.</li>
+</ul>
+<p>That means for roughly 100 million years, there were sharks swimming in the oceans, but not a single tree on Earth. (Before trees, the land was dominated by giant fungi and small plants).</p>
+<p><strong>To make it even weirder:</strong>
+Recent data from the Cassini spacecraft suggests that Saturn’s rings are likely only <strong>10 to 100 million years old</strong> (formed from a destroyed icy moon). </p>
+<p>This means that sharks had already been swimming on Earth for about 350 million years, and the dinosaurs had already lived and died, by the time Saturn got its rings. </p>
+<p>So, next time you look at a shark, remember: you are looking at a living lineage that is older than trees and older than the most famous feature of our solar system.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1433 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**Considering Novel Information**
+
+I&#39;m currently focused on identifying an interesting piece of information that the user is unlikely to know. The emphasis is on novelty and intrigue. I&#39;m actively filtering for potential responses. I aim for conciseness while still being informative.
+
+
+**Developing Intriguing Facts**
+
+I&#39;m now diving into specific factual candidates. Currently, I&#39;m assessing information about nature, including the relative age of sharks and trees, and the extraordinary abilities of flamingos. I am also investigating the immortal jellyfish and blue whale biology. I&#39;m focusing on ensuring accuracy and that the information will be engaging.
+
+
+**Prioritizing Factual Comparisons**
+
+I&#39;m now comparing potential facts. I&#39;ve considered several concepts, evaluating their novelty and potential for engagement. I am presently examining the relative ages of sharks and trees, leaning toward the shark and tree comparison. I&#39;m focusing on facts that will be easily understood and considered intriguing.
+
+
+**Confirming Comparative Timeline**
+
+I&#39;ve decided to proceed with the comparison of sharks, trees, and Saturn&#39;s rings. I confirmed the timeline: shark ancestors predate trees, and Saturn&#39;s rings are relatively young, only 10 to 100 million years old. This offers a compelling juxtaposition of biological and astronomical timescales for the user to consider. I&#39;m satisfied that this choice will be informative and pique interest.
+
+
+**Refining Informative Content**
+
+I&#39;ve refined the narrative, emphasizing the timeline of sharks, trees, and Saturn&#39;s rings. The focus remains on factual accuracy and presenting a surprising comparison. I&#39;m aiming for a concise and engaging final statement, designed to leave a lasting impression. I&#39;m confident that the current data is appropriate.
+
+
+**Finalizing Factual Details**
+
+I am now focusing on the final phrasing. I&#39;m ensuring clarity and conciseness, to leave the user with a memorable factual comparison. I am focusing on making sure that the final statement will be effective.
+
+
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Here is a fact that sounds like science fiction, but is completely true:</p>
+<p><strong>Humans are bioluminescent. You are actually glowing in the dark right now, but you just can&#39;t see it.</strong></p>
+<p>In 2009, Japanese scientists using ultra-sensitive cameras discovered that the human body emits visible light. </p>
+<p>Here are the details:</p>
+<ul>
+<li><strong>The Cause:</strong> The glow is a side effect of our metabolism. It is created by cellular respiration—specifically, when free radicals generated by cellular respiration react with ambient fluorophores (glowing chemicals) in our bodies.</li>
+<li><strong>Why we can&#39;t see it:</strong> The light we emit is about 1,000 times less intense than the levels our eyes are capable of perceiving. It’s essentially drowned out by the ambient light around us and our own eyes&#39; limitations.</li>
+<li><strong>The Pattern:</strong> The glow isn&#39;t constant. It rises and falls in a 24-hour cycle. It is at its weakest in the late morning and peaks in the late afternoon.</li>
+<li><strong>The Brightest Spot:</strong> The brightest light comes from our faces—specifically our foreheads, necks, and cheeks.</li>
+</ul>
+<hr>
+<p><strong>Bonus Fact (just in case you knew that one):</strong>
+A typical, fluffy cumulus cloud (the nice weather kind) weighs about <strong>1.1 million pounds</strong> (approx. 500,000 kg). That is equivalent to about 100 elephants or a fully loaded Boeing 747. It stays afloat because that immense weight is spread out over a massive area, and the cloud is less dense than the dry air below it. </p>
+<p>Did you know either of those?</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>1601 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**Considering Novelty Requests**
+
+I&#39;m focusing on parsing the user&#39;s intent. The core is identifying what constitutes &quot;something I don&#39;t know.&quot; I&#39;m now exploring different approaches to generate novel information, moving away from predictable responses. I&#39;m prioritizing methods to assess information gaps in a user&#39;s potential knowledge.
+
+
+**Exploring Obscure Knowledge**
+
+I&#39;m now zeroing in on obscure yet engaging facts. My current focus is evaluating potential ideas across various categories: nature, space, history, and science. I&#39;m prioritizing facts that are easily understood and verifiable, avoiding complex topics such as quantum entanglement. The goal is to identify truly novel information that will be of interest. I&#39;m aiming for something that is both interesting and perhaps a bit surprising. I&#39;m discarding ideas that seem too widely known.
+
+
+**Evaluating Novelty**
+
+I&#39;ve been evaluating several facts. I am trying to determine what constitutes genuinely novel information. Ideas about *Ophiocordyceps unilateralis*, sharks, the Anglo-Zanzibar War, and tardigrades were not suitable. I have kept the ideas about clouds, rain, Pando, and human bioluminescence. Now I&#39;m considering their presentation and depth.
+
+
+**Selecting Surprising Facts**
+
+I&#39;ve decided on human bioluminescence as the primary fact due to its personal relevance and unexpected nature. I&#39;m preparing to also include the cloud weight fact, for a contrasting approach. My goal is to strike a balance between relatability and novelty, and avoid ideas that rely on easily found information. I&#39;m focusing on the delivery of the facts to maintain interest.
+
+
+**Crafting the Response**
+
+I&#39;m now drafting the response. I&#39;ve structured it with an introduction, followed by the two facts: human bioluminescence as the primary focus, and the weight of clouds as a supplementary point. The bioluminescence segment includes specific details on intensity, discovery, and patterns. For the cloud fact, I&#39;ve added weight, and an analogy to aid understanding. I&#39;m focusing on the conclusion, which seeks to politely wrap up the presentation.
+
+
+**Refining Clarity and Flow**
+
+I&#39;m now revising the draft for improved clarity and a more engaging flow. The primary focus is on an enthusiastic and informative tone. I&#39;m double-checking the accuracy of all scientific data, and making sure the tone remains suitable. I&#39;m paying extra attention to the structure, especially transitions between the different sections.
+
+
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here is something about your own body that you probably don’t know: <strong>You have invisible stripes all over your body.</strong></p>
+<p>They are called <strong>Blaschko’s lines</strong>, and you have had them since you were an embryo.</p>
+<p>In the late 19th century, a German dermatologist named Alfred Blaschko was studying patients with various skin conditions. He noticed that their rashes, moles, and pigmentations seemed to follow very specific, identical patterns across different patients. </p>
+<p>He mapped them out and discovered that we all have a &quot;map&quot; written into our skin:</p>
+<ul>
+<li><strong>V-shapes</strong> over your upper back.</li>
+<li><strong>S-shapes</strong> on your abdomen and sides.</li>
+<li><strong>Inverted U-shapes</strong> from your breastbone to your upper arm.</li>
+<li><strong>Perpendicular waves</strong> down your arms and legs.</li>
+</ul>
+<p><strong>Why are they there?</strong>
+When you were just a tiny clump of cells in the womb, your cells multiplied and migrated to form your skin. Blaschko&#39;s lines are essentially the &quot;footprints&quot; of that cellular movement. </p>
+<p><strong>Why can&#39;t you see them?</strong>
+Normally, your skin cells all have the same pigment, so the lines are invisible. However, they can become visible under certain circumstances:</p>
+<ol>
+<li><strong>Certain skin conditions:</strong> Some genetic disorders or rashes (like eczema or lupus) will follow these exact paths.</li>
+<li><strong>Chimerism:</strong> If a person is a &quot;chimera&quot; (meaning they absorbed a twin in the womb and have two distinct sets of DNA), their skin cells might produce slightly different amounts of pigment, making the swirls and stripes clearly visible under normal light.</li>
+<li><strong>UV Light:</strong> In some people, these lines can be seen under specific types of ultraviolet lighting.</li>
+</ol>
+<hr>
+<p><strong>Bonus Fact just in case you already knew that:</strong>
+Sharks are older than trees. And trees are older than Saturn&#39;s rings. </p>
+<ul>
+<li><strong>Sharks:</strong> ~400+ million years old.</li>
+<li><strong>Trees:</strong> ~350 million years old.</li>
+<li><strong>Saturn&#39;s Rings:</strong> ~10 to 100 million years old (formed when dinosaurs were already roaming the Earth).</li>
+</ul>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1816 tokens</span>
+                    <span class="topic-tag" data-topic="sharks">🦈 sharks</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">**Exploring Unexpected Niches**
+
+I&#39;m currently focused on identifying novel knowledge areas. I&#39;m prioritizing the user&#39;s desire for surprising or obscure information and trying to find a subject that is not well-known. I am making sure the response meets their criteria.
+
+
+**Analyzing Knowledge Gaps**
+
+I&#39;m now prioritizing niche fields. I&#39;ve considered many options, and am now exploring specific facts about sloths, sharks, fungi and historical events. I&#39;m focusing on facts with elements of surprise. I am also working to ensure each fact is in alignment with the user&#39;s intent.
+
+
+**Identifying Novel Subjects**
+
+I&#39;ve discarded some ideas due to their familiarity. I&#39;ve considered historical events such as the Anglo-Zanzibar War, the Great Emu War, and the &quot;Dancing Plague&quot; but found them too common. I am concentrating on the Ancient Romans&#39; use of urine for teeth whitening, Stanislav Petrov&#39;s actions, and intriguing scientific concepts such as the Boötes Void. I&#39;m also including the fact that there are more trees than stars.
+
+
+**Refining a Specific Detail**
+
+I&#39;ve discarded several ideas, narrowing the focus to &quot;Blaschko&#39;s lines&quot; (human stripes) as the primary subject. I see this as a strong option due to its visual nature, biological relevance, and relative obscurity. I am now considering what related detail could be used as a bonus fact to complement the primary one.
+
+
+**Selecting Intriguing Data**
+
+I&#39;m now prioritizing the &quot;Wood Wide Web&quot; and underwater volcano sounds. I&#39;m also reconsidering the fact about sharks&#39; age. I&#39;m focusing on creating an array of facts, so the user finds something they don&#39;t already know. I am starting to draft a response that includes multiple facts.
+
+I&#39;ve decided to proceed with: Blaschko&#39;s lines, the age of sharks, the smell of rain, and sloths&#39; breathing capabilities. I am in the process of formatting the output and considering how to best present these facts, starting with a hook and ending with a graceful conclusion. I am now refining the explanation of &quot;Blaschko&#39;s lines.&quot;
+
+
+**Elaborating on Blaschko&#39;s Lines**
+
+I&#39;m now expanding on Blaschko&#39;s lines, detailing the embryonic cell migration that causes skin patterns. I am focused on explaining how the lines manifest under UV light or with genetic conditions. I am refining the description to focus on the appearance of swirls on the face and stripes on the limbs. I am focusing on generating an engaging lead-in, and integrating the information in a clear and compelling way.
+
+
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/meta-muse-ember/">← Meta: Muse Ember</a>
+            <a href="/">all models</a>
+            <a href="/m/google-gemini-omni-1.1-flash/">Google: Gemini Omni 1.1 Flash →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=ad55bb5c"></script>
+
+</body>
+</html>
