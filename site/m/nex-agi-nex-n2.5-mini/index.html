@@ -280,9 +280,33 @@
             font-family: var(--font-display);
             font-weight: 600;
             font-size: 1.3rem;
-            margin-bottom: 24px;
             color: var(--text-dim);
         }
+
+        .topic-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .view-toggle { display: flex; gap: 6px; }
+
+        /* Heatmap: single-hue (accent), shade = share of responses */
+        .heat-scroll { overflow-x: auto; }
+        .heat-scroll svg { display: block; width: 100%; min-width: 560px; height: auto; }
+        .heat-row { cursor: pointer; }
+        .heat-row:hover .heat-tick { fill: var(--text); }
+        .heat-row.active .heat-tick { fill: var(--accent); }
+        .heat-cell { fill: var(--accent); }
+        .heat-cell[data-month]:hover { stroke: var(--text); stroke-width: 1; }
+        .heat-cell:not([data-month]) { cursor: default; }
+        .heat-cell.active { stroke: var(--text); stroke-width: 2; }
+        .heat-tick { fill: var(--text-dim); font-size: 11px; font-family: var(--font-body); }
+        .heat-n { fill: var(--text-faint); font-size: 9px; }
+        .heat-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .heat-note { margin-top: 10px; font-size: 12px; color: var(--text-faint); }
 
         .topic-bars {
             display: flex;
@@ -817,7 +841,7 @@ The main heart circulates blood through the body, while the other two pump blood
     if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
 })();
 </script>
-<script defer src="/app.js?v=ad55bb5c"></script>
+<script defer src="/app.js?v=eced37a8"></script>
 
 </body>
 </html>

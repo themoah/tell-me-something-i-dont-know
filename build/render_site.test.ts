@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, topicTrend, renderTopicHeatmap, hiveMindTopics, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
 
 test('slugify replaces all slashes', () => {
     assert.equal(slugify('anthropic/claude-sonnet-4.6'), 'anthropic-claude-sonnet-4.6');
@@ -108,4 +108,39 @@ test('modelsWithAnswers keeps only successful runs', () => {
     const visible = modelsWithAnswers(models);
     assert.equal(visible.length, 1);
     assert.deepEqual(visible[0].runs.map((r) => r.content), ['First', 'Third']);
+});
+
+test('topicTrend buckets successful runs by release month, oldest first', () => {
+    const run = (topics: string[], success = true) => ({ success, topics });
+    const models = [
+        { id: 'a/new', released: 'March 2026', runs: [run(['octopus']), run([]), run(['octopus'], false)] },
+        { id: 'a/old', released: 'January 2025', runs: [run(['sharks', 'octopus'])] },
+        { id: 'a/nodate', runs: [run(['octopus'])] },
+    ] as any;
+    const months = topicTrend(models, ['octopus', 'sharks']);
+    assert.deepEqual([months[0].label, months[0].runs, months[0].counts], ['Jan 2025', 1, [1, 1]]);
+    const last = months[months.length - 1];
+    assert.deepEqual([last.label, last.runs, last.counts], ['Mar 2026', 2, [1, 0]]); // failed run ignored; undated model skipped
+    assert.equal(months.length, 15); // Jan 2025..Mar 2026, every calendar month
+    assert.ok(months.slice(1, -1).every(m => m.runs === 0), 'gap months are present and empty');
+});
+
+test('renderTopicHeatmap: one cell per topic x month, tooltip carries the numbers', () => {
+    const months = [
+        { ts: 1, label: 'Jan 2025', runs: 4, counts: [2, 0] },
+        { ts: 2, label: 'Feb 2025', runs: 5, counts: [0, 5] },
+    ];
+    const html = renderTopicHeatmap(months, ['octopus', 'sharks']);
+    assert.equal((html.match(/class="heat-cell"/g) || []).length, 4);
+    assert.equal((html.match(/data-month="\d+"/g) || []).length, 2); // only non-empty cells are clickable
+    assert.ok(html.includes('Jan 2025 · octopus: 50% (2 of 4 responses)'));
+    assert.equal((html.match(/<g class="heat-row" data-topic="(octopus|sharks)" role="button"/g) || []).length, 2);
+    assert.equal(renderTopicHeatmap([], ['octopus']), '');
+    const withGap = [months[0], { ts: 2, label: 'Feb 2025', runs: 0, counts: [0, 0] }, months[1]];
+    assert.equal((renderTopicHeatmap(withGap, ['octopus', 'sharks']).match(/class="heat-cell"/g) || []).length, 4); // empty month draws no cells
+});
+
+test('hiveMindTopics matches the bar chart threshold', () => {
+    const stats = { topic_frequency: { a: 20, b: MIN_TOPIC_BAR_COUNT, c: MIN_TOPIC_BAR_COUNT - 1 } } as any;
+    assert.deepEqual(hiveMindTopics(stats), ['a', 'b']);
 });
