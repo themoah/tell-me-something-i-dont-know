@@ -257,42 +257,61 @@ async function queryModelOnce(
   }
 }
 
+const topicKeywords: Record<string, string[]> = {
+  jellyfish: ['jellyfish', 'medusa', 'cnidarian'],
+  octopus: ['octopus', 'octopi', 'octopuses', 'cephalopod'],
+  'eiffel tower': ['eiffel tower', 'gustave eiffel'],
+  honey: ['honey never spoils', "honey doesn't expire", 'honey found in tombs'],
+  bananas: ['bananas are berries', 'banana is a berry', 'banana.*radioactive'],
+  cleopatra: ['cleopatra.*pyramid', 'cleopatra.*moon landing', 'cleopatra.*closer in time'],
+  'oxford university': ['oxford.*university.*aztec', 'oxford.*older'],
+  'mantis shrimp': ['mantis shrimp'],
+  tardigrade: ['tardigrade', 'water bear'],
+  venus: ['venus.*day.*year', 'venus.*longer'],
+  'blue whale': ['blue whale.*heart', 'blue whale.*tongue'],
+  shakespeare: ['shakespeare.*invented', 'shakespeare.*words'],
+  dna: ['share.*dna.*banana', 'dna.*banana'],
+  space: ['neutron star', 'teaspoon.*star', 'space.*silent'],
+  platypus: ['platypus'],
+  sloths: ['sloth'],
+  'wood wide web': ['wood wide web', 'mycorrhizal', 'fungal network', 'mycelium'],
+  sharks: ['shark'],
+  wombats: ['wombat'],
+  'anglo-zanzibar war': ['anglo-zanzibar', 'zanzibar war', 'shortest war', 'shortest recorded war'],
+};
+
+const topicPatterns = Object.entries(topicKeywords).map(
+  ([topic, keywords]) => [topic, keywords.map(kw => new RegExp(kw))] as const,
+);
+
 export function detectTopics(text: string): string[] {
   const lower = text.toLowerCase();
 
-  const topicKeywords: Record<string, string[]> = {
-    jellyfish: ['jellyfish', 'medusa', 'cnidarian'],
-    octopus: ['octopus', 'octopi', 'octopuses', 'cephalopod'],
-    'eiffel tower': ['eiffel tower', 'gustave eiffel'],
-    honey: ['honey never spoils', "honey doesn't expire", 'honey found in tombs'],
-    bananas: ['bananas are berries', 'banana is a berry', 'banana.*radioactive'],
-    cleopatra: ['cleopatra.*pyramid', 'cleopatra.*moon landing', 'cleopatra.*closer in time'],
-    'oxford university': ['oxford.*university.*aztec', 'oxford.*older'],
-    'mantis shrimp': ['mantis shrimp'],
-    tardigrade: ['tardigrade', 'water bear'],
-    venus: ['venus.*day.*year', 'venus.*longer'],
-    'blue whale': ['blue whale.*heart', 'blue whale.*tongue'],
-    shakespeare: ['shakespeare.*invented', 'shakespeare.*words'],
-    dna: ['share.*dna.*banana', 'dna.*banana'],
-    space: ['neutron star', 'teaspoon.*star', 'space.*silent'],
-    platypus: ['platypus'],
-    sloths: ['sloth'],
-    'wood wide web': ['wood wide web', 'mycorrhizal', 'fungal network', 'mycelium'],
-    sharks: ['shark'],
-    wombats: ['wombat'],
-    'anglo-zanzibar war': ['anglo-zanzibar', 'zanzibar war', 'shortest war', 'shortest recorded war'],
-  };
-
   const topics: string[] = [];
-  for (const [topic, keywords] of Object.entries(topicKeywords)) {
-    for (const kw of keywords) {
-      if (new RegExp(kw).test(lower)) {
+  for (const [topic, patterns] of topicPatterns) {
+    for (const re of patterns) {
+      if (re.test(lower)) {
         topics.push(topic);
         break;
       }
     }
   }
   return topics;
+}
+
+/** Topic whose keyword matches earliest in the text. */
+export function primaryTopic(text: string): string | null {
+  const lower = text.toLowerCase();
+  let best: { topic: string; index: number } | null = null;
+  for (const [topic, patterns] of topicPatterns) {
+    for (const re of patterns) {
+      const match = re.exec(lower);
+      if (match && (best === null || match.index < best.index)) {
+        best = { topic, index: match.index };
+      }
+    }
+  }
+  return best?.topic ?? null;
 }
 
 export interface TopicStats {

@@ -1,6 +1,15 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, topicTrend, renderTopicHeatmap, hiveMindTopics, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+import { slugify, escapeHtml, calcOriginality, originalityBadge, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, topicTrend, renderTopicHeatmap, hiveMindTopics, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+
+const POPULAR = ['octopus', 'sharks', 'jellyfish', 'cleopatra', 'honey', 'oxford university', 'venus', 'wombats', 'anglo-zanzibar war', 'bananas'];
+
+function model(contents: string[]) {
+    return {
+        id: 'x/y', name: 'Y', provider: 'X', license: 'commercial',
+        runs: contents.map(content => ({ success: true, content })),
+    } as any;
+}
 
 test('slugify replaces all slashes', () => {
     assert.equal(slugify('anthropic/claude-sonnet-4.6'), 'anthropic-claude-sonnet-4.6');
@@ -12,17 +21,149 @@ test('escapeHtml escapes all special chars', () => {
     assert.equal(escapeHtml(`<a href="x">&'`), '&lt;a href=&quot;x&quot;&gt;&amp;&#39;');
 });
 
-test('calcOriginality: 3 minus runs touching a top topic', () => {
-    const model = {
+test('calcOriginality: same topic with different wording scores 1', () => {
+    const m = model([
+        'Octopuses have three hearts.',
+        'An octopus pumps blood with two of its hearts.',
+        'The octopus has blue blood.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 1);
+});
+
+test('calcOriginality: a reworded untagged fact repeated three times scores 1', () => {
+    const m = model([
+        'Your brain actively reconstructs the past every time you remember it.',
+        'Your brain actively reconstructs the past every time you remember it.',
+        'Your brain actively reconstructs your past memories every time you recall them.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 1);
+});
+
+test('calcOriginality: three different popular facts score 3', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'Sharks are older than trees.',
+        'The immortal jellyfish can revert to a polyp.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 3);
+});
+
+test('calcOriginality: three different facts with one off the list score 4', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'Sharks are older than trees.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 4);
+});
+
+test('calcOriginality: three different facts with two off the list score 5', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'The total weight of all the ants on Earth matches the weight of all humans.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 5);
+});
+
+test('calcOriginality: two facts score 2', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'An octopus has blue blood.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a shared preamble does not merge different topics', () => {
+    const m = model([
+        "Here's something you might not know. An octopus has three hearts and blue blood.",
+        "Here's something you might not know. Sharks are older than trees by a wide margin.",
+        "Here's something you might not know. The immortal jellyfish reverts to a polyp.",
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 3);
+});
+
+test('calcOriginality: a later popular mention does not recast the earliest topic', () => {
+    const m = model([
+        'Trees share carbon through the wood wide web. Sharks are older than trees.',
+        'An octopus has three hearts.',
+        'The immortal jellyfish reverts to a polyp.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 4);
+});
+
+test('calcOriginality: identical short claims are one fact', () => {
+    const m = model([
+        'Prime numbers.',
+        'Prime numbers.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: failed runs are ignored and two answers cannot score 5', () => {
+    const failed = {
         id: 'x/y', name: 'Y', provider: 'X', license: 'commercial',
         runs: [
-            { success: true, topics: ['jellyfish'] },
-            { success: true, topics: ['venus'] },
-            { success: true, topics: [] },
+            { success: true, content: 'An octopus has three hearts.' },
+            { success: false, content: null },
+            { success: true, content: 'An octopus has blue blood.' },
         ],
     } as any;
-    assert.equal(calcOriginality(model, ['jellyfish', 'octopus', 'honey']), 2);
-    assert.equal(calcOriginality(model, ['venus', 'jellyfish', 'honey']), 1);
+    assert.equal(calcOriginality(failed, POPULAR), 1);
+    const two = model([
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+        'The total weight of all the ants on Earth matches the weight of all humans.',
+    ]);
+    assert.equal(calcOriginality(two, POPULAR), 2);
+});
+
+test('calcOriginality: a lead-in on the same line does not hide a repeated fact', () => {
+    const m = model([
+        "Here's a fact many people might not know: The longest word in the English language is pneumonoultramicroscopicsilicovolcanoconiosis.",
+        "Here's something you might not know: the longest word in the English language is pneumonoultramicroscopicsilicovolcanoconiosis.",
+        "Here's something you might not know: the shortest war in history was between Britain and Zanzibar on August 27, 1896.",
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: the opening sentence wins over a later bold word', () => {
+    const m = model([
+        'You are literally glowing right now. Researchers measured biophotons from human skin.',
+        'Your immune system does not know your eyes exist. The proteins are hidden from white blood cells.',
+        'Your immune system does not know your eyes exist. Your eyes have **"immune privilege."** Inflammation would blind you.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: text between short bold words is not the claim', () => {
+    const m = model([
+        'The little dot above a lowercase **i** or **j** is called a **tittle**.',
+        'The **b** in **"debt"** is silent because Latin spelling added it.',
+        'The little dot above a lowercase **i** or **j** is called a **tittle**. The word comes from Latin.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a lead-in line yields the next sentence', () => {
+    const m = model([
+        'You may not know that honeybees can recognize human faces. They learn patterns of features.',
+        "I don't know what you already know, but here's one you might not:\n\nHoneybees can recognize human faces. They associate facial patterns with rewards.",
+        'You may not know this: honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('originalityBadge renders five stars', () => {
+    assert.equal(
+        originalityBadge(5),
+        '<span class="originality-badge" data-score="5">★★★★★<span class="star-empty"></span> original</span>',
+    );
+    assert.equal(
+        originalityBadge(1),
+        '<span class="originality-badge" data-score="1">★<span class="star-empty">☆☆☆☆</span> original</span>',
+    );
 });
 
 test('metaDescription is plain text, capped, strips link URLs, names the model', () => {
@@ -143,4 +284,21 @@ test('renderTopicHeatmap: one cell per topic x month, tooltip carries the number
 test('hiveMindTopics matches the bar chart threshold', () => {
     const stats = { topic_frequency: { a: 20, b: MIN_TOPIC_BAR_COUNT, c: MIN_TOPIC_BAR_COUNT - 1 } } as any;
     assert.deepEqual(hiveMindTopics(stats), ['a', 'b']);
+});
+
+test('calcOriginality: an untagged answer does not bridge two different topics', () => {
+    const m = model([
+        'Octopus creatures evolved long before trees existed anywhere.',
+        'Shark creatures evolved long before trees existed anywhere.',
+        'Ancient creatures evolved long before trees existed anywhere.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a decimal point does not end the claim', () => {
+    const m = model([
+        'The average cloud weighs about 1.1 million pounds.',
+        'The average cloud weighs about 1.5 grams per cubic meter of water droplets.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
 });

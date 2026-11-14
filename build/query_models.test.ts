@@ -9,6 +9,7 @@ import {
   runsStillNeeded,
   shouldRetryRunResult,
   detectTopics,
+  primaryTopic,
   retagData,
 } from './query_models.ts';
 
@@ -169,6 +170,22 @@ test('retryTokenBudgets uses 4x larger token caps', () => {
 
 test('retryTokenBudgets skips budgets that do not increase the current max tokens', () => {
   assert.deepEqual(retryTokenBudgets(10000), [20000, 40000]);
+});
+
+test('primaryTopic returns the earliest matching topic', () => {
+  assert.equal(
+    primaryTopic('Jellyfish drift by. An octopus has three hearts.'),
+    'jellyfish',
+  );
+  assert.equal(
+    primaryTopic('An octopus has three hearts. Jellyfish drift by.'),
+    'octopus',
+  );
+  assert.equal(
+    primaryTopic('Trees share carbon through the wood wide web. Sharks are older than trees.'),
+    'wood wide web',
+  );
+  assert.equal(primaryTopic('Municipal bonds funded the aqueduct.'), null);
 });
 
 test('detectTopics finds octopus and jellyfish', () => {

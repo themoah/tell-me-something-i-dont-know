@@ -20,6 +20,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
+import { primaryTopic } from './query_models.ts';
 
 marked.use({ async: false });
 
@@ -201,18 +202,109 @@ export function metaDescription(model: Model): string {
     return `${model.name} answers "${PROMPT}" — ${snippet}`.slice(0, 300);
 }
 
-export function calcOriginality(model: Model, topTopics: string[]): number {
-    let runsWithTopTopic = 0;
-    for (const run of model.runs) {
-        if (!run.success || !run.topics) continue;
-        if (run.topics.some(t => topTopics.includes(t))) runsWithTopTopic++;
-    }
-    return 3 - runsWithTopTopic;
+const CLAIM_STOP = new Set(
+    'that this with from your have been they them their what when where which about there these those into just only also more than then some very really something people might know here fact the and for are was you not but its can'.split(' '),
+);
+
+const LEAD_IN = /^(here'?s|here is|okay|sure|alright|certainly|of course|great|let me|i can.?t know|i don.?t know|you may not know|since i)\b/i;
+
+function contentTokens(text: string): string[] {
+    return (text.toLowerCase().match(/[a-z]{3,}/g) ?? []).filter(w => !CLAIM_STOP.has(w));
 }
 
-function originalityBadge(score: number): string {
+/** Opening sentence, skipping a lead-in and ignoring highlights inside the sentence. */
+function claimText(text: string): string {
+    const plain = text
+        .replace(/[*_#>`\[\]]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    let rest = plain;
+    while (rest) {
+        const end = rest.search(/[.!?](?=\s|$)/);
+        const sentence = (end === -1 ? rest : rest.slice(0, Math.min(end + 1, 220))).trim();
+        rest = end === -1 || end > 220 ? '' : rest.slice(end + 1).trim();
+        const colon = sentence.match(/^([^:]{0,140}:)\s*(.*)$/);
+        const body = colon && LEAD_IN.test(colon[1]) ? colon[2].trim() : sentence;
+        if (LEAD_IN.test(body) && contentTokens(body).length < 3) continue;
+        if (body.length >= 12 || contentTokens(body).length >= 3) return body;
+    }
+    return '';
+}
+
+function claimsOverlap(a: string, b: string): boolean {
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const ca = claimText(a);
+    const cb = claimText(b);
+    const tokens = (s: string) => new Set(
+        (s.toLowerCase().match(/[a-z]{3,}/g) ?? []).filter(w => !CLAIM_STOP.has(w)),
+    );
+    const A = tokens(ca);
+    const B = tokens(cb);
+    if (A.size >= 3 && B.size >= 3) {
+        let inter = 0;
+        for (const w of A) if (B.has(w)) inter++;
+        if (inter / (A.size + B.size - inter) >= 0.5) return true;
+    }
+    const na = norm(ca);
+    const nb = norm(cb);
+    return na.length >= 12 && na === nb;
+}
+
+function sameFact(a: string, b: string): boolean {
+    const ta = primaryTopic(a);
+    const tb = primaryTopic(b);
+    if (ta && tb) return ta === tb;
+    return claimsOverlap(a, b);
+}
+
+export function calcOriginality(model: Model, popularTopics: string[]): number {
+    const runs = model.runs.filter(r => r.success && !!r.content?.trim());
+    if (runs.length === 0) return 1;
+    const parent = runs.map((_, i) => i);
+    const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+    // A group keeps at most one topic, so an untagged answer can't bridge two different topics.
+    const groupTopic = runs.map(r => primaryTopic(r.content!));
+    for (let i = 0; i < runs.length; i++) {
+        for (let j = i + 1; j < runs.length; j++) {
+            const ri = find(i);
+            const rj = find(j);
+            if (ri === rj) continue;
+            const ti = groupTopic[ri];
+            const tj = groupTopic[rj];
+            if (ti && tj && ti !== tj) continue;
+            if (sameFact(runs[i].content!, runs[j].content!)) {
+                parent[ri] = rj;
+                groupTopic[rj] = tj ?? ti;
+            }
+        }
+    }
+    const clusters = new Map<number, Run[]>();
+    runs.forEach((run, i) => {
+        const root = find(i);
+        const group = clusters.get(root) ?? [];
+        group.push(run);
+        clusters.set(root, group);
+    });
+    const popular = new Set(popularTopics);
+    let offlist = 0;
+    for (const group of clusters.values()) {
+        const onList = group.some(run => {
+            const topic = primaryTopic(run.content ?? '');
+            return topic !== null && popular.has(topic);
+        });
+        if (!onList) offlist++;
+    }
+    const distinct = clusters.size;
+    if (distinct <= 1) return 1;
+    if (distinct === 2) return 2;
+    if (offlist <= 0) return 3;
+    if (offlist === 1) return 4;
+    return 5;
+}
+
+export function originalityBadge(score: number): string {
     const filled = '★'.repeat(score);
-    const empty = '☆'.repeat(3 - score);
+    const empty = '☆'.repeat(5 - score);
     return `<span class="originality-badge" data-score="${score}">${filled}<span class="star-empty">${empty}</span> original</span>`;
 }
 
@@ -415,12 +507,12 @@ function renderRunBlocks(runs: Run[]) {
     return { tabsHTML, responsesHTML, totalTokens, allTopics };
 }
 
-function renderModelCards(models: Model[], topTopics: string[]): string {
+function renderModelCards(models: Model[], popularTopics: string[]): string {
     let html = '';
     for (let idx = 0; idx < models.length; idx++) {
         const model = models[idx];
         const licenseLabel = escapeHtml(model.license.replace('-', ' '));
-        const originality = calcOriginality(model, topTopics);
+        const originality = calcOriginality(model, popularTopics);
         const released = parseReleasedToTimestamp(model.released);
         const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
         if (!model.runs.some((r) => isPublishableRun(r))) continue;
@@ -516,14 +608,14 @@ ${body}
 
 /** Per-model page, reusing the shared <head> (CSS/fonts) from the index template. */
 function renderModelPage(
-    model: Model, sharedHead: string, prev: Model | null, next: Model | null, topTopics: string[],
+    model: Model, sharedHead: string, prev: Model | null, next: Model | null, popularTopics: string[],
 ): string {
     const slug = slugify(model.id);
     const url = `${SITE_URL}/m/${slug}/`;
     const title = `${escapeHtml(model.name)} — Tell me something I don't know.`;
     const desc = escapeHtml(metaDescription(model));
     const licenseLabel = escapeHtml(model.license.replace('-', ' '));
-    const originality = calcOriginality(model, topTopics);
+    const originality = calcOriginality(model, popularTopics);
     const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
     const { tabsHTML, responsesHTML } = renderRunBlocks(model.runs);
 
@@ -636,7 +728,7 @@ async function main() {
     const dateStr = new Date(data.meta.generated_at).toLocaleDateString('en-US', {
         year: 'numeric', month: 'long', day: 'numeric',
     });
-    const topTopics = Object.keys(data.stats.topic_frequency).slice(0, 3);
+    const popularTopics = Object.keys(data.stats.topic_frequency).slice(0, 10);
     const claim = topTopicClaim(data.stats);
     const metaDesc = `I've asked ${modelCount}+ LLMs the same question. ${claim}`;
     const ogDesc = `I've asked ${modelCount}+ LLMs '${PROMPT}' ${claim}`;
@@ -686,7 +778,7 @@ async function main() {
         html = html.replace('<!-- SLOT:callout -->', () => callout);
     }
 
-    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(dedupeBySlug(data.models), topTopics));
+    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(dedupeBySlug(data.models), popularTopics));
     html = html.replace(
         '<!-- SLOT:hero_data -->',
         () => `<script>window.__HERO=${serializeForScriptTag(candidates)};</script>`,
@@ -705,7 +797,7 @@ async function main() {
         const next = i < uniqueModels.length - 1 ? uniqueModels[i + 1] : null;
         const dir = path.join(MODELS_DIR, slugify(model.id));
         await fs.mkdir(dir, { recursive: true });
-        await fs.writeFile(path.join(dir, 'index.html'), bustAppJs(renderModelPage(model, sharedHead, prev, next, topTopics), appVersion), 'utf-8');
+        await fs.writeFile(path.join(dir, 'index.html'), bustAppJs(renderModelPage(model, sharedHead, prev, next, popularTopics), appVersion), 'utf-8');
     }
     console.log(`Rendered ${uniqueModels.length} model pages into site/m/`);
 
