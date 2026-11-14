@@ -20,6 +20,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
+import { primaryTopic } from './query_models.ts';
 
 marked.use({ async: false });
 
@@ -201,18 +202,93 @@ export function metaDescription(model: Model): string {
     return `${model.name} answers "${PROMPT}" — ${snippet}`.slice(0, 300);
 }
 
-export function calcOriginality(model: Model, topTopics: string[]): number {
-    let runsWithTopTopic = 0;
-    for (const run of model.runs) {
-        if (!run.success || !run.topics) continue;
-        if (run.topics.some(t => topTopics.includes(t))) runsWithTopTopic++;
+const CLAIM_STOP = new Set(
+    'that this with from your have been they them their what when where which about there these those into just only also more than then some very really something people might know here fact the and for are was you not but its can'.split(' '),
+);
+
+/** First sentence of the answer's opening claim, markdown stripped. */
+function claimText(text: string): string {
+    const bold = text.match(/\*\*((?:(?!\*\*).){12,400})\*\*/s);
+    let raw = bold ? bold[1] : '';
+    if (!raw) {
+        const skip = /^(here'?s|here is|okay|sure|alright|certainly|of course|great|let me)\b/i;
+        const lines = text.split('\n').map(s => s.trim()).filter(Boolean);
+        const usable = (s: string, min: number) => {
+            const plain = s.replace(/[*_#>`]/g, '').trim();
+            return plain.length >= min && !skip.test(plain);
+        };
+        const line = lines.find(s => usable(s, 40)) ?? lines.find(s => usable(s, 1)) ?? '';
+        raw = line;
     }
-    return 3 - runsWithTopTopic;
+    raw = raw.replace(/[*_#>`\[\]]/g, ' ').replace(/\s+/g, ' ').trim();
+    const end = raw.search(/[.!?]/);
+    if (end === -1 || end > 220) return raw.slice(0, 220).trim();
+    return raw.slice(0, end + 1).trim();
 }
 
-function originalityBadge(score: number): string {
+function claimsOverlap(a: string, b: string): boolean {
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const ca = claimText(a);
+    const cb = claimText(b);
+    const tokens = (s: string) => new Set(
+        (s.toLowerCase().match(/[a-z]{3,}/g) ?? []).filter(w => !CLAIM_STOP.has(w)),
+    );
+    const A = tokens(ca);
+    const B = tokens(cb);
+    if (A.size >= 3 && B.size >= 3) {
+        let inter = 0;
+        for (const w of A) if (B.has(w)) inter++;
+        if (inter / (A.size + B.size - inter) >= 0.5) return true;
+    }
+    const na = norm(ca);
+    const nb = norm(cb);
+    return na.length >= 12 && na === nb;
+}
+
+function sameFact(a: string, b: string): boolean {
+    const ta = primaryTopic(a);
+    const tb = primaryTopic(b);
+    if (ta && tb) return ta === tb;
+    return claimsOverlap(a, b);
+}
+
+export function calcOriginality(model: Model, popularTopics: string[]): number {
+    const runs = model.runs.filter(r => r.success && !!r.content?.trim());
+    if (runs.length === 0) return 1;
+    const parent = runs.map((_, i) => i);
+    const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+    for (let i = 0; i < runs.length; i++) {
+        for (let j = i + 1; j < runs.length; j++) {
+            if (sameFact(runs[i].content!, runs[j].content!)) parent[find(i)] = find(j);
+        }
+    }
+    const clusters = new Map<number, Run[]>();
+    runs.forEach((run, i) => {
+        const root = find(i);
+        const group = clusters.get(root) ?? [];
+        group.push(run);
+        clusters.set(root, group);
+    });
+    const popular = new Set(popularTopics);
+    let offlist = 0;
+    for (const group of clusters.values()) {
+        const onList = group.some(run => {
+            const topic = primaryTopic(run.content ?? '');
+            return topic !== null && popular.has(topic);
+        });
+        if (!onList) offlist++;
+    }
+    const distinct = clusters.size;
+    if (distinct <= 1) return 1;
+    if (distinct === 2) return 2;
+    if (offlist <= 0) return 3;
+    if (offlist === 1) return 4;
+    return 5;
+}
+
+export function originalityBadge(score: number): string {
     const filled = '★'.repeat(score);
-    const empty = '☆'.repeat(3 - score);
+    const empty = '☆'.repeat(5 - score);
     return `<span class="originality-badge" data-score="${score}">${filled}<span class="star-empty">${empty}</span> original</span>`;
 }
 
@@ -415,12 +491,12 @@ function renderRunBlocks(runs: Run[]) {
     return { tabsHTML, responsesHTML, totalTokens, allTopics };
 }
 
-function renderModelCards(models: Model[], topTopics: string[]): string {
+function renderModelCards(models: Model[], popularTopics: string[]): string {
     let html = '';
     for (let idx = 0; idx < models.length; idx++) {
         const model = models[idx];
         const licenseLabel = escapeHtml(model.license.replace('-', ' '));
-        const originality = calcOriginality(model, topTopics);
+        const originality = calcOriginality(model, popularTopics);
         const released = parseReleasedToTimestamp(model.released);
         const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
         if (!model.runs.some((r) => isPublishableRun(r))) continue;
@@ -516,14 +592,14 @@ ${body}
 
 /** Per-model page, reusing the shared <head> (CSS/fonts) from the index template. */
 function renderModelPage(
-    model: Model, sharedHead: string, prev: Model | null, next: Model | null, topTopics: string[],
+    model: Model, sharedHead: string, prev: Model | null, next: Model | null, popularTopics: string[],
 ): string {
     const slug = slugify(model.id);
     const url = `${SITE_URL}/m/${slug}/`;
     const title = `${escapeHtml(model.name)} — Tell me something I don't know.`;
     const desc = escapeHtml(metaDescription(model));
     const licenseLabel = escapeHtml(model.license.replace('-', ' '));
-    const originality = calcOriginality(model, topTopics);
+    const originality = calcOriginality(model, popularTopics);
     const releasedHTML = model.released ? `<div class="model-released">${escapeHtml(model.released)}</div>` : '';
     const { tabsHTML, responsesHTML } = renderRunBlocks(model.runs);
 

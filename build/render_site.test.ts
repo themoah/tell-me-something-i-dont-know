@@ -1,6 +1,15 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugify, escapeHtml, calcOriginality, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, topicTrend, renderTopicHeatmap, hiveMindTopics, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+import { slugify, escapeHtml, calcOriginality, originalityBadge, metaDescription, parseReleasedToTimestamp, topTopicClaim, topicDisplayName, topicEmoji, renderTopicBars, topicTrend, renderTopicHeatmap, hiveMindTopics, modelsWithAnswers, MIN_TOPIC_BAR_COUNT } from './render_site.ts';
+
+const POPULAR = ['octopus', 'sharks', 'jellyfish', 'cleopatra', 'honey', 'oxford university', 'venus', 'wombats', 'anglo-zanzibar war', 'bananas'];
+
+function model(contents: string[]) {
+    return {
+        id: 'x/y', name: 'Y', provider: 'X', license: 'commercial',
+        runs: contents.map(content => ({ success: true, content })),
+    } as any;
+}
 
 test('slugify replaces all slashes', () => {
     assert.equal(slugify('anthropic/claude-sonnet-4.6'), 'anthropic-claude-sonnet-4.6');
@@ -12,17 +21,113 @@ test('escapeHtml escapes all special chars', () => {
     assert.equal(escapeHtml(`<a href="x">&'`), '&lt;a href=&quot;x&quot;&gt;&amp;&#39;');
 });
 
-test('calcOriginality: 3 minus runs touching a top topic', () => {
-    const model = {
+test('calcOriginality: same topic with different wording scores 1', () => {
+    const m = model([
+        'Octopuses have three hearts.',
+        'An octopus pumps blood with two of its hearts.',
+        'The octopus has blue blood.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 1);
+});
+
+test('calcOriginality: a reworded untagged fact repeated three times scores 1', () => {
+    const m = model([
+        'Your brain actively reconstructs the past every time you remember it.',
+        'Your brain actively reconstructs the past every time you remember it.',
+        'Your brain actively reconstructs your past memories every time you recall them.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 1);
+});
+
+test('calcOriginality: three different popular facts score 3', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'Sharks are older than trees.',
+        'The immortal jellyfish can revert to a polyp.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 3);
+});
+
+test('calcOriginality: three different facts with one off the list score 4', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'Sharks are older than trees.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 4);
+});
+
+test('calcOriginality: three different facts with two off the list score 5', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'The total weight of all the ants on Earth matches the weight of all humans.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 5);
+});
+
+test('calcOriginality: two facts score 2', () => {
+    const m = model([
+        'An octopus has three hearts.',
+        'An octopus has blue blood.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a shared preamble does not merge different topics', () => {
+    const m = model([
+        "Here's something you might not know. An octopus has three hearts and blue blood.",
+        "Here's something you might not know. Sharks are older than trees by a wide margin.",
+        "Here's something you might not know. The immortal jellyfish reverts to a polyp.",
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 3);
+});
+
+test('calcOriginality: a later popular mention does not recast the earliest topic', () => {
+    const m = model([
+        'Trees share carbon through the wood wide web. Sharks are older than trees.',
+        'An octopus has three hearts.',
+        'The immortal jellyfish reverts to a polyp.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 4);
+});
+
+test('calcOriginality: identical short claims are one fact', () => {
+    const m = model([
+        'Prime numbers.',
+        'Prime numbers.',
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: failed runs are ignored and two answers cannot score 5', () => {
+    const failed = {
         id: 'x/y', name: 'Y', provider: 'X', license: 'commercial',
         runs: [
-            { success: true, topics: ['jellyfish'] },
-            { success: true, topics: ['venus'] },
-            { success: true, topics: [] },
+            { success: true, content: 'An octopus has three hearts.' },
+            { success: false, content: null },
+            { success: true, content: 'An octopus has blue blood.' },
         ],
     } as any;
-    assert.equal(calcOriginality(model, ['jellyfish', 'octopus', 'honey']), 2);
-    assert.equal(calcOriginality(model, ['venus', 'jellyfish', 'honey']), 1);
+    assert.equal(calcOriginality(failed, POPULAR), 1);
+    const two = model([
+        'Scotland chose the unicorn as its national animal in the twelfth century.',
+        'The total weight of all the ants on Earth matches the weight of all humans.',
+    ]);
+    assert.equal(calcOriginality(two, POPULAR), 2);
+});
+
+test('originalityBadge renders five stars', () => {
+    assert.equal(
+        originalityBadge(5),
+        '<span class="originality-badge" data-score="5">★★★★★<span class="star-empty"></span> original</span>',
+    );
+    assert.equal(
+        originalityBadge(1),
+        '<span class="originality-badge" data-score="1">★<span class="star-empty">☆☆☆☆</span> original</span>',
+    );
 });
 
 test('metaDescription is plain text, capped, strips link URLs, names the model', () => {
