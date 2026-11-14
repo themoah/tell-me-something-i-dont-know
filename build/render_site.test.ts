@@ -119,6 +119,42 @@ test('calcOriginality: failed runs are ignored and two answers cannot score 5', 
     assert.equal(calcOriginality(two, POPULAR), 2);
 });
 
+test('calcOriginality: a lead-in on the same line does not hide a repeated fact', () => {
+    const m = model([
+        "Here's a fact many people might not know: The longest word in the English language is pneumonoultramicroscopicsilicovolcanoconiosis.",
+        "Here's something you might not know: the longest word in the English language is pneumonoultramicroscopicsilicovolcanoconiosis.",
+        "Here's something you might not know: the shortest war in history was between Britain and Zanzibar on August 27, 1896.",
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: the opening sentence wins over a later bold word', () => {
+    const m = model([
+        'You are literally glowing right now. Researchers measured biophotons from human skin.',
+        'Your immune system does not know your eyes exist. The proteins are hidden from white blood cells.',
+        'Your immune system does not know your eyes exist. Your eyes have **"immune privilege."** Inflammation would blind you.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: text between short bold words is not the claim', () => {
+    const m = model([
+        'The little dot above a lowercase **i** or **j** is called a **tittle**.',
+        'The **b** in **"debt"** is silent because Latin spelling added it.',
+        'The little dot above a lowercase **i** or **j** is called a **tittle**. The word comes from Latin.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a lead-in line yields the next sentence', () => {
+    const m = model([
+        'You may not know that honeybees can recognize human faces. They learn patterns of features.',
+        "I don't know what you already know, but here's one you might not:\n\nHoneybees can recognize human faces. They associate facial patterns with rewards.",
+        'You may not know this: honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
 test('originalityBadge renders five stars', () => {
     assert.equal(
         originalityBadge(5),

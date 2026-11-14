@@ -206,24 +206,29 @@ const CLAIM_STOP = new Set(
     'that this with from your have been they them their what when where which about there these those into just only also more than then some very really something people might know here fact the and for are was you not but its can'.split(' '),
 );
 
-/** First sentence of the answer's opening claim, markdown stripped. */
+const LEAD_IN = /^(here'?s|here is|okay|sure|alright|certainly|of course|great|let me|i can.?t know|i don.?t know|you may not know|since i)\b/i;
+
+function contentTokens(text: string): string[] {
+    return (text.toLowerCase().match(/[a-z]{3,}/g) ?? []).filter(w => !CLAIM_STOP.has(w));
+}
+
+/** Opening sentence, skipping a lead-in and ignoring highlights inside the sentence. */
 function claimText(text: string): string {
-    const bold = text.match(/\*\*((?:(?!\*\*).){12,400})\*\*/s);
-    let raw = bold ? bold[1] : '';
-    if (!raw) {
-        const skip = /^(here'?s|here is|okay|sure|alright|certainly|of course|great|let me)\b/i;
-        const lines = text.split('\n').map(s => s.trim()).filter(Boolean);
-        const usable = (s: string, min: number) => {
-            const plain = s.replace(/[*_#>`]/g, '').trim();
-            return plain.length >= min && !skip.test(plain);
-        };
-        const line = lines.find(s => usable(s, 40)) ?? lines.find(s => usable(s, 1)) ?? '';
-        raw = line;
+    const plain = text
+        .replace(/[*_#>`\[\]]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    let rest = plain;
+    while (rest) {
+        const end = rest.search(/[.!?]/);
+        const sentence = (end === -1 ? rest : rest.slice(0, Math.min(end + 1, 220))).trim();
+        rest = end === -1 || end > 220 ? '' : rest.slice(end + 1).trim();
+        const colon = sentence.match(/^([^:]{0,140}:)\s*(.*)$/);
+        const body = colon && LEAD_IN.test(colon[1]) ? colon[2].trim() : sentence;
+        if (LEAD_IN.test(body) && contentTokens(body).length < 3) continue;
+        if (body.length >= 12 || contentTokens(body).length >= 3) return body;
     }
-    raw = raw.replace(/[*_#>`\[\]]/g, ' ').replace(/\s+/g, ' ').trim();
-    const end = raw.search(/[.!?]/);
-    if (end === -1 || end > 220) return raw.slice(0, 220).trim();
-    return raw.slice(0, end + 1).trim();
+    return '';
 }
 
 function claimsOverlap(a: string, b: string): boolean {
