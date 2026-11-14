@@ -220,7 +220,7 @@ function claimText(text: string): string {
         .trim();
     let rest = plain;
     while (rest) {
-        const end = rest.search(/[.!?]/);
+        const end = rest.search(/[.!?](?=\s|$)/);
         const sentence = (end === -1 ? rest : rest.slice(0, Math.min(end + 1, 220))).trim();
         rest = end === -1 || end > 220 ? '' : rest.slice(end + 1).trim();
         const colon = sentence.match(/^([^:]{0,140}:)\s*(.*)$/);
@@ -262,9 +262,20 @@ export function calcOriginality(model: Model, popularTopics: string[]): number {
     if (runs.length === 0) return 1;
     const parent = runs.map((_, i) => i);
     const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+    // A group keeps at most one topic, so an untagged answer can't bridge two different topics.
+    const groupTopic = runs.map(r => primaryTopic(r.content!));
     for (let i = 0; i < runs.length; i++) {
         for (let j = i + 1; j < runs.length; j++) {
-            if (sameFact(runs[i].content!, runs[j].content!)) parent[find(i)] = find(j);
+            const ri = find(i);
+            const rj = find(j);
+            if (ri === rj) continue;
+            const ti = groupTopic[ri];
+            const tj = groupTopic[rj];
+            if (ti && tj && ti !== tj) continue;
+            if (sameFact(runs[i].content!, runs[j].content!)) {
+                parent[ri] = rj;
+                groupTopic[rj] = tj ?? ti;
+            }
         }
     }
     const clusters = new Map<number, Run[]>();

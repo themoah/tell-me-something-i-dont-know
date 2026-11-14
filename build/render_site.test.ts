@@ -285,3 +285,20 @@ test('hiveMindTopics matches the bar chart threshold', () => {
     const stats = { topic_frequency: { a: 20, b: MIN_TOPIC_BAR_COUNT, c: MIN_TOPIC_BAR_COUNT - 1 } } as any;
     assert.deepEqual(hiveMindTopics(stats), ['a', 'b']);
 });
+
+test('calcOriginality: an untagged answer does not bridge two different topics', () => {
+    const m = model([
+        'Octopus creatures evolved long before trees existed anywhere.',
+        'Shark creatures evolved long before trees existed anywhere.',
+        'Ancient creatures evolved long before trees existed anywhere.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
+
+test('calcOriginality: a decimal point does not end the claim', () => {
+    const m = model([
+        'The average cloud weighs about 1.1 million pounds.',
+        'The average cloud weighs about 1.5 grams per cubic meter of water droplets.',
+    ]);
+    assert.equal(calcOriginality(m, POPULAR), 2);
+});
