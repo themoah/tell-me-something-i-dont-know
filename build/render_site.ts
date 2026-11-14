@@ -712,7 +712,7 @@ async function main() {
     const dateStr = new Date(data.meta.generated_at).toLocaleDateString('en-US', {
         year: 'numeric', month: 'long', day: 'numeric',
     });
-    const topTopics = Object.keys(data.stats.topic_frequency).slice(0, 3);
+    const popularTopics = Object.keys(data.stats.topic_frequency).slice(0, 10);
     const claim = topTopicClaim(data.stats);
     const metaDesc = `I've asked ${modelCount}+ LLMs the same question. ${claim}`;
     const ogDesc = `I've asked ${modelCount}+ LLMs '${PROMPT}' ${claim}`;
@@ -762,7 +762,7 @@ async function main() {
         html = html.replace('<!-- SLOT:callout -->', () => callout);
     }
 
-    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(dedupeBySlug(data.models), topTopics));
+    html = html.replace('<!-- SLOT:cards -->', () => renderModelCards(dedupeBySlug(data.models), popularTopics));
     html = html.replace(
         '<!-- SLOT:hero_data -->',
         () => `<script>window.__HERO=${serializeForScriptTag(candidates)};</script>`,
@@ -781,7 +781,7 @@ async function main() {
         const next = i < uniqueModels.length - 1 ? uniqueModels[i + 1] : null;
         const dir = path.join(MODELS_DIR, slugify(model.id));
         await fs.mkdir(dir, { recursive: true });
-        await fs.writeFile(path.join(dir, 'index.html'), bustAppJs(renderModelPage(model, sharedHead, prev, next, topTopics), appVersion), 'utf-8');
+        await fs.writeFile(path.join(dir, 'index.html'), bustAppJs(renderModelPage(model, sharedHead, prev, next, popularTopics), appVersion), 'utf-8');
     }
     console.log(`Rendered ${uniqueModels.length} model pages into site/m/`);
 
