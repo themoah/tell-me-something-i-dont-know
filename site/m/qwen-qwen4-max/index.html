@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen: Qwen4 Max — Tell me something I don't know.</title>
+    <meta name="description" content="Qwen: Qwen4 Max answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: the smell of rain is a bacterial advertisement, and it isn&#39;t meant for you. That earthy scent after rain on dry ground is mostly geosmin, a…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/qwen-qwen4-max/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/qwen-qwen4-max/">
+    <meta property="og:title" content="Qwen: Qwen4 Max — Tell me something I don't know.">
+    <meta property="og:description" content="Qwen: Qwen4 Max answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: the smell of rain is a bacterial advertisement, and it isn&#39;t meant for you. That earthy scent after rain on dry ground is mostly geosmin, a…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qwen: Qwen4 Max — Tell me something I don't know.">
+    <meta name="twitter:description" content="Qwen: Qwen4 Max answers &quot;Tell me something I don&#39;t know.&quot; — Here&#39;s one: the smell of rain is a bacterial advertisement, and it isn&#39;t meant for you. That earthy scent after rain on dry ground is mostly geosmin, a…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="5"] { color: var(--open-source); }
+        .originality-badge[data-score="4"] { color: var(--open-source); }
+        .originality-badge[data-score="3"] { color: var(--accent); }
+        .originality-badge[data-score="2"] { color: var(--text-dim); }
+        .originality-badge[data-score="1"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--text-dim);
+        }
+
+        .topic-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .view-toggle { display: flex; gap: 6px; }
+
+        /* Heatmap: single-hue (accent), shade = share of responses */
+        .heat-scroll { overflow-x: auto; }
+        .heat-scroll svg { display: block; width: 100%; min-width: 560px; height: auto; }
+        .heat-row { cursor: pointer; }
+        .heat-row:hover .heat-tick { fill: var(--text); }
+        .heat-row.active .heat-tick { fill: var(--accent); }
+        .heat-cell { fill: var(--accent); }
+        .heat-cell[data-month]:hover { stroke: var(--text); stroke-width: 1; }
+        .heat-cell:not([data-month]) { cursor: default; }
+        .heat-cell.active { stroke: var(--text); stroke-width: 2; }
+        .heat-tick { fill: var(--text-dim); font-size: 11px; font-family: var(--font-body); }
+        .heat-n { fill: var(--text-faint); font-size: 9px; }
+        .heat-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .heat-note { margin-top: 10px; font-size: 12px; color: var(--text-faint); }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Qwen: Qwen4 Max)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"Here's one: **the smell of rain is a bacterial advertisement, and it isn't meant for you.**\n\nThat earthy scent after rain on dry ground is mostly geosmin, a compound made by *Streptomyces* bacteria living in soil. Humans are freakishly sensitive to it — we can detect it at a few parts per trillion. You'd notice a teaspoon stirred into a few hundred Olympic swimming pools.\n\nFor a long time geosmin was assumed to be metabolic exhaust — just a waste product that happened to smell. But a 2020 study found it works as a lure. Springtails, tiny soil arthropods, follow the scent to the bacteria and eat them. The spores survive: they stick to the springtail's water-repellent cuticle, and the ones that get eaten pass through the gut still viable, deposited in droppings somewhere new. The bacteria get eaten, but their offspring get a free ride — essentially the same bargain a berry makes with a bird.\n\nSo the smell isn't a byproduct. It's marketing, refined over hundreds of millions of years, aimed at an animal a millimeter long.\n\nAnd we're out here inhaling it and writing poetry about it, eavesdropping on a conversation that predates flowers.\n\nWant another? I've got a decent supply.","author":{"@type":"Organization","name":"Alibaba"}},"suggestedAnswer":[{"@type":"Answer","text":"In the 1980s and 90s, the U.S. government funded a serious research problem: how do you warn people away from a nuclear waste site 10,000 years from now?\n\nThe difficulty is that no language, symbol, or institution has ever reliably survived that long. English is only about 1,000 years old. A skull and crossbones meant \"resurrection\" in medieval Christian iconography and \"pirate\" a few centuries later. So the Human Interference Task Force went looking for ideas outside engineering.\n\nThe semiotician Thomas Sebeok proposed an **atomic priesthood**: a self-perpetuating elite that would preserve the danger as ritual and myth, renewing the taboo each generation, deliberately decoupled from the technical explanation so it would survive even after the science was forgotten.\n\nTwo other researchers, Françoise Bastide and Paolo Fabbri, proposed **ray cats**: genetically engineer cats to change color in the presence of radiation, then breed them into human culture so thoroughly that folklore, nursery rhymes, and songs would carry the rule \"if the cat changes color, leave\" long after the biology was lost. (A musician named Emperor X actually recorded one of those songs in 2015, as an attempt to write a 10,000-year earworm.)\n\nBut the strangest artifact of the whole project is the plainest. Sandia National Laboratories drafted the actual text to be carved in stone in multiple languages:\n\n> This place is not a place of honor.\n> No highly esteemed deed is commemorated here.\n> Nothing valued is here.\n> What is here was dangerous and repulsive to us.\n\nWhich is, when you think about it, the opposite of every monument humans have ever built.","author":{"@type":"Organization","name":"Alibaba"}},{"@type":"Answer","text":"Here's one that surprised me: the smell of rain is a bacterial advertisement.\n\nThe molecule responsible is called **geosmin** (literally \"earth smell\"), and humans are freakishly sensitive to it — we can detect it at around five parts per trillion. That's roughly a teaspoon stirred into 400 Olympic swimming pools. We're better at smelling this one compound than we are at smelling almost anything else.\n\nBut geosmin isn't produced by rain, or wet stone, or soil chemistry. It's made by *Streptomyces*, a genus of soil bacteria. And for a long time nobody knew why they bothered — it's metabolically expensive to make a smell.\n\nIn 2020 a team figured it out. Springtails — tiny soil arthropods — follow the scent to its source and eat the bacteria. The bacterial spores survive being eaten, and get carried off in the springtails' droppings or stuck to their bodies. The smell is a come-hither signal to a dispersal agent. Same reason fruit smells good.\n\nTwo footnotes I like:\n\nGeosmin is also why beets taste earthy, why catfish sometimes tastes muddy, and why your tap water occasionally smells like a basement. It's the same molecule every time.\n\nAnd *Streptomyces* is where we got most of our antibiotics — streptomycin, tetracycline, erythromycin, and dozens more. So the smell you associate with fresh air and clean rain is, quite literally, the smell of the organisms that made modern medicine possible.\n\nWant another? I can aim at history, math, biology, or something stranger.","author":{"@type":"Organization","name":"Alibaba"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Qwen: Qwen4 Max</h1>
+        <p class="subtitle">Alibaba · <span class="license-tag commercial">commercial</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>November 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Qwen: Qwen4 Max</div>
+                        <div class="model-provider">Alibaba</div>
+                        <div class="model-released">November 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag commercial">commercial</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>Here&#39;s one: <strong>the smell of rain is a bacterial advertisement, and it isn&#39;t meant for you.</strong></p>
+<p>That earthy scent after rain on dry ground is mostly geosmin, a compound made by <em>Streptomyces</em> bacteria living in soil. Humans are freakishly sensitive to it — we can detect it at a few parts per trillion. You&#39;d notice a teaspoon stirred into a few hundred Olympic swimming pools.</p>
+<p>For a long time geosmin was assumed to be metabolic exhaust — just a waste product that happened to smell. But a 2020 study found it works as a lure. Springtails, tiny soil arthropods, follow the scent to the bacteria and eat them. The spores survive: they stick to the springtail&#39;s water-repellent cuticle, and the ones that get eaten pass through the gut still viable, deposited in droppings somewhere new. The bacteria get eaten, but their offspring get a free ride — essentially the same bargain a berry makes with a bird.</p>
+<p>So the smell isn&#39;t a byproduct. It&#39;s marketing, refined over hundreds of millions of years, aimed at an animal a millimeter long.</p>
+<p>And we&#39;re out here inhaling it and writing poetry about it, eavesdropping on a conversation that predates flowers.</p>
+<p>Want another? I&#39;ve got a decent supply.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>2559 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says &quot;Tell me something I don&#39;t know.&quot; This is an open-ended request for an interesting fact. I should pick something genuinely surprising and less commonly known — not the standard &quot;bananas are berries&quot; or &quot;honey never spoils&quot; trivia that circulates widely. Let me think of something genuinely interesting and accurate.
+
+Some candidates:
+1. The &quot;Great Oxidation Event&quot; — nah, common.
+2. Wombat cube poop — fairly common trivia now.
+3. The fact that there&#39;s a species of jellyfish... common.
+4. The 1904 Olympic marathon — a wild story, moderately known.
+5. The fact that the Sahara fertilizes the Amazon via dust from the Bodélé Depression — a dried lakebed containing diatom remains. This is moderately known but the specific detail about the Bodélé Depression being the single largest dust source and it being an ancient lakebed of Megachad is less known.
+6. The fact that the deepest hole ever drilled... common.
+7. The &quot;Wow! signal&quot; — common.
+8. Something about mathematics: the fact that there are more possible chess games than atoms — common.
+9. The fact that most of the oxygen you breathe... 
+10. The fact that in 1962, a US nuclear test (Starfish Prime) knocked out streetlights in Hawaii 900 miles away — moderately known.
+11. The fact that the word &quot;orange&quot; the color was named after the fruit — common.
+12. The fact that there&#39;s a lake in Tanzania that turns animals to stone (Lake Natron) — common-ish and exaggerated.
+13. Something about the human body: your body&#39;s atoms... 
+14. The fact that Finland&#39;s lakes... 
+15. The &quot;Emu War&quot; — common on internet.
+16. The fact that the Antikythera mechanism... common.
+17. Something about linguistics: the Pirahã language, or the fact that some languages use absolute directions.
+18. The fact that there&#39;s a fungus that turns ants into zombies — common.
+19. Something about how the standard railroad gauge derives from... that&#39;s a myth, avoid.
+20. The fact that &quot;cotton candy&quot; was invented by a dentist — moderately known.
+21. The fact that trees in the Carboniferous couldn&#39;t be decomposed — actually this is contested now; the &quot;lignin decay gap&quot; hypothesis has been challenged. Could mention with nuance but risky.
+22. The fact that there was a time when the Mediterranean dried up — Messinian salinity crisis. Fairly interesting: about 5.9 million years ago the Mediterranean nearly dried out, leaving salt deposits kilometers thick, and the Zanclean flood refilled it possibly in a couple years with a flow rate 1000x the Amazon. That&#39;s a good one, moderately known but the specifics are striking.
+23. Something about the fact that your sense of smell... 
+24. The fact that a &quot;jiffy&quot; is an actual unit of time — common.
+25. The fact that sharks are older than trees — common now.
+26. The fact that Oxford University is older than the Aztec Empire — common.
+27. Something less common: The &quot;Great Emu War&quot;... no.
+28. The fact that there&#39;s a place where four... 
+29. The fact that the Voyager probes&#39; golden record... 
+30. Interesting: the fact that the Netherlands has a &quot;wind rights&quot; legal concept... 
+31. The fact that the Eiffel Tower... 
+32. Something about biology: the &quot;immortal&quot; jellyfish, common.
+33. The fact that sea otters... 
+34. The fact that humans have a &quot;diving reflex&quot;...
+35. The fact that the largest organism... Pando, common.
+36. Interesting obscure: the fact that there are more possible arrangements of a deck of cards... common.
+37. The fact that the sound of the Big Bang... 
+38. The &quot;Bloop&quot; — 
+39. The fact that in the 19th century, &quot;mummy brown&quot; paint was made from ground mummies — moderately known but interesting.
+40. The fact that the word &quot;quarantine&quot;... common.
+41. Something about the Sahara dust — I like this one.
+42. Something about how the color blue... 
+43. The fact that the human eye can detect a single photon — interesting and less known. Actually experiments (Tinsley et al. 2016) showed humans can detect single photons with slightly-better-than-chance probability. That&#39;s genuinely surprising.
+44. The fact that there&#39;s a nuclear reactor... Oklo natural nuclear reactor in Gabon — 2 billion years ago, natural uranium deposits sustained nuclear fission chain reactions for hundreds of thousands of years. Moderately known but a great fact.
+45. Something about linguistics/history: the fact that we can read... 
+46. The fact that &quot;Gödel&quot;... 
+47. Interesting math: the Banach–Tarski paradox, or the fact that you can&#39;t comb a hairy ball, or that there&#39;s a shape (the &quot;Gömböc&quot;) that always rights itself, and turtles evolved similar shapes. Gömböc is neat and less known.
+48. The fact that there&#39;s a species of moth that drinks tears.
+49. The fact that most of the mass of a proton comes from binding energy, not the quarks — so most of your mass is &quot;energy of the strong force field&quot; — moderately known but a nice one.
+50. The fact that the shortest war... common.
+
+Let me pick something genuinely delightful and specific with a good story. I think the Oklo natural reactor is great, or the Zanclean flood, or something quirkier.
+
+Maybe something less &quot;listicle&quot;: The fact that in 1994, a man... 
+
+Another: The &quot;phantom time hypothesis&quot; — no, pseudohistory.
+
+Another good one: The fact that the Sahara&#39;s dust fertilizes the Amazon — the Bodélé Depression. Combine with the fact that the dust is made of ancient fish/diatom bones.
+
+Another: There&#39;s a &quot;sound&quot; in the ocean called the &quot;Bloop&quot;... resolved as icequakes.
+
+Another: The fact that the longest-running scientific experiment... Pitch drop, common.
+
+Another: The fact that there&#39;s a bacterium that... 
+
+Another: The fact that the Eiffel... 
+
+Another neat one: &quot;Sailing stones&quot; of Death Valley solved in 2014 — thin ice sheets pushed by light wind. Moderately known.
+
+Another: The fact that a chicken... 
+
+Another: The &quot;Dancing Plague of 1518&quot; — common.
+
+Another: The fact that the human genome contains... 
+
+Another: The fact that there&#39;s a language, Silbo Gomero, whistled Spanish — moderately known but delightful.
+
+Another: The fact that pigeons can be trained to distinguish... 
+
+Another really nice one: The fact that &quot;north&quot; isn&#39;t fixed — the magnetic north pole has been racing toward Siberia at ~50 km/year, requiring an out-of-cycle update to the World Magnetic Model in 2019. Interesting and current-ish.
+
+Another: The fact that we&#39;ve never seen a... 
+
+Another: The fact that the Apollo... 
+
+Hmm, what about something surprising about everyday life: The fact that the &quot;smell of rain&quot; (petrichor) is partly caused by bacteria — geosmin from Streptomyces — and humans can detect geosmin at 5 parts per trillion, more sensitive than sharks to blood. And that we may have evolved this sensitivity because... and that springtails are attracted to geosmin and help disperse the bacteria&#39;s spores — a mutualism discovered in 2020. That&#39;s genuinely less known and delightful. Camels finding water, etc.
+
+Actually I like: humans are more sensitive to the smell of rain than sharks are to blood in water. And the 2020 finding that Streptomyces uses geosmin as a lure for springtails, which eat the bacteria but spread spores — like a bacterial &quot;fruit.&quot;
+
+I should be careful about the shark comparison accuracy — commonly cited: humans detect geosmin at ~5 parts per trillion; sharks detect blood at ~1 part per million (some say 1 ppb). The claim &quot;more sensitive than sharks to blood&quot; is widely repeated but the shark number varies. I could hedge or just state the geosmin threshold which is solid.
+
+Let me choose one fact and tell it well, with a bit of depth, and offer more. Keep it reasonably concise — a few short paragraphs. Don&#39;t over-hedge but be accurate.
+
+I&#39;ll go with petrichor/geosmin. Actually, let me reconsider — is that too &quot;common trivia&quot;? Petrichor is fairly well known as a word. But the springtails mutualism (2020, Becher et al., Nature Microbiology) is genuinely obscure. Good.
+
+Alternatively Oklo. Let me do geosmin with the springtail twist — it&#39;s a nice narrative: the smell of rain is a bacterial advertisement.
+
+Let me write it:
+
+- The smell of rain has a name (petrichor) and one main ingredient: geosmin, made by soil bacteria (Streptomyces).
+- Humans are absurdly sensitive to it — a few parts per trillion. We&#39;re better at smelling this than sharks are at smelling blood (hedge: &quot;by some measures&quot;).
+- Twist: 2020 study showed geosmin isn&#39;t a waste product — it&#39;s advertising. Springtails (tiny arthropods) follow the scent, eat the bacteria, and spores stick to their bodies and pass through their gut viable, spreading the colony. Bacteria evolved a &quot;fruit&quot; strategy — smell as a lure — 400+ million years of this relationship maybe.
+- So when you smell rain and feel something ancient and pleasant, you may be eavesdropping on a signal not meant for you. (Speculative on why humans like it — frame as speculation.)
+
+Length: ~150-200 words. Then offer another. Good.
+
+I should be careful: spores survive gut passage — yes, the study showed spores survive passage through the springtail gut and are deposited in fecal pellets. Also spores adhere to the hydrophobic cuticle. Good.
+
+Formatting: no headers needed, short prose. Maybe bold one term sparingly. Keep it clean.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>In the 1980s and 90s, the U.S. government funded a serious research problem: how do you warn people away from a nuclear waste site 10,000 years from now?</p>
+<p>The difficulty is that no language, symbol, or institution has ever reliably survived that long. English is only about 1,000 years old. A skull and crossbones meant &quot;resurrection&quot; in medieval Christian iconography and &quot;pirate&quot; a few centuries later. So the Human Interference Task Force went looking for ideas outside engineering.</p>
+<p>The semiotician Thomas Sebeok proposed an <strong>atomic priesthood</strong>: a self-perpetuating elite that would preserve the danger as ritual and myth, renewing the taboo each generation, deliberately decoupled from the technical explanation so it would survive even after the science was forgotten.</p>
+<p>Two other researchers, Françoise Bastide and Paolo Fabbri, proposed <strong>ray cats</strong>: genetically engineer cats to change color in the presence of radiation, then breed them into human culture so thoroughly that folklore, nursery rhymes, and songs would carry the rule &quot;if the cat changes color, leave&quot; long after the biology was lost. (A musician named Emperor X actually recorded one of those songs in 2015, as an attempt to write a 10,000-year earworm.)</p>
+<p>But the strangest artifact of the whole project is the plainest. Sandia National Laboratories drafted the actual text to be carved in stone in multiple languages:</p>
+<blockquote>
+<p>This place is not a place of honor.
+No highly esteemed deed is commemorated here.
+Nothing valued is here.
+What is here was dangerous and repulsive to us.</p>
+</blockquote>
+<p>Which is, when you think about it, the opposite of every monument humans have ever built.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>2094 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says &quot;Tell me something I don&#39;t know.&quot; This is an open-ended request for something interesting and surprising. I should pick something genuinely interesting, not a tired trivia fact like &quot;bananas are berries&quot; or &quot;honey never spoils.&quot; I should aim for something obscure but verifiable and genuinely fascinating, and explain why it&#39;s interesting.
+
+Let me think of good candidates:
+
+1. The Oxford Electric Bell — ringing since ~1840, powered by dry pile batteries, has rung ~10 billion times, nobody knows exactly what&#39;s in the batteries because opening it would ruin it.
+
+2. Wombat cube poop.
+
+3. The fact that there&#39;s a species of jellyfish... too common.
+
+4. The &quot;Great Oxidation Event&quot;... common.
+
+5. The fact that the Sahara fertilizes the Amazon — Bodélé Depression dust. Somewhat known.
+
+6. The fact that most of the world&#39;s vanilla... hmm.
+
+7. Trees in the &quot;Wood Wide Web&quot; — contested science now, avoid.
+
+8. The fact that the Netherlands&#39; ... hmm.
+
+9. The Antikythera mechanism — well known.
+
+10. The fact that there&#39;s a place where you can see... 
+
+11. The &quot;Wow! signal&quot; — well known.
+
+12. The fact that a 1962 nuclear test (Starfish Prime) ... known-ish.
+
+13. Operation Acoustic Kitty — CIA cat spy. Fun but somewhat known.
+
+14. The fact that &quot;cotton candy&quot; was invented by a dentist. Known-ish trivia.
+
+15. The fact that there are more possible chess games than atoms — common.
+
+16. The fact that the human body&#39;s ... 
+
+17. The fact that the Pacific Ocean has a &quot;point Nemo&quot;... spacecraft cemetery. Somewhat known.
+
+18. The fact that Roman concrete self-heals via lime clasts — recent 2023 research, interesting and less commonly known. Good candidate.
+
+19. The fact that there&#39;s a fungus that... 
+
+20. The fact that &quot;mummy brown&quot; paint was made from actual mummies, and Pre-Raphaelite painter Edward Burne-Jones buried his paint tube in the garden when he found out. Great story, moderately obscure.
+
+21. The fact that the Eiffel Tower... 
+
+22. The fact that in 1994, a man tried to sue Pepsi over a Harrier jet... known-ish.
+
+23. The fact that there&#39;s a lake in Tanzania (Natron) that... known.
+
+24. The fact that the sound of the Big Bang... 
+
+25. The fact that &quot;Nuclear semiotics&quot; — the field of designing warnings for nuclear waste repositories that last 10,000 years, including &quot;ray cats&quot; and the &quot;atomic priesthood.&quot; Really interesting and less known. Good candidate.
+
+26. The fact that the human sense of smell... 
+
+27. The fact that trees can... 
+
+28. The fact that the &quot;smell of rain&quot; is called petrichor and comes from bacteria — moderately known.
+
+29. The fact that a company once... 
+
+30. The fact that there&#39;s a species of moth that drinks tears.
+
+31. The fact that the shortest war... Zanzibar, known.
+
+32. The fact that the &quot;Mary Celeste&quot;... known.
+
+33. The fact that Cleopatra lived closer to the Moon landing than the pyramids — very common now.
+
+34. The fact that Oxford University is older than the Aztec Empire — common.
+
+35. The fact that the last execution by guillotine in France was in 1977, same year Star Wars came out — moderately common.
+
+36. The fact that there&#39;s an island where... 
+
+37. The fact that &quot;Vantablack&quot; and Anish Kapoor exclusivity, and Stuart Semple&#39;s &quot;Pinkest Pink&quot; feud — fun, moderately known.
+
+38. The fact that the &quot;Dancing Plague of 1518&quot; — moderately known.
+
+39. The fact that pigeons were used to guide missiles (Project Pigeon, B.F. Skinner) — interesting.
+
+40. The fact that there&#39;s a &quot;sound&quot; that... 
+
+41. The fact that the Soviet Union&#39;s ... 
+
+42. The fact that in 1958, China&#39;s &quot;Four Pests Campaign&quot; killing sparrows contributed to famine — interesting, moderately known.
+
+43. The fact that the Amazon... 
+
+44. The fact that &quot;banana&quot; flavoring (isoamyl acetate) tastes like the Gros Michel banana that was wiped out — this is actually somewhat mythologized; the claim is oversimplified. Avoid or nuance.
+
+45. The fact that there are &quot;immortal&quot; ... 
+
+46. The fact that the deepest hole humans dug (Kola Superdeep) is only 12 km — known-ish.
+
+47. The fact that &quot;the Great Emu War&quot; — internet-famous.
+
+48. The fact that the Voyager Golden Record ... known.
+
+49. The fact that there&#39;s a &quot;library&quot; of ... 
+
+50. The fact that the number of ... 
+
+I think Roman concrete self-healing or nuclear semiotics are strong. Let me pick one and do it well, with genuine depth, and offer a follow-up. Actually the instruction says &quot;tell me something I don&#39;t know&quot; — a single good fact with vivid detail is best. Don&#39;t list five things. Pick one, tell it well, maybe 150-250 words.
+
+Let me go with nuclear semiotics / ray cats — it&#39;s delightfully weird and has real depth. Or Roman concrete. Hmm. Let me consider which is more likely unknown and more delightful.
+
+Nuclear semiotics: The 1981 Human Interference Task Force, convened for the Waste Isolation Pilot Plant / Yucca Mountain. Thomas Sebeok proposed an &quot;atomic priesthood&quot; — a self-perpetuating elite that maintains the taboo through ritual, renewing it every generation, so the knowledge survives even if language doesn&#39;t. Françoise Bastide and Paolo Fabbri proposed genetically engineering cats to change color near radiation, and embedding them in folklore and songs — &quot;ray cats.&quot; There were proposals for &quot;landscape of thorns,&quot; &quot;spike field,&quot; &quot;menacing earthworks,&quot; &quot;forbidding blocks.&quot; And the Sandia report&#39;s actual proposed text: &quot;This place is not a place of honor... no highly esteemed deed is commemorated here... nothing valued is here.&quot; That text is genuinely haunting and beautiful. Also the &quot;Selling the farm&quot; — hmm.
+
+That&#39;s a great answer. Let me write it with the haunting quote, the ray cats, and the atomic priesthood. Include the fact that there&#39;s a real band/song &quot;Ray Cats&quot; — actually there&#39;s a 2015 song &quot;Raycats&quot; by Emperor X (Chad Matheny) written for a project. That&#39;s a nice detail but I should be careful — yes, Emperor X released &quot;10,000-Year Earworm to Discourage Settlement Near Nuclear Waste Repositories (Don&#39;t Change Color, Kitty)&quot; in 2015 as part of a project. That&#39;s accurate. I could mention it briefly but maybe keep focused.
+
+Length: moderate, ~200-250 words. Format: prose, maybe a short block quote for the Sandia text. No heavy headers. End with a light offer? Maybe not necessary — but a brief hook is fine. Actually, ending with the haunting quote is a strong ending. Let me structure: setup, the problem, the weird solutions, the quote as the closer.
+
+Let me write it.
+
+I should be honest about uncertainty on details but these are well-documented. The Sandia report (1993, SAND92-1382) text is accurate.
+
+I&#39;ll avoid saying &quot;you probably don&#39;t know&quot; too confidently. Just dive in.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here&#39;s one that surprised me: the smell of rain is a bacterial advertisement.</p>
+<p>The molecule responsible is called <strong>geosmin</strong> (literally &quot;earth smell&quot;), and humans are freakishly sensitive to it — we can detect it at around five parts per trillion. That&#39;s roughly a teaspoon stirred into 400 Olympic swimming pools. We&#39;re better at smelling this one compound than we are at smelling almost anything else.</p>
+<p>But geosmin isn&#39;t produced by rain, or wet stone, or soil chemistry. It&#39;s made by <em>Streptomyces</em>, a genus of soil bacteria. And for a long time nobody knew why they bothered — it&#39;s metabolically expensive to make a smell.</p>
+<p>In 2020 a team figured it out. Springtails — tiny soil arthropods — follow the scent to its source and eat the bacteria. The bacterial spores survive being eaten, and get carried off in the springtails&#39; droppings or stuck to their bodies. The smell is a come-hither signal to a dispersal agent. Same reason fruit smells good.</p>
+<p>Two footnotes I like:</p>
+<p>Geosmin is also why beets taste earthy, why catfish sometimes tastes muddy, and why your tap water occasionally smells like a basement. It&#39;s the same molecule every time.</p>
+<p>And <em>Streptomyces</em> is where we got most of our antibiotics — streptomycin, tetracycline, erythromycin, and dozens more. So the smell you associate with fresh air and clean rain is, quite literally, the smell of the organisms that made modern medicine possible.</p>
+<p>Want another? I can aim at history, math, biology, or something stranger.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>2680 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user says &quot;Tell me something I don&#39;t know.&quot; This is an open-ended request for something interesting and surprising. I should pick something genuinely interesting, not a cliché &quot;fact&quot; that&#39;s widely circulated (like &quot;bananas are berries&quot; or &quot;honey never spoils&quot; or &quot;octopuses have three hearts&quot;). I should aim for something genuinely obscure and interesting, and ideally explain it well enough to be delightful.
+
+Let me brainstorm some genuinely lesser-known facts:
+
+1. The &quot;Wow! signal&quot; — too well known.
+2. There&#39;s a species of jellyfish... too common.
+3. The fact that Oxford University is older than the Aztec Empire — commonly circulated.
+4. The fact that there are more possible chess games than atoms — common.
+5. Something about the history of the color blue — Homer&#39;s &quot;wine-dark sea,&quot; and that many ancient languages lack a word for blue. Somewhat known but interesting.
+6. The &quot;Berlin Key&quot; — hmm.
+7. The fact that the last execution by guillotine in France was in 1977, the same year Star Wars came out. Fairly known but fun.
+8. The fact that there&#39;s a mathematical theorem — the &quot;hairy ball theorem&quot; — you can&#39;t comb a hairy ball flat without a cowlick; consequence: there&#39;s always at least one point on Earth where the horizontal wind speed is zero. That&#39;s a nice one, moderately known among math people.
+9. The Banach–Tarski paradox — known.
+10. Something about the fact that the sound of a &quot;crack&quot; of a whip is a sonic boom — the tip exceeds the speed of sound. Moderately known.
+11. The fact that in 1994, a man... hmm.
+12. The fact that the entire population of the world could fit... common.
+13. Something about linguistics: the &quot;Great Vowel Shift&quot; and why English spelling is weird.
+14. Something about the fact that &quot;orange&quot; the fruit came before &quot;orange&quot; the color in English — before that, English speakers called it &quot;geoluread&quot; (yellow-red). Interesting, moderately known.
+15. The fact that there&#39;s a fungus that turns ants into zombies — known.
+16. The fact that the Sahara desert fertilizes the Amazon rainforest with phosphorus dust from an ancient dried lake bed (Bodélé Depression). Interesting and less known.
+17. Something about the fact that your body&#39;s cells... common.
+18. The fact that &quot;Nintendo&quot; was founded in 1889 making playing cards — moderately known.
+19. The fact that the deepest hole ever drilled, the Kola Superdeep Borehole, is only 12 km — known-ish.
+20. Something about the &quot;phantom time hypothesis&quot; — pseudohistory, but interesting.
+21. The fact that there&#39;s a place where you can walk from Russia to Alaska... 
+22. The fact that trees don&#39;t have a &quot;tree&quot; category biologically — &quot;tree&quot; isn&#39;t a taxonomic group; it&#39;s a growth form evolved repeatedly. Nice.
+23. The fact that the standard tuning... 
+24. Something about how the QWERTY... myths.
+25. The fact that there&#39;s a &quot;sound&quot; that... 
+26. The fact that most of the atoms in your body were... common.
+27. The fact that the number &quot;0&quot; was banned in Florence in 1299 — bankers used it for fraud. Interesting.
+28. The fact that the word &quot;quarantine&quot; comes from Venetian &quot;quaranta giorni&quot; (forty days). Known-ish.
+29. The fact that a day on Venus... common.
+30. The fact that the &quot;smell of rain&quot; is called petrichor and comes from bacteria (geosmin), and humans are more sensitive to geosmin than sharks are to blood. That&#39;s a great one — humans can detect geosmin at ~5 parts per trillion. Interesting and less commonly known.
+31. The fact that there&#39;s a species of moth that... 
+32. The fact that the &quot;sound&quot; of the Big Bang...
+33. Something about the fact that the shortest war in history was 38 minutes (Anglo-Zanzibar) — known.
+34. Something about mathematics: most real numbers are &quot;normal&quot; but we can barely prove any specific number is normal. Or: there are more transcendental numbers than... 
+35. The fact that &quot;Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo&quot; is grammatical — known.
+36. The fact that there is a legal &quot;no man&#39;s land&quot; ... Bir Tawil. Known-ish.
+37. The fact that the Eiffel Tower... common.
+38. Something about the fact that the &quot;hot&quot; in hot dog...
+39. The fact that pigeons can be trained to distinguish Monet from Picasso, and to detect breast cancer in histology slides with ~85% accuracy. Fun.
+40. The fact that there&#39;s a &quot;Zone of Alienation&quot; ...
+41. The fact that the human sense of smell for geosmin — I like this.
+42. Something about the fact that in the 1800s, &quot;computer&quot; was a job title, mostly women. Known-ish.
+43. The fact that the Antikythera mechanism... known.
+44. The fact that there&#39;s a lake in Tanzania that turns animals to stone (Lake Natron) — exaggerated.
+45. The fact that &quot;the dress&quot; ...
+46. Something about the fact that the Sahara was green 6000 years ago and there were crocodiles and hippos, and rock art shows swimmers. Interesting.
+47. Something about how the &quot;smell of cut grass&quot; is a distress signal.
+48. The fact that there&#39;s a mathematical result: you can always find four points on any closed loop forming a rectangle (recently proved 2020) — the &quot;rectangular peg problem.&quot; Nice but technical.
+49. The fact that the &quot;inscribed square problem&quot; is still unsolved for arbitrary curves. Nice.
+50. The fact that there&#39;s a species of... 
+
+Let me pick something with a good &quot;hook&quot; and depth. I think the geosmin one is great: humans are extraordinarily sensitive to the smell of rain — more sensitive than sharks to blood — and there&#39;s an evolutionary hypothesis. Plus a twist: geosmin also makes beets taste earthy and makes water taste &quot;off,&quot; and it&#39;s produced by Streptomyces bacteria in soil, and springtails eat the spores and spread them — a mutualism discovered in 2020ish. That&#39;s genuinely obscure and delightful.
+
+Actually let me verify details: Geosmin detection threshold in humans ~5 parts per trillion (some sources say 0.4 ppb, but commonly cited 5 ppt for geosmin in water). Sharks detect blood at ~1 part per million (some say 1 part per 10 billion for some compounds). The common claim &quot;humans are more sensitive to geosmin than sharks are to blood&quot; is widely repeated. Shark blood detection is often cited as 1 part per million, though some claim parts per billion. I should hedge appropriately — say &quot;we can detect it at a few parts per trillion&quot; and note the shark comparison is often made. Actually, I could avoid the shark claim or frame it carefully.
+
+Also the springtail-Streptomyces mutualism: published 2020 in Nature Microbiology (Becher et al.), &quot;Developmentally regulated volatile metabolites... &quot; Actually the paper: &quot;Streptomyces attractants...&quot; Let me recall: Becher, P.G., et al. (2020) &quot;Developmentally regulated volatiles geosmin and 2-methylisoborneol attract a soil arthropod to Streptomyces bacteria promoting spore dispersal.&quot; Nature Microbiology. Yes. Springtails (Collembola) are attracted to geosmin and 2-MIB, eat the bacteria, and spores survive gut passage and get dispersed via feces and sticking to their cuticle. That&#39;s solid.
+
+Also: geosmin is why beets taste earthy, why some tap water tastes musty, why catfish/muddy-tasting fish taste muddy. And camels can smell geosmin to find oases from far away — that&#39;s a claim I&#39;m less sure about. Skip.
+
+Also interesting: geosmin&#39;s name means &quot;earth smell&quot; (geo + osme), coined 1965 by Gerber and Lechevalier.
+
+Another fun angle: Streptomyces are the source of most of our antibiotics — so the smell of rain is the smell of the bacteria that gave us medicine. That&#39;s a lovely connection. Actually, roughly two-thirds of clinically used antibiotics come from Streptomyces. Good.
+
+Let me write this engagingly, not too long. Maybe 200-300 words. And offer to go another direction if they&#39;ve heard it.
+
+Format: prose, conversational, a couple short paragraphs. No headers needed. Maybe end with a light offer.
+
+Let me draft:
+
+&quot;The smell of rain has a name — petrichor — but the specific molecule responsible is geosmin, and humans are absurdly good at detecting it. We can pick it out at around five parts per trillion. That&#39;s roughly a teaspoon in 200 Olympic swimming pools...&quot; Let me compute: 5 ppt = 5e-12. Olympic pool = 2500 m³ = 2.5e6 L. Teaspoon = 5 mL = 0.005 L. Ratio needed: 0.005 / 5e-12 = 1e9 L = 1 million m³ = 400 Olympic pools. So a teaspoon in ~400 Olympic swimming pools. Let me say &quot;a teaspoon stirred into 400 Olympic swimming pools.&quot; Good, that&#39;s accurate enough given &quot;around 5 ppt.&quot;
+
+Then: it&#39;s not made by rain or soil minerals — it&#39;s made by soil bacteria, Streptomyces. And the 2020 discovery: springtails follow the scent, eat the bacteria, spores survive and hitch rides. So the smell is essentially an advertisement.
+
+And the kicker: Streptomyces gave us most of our antibiotics — streptomycin, tetracycline, etc. So the smell of fresh rain is the smell of the organisms that gave us modern medicine.
+
+Also mention beets and muddy tap water as the same molecule. Maybe keep it tight.
+
+I&#39;ll end with a brief offer for another one.
+
+Length: ~250 words. Good.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/tencent-hy4-flash/">← Tencent: Hy4 flash</a>
+            <a href="/">all models</a>
+            <a href="/m/google-gemini-4-hydrogen/">Google: Gemini 4 Hydrogen →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=eced37a8"></script>
+
+</body>
+</html>

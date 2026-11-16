@@ -1540,3 +1540,71 @@ models:
     license: "open-weights"
     released: "November 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "tencent/hy4-flash"
+    name: "Tencent: Hy4 flash"
+    provider: "Tencent"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "qwen/qwen4-max"
+    name: "Qwen: Qwen4 Max"
+    provider: "Alibaba"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "google/gemini-4-hydrogen"
+    name: "Google: Gemini 4 Hydrogen"
+    provider: "Google"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "baidu/ernie-light-dt-1.0-intl"
+    name: "Baidu: ERNIE-Light-DT-1.0"
+    provider: "Baidu"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "google/gemini-4-carbon"
+    name: "Google: Gemini 4 Carbon"
+    provider: "Google"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "kt/midm-k-3.0-pro"
+    name: "KT: Mi:dm K 3.0 Pro"
+    provider: "Kt"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "inclusionai/ling-3.2-flash:free"
+    name: "inclusionAI: Ling 3.2 Flash (free)"
+    provider: "Inclusionai"
+    license: "open-weights"
+    released: "November 2026"
+
+  - id: "baidu/ernie-5.5-flash-preview:free"
+    name: "Baidu: ERNIE-5.5-Flash-Preview (free)"
+    provider: "Baidu"
+    license: "open-weights"
+    released: "November 2026"
+
+  - id: "nex-agi/nex-n2.6"
+    name: "Nex AGI: Nex-N2.6"
+    provider: "Nex Agi"
+    license: "open-source"
+    released: "November 2026"
+
+  - id: "thinkingmachines/inkling-2-small"
+    name: "Thinking Machines: Inkling 2 Small"
+    provider: "Thinkingmachines"
+    license: "open-source"
+    released: "November 2026"
+
+  - id: "motif-technologies/motif-3"
+    name: "Motif Technologies: Motif 3"
+    provider: "Motif Technologies"
+    license: "open-source"
+    released: "November 2026"
+
