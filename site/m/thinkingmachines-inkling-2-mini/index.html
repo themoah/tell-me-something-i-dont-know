@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thinking Machines: Inkling 2 Mini — Tell me something I don't know.</title>
+    <meta name="description" content="Thinking Machines: Inkling 2 Mini answers &quot;Tell me something I don&#39;t know.&quot; — The Eiffel Tower isn’t exactly a fixed height: in hot weather it expands, so it can be measurably taller in summer than in winter. If you want another o…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/thinkingmachines-inkling-2-mini/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/thinkingmachines-inkling-2-mini/">
+    <meta property="og:title" content="Thinking Machines: Inkling 2 Mini — Tell me something I don't know.">
+    <meta property="og:description" content="Thinking Machines: Inkling 2 Mini answers &quot;Tell me something I don&#39;t know.&quot; — The Eiffel Tower isn’t exactly a fixed height: in hot weather it expands, so it can be measurably taller in summer than in winter. If you want another o…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thinking Machines: Inkling 2 Mini — Tell me something I don't know.">
+    <meta name="twitter:description" content="Thinking Machines: Inkling 2 Mini answers &quot;Tell me something I don&#39;t know.&quot; — The Eiffel Tower isn’t exactly a fixed height: in hot weather it expands, so it can be measurably taller in summer than in winter. If you want another o…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="5"] { color: var(--open-source); }
+        .originality-badge[data-score="4"] { color: var(--open-source); }
+        .originality-badge[data-score="3"] { color: var(--accent); }
+        .originality-badge[data-score="2"] { color: var(--text-dim); }
+        .originality-badge[data-score="1"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--text-dim);
+        }
+
+        .topic-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .view-toggle { display: flex; gap: 6px; }
+
+        /* Heatmap: single-hue (accent), shade = share of responses */
+        .heat-scroll { overflow-x: auto; }
+        .heat-scroll svg { display: block; width: 100%; min-width: 560px; height: auto; }
+        .heat-row { cursor: pointer; }
+        .heat-row:hover .heat-tick { fill: var(--text); }
+        .heat-row.active .heat-tick { fill: var(--accent); }
+        .heat-cell { fill: var(--accent); }
+        .heat-cell[data-month]:hover { stroke: var(--text); stroke-width: 1; }
+        .heat-cell:not([data-month]) { cursor: default; }
+        .heat-cell.active { stroke: var(--text); stroke-width: 2; }
+        .heat-tick { fill: var(--text-dim); font-size: 11px; font-family: var(--font-body); }
+        .heat-n { fill: var(--text-faint); font-size: 9px; }
+        .heat-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .heat-note { margin-top: 10px; font-size: 12px; color: var(--text-faint); }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to Thinking Machines: Inkling 2 Mini)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"The Eiffel Tower isn’t exactly a fixed height: in hot weather it expands, so it can be measurably taller in summer than in winter.\n\nIf you want another one: octopuses have three hearts and blue blood, because their blood uses copper-based hemocyanin rather than iron-based hemoglobin.","author":{"@type":"Organization","name":"Thinkingmachines"}},"suggestedAnswer":[{"@type":"Answer","text":"Something that surprises people: the tiny jellyfish *Turritopsis dohrnii* is often called “biologically immortal” because, when stressed or damaged, it can revert to a younger stage and regenerate—though it’s not literally immune to death; it can still be eaten, diseased, or fail to survive. It’s closer to “able to reset its life cycle” than to being truly eternal.","author":{"@type":"Organization","name":"Thinkingmachines"}},{"@type":"Answer","text":"Here’s one that’s not widely known: the Eiffel Tower isn’t perfectly still — it expands about 15 cm (roughly 6 inches) taller in hot weather because the iron expands with heat, then contracts again in cold. So on a hot day it’s measurably longer than in the winter.\n\nA companion one: honey is famous for not spoiling, and archaeological samples of honey found in ancient tombs have been reported as still usable after thousands of years — partly because of its low water content and natural preservatives.","author":{"@type":"Organization","name":"Thinkingmachines"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>Thinking Machines: Inkling 2 Mini</h1>
+        <p class="subtitle">Thinkingmachines · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="2">★★<span class="star-empty">☆☆☆</span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>November 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">Thinking Machines: Inkling 2 Mini</div>
+                        <div class="model-provider">Thinkingmachines</div>
+                        <div class="model-released">November 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="2">★★<span class="star-empty">☆☆☆</span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>The Eiffel Tower isn’t exactly a fixed height: in hot weather it expands, so it can be measurably taller in summer than in winter.</p>
+<p>If you want another one: octopuses have three hearts and blue blood, because their blood uses copper-based hemocyanin rather than iron-based hemoglobin.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>1638 tokens</span>
+                    <span class="topic-tag" data-topic="octopus">🐙 octopus</span> <span class="topic-tag" data-topic="eiffel tower">🗼 eiffel tower</span>
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks for something they don&#39;t know. This is open-ended and vague. They want novel information. I should pick something interesting, accurate, and not overly common knowledge. Options: obscure facts, curious science, history, nature, culture. I need to be careful about accuracy and not fabricate.
+
+Good candidates:
+- The human brain uses about 20% of body energy despite being ~2% of body mass.
+- Octopuses have three hearts and blue blood (copper-based hemocyanin).
+- Honey never spoils—archaeologists found 3,000-year-old honey edible.
+- Wombats have scat that is cube-shaped.
+- The deepest known point in Mariana Trench ~10,935 m.
+- Some spiders can survive vacuum? Not sure.
+- The Great Barrier Reef is visible from space? Sometimes claimed but debatable; avoid.
+- Sharks are older than trees? Actually sharks appeared ~450 million years? Some claims.
+- Penguins have a layer of fat and feathers; not new.
+- There are more species of ants than birds? Actually ants are among most speciose.
+- The Eiffel Tower grows ~15 cm taller in summer due to thermal expansion.
+- The human body has more bacteria than human cells.
+- Octopuses have nine brains? They have one central brain and two lobes in each arm? Actually octopus has a central brain and two peripheral brains in arms? Let&#39;s recall: octopus nervous system includes a central brain (~500 million neurons) and two arms each with ~? Actually arms have neurons and can function semi-independently. There are three hearts.
+- The first known photo was an image of a rooftop? Actually first photograph by Niepce 1826 (View from the Window at Le Gras).
+- Bananas are berries; strawberries are not berries.
+- The word &quot;okay&quot; predates the US Civil War? It appeared in 1839? Hmm.
+- Humans have 206 bones (adult). Not that unknown.
+- The largest living land animal is the giraffe? Actually largest living land animals are blue whale (not land), elephants etc.
+- The smallest mammal is the Etruscan shrew? Or the bumblebee bat? Actually smallest mammal: Etruscan shrew (~2 g) or bat? The smallest bat is the bumblebee bat. Not needed.
+- Honey never spoils: 3,000-year-old honey in Egyptian tombs edible. Strong fact.
+- The Eiffel Tower expands: ~15 cm in summer vs winter.
+- The human heart beats ~100,000 times/day? Actually ~100,000 times/day, ~3 billion/lifetime.
+- Wombat scat cube-shaped: true.
+- The Sahara desert is expanding? It&#39;s not uniformly expanding; some deserts expanding due to climate change. Avoid.
+- There are 5 senses but some animals have more.
+- The Komodo dragon can survive in water? Not needed.
+- There are more neurons in the human brain than stars? Actually ~86 billion neurons; Milky Way has ~100-400 billion stars. Similar order. Avoid.
+- The shortest word? Not needed.
+- The longest word in English? Not needed.
+- The human body produces ~1.5 liters of saliva/day? Not needed.
+- There are more stars in the observable universe than grains of sand on Earth? Common claim.
+- The human brain is ~2% of body mass but uses ~20% of energy. Good.
+- The human body has more bacteria than cells. Good.
+- The Great Wall of China is not visible from space with naked eye. Common myth.
+- The word &quot;googol&quot;? Not needed.
+- The largest bird egg is ostrich egg; largest bird? Not needed.
+- The Eiffel Tower is not actually the tallest structure? Not needed.
+- The human body has ~37 trillion cells? Estimates vary.
+- The human heart is the only muscle that never rests? Good.
+- Honey never spoils. Nice.
+- The Eiffel Tower grows ~15 cm in summer. Nice.
+- Wombat scat cube-shaped. Nice.
+- Octopus has three hearts and blue blood. Nice.
+- The human brain uses 20% of energy. Nice.
+
+Pick one or two, concise. The user said &quot;something&quot; singular. I can give one with a bit of context. I&#39;ll choose the Eiffel Tower expansion or the octopus. The Eiffel Tower fact is nice and surprising. But I should be careful: the Eiffel Tower grows about 15 cm in summer due to thermal expansion (some sources say 18 cm). I can say &quot;roughly 15 cm&quot; or &quot;several centimeters&quot;. Let&#39;s use a robust fact: &quot;The Eiffel Tower is not the tallest structure in the world&quot; is not that interesting.
+
+Better: &quot;Honey never spoils.&quot; It&#39;s a striking, memorable fact. But maybe too folksy.
+
+The user asked &quot;Tell me something I don&#39;t know.&quot; Could be a fun prompt. I can give one surprising fact and maybe a bonus. Keep it short.
+
+I&#39;ll say: &quot;The Eiffel Tower grows taller in summer.&quot; Then give detail: thermal expansion, about 15 cm (some sources say up to ~18 cm) between winter and summer. That&#39;s accurate enough if phrased carefully.
+
+Alternatively: &quot;Octopuses have three hearts and blue blood.&quot; That&#39;s accurate. Their blood is blue due to hemocyanin (copper-based) instead of hemoglobin (iron-based). They have three hearts: one systemic and two branchial (gill) hearts. Good.
+
+I&#39;ll give one main fact, maybe mention a second briefly. The user asked for something singular, so I&#39;ll keep it focused but can add a small bonus.
+
+Need to ensure no fabrication. Eiffel Tower: In hot weather, it expands; in winter it contracts. The height increase is often cited as ~15 cm (6 inches) in summer. Some sources say up to 18 cm. I&#39;ll say &quot;about 15 cm&quot; or &quot;several centimeters.&quot; To be safe: &quot;expands by roughly 15 cm in summer heat.&quot; That&#39;s commonly cited.
+
+Let&#39;s craft final: &quot;The Eiffel Tower isn&#39;t a fixed height—it grows in summer. As metal heats, it expands, so the tower is measurably taller in hot weather and slightly shorter when cold.&quot; That&#39;s accurate.
+
+Maybe add: &quot;If you want another one: octopuses have three hearts.&quot; But user said something; I can include one plus a bonus. The instruction says tell me something I don&#39;t know; giving two is fine but might be too much. I&#39;ll give one strong fact and maybe one short bonus.
+
+Final answer should be concise.</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>Something that surprises people: the tiny jellyfish <em>Turritopsis dohrnii</em> is often called “biologically immortal” because, when stressed or damaged, it can revert to a younger stage and regenerate—though it’s not literally immune to death; it can still be eaten, diseased, or fail to survive. It’s closer to “able to reset its life cycle” than to being truly eternal.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>601 tokens</span>
+                    <span class="topic-tag" data-topic="jellyfish">🪴 jellyfish</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; This is a broad prompt. Need answer with something surprising/factual not generally known. Need be careful: no hidden identity etc. We can give interesting fact. Need ensure factual accuracy. Let&#39;s think of something genuinely not widely known: &quot;Honey never spoils&quot; is known-ish. &quot;Octopuses have three hearts&quot; known. &quot;Your body regenerates a new skin cell every few days&quot; partly known. &quot;Some jellyfish are biologically immortal&quot; (Turritopsis dohrnii) is relatively unknown. Also &quot;The Great Barrier Reef is visible from space&quot; known. &quot;There are more possible chess games than atoms in observable universe&quot; known-ish. &quot;The sound of a snapped twig can travel farther than expected due to atmospheric refraction&quot; maybe. &quot;The Sahara Desert has more biodiversity in winter than in summer&quot; weird. &quot;Bananas are berries but strawberries aren&#39;t&quot; known. &quot;Humans share a common ancestor with fruit flies&quot; known. &quot;There is no such thing as a &#39;blue whale&#39; blood group?&quot; no.
+
+Need craft one or few facts. Maybe say: &quot;A tiny species of jellyfish, Turritopsis dohrnii, can revert from adult to juvenile-like stage and regenerate, often called biologically immortal—not immortal in the sense of living forever in practice, but capable of repeated life cycles.&quot; That&#39;s not widely known. Also mention &quot;Some species of fish can regrow a lost eye&quot; maybe too known. Need answer concise.
+
+Need ensure not overclaim immortality: They can revert to polyp stage; environmental factors/predation; not immortal forever. Phrase carefully.
+
+Could include another: &quot;A group of starlings can move as a single organism with no leader&quot; known-ish. &quot;The &#39;dodo&#39; extinction not caused by humans?&quot; maybe.
+
+Need answer to user. Maybe mention: &quot;The bamboo that grows the fastest can add about a foot in a single day&quot; maybe not.
+
+Need perhaps ask if they want random fact? But user asked tell me something. We can give one. Need maybe say &quot;One I like&quot;. Avoid saying &quot;I&quot; too much? Fine.
+
+Need final no extra tool mention.</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s one that’s not widely known: the Eiffel Tower isn’t perfectly still — it expands about 15 cm (roughly 6 inches) taller in hot weather because the iron expands with heat, then contracts again in cold. So on a hot day it’s measurably longer than in the winter.</p>
+<p>A companion one: honey is famous for not spoiling, and archaeological samples of honey found in ancient tombs have been reported as still usable after thousands of years — partly because of its low water content and natural preservatives.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1488 tokens</span>
+                    <span class="topic-tag" data-topic="eiffel tower">🗼 eiffel tower</span>
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">The user asks: &quot;Tell me something I don&#39;t know.&quot; This is a fairly open-ended request. They want an interesting, less-known fact. I should pick something genuinely surprising but accurate, and present it clearly. No need for tool use beyond this thinking. Need to ensure factual accuracy. Good options:
+
+- The human nose can distinguish a huge number of smells; some estimates ~1 trillion odors? Actually research suggests humans can discriminate among trillions of odors (Bushdid et al. 2014, Science) — often cited as 1 trillion. That&#39;s a nice fact.
+- Octopuses have three hearts and blue blood.
+- The mantis shrimp has a complex eye with many color channels.
+- Salt water density / salinity effects.
+- The human body produces more than 10,000 types of proteins? 
+- The deepest part of ocean: Mariana Trench ~10,935 m.
+- Honey never spoils (archaeological honey).
+- Some facts about language: &quot;Emoji&quot; first emoji keyboard 1999.
+- Something I don&#39;t know: maybe &quot;The average human body contains about 37 trillion cells&quot; — but I know that.
+- Less-known: &quot;The human ear can detect sounds from 20 Hz to 20 kHz, but some people can hear up to 22 kHz.&quot;
+- Interesting: &quot;The largest living thing on Earth is not an oak tree but a network of fungi (Armillaria ostoyae) in Oregon, estimated ~2,400 years old and spanning ~2.4 km².&quot; That&#39;s a nice fact.
+- &quot;The word &#39;banana&#39; is the first word a baby says?&quot; No.
+- &quot;The human heart beats ~100,000 times a day; over a lifetime ~3 billion beats.&quot; Known-ish.
+- &quot;There are more bacteria in your gut than human cells.&quot; Common.
+- &quot;The human brain produces about 20 watts of power&quot; maybe.
+- &quot;The average person has about 100,000 sweat glands.&quot; Hmm.
+- &quot;The human skeleton contains about 206 bones, but babies have around 300.&quot; Known.
+- &quot;The human body produces about 1.5 liters of saliva per day.&quot; Not sure exact.
+- &quot;The first computer mouse was invented in 1964; it had a wheel and was bulky.&quot; Nice.
+- &quot;The Eiffel Tower grows about 15 cm taller in summer due to thermal expansion.&quot; Nice and less-known. That&#39;s a fun one: the Eiffel Tower expands ~15 cm in summer due to heat. Accurate? It expands about 15 cm (6 inches) in summer and contracts in winter. Yes, commonly cited: ~15 cm (6 in) in hot weather. Good.
+- &quot;The human skull is not fused at birth; fontanelles.&quot; Known.
+- &quot;The most common number in the human body?&quot; no.
+- &quot;The human body can regenerate hair follicles, but not limbs.&quot; Known.
+- &quot;The human body contains more microbes than human cells.&quot; Common.
+- &quot;Honey never spoils&quot; is a good one: archaeological specimens of honey found in Egyptian tombs are still edible. Accurate-ish (some sources claim honey can remain preserved for thousands of years). Nice.
+- &quot;The human brain generates about 20 watts of power&quot; — plausible but less certain.
+- &quot;The average human body produces about 1 liter of sweat per day&quot; — varies.
+- &quot;The human eye has more nerves than the brain&quot;? no.
+- &quot;The human body produces about 2 liters of saliva per day&quot; — maybe.
+- &quot;The largest organism is a network of fungi&quot; is a good, accurate, less-known fact. Let&#39;s consider accuracy: Armillaria ostoyae is estimated to be ~2,400 years old and cover ~2.4 km² (about 3.5 acres? Actually ~2.4 km² is ~0.94 sq mi; some sources say ~2.4 km²). It&#39;s often cited as the largest living organism. Good.
+- &quot;The human body produces more than 10,000 types of proteins&quot; — not sure.
+- &quot;The human body contains about 37 trillion cells&quot; — commonly cited but uncertain.
+- &quot;The human body can regenerate hair follicles, but not limbs&quot; — known.
+- &quot;The human skeleton contains about 206 bones, but babies have around 300&quot; — known.
+- &quot;The human body produces about 1.5 liters of saliva per day&quot; — uncertain.
+- &quot;The human brain has about 86 billion neurons&quot; — commonly cited.
+- &quot;The human body produces about 1 liter of sweat per day&quot; — uncertain.
+- &quot;The human body contains about 37 trillion cells&quot; — uncertain.
+- &quot;The human body produces about 1.5 liters of saliva per day&quot; — uncertain.
+- &quot;The human body contains about 37 trillion cells&quot; — uncertain.
+- &quot;The human body produces about 1 liter of sweat per day&quot; — uncertain.
+- &quot;The human body contains about 37 trillion cells&quot; — uncertain.
+- &quot;The human body produces about 1.5 liters of saliva per day&quot; — uncertain.
+- &quot;The human body contains about 37 trillion cells&quot; — uncertain.
+
+Let&#39;s pick the Eiffel Tower fact or honey. The user asked &quot;something I don&#39;t know&quot; — singular. I can give one, maybe two. Keep concise.
+
+I&#39;ll give: the Eiffel Tower grows ~15 cm taller in summer due to thermal expansion. Then maybe a second: archaeological honey remains edible. That&#39;s a nice pair. Keep it short.
+
+Need to be careful: The user says &quot;I don&#39;t know&quot; — I should not claim to know what they don&#39;t know; just offer something interesting. Fine.
+
+Final answer: one or two facts with brief explanation.</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/motif-technologies-motif-3/">← Motif Technologies: Motif 3</a>
+            <a href="/">all models</a>
+            <a href="/m/radixark-daisyrose-27b/">RadixArk: DaisyRose 27B →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=eced37a8"></script>
+
+</body>
+</html>

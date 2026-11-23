@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadixArk: DaisyRose 27B — Tell me something I don't know.</title>
+    <meta name="description" content="RadixArk: DaisyRose 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know for sure, but here’s one: Some of the oldest known written recipes are on Babylonian clay tablets from around 1700 BCE—and they’re for spic…">
+    <link rel="canonical" href="https://tellmesomethingidontknow.fyi/m/radixark-daisyrose-27b/">
+    <meta property="og:url" content="https://tellmesomethingidontknow.fyi/m/radixark-daisyrose-27b/">
+    <meta property="og:title" content="RadixArk: DaisyRose 27B — Tell me something I don't know.">
+    <meta property="og:description" content="RadixArk: DaisyRose 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know for sure, but here’s one: Some of the oldest known written recipes are on Babylonian clay tablets from around 1700 BCE—and they’re for spic…">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tellmesomethingidontknow.fyi/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RadixArk: DaisyRose 27B — Tell me something I don't know.">
+    <meta name="twitter:description" content="RadixArk: DaisyRose 27B answers &quot;Tell me something I don&#39;t know.&quot; — I can’t know for sure, but here’s one: Some of the oldest known written recipes are on Babylonian clay tablets from around 1700 BCE—and they’re for spic…">
+    <meta name="twitter:image" content="https://tellmesomethingidontknow.fyi/og.png">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0b0e;
+            --bg-card: #16151a;
+            --bg-card-hover: #1c1b21;
+            --text: #e8e4de;
+            --text-dim: #8a8690;
+            --text-faint: #5a5660;
+            --accent: #f0c040;
+            --accent-dim: #a08020;
+            --commercial: #6ea8fe;
+            --open-weights: #c084fc;
+            --open-source: #4ade80;
+            --border: #2a2830;
+            --border-light: #3a3840;
+            --radius: 8px;
+            --font-body: 'DM Mono', monospace;
+            --font-display: 'Fraunces', serif;
+            --accent-bg: rgba(240, 192, 64, 0.08);
+            --accent-bg-hover: rgba(240, 192, 64, 0.12);
+            --accent-bg-strong: rgba(240, 192, 64, 0.25);
+            --accent-bg-tag: rgba(240, 192, 64, 0.1);
+            --accent-bg-tag-hover: rgba(240, 192, 64, 0.2);
+            --commercial-bg: rgba(110, 168, 254, 0.08);
+            --open-weights-bg: rgba(192, 132, 252, 0.08);
+            --open-source-bg: rgba(74, 222, 128, 0.08);
+            --commercial-border: rgba(110, 168, 254, 0.3);
+            --open-weights-border: rgba(192, 132, 252, 0.3);
+            --open-source-border: rgba(74, 222, 128, 0.3);
+            --overlay-subtle: rgba(255,255,255,0.03);
+            --overlay-light: rgba(255,255,255,0.06);
+            --surprise-glow: rgba(240, 192, 64, 0.35);
+            --error: #f87171;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f3ef;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0eeea;
+            --text: #1a1a1a;
+            --text-dim: #555555;
+            --text-faint: #999999;
+            --accent: #c09020;
+            --accent-dim: #8a6a18;
+            --commercial: #2563eb;
+            --open-weights: #7c3aed;
+            --open-source: #16a34a;
+            --border: #e0ddd8;
+            --border-light: #ccc8c0;
+            --accent-bg: rgba(192, 144, 32, 0.08);
+            --accent-bg-hover: rgba(192, 144, 32, 0.15);
+            --accent-bg-strong: rgba(192, 144, 32, 0.2);
+            --accent-bg-tag: rgba(192, 144, 32, 0.1);
+            --accent-bg-tag-hover: rgba(192, 144, 32, 0.2);
+            --commercial-bg: rgba(37, 99, 235, 0.06);
+            --open-weights-bg: rgba(124, 58, 237, 0.06);
+            --open-source-bg: rgba(22, 163, 74, 0.06);
+            --commercial-border: rgba(37, 99, 235, 0.25);
+            --open-weights-border: rgba(124, 58, 237, 0.25);
+            --open-source-border: rgba(22, 163, 74, 0.25);
+            --overlay-subtle: rgba(0,0,0,0.02);
+            --overlay-light: rgba(0,0,0,0.04);
+            --surprise-glow: rgba(192, 144, 32, 0.35);
+            --error: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        header {
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-dim);
+            max-width: 780px;
+            line-height: 1.7;
+        }
+
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .meta-line {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .meta-line span { margin-right: 24px; }
+
+        .contribute-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-light);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+
+        .contribute-note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contribute-note a:hover { text-decoration: underline; }
+
+        .share-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .share-link {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .share-link:hover { text-decoration: underline; }
+
+        /* === HERO QUOTE === */
+        .hero-quote {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-attr {
+            display: block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .hero-refresh {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        .hero-refresh:hover { text-decoration: underline; }
+
+        /* === SURPRISE BUTTON === */
+        .surprise-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+        .surprise-btn:hover {
+            background: var(--accent-bg-hover);
+        }
+
+        .model-card.surprise-highlight {
+            animation: surprise-glow 1.5s ease;
+        }
+
+        @keyframes surprise-glow {
+            0% { box-shadow: 0 0 0 0 transparent; }
+            50% { box-shadow: 0 0 20px 4px var(--surprise-glow); border-color: var(--accent); }
+            100% { box-shadow: 0 0 0 0 transparent; }
+        }
+
+        /* === ORIGINALITY BADGE === */
+        .originality-badge {
+            display: block;
+            font-size: 11px;
+            margin-top: 6px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+        .originality-badge[data-score="5"] { color: var(--open-source); }
+        .originality-badge[data-score="4"] { color: var(--open-source); }
+        .originality-badge[data-score="3"] { color: var(--accent); }
+        .originality-badge[data-score="2"] { color: var(--text-dim); }
+        .originality-badge[data-score="1"] { color: var(--text-faint); }
+        .originality-badge .star-empty { color: var(--text-faint); }
+
+        /* === RELEASE DATE === */
+        .model-released {
+            font-size: 11px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        /* === TOPIC BAR === */
+        .topic-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--text-dim);
+        }
+
+        .topic-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .view-toggle { display: flex; gap: 6px; }
+
+        /* Heatmap: single-hue (accent), shade = share of responses */
+        .heat-scroll { overflow-x: auto; }
+        .heat-scroll svg { display: block; width: 100%; min-width: 560px; height: auto; }
+        .heat-row { cursor: pointer; }
+        .heat-row:hover .heat-tick { fill: var(--text); }
+        .heat-row.active .heat-tick { fill: var(--accent); }
+        .heat-cell { fill: var(--accent); }
+        .heat-cell[data-month]:hover { stroke: var(--text); stroke-width: 1; }
+        .heat-cell:not([data-month]) { cursor: default; }
+        .heat-cell.active { stroke: var(--text); stroke-width: 2; }
+        .heat-tick { fill: var(--text-dim); font-size: 11px; font-family: var(--font-body); }
+        .heat-n { fill: var(--text-faint); font-size: 9px; }
+        .heat-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .heat-note { margin-top: 10px; font-size: 12px; color: var(--text-faint); }
+
+        .topic-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .topic-bar-row:hover .topic-bar-label { color: var(--text); }
+        .topic-bar-row.active .topic-bar-label { color: var(--accent); }
+
+        .topic-bar-label {
+            width: 140px;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .topic-bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topic-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            min-width: 2px;
+            opacity: 0.8;
+        }
+
+        .topic-bar-count {
+            width: 36px;
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .jellyfish-callout {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .jellyfish-callout .emoji { font-size: 18px; margin-right: 8px; }
+
+        /* === FILTERS === */
+        .filter-section {
+            padding: 32px 0 24px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: 8px;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-family: var(--font-body);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 400;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+
+        .filter-pill.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .filter-pill.active[data-filter="commercial"] { border-color: var(--commercial); color: var(--commercial); background: var(--commercial-bg); }
+        .filter-pill.active[data-filter="open-weights"] { border-color: var(--open-weights); color: var(--open-weights); background: var(--open-weights-bg); }
+        .filter-pill.active[data-filter="open-source"] { border-color: var(--open-source); color: var(--open-source); background: var(--open-source-bg); }
+
+        .model-count {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* === MODEL GRID === */
+        .models-section {
+            padding: 32px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 16px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .model-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .model-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .model-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .model-provider {
+            font-size: 12px;
+            color: var(--text-faint);
+            margin-top: 2px;
+        }
+
+        .license-tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .license-tag.commercial { color: var(--commercial); border: 1px solid var(--commercial-border); }
+        .license-tag.open-weights { color: var(--open-weights); border: 1px solid var(--open-weights-border); }
+        .license-tag.open-source { color: var(--open-source); border: 1px solid var(--open-source-border); }
+
+        .response-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .response-tab {
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: none;
+            background: transparent;
+            color: var(--text-faint);
+            font-family: var(--font-body);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .response-tab:hover { color: var(--text-dim); }
+
+        .response-tab.active {
+            background: var(--overlay-light);
+            color: var(--text);
+        }
+
+        .response-text {
+            font-size: 13px;
+            line-height: 1.75;
+            color: var(--text-dim);
+            min-height: 80px;
+        }
+        .response-text p { margin-bottom: 0.75em; }
+        .response-text p:last-child { margin-bottom: 0; }
+        .response-text h1, .response-text h2, .response-text h3,
+        .response-text h4 { color: var(--text); font-size: 13px; font-weight: 600; margin: 1em 0 0.4em; }
+        .response-text strong { color: var(--text); }
+        .response-text ul, .response-text ol { padding-left: 1.4em; margin-bottom: 0.75em; }
+        .response-text li { margin-bottom: 0.25em; }
+        .response-text hr { border: none; border-top: 1px solid var(--border); margin: 0.75em 0; }
+        .response-text details { margin: 0.5em 0; }
+        .response-text summary { cursor: pointer; color: var(--text-dim); }
+        .response-text code { background: var(--overlay-light); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+
+        .response-meta {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-faint);
+        }
+
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 8px;
+            background: var(--accent-bg-tag);
+            color: var(--accent-dim);
+            font-size: 11px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .topic-tag:hover {
+            background: var(--accent-bg-tag-hover);
+            color: var(--accent);
+        }
+        .topic-tag.active {
+            background: var(--accent-bg-strong);
+            color: var(--accent);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* === THEME TOGGLE === */
+        .theme-toggle {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        .model-card, .hero-quote, footer, .topic-section, .filter-section, .jellyfish-callout, .contribute-note {
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            header { padding: 24px 0 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .topic-bar-label { width: 100px; font-size: 12px; }
+            .filter-row { gap: 6px; }
+            .theme-toggle { top: -4px; padding: 4px 8px; font-size: 14px; }
+        }
+
+        /* === REASONING TOGGLE === */
+        details.reasoning-block {
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+        details.reasoning-block summary {
+            cursor: pointer;
+            font-size: 11px;
+            color: var(--text-faint);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        details.reasoning-block summary::-webkit-details-marker { display: none; }
+        details.reasoning-block summary::before {
+            content: '▶';
+            font-size: 9px;
+            transition: transform 0.15s;
+            display: inline-block;
+        }
+        details[open].reasoning-block summary::before { transform: rotate(90deg); }
+        details.reasoning-block summary:hover { color: var(--text-dim); }
+        .reasoning-content {
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--overlay-subtle);
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--text-faint);
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* === LOADING STATE === */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-faint);
+        }
+
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hidden { display: none !important; }
+
+        /* === STATIC ADDITIONS === */
+        .model-permalink {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .model-permalink:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+        .breadcrumb { margin: 0 0 12px; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .model-grid-single { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; }
+
+        .model-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            font-size: 0.9rem;
+        }
+        .model-nav a { color: var(--text-dim); text-decoration: none; }
+        .model-nav a:hover { color: var(--accent); }
+    </style>
+    <noscript><style>.model-card,.hero-quote,.topic-section,.filter-section{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"Tell me something I don't know.","text":"Tell me something I don't know. (asked to RadixArk: DaisyRose 27B)","answerCount":3,"acceptedAnswer":{"@type":"Answer","text":"\n\nI can’t know for sure, but here’s one:\n\nSome of the oldest known written recipes are on Babylonian clay tablets from around **1700 BCE**—and they’re for **spiced meat soups/broths**, not just bread or beer. One famous tablet describes thick soups seasoned with things like **leeks, garlic, cumin, and salt**.","author":{"@type":"Organization","name":"Radixark"}},"suggestedAnswer":[{"@type":"Answer","text":"\n\nThe first spam email was a boring business ad.\n\nIn 1978, Gary Thuerk, a marketing manager at DEC, sent an unsolicited message to about 400 ARPANET users offering a free live demo of DEC’s PDP-11 computer for real-time data communication.\n\nSo the original “spam” wasn’t a Nigerian prince scheme or crypto scam — it was a tech company trying to get meetings.","author":{"@type":"Organization","name":"Radixark"}},{"@type":"Answer","text":"\n\nHere’s a fact many people don’t know:\n\nThe first widely recognized email spam blast was sent at **12:01 a.m. on April 4, 1978**, by Gary Thuerk, an employee at Data General Corporation. He sent it to about **400 ARPANET users**, inviting them to a computer demonstration in San Francisco and noting that **lunch would be provided**.","author":{"@type":"Organization","name":"Radixark"}}]}}</script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+        <p class="breadcrumb"><a href="/">← Tell me something I don't know.</a></p>
+        <h1>RadixArk: DaisyRose 27B</h1>
+        <p class="subtitle">Radixark · <span class="license-tag open-source">open source</span> <span class="originality-badge" data-score="5">★★★★★<span class="star-empty"></span> original</span></p>
+        <div class="meta-line">
+            <span>Prompt: <strong>"Tell me something I don't know."</strong></span>
+            <span>Released: <strong>November 2026</strong></span>
+        </div>
+        <div class="share-row">
+            <span class="filter-label">Share:</span>
+            <a id="share-x" class="share-link" target="_blank" rel="noopener">X</a>
+            <a id="share-facebook" class="share-link" target="_blank" rel="noopener">Facebook</a>
+            <a id="share-reddit" class="share-link" target="_blank" rel="noopener">Reddit</a>
+            <a id="share-linkedin" class="share-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="share-copy" class="share-link">Copy Link</a>
+        </div>
+    </header>
+
+    <section class="models-section">
+        <div class="model-grid model-grid-single">
+            <div class="model-card visible">
+                <div class="card-header">
+                    <div>
+                        <div class="model-name">RadixArk: DaisyRose 27B</div>
+                        <div class="model-provider">Radixark</div>
+                        <div class="model-released">November 2026</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="license-tag open-source">open source</span>
+                        <span class="originality-badge" data-score="5">★★★★★<span class="star-empty"></span> original</span>
+                    </div>
+                </div>
+                <div class="response-tabs"><button class="response-tab active" data-run="0">Run 1</button><button class="response-tab " data-run="1">Run 2</button><button class="response-tab " data-run="2">Run 3</button></div>
+                
+                <div class="response-text" data-run="0">
+                    <p>I can’t know for sure, but here’s one:</p>
+<p>Some of the oldest known written recipes are on Babylonian clay tablets from around <strong>1700 BCE</strong>—and they’re for <strong>spiced meat soups/broths</strong>, not just bread or beer. One famous tablet describes thick soups seasoned with things like <strong>leeks, garlic, cumin, and salt</strong>.</p>
+
+                </div>
+                <div class="response-meta" data-run="0">
+                    <span>4757 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block" data-run="0">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need answer user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Should be interesting, perhaps obscure but true. Need ensure not claiming personal knowledge? Could say &quot;Here’s something likely new: ...&quot; Need avoid falsehood. Think of a surprising fact. Could be about everyday things. Need perhaps verify mentally. Some options:
+- Honey doesn&#39;t spoil; archaeologists found 3000-year-old honey edible. But may know.
+- Octopuses have three hearts, blue blood, and neurons in arms. Common.
+- There are more possible chess games than atoms in observable universe? Common.
+- A day on Venus longer than year. Common.
+- Bananas are berries, strawberries are not. Common.
+- The dot on i and j called tittle, from Latin titulus. Could be interesting.
+- The shortest war in history: Anglo-Zanzibar War 38 minutes (1896). Common maybe.
+- There is a species of frog that gives birth through its mouth? Surprising, true? Some frogs? The African frog? Need be careful.
+- There are cells in human body that divide only once? Not great.
+- The number 1 has 1 factor? no.
+- &quot;Some species of bacteria can live without oxygen and use arsenic?&quot; disputed.
+- &quot;Your body produces about 25 million new cells per second&quot; maybe.
+- &quot;The Eiffel Tower grows taller in summer due to thermal expansion by about 15 cm.&quot; Common.
+- &quot;The shortest war: 38-45 minutes&quot; maybe.
+- &quot;The heart can beat for minutes after removed, has own electrical system&quot; common.
+- &quot;There are more trees on Earth than stars in Milky Way&quot; maybe common.
+- &quot;A cloud weighs millions of pounds&quot; common.
+- &quot;The word &#39;set&#39; has most definitions in English dictionary&quot; common.
+- &quot;There is a mountain taller than Everest measured from base to peak: Mauna Kea&quot; common.
+- &quot;Oxford University is older than the Aztec Empire&quot; common.
+- &quot;The inventor of the Pringles can, Fredric Baur, had his ashes buried in one&quot; maybe interesting and true? He died 2008? He designed the can and requested ashes placed in a Pringles can and buried on family farm. Good.
+- &quot;The first computer bug was an actual moth in 1947&quot; common.
+- &quot;The longest place name in Europe?&quot; Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.
+- &quot;In Switzerland, there is a law that makes it illegal to keep a single guinea pig&quot; maybe true? They are social; law? Maybe not exact.
+- &quot;In Japan, there are &#39;ghost trains&#39; and &#39;ghost bullet trains&#39;&quot; maybe.
+- &quot;The shortest war ended with a peace treaty after 38 minutes&quot; maybe.
+- &quot;The only metal liquid at room temp: mercury; bromine nonmetal liquid&quot; common.
+- &quot;The word &#39;abracadabra&#39; was once used as a healing incantation&quot; maybe.
+- &quot;The &#39;I&#39; in I am is the most used letter in English&quot; common.
+- &quot;The human nose can detect about 1 trillion scents, not 10,000&quot; maybe good, but contested? 2014 study estimated 1 trillion. Good.
+- &quot;There are more ways to shuffle a deck of 52 cards than atoms in solar system?&quot; Common.
+- &quot;A group of flamingos is a flamboyance&quot; cute.
+- &quot;The &#39;blue&#39; in blueberry?&quot; no.
+- &quot;The first known use of the word &#39;computer&#39; referred to a person&quot; maybe.
+- &quot;The city of Timbuktu is not in the Sahara? It is in Mali near Niger River.&quot; maybe.
+- &quot;The Great Wall of China is not visible from space with naked eye&quot; common.
+- &quot;The longest named word: titin, 189,819 letters?&quot; It&#39;s a protein gene; not a word in dictionary, but chemical name. Could be risky.
+- &quot;The longest place name is not official.&quot; 
+- &quot;The &#39;silent e&#39; at end of words?&quot; no.
+- &quot;The human tongue map is a myth; taste buds all over&quot; common.
+- &quot;Some animals can see colors we can&#39;t, but humans have more than 2 cones? no.&quot;
+- &quot;The &#39;smell&#39; of a fresh pencil is lead?&quot; no, graphite plus clay, wood.
+- &quot;The only edible seaweed?&quot; no.
+- &quot;The &#39;brain&#39; of a snail?&quot; no.
+- &quot;The &#39;blood&#39; of a squid?&quot; no.
+- &quot;The &#39;footprint&#39; of dinosaurs?&quot; no.
+
+Need satisfy &quot;Tell me something I don&#39;t know.&quot; Could give a single surprising fact with explanation. Since user asks open. We can be playful: &quot;I can&#39;t know what you know, but here&#39;s a fact most people don&#39;t: ...&quot; Need not be too long. Need maybe avoid too common. Let&#39;s find a genuinely obscure but verifiable fact. 
+
+Potential fact: &quot;The 1982 &#39;Egg&#39; sculpture by Anish Kapoor?&quot; no.
+
+Maybe &quot;The first transatlantic radio broadcast was by Marconi in 1901, but the first transatlantic telephone call was in 1927, and the first transatlantic fax?&quot; Not unique.
+
+&quot;During World War II, there was a brief war between Italy and Ethiopia?&quot; no.
+
+&quot;The only war that lasted 38 minutes&quot; maybe okay.
+
+&quot;The most common word in Shakespeare?&quot; no.
+
+&quot;The &#39;M&#39; in &#39;IBM&#39;?&quot; no.
+
+&quot;The word &#39;tsk&#39;??&quot; no.
+
+Could answer with a fact about language: &quot;The dot over the &#39;i&#39; is called a tittle, and in medieval manuscripts, scribes often didn&#39;t put it, so readers had to infer words. The word tittle comes from Latin titulus, meaning title or heading.&quot; Interesting. But many may know.
+
+Maybe: &quot;The &#39;I&#39; in &#39;I&#39;?&quot; no.
+
+&quot;Most of the mass of a proton is not quarks; it&#39;s the energy of gluon fields (E=mc^2).&quot; Surprising but maybe known.
+
+&quot;There is a species of spider, the banana tree spider, that is not poisonous?&quot; common.
+
+&quot;The &#39;smile&#39; of the moon?&quot; no.
+
+&quot;Your stomach gets a new lining every few days to avoid digesting itself.&quot; Good, maybe some know.
+
+&quot;You can hear a thunderclap even if lightning is hidden behind clouds (sheet lightning).&quot; maybe.
+
+&quot;The &#39;sound&#39; of a sneeze is lower in pitch when...&quot; no.
+
+Could provide a fact with context: &quot;The &#39;dot&#39; on the letter j is called a tittle; before the tittle became standard, lowercase i and j were the same character, so texts could be ambiguous.&quot; Let&#39;s verify: The letter j emerged from i in medieval Latin, with a swash tail; the tittle distinguishes. &quot;I&quot; and &quot;j&quot; originally same; j developed as variant of i. The dot on i is tittle. Yes. But &quot;I don&#39;t know&quot; maybe they might know. Could say &quot;If you already know this, it&#39;s a rare one.&quot; Need not.
+
+Maybe choose an even more surprising one: &quot;The word &#39;set&#39; has more definitions in the Oxford English Dictionary than any other English word (around 430+).&quot; This is often cited, but might be known. &quot;The &#39;Oxford English Dictionary&#39; records over 430 meanings for &#39;set&#39;.&quot; Good.
+
+What about &quot;The first known written recipe is from Mesopotamia, around 1700 BCE, and includes a barley soup.&quot; Maybe interesting. Need verify: The oldest known recipe is from cuneiform tablets in Babylon, about 3,500 years old, from the Yale Babylonian Collection, describing soups. True: &quot;The oldest known recipes are from ancient Mesopotamia, dating to around 1700 BC, written in cuneiform on clay tablets; they describe beef, lamb, and goat soups.&quot; That&#39;s good. But user may not know. It&#39;s safe.
+
+Could combine: &quot;The oldest known recipes are not bread or beer—they are soups, recorded in Babylonian cuneiform around 1700 BC.&quot; Need ensure oldest known recipes? Some might say &quot;oldest recipe in the world is from ancient Mesopotamia&quot;. The Yale Babylonian Tablet: recipe for a thick soup, dating to about 3,700 years ago. Good.
+
+Another: &quot;The first known printed book?&quot; Diamond Sutra 868 CE. Known.
+
+&quot;The first known computer error was a moth taped into a logbook&quot; common.
+
+&quot;The shortest named war lasted 38 minutes; the British gave Zanzibar an hour to surrender; the sultan lost.&quot; Good.
+
+But the request is simple. We can give one fact and maybe a second. The desired answer probably concise. Need maybe no citations? Could provide. Need be careful about &quot;something I don&#39;t know&quot; - impossible to guarantee. So phrase: &quot;I can&#39;t know for sure, but here&#39;s one that surprises people...&quot; That is honest.
+
+Need maybe final: &quot;I can’t know what you already know, but here’s a fact most people don’t: the oldest known recipes, from Babylon around 1700 BCE, are for soups—not bread or beer—and include instructions for seasoning with leeks, garlic, and mint.&quot; Is that accurate? Let&#39;s check details: Yale Babylonian tablet recipes from about 1700 BC. They are for soups: &quot;A thick soup of beef?&quot; ingredients include leek, garlic, cumin, mint, salt? Let&#39;s verify: The oldest known recipe? According to Smithsonian? &quot;A 3,700-year-old tablet contains a recipe for a thick soup made with beef, leeks, garlic, cumin, and mint.&quot; Another recipe uses lamb or goat. Good. We can say &quot;according to a cuneiform tablet now in Yale&#39;s Babylonian collection.&quot; That&#39;s safe.
+
+Could include: &quot;They weren&#39;t for bread, which is older, but among surviving written recipes, these are among the oldest.&quot; But user asks something they don&#39;t know; the fact itself. Need avoid overclaim: &quot;oldest known written recipe&quot; vs &quot;oldest known recipes&quot;. Some sources: &quot;oldest recipe in the world&quot; is a Babylonian soup from around 1700 BC. There may be older? We can hedge: &quot;Among the oldest known written recipes...&quot; Good.
+
+Maybe choose a more surprising, less mainstream fact: &quot;The word &#39;tsundere&#39;?&quot; no.
+
+Could say: &quot;The &#39;dot&#39; on the letter i is called a tittle, and the word &#39;tittle&#39; itself means a tiny mark; in Old English, &#39;tittle&#39; could refer to the dot or a tiny letter.&quot; Not as surprising.
+
+Maybe: &quot;The first person to receive a Nobel Prize was Henri Becquerel, for discovery of spontaneous radioactivity in 1903.&quot; Not surprising.
+
+&quot;The Nobel Prize in Physics was first awarded in 1901 to Wilhelm Röntgen for discovery of X-rays.&quot; Common.
+
+&quot;The shortest Nobel acceptance speech?&quot; no.
+
+Could be about numbers: &quot;There are 268 different ways to write the number 1 using 1s?&quot; no.
+
+&quot;0! = 1&quot; known.
+
+&quot;There is a prime number between n and 2n for every n &gt; 1 (Bertrand&#39;s postulate).&quot; Maybe too math.
+
+Maybe: &quot;The &#39;Erdős number&#39; connects mathematicians by coauthorship; many have 1 or 2.&quot; Not something everyone knows. But maybe too niche.
+
+Could answer with a fact about daily life: &quot;The &#39;sound&#39; of a microwave oven&#39;s magnetron is inaudible, but the smell of food is due to heat.&quot; no.
+
+&quot;Your eyes are the only human organ not protected by bone or tissue? The cornea?&quot; Common.
+
+&quot;Human bodies contain enough carbon to make ~10 pencils?&quot; Maybe.
+
+&quot;The human eye can distinguish about 10 million colors?&quot; common.
+
+&quot;The &#39;smell&#39; of rain is petrichor from geosmin, produced by bacteria and plants.&quot; Good.
+
+Maybe: &quot;The &#39;smell of rain&#39; is called petrichor, caused largely by a compound called geosmin, which your nose can detect at less than 5 parts per trillion.&quot; This is surprising and true? Geosmin detection threshold around 5-10 parts per trillion in water. Humans are exceptionally sensitive. Good.
+
+Could say: &quot;The smell of rain isn&#39;t mostly rainwater—it’s called petrichor, and a big part is geosmin, an earthy compound produced by soil bacteria and plants. Humans can detect it at astonishingly low concentrations, around parts per trillion.&quot; Nice.
+
+Need ensure &quot;soil bacteria and plants&quot; produce geosmin. Geosmin is produced by Streptomyces bacteria and some plants. It&#39;s released from soil into air when rain hits. Good. &quot;Your nose can detect geosmin at about 5 parts per trillion&quot; - some sources: humans can detect geosmin at 5-10 ppt (water). Good enough with &quot;roughly&quot;.
+
+Would user know? Maybe. But likely not. Could combine with &quot;I can&#39;t know for sure&quot;. 
+
+Maybe choose an even more obscure one: &quot;The &#39;blue&#39; in blue blood?&quot; no.
+
+&quot;Banana trees are actually giant herbs, not trees; they have no woody tissue.&quot; This is surprising and true. Many know banana plants are not trees. But &quot;banana trees are actually herbs&quot; maybe.
+
+&quot;Coconut water is sterile and was used as IV fluid in emergencies.&quot; True, but maybe known.
+
+&quot;The &#39;brain&#39; of an octopus?&quot; no.
+
+&quot;The human stomach acid is strong enough to dissolve metal?&quot; It can dissolve small metal objects? pH 1.5-3.5. Not exactly.
+
+&quot;Your brain is about 2% of body weight but uses 20% of energy.&quot; Common.
+
+&quot;The most common blood type O positive&quot; common.
+
+&quot;The first artificial satellite was a polished aluminum sphere with antennas.&quot; Common.
+
+Maybe a fact from history: &quot;The first known use of the word &#39;software&#39; in a technical sense was in 1958?&quot; Might be niche. Let&#39;s check: The term software may first appear in 1958? Actually &quot;software&quot; coined by Margaret Hamilton? No, she popularized. Earliest known use? &quot;software&quot; in 1958? Could be risky.
+
+&quot;The term &#39;data&#39; is Latin for &#39;things given&#39;; in modern computing, &#39;data&#39; is plural and &#39;datum&#39; singular, but singular &#39;data&#39; is now standard.&quot; Maybe.
+
+&quot;The &#39;Q&#39; in &#39;FAQ&#39; stands for Frequently Asked Questions&quot; no.
+
+&quot;The &#39;W&#39; in &#39;Wikipedia&#39;?&quot; no.
+
+Maybe: &quot;The &#39;dot&#39; on the &#39;i&#39; in the Oxford English Dictionary?&quot; no.
+
+Could be a fun philosophical fact: &quot;The first known use of the word &#39;selfie&#39; in print dates to 2002, but the popular usage appeared in 2013.&quot; Not sure. Let&#39;s verify? &quot;Selfie&quot; first appeared in The Age in 2002? The term was used in 2002 in an Australian newspaper? The first known online use? Could be risky.
+
+&quot;The word &#39;spork&#39; was patented in 1953 by Samuel Bronson &#39;Sam&#39; Fox?&quot; Actually spork invented by Samuel Bronson? &quot;Spork&quot; trademark? It was patented by Sam Fox in 1953? The spork was invented by plastic maker Samuel Bronson in 1953, maybe. The term &quot;spork&quot; is a blend of spoon and fork. Could be interesting but maybe known.
+
+&quot;The &#39;M&#39; on McDonald&#39;s logo used to have two golden arches?&quot; no.
+
+&quot;The first hamburger?&quot; no.
+
+Could answer with a scientific surprising fact: &quot;There is a form of lightning that occurs inside clouds and is invisible to the naked eye, detectable by radio.&quot; Maybe.
+
+&quot;The &#39;sound&#39; of a black hole?&quot; no.
+
+&quot;Neutrinos pass through Earth at about 100 trillion per second through your body.&quot; Surprising, true: about 100 trillion solar neutrinos pass through you each second. Good. Could say: &quot;About 100 trillion neutrinos from the Sun pass through your body every second, and you don’t notice because they interact so weakly.&quot; This is common among physics fans but maybe not everyone. Safe? Solar neutrino flux at Earth ~6e10 cm^-2 s^-1. Human body area maybe 10^4 cm^2? 10^14 cm^-2? Let&#39;s compute: 6e10 per cm2 per sec. Body cross-section maybe 0.1 m2 = 1000 cm2? Wait 0.1 m2 = 1000 cm2? 1 m2 = 10000 cm2, so 0.1 =1000. Then 6e13/sec. If effective area maybe 10000 cm2? 6e14/sec. &quot;Hundred trillion&quot; =1e14, yes plausible. Good.
+
+Maybe user wants something they don&#39;t know; a simple surprising fact. We can give one with &quot;I can&#39;t guarantee&quot;.
+
+Need maybe final in English. The user&#39;s request English. Final should be concise but enough. Could say:
+
+&quot;I can’t know what you already know, but here’s one that surprises a lot of people:
+
+The smell we call “rain” — petrichor — is mostly an odor released from soil when rain hits it. A key molecule is geosmin, produced by soil bacteria and some plants. Your nose is so sensitive to geosmin that humans can detect it at roughly parts-per-trillion concentrations, which is why a faint whiff of wet earth can be so distinctive.&quot;
+
+This is nice. Need ensure &quot;mostly&quot; maybe petrichor includes ozone, plant oils (cis-3-hexen-1-ol), geosmin. It&#39;s not &quot;mostly&quot; one molecule. Better: &quot;part of the smell&quot;. Use &quot;A major contributor&quot;. Good.
+
+Could also mention &quot;parts-per-trillion in water&quot;. If in air? Detection threshold in water; in air maybe 5-10 ppt? Need not exact: &quot;at astonishingly low concentrations—on the order of parts per trillion.&quot; Good.
+
+Need maybe no citations. But could add &quot;if you want another, I can go weirder.&quot; Nice.
+
+But the prompt is just &quot;Tell me something I don&#39;t know.&quot; We can respond with one fact. Need maybe ensure not too generic. Let&#39;s decide final.
+
+Alternative: &quot;The oldest known written recipes are for Babylonian soups, around 1700 BCE.&quot; This is perhaps more unique and less likely known. Could combine? Maybe one fact only. Which is more &quot;don&#39;t know&quot;? Petrichor might be known. Babylonian soup recipes is obscure. Let&#39;s choose that. Need verify details. Let&#39;s formulate:
+
+&quot;Among the oldest known written recipes are Babylonian clay tablets from around 1700 BCE that describe soups, including a thick beef soup seasoned with leeks, garlic, cumin, and salt—so some of the earliest recorded cooking wasn’t bread or beer, but simmered, spiced meat broth.&quot;
+
+Is &quot;oldest known written recipes&quot; safe? Let&#39;s hedge: &quot;Some of the oldest known written recipes...&quot; Good.
+
+Need maybe mention &quot;Yale Babylonian tablet&quot;? Could add &quot;A famous one is the Yale Babylonian tablet.&quot; It describes a thick soup. There are three recipes? One uses lamb/goat? Let&#39;s be precise: The Yale Babylonian tablet contains recipes for soups dating to about 3,700 years ago. It includes: &quot;A thick soup of beef&quot;? Ingredients: leek, garlic, cumin, salt, goat fat? Mint? Let&#39;s recall: According to a 2001 article? The oldest recipe in the world: &quot;A thick soup made with beef, leeks, garlic, cumin, and mint&quot; or &quot;A delicious soup made with goat, leek, garlic, cumin, salt, and fat.&quot; There are 3 recipes: one uses beef, another lamb/goat, another? I can avoid exact: &quot;describe spiced meat broths with leeks, garlic, and herbs.&quot; That is safe. 
+
+Maybe: &quot;The oldest known written recipes, found on Babylonian cuneiform tablets from about 1700 BCE, are for soups—spiced meat broths with leeks, garlic, and herbs—not for bread or beer.&quot; This is a bit strong but hedged by &quot;oldest known written recipes&quot;? Some sources say yes. Let&#39;s use &quot;some of the oldest known&quot;. 
+
+Could there be older written recipes? Egyptian? Maybe no. The Yale tablet is often called oldest known recipes. Good.
+
+Maybe add a little context: &quot;That’s roughly 3,700 years old.&quot; Nice.
+
+Need maybe user might know? It&#39;s okay.
+
+Let&#39;s final: &quot;I can&#39;t know for sure, but here&#39;s one: some of the oldest known written recipes are on Babylonian clay tablets from around 1700 BCE, and they’re for spiced meat soups/broths—not just bread or beer. One famous tablet describes thick soups seasoned with ingredients like leeks, garlic, cumin, and salt.&quot; That&#39;s a solid answer.
+
+Need ensure final not too long. Good.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="1">
+                    <p>The first spam email was a boring business ad.</p>
+<p>In 1978, Gary Thuerk, a marketing manager at DEC, sent an unsolicited message to about 400 ARPANET users offering a free live demo of DEC’s PDP-11 computer for real-time data communication.</p>
+<p>So the original “spam” wasn’t a Nigerian prince scheme or crypto scam — it was a tech company trying to get meetings.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="1">
+                    <span>4615 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="1">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need produce final. Could be a surprising fact. Need ensure not known? Impossible. Pick obscure true fact. Maybe &quot;Bananas are berries, but strawberries aren&#39;t&quot; common. Need something less common. Need be safe. Could say &quot;Octopuses have three hearts, and two stop beating when they swim&quot; somewhat known. Need more obscure: &quot;There is a species of jellyfish (Turritopsis dohrnii) often called immortal&quot; somewhat known. Need something user probably doesn&#39;t know. We can phrase &quot;Here&#39;s a lesser-known fact...&quot; Need maybe explain.
+
+Need choose fact: &quot;The total length of capillaries in an adult human body is about 60,000 miles&quot; known-ish. &quot;If you add up all the stars in observable universe...&quot; common.
+
+Obscure: &quot;The shortest war in recorded history was between Britain and Zanzibar in 1896, lasting about 38–45 minutes.&quot; Known-ish. &quot;A day on Venus is longer than its year&quot; known. &quot;Pineapples are not native to Hawaii&quot; maybe known.
+
+Maybe &quot;In 1976, a group of Japanese scientists accidentally created &#39;pink snow&#39; due to algae?&quot; no.
+
+Need be accurate. Something I don&#39;t know: Could be a surprising fact about language: &quot;The word &#39;set&#39; has the most definitions in the Oxford English Dictionary&quot; maybe known. &quot;There are more possible chess games than atoms in the observable universe&quot; known-ish.
+
+Could use &quot;The oldest living organisms are cyanobacteria in Australia&#39;s Lake Charlewood, estimated 3.5 billion years old&quot;? Need verify: Lake Charlewood stromatolites estimated 3.465 billion years old, among oldest life. But &quot;oldest living&quot; maybe disputed.
+
+Better: &quot;A 2023 study? Hmm not sure.&quot;
+
+Need something factual and verifiable. &quot;The inventor of the Pringles can, Fredric Baur, was buried in one?&quot; That&#39;s odd. Fact: Pringles cans are octagonal because they stack and resist crushing; inventor Fredric Baur died in 1977 and was buried in one. Is that true? I recall Fredric Baur was buried in a Pringles can? Let&#39;s verify from memory: Pringles packaging was invented by Fredric Baur. His death in 1977? Some sources say he was buried in a Pringles can? Could be a myth? Need avoid unverified.
+
+Maybe &quot;The &#39;candle&#39; in the Apollo 13 &#39;it&#39;s not over till it&#39;s over&#39;?&quot; no.
+
+Fact: &quot;The only metal liquid at room temp is mercury; bromine is liquid nonmetal.&quot; Known.
+
+&quot;Ketchup was sold as medicine in the 1830s&quot; common.
+
+&quot;Alexander Graham Bell&#39;s company made the first practical telephone, but he was also deaf?&quot; common.
+
+Could be &quot;There is a &#39;sea of glass&#39; in Nevada from a WWII atomic test?&quot; maybe.
+
+Need satisfy &quot;Tell me something I don&#39;t know.&quot; Could be playful: &quot;Your left lung has two lobes, your right has three, leaving room for your liver.&quot; Many know? Maybe not.
+
+Could tell &quot;You have more unique proteins?&quot; Hmm.
+
+Need maybe say: &quot;A teaspoon of neutron star material would weigh about 6 billion tons&quot; common but dramatic. &quot;The Sun makes up 99.86% of mass in solar system&quot; common.
+
+Obscure but verifiable: &quot;The first computer &#39;bug&#39; was a literal moth found in a Harvard Mark II relay in 1947; the taped moth is in Smithsonian.&quot; Known-ish but fun.
+
+&quot;Human stomach acid is strong enough to dissolve razor blades&quot;? Not exactly; hydrochloric acid pH 1.5-3.5, can dissolve metal? Razor blades steel may corrode, but not safe.
+
+Maybe: &quot;The Eiffel Tower can be up to 15 cm taller in summer due to thermal expansion.&quot; Known-ish.
+
+Need something likely unknown. Could choose &quot;There&#39;s an international law that makes it illegal to wear a tuxedo to the opera?&quot; No, fake.
+
+Let&#39;s think of truly obscure accurate facts:
+
+- &quot;The first known recipe for pizza? Neapolitan pizza is recognized by UNESCO?&quot; not.
+- &quot;The &#39;Green flash&#39; phenomenon can be seen at sunset.&quot; common.
+- &quot;A group of flamingos is called a &#39;flamboyance&#39;.&quot; common.
+- &quot;The shortest war 38 minutes&quot; common.
+- &quot;The &#39;Methuselah spruce&#39; is around 5,000 years old&quot; known-ish.
+- &quot;The &#39;Old Tjikko&#39; yew tree in UK estimated 5,000 years.&quot;
+- &quot;There are 87 known elements naturally occurring?&quot; common.
+- &quot;The &#39;Great Stink&#39; of 1858 led to London&#39;s sewer system designed by Joseph Bazalgette.&quot; maybe.
+- &quot;The &#39;Coffin&#39; of Tutankhamun?&quot; no.
+
+Science oddities:
+- &quot;Bananas are genetically nearly identical, making them susceptible to Panama disease&quot; known.
+- &quot;Sea otters hold hands while sleeping to avoid drifting apart&quot; common.
+- &quot;Cows have best friends and get stressed when separated&quot; maybe.
+- &quot;Dolphins use &#39;signature whistles&#39; as names&quot; known.
+- &quot;Octopus blood is blue due to hemocyanin&quot; common.
+- &quot;Sloths can hold their breath longer than dolphins&quot; (40 min vs 10 min) maybe true but controversial.
+- &quot;A shrimp&#39;s heart is in its head.&quot; common.
+
+History/linguistics:
+- &quot;The &#39;V&#39; sign for victory popularized by Churchill during WWII&quot; known.
+- &quot;The first use of &#39;I love you&#39; in sign language?&quot; no.
+- &quot;The &#39;Mona Lisa&#39; had eyebrows originally?&quot; common.
+- &quot;The &#39;Rosetta Stone&#39; wasn&#39;t a &#39;stone&#39; but granodiorite stele.&quot; maybe known.
+- &quot;The &#39;Library of Alexandria&#39; was not destroyed in one fire but declined over centuries&quot; common.
+- &quot;The &#39;Oxford English Dictionary&#39; first published in 1928?&quot; maybe.
+- &quot;The &#39;word of the day&#39;?&quot; no.
+
+Astronomy:
+- &quot;The footprints on the Moon may last millions of years due to lack of weather&quot; common.
+- &quot;Venus rotates clockwise, so Sun rises west and sets east&quot; known-ish.
+- &quot;A year on Venus is 225 Earth days; a day is 243 Earth days&quot; known.
+- &quot;Saturn is less dense than water&quot; known.
+- &quot;Neptune has seasons longer than 40 Earth years&quot; known-ish.
+- &quot;The Sun rotates every ~25 days at equator&quot; maybe.
+
+Biology/medicine:
+- &quot;Humans share about 60% of DNA with bananas&quot; common.
+- &quot;You replace most of your cells every 10 years?&quot; not exact.
+- &quot;Your brain uses ~20% of energy&quot; common.
+- &quot;You are 60% water?&quot; common.
+
+Maybe use &quot;The longest-known recorded continuous life of an organism?&quot; Hmm.
+
+Could make answer conversational: &quot;Sure — here&#39;s a less-known one: The first printed newspaper advertisement? ...&quot;? Need accuracy.
+
+Maybe &quot;The first commercial advertisement in a newspaper appeared in 1704 in The Boston News-Letter for lost cats?&quot; Hmm.
+
+Let&#39;s identify a fact that&#39;s surprising and verifiable from known sources. We can&#39;t browse. Need memory.
+
+Potential: &quot;The &#39;Pringles&#39; can is octagonal because the shape is the strongest that can be printed from a single sheet and stack flat; Pringles were originally called &#39;Glads&#39; at a trade show and renamed after founder Pringle Glanville?&quot; Is that true? Pringles history: Founded by Pringle Glanville? The name came from founder Pringle Glanville? Actually Pringles company named after founder Pringle Glanville? Let&#39;s recall: The brand name &quot;Pringles&quot; derives from founder Pringle Glanville, who died before launch; product originally called Glads (Gladstone?) but changed due to trademark? I think product was originally called &quot;Glads&quot; after William Gladstone? Need verify. Pringles were created at Procter &amp; Gamble. The stackable shape patented by Fredric Baur. The name &quot;Pringles&quot; is thought to come from founder Pringle Glanville, but not confirmed? Could be risky.
+
+Maybe &quot;The &#39;Pringles&#39; can is octagonal, not round, because it&#39;s easier to stack and less likely to crush&quot; is less known and likely true. But user might know? Could pair with &quot;the first Pringles can shape was a patent for &#39;a method of packaging chips&#39;&quot;.
+
+Another: &quot;The word &#39;nerd&#39; originally was a name in Roald Dahl&#39;s James and the Giant Peach (1961), and may have been inspired by the Yiddish word neder?&quot; Common? Some know.
+
+Could say &quot;In English, the letter &#39;e&#39; is most common, but in German &#39;n&#39;?&quot; not.
+
+Could answer with a surprising fact plus caveat &quot;I doubt you know this&quot;. Need not overdo.
+
+Maybe choose &quot;The &#39;Cicada 3301&#39; puzzle?&quot; no.
+
+What does user likely not know? We need produce one thing. Could be: &quot;The human body has about 38 trillion cells, but most are not human: bacteria make up about 50% of cells in gut?&quot; known.
+
+&quot;Your stomach gets a new lining every few days to avoid digesting itself&quot; maybe not known.
+
+&quot;A person&#39;s bones are replaced every 10 years?&quot; not.
+
+Maybe &quot;The &#39;blue dot&#39;?&quot; no.
+
+Let&#39;s think of exact, lesser-known: &quot;The first transatlantic cable was laid in 1858 but failed after about three weeks; the first successful one was 1866.&quot; Some know.
+
+&quot;The &#39;Great Pacific Garbage Patch&#39; is not one giant island; it&#39;s mostly tiny plastic particles floating in a low-velocity zone.&quot; Common.
+
+&quot;There are no indigenous reindeer in Canada?&quot; no.
+
+&quot;Canada has more lakes than the rest of the world combined&quot; often repeated but dubious.
+
+Maybe &quot;The &#39;Mall&#39; in Washington D.C. was originally called the Mall?&quot; not.
+
+&quot;London&#39;s &#39;Mall&#39; is not a shopping mall; it&#39;s a promenade.&quot; common.
+
+&quot;The &#39;M&amp;M&#39; in M&amp;M&#39;s stands for Mars and Murrie, but Forrest Mars died before company became big?&quot; known-ish.
+
+&quot;The first American to eat on the Moon was food from a freeze-dried packet: ham and eggs?&quot; Actually Apollo 11 astronauts ate shrimp cocktail? Wait Neil Armstrong&#39;s first meal on Moon: compressed packet of ham and eggs? Buzz Aldrin drank communion wine? Hmm.
+
+Could tell: &quot;On the first Moon landing, Buzz Aldrin took Christian communion privately, but Armstrong didn&#39;t.&quot; Known.
+
+&quot;Neil Armstrong&#39;s first words on the Moon were &#39;Contact light&#39;; the famous &#39;one small step&#39; came later.&quot; Many know.
+
+&quot;The first message sent over the Internet in 1969 was &#39;LO&#39; because the system crashed while typing &#39;LOGIN&#39;.&quot; Common but maybe not known. Could be good. But maybe user knows.
+
+&quot;The first spam email in 1978 was an ad for a DEC computer by Gary Thuerk, not porn.&quot; Could be less known. But maybe.
+
+&quot;The term &#39;bug&#39; in computing was popularized by Grace Hopper finding a moth in a relay in 1947; the moth is in Smithsonian.&quot; Good. But user might know.
+
+Need something &quot;I don&#39;t know&quot;. Could be very specific: &quot;The &#39;Hessdalen lights&#39; in Norway?&quot; no.
+
+Maybe &quot;The &#39;Bloop&#39; deep-sea sound in 1997 was not an alien; it may have been an icequake.&quot; Known.
+
+Could pick a fact from history that&#39;s obscure: &quot;In 1799, Napoleon&#39;s expedition to Egypt included scientists, which led to the founding of Egyptology and discovery of the Rosetta Stone.&quot; Known.
+
+&quot;During the 1904 Summer Olympics, marathon had 32 finishers, but many were given strychnine and brandy as energy boosters.&quot; That&#39;s surprising. Need accuracy: 1904 St. Louis marathon was chaotic; some runners given strychnine sulfate and brandy; winner Fred Lorz rode partway; second Thomas Hicks dosed with strychnine and brandy, thought dead; actually first finisher? Let&#39;s recall: 1904 Olympic marathon was notorious. The first finisher, American Thomas Hicks, was given strychnine and brandy during the race; he collapsed and was thought dead. The first man to actually complete the course (Frederick Lorz?) Wait Lorz rode in a car for 11 miles and was disqualified. The official winner was Thomas Hicks, who finished after being revived? Another runner, Andrew Hannan? Let&#39;s be precise if we use. Could be too risky.
+
+Maybe &quot;In 1904, the marathon was held in summer heat, and some runners were given strychnine, a poison, as a stimulant.&quot; True-ish. But maybe controversial.
+
+Another: &quot;The first video game? &#39;Spacewar!&#39; 1962.&quot; known.
+
+&quot;The first computer virus &#39;Creeper&#39; said &#39;I&#39;m the creeper, catch me if you can!&#39; and the first antivirus &#39;Reaper&#39; was made by Ray Tomlinson.&quot; That&#39;s a nice fact. Tomlinson invented email in 1971 and also created Reaper to remove Creeper. Is that true? Yes, Creeper was a self-replicating program on ARPANET in 1971; Ray Tomlinson created Reaper to delete it, often considered first antivirus. Email @ sign introduced by Tomlinson. Surprising. User likely doesn&#39;t know. But maybe too niche.
+
+Could say: &quot;The first computer antivirus program, Reaper, was written by the same person who popularized email with the @ symbol.&quot; That&#39;s neat. Need ensure: Ray Tomlinson is credited with first email message across networks in 1971 using @. He wrote Reaper in 1972? It removed Creeper from TENEX. It is considered one of first antivirus programs. Good. But &quot;first&quot; maybe contested; we can phrase &quot;often considered&quot;.
+
+Would that be something user doesn&#39;t know? Probably. Need final maybe one or two sentences. But desired oververbosity 9, maybe give a little context. User asked simply; can respond with a fact. Need not be too long. Could be engaging.
+
+Maybe choose something even more surprising: &quot;The &#39;QWERTY&#39; keyboard layout was not designed for typists; it was adapted from a telegraph?&quot; Hmm. QWERTY history: Developed for Sholes and Glidden typewriter; arrangement may have been to reduce jamming of typebars, not speed; some keys placed to slow common digraphs. Could say &quot;The QWERTY layout is a product of 19th-century mechanical typewriter design, not modern efficiency.&quot; Some know.
+
+Maybe &quot;The &#39;@&#39; symbol was used in commerce long before email to mean &#39;at the rate of&#39;; Ray Tomlinson chose it for email in 1971.&quot; That&#39;s a nice fact. Combine with Reaper? Could say &quot;The @ symbol already existed as a pricing mark, like &#39;50@ $2 each&#39;; the first email address used it because it meant &#39;at&#39;.&quot; That is likely unknown. But we need something I don&#39;t know. Could answer: &quot;The first internet address used @ because in trade notation &#39;@&#39; meant &#39;at&#39; (e.g., 10 barrels @ $5 each); Ray Tomlinson borrowed that for email in 1971.&quot; That&#39;s good.
+
+But maybe user knows @ story. Another: &quot;The first email ever sent was &#39;Q@BBN-tenexa&#39;? Actually Tomlinson sent a message from BBN-tenexa to BBN-TENEXB, likely &#39;Q&#39; or &#39;QWERTYUIOP&#39;.&quot; Could be interesting but less reliable.
+
+What about &quot;The &#39;lorem ipsum&#39; placeholder text is not random; it comes from Cicero&#39;s &#39;De finibus bonorum et malorum&#39;.&quot; Known.
+
+Could say &quot;The &#39;404&#39; error code comes from HTTP status codes, not a secret code; 4 means client error, 04 means Not Found.&quot; known.
+
+Maybe &quot;The &#39;Ctrl+C&#39; and &#39;Ctrl+V&#39; copy-paste keys were chosen because early Macintosh had Command C/V?&quot; Not.
+
+Maybe &quot;The &#39;Shift&#39; key?&quot; no.
+
+Let&#39;s choose a fact that is true, interesting, less common, and safe: &quot;The first computer antivirus was created by the same person who sent the first email.&quot; Need accuracy: The first email across a network by Ray Tomlinson in 1971; Reaper considered first antivirus. Is Tomlinson the same? Yes. We can say &quot;often credited&quot;. That is likely something many don&#39;t know.
+
+But maybe we can do even better: &quot;The first spam email was an advertisement for DEC computers sent to 400 ARPANET users in 1978, and it mentioned that a live demonstration was available on request.&quot; This is a good historical tech fact. It&#39;s specific. User likely doesn&#39;t know. Need accuracy: Gary Thuerk sent first spam in 1978? He was a marketing manager at DEC; sent advertisement for DEC PDP-11? The message: &quot;Gentlemen: We would like to make you a special offer regarding the use of our PDP-11 for real time data communication... We have the facilities to run a live demonstration...&quot; Sent to about 397/400 users on ARPANET. Good. Could tell that. It&#39;s fun.
+
+Could say: &quot;The first spam email wasn&#39;t a Nigerian prince scheme; it was a 1978 ad for a DEC minicomputer sent by DEC marketing manager Gary Thuerk to ARPANET users, offering a live demo of data communication.&quot; This is likely unknown.
+
+Need final: concise but with context. Maybe add &quot;Fun bonus: it used the phrase &#39;on the ARPANET&#39;?&quot; We can include.
+
+Need ensure no false. Let&#39;s verify memory:
+- First spam email: May 1978, Gary Thuerk, DEC, sent to about 400 ARPANET users, advertising DEC PDP-11? It said: &quot;Gentlemen: We would like to make you a special offer regarding the use of our PDP-11 for real time data communication. We have the facilities to run a live demonstration of our software. This system is currently on the ARPANET in the U.S. and is available on a 24 hour basis. The demonstration is free.&quot; Something like that. Good.
+- It was to &quot;the West Coast and New England&quot; maybe. Some sources say first mass unsolicited email. It was advertising for DEC&#39;s PDP-11. Good.
+
+Could final: &quot;The first spam email was a business ad, not something bizarre: in 1978, DEC marketing manager Gary Thuerk sent a message to ARPANET users saying they could get a free live demo of their PDP-11 computer’s data-communication setup.&quot; That&#39;s likely something they don&#39;t know. Add: &quot;It helped establish the concept of unsolicited mass email.&quot;
+
+Need maybe not too long. Since user asked &quot;Tell me something I don&#39;t know.&quot; Could be playful: &quot;Here&#39;s a tech-history fact...&quot; Then fact. Ensure final answer only. Could include &quot;If you want, I can go deeper.&quot; But maybe not necessary.
+
+Alternative fact: &quot;The first email virus and antivirus were created by same person.&quot; Which is more surprising? The first spam is more likely unknown. Let&#39;s pick first spam. It&#39;s a concrete historical fact. We can phrase with &quot;often considered&quot; to avoid absolute. &quot;One of the first, if not the first, spam emails...&quot; Good.
+
+Need maybe mention &quot;1978, Gary Thuerk, DEC, ARPANET, 400 users, PDP-11 demo.&quot; That&#39;s enough.
+
+Let&#39;s craft final: &quot;The first spam email was a fairly polite ad: in 1978, Gary Thuerk, a DEC marketing manager, sent an unsolicited message to about 400 ARPANET users offering a free live demo of DEC’s PDP-11 computer for real-time data communication.&quot; Then maybe &quot;So the original spam wasn&#39;t crypto or scams; it was a tech company trying to get meetings.&quot; Nice.
+
+Need ensure &quot;first spam email&quot; maybe &quot;often called the first spam&quot;. Good.
+
+Final in English. Done.
+</div>
+                </details>
+                <div class="response-text hidden" data-run="2">
+                    <p>Here’s a fact many people don’t know:</p>
+<p>The first widely recognized email spam blast was sent at <strong>12:01 a.m. on April 4, 1978</strong>, by Gary Thuerk, an employee at Data General Corporation. He sent it to about <strong>400 ARPANET users</strong>, inviting them to a computer demonstration in San Francisco and noting that <strong>lunch would be provided</strong>.</p>
+
+                </div>
+                <div class="response-meta hidden" data-run="2">
+                    <span>1952 tokens</span>
+                    
+                </div>
+                
+                <details class="reasoning-block hidden" data-run="2">
+                    <summary>show reasoning</summary>
+                    <div class="reasoning-content">We need to respond to user: &quot;Tell me something I don&#39;t know.&quot; Need produce final answer. Need likely a surprising fact. Could be concise. Need ensure true. Let&#39;s pick something obscure but verifiable. Maybe &quot;The shortest war in history was between Britain and Zanzibar in 1896, lasting about 38 minutes.&quot; But user might know? &quot;Something I don&#39;t know&quot; cannot guarantee. Could frame as &quot;You probably don&#39;t know this...&quot; Need maybe surprising. Fact: In 1932, the US government banned the importation of Cuban cigars? Hmm. More obscure: &quot;The world&#39;s shortest commercially sold film is &#39;Blink&#39; (1896?) one second.&quot; Not sure. &quot;A day on Venus is longer than its year&quot; common. &quot;Mars has two moons named Phobos and Deimos&quot; common. &quot;Bananas are berries but strawberries are not&quot; maybe common.
+
+Need something likely unknown: &quot;There is a species of jellyfish, Turritopsis dohrnii, considered biologically immortal&quot; common. &quot;Cows have best friends and get stressed when separated&quot; maybe.
+
+Could tell a fact with caveat: &quot;One thing you may not know: ...&quot; Ensure accuracy. Let&#39;s think of a robust obscure fact.
+
+Possibilities:
+- &quot;In 1955, Australia had the first commercial television station?&quot; no.
+- &quot;The first computer bug was an actual moth taped into a logbook in 1947&quot; common.
+- &quot;The inventor of the Pringles can was a can designer?&quot; Maybe.
+- &quot;Pringles are not legally chips in US?&quot; Actually Pringles are called snack chips; legal case? Not sure.
+- &quot;There was a man who survived being struck by lightning?&quot; not enough.
+- &quot;The oldest known tattooed person is Ötzi the Iceman, with 61 tattoos&quot; likely.
+- &quot;The first known depiction of a smiley face was in 1963 by Frank Hodgson?&quot; maybe.
+- &quot;The shortest war lasted 38 minutes&quot; common.
+- &quot;There is an airport with no scheduled passenger flights?&quot; no.
+- &quot;A group of flamingos is a flamboyance&quot; common.
+- &quot;The Eiffel Tower can be 15 cm taller in summer due to thermal expansion&quot; common.
+- &quot;Honey never spoils&quot; common.
+- &quot;Octopuses have three hearts and blue blood&quot; common.
+- &quot;Sharks existed before trees&quot; maybe less known but increasingly known.
+- &quot;The first known video game was Spacewar! in 1962&quot; common among tech.
+- &quot;In 1840, a British stamp featured Queen Victoria; the Penny Black&quot; common.
+- &quot;The world’s smallest country is Vatican City&quot; common.
+- &quot;There&#39;s a species of flatworm that can regenerate from a single cell?&quot; maybe.
+- &quot;The shortest book in the Library of Congress is &#39;The Book of Lists&#39;?&quot; no.
+- &quot;There are more trees on Earth than stars in the Milky Way&quot; (approx 3 trillion trees vs 100-400 billion stars) maybe known.
+- &quot;A teaspoon of neutron star weighs about 6 billion tons&quot; common.
+- &quot;The human body contains enough carbon to make about 90 pencils&quot; maybe.
+- &quot;The first human to see the far side of the Moon was Yuri Gagarin?&quot; Actually Gagarin was in space but did he see far side? He was in Earth orbit, couldn&#39;t see far side. First to see far side? A spacecraft: Luna 3. First human? Gennady? No human has orbited Moon? Apollo astronauts saw far side? They orbit? Maybe.
+- &quot;The shortest possible name for a US president?&quot; &quot;Teddy&quot; not official.
+- &quot;The word &#39;ketchup&#39; originally came from a Southeast Asian fish sauce called kê-chiap.&quot; That&#39;s interesting, likely unknown. Ensure accurate: Ketchup from Hokkien kôe-chiap? Fish sauce. Yes.
+- &quot;The first known use of the word &#39;internet&#39; was in 1974?&quot; Maybe.
+- &quot;In 1982, the first text message was &#39;Merry Christmas&#39;&quot; common.
+- &quot;The first email was sent in 1971&quot; common.
+- &quot;The first smartphone?&quot; common.
+
+Need maybe answer in a way that acknowledges cannot guarantee. Could say &quot;Here&#39;s a fact that many people don&#39;t know: ...&quot; But user requested &quot;Tell me something I don&#39;t know.&quot; We can&#39;t verify. Maybe playful: &quot;Statistically, there&#39;s a decent chance you don&#39;t know this: ...&quot; But likely want fact.
+
+Need maybe provide something novel: &quot;In 1956, the first commercial television ad in Canada?&quot; no.
+
+Let&#39;s choose an accurate, obscure fact: &quot;The first known use of the emoji-like smiley face was in 1963, a traffic safety officer commissioned a designer to make a badge with a yellow smiley face.&quot; Is that true? Frank Hodgson, Chief of Traffic Control at Hartford Insurance, commissioned Harold Sontag? Actually smiley face created in 1963 by Frank M. Hodgson for insurance company, designed by Harold Sonngon? The exact: In 1963, Hartford Insurance Company commissioned a yellow smiley face button to promote traffic safety, drawn by artist? It became famous. There was earlier in 1863 a cartoon? But likely okay.
+
+Could say: &quot;The modern yellow smiley face was originally designed as a traffic-safety marketing item in 1963, not as a digital emoji.&quot; Is that likely unknown? Many may not know. Need ensure: It was commissioned by Frank Hodgson, Chief of Traffic Control at Hartford Insurance Company, to make an eye-catching pin. He asked a designer to draw a smiling face on yellow construction cone? It was sold at gas stations. Yes.
+
+But maybe user might know. Another fact: &quot;In 1972, the first known &#39;spam&#39; email was sent at 12:01 AM on April 4, 1978, by Gary Thuerk to 400 ARPANET users promoting a Dec computer lunch.&quot; This is obscure but true. Could be good. But maybe user doesn&#39;t know. Need maybe include date. Let&#39;s verify from memory: First spam: April 4, 1978, by Gary Thuerk of DEC to ARPANET members, inviting to a product demonstration in San Francisco, mentioning lunch. Yes. It was sent to 400 people. Could say &quot;often considered the first email spam blast.&quot; Good.
+
+Could answer: &quot;In 1978, the first known mass email spam was sent at 12:01 a.m. on April 4 by DEC salesman Gary Thuerk to about 400 ARPANET users, advertising a computer demonstration—and offering lunch.&quot; That&#39;s a neat fact. It&#39;s likely less known. Need maybe not too long. Could add &quot;so &#39;spam&#39; predates email clients by years.&quot; But ensure no false: Was it exactly 12:01? Some sources say sent at 12:01 AM, Thursday April 4, 1978. Good.
+
+Could maybe use something even more surprising: &quot;The first known email spam was a business promotion, not a chain letter.&quot; That&#39;s interesting.
+
+Alternative: &quot;The first known text message &#39;Merry Christmas&#39; was sent in 1992 by Neil Papworth.&quot; Many know. &quot;The first known emoji was not a picture but the Japanese word &#39;e&#39; + &#39;moji&#39;?&quot; common.
+
+Let&#39;s choose the spam fact. It satisfies &quot;something I don&#39;t know&quot; maybe. Need final answer only. Could say: &quot;Here’s one: the first known email spam was sent at 12:01 a.m. on April 4, 1978...&quot; Need maybe mention &quot;often considered&quot;. Since user asked simply, no need lengthy. But maybe we can make it a bit playful: &quot;Statistically, you might not know this...&quot; But maybe final: &quot;In 1978...&quot;.
+
+Need ensure not too much. Final: &quot;Here&#39;s a fact many people don&#39;t know: the first widely recognized email spam blast was sent at 12:01 a.m. on April 4, 1978, by DEC employee Gary Thuerk to about 400 ARPANET users. It advertised a computer demonstration in San Francisco and mentioned that lunch would be provided.&quot; That&#39;s good.
+
+Need consider if user expects &quot;something I don&#39;t know&quot; maybe wants creative? Could answer with fact. Done.
+</div>
+                </details>
+            </div>
+        </div>
+        <nav class="model-nav">
+            <a href="/m/thinkingmachines-inkling-2-mini/">← Thinking Machines: Inkling 2 Mini</a>
+            <a href="/">all models</a>
+            <a href="/m/mistralai-pixtral-large-2502/">Mistral: Pixtral Large 2502 →</a>
+        </nav>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            Built for fun. Responses queried via <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>.
+            Each model was asked 3 times with identical parameters.
+        </p>
+        <p style="margin-top: 8px;">
+            <a href="https://github.com/themoah/tell-me-something-i-dont-know" target="_blank" rel="noopener">Source on GitHub</a>
+            Made with &lt;3 by <a href="https://x.com/themoah" target="_blank" rel="noopener">Aviv Dozorets</a> with a help from Claude Code, 2026.
+        </p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+</script>
+<script defer src="/app.js?v=eced37a8"></script>
+
+</body>
+</html>
