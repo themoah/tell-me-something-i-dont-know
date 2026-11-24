@@ -1608,3 +1608,41 @@ models:
     license: "open-source"
     released: "November 2026"
 
+
+  # === Auto-discovered models ===
+  - id: "thinkingmachines/inkling-2-mini"
+    name: "Thinking Machines: Inkling 2 Mini"
+    provider: "Thinkingmachines"
+    license: "open-source"
+    released: "November 2026"
+
+  - id: "radixark/daisyrose-27b"
+    name: "RadixArk: DaisyRose 27B"
+    provider: "Radixark"
+    license: "open-source"
+    released: "November 2026"
+
+  - id: "mistralai/pixtral-large-2502"
+    name: "Mistral: Pixtral Large 2502"
+    provider: "Mistral"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "google/gemini-4-neon"
+    name: "Google: Gemini 4 Neon"
+    provider: "Google"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "openai/gpt-6.2-sol-pro"
+    name: "OpenAI: GPT-6.2 Sol Pro"
+    provider: "OpenAI"
+    license: "commercial"
+    released: "November 2026"
+
+  - id: "openai/gpt-6.2-sol"
+    name: "OpenAI: GPT-6.2 Sol"
+    provider: "OpenAI"
+    license: "commercial"
+    released: "November 2026"
+
